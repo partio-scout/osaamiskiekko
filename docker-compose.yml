@@ -30,13 +30,9 @@ services:
       POSTGRES_DB: mydb
       POSTGRES_PASSWORD: mypassword
       POSTGRES_USER: myuser
-  frontend:
-    image: node:10
+  dev:
+    build: frontend
+    volumes:
+      - ./frontend/src:/usr/src/app/src
     ports:
       - 3000:3000
-    volumes:
-      - ./frontend:/usr/local/app
-    restart: always
-    working_dir: /usr/local/app
-    entrypoint: "/bin/bash"
-    command: "-c \"if [ ! -d \"node_modules\" ]; then npm i; fi; npm start\""

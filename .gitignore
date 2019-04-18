@@ -1,3 +1,21 @@
 .env
+frontend/build
+nginx/build
 
+# Test results
+results
+robot/log.html
+robot/output.xml
+robot/report.html
+robot/selenium-*.png
+
+# OSX
+.DS_Store
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Logs
+*.log
 /tmp

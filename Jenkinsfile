@@ -83,7 +83,7 @@ pipeline {
 def buildImages() {
   sh """${compose} \
     -f docker-compose.yml \
-    -f docker-compose-frontend.yml \
+    -f docker-compose-production.yml \
     build --pull api db frontend"""
 }
 

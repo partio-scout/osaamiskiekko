@@ -87,6 +87,7 @@ def buildImages() {
     build --pull api db frontend"""
 }
 
+
 def notifyBuild(String buildStatus = 'STARTED') {
   buildStatus = buildStatus ?: 'SUCCESS'
 
@@ -109,5 +110,6 @@ def notifyBuild(String buildStatus = 'STARTED') {
     colorCode = '#FF9FA1'
   }
 
-  slackSend(teamDomain: "eficode", token: credentials('slacktoken'), color: colorCode, message: summary)
+  // TODO Re-enable slackSend if slack plugin is added to Jenkins
+  // slackSend(teamDomain: "eficode", token: credentials('slacktoken'), color: colorCode, message: summary)
 }

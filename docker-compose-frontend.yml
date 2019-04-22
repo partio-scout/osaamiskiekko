@@ -1,15 +1,12 @@
 version: "3.7"
 
 services:
-  dist:
-    build: frontend
-    command: npm run build
-    volumes:
-      - ./nginx/build:/usr/src/app/build
-
   frontend:
-    build: ./nginx
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile.production
     ports:
+      - 443:443
       - 80:80
 
 

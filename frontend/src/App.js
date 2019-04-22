@@ -6,7 +6,7 @@ import axios from 'axios';
 
 async function getApiData() {
   try {
-    const response = await axios.get('http://localhost:1337/testendpoints');
+    const response = await axios.get('/api/testendpoints');
     console.log(response);
   } catch (error) {
     console.error(error);

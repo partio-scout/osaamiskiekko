@@ -21,6 +21,7 @@ services:
     depends_on:
       - db
     restart: always
+
   db:
     image: postgres
     restart: always
@@ -30,6 +31,7 @@ services:
       POSTGRES_DB: mydb
       POSTGRES_PASSWORD: mypassword
       POSTGRES_USER: myuser
+      
   dev:
     build: frontend
     volumes:

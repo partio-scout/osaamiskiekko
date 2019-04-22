@@ -74,7 +74,7 @@ pipeline {
     //   step([$class: 'JUnitResultArchiver', testResults: 'results/mocha/test-results.xml'])
       sh """${compose} \
         -f docker-compose.yml \
-        -f docker-compose-production.yml \
+        -f docker-compose-frontend.yml \
         down -v"""
     }
   }
@@ -83,7 +83,7 @@ pipeline {
 def buildImages() {
   sh """${compose} \
     -f docker-compose.yml \
-    -f docker-compose-production.yml \
+    -f docker-compose-frontend.yml \
     build --pull api db frontend"""
 }
 

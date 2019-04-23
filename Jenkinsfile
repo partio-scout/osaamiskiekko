@@ -30,6 +30,14 @@ pipeline {
       }
     }
 
+    stage('Front-End unit tests') {
+      steps {
+        sh """${compose} \
+            -f docker-compose.frontend-unittests.yml up
+           """
+      }
+    }    
+
     // TODO: Enable StrapiCMS unit
     // stage('Unit Test') {
     //   steps {

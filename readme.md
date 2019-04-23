@@ -20,3 +20,12 @@ Production uses nginx frontend to serve static react app and relay requests to b
   api db frontend
 
 Frontend is accessible by default at http://localhost:80 
+
+# Running tests
+
+Robot tests can be ran in docker
+
+  docker-compose -f docker-compose.yml -f docker-compose-frontend.yml -f docker-compose-robot.yml run robot
+
+or locally: See /robot/README.md.
+

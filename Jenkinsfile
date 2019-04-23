@@ -51,28 +51,32 @@ pipeline {
     //   }
     // }
 
-    // stage('Acceptance Test') {
-    //   steps {
-    //     sh """${compose} \
-    //       -f compose/robot.yml \
-    //       run robot"""
+    stage('Acceptance Test') {
+      steps {
+        sh """${compose} \
+          -f docker-compose.yml \
+          -f docker-compose-frontend.yml \
+          -f docker-compose-robot.yml \
+          run robot"""
 
-    //     step([$class: 'RobotPublisher',
-    //         disableArchiveOutput: false,
-    //         logFileName: 'results/robot/log.html',
-    //         onlyCritical: true,
-    //         otherFiles: '',
-    //         outputFileName: 'results/robot/output.xml',
-    //         outputPath: '.',
-    //         passThreshold: 90,
-    //         reportFileName: 'results/robot/report.html',
-    //         unstableThreshold: 100]);
+        step([$class: 'RobotPublisher',
+            disableArchiveOutput: false,
+            logFileName: 'results/robot/log.html',
+            onlyCritical: true,
+            otherFiles: '',
+            outputFileName: 'results/robot/output.xml',
+            outputPath: '.',
+            passThreshold: 90,
+            reportFileName: 'results/robot/report.html',
+            unstableThreshold: 100]);
 
-    //     sh """${compose} \
-    //       -f compose/robot.yml \
-    //       down -v"""
-    //   }
-    // }
+        sh """${compose} \
+          -f docker-compose.yml \
+          -f docker-compose-frontend.yml \
+          -f docker-compose-robot.yml \
+          down -v"""
+      }
+    }
   }
 
   post {

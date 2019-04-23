@@ -1,4 +1,4 @@
-version: "3.7"
+version: '3.7'
 
 services:
   hub:
@@ -15,6 +15,7 @@ services:
 
   chrome:
     image: selenium/node-chrome
+    shm_size: "2g"
     environment:
       HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
@@ -25,6 +26,7 @@ services:
 
   firefox:
     image: selenium/node-firefox
+    shm_size: "2g"
     environment:
       HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
@@ -33,37 +35,16 @@ services:
     depends_on:
       - hub
 
-  # robotbackend:
-  #   build: backend
-  #   command: sh -c './wait-for db:5432 -- npm start'
-  #   environment:
-  #     DATABASE_URL: postgres://demo:demo@db/demo
-  #     GOOGLE_OAUTH_ID: 'app-id-12345678'
-  #     GOOGLE_OAUTH_SECRET: 'app-id-12345678'
-  #     SECRET: '12345678'
-  #   ports:
-  #     - 9000:9000
-  #   depends_on:
-  #     - db
-
-  # robotfrontend:
-  #   build: frontend
-  #   environment:
-  #     ENDPOINT: http://robotbackend:9000/api
-  #   ports:
-  #     - 8000:8000
-
   robot:
     build: robot
     command: sh -c '/robot/wait-for hub:4444 -- sleep 5 && python /robot/run.py --outputdir /results'
     environment:
       BROWSER: chrome
       SELENIUM: http://hub:4444/wd/hub
-      SERVER: https://www.eficode.com/home
+      SERVER: http://frontend
     volumes:
       - ./robot:/robot:ro
       - ./results/robot:/results:rw
     depends_on:
-      - firefox
-      # - robotbackend
-      # - robotfrontend
+      - chrome
+      - frontend

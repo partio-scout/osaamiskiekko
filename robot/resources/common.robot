@@ -21,7 +21,7 @@ Close browser
 
 Verify homepage is open
   # Wait Until Page Contains    Hello
-  Location should be          ${SERVER}/
+  Location should be          ${SERVER}
 
 # Login
 #   [Arguments]    ${email}    ${password}

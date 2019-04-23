@@ -1,0 +1,69 @@
+version: "3.7"
+
+services:
+  hub:
+    image: selenium/hub
+    environment:
+      GRID_MAX_SESSION: 50
+      GRID_UNREGISTER_IF_STILL_DOWN_AFTER: 10000
+      GRID_NEW_SESSION_WAIT_TIMEOUT: 5000
+      DBUS_SESSION_BUS_ADDRESS: /dev/null
+    expose:
+      - 4444
+    ports:
+      - 4444:4444
+
+  chrome:
+    image: selenium/node-chrome
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+    ports:
+      - 5900:5900
+    depends_on:
+      - hub
+
+  firefox:
+    image: selenium/node-firefox
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+    ports:
+      - 5901:5900
+    depends_on:
+      - hub
+
+  # robotbackend:
+  #   build: backend
+  #   command: sh -c './wait-for db:5432 -- npm start'
+  #   environment:
+  #     DATABASE_URL: postgres://demo:demo@db/demo
+  #     GOOGLE_OAUTH_ID: 'app-id-12345678'
+  #     GOOGLE_OAUTH_SECRET: 'app-id-12345678'
+  #     SECRET: '12345678'
+  #   ports:
+  #     - 9000:9000
+  #   depends_on:
+  #     - db
+
+  # robotfrontend:
+  #   build: frontend
+  #   environment:
+  #     ENDPOINT: http://robotbackend:9000/api
+  #   ports:
+  #     - 8000:8000
+
+  robot:
+    build: robot
+    command: sh -c '/robot/wait-for hub:4444 -- sleep 5 && python /robot/run.py --outputdir /results'
+    environment:
+      BROWSER: chrome
+      SELENIUM: http://hub:4444/wd/hub
+      SERVER: https://www.eficode.com/home
+    volumes:
+      - ./robot:/robot:ro
+      - ./results/robot:/results:rw
+    depends_on:
+      - firefox
+      # - robotbackend
+      # - robotfrontend

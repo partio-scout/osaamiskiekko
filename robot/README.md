@@ -22,6 +22,13 @@ This project template follows the following test harness:
 
 `run.py` is the heart of the whole thing, setting up PATHs and other test execution-related configuration. It relies on the four folders (`docs`, `libs`, `resources`, `tests`) being exactly named like they are, being exactly where they are.
 
+## Running tests locally
+To run tests on command line install python, robot framework and for example chrome webdrivers and execute
+
+        BROWSER=chrome SERVER=http://localhost:3000 SELENIUM= python run.py
+
+Change SERVER as needed to target other environments.
+
 TODO:
 - Write guide
 - run.py: --help

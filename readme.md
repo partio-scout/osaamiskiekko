@@ -12,9 +12,11 @@ frontend is created with create-react-app and can be found in the frontend folde
 
 postgres is used as database
 
-# Deploy to nginx
+# Running production version locally
 
-docker-compose -f docker-compose-frontend.yml build dist
-docker-compose -f docker-compose-frontend.yml run dist
-docker-compose -f docker-compose-frontend.yml build frontend
-docker-compose -f docker-compose-frontend.yml up frontend
+Production uses nginx frontend to serve static react app and relay requests to backend. 
+
+  docker-compose --project-directory . -f docker-compose.yml -f docker-compose-frontend.yml up \
+  api db frontend
+
+Frontend is accessible by default at http://localhost:80 

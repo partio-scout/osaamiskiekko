@@ -15,7 +15,6 @@ services:
 
   chrome:
     image: selenium/node-chrome
-    shm_size: "2g"
     environment:
       HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
@@ -26,7 +25,6 @@ services:
 
   firefox:
     image: selenium/node-firefox
-    shm_size: "2g"
     environment:
       HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
@@ -41,10 +39,11 @@ services:
     environment:
       BROWSER: chrome
       SELENIUM: http://hub:4444/wd/hub
-      SERVER: http://frontend
+      SERVER: http://frontend/
     volumes:
       - ./robot:/robot:ro
       - ./results/robot:/results:rw
     depends_on:
       - chrome
+      - api
       - frontend

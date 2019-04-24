@@ -1,6 +1,11 @@
 dockerEnvironment = "osaamiskiekko"
 compose = "docker-compose --project-directory . -p ${dockerEnvironment}"
-projectName = "partio-osaamiskiekko"
+projectName = "partionosaamiskiekko"
+dockerRepository = "artifactory.dev.eficode.io"
+dockerFrontendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/frontend_${env.BRANCH_NAME}"
+dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/api_${env.BRANCH_NAME}"
+
+publishedBranches = [ "master", "staging", "production"]
 
 pipeline {
   agent {
@@ -77,13 +82,47 @@ pipeline {
           down -v"""
       }
     }
+
+    stage('Push to Artifactory') {
+      when {
+        expression {
+              return publishedBranches.contains(env.BRANCH_NAME);
+        }
+      }
+      steps {
+        script {
+          env.WORKSPACE = pwd()
+        }
+        script {
+          if (env.BRANCH_NAME == 'production') {
+            env.VERSION = sh (script: """
+              docker run -v \"${env.WORKSPACE}/package.json:/tmp/package.json\" node:alpine node -p \"require(\'/tmp/package.json\').version\"
+              """,
+            returnStdout: true).trim()
+          } else {
+            env.VERSION =   "${env.GIT_COMMIT}".substring(32)
+          }
+
+          echo env.VERSION
+        }
+
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',
+          usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+
+          echo "Using docker username ${env.USERNAME}."
+          sh "docker login ${dockerRepository} -u $USERNAME -p $PASSWORD"
+
+          labelAndPush(env.VERSION)
+        }
+      }
+    }
   }
 
   post {
     always {
       notifyBuild(currentBuild.result)
       // TODO: Enable unit test archival
-    //   step([$class: 'JUnitResultArchiver', testResults: 'results/mocha/test-results.xml'])
+      // step([$class: 'JUnitResultArchiver', testResults: 'results/mocha/test-results.xml'])
       sh """${compose} \
         -f docker-compose.yml \
         -f compose/frontend.yml \
@@ -97,6 +136,26 @@ def buildImages() {
     -f docker-compose.yml \
     -f compose/frontend.yml \
     build --pull api db frontend"""
+}
+
+def labelAndPush(version) {
+  tagImages(version)
+  pushToDockerhub(version)
+}
+
+def tagImages(version) {
+  sh "docker tag ${dockerEnvironment}_frontend ${dockerFrontendImage}:${version}"
+  sh "docker tag ${dockerEnvironment}_api ${dockerBackendImage}:${version}"
+}
+
+def pushToDockerhub(version) {
+  // If you want to fail the pipeline when the version number is not bumped,
+  // uncomment the next 2 lines and comment out the rest.
+  // sh "docker push ${dockerFrontendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number?' && false)"
+  // sh "docker push ${dockerBackendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number?' && false)"
+
+  sh "docker push ${dockerFrontendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number? Skipping push.' && true)"
+  sh "docker push ${dockerBackendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number? Skipping push.' && true)"
 }
 
 

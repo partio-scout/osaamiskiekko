@@ -3,7 +3,6 @@
 Library     Selenium2Library  timeout=15
 
 Variables   ./variables.py
-Library     ../libs/library.py
 
 Documentation   Test suite should always import only one resource file.
 ...  Thus, ideally your resource files create a tree structure while
@@ -14,12 +13,15 @@ Documentation   Test suite should always import only one resource file.
 
 Open browser and go to homepage
   Open Browser    ${SERVER}    browser=${BROWSER}    remote_url=${SELENIUM}
+  Maximize Browser Window
 
 Close browser
+  Run Keyword And Ignore Error    Go To    ${SERVER}
   Close All Browsers
 
 Verify homepage is open
-  Wait Until Page Contains    Very semantic button    timeout=15
+  Title Should Be    Partio Osaamiskiekko-palvelu
+  Location should be          ${SERVER}
 
 # Login
 #   [Arguments]    ${email}    ${password}
@@ -29,5 +31,4 @@ Verify homepage is open
 
 # Click Button With Span  [Arguments]  ${locator}
 #   Click Button  //button[contains(text(), '${locator}')]
-
 

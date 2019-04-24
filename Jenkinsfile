@@ -33,7 +33,8 @@ pipeline {
     stage('Front-End unit tests') {
       steps {
         sh """${compose} \
-            -f docker-compose.frontend-unittests.yml up
+            --project-directory . \
+            -f frontend-unittests.yml up
            """
       }
     }    
@@ -55,8 +56,8 @@ pipeline {
       steps {
         sh """${compose} \
           -f docker-compose.yml \
-          -f docker-compose-frontend.yml \
-          -f docker-compose-robot.yml \
+          -f compose/frontend.yml \
+          -f compose/robot.yml \
           run robot"""
 
         step([$class: 'RobotPublisher',
@@ -72,8 +73,8 @@ pipeline {
 
         sh """${compose} \
           -f docker-compose.yml \
-          -f docker-compose-frontend.yml \
-          -f docker-compose-robot.yml \
+          -f compose/frontend.yml \
+          -f compose/robot.yml \
           down -v"""
       }
     }
@@ -86,7 +87,7 @@ pipeline {
     //   step([$class: 'JUnitResultArchiver', testResults: 'results/mocha/test-results.xml'])
       sh """${compose} \
         -f docker-compose.yml \
-        -f docker-compose-frontend.yml \
+        -f compose/frontend.yml \
         down -v"""
     }
   }
@@ -95,7 +96,7 @@ pipeline {
 def buildImages() {
   sh """${compose} \
     -f docker-compose.yml \
-    -f docker-compose-frontend.yml \
+    -f compose/frontend.yml \
     build --pull api db frontend"""
 }
 

@@ -1,0 +1,107 @@
+version: '3.7'
+
+services:
+  hub:
+    image: selenium/hub
+    environment:
+      GRID_MAX_SESSION: 50
+      GRID_UNREGISTER_IF_STILL_DOWN_AFTER: 10000
+      GRID_NEW_SESSION_WAIT_TIMEOUT: 5000
+      DBUS_SESSION_BUS_ADDRESS: /dev/null
+    expose:
+      - 4444
+    ports:
+      - 4444:4444
+
+  chrome:
+    image: selenium/node-chrome
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+    ports:
+      - 5900:5900
+    depends_on:
+      - hub
+
+  firefox:
+    image: selenium/node-firefox
+    environment:
+      HUB_PORT_4444_TCP_ADDR: hub
+      HUB_PORT_4444_TCP_PORT: 4444
+    ports:
+      - 5901:5900
+    depends_on:
+      - hub
+
+  # robotdb:
+  #   image: postgres
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     POSTGRES_DB: mydb
+  #     POSTGRES_PASSWORD: mypassword
+  #     POSTGRES_USER: myuser
+
+  # robotbackend:
+  #   build: 
+  #     context: ./cms
+  #   ports:
+  #     - 1337:1337
+  #   depends_on:
+  #     - robotdb
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_USER: myuser
+
+  # api:
+  #   build: ./cms
+  #   image: strapi/strapi
+  #   environment:
+  #     - APP_NAME=strapi-app
+  #     - DATABASE_CLIENT=postgres
+  #     - DATABASE_HOST=db
+  #     - DATABASE_PORT=5432
+  #     - DATABASE_NAME=mydb
+  #     - DATABASE_USERNAME=myuser
+  #     - DATABASE_PASSWORD=mypassword
+  #     - DATABASE_SSL=false
+  #     - DATABASE_AUTHENTICATION_DATABASE=strapi
+  #     - HOST=localhost
+  #   ports:
+  #     - 1337:1337
+  #   volumes:
+  #     - ./cms:/usr/src/api/cms
+  #   depends_on:
+  #     - db
+
+  # robotfrontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile.production
+  #     target: production
+  #   ports:
+  #     - 443:443
+  #     - 80:80
+  #   depends_on:
+  #     - api
+
+  robot:
+    build: robot
+    command: sh -c '/robot/wait-for hub:4444 -- sleep 25 && python /robot/run.py --outputdir /results'
+    environment:
+      BROWSER: chrome
+      SELENIUM: http://hub:4444/wd/hub
+      SERVER: http://localhost:80
+    volumes:
+      - ./robot:/robot:ro
+      - ./results/robot:/results:rw
+    depends_on:
+      - chrome
+      # - robotfrontend
+      # - robotbackend

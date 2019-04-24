@@ -84,11 +84,11 @@ pipeline {
     }
 
     stage('Push to Artifactory') {
-      // when {
-      //   expression {
-      //         return publishedBranches.contains(env.BRANCH_NAME);
-      //   }
-      // }
+      when {
+        expression {
+              return publishedBranches.contains(env.BRANCH_NAME);
+        }
+      }
       steps {
         script {
           env.WORKSPACE = pwd()

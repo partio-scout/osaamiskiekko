@@ -46,4 +46,4 @@ services:
     depends_on:
       - chrome
       - api
-      - frontend
+      - dev

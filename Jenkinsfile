@@ -33,7 +33,7 @@ pipeline {
     stage('Front-End unit tests') {
       steps {
         sh """${compose} \
-            -f frontend-unittests.yml up
+            -f compose/frontend-unittests.yml up
            """
       }
     }    

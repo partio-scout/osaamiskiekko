@@ -20,8 +20,9 @@ Close browser
   Close All Browsers
 
 Verify homepage is open
-  Title Should Be    React App
+  # Title Should Be    Partion osaamiskiekko-palvelu
   Location should be          ${SERVER}
+  Wait Until Page Contains    Osaamiskiekko
 
 # Login
 #   [Arguments]    ${email}    ${password}

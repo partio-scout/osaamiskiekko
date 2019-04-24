@@ -18,6 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <h1>Osaamiskiekko</h1>
           <Button primary onClick={getApiData}>Very semantic button</Button>
         </header>
       </div>

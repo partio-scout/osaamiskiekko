@@ -35,15 +35,15 @@ services:
 
   robot:
     build: robot
-    command: sh -c '/robot/wait-for hub:4444 -- sleep 60 && python /robot/run.py --outputdir /results'
+    command: sh -c '/robot/wait-for hub:4444 -- sleep 5 && python /robot/run.py --outputdir /results'
     environment:
       BROWSER: chrome
       SELENIUM: http://hub:4444/wd/hub
-      SERVER: http://localhost:3000/
+      SERVER: http://frontend/
     volumes:
       - ./robot:/robot:ro
       - ./results/robot:/results:rw
     depends_on:
       - chrome
       - api
-      - dev
+      - frontend

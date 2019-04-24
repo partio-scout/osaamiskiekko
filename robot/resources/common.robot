@@ -20,7 +20,7 @@ Close browser
   Close All Browsers
 
 Verify homepage is open
-  Title Should Be    Partio Osaamiskiekko-palvelu
+  # Title Should Be    Partio Osaamiskiekko-palvelu
   Location should be          ${SERVER}
 
 # Login

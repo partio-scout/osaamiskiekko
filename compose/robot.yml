@@ -39,7 +39,7 @@ services:
     environment:
       BROWSER: chrome
       SELENIUM: http://hub:4444/wd/hub
-      SERVER: http://localhost/
+      SERVER: http://localhost:3000/
     volumes:
       - ./robot:/robot:ro
       - ./results/robot:/results:rw

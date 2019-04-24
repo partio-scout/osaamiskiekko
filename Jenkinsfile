@@ -138,7 +138,7 @@ def labelAndPush(version) {
   pushToDockerhub(version)
 }
 
-def tagImages(version, stub) {
+def tagImages(version) {
   sh "docker tag ${dockerEnvironment}_frontend ${dockerFrontendImage}:${version}"
   sh "docker tag ${dockerEnvironment}_api ${dockerBackendImage}:${version}"
 }

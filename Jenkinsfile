@@ -2,8 +2,8 @@ dockerEnvironment = "osaamiskiekko"
 compose = "docker-compose --project-directory . -p ${dockerEnvironment}"
 projectName = "partionosaamiskiekko"
 dockerRepository = "artifactory.dev.eficode.io"
-dockerFrontendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/frontend_${env.BRANCH_NAME}"
-dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/api_${env.BRANCH_NAME}"
+dockerFrontendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/frontend_test"
+dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/api_test"
 
 publishedBranches = [ "master", "staging", "production"]
 
@@ -84,6 +84,11 @@ pipeline {
     }
 
     stage('Push to Artifactory') {
+      when {
+        expression {
+              return publishedBranches.contains(env.BRANCH_NAME);
+        }
+      }
       steps {
         script {
           env.WORKSPACE = pwd()

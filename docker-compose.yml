@@ -1,7 +1,7 @@
 version: "3.7"
 services:
-  api:
-    build: ./cms
+  backend:
+    build: ./backend
     environment:
       - APP_NAME=strapi-app
       - DATABASE_CLIENT=postgres
@@ -16,7 +16,7 @@ services:
     ports:
       - 1337:1337
     volumes:
-      - ./cms:/usr/src/api/cms
+      - ./backend:/usr/src/api/cms
     depends_on:
       - db
 

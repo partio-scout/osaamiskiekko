@@ -2,7 +2,7 @@
 
 # INFO
 
-- cms backend is built with strapi and uses the official strapi image https://github.com/strapi/strapi-docker
+- cms backend uses strapi https://strapi.io/
 - frontend is created with create-react-app and can be found in the frontend folder
 - postgres is used as database
 
@@ -17,7 +17,7 @@ Install docker and run command:
 Production uses nginx frontend to serve static react app and relay requests to backend. 
 Frontend is accessible by default at http://localhost
 
-  docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml up api db frontend
+  docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml up backend db frontend
 
 # TESTING
 
@@ -42,3 +42,16 @@ Firefox: Download and install firefox + geckodriver https://github.com/mozilla/g
 ## Frontend Jest Unit tests
 
 docker-compose --project-directory . -f compose/frontend-unittests.yml up
+
+# Docker commands 
+ - list running containers: docker ps -a
+ - remove container: docker rm container_name
+ - remove image: docker rmi image
+ - stop all containers: docker stop $(docker ps -a -q)
+ - kill all running containers: docker kill $(docker ps -q)
+ - delete all stopped containers: docker rm $(docker ps -a -q)
+ - delete all images: docker rmi $(docker images -q)
+ - list volumes: docker volume ls 
+ - remove everything (containers, images, volumes): docker system prune -a
+ - clean networks: docker network prune
+ - clean containers: docker container prune

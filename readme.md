@@ -23,10 +23,9 @@ Frontend is accessible by default at http://localhost
 
 ## Running End-To-End tests with Robotframework
 
-Robot tests can be ran in docker (chrome default) 
+Robot tests can be ran in docker (chrome default). Run makefile in project root: 
 
-  docker-compose --project-directory . -f docker-compose.yml -f compose/robot.yml up
-  docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml up api db frontend robot
+ make run-robot
   
 ## Running robot locally
 

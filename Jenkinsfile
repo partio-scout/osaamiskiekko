@@ -3,7 +3,7 @@ compose = "docker-compose --project-directory . -p ${dockerEnvironment}"
 projectName = "partionosaamiskiekko"
 dockerRepository = "artifactory.dev.eficode.io"
 dockerFrontendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/frontend_${env.BRANCH_NAME}"
-dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/api_${env.BRANCH_NAME}"
+dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/backend_${env.BRANCH_NAME}"
 
 publishedBranches = [ "master", "staging", "production"]
 

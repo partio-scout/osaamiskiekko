@@ -135,7 +135,7 @@ def buildImages() {
   sh """${compose} \
     -f docker-compose.yml \
     -f compose/frontend.yml \
-    build --pull api db frontend"""
+    build --pull backend db frontend"""
 }
 
 def labelAndPush(version) {

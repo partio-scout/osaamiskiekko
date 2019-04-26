@@ -4,5 +4,5 @@ metadata:
   name: basic-ingress
 spec:
   backend:
-    serviceName: osaamiskiekko-frontend-service
+    serviceName: frontend
     servicePort: 80

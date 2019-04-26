@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/frontend_master:e9402845
+        image: artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/frontend_master:aec5463d
         lifecycle:
           preStop:
             exec:

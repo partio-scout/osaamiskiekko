@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      app: osaamiskiekko
+      tier: backend
+      track: stable
+      phase: dev
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: osaamiskiekko
+        tier: backend
+        track: stable
+        phase: dev
+    spec:
+      containers:
+        - name: backend
+          image: artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/api_master:e9402845
+          ports:
+            - name: http
+              containerPort: 1337
+      imagePullSecrets:
+      - name: eficode-artifactory-cred

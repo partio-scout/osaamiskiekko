@@ -1,5 +1,9 @@
 # Partio Osaamiskiekko-palvelu
 
+# Strapi account
+
+partioadmin:6QVAjgusFD3YL7x
+
 # INFO
 
 - cms backend uses strapi https://strapi.io/

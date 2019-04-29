@@ -18,7 +18,7 @@ DATABASE_SRV=${DATABASE_SRV:-false}
 EXTRA_ARGS=${EXTRA_ARGS:-}
 
 cd /usr/src/api/cms
-if [ ! -d "$APP_NAME/node_modules" ]
+if [ ! -d "node_modules" ]
 then
     npm install
 fi

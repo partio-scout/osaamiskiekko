@@ -8,5 +8,5 @@ Test Teardown       Close browser
 
 *** Test cases ***
 
-Front page should be open
-  Verify homepage is open
+Frontend should be open
+    Verify frontend is running

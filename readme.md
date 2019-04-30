@@ -47,6 +47,14 @@ Firefox: Download and install firefox + geckodriver https://github.com/mozilla/g
 
 docker-compose --project-directory . -f compose/frontend-unittests.yml up
 
+# Makefile
+
+make backupdatamodels
+  copies strapi datamodels from docker to tmp folder (just in case)
+
+make getdatabasedump
+  gets postgre database dump from docker
+
 # Docker commands 
  - list running containers: docker ps -a
  - remove container: docker rm container_name

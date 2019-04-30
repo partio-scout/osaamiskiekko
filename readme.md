@@ -53,7 +53,13 @@ make backupdatamodels
   copies strapi datamodels from docker to tmp folder (just in case)
 
 make getdatabasedump
-  gets postgre database dump from docker
+  gets postgre database dump from docker which contains everything (can be used as test data for example)
+
+make getdatabasedump-dataonly
+  gets only data dump from postgres
+
+make restoredata-dataonly
+  restores data after Strapi has created tables accordingly
 
 # Docker commands 
  - list running containers: docker ps -a

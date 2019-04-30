@@ -8,3 +8,14 @@ backupdatamodels:
 
 getdatabasedump:
 	docker exec -t partio_db_1 pg_dump --clean --if-exists -U myuser -d mydb > ./backend/postgre/dump.sql
+
+docker-cleanrun:
+	docker volume prune -f
+	docker container prune -f
+	docker-compose up
+
+getdatabasedump-dataonly:
+ 	docker exec -t partio_db_1 pg_dump --data-only -U myuser -d mydb > ./backend/postgre/dump_dataonly.sql  
+
+restoredata-dataonly:
+	cat ./backend/postgre/dump_dataonly.sql | docker exec -i partio_db_1 psql -U myuser -d mydb

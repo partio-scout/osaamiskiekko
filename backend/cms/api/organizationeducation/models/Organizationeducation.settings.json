@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "organizations",
+  "collectionName": "organizationeducations",
   "info": {
-    "name": "organization",
+    "name": "organizationeducation",
     "description": ""
   },
   "options": {
@@ -17,8 +17,11 @@
     "description": {
       "type": "text"
     },
-    "url": {
-      "type": "string"
+    "credits": {
+      "type": "integer"
+    },
+    "nqf": {
+      "type": "integer"
     }
   }
 }

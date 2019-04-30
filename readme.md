@@ -72,6 +72,8 @@ sql dump has been modified as it cant drop or create database with the current u
 
 ## Copy postgres database
 docker exec -t CONTAINER_ID pg_dump --data-only -U myuser -d mydb > ./backend/postgre/dump_dataonly.sql 
+docker exec -t partio_db_1 pg_dump --clean --if-exists -U myuser -d mydb > ./tmp/postgre/dump_new.sql   
+docker exec -t partio_db_1 pg_dumpall -U myuser -d mydb > ./tmp/postgre/dump_all.sql   
 
 ## Restore database
 cat ./backend/postgre/dump.sql | docker exec -i CONTAINER_ID psql -U myuser -d mydb

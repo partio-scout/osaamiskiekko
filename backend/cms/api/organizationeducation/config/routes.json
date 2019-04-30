@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/organizationeducations",
+      "handler": "Organizationeducation.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/organizationeducations/count",
+      "handler": "Organizationeducation.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/organizationeducations/:id",
+      "handler": "Organizationeducation.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/organizationeducations",
+      "handler": "Organizationeducation.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/organizationeducations/:id",
+      "handler": "Organizationeducation.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/organizationeducations/:id",
+      "handler": "Organizationeducation.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,41 +1,4 @@
 --
--- PostgreSQL database cluster dump
---
-
-SET default_transaction_read_only = off;
-
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-
---
--- Drop databases (except postgres and template1)
---
-
--- DROP DATABASE mydb;
-
-
-
-
---
--- Drop roles
---
-
--- DROP ROLE myuser;
-
-
---
--- Roles
---
-
--- CREATE ROLE myuser;
-ALTER ROLE myuser WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS PASSWORD 'md554fdba1dac1d18ce9c2d57a03502a8ff';
-
-
-
-
-
-
---
 -- PostgreSQL database dump
 --
 
@@ -52,105 +15,84 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 SET row_security = off;
 
-UPDATE pg_catalog.pg_database SET datistemplate = false WHERE datname = 'template1';
-DROP DATABASE template1;
---
--- Name: template1; Type: DATABASE; Schema: -; Owner: myuser
---
-
-CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'en_US.utf8' LC_CTYPE = 'en_US.utf8';
-
-
-ALTER DATABASE template1 OWNER TO myuser;
-
-\connect template1
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- Name: DATABASE template1; Type: COMMENT; Schema: -; Owner: myuser
---
-
-COMMENT ON DATABASE template1 IS 'default template for new databases';
-
-
---
--- Name: template1; Type: DATABASE PROPERTIES; Schema: -; Owner: myuser
---
-
-ALTER DATABASE template1 IS_TEMPLATE = true;
-
-
-\connect template1
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- Name: DATABASE template1; Type: ACL; Schema: -; Owner: myuser
---
-
-REVOKE CONNECT,TEMPORARY ON DATABASE template1 FROM PUBLIC;
-GRANT CONNECT ON DATABASE template1 TO PUBLIC;
-
-
---
--- PostgreSQL database dump complete
---
-
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 11.2 (Debian 11.2-1.pgdg90+1)
--- Dumped by pg_dump version 11.2 (Debian 11.2-1.pgdg90+1)
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- Name: mydb; Type: DATABASE; Schema: -; Owner: myuser
---
-
--- CREATE DATABASE mydb WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'en_US.utf8' LC_CTYPE = 'en_US.utf8';
-
-
-ALTER DATABASE mydb OWNER TO myuser;
-
-\connect mydb
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET row_security = off;
-
+DROP INDEX IF EXISTS public.search_users_permissions_user_username;
+DROP INDEX IF EXISTS public.search_users_permissions_user_resetpasswordtoken;
+DROP INDEX IF EXISTS public.search_users_permissions_user_provider;
+DROP INDEX IF EXISTS public.search_users_permissions_role_type;
+DROP INDEX IF EXISTS public.search_users_permissions_role_name;
+DROP INDEX IF EXISTS public.search_users_permissions_role_description;
+DROP INDEX IF EXISTS public.search_users_permissions_permission_type;
+DROP INDEX IF EXISTS public.search_users_permissions_permission_policy;
+DROP INDEX IF EXISTS public.search_users_permissions_permission_controller;
+DROP INDEX IF EXISTS public.search_users_permissions_permission_action;
+DROP INDEX IF EXISTS public.search_upload_file_url;
+DROP INDEX IF EXISTS public.search_upload_file_size;
+DROP INDEX IF EXISTS public.search_upload_file_sha256;
+DROP INDEX IF EXISTS public.search_upload_file_public_id;
+DROP INDEX IF EXISTS public.search_upload_file_provider;
+DROP INDEX IF EXISTS public.search_upload_file_name;
+DROP INDEX IF EXISTS public.search_upload_file_morph_related_type;
+DROP INDEX IF EXISTS public.search_upload_file_morph_field;
+DROP INDEX IF EXISTS public.search_upload_file_mime;
+DROP INDEX IF EXISTS public.search_upload_file_hash;
+DROP INDEX IF EXISTS public.search_upload_file_ext;
+DROP INDEX IF EXISTS public.search_organizations_url;
+DROP INDEX IF EXISTS public.search_organizations_name;
+DROP INDEX IF EXISTS public.search_organizations_description;
+DROP INDEX IF EXISTS public.search_organizationeducations_name;
+DROP INDEX IF EXISTS public.search_organizationeducations_description;
+DROP INDEX IF EXISTS public.search_examinations_url;
+DROP INDEX IF EXISTS public.search_examinations_name;
+DROP INDEX IF EXISTS public.search_examinations_description;
+DROP INDEX IF EXISTS public.search_core_store_value;
+DROP INDEX IF EXISTS public.search_core_store_type;
+DROP INDEX IF EXISTS public.search_core_store_tag;
+DROP INDEX IF EXISTS public.search_core_store_key;
+DROP INDEX IF EXISTS public.search_core_store_environment;
+DROP INDEX IF EXISTS public.search_academies_url;
+DROP INDEX IF EXISTS public.search_academies_name;
+DROP INDEX IF EXISTS public.search_academies_description;
+ALTER TABLE IF EXISTS ONLY public."users-permissions_user" DROP CONSTRAINT IF EXISTS "users-permissions_user_pkey";
+ALTER TABLE IF EXISTS ONLY public."users-permissions_role" DROP CONSTRAINT IF EXISTS "users-permissions_role_pkey";
+ALTER TABLE IF EXISTS ONLY public."users-permissions_permission" DROP CONSTRAINT IF EXISTS "users-permissions_permission_pkey";
+ALTER TABLE IF EXISTS ONLY public.upload_file DROP CONSTRAINT IF EXISTS upload_file_pkey;
+ALTER TABLE IF EXISTS ONLY public.upload_file_morph DROP CONSTRAINT IF EXISTS upload_file_morph_pkey;
+ALTER TABLE IF EXISTS ONLY public.organizations DROP CONSTRAINT IF EXISTS organizations_pkey;
+ALTER TABLE IF EXISTS ONLY public.organizationeducations DROP CONSTRAINT IF EXISTS organizationeducations_pkey;
+ALTER TABLE IF EXISTS ONLY public.examinations DROP CONSTRAINT IF EXISTS examinations_pkey;
+ALTER TABLE IF EXISTS ONLY public.core_store DROP CONSTRAINT IF EXISTS core_store_pkey;
+ALTER TABLE IF EXISTS ONLY public.academies DROP CONSTRAINT IF EXISTS academies_pkey;
+ALTER TABLE IF EXISTS public."users-permissions_user" ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public."users-permissions_role" ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public."users-permissions_permission" ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.upload_file_morph ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.upload_file ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.organizations ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.organizationeducations ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.examinations ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.core_store ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.academies ALTER COLUMN id DROP DEFAULT;
+DROP SEQUENCE IF EXISTS public."users-permissions_user_id_seq";
+DROP TABLE IF EXISTS public."users-permissions_user";
+DROP SEQUENCE IF EXISTS public."users-permissions_role_id_seq";
+DROP TABLE IF EXISTS public."users-permissions_role";
+DROP SEQUENCE IF EXISTS public."users-permissions_permission_id_seq";
+DROP TABLE IF EXISTS public."users-permissions_permission";
+DROP SEQUENCE IF EXISTS public.upload_file_morph_id_seq;
+DROP TABLE IF EXISTS public.upload_file_morph;
+DROP SEQUENCE IF EXISTS public.upload_file_id_seq;
+DROP TABLE IF EXISTS public.upload_file;
+DROP SEQUENCE IF EXISTS public.organizations_id_seq;
+DROP TABLE IF EXISTS public.organizations;
+DROP SEQUENCE IF EXISTS public.organizationeducations_id_seq;
+DROP TABLE IF EXISTS public.organizationeducations;
+DROP SEQUENCE IF EXISTS public.examinations_id_seq;
+DROP TABLE IF EXISTS public.examinations;
+DROP SEQUENCE IF EXISTS public.core_store_id_seq;
+DROP TABLE IF EXISTS public.core_store;
+DROP SEQUENCE IF EXISTS public.academies_id_seq;
+DROP TABLE IF EXISTS public.academies;
+DROP EXTENSION IF EXISTS pg_trgm;
 --
 -- Name: pg_trgm; Type: EXTENSION; Schema: -; Owner: 
 --
@@ -168,6 +110,44 @@ COMMENT ON EXTENSION pg_trgm IS 'text similarity measurement and index searching
 SET default_tablespace = '';
 
 SET default_with_oids = false;
+
+--
+-- Name: academies; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.academies (
+    id integer NOT NULL,
+    name character varying(255),
+    description text,
+    url character varying(255),
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
+);
+
+
+ALTER TABLE public.academies OWNER TO myuser;
+
+--
+-- Name: academies_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.academies_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.academies_id_seq OWNER TO myuser;
+
+--
+-- Name: academies_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.academies_id_seq OWNED BY public.academies.id;
+
 
 --
 -- Name: core_store; Type: TABLE; Schema: public; Owner: myuser
@@ -205,6 +185,85 @@ ALTER TABLE public.core_store_id_seq OWNER TO myuser;
 --
 
 ALTER SEQUENCE public.core_store_id_seq OWNED BY public.core_store.id;
+
+
+--
+-- Name: examinations; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.examinations (
+    id integer NOT NULL,
+    name character varying(255),
+    description text,
+    url character varying(255),
+    credits integer,
+    nqf integer,
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
+);
+
+
+ALTER TABLE public.examinations OWNER TO myuser;
+
+--
+-- Name: examinations_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.examinations_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.examinations_id_seq OWNER TO myuser;
+
+--
+-- Name: examinations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.examinations_id_seq OWNED BY public.examinations.id;
+
+
+--
+-- Name: organizationeducations; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.organizationeducations (
+    id integer NOT NULL,
+    name character varying(255),
+    description text,
+    credits integer,
+    nqf integer,
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
+);
+
+
+ALTER TABLE public.organizationeducations OWNER TO myuser;
+
+--
+-- Name: organizationeducations_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.organizationeducations_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.organizationeducations_id_seq OWNER TO myuser;
+
+--
+-- Name: organizationeducations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.organizationeducations_id_seq OWNED BY public.organizationeducations.id;
 
 
 --
@@ -443,10 +502,31 @@ ALTER SEQUENCE public."users-permissions_user_id_seq" OWNED BY public."users-per
 
 
 --
+-- Name: academies id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.academies ALTER COLUMN id SET DEFAULT nextval('public.academies_id_seq'::regclass);
+
+
+--
 -- Name: core_store id; Type: DEFAULT; Schema: public; Owner: myuser
 --
 
 ALTER TABLE ONLY public.core_store ALTER COLUMN id SET DEFAULT nextval('public.core_store_id_seq'::regclass);
+
+
+--
+-- Name: examinations id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.examinations ALTER COLUMN id SET DEFAULT nextval('public.examinations_id_seq'::regclass);
+
+
+--
+-- Name: organizationeducations id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.organizationeducations ALTER COLUMN id SET DEFAULT nextval('public.organizationeducations_id_seq'::regclass);
 
 
 --
@@ -492,6 +572,16 @@ ALTER TABLE ONLY public."users-permissions_user" ALTER COLUMN id SET DEFAULT nex
 
 
 --
+-- Data for Name: academies; Type: TABLE DATA; Schema: public; Owner: myuser
+--
+
+COPY public.academies (id, name, description, url, created_at, updated_at) FROM stdin;
+1	Haaga-Helia	Haaga-Helia ammattikorkeakoulu kouluttaa liike-elämän ja palveluelinkeinojen asiantuntijoita sekä tutkii ja kehittää näihin aloihin liittyvää osaamista ja toimintaa. Koulutusalamme ovat liiketalous, tietotekniikka, hotelli-, ravintola- ja matkailuala, johdon assistenttityö, toimittajakoulutus, liikunta-ala sekä ammatillinen opettajankoulutus. Meille on tärkeää, että opiskelijoillamme on heti valmistuttuaan vahvat siteet työelämään. Panostamme toiminnassamme yrittäjyyteen, yhteistyöhön, innovatiivisuuteen ja kansainvälisyyteen.	https://www.haaga-helia.fi/fi/etusivu	2019-04-30 08:28:12.391+00	2019-04-30 08:28:12.413+00
+2	Metropolia	Metropolia University of Applied Sciences is the largest University of Applied Sciences in Finland situated in Helsinki metropolitan area. The university has four fields of study: culture, business, health care and social services, and technology. Teaching is also provided in English.	https://www.metropolia.fi/	2019-04-30 08:28:33.528+00	2019-04-30 08:28:33.544+00
+\.
+
+
+--
 -- Data for Name: core_store; Type: TABLE DATA; Schema: public; Owner: myuser
 --
 
@@ -502,14 +592,36 @@ COPY public.core_store (id, key, value, type, environment, tag) FROM stdin;
 11	plugin_upload_provider	{"provider":"local","name":"Local server","enabled":true,"sizeLimit":1000000}	object	development	
 12	plugin_users-permissions_email	{"reset_password":{"display":"Email.template.reset_password","icon":"refresh","options":{"from":{"name":"Administration Panel","email":"no-reply@strapi.io"},"response_email":"","object":"­Reset password","message":"<p>We heard that you lost your password. Sorry about that!</p>\\n\\n<p>But don’t worry! You can use the following link to reset your password:</p>\\n\\n<p><%= URL %>?code=<%= TOKEN %></p>\\n\\n<p>Thanks.</p>"}},"email_confirmation":{"display":"Email.template.email_confirmation","icon":"check-square-o","options":{"from":{"name":"Administration Panel","email":"no-reply@strapi.io"},"response_email":"","object":"Account confirmation","message":"<p>Thank you for registering!</p>\\n\\n<p>You have to confirm your email address. Please click on the link below.</p>\\n\\n<p><%= URL %>?confirmation=<%= CODE %></p>\\n\\n<p>Thanks.</p>"}}}	object		
 13	plugin_users-permissions_advanced	{"unique_email":true,"allow_register":true,"email_confirmation":false,"email_confirmation_redirection":"http://localhost:1337/admin","default_role":"authenticated"}	object		
-14	db_model_organizations	{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
-5	db_model_upload_file	{"name":{"type":"string","configurable":false,"required":true},"hash":{"type":"string","configurable":false,"required":true},"sha256":{"type":"string","configurable":false},"ext":{"type":"string","configurable":false},"mime":{"type":"string","configurable":false,"required":true},"size":{"type":"string","configurable":false,"required":true},"url":{"type":"string","configurable":false,"required":true},"provider":{"type":"string","configurable":false,"required":true},"public_id":{"type":"string","configurable":false},"related":{"collection":"*","filter":"field","configurable":false},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
-4	db_model_users-permissions_role	{"name":{"type":"string","minLength":3,"required":true,"configurable":false},"description":{"type":"string","configurable":false},"type":{"type":"string","unique":true,"configurable":false},"permissions":{"collection":"permission","via":"role","plugin":"users-permissions","configurable":false,"isVirtual":true},"users":{"collection":"user","via":"role","configurable":false,"plugin":"users-permissions","isVirtual":true}}	object	\N	\N
-2	db_model_core_store	{"key":{"type":"string"},"value":{"type":"text"},"type":{"type":"string"},"environment":{"type":"string"},"tag":{"type":"string"}}	object	\N	\N
+17	db_model_examinations	{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"},"credits":{"type":"integer"},"nqf":{"type":"integer"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+15	db_model_organizationeducations	{"name":{"type":"string"},"description":{"type":"text"},"credits":{"type":"integer"},"nqf":{"type":"integer"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
 1	db_model_users-permissions_permission	{"type":{"type":"string","required":true,"configurable":false},"controller":{"type":"string","required":true,"configurable":false},"action":{"type":"string","required":true,"configurable":false},"enabled":{"type":"boolean","required":true,"configurable":false},"policy":{"type":"string","configurable":false},"role":{"model":"role","via":"permissions","plugin":"users-permissions","configurable":false}}	object	\N	\N
-3	db_model_users-permissions_user	{"username":{"type":"string","minLength":3,"unique":true,"configurable":false,"required":true},"email":{"type":"email","minLength":6,"configurable":false,"required":true},"provider":{"type":"string","configurable":false},"password":{"type":"password","minLength":6,"configurable":false,"private":true},"resetPasswordToken":{"type":"string","configurable":false,"private":true},"confirmed":{"type":"boolean","default":false,"configurable":false},"blocked":{"type":"boolean","default":false,"configurable":false},"role":{"model":"role","via":"users","plugin":"users-permissions","configurable":false}}	object	\N	\N
+4	db_model_users-permissions_role	{"name":{"type":"string","minLength":3,"required":true,"configurable":false},"description":{"type":"string","configurable":false},"type":{"type":"string","unique":true,"configurable":false},"permissions":{"collection":"permission","via":"role","plugin":"users-permissions","configurable":false,"isVirtual":true},"users":{"collection":"user","via":"role","configurable":false,"plugin":"users-permissions","isVirtual":true}}	object	\N	\N
 6	db_model_upload_file_morph	{"upload_file_id":{"type":"integer"},"related_id":{"type":"integer"},"related_type":{"type":"text"},"field":{"type":"text"}}	object	\N	\N
-7	plugin_content-manager_schema	{"generalSettings":{"search":true,"filters":true,"bulkActions":true,"pageEntries":10},"models":{"plugins":{"upload":{"file":{"label":"File","labelPlural":"Files","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":["created_at","updated_at"]},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"hash":{"label":"Hash","type":"string","description":"","name":"hash","editable":true,"placeholder":""},"sha256":{"label":"Sha256","type":"string","description":"","name":"sha256","editable":true,"placeholder":""},"ext":{"label":"Ext","type":"string","description":"","name":"ext","editable":true,"placeholder":""},"mime":{"label":"Mime","type":"string","description":"","name":"mime","editable":true,"placeholder":""},"size":{"label":"Size","type":"string","description":"","name":"size","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"provider":{"label":"Provider","type":"string","description":"","name":"provider","editable":true,"placeholder":""},"public_id":{"label":"Public_id","type":"string","description":"","name":"public_id","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","hash","sha256","ext","mime","size","url","provider","public_id"],"relations":[]},"info":{"name":"file","description":""},"connection":"default","collectionName":"upload_file","attributes":{"name":{"type":"string","configurable":false,"required":true},"hash":{"type":"string","configurable":false,"required":true},"sha256":{"type":"string","configurable":false},"ext":{"type":"string","configurable":false},"mime":{"type":"string","configurable":false,"required":true},"size":{"type":"string","configurable":false,"required":true},"url":{"type":"string","configurable":false,"required":true},"provider":{"type":"string","configurable":false,"required":true},"public_id":{"type":"string","configurable":false},"related":{"collection":"*","filter":"field","configurable":false}},"globalId":"UploadFile","globalName":"UploadFile","primaryKey":"id","associations":[{"alias":"related","type":"collection","related":[],"nature":"manyMorphToMany","autoPopulate":true,"filter":"field"}],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"hash":{"label":"Hash","description":"","type":"string","disabled":false,"name":"hash","sortable":true,"searchable":true},"sha256":{"label":"Sha256","description":"","type":"string","disabled":false,"name":"sha256","sortable":true,"searchable":true},"ext":{"label":"Ext","description":"","type":"string","disabled":false,"name":"ext","sortable":true,"searchable":true},"mime":{"label":"Mime","description":"","type":"string","disabled":false,"name":"mime","sortable":true,"searchable":true},"size":{"label":"Size","description":"","type":"string","disabled":false,"name":"size","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},"provider":{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},"public_id":{"label":"Public_id","description":"","type":"string","disabled":false,"name":"public_id","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Hash","description":"","type":"string","disabled":false,"name":"hash","sortable":true,"searchable":true},{"label":"Sha256","description":"","type":"string","disabled":false,"name":"sha256","sortable":true,"searchable":true},{"label":"Ext","description":"","type":"string","disabled":false,"name":"ext","sortable":true,"searchable":true}],"relations":{"related":{"alias":"related","type":"collection","related":[],"nature":"manyMorphToMany","autoPopulate":true,"filter":"field","description":"","label":"Related","displayedAttribute":"id"}}}},"users-permissions":{"permission":{"label":"Permission","labelPlural":"Permissions","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"type":{"label":"Type","type":"string","description":"","name":"type","editable":true,"placeholder":""},"controller":{"label":"Controller","type":"string","description":"","name":"controller","editable":true,"placeholder":""},"action":{"label":"Action","type":"string","description":"","name":"action","editable":true,"placeholder":""},"enabled":{"label":"Enabled","type":"boolean","description":"","name":"enabled","editable":true,"placeholder":""},"policy":{"label":"Policy","type":"string","description":"","name":"policy","editable":true,"placeholder":""}},"displayedField":"id","fields":["type","controller","action","enabled","policy"],"relations":["role"]},"info":{"name":"permission","description":""},"connection":"default","collectionName":"users-permissions_permission","attributes":{"type":{"type":"string","required":true,"configurable":false},"controller":{"type":"string","required":true,"configurable":false},"action":{"type":"string","required":true,"configurable":false},"enabled":{"type":"boolean","required":true,"configurable":false},"policy":{"type":"string","configurable":false},"role":{"model":"role","via":"permissions","plugin":"users-permissions","configurable":false}},"globalId":"UsersPermissionsPermission","globalName":"UsersPermissionsPermission","primaryKey":"id","associations":[{"alias":"role","type":"model","model":"role","via":"permissions","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"type":{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true},"controller":{"label":"Controller","description":"","type":"string","disabled":false,"name":"controller","sortable":true,"searchable":true},"action":{"label":"Action","description":"","type":"string","disabled":false,"name":"action","sortable":true,"searchable":true},"enabled":{"label":"Enabled","description":"","type":"boolean","disabled":false,"name":"enabled","sortable":true,"searchable":true},"policy":{"label":"Policy","description":"","type":"string","disabled":false,"name":"policy","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true},{"label":"Controller","description":"","type":"string","disabled":false,"name":"controller","sortable":true,"searchable":true},{"label":"Action","description":"","type":"string","disabled":false,"name":"action","sortable":true,"searchable":true},{"label":"Enabled","description":"","type":"boolean","disabled":false,"name":"enabled","sortable":true,"searchable":true}],"relations":{"role":{"alias":"role","type":"model","model":"role","via":"permissions","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Role","displayedAttribute":"name"}}},"role":{"label":"Role","labelPlural":"Roles","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"string","description":"","name":"description","editable":true,"placeholder":""},"type":{"label":"Type","type":"string","description":"","name":"type","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","type"],"relations":["permissions","users"]},"info":{"name":"role","description":""},"connection":"default","collectionName":"users-permissions_role","attributes":{"name":{"type":"string","minLength":3,"required":true,"configurable":false},"description":{"type":"string","configurable":false},"type":{"type":"string","unique":true,"configurable":false},"permissions":{"collection":"permission","via":"role","plugin":"users-permissions","configurable":false,"isVirtual":true},"users":{"collection":"user","via":"role","configurable":false,"plugin":"users-permissions","isVirtual":true}},"globalId":"UsersPermissionsRole","globalName":"UsersPermissionsRole","primaryKey":"id","associations":[{"alias":"permissions","type":"collection","collection":"permission","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions"},{"alias":"users","type":"collection","collection":"user","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"string","disabled":false,"name":"description","sortable":true,"searchable":true},"type":{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"string","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true}],"relations":{"permissions":{"alias":"permissions","type":"collection","collection":"permission","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Permissions","displayedAttribute":"type"},"users":{"alias":"users","type":"collection","collection":"user","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Users","displayedAttribute":"username"}}},"user":{"label":"User","labelPlural":"Users","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"username":{"label":"Username","type":"string","description":"","name":"username","editable":true,"placeholder":""},"email":{"label":"Email","type":"email","description":"","name":"email","editable":true,"placeholder":""},"provider":{"label":"Provider","type":"string","description":"","name":"provider","editable":true,"placeholder":""},"password":{"label":"Password","type":"password","description":"","name":"password","editable":true,"placeholder":""},"confirmed":{"label":"Confirmed","type":"boolean","description":"","name":"confirmed","editable":true,"placeholder":""},"blocked":{"label":"Blocked","type":"boolean","description":"","name":"blocked","editable":true,"placeholder":""}},"displayedField":"id","fields":["username","email","provider","password","confirmed","blocked"],"relations":["role"]},"info":{"name":"user","description":""},"connection":"default","collectionName":"users-permissions_user","attributes":{"username":{"type":"string","minLength":3,"unique":true,"configurable":false,"required":true},"email":{"type":"email","minLength":6,"configurable":false,"required":true},"provider":{"type":"string","configurable":false},"password":{"type":"password","minLength":6,"configurable":false,"private":true},"confirmed":{"type":"boolean","default":false,"configurable":false},"blocked":{"type":"boolean","default":false,"configurable":false},"role":{"model":"role","via":"users","plugin":"users-permissions","configurable":false}},"globalId":"UsersPermissionsUser","globalName":"UsersPermissionsUser","primaryKey":"id","associations":[{"alias":"role","type":"model","model":"role","via":"users","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"username":{"label":"Username","description":"","type":"string","disabled":false,"name":"username","sortable":true,"searchable":true},"email":{"label":"Email","description":"","type":"email","disabled":false,"name":"email","sortable":true,"searchable":true},"provider":{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},"password":{"label":"Password","description":"","type":"password","disabled":false,"name":"password","sortable":true,"searchable":true},"confirmed":{"label":"Confirmed","description":"","type":"boolean","disabled":false,"name":"confirmed","sortable":true,"searchable":true},"blocked":{"label":"Blocked","description":"","type":"boolean","disabled":false,"name":"blocked","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Username","description":"","type":"string","disabled":false,"name":"username","sortable":true,"searchable":true},{"label":"Email","description":"","type":"email","disabled":false,"name":"email","sortable":true,"searchable":true},{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},{"label":"Password","description":"","type":"password","disabled":false,"name":"password","sortable":true,"searchable":true}],"relations":{"role":{"alias":"role","type":"model","model":"role","via":"users","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Role","displayedAttribute":"name"}}}}},"organization":{"label":"Organization","labelPlural":"Organizations","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"text","description":"","name":"description","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","url"],"relations":[]},"info":{"name":"organization","description":"organisaation datamalli"},"connection":"default","collectionName":"organizations","attributes":{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"}},"globalId":"Organization","globalName":"Organization","primaryKey":"id","associations":[],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}],"relations":{}}},"layout":{"user":{"actions":{"create":"User.create","update":"User.update","destroy":"User.destroy","deleteall":"User.destroyAll"},"attributes":{"username":{"className":"col-md-6"},"email":{"className":"col-md-6"},"resetPasswordToken":{"className":"d-none"},"role":{"className":"d-none"}}},"organization":{"attributes":{}}}}	object		
+7	plugin_content-manager_schema	{"generalSettings":{"search":true,"filters":true,"bulkActions":true,"pageEntries":10},"models":{"plugins":{"upload":{"file":{"label":"File","labelPlural":"Files","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":["created_at","updated_at"]},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"hash":{"label":"Hash","type":"string","description":"","name":"hash","editable":true,"placeholder":""},"sha256":{"label":"Sha256","type":"string","description":"","name":"sha256","editable":true,"placeholder":""},"ext":{"label":"Ext","type":"string","description":"","name":"ext","editable":true,"placeholder":""},"mime":{"label":"Mime","type":"string","description":"","name":"mime","editable":true,"placeholder":""},"size":{"label":"Size","type":"string","description":"","name":"size","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"provider":{"label":"Provider","type":"string","description":"","name":"provider","editable":true,"placeholder":""},"public_id":{"label":"Public_id","type":"string","description":"","name":"public_id","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","hash","sha256","ext","mime","size","url","provider","public_id"],"relations":[]},"info":{"name":"file","description":""},"connection":"default","collectionName":"upload_file","attributes":{"name":{"type":"string","configurable":false,"required":true},"hash":{"type":"string","configurable":false,"required":true},"sha256":{"type":"string","configurable":false},"ext":{"type":"string","configurable":false},"mime":{"type":"string","configurable":false,"required":true},"size":{"type":"string","configurable":false,"required":true},"url":{"type":"string","configurable":false,"required":true},"provider":{"type":"string","configurable":false,"required":true},"public_id":{"type":"string","configurable":false},"related":{"collection":"*","filter":"field","configurable":false}},"globalId":"UploadFile","globalName":"UploadFile","primaryKey":"id","associations":[{"alias":"related","type":"collection","related":[],"nature":"manyMorphToMany","autoPopulate":true,"filter":"field"}],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"hash":{"label":"Hash","description":"","type":"string","disabled":false,"name":"hash","sortable":true,"searchable":true},"sha256":{"label":"Sha256","description":"","type":"string","disabled":false,"name":"sha256","sortable":true,"searchable":true},"ext":{"label":"Ext","description":"","type":"string","disabled":false,"name":"ext","sortable":true,"searchable":true},"mime":{"label":"Mime","description":"","type":"string","disabled":false,"name":"mime","sortable":true,"searchable":true},"size":{"label":"Size","description":"","type":"string","disabled":false,"name":"size","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},"provider":{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},"public_id":{"label":"Public_id","description":"","type":"string","disabled":false,"name":"public_id","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Hash","description":"","type":"string","disabled":false,"name":"hash","sortable":true,"searchable":true},{"label":"Sha256","description":"","type":"string","disabled":false,"name":"sha256","sortable":true,"searchable":true},{"label":"Ext","description":"","type":"string","disabled":false,"name":"ext","sortable":true,"searchable":true}],"relations":{"related":{"alias":"related","type":"collection","related":[],"nature":"manyMorphToMany","autoPopulate":true,"filter":"field","description":"","label":"Related","displayedAttribute":"id"}}}},"users-permissions":{"permission":{"label":"Permission","labelPlural":"Permissions","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"type":{"label":"Type","type":"string","description":"","name":"type","editable":true,"placeholder":""},"controller":{"label":"Controller","type":"string","description":"","name":"controller","editable":true,"placeholder":""},"action":{"label":"Action","type":"string","description":"","name":"action","editable":true,"placeholder":""},"enabled":{"label":"Enabled","type":"boolean","description":"","name":"enabled","editable":true,"placeholder":""},"policy":{"label":"Policy","type":"string","description":"","name":"policy","editable":true,"placeholder":""}},"displayedField":"id","fields":["type","controller","action","enabled","policy"],"relations":["role"]},"info":{"name":"permission","description":""},"connection":"default","collectionName":"users-permissions_permission","attributes":{"type":{"type":"string","required":true,"configurable":false},"controller":{"type":"string","required":true,"configurable":false},"action":{"type":"string","required":true,"configurable":false},"enabled":{"type":"boolean","required":true,"configurable":false},"policy":{"type":"string","configurable":false},"role":{"model":"role","via":"permissions","plugin":"users-permissions","configurable":false}},"globalId":"UsersPermissionsPermission","globalName":"UsersPermissionsPermission","primaryKey":"id","associations":[{"alias":"role","type":"model","model":"role","via":"permissions","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"type":{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true},"controller":{"label":"Controller","description":"","type":"string","disabled":false,"name":"controller","sortable":true,"searchable":true},"action":{"label":"Action","description":"","type":"string","disabled":false,"name":"action","sortable":true,"searchable":true},"enabled":{"label":"Enabled","description":"","type":"boolean","disabled":false,"name":"enabled","sortable":true,"searchable":true},"policy":{"label":"Policy","description":"","type":"string","disabled":false,"name":"policy","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true},{"label":"Controller","description":"","type":"string","disabled":false,"name":"controller","sortable":true,"searchable":true},{"label":"Action","description":"","type":"string","disabled":false,"name":"action","sortable":true,"searchable":true},{"label":"Enabled","description":"","type":"boolean","disabled":false,"name":"enabled","sortable":true,"searchable":true}],"relations":{"role":{"alias":"role","type":"model","model":"role","via":"permissions","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Role","displayedAttribute":"name"}}},"role":{"label":"Role","labelPlural":"Roles","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"string","description":"","name":"description","editable":true,"placeholder":""},"type":{"label":"Type","type":"string","description":"","name":"type","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","type"],"relations":["permissions","users"]},"info":{"name":"role","description":""},"connection":"default","collectionName":"users-permissions_role","attributes":{"name":{"type":"string","minLength":3,"required":true,"configurable":false},"description":{"type":"string","configurable":false},"type":{"type":"string","unique":true,"configurable":false},"permissions":{"collection":"permission","via":"role","plugin":"users-permissions","configurable":false,"isVirtual":true},"users":{"collection":"user","via":"role","configurable":false,"plugin":"users-permissions","isVirtual":true}},"globalId":"UsersPermissionsRole","globalName":"UsersPermissionsRole","primaryKey":"id","associations":[{"alias":"permissions","type":"collection","collection":"permission","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions"},{"alias":"users","type":"collection","collection":"user","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"string","disabled":false,"name":"description","sortable":true,"searchable":true},"type":{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"string","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true}],"relations":{"permissions":{"alias":"permissions","type":"collection","collection":"permission","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Permissions","displayedAttribute":"type"},"users":{"alias":"users","type":"collection","collection":"user","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Users","displayedAttribute":"username"}}},"user":{"label":"User","labelPlural":"Users","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"username":{"label":"Username","type":"string","description":"","name":"username","editable":true,"placeholder":""},"email":{"label":"Email","type":"email","description":"","name":"email","editable":true,"placeholder":""},"provider":{"label":"Provider","type":"string","description":"","name":"provider","editable":true,"placeholder":""},"password":{"label":"Password","type":"password","description":"","name":"password","editable":true,"placeholder":""},"confirmed":{"label":"Confirmed","type":"boolean","description":"","name":"confirmed","editable":true,"placeholder":""},"blocked":{"label":"Blocked","type":"boolean","description":"","name":"blocked","editable":true,"placeholder":""}},"displayedField":"id","fields":["username","email","provider","password","confirmed","blocked"],"relations":["role"]},"info":{"name":"user","description":""},"connection":"default","collectionName":"users-permissions_user","attributes":{"username":{"type":"string","minLength":3,"unique":true,"configurable":false,"required":true},"email":{"type":"email","minLength":6,"configurable":false,"required":true},"provider":{"type":"string","configurable":false},"password":{"type":"password","minLength":6,"configurable":false,"private":true},"confirmed":{"type":"boolean","default":false,"configurable":false},"blocked":{"type":"boolean","default":false,"configurable":false},"role":{"model":"role","via":"users","plugin":"users-permissions","configurable":false}},"globalId":"UsersPermissionsUser","globalName":"UsersPermissionsUser","primaryKey":"id","associations":[{"alias":"role","type":"model","model":"role","via":"users","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"username":{"label":"Username","description":"","type":"string","disabled":false,"name":"username","sortable":true,"searchable":true},"email":{"label":"Email","description":"","type":"email","disabled":false,"name":"email","sortable":true,"searchable":true},"provider":{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},"password":{"label":"Password","description":"","type":"password","disabled":false,"name":"password","sortable":true,"searchable":true},"confirmed":{"label":"Confirmed","description":"","type":"boolean","disabled":false,"name":"confirmed","sortable":true,"searchable":true},"blocked":{"label":"Blocked","description":"","type":"boolean","disabled":false,"name":"blocked","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Username","description":"","type":"string","disabled":false,"name":"username","sortable":true,"searchable":true},{"label":"Email","description":"","type":"email","disabled":false,"name":"email","sortable":true,"searchable":true},{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},{"label":"Password","description":"","type":"password","disabled":false,"name":"password","sortable":true,"searchable":true}],"relations":{"role":{"alias":"role","type":"model","model":"role","via":"users","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Role","displayedAttribute":"name"}}}}},"organization":{"label":"Organization","labelPlural":"Organizations","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"text","description":"","name":"description","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","url"],"relations":[]},"info":{"name":"organization","description":""},"connection":"default","collectionName":"organizations","attributes":{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"}},"globalId":"Organization","globalName":"Organization","primaryKey":"id","associations":[],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}],"relations":{}},"organizationeducation":{"label":"Organizationeducation","labelPlural":"Organizationeducations","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"text","description":"","name":"description","editable":true,"placeholder":""},"credits":{"label":"Credits","type":"integer","description":"","name":"credits","editable":true,"placeholder":""},"nqf":{"label":"Nqf","type":"integer","description":"","name":"nqf","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","credits","nqf"],"relations":[]},"info":{"name":"organizationeducation","description":""},"connection":"default","collectionName":"organizationeducations","attributes":{"name":{"type":"string"},"description":{"type":"text"},"credits":{"type":"integer"},"nqf":{"type":"integer"}},"globalId":"Organizationeducation","globalName":"Organizationeducation","primaryKey":"id","associations":[],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},"credits":{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true},"nqf":{"label":"Nqf","description":"","type":"integer","disabled":false,"name":"nqf","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true},{"label":"Nqf","description":"","type":"integer","disabled":false,"name":"nqf","sortable":true,"searchable":true}],"relations":{}},"academy":{"label":"Academy","labelPlural":"Academies","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"text","description":"","name":"description","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","url"],"relations":[]},"info":{"name":"academy","description":""},"connection":"default","collectionName":"academies","attributes":{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"}},"globalId":"Academy","globalName":"Academy","primaryKey":"id","associations":[],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}],"relations":{}},"examination":{"label":"Examination","labelPlural":"Examinations","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"text","description":"","name":"description","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"credits":{"label":"Credits","type":"integer","description":"","name":"credits","editable":true,"placeholder":""},"nqf":{"label":"Nqf","type":"integer","description":"","name":"nqf","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","url","credits","nqf"],"relations":[]},"info":{"name":"examination","description":""},"connection":"default","collectionName":"examinations","attributes":{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"},"credits":{"type":"integer"},"nqf":{"type":"integer"}},"globalId":"Examination","globalName":"Examination","primaryKey":"id","associations":[],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},"credits":{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true},"nqf":{"label":"Nqf","description":"","type":"integer","disabled":false,"name":"nqf","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true}],"relations":{}}},"layout":{"user":{"actions":{"create":"User.create","update":"User.update","destroy":"User.destroy","deleteall":"User.destroyAll"},"attributes":{"username":{"className":"col-md-6"},"email":{"className":"col-md-6"},"resetPasswordToken":{"className":"d-none"},"role":{"className":"d-none"}}},"organization":{"attributes":{}},"organizationeducation":{"attributes":{}},"academy":{"attributes":{}},"examination":{"attributes":{}}}}	object		
+2	db_model_core_store	{"key":{"type":"string"},"value":{"type":"text"},"type":{"type":"string"},"environment":{"type":"string"},"tag":{"type":"string"}}	object	\N	\N
+16	db_model_academies	{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+5	db_model_upload_file	{"name":{"type":"string","configurable":false,"required":true},"hash":{"type":"string","configurable":false,"required":true},"sha256":{"type":"string","configurable":false},"ext":{"type":"string","configurable":false},"mime":{"type":"string","configurable":false,"required":true},"size":{"type":"string","configurable":false,"required":true},"url":{"type":"string","configurable":false,"required":true},"provider":{"type":"string","configurable":false,"required":true},"public_id":{"type":"string","configurable":false},"related":{"collection":"*","filter":"field","configurable":false},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+14	db_model_organizations	{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+3	db_model_users-permissions_user	{"username":{"type":"string","minLength":3,"unique":true,"configurable":false,"required":true},"email":{"type":"email","minLength":6,"configurable":false,"required":true},"provider":{"type":"string","configurable":false},"password":{"type":"password","minLength":6,"configurable":false,"private":true},"resetPasswordToken":{"type":"string","configurable":false,"private":true},"confirmed":{"type":"boolean","default":false,"configurable":false},"blocked":{"type":"boolean","default":false,"configurable":false},"role":{"model":"role","via":"users","plugin":"users-permissions","configurable":false}}	object	\N	\N
+\.
+
+
+--
+-- Data for Name: examinations; Type: TABLE DATA; Schema: public; Owner: myuser
+--
+
+COPY public.examinations (id, name, description, url, credits, nqf, created_at, updated_at) FROM stdin;
+1	Tietojenkäsittelytiede	Tietojenkäsittelytieteen tutkinnossa opiskellaan tietotekniikkaa ja algoritmeja.		310	\N	2019-04-30 08:32:43.86+00	2019-04-30 08:32:43.888+00
+\.
+
+
+--
+-- Data for Name: organizationeducations; Type: TABLE DATA; Schema: public; Owner: myuser
+--
+
+COPY public.organizationeducations (id, name, description, credits, nqf, created_at, updated_at) FROM stdin;
+1	Ensiapukoulutus	Näin opit tyrehdyttämään vuotavan haavan.	3	5	2019-04-30 08:30:55.956+00	2019-04-30 08:30:55.968+00
+2	Partiojohtajan perustutkinto	Partiojohtajan perustutkinnolla osaat johtaa pientä ryhmää (1-5) henkilöä.	3	8	2019-04-30 08:31:37.607+00	2019-04-30 08:31:37.63+00
 \.
 
 
@@ -518,8 +630,8 @@ COPY public.core_store (id, key, value, type, environment, tag) FROM stdin;
 --
 
 COPY public.organizations (id, name, description, url, created_at, updated_at) FROM stdin;
-1	Haaga-Helia	Haaga-Helia is a strongly business orientated university of applied sciences in Finland. Through education, research and development, we prepare professionals for business and services. We focus on co-operation, entrepreneurship, innovation and internationality.	http://www.haaga-helia.fi/en/frontpage	2019-04-26 08:43:24.592+00	2019-04-26 08:43:24.61+00
-2	Metropolia	Metropolia Ammatti­korkeakoulu - Osaamista ja oivallusta tulevaisuuden tekemiseen\n	https://www.metropolia.fi/	2019-04-26 08:43:50.741+00	2019-04-26 08:43:50.754+00
+3	Martat	Martat on kotien ja perheiden hyvinvointia ja kotitalouden arvostusta edistävä kansalaisjärjestö. Tule mukaan monipuoliseen toimintaamme!	https://www.martat.fi/	2019-04-30 08:29:18.916+00	2019-04-30 08:29:18.944+00
+4	Partio	Partio on hauska ja monipuolinen harrastus, joka sopii kaikille. Partiossa leikitään, pelataan, retkeillään, leireillään, opitaan ja saadaan uusia kavereita.	https://www.partio.fi	2019-04-30 08:30:30.583+00	2019-04-30 08:30:30.595+00
 \.
 
 
@@ -787,6 +899,60 @@ COPY public."users-permissions_permission" (id, type, controller, action, enable
 241	application	organization	create	f		3
 242	application	organization	update	f		3
 243	application	organization	destroy	f		3
+244	application	organizationeducation	find	t		1
+245	application	organizationeducation	findone	t		1
+246	application	organizationeducation	count	t		1
+247	application	organizationeducation	create	t		1
+248	application	organizationeducation	update	t		1
+249	application	organizationeducation	findone	f		2
+250	application	organizationeducation	count	f		2
+251	application	organizationeducation	destroy	t		1
+252	application	organizationeducation	find	f		2
+253	application	organizationeducation	create	f		2
+254	application	organizationeducation	update	f		2
+255	application	organizationeducation	destroy	f		2
+256	application	organizationeducation	find	f		3
+257	application	organizationeducation	findone	f		3
+258	application	organizationeducation	count	f		3
+259	application	organizationeducation	create	f		3
+260	application	organizationeducation	update	f		3
+261	application	organizationeducation	destroy	f		3
+262	application	academy	find	t		1
+263	application	academy	findone	t		1
+264	application	academy	count	t		1
+265	application	academy	create	t		1
+266	application	academy	update	t		1
+267	application	academy	destroy	t		1
+268	application	academy	find	f		2
+269	application	academy	findone	f		2
+270	application	academy	count	f		2
+271	application	academy	create	f		2
+272	application	academy	update	f		2
+273	application	academy	destroy	f		2
+274	application	academy	find	f		3
+275	application	academy	findone	f		3
+276	application	academy	count	f		3
+277	application	academy	create	f		3
+278	application	academy	update	f		3
+279	application	academy	destroy	f		3
+280	application	examination	find	t		1
+281	application	examination	count	t		1
+282	application	examination	update	t		1
+283	application	examination	create	t		1
+284	application	examination	findone	t		1
+285	application	examination	destroy	t		1
+286	application	examination	find	f		2
+287	application	examination	findone	f		2
+288	application	examination	count	f		2
+289	application	examination	create	f		2
+290	application	examination	update	f		2
+291	application	examination	destroy	f		2
+292	application	examination	find	f		3
+293	application	examination	findone	f		3
+294	application	examination	count	f		3
+295	application	examination	create	f		3
+296	application	examination	update	f		3
+297	application	examination	destroy	f		3
 \.
 
 
@@ -811,17 +977,38 @@ COPY public."users-permissions_user" (id, username, email, provider, password, "
 
 
 --
+-- Name: academies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
+--
+
+SELECT pg_catalog.setval('public.academies_id_seq', 2, true);
+
+
+--
 -- Name: core_store_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
 --
 
-SELECT pg_catalog.setval('public.core_store_id_seq', 14, true);
+SELECT pg_catalog.setval('public.core_store_id_seq', 17, true);
+
+
+--
+-- Name: examinations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
+--
+
+SELECT pg_catalog.setval('public.examinations_id_seq', 1, true);
+
+
+--
+-- Name: organizationeducations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
+--
+
+SELECT pg_catalog.setval('public.organizationeducations_id_seq', 2, true);
 
 
 --
 -- Name: organizations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
 --
 
-SELECT pg_catalog.setval('public.organizations_id_seq', 2, true);
+SELECT pg_catalog.setval('public.organizations_id_seq', 4, true);
 
 
 --
@@ -842,7 +1029,7 @@ SELECT pg_catalog.setval('public.upload_file_morph_id_seq', 1, false);
 -- Name: users-permissions_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
 --
 
-SELECT pg_catalog.setval('public."users-permissions_permission_id_seq"', 243, true);
+SELECT pg_catalog.setval('public."users-permissions_permission_id_seq"', 297, true);
 
 
 --
@@ -860,11 +1047,35 @@ SELECT pg_catalog.setval('public."users-permissions_user_id_seq"', 1, true);
 
 
 --
+-- Name: academies academies_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.academies
+    ADD CONSTRAINT academies_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: core_store core_store_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
 --
 
 ALTER TABLE ONLY public.core_store
     ADD CONSTRAINT core_store_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: examinations examinations_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.examinations
+    ADD CONSTRAINT examinations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: organizationeducations organizationeducations_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.organizationeducations
+    ADD CONSTRAINT organizationeducations_pkey PRIMARY KEY (id);
 
 
 --
@@ -916,6 +1127,27 @@ ALTER TABLE ONLY public."users-permissions_user"
 
 
 --
+-- Name: search_academies_description; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academies_description ON public.academies USING gin (description public.gin_trgm_ops);
+
+
+--
+-- Name: search_academies_name; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academies_name ON public.academies USING gin (name public.gin_trgm_ops);
+
+
+--
+-- Name: search_academies_url; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academies_url ON public.academies USING gin (url public.gin_trgm_ops);
+
+
+--
 -- Name: search_core_store_environment; Type: INDEX; Schema: public; Owner: myuser
 --
 
@@ -948,6 +1180,41 @@ CREATE INDEX search_core_store_type ON public.core_store USING gin (type public.
 --
 
 CREATE INDEX search_core_store_value ON public.core_store USING gin (value public.gin_trgm_ops);
+
+
+--
+-- Name: search_examinations_description; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_examinations_description ON public.examinations USING gin (description public.gin_trgm_ops);
+
+
+--
+-- Name: search_examinations_name; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_examinations_name ON public.examinations USING gin (name public.gin_trgm_ops);
+
+
+--
+-- Name: search_examinations_url; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_examinations_url ON public.examinations USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizationeducations_description; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizationeducations_description ON public.organizationeducations USING gin (description public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizationeducations_name; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizationeducations_name ON public.organizationeducations USING gin (name public.gin_trgm_ops);
 
 
 --
@@ -1120,59 +1387,5 @@ CREATE INDEX search_users_permissions_user_username ON public."users-permissions
 
 --
 -- PostgreSQL database dump complete
---
-
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 11.2 (Debian 11.2-1.pgdg90+1)
--- Dumped by pg_dump version 11.2 (Debian 11.2-1.pgdg90+1)
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET row_security = off;
-
-DROP DATABASE postgres;
---
--- Name: postgres; Type: DATABASE; Schema: -; Owner: myuser
---
-
-CREATE DATABASE postgres WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'en_US.utf8' LC_CTYPE = 'en_US.utf8';
-
-
-ALTER DATABASE postgres OWNER TO myuser;
-
-\connect postgres
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- Name: DATABASE postgres; Type: COMMENT; Schema: -; Owner: myuser
---
-
-COMMENT ON DATABASE postgres IS 'default administrative connection database';
-
-
---
--- PostgreSQL database dump complete
---
-
---
--- PostgreSQL database cluster dump complete
 --
 

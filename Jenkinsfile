@@ -38,20 +38,20 @@ pipeline {
     stage('Front-End unit tests') {
       steps {
         sh """${compose} \
-            -f compose/frontend-unittests.yml up
-           """
+            -f compose/frontend-unittests.yml \
+            up"""
       }
 
       post {
         always {
           sh """${compose} \
-            -f compose/frontend-unittests.yml
+            -f compose/frontend-unittests.yml \
             logs >unit-test.log"""
           
           archive 'unit-test.log'
 
           sh """${compose} \
-            -f compose/frontend-unittests.yml
+            -f compose/frontend-unittests.yml \
             down"""
         }
       }
@@ -169,29 +169,33 @@ def pushToDockerhub(version) {
   sh "docker push ${dockerBackendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number? Skipping push.' && true)"
 }
 
-
-def notifyBuild(String buildStatus = 'STARTED') {
-  buildStatus = buildStatus ?: 'SUCCESS'
-
-  def colorCode = '#FF9FA1'
-  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-  def summary = "${subject} (${env.BUILD_URL})"
-  def details = """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-    <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
-
-  if (buildStatus == 'STARTED') {
-    colorCode = '#D4DADF'
-  } else if (buildStatus == 'SUCCESS') {
-    summary = ":unicorn_face: Success! ${env.JOB_NAME}: ${env.BUILD_URL}"
-    colorCode = '#BDFFC3'
-  } else if (buildStatus == 'UNSTABLE') {
-    summary = ":face_with_head_bandage: Unstable! ${env.JOB_NAME}: ${env.BUILD_URL}"
-    colorCode = '#FF9FA1'
-  } else {
-    summary = ":sos: Failure! ${env.JOB_NAME}: ${env.BUILD_URL}"
-    colorCode = '#FF9FA1'
-  }
-
-  // TODO Re-enable slackSend if slack plugin is added to Jenkins
-  // slackSend(teamDomain: "eficode", token: credentials('slacktoken'), color: colorCode, message: summary)
+def notifyBuild(String buildStatus = 'STARTED', branch) {
+  def slackURL = "https://eficode.slack.com/services/hooks/jenkins-ci/${credentials('slacktoken')}"
+  sh "curl --request POST --header 'Content-Type: application/json' --data '{\"text\": \"Build ${status}\nBranch: ${branch}\nSee: https://ci.dev.eficode.io/job/Partion%20osaamiskiekko/job/osaamiskiekko/job/${branch}/\"}' ${slackURL}"
 }
+
+// def notifyBuild(String buildStatus = 'STARTED') {
+//   buildStatus = buildStatus ?: 'SUCCESS'
+
+//   def colorCode = '#FF9FA1'
+//   def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+//   def summary = "${subject} (${env.BUILD_URL})"
+//   def details = """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+//     <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
+
+//   if (buildStatus == 'STARTED') {
+//     colorCode = '#D4DADF'
+//   } else if (buildStatus == 'SUCCESS') {
+//     summary = ":unicorn_face: Success! ${env.JOB_NAME}: ${env.BUILD_URL}"
+//     colorCode = '#BDFFC3'
+//   } else if (buildStatus == 'UNSTABLE') {
+//     summary = ":face_with_head_bandage: Unstable! ${env.JOB_NAME}: ${env.BUILD_URL}"
+//     colorCode = '#FF9FA1'
+//   } else {
+//     summary = ":sos: Failure! ${env.JOB_NAME}: ${env.BUILD_URL}"
+//     colorCode = '#FF9FA1'
+//   }
+
+//   // TODO Re-enable slackSend if slack plugin is added to Jenkins
+//   // slackSend(teamDomain: "eficode", token: credentials('slacktoken'), color: colorCode, message: summary)
+// }

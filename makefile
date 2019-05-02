@@ -1,7 +1,7 @@
 run-robot:
 	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml build frontend db backend robot
 	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml run robot
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml down
+	# docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml down
 
 backupdatamodels:
 	cp -r ./backend/cms/api ./tmp/datamodels

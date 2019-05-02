@@ -40,7 +40,7 @@ services:
       BROWSER: chrome
       SELENIUM: http://hub:4444/wd/hub
       SERVER: http://frontend/
-      API: http://backend:1337/
+      API: http://frontend/api/
     volumes:
       - ./robot:/robot:ro
       - ./results/robot:/results:rw

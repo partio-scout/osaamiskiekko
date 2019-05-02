@@ -40,6 +40,10 @@ pipeline {
         sh """${compose} \
             -f compose/frontend-unittests.yml up
            """
+
+        sh """${compose} \
+            -f compose/frontend-unittests.yml down
+           """
       }
     }    
 
@@ -58,11 +62,18 @@ pipeline {
 
     stage('Acceptance Test') {
       steps {
-        sh """${compose} \
-          -f docker-compose.yml \
-          -f compose/frontend.yml \
-          -f compose/robot.yml \
-          run robot"""
+        script {
+          try {
+            sh """${compose} \
+              -f docker-compose.yml \
+              -f compose/frontend.yml \
+              -f compose/robot.yml \
+              run robot"""
+          } catch (err) {
+            echo err;
+            currentBuild.result = 'FAILURE';
+          }
+        }
 
         step([$class: 'RobotPublisher',
             disableArchiveOutput: false,

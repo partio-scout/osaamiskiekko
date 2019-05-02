@@ -174,7 +174,7 @@ def notifyBuild(String buildStatus = 'STARTED') {
     withCredentials([string(credentialsId: 'slacktoken', variable: 'TOKEN')]) { 
       def slackURL = "https://eficode.slack.com/services/hooks/jenkins-ci/$TOKEN"
       
-      sh "curl --request POST --header 'Content-Type: application/json' --data '{\"text\": \"Build ${buildStatus}\nBranch: ${env.BRANCH_NAME}\nSee: https://ci.dev.eficode.io/job/Partion%20osaamiskiekko/job/osaamiskiekko/job/${branch}/\"}' ${slackURL}"
+      sh "curl --request POST --header 'Content-Type: application/json' --data '{\"text\": \"Build ${buildStatus}\nBranch: ${env.BRANCH_NAME}\nSee: https://ci.dev.eficode.io/job/Partion%20osaamiskiekko/job/osaamiskiekko/job/${env.BRANCH_NAME}/\"}' ${slackURL}"
     }
   } catch (error) {
     echo "Error notifying slack: ${error}"

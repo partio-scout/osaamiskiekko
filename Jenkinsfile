@@ -9,7 +9,7 @@ publishedBranches = [ "master", "staging", "production"]
 
 pipeline {
   agent {
-    label 'docker'
+    label 'tabletkoulu'
   }
   
   environment {
@@ -169,9 +169,14 @@ def pushToDockerhub(version) {
   sh "docker push ${dockerBackendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number? Skipping push.' && true)"
 }
 
-def notifyBuild(String buildStatus = 'STARTED', branch) {
+def notifyBuild(String buildStatus = 'STARTED') {
+  echo "Notifying slack: ${buildStatus}";
+  
   def slackURL = "https://eficode.slack.com/services/hooks/jenkins-ci/${credentials('slacktoken')}"
-  sh "curl --request POST --header 'Content-Type: application/json' --data '{\"text\": \"Build ${status}\nBranch: ${branch}\nSee: https://ci.dev.eficode.io/job/Partion%20osaamiskiekko/job/osaamiskiekko/job/${branch}/\"}' ${slackURL}"
+
+  sh "curl --request POST --header 'Content-Type: application/json' --data '{\"text\": \"Build ${status}\nBranch: ${env.BRANCH_NAME}\nSee: https://ci.dev.eficode.io/job/Partion%20osaamiskiekko/job/osaamiskiekko/job/${branch}/\"}' ${slackURL}"
+
+  echo "slack notified"
 }
 
 // def notifyBuild(String buildStatus = 'STARTED') {

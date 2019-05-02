@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/examinations",
+      "handler": "Examination.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/examinations/count",
+      "handler": "Examination.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/examinations/:id",
+      "handler": "Examination.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/examinations",
+      "handler": "Examination.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/examinations/:id",
+      "handler": "Examination.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/examinations/:id",
+      "handler": "Examination.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

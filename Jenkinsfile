@@ -9,7 +9,7 @@ publishedBranches = [ "master", "staging", "production"]
 
 pipeline {
   agent {
-    label 'docker'
+    label 'tabletkoulu'
   }
   
   environment {
@@ -38,48 +38,63 @@ pipeline {
     stage('Front-End unit tests') {
       steps {
         sh """${compose} \
-            -f compose/frontend-unittests.yml up
-           """
+            -f compose/frontend-unittests.yml \
+            up"""
+      }
+
+      post {
+        always {
+          sh """${compose} \
+            -f compose/frontend-unittests.yml \
+            logs >unit-test.log"""
+          
+          archive 'unit-test.log'
+
+          sh """${compose} \
+            -f compose/frontend-unittests.yml \
+            down"""
+        }
       }
     }    
 
-    // TODO: Enable StrapiCMS unit
-    // stage('Unit Test') {
-    //   steps {
-    //     sh """${compose} \
-    //       -f compose/test.yml \
-    //       run mocha"""
-
-    //     sh """${compose} \
-    //     -f compose/test.yml \
-    //     down -v"""
-    //   }
-    // }
-
     stage('Acceptance Test') {
       steps {
-        sh """${compose} \
-          -f docker-compose.yml \
-          -f compose/frontend.yml \
-          -f compose/robot.yml \
-          run robot"""
+        script {
+            sh """${compose} \
+              -f docker-compose.yml \
+              -f compose/frontend.yml \
+              -f compose/robot.yml \
+              run robot"""
+        }
+      }
 
-        step([$class: 'RobotPublisher',
-            disableArchiveOutput: false,
-            logFileName: 'results/robot/log.html',
-            onlyCritical: true,
-            otherFiles: '',
-            outputFileName: 'results/robot/output.xml',
-            outputPath: '.',
-            passThreshold: 90,
-            reportFileName: 'results/robot/report.html',
-            unstableThreshold: 100]);
+      post {
+        always {
+          step([$class: 'RobotPublisher',
+              disableArchiveOutput: false,
+              logFileName: 'results/robot/log.html',
+              onlyCritical: true,
+              otherFiles: 'results/robot/*.png',
+              outputFileName: 'results/robot/output.xml',
+              outputPath: '.',
+              passThreshold: 90,
+              reportFileName: 'results/robot/report.html',
+              unstableThreshold: 100]);
 
-        sh """${compose} \
-          -f docker-compose.yml \
-          -f compose/frontend.yml \
-          -f compose/robot.yml \
-          down -v"""
+          sh """${compose} \
+            -f docker-compose.yml \
+            -f compose/frontend.yml \
+            -f compose/robot.yml \
+            logs >acceptance-test.log"""
+          
+          archive 'acceptance-test.log'
+
+          sh """${compose} \
+            -f docker-compose.yml \
+            -f compose/frontend.yml \
+            -f compose/robot.yml \
+            down -v"""
+        }
       }
     }
 
@@ -123,10 +138,6 @@ pipeline {
       notifyBuild(currentBuild.result)
       // TODO: Enable unit test archival
       // step([$class: 'JUnitResultArchiver', testResults: 'results/mocha/test-results.xml'])
-      sh """${compose} \
-        -f docker-compose.yml \
-        -f compose/frontend.yml \
-        down -v"""
     }
   }
 }
@@ -158,29 +169,40 @@ def pushToDockerhub(version) {
   sh "docker push ${dockerBackendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number? Skipping push.' && true)"
 }
 
-
 def notifyBuild(String buildStatus = 'STARTED') {
-  buildStatus = buildStatus ?: 'SUCCESS'
-
-  def colorCode = '#FF9FA1'
-  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-  def summary = "${subject} (${env.BUILD_URL})"
-  def details = """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-    <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
-
-  if (buildStatus == 'STARTED') {
-    colorCode = '#D4DADF'
-  } else if (buildStatus == 'SUCCESS') {
-    summary = ":unicorn_face: Success! ${env.JOB_NAME}: ${env.BUILD_URL}"
-    colorCode = '#BDFFC3'
-  } else if (buildStatus == 'UNSTABLE') {
-    summary = ":face_with_head_bandage: Unstable! ${env.JOB_NAME}: ${env.BUILD_URL}"
-    colorCode = '#FF9FA1'
-  } else {
-    summary = ":sos: Failure! ${env.JOB_NAME}: ${env.BUILD_URL}"
-    colorCode = '#FF9FA1'
+  try {
+    withCredentials([string(credentialsId: 'slacktoken', variable: 'TOKEN')]) { 
+      def slackURL = "https://eficode.slack.com/services/hooks/jenkins-ci/$TOKEN"
+      
+      sh "curl --request POST --header 'Content-Type: application/json' --data '{\"text\": \"Build ${buildStatus}\nBranch: ${env.BRANCH_NAME}\nSee: https://ci.dev.eficode.io/job/Partion%20osaamiskiekko/job/osaamiskiekko/job/${env.BRANCH_NAME}/\"}' ${slackURL}"
+    }
+  } catch (error) {
+    echo "Error notifying slack: ${error}"
   }
-
-  // TODO Re-enable slackSend if slack plugin is added to Jenkins
-  // slackSend(teamDomain: "eficode", token: credentials('slacktoken'), color: colorCode, message: summary)
 }
+
+// def notifyBuild(String buildStatus = 'STARTED') {
+//   buildStatus = buildStatus ?: 'SUCCESS'
+
+//   def colorCode = '#FF9FA1'
+//   def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+//   def summary = "${subject} (${env.BUILD_URL})"
+//   def details = """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+//     <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
+
+//   if (buildStatus == 'STARTED') {
+//     colorCode = '#D4DADF'
+//   } else if (buildStatus == 'SUCCESS') {
+//     summary = ":unicorn_face: Success! ${env.JOB_NAME}: ${env.BUILD_URL}"
+//     colorCode = '#BDFFC3'
+//   } else if (buildStatus == 'UNSTABLE') {
+//     summary = ":face_with_head_bandage: Unstable! ${env.JOB_NAME}: ${env.BUILD_URL}"
+//     colorCode = '#FF9FA1'
+//   } else {
+//     summary = ":sos: Failure! ${env.JOB_NAME}: ${env.BUILD_URL}"
+//     colorCode = '#FF9FA1'
+//   }
+
+//   // TODO Re-enable slackSend if slack plugin is added to Jenkins
+//   // slackSend(teamDomain: "eficode", token: credentials('slacktoken'), color: colorCode, message: summary)
+// }

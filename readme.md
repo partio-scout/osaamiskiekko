@@ -1,5 +1,9 @@
 # Partio Osaamiskiekko-palvelu
 
+# Strapi account
+
+partioadmin:6QVAjgusFD3YL7x
+
 # INFO
 
 - cms backend uses strapi https://strapi.io/
@@ -43,6 +47,20 @@ Firefox: Download and install firefox + geckodriver https://github.com/mozilla/g
 
 docker-compose --project-directory . -f compose/frontend-unittests.yml up
 
+# Makefile
+
+make backupdatamodels
+  copies strapi datamodels from docker to tmp folder (just in case)
+
+make getdatabasedump
+  gets postgre database dump from docker which contains everything (can be used as test data for example)
+
+make getdatabasedump-dataonly
+  gets only data dump from postgres
+
+make restoredata-dataonly
+  restores data after Strapi has created tables accordingly
+
 # Docker commands 
  - list running containers: docker ps -a
  - remove container: docker rm container_name
@@ -55,3 +73,30 @@ docker-compose --project-directory . -f compose/frontend-unittests.yml up
  - remove everything (containers, images, volumes): docker system prune -a
  - clean networks: docker network prune
  - clean containers: docker container prune
+ - connect docker container with sh or alternative /bin/bash: docker exec -it ID sh
+ - install package on alpine docker: apk add nano
+
+# Database and Strapi setup
+
+Strapi new command generates database setup so backend/cms contains strapi binary which is copied to docker.
+cms/api contains the generated datamodel created with strapi UI
+cms/config/environments/development/database.json contains docker db info
+docker-compose file has sql init script for postgres. sql init file is located in backend/postgre/dump.sql
+sql dump has been modified as it cant drop or create database with the current user
+
+## Copy postgres database
+docker exec -t CONTAINER_ID pg_dump --data-only -U myuser -d mydb > ./backend/postgre/dump_dataonly.sql 
+docker exec -t partio_db_1 pg_dump --clean --if-exists -U myuser -d mydb > ./tmp/postgre/dump_new.sql   
+docker exec -t partio_db_1 pg_dumpall -U myuser -d mydb > ./tmp/postgre/dump_all.sql   
+
+## Restore database
+cat ./backend/postgre/dump.sql | docker exec -i CONTAINER_ID psql -U myuser -d mydb
+
+## Copy strapi datamodels from docker
+docker cp CONTAINER_ID:/usr/src/api/strapi-app/api ./backend/datamodels
+
+## Copy datamodel back to docker 
+docker cp ./backend/datamodels/api/* CONTAINER_ID:/usr/src/api/cms/api
+
+## Backup all
+docker exec -t CONTAINER_ID pg_dumpall -c -U myuser -l mydb > ./backend/postgre/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql

@@ -40,10 +40,20 @@ pipeline {
         sh """${compose} \
             -f compose/frontend-unittests.yml up
            """
+      }
 
-        sh """${compose} \
-            -f compose/frontend-unittests.yml down
-           """
+      post {
+        always {
+          sh """${compose} \
+            -f compose/frontend-unittests.yml
+            logs >unit-test.log"""
+          
+          archive 'unit-test.log'
+
+          sh """${compose} \
+            -f compose/frontend-unittests.yml
+            down"""
+        }
       }
     }    
 

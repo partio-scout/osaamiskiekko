@@ -75,6 +75,14 @@ pipeline {
             -f docker-compose.yml \
             -f compose/frontend.yml \
             -f compose/robot.yml \
+            logs >acceptance-test.log"""
+          
+          archive 'acceptance-test.log'
+
+          sh """${compose} \
+            -f docker-compose.yml \
+            -f compose/frontend.yml \
+            -f compose/robot.yml \
             down -v"""
         }
       }

@@ -10,3 +10,9 @@ Test Teardown       Close backend browser
 
 Backend should be open
     Verify backend is running
+
+Backend should be open2
+    Verify backend is running
+
+Backend should be open3
+    Verify backend is running

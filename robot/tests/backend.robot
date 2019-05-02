@@ -3,7 +3,7 @@
 Resource   ${PROJECTROOT}${/}resources${/}common.robot
 Resource   ${PROJECTROOT}${/}resources${/}variables.robot
 
-Suite Setup         Set Selenium Timeout    1 minute
+Suite Setup         Set Selenium Timeout    2 minutes
 Suite Teardown      Set Selenium Timeout    15 seconds
 Test Setup          Open browser and go to backend
 Test Teardown       Close backend browser

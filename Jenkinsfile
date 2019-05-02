@@ -47,19 +47,6 @@ pipeline {
       }
     }    
 
-    // TODO: Enable StrapiCMS unit
-    // stage('Unit Test') {
-    //   steps {
-    //     sh """${compose} \
-    //       -f compose/test.yml \
-    //       run mocha"""
-
-    //     sh """${compose} \
-    //     -f compose/test.yml \
-    //     down -v"""
-    //   }
-    // }
-
     stage('Acceptance Test') {
       steps {
         script {

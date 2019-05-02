@@ -172,10 +172,12 @@ def pushToDockerhub(version) {
 def notifyBuild(String buildStatus = 'STARTED') {
   try {
     withCredentials([string(credentialsId: 'slacktoken', variable: 'TOKEN')]) { 
-      echo "Notifying slack: ${buildStatus}, ${TOKEN}";
+      echo "Notifying slack: ${buildStatus}, $TOKEN";
     
-      def slackURL = "https://eficode.slack.com/services/hooks/jenkins-ci/${TOKEN}"
-
+      def slackURL = "https://eficode.slack.com/services/hooks/jenkins-ci/$TOKEN"
+      
+      echo "SlackURL: ${slackURL}"
+      
       sh "curl --request POST --header 'Content-Type: application/json' --data '{\"text\": \"Build ${status}\nBranch: ${env.BRANCH_NAME}\nSee: https://ci.dev.eficode.io/job/Partion%20osaamiskiekko/job/osaamiskiekko/job/${branch}/\"}' ${slackURL}"
 
       echo "slack notified"

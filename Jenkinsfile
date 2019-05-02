@@ -62,22 +62,6 @@ pipeline {
           }
         }
 
-        step([$class: 'RobotPublisher',
-            disableArchiveOutput: false,
-            logFileName: 'results/robot/log.html',
-            onlyCritical: true,
-            otherFiles: '',
-            outputFileName: 'results/robot/output.xml',
-            outputPath: '.',
-            passThreshold: 90,
-            reportFileName: 'results/robot/report.html',
-            unstableThreshold: 100]);
-
-        sh """${compose} \
-          -f docker-compose.yml \
-          -f compose/frontend.yml \
-          -f compose/robot.yml \
-          down -v"""
       }
     }
 
@@ -121,9 +105,22 @@ pipeline {
       notifyBuild(currentBuild.result)
       // TODO: Enable unit test archival
       // step([$class: 'JUnitResultArchiver', testResults: 'results/mocha/test-results.xml'])
+
+      step([$class: 'RobotPublisher',
+          disableArchiveOutput: false,
+          logFileName: 'results/robot/log.html',
+          onlyCritical: true,
+          otherFiles: '',
+          outputFileName: 'results/robot/output.xml',
+          outputPath: '.',
+          passThreshold: 90,
+          reportFileName: 'results/robot/report.html',
+          unstableThreshold: 100]);
+
       sh """${compose} \
         -f docker-compose.yml \
         -f compose/frontend.yml \
+        -f compose/robot.yml \
         down -v"""
     }
   }

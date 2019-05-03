@@ -1,27 +1,34 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
-import axios from 'axios';
+import styled from 'styled-components';
+import { Container } from 'semantic-ui-react';
+import NavLinks from './components/NavLinks';
+import Header from './components/Header';
+import Curve from './images/curve.svg';
+import { GlobalStyle } from './GlobalStyles';
 
-async function getApiData() {
-  try {
-    const response = await axios.get('/api/testendpoints');
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
-}
+const MainMenuDiv = styled.div`
+  background-color: #DAD7FF;
+  padding: 20px;
+`;
+
+const CurvedImage = styled.img`
+  width: 100%;
+  margin-top: -5px;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Osaamiskiekko</h1>
-          <Button primary onClick={getApiData}>Very semantic button</Button>
-        </header>
-      </div>
+      <Container>
+        <MainMenuDiv>
+          <NavLinks></NavLinks>
+          <Header></Header>
+        </MainMenuDiv>
+        <CurvedImage src={Curve}></CurvedImage>
+        <GlobalStyle />
+      </Container>
     );
   }
 }

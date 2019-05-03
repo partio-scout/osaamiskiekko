@@ -61,6 +61,14 @@ make getdatabasedump-dataonly
 make restoredata-dataonly
   restores data after Strapi has created tables accordingly
 
+# Update Container
+
+docker-compose build servicename
+
+# Run only one container
+
+docker-compose up servicename
+
 # Docker commands 
  - list running containers: docker ps -a
  - remove container: docker rm container_name

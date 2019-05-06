@@ -19,3 +19,33 @@ getdatabasedump-dataonly:
 
 restoredata-dataonly:
 	cat ./backend/postgre/dump_dataonly.sql | docker exec -i partio_db_1 psql -U myuser -d mydb
+
+deploy: check-deploy-arguments deploy-backend-service deploy-backend deploy-frontend deploy-ingress
+
+check-deploy-arguments:
+ifeq ($(backendimage), )
+	$(error "backendimage required. Usage 'backendimage=[url] frontendimage=[url] make deploy")
+endif
+ifeq ($(frontendimage), )
+	$(error "frontendimage required. Usage 'backendimage=[url] frontendimage=[url] make deploy")
+endif
+
+deploy-db:
+	$(info deploying db)
+	@kubectl apply -f kubectl/db.yaml
+
+deploy-backend-service:
+	$(info deploying backend service)
+	@kubectl apply -f kubectl/backend-service.yaml
+
+deploy-backend:
+	$(info deploying backend)
+	@sed -e 's#$$BACKENDIMAGE#$(backendimage)#g' kubectl/backend.yaml | kubectl apply -f -
+
+deploy-frontend:
+	$(info deploying frontend)
+	@sed -e 's#$$FRONTENDIMAGE#$(frontendimage)#g' kubectl/frontend.yaml | kubectl apply -f -
+
+deploy-ingress:
+	$(info deploying ingress)
+	@kubectl apply -f kubectl/ingress.yaml

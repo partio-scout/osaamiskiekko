@@ -1,27 +1,27 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: db
 spec:
   selector:
     app: osaamiskiekko
-    tier: frontend
+    tier: db
     phase: dev
   ports:
   - protocol: "TCP"
-    port: 80
-    targetPort: 80
+    port: 5432
+    targetPort: 5432
   type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: db
 spec:
   selector:
     matchLabels:
       app: osaamiskiekko
-      tier: frontend
+      tier: db
       track: stable
       phase: dev
   replicas: 1
@@ -29,17 +29,10 @@ spec:
     metadata:
       labels:
         app: osaamiskiekko
-        tier: frontend
+        tier: db
         track: stable
         phase: dev
     spec:
       containers:
-      - name: nginx
-        # Replaced during Jenkins build. Use 'make deploy' to run locally
-        image: $FRONTENDIMAGE
-        lifecycle:
-          preStop:
-            exec:
-              command: ["nginx","-s","quit"]
-      imagePullSecrets:
-      - name: eficode-artifactory-cred
+      - name: db
+        image: postgres

@@ -7,7 +7,7 @@ dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/ba
 taggedFrontendImage = dockerFrontendImage
 taggedBackendImage = dockerBackendImage
 
-publishedBranches = [ "master", "staging", "production"]
+publishedBranches = [ "master", "testing", "staging", "production"]
 
 pipeline {
   agent {

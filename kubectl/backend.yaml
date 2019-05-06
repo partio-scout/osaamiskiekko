@@ -24,11 +24,11 @@ spec:
           image: $BACKENDIMAGE
           env:
             - name: DATABASE_HOST
-              value: db
+              value: "db"
             - name: DATABASE_PORT
-              value: 5432
+              value: "5432"
             - name: DATABASE_NAME
-              value: mydb
+              value: "mydb"
             - name: DATABASE_USERNAME
               valueFrom:
                 secretKeyRef:

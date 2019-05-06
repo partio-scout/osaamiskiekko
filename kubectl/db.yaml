@@ -38,7 +38,7 @@ spec:
         image: postgres
         env:
           - name: POSTGRES_DB
-            value: mydb
+            value: "mydb"
           - name: POSTGRES_USER
             valueFrom:
               secretKeyRef:

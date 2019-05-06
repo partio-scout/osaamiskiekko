@@ -192,7 +192,7 @@ pipeline {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',
           usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
 
-          sh "kubectl create secret docker-registry eficode-artifactory-cred --docker-server=${dockerRepository} --docker-username=$USERNAME --docker-password=$PASSWORD --docker-email=partionosaamiskiekko-bot@rum.invalid"
+          sh "kubectl create secret docker-registry eficode-artifactory-cred --docker-server=${dockerRepository} --docker-username=$USERNAME --docker-password=$PASSWORD --docker-email=partionosaamiskiekko-bot@rum.invalid || true"
 
           sh "backendimage=${taggedBackendImage} frontendimage=${taggedFrontendImage} make deploy"
         }

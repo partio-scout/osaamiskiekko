@@ -5,7 +5,7 @@ dockerRepository = "artifactory.dev.eficode.io"
 dockerFrontendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/frontend_${env.BRANCH_NAME}"
 dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/backend_${env.BRANCH_NAME}"
 taggedFrontendImage = dockerFrontendImage
-taggedBackendImage = finalBackendImage
+taggedBackendImage = dockerBackendImage
 
 publishedBranches = [ "master", "staging", "production"]
 

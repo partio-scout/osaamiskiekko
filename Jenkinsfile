@@ -32,12 +32,17 @@ pipeline {
     stage('Analysis') {
       steps {
         script {
+          echo "setting scannerHome"
           scannerHome = tool "Sonar Scanner 3.3.0.1492"
+          echo "scannerHome set"
         }
+        
         withSonarQubeEnv('SonarQube 5.6.6 (sonar)') {
+          echo "Executing sonar scanner"
           withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${partionosaamiskiekko-bot-w_password}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
             sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=${USERNAME} -Dsonar.password=${PASSWORD} -Dsonar.branch=${env.BRANCH_NAME}"
           }
+          echo "Scan finished"
         }
       }
     }

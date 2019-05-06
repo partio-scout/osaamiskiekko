@@ -258,21 +258,22 @@ def labelAndPush(version) {
 }
 
 def tagImages(version) {
+  sh "docker tag ${dockerEnvironment}_frontend ${dockerFrontendImage}:latest"
+  sh "docker tag ${dockerEnvironment}_backend ${dockerBackendImage}:latest"
+
+  sh "docker tag ${dockerEnvironment}_frontend ${taggedFrontendImage}:${version}"
+  sh "docker tag ${dockerEnvironment}_backend ${taggedBackendImage}:${version}"
+
   taggedFrontendImage = "${dockerFrontendImage}:${version}"
-  taggedBackendImage = "${dockerBackendImage}:${version}"
-  
-  sh "docker tag ${dockerEnvironment}_frontend ${taggedFrontendImage}"
-  sh "docker tag ${dockerEnvironment}_backend ${taggedBackendImage}"
+  taggedBackendImage = "${dockerBackendImage}:${version}"  
 }
 
 def pushToDockerhub(version) {
-  // If you want to fail the pipeline when the version number is not bumped,
-  // uncomment the next 2 lines and comment out the rest.
-  // sh "docker push ${dockerFrontendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number?' && false)"
-  // sh "docker push ${dockerBackendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number?' && false)"
+  sh "docker push ${dockerFrontendImage}:latest"
+  sh "docker push ${dockerBackendImage}:latest"
 
-  sh "docker push ${taggedFrontendImage} || (echo 'Looks like the push failed. Did you remember to bump the package version number? Skipping push.' && true)"
-  sh "docker push ${taggedBackendImage} || (echo 'Looks like the push failed. Did you remember to bump the package version number? Skipping push.' && true)"
+  sh "docker push ${taggedFrontendImage}"
+  sh "docker push ${taggedBackendImage}"
 }
 
 def notifyBuild(String buildStatus = 'STARTED') {

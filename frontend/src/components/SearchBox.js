@@ -1,66 +1,64 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Form } from 'semantic-ui-react'
-import { Search, Grid, Header, Segment } from 'semantic-ui-react'
 
-// const MenuLink = styled(Menu.Item)`
-//   &&& {
-//     color: #4736FF;
-//   }
-
-const SearchForm = styled(Form)`
-&&& {
+const S = {};
+S.SearchBox = styled.div`
+  top: 130px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: white;
-  padding: 40px 100px 40px 100px;
-  text-align: center;
+  width: 600px;
   border: 1px solid #4736FF;
-  border-radius: 5px;
-  position: relative;
-  top: 180px;
-  max-width: 600px;
-  margin: auto;
-  }
-`;
-
-const SearchLabel = styled.label`
-  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 20px;
   color: #4736FF;
 `;
 
-const StyledInput = styled.input`
+S.SearchWrapper = styled.div `
+  max-width: 250px;
+  margin: auto;
+  position: relative;
+
+  :nth-child(1) {
+    margin-bottom: 20px;
+  }
+
+input {
+  width: 250px;
+  height: 32px;
   border: none;
-  border-bottom: 2px solid #4736FF;
+  border-bottom: 1px solid #4736FF;
+  padding-left: 22px;
+  outline-width: 0;
   outline: none;
-  /* width: 250px; */
+}
+
+input::placeholder {
+  color: #4736FF;
+  opacity: 1;
+}
+
+.fa-search { 
+  position: absolute;
+  left: 0px;
+  top: 27px;
+}
 `;
 
 export default function SearchBox() {
-  const [searchText, setSearchText] = useState('');
-
   return (
-    <SearchForm>
-      <Form.Field>
-        <label>Valitse järjestö tai oppilaitos</label>
-        <StyledInput 
-          placeholder='Hae järjestöä tai oppilaitosta...' 
-          value={searchText}
-          onChange={e => setSearchText(e.target.value)}
-          type="text"
-        />
-      </Form.Field>
-    </SearchForm>
-    // <SearchForm>
-    //   <SearchLabel htmlFor="organization">Valitse järjestö tai oppilaitos</SearchLabel>
-    //   <StyledInput
-    //     value={searchText}
-    //     onChange={e => setSearchText(e.target.value)}
-    //     placeholder="Hae järjestöä tai oppilaitosta..."
-    //     type="text"
-    //     name="organization"
-    //     id="organization"
-    //     required
-    //   />
-    // </SearchForm>
-    
-  );
+    <S.SearchBox>
+      <S.SearchWrapper>
+        <label htmlFor="search-academy">Valitse järjestö tai oppilaitos</label>
+        <span className="fa fa-search"></span>
+        <input placeholder="Hae..." name="search-academy"/>
+      </S.SearchWrapper>
+      <S.SearchWrapper>
+        <label htmlFor="search-academy">Valitse koulutus</label>
+        <span className="fa fa-search"></span>
+        <input placeholder="Hae..." name="search-academy" />
+      </S.SearchWrapper>
+    </S.SearchBox>
+  )
 }

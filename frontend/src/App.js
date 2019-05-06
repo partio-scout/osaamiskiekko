@@ -1,34 +1,33 @@
 import React, { Component } from 'react';
 import './App.css';
-import 'semantic-ui-css/semantic.min.css';
-import styled from 'styled-components';
-import { Container } from 'semantic-ui-react';
-import NavLinks from './components/NavLinks';
-import Header from './components/Header';
+// import styled from 'styled-components';
 import Curve from './images/curve.svg';
-import { GlobalStyle } from './GlobalStyles';
-
-const MainMenuDiv = styled.div`
-  background-color: #DAD7FF;
-  padding: 20px;
-`;
-
-const CurvedImage = styled.img`
-  width: 100%;
-  margin-top: -5px;
-`;
+// import { GlobalStyle } from './GlobalStyles';
+import PlaceholderImage from './images/square-image.png';
+import Navigation from './components/Navigation';
+import SearchBox from './components/SearchBox';
 
 class App extends Component {
   render() {
     return (
-      <Container>
-        <MainMenuDiv>
-          <NavLinks></NavLinks>
-          <Header></Header>
-        </MainMenuDiv>
-        <CurvedImage src={Curve}></CurvedImage>
-        <GlobalStyle />
-      </Container>
+      <div>
+        <header>
+            <Navigation />
+            <div className="header-container">
+              <div className="header-text">
+                <h1>Osaamiskiekon avulla hyödynnät osaamisesi monipuolisesti</h1>
+                <p>Osaamiskiekon avulla löydät harrastus- ja vapaaehtoistoiminnassa hankitun osaamisen rinnakkain tutkintoon johtavien opintojen kanssa.</p>  
+              </div>
+              <div className="header-image-container">
+                <img src={PlaceholderImage} alt="placeholder" className="header-image"/>
+              </div>
+            </div>
+        </header>
+        <div className="curve-container">
+          <SearchBox />
+          <img src={Curve} alt="Curve" className="curve-image"/>
+        </div>
+      </div>
     );
   }
 }

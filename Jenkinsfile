@@ -200,7 +200,7 @@ pipeline {
             -n ${env.NAMESPACE} || true"""
 
           sh """kubectl patch serviceaccount default \
-            -p \"{\\\"imagePullSecrets\\\": [{\\\"name\\\": \\\"eficode-artifactory-cred\\\"}]}\" 
+            -p \"{\\\"imagePullSecrets\\\": [{\\\"name\\\": \\\"eficode-artifactory-cred\\\"}]}\" \
             -n ${env.NAMESPACE}"""
         }
         // Create or update database credentials

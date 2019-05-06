@@ -233,8 +233,8 @@ def labelAndPush(version) {
 }
 
 def tagImages(version) {
-  taggedFrontendImage = ${dockerFrontendImage}:${version}
-  taggedBackendImage = ${dockerBackendImage}:${version}
+  taggedFrontendImage = "${dockerFrontendImage}:${version}"
+  taggedBackendImage = "${dockerBackendImage}:${version}"
   
   sh "docker tag ${dockerEnvironment}_frontend ${taggedFrontendImage}"
   sh "docker tag ${dockerEnvironment}_backend ${taggedBackendImage}"

@@ -22,8 +22,23 @@ spec:
         - name: backend
           # Replaced during Jenkins build. Use 'make deploy' to run locally
           image: $BACKENDIMAGE
+          env:
+            - name: DATABASE_HOST
+              value: db
+            - name: DATABASE_PORT
+              value: 5432
+            - name: DATABASE_NAME
+              value: mydb
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: username
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: password
           ports:
             - name: http
               containerPort: 1337
-      imagePullSecrets:
-      - name: eficode-artifactory-cred

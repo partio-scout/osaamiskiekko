@@ -36,3 +36,16 @@ spec:
       containers:
       - name: db
         image: postgres
+        env:
+          - name: POSTGRES_DB
+            value: mydb
+          - name: POSTGRES_USER
+            valueFrom:
+              secretKeyRef:
+                name: database-credentials
+                key: username
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: database-credentials
+                key: password

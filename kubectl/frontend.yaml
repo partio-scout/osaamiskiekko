@@ -41,5 +41,3 @@ spec:
           preStop:
             exec:
               command: ["nginx","-s","quit"]
-      imagePullSecrets:
-      - name: eficode-artifactory-cred

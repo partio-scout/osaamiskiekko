@@ -192,9 +192,14 @@ pipeline {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',
           usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
 
-          sh "kubectl create secret docker-registry eficode-artifactory-cred --docker-server=${dockerRepository} --docker-username=$USERNAME --docker-password=$PASSWORD --docker-email=partionosaamiskiekko-bot@rum.invalid || true"
+          sh "kubectl create secret docker-registry eficode-artifactory-cred --docker-server=${dockerRepository} --docker-username=$USERNAME --docker-password=$PASSWORD --docker-email=partionosaamiskiekko-bot@rum.invalid -n ${env.NAMESPACE} || true"
+          sh "kubectl patch serviceaccount default -p \"{\\\"imagePullSecrets\\\": [{\\\"name\\\": \\\"eficode-artifactory-cred\\\"}]}\" -n ${env.NAMESPACE}"
 
-          sh "backendimage=${taggedBackendImage} frontendimage=${taggedFrontendImage} make deploy"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/db.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend-service.yaml"
+          sh "sed -e 's#$$BACKENDIMAGE#${taggedBackendImage}#g' kubectl/backend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
+          sh "sed -e 's#$$FRONTENDIMAGE#${taggedFrontendImage}#g' kubectl/frontend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/ingress.yaml"
         }
       }
     }

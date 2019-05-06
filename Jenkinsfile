@@ -197,8 +197,8 @@ pipeline {
 
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/db.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend-service.yaml"
-          sh "sed -e 's#\$\$BACKENDIMAGE#${taggedBackendImage}#g' kubectl/backend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
-          sh "sed -e 's#\$\$FRONTENDIMAGE#${taggedFrontendImage}#g' kubectl/frontend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
+          sh "sed -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g' kubectl/backend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
+          sh "sed -e 's#\$FRONTENDIMAGE#${taggedFrontendImage}#g' kubectl/frontend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/ingress.yaml"
         }
       }

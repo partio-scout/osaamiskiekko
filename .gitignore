@@ -8,7 +8,7 @@ robot/output.xml
 robot/report.html
 robot/selenium-*.png
 robot/results
-
+.scannerwork
 # OSX
 .DS_Store
 # Node

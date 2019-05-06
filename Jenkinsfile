@@ -29,6 +29,20 @@ pipeline {
       }
     }
 
+    stage('Analysis') {
+      steps {
+        script {
+          scannerHome = tool "Sonar Scanner 3.3.0.1492"
+        }
+        withSonarQubeEnv('SonarQube 5.6.6 (sonar)') {
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${partionosaamiskiekko-bot-w_password}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=${USERNAME} -Dsonar.password=${PASSWORD} -Dsonar.branch=${env.BRANCH_NAME}"
+          }
+        }
+      }
+      }
+    }
+
     stage('Build') {
       steps {
         buildImages()

@@ -182,7 +182,7 @@ pipeline {
           }
           
           sh "gcloud iam service-accounts keys create key.json --iam-account ${GCLOUD_DB_PROXY_USERNAME}"
-          sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=../key.json || true"
+          sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=./key.json || true"
           sh "rm key.json"
 
           sh "gcloud auth configure-docker"

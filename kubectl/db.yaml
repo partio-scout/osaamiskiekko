@@ -53,3 +53,11 @@ spec:
               secretKeyRef:
                 name: database-credentials
                 key: password
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgresdata
+          subPath: data
+      volumes:
+      - name: postgresdata
+        persistentVolumeClaim:
+          claimName: db-data

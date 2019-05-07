@@ -8,6 +8,7 @@ backupdatamodels:
 
 
 docker-cleanrun:
+	docker-compose down
 	docker volume prune -f
 	docker container prune -f
 	docker-compose up

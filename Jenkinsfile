@@ -215,6 +215,7 @@ pipeline {
         }
         // Deploy
         script {
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/db-persistentvolumeclaim.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/db.yaml"
           sh "sed -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g' kubectl/backend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
           sh "sed -e 's#\$FRONTENDIMAGE#${taggedFrontendImage}#g' kubectl/frontend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"

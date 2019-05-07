@@ -36,7 +36,7 @@ pipeline {
     //   }
     // }
   
-    stage('cloud init') {
+    stage('Cloud init') {
       when {
         expression {
           return publishedBranches.contains(env.BRANCH_NAME);
@@ -64,9 +64,11 @@ pipeline {
           }
           
           // Create database proxy credentials secret
-          sh "gcloud iam service-accounts keys create key.json --iam-account ${GCLOUD_DB_PROXY_USERNAME}"
-          sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=./key.json || true"
-          sh "rm key.json"
+          withCredentials([file(credentialsId: 'osaamiskiekko-google-cloudsql-proxy-credentials', variable: 'proxycredfile')]) {
+            sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=\$proxycredfile || true"
+            sh "rm \$proxycredfile"
+          }
+
 
           // Create or update docker registry credentials secret
           withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',

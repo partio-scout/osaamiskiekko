@@ -11,6 +11,9 @@ spec:
   - protocol: "TCP"
     port: 80
     targetPort: 80
+  - protocol: "TCP"
+    port: 1337
+    targetPort: 1337
   type: NodePort
 ---
 apiVersion: apps/v1
@@ -37,6 +40,12 @@ spec:
       - name: nginx
         # Replaced during Jenkins build. Use 'make deploy' to run locally
         image: $FRONTENDIMAGE
+        imagePullPolicy: IfNotPresent
+        ports:
+          - name: http
+            containerPort: 80
+          - name: backendproxy
+            containerPort: 1337
         lifecycle:
           preStop:
             exec:

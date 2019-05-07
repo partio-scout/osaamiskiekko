@@ -1,3 +1,24 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: backend
+spec:
+  selector:
+    app: osaamiskiekko
+    tier: backend
+    phase: dev
+  ports:
+  - protocol: "TCP"
+    port: 1337
+    targetPort: http
+  # type: NodePort
+  # ports:
+  # - name: strapicms
+  #   protocol: TCP
+  #   nodePort: 32012
+  #   port: 1337
+  #   targetPort: 1337
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,6 +43,9 @@ spec:
         - name: backend
           # Replaced during Jenkins build. Use 'make deploy' to run locally
           image: $BACKENDIMAGE
+          ports:
+            - name: http
+              containerPort: 1337
           env:
             - name: DATABASE_HOST
               value: "db"
@@ -39,6 +63,3 @@ spec:
                 secretKeyRef:
                   name: database-credentials
                   key: password
-          ports:
-            - name: http
-              containerPort: 1337

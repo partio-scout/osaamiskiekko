@@ -36,11 +36,30 @@ DROP INDEX IF EXISTS public.search_upload_file_morph_field;
 DROP INDEX IF EXISTS public.search_upload_file_mime;
 DROP INDEX IF EXISTS public.search_upload_file_hash;
 DROP INDEX IF EXISTS public.search_upload_file_ext;
+DROP INDEX IF EXISTS public.search_schools_url;
+DROP INDEX IF EXISTS public.search_schools_name_swe;
+DROP INDEX IF EXISTS public.search_schools_name_fi;
+DROP INDEX IF EXISTS public.search_schools_name_en;
+DROP INDEX IF EXISTS public.search_schools_description_swe;
+DROP INDEX IF EXISTS public.search_schools_description_fi;
+DROP INDEX IF EXISTS public.search_schools_description_en;
 DROP INDEX IF EXISTS public.search_organizations_url;
+DROP INDEX IF EXISTS public.search_organizations_name_swe;
+DROP INDEX IF EXISTS public.search_organizations_name_fi;
+DROP INDEX IF EXISTS public.search_organizations_name_en;
 DROP INDEX IF EXISTS public.search_organizations_name;
+DROP INDEX IF EXISTS public.search_organizations_description_swe;
+DROP INDEX IF EXISTS public.search_organizations_description_fi;
+DROP INDEX IF EXISTS public.search_organizations_description_en;
 DROP INDEX IF EXISTS public.search_organizations_description;
 DROP INDEX IF EXISTS public.search_organizationeducations_name;
 DROP INDEX IF EXISTS public.search_organizationeducations_description;
+DROP INDEX IF EXISTS public.search_nqfs_name_swe;
+DROP INDEX IF EXISTS public.search_nqfs_name_fi;
+DROP INDEX IF EXISTS public.search_nqfs_name_en;
+DROP INDEX IF EXISTS public.search_fieldofstudies_name_swe;
+DROP INDEX IF EXISTS public.search_fieldofstudies_name_fi;
+DROP INDEX IF EXISTS public.search_fieldofstudies_name_en;
 DROP INDEX IF EXISTS public.search_examinations_url;
 DROP INDEX IF EXISTS public.search_examinations_name;
 DROP INDEX IF EXISTS public.search_examinations_description;
@@ -49,29 +68,58 @@ DROP INDEX IF EXISTS public.search_core_store_type;
 DROP INDEX IF EXISTS public.search_core_store_tag;
 DROP INDEX IF EXISTS public.search_core_store_key;
 DROP INDEX IF EXISTS public.search_core_store_environment;
+DROP INDEX IF EXISTS public.search_competence_url;
+DROP INDEX IF EXISTS public.search_competence_organization;
+DROP INDEX IF EXISTS public.search_competence_name_swe;
+DROP INDEX IF EXISTS public.search_competence_name_fi;
+DROP INDEX IF EXISTS public.search_competence_name_en;
+DROP INDEX IF EXISTS public.search_competence_identification;
+DROP INDEX IF EXISTS public.search_competence_description_swe;
+DROP INDEX IF EXISTS public.search_competence_description_fi;
+DROP INDEX IF EXISTS public.search_competence_description_en;
 DROP INDEX IF EXISTS public.search_academies_url;
 DROP INDEX IF EXISTS public.search_academies_name;
 DROP INDEX IF EXISTS public.search_academies_description;
+DROP INDEX IF EXISTS public.search_academicdegrees_url;
+DROP INDEX IF EXISTS public.search_academicdegrees_school;
+DROP INDEX IF EXISTS public.search_academicdegrees_name_swe;
+DROP INDEX IF EXISTS public.search_academicdegrees_name_fi;
+DROP INDEX IF EXISTS public.search_academicdegrees_name_en;
+DROP INDEX IF EXISTS public.search_academicdegrees_identification;
+DROP INDEX IF EXISTS public.search_academicdegrees_fieldofstudy;
+DROP INDEX IF EXISTS public.search_academicdegrees_description_swe;
+DROP INDEX IF EXISTS public.search_academicdegrees_description_fi;
+DROP INDEX IF EXISTS public.search_academicdegrees_description_en;
 ALTER TABLE IF EXISTS ONLY public."users-permissions_user" DROP CONSTRAINT IF EXISTS "users-permissions_user_pkey";
 ALTER TABLE IF EXISTS ONLY public."users-permissions_role" DROP CONSTRAINT IF EXISTS "users-permissions_role_pkey";
 ALTER TABLE IF EXISTS ONLY public."users-permissions_permission" DROP CONSTRAINT IF EXISTS "users-permissions_permission_pkey";
 ALTER TABLE IF EXISTS ONLY public.upload_file DROP CONSTRAINT IF EXISTS upload_file_pkey;
 ALTER TABLE IF EXISTS ONLY public.upload_file_morph DROP CONSTRAINT IF EXISTS upload_file_morph_pkey;
+ALTER TABLE IF EXISTS ONLY public.schools DROP CONSTRAINT IF EXISTS schools_pkey;
 ALTER TABLE IF EXISTS ONLY public.organizations DROP CONSTRAINT IF EXISTS organizations_pkey;
 ALTER TABLE IF EXISTS ONLY public.organizationeducations DROP CONSTRAINT IF EXISTS organizationeducations_pkey;
+ALTER TABLE IF EXISTS ONLY public.nqfs DROP CONSTRAINT IF EXISTS nqfs_pkey;
+ALTER TABLE IF EXISTS ONLY public.fieldofstudies DROP CONSTRAINT IF EXISTS fieldofstudies_pkey;
 ALTER TABLE IF EXISTS ONLY public.examinations DROP CONSTRAINT IF EXISTS examinations_pkey;
 ALTER TABLE IF EXISTS ONLY public.core_store DROP CONSTRAINT IF EXISTS core_store_pkey;
+ALTER TABLE IF EXISTS ONLY public.competence DROP CONSTRAINT IF EXISTS competence_pkey;
 ALTER TABLE IF EXISTS ONLY public.academies DROP CONSTRAINT IF EXISTS academies_pkey;
+ALTER TABLE IF EXISTS ONLY public.academicdegrees DROP CONSTRAINT IF EXISTS academicdegrees_pkey;
 ALTER TABLE IF EXISTS public."users-permissions_user" ALTER COLUMN id DROP DEFAULT;
 ALTER TABLE IF EXISTS public."users-permissions_role" ALTER COLUMN id DROP DEFAULT;
 ALTER TABLE IF EXISTS public."users-permissions_permission" ALTER COLUMN id DROP DEFAULT;
 ALTER TABLE IF EXISTS public.upload_file_morph ALTER COLUMN id DROP DEFAULT;
 ALTER TABLE IF EXISTS public.upload_file ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.schools ALTER COLUMN id DROP DEFAULT;
 ALTER TABLE IF EXISTS public.organizations ALTER COLUMN id DROP DEFAULT;
 ALTER TABLE IF EXISTS public.organizationeducations ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.nqfs ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.fieldofstudies ALTER COLUMN id DROP DEFAULT;
 ALTER TABLE IF EXISTS public.examinations ALTER COLUMN id DROP DEFAULT;
 ALTER TABLE IF EXISTS public.core_store ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.competence ALTER COLUMN id DROP DEFAULT;
 ALTER TABLE IF EXISTS public.academies ALTER COLUMN id DROP DEFAULT;
+ALTER TABLE IF EXISTS public.academicdegrees ALTER COLUMN id DROP DEFAULT;
 DROP SEQUENCE IF EXISTS public."users-permissions_user_id_seq";
 DROP TABLE IF EXISTS public."users-permissions_user";
 DROP SEQUENCE IF EXISTS public."users-permissions_role_id_seq";
@@ -82,16 +130,26 @@ DROP SEQUENCE IF EXISTS public.upload_file_morph_id_seq;
 DROP TABLE IF EXISTS public.upload_file_morph;
 DROP SEQUENCE IF EXISTS public.upload_file_id_seq;
 DROP TABLE IF EXISTS public.upload_file;
+DROP SEQUENCE IF EXISTS public.schools_id_seq;
+DROP TABLE IF EXISTS public.schools;
 DROP SEQUENCE IF EXISTS public.organizations_id_seq;
 DROP TABLE IF EXISTS public.organizations;
 DROP SEQUENCE IF EXISTS public.organizationeducations_id_seq;
 DROP TABLE IF EXISTS public.organizationeducations;
+DROP SEQUENCE IF EXISTS public.nqfs_id_seq;
+DROP TABLE IF EXISTS public.nqfs;
+DROP SEQUENCE IF EXISTS public.fieldofstudies_id_seq;
+DROP TABLE IF EXISTS public.fieldofstudies;
 DROP SEQUENCE IF EXISTS public.examinations_id_seq;
 DROP TABLE IF EXISTS public.examinations;
 DROP SEQUENCE IF EXISTS public.core_store_id_seq;
 DROP TABLE IF EXISTS public.core_store;
+DROP SEQUENCE IF EXISTS public.competence_id_seq;
+DROP TABLE IF EXISTS public.competence;
 DROP SEQUENCE IF EXISTS public.academies_id_seq;
 DROP TABLE IF EXISTS public.academies;
+DROP SEQUENCE IF EXISTS public.academicdegrees_id_seq;
+DROP TABLE IF EXISTS public.academicdegrees;
 DROP EXTENSION IF EXISTS pg_trgm;
 --
 -- Name: pg_trgm; Type: EXTENSION; Schema: -; Owner: 
@@ -110,6 +168,53 @@ COMMENT ON EXTENSION pg_trgm IS 'text similarity measurement and index searching
 SET default_tablespace = '';
 
 SET default_with_oids = false;
+
+--
+-- Name: academicdegrees; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.academicdegrees (
+    id integer NOT NULL,
+    identification character varying(255),
+    name_en character varying(255),
+    name_fi character varying(255),
+    name_swe character varying(255),
+    description_en text,
+    description_fi text,
+    description_swe text,
+    url character varying(255),
+    credits integer,
+    nqf integer,
+    school character varying(255),
+    fieldofstudy character varying(255),
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
+);
+
+
+ALTER TABLE public.academicdegrees OWNER TO myuser;
+
+--
+-- Name: academicdegrees_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.academicdegrees_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.academicdegrees_id_seq OWNER TO myuser;
+
+--
+-- Name: academicdegrees_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.academicdegrees_id_seq OWNED BY public.academicdegrees.id;
+
 
 --
 -- Name: academies; Type: TABLE; Schema: public; Owner: myuser
@@ -147,6 +252,52 @@ ALTER TABLE public.academies_id_seq OWNER TO myuser;
 --
 
 ALTER SEQUENCE public.academies_id_seq OWNED BY public.academies.id;
+
+
+--
+-- Name: competence; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.competence (
+    id integer NOT NULL,
+    name_en character varying(255),
+    description_en text,
+    credits integer,
+    nqf integer,
+    url character varying(255),
+    name_fi character varying(255),
+    name_swe character varying(255),
+    description_fi text,
+    description_swe text,
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone,
+    organization character varying(255),
+    identification character varying(255)
+);
+
+
+ALTER TABLE public.competence OWNER TO myuser;
+
+--
+-- Name: competence_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.competence_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.competence_id_seq OWNER TO myuser;
+
+--
+-- Name: competence_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.competence_id_seq OWNED BY public.competence.id;
 
 
 --
@@ -228,6 +379,83 @@ ALTER SEQUENCE public.examinations_id_seq OWNED BY public.examinations.id;
 
 
 --
+-- Name: fieldofstudies; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.fieldofstudies (
+    id integer NOT NULL,
+    name_fi character varying(255),
+    name_en character varying(255),
+    name_swe character varying(255),
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
+);
+
+
+ALTER TABLE public.fieldofstudies OWNER TO myuser;
+
+--
+-- Name: fieldofstudies_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.fieldofstudies_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.fieldofstudies_id_seq OWNER TO myuser;
+
+--
+-- Name: fieldofstudies_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.fieldofstudies_id_seq OWNED BY public.fieldofstudies.id;
+
+
+--
+-- Name: nqfs; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.nqfs (
+    id integer NOT NULL,
+    name_en character varying(255),
+    name_fi character varying(255),
+    name_swe character varying(255),
+    level integer,
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
+);
+
+
+ALTER TABLE public.nqfs OWNER TO myuser;
+
+--
+-- Name: nqfs_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.nqfs_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.nqfs_id_seq OWNER TO myuser;
+
+--
+-- Name: nqfs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.nqfs_id_seq OWNED BY public.nqfs.id;
+
+
+--
 -- Name: organizationeducations; Type: TABLE; Schema: public; Owner: myuser
 --
 
@@ -238,7 +466,14 @@ CREATE TABLE public.organizationeducations (
     credits integer,
     nqf integer,
     created_at timestamp with time zone,
-    updated_at timestamp with time zone
+    updated_at timestamp with time zone,
+    name_en character varying(255),
+    description_en text,
+    url character varying(255),
+    name_swe character varying(255),
+    description_fi text,
+    name_fi character varying(255),
+    description_swe text
 );
 
 
@@ -276,7 +511,13 @@ CREATE TABLE public.organizations (
     description text,
     url character varying(255),
     created_at timestamp with time zone,
-    updated_at timestamp with time zone
+    updated_at timestamp with time zone,
+    name_en character varying(255),
+    description_en text,
+    name_fi character varying(255),
+    name_swe character varying(255),
+    description_fi text,
+    description_swe text
 );
 
 
@@ -302,6 +543,48 @@ ALTER TABLE public.organizations_id_seq OWNER TO myuser;
 --
 
 ALTER SEQUENCE public.organizations_id_seq OWNED BY public.organizations.id;
+
+
+--
+-- Name: schools; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.schools (
+    id integer NOT NULL,
+    name_en character varying(255),
+    name_fi character varying(255),
+    name_swe character varying(255),
+    description_en text,
+    description_fi text,
+    description_swe text,
+    url character varying(255),
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
+);
+
+
+ALTER TABLE public.schools OWNER TO myuser;
+
+--
+-- Name: schools_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.schools_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.schools_id_seq OWNER TO myuser;
+
+--
+-- Name: schools_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.schools_id_seq OWNED BY public.schools.id;
 
 
 --
@@ -502,10 +785,24 @@ ALTER SEQUENCE public."users-permissions_user_id_seq" OWNED BY public."users-per
 
 
 --
+-- Name: academicdegrees id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.academicdegrees ALTER COLUMN id SET DEFAULT nextval('public.academicdegrees_id_seq'::regclass);
+
+
+--
 -- Name: academies id; Type: DEFAULT; Schema: public; Owner: myuser
 --
 
 ALTER TABLE ONLY public.academies ALTER COLUMN id SET DEFAULT nextval('public.academies_id_seq'::regclass);
+
+
+--
+-- Name: competence id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.competence ALTER COLUMN id SET DEFAULT nextval('public.competence_id_seq'::regclass);
 
 
 --
@@ -523,6 +820,20 @@ ALTER TABLE ONLY public.examinations ALTER COLUMN id SET DEFAULT nextval('public
 
 
 --
+-- Name: fieldofstudies id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.fieldofstudies ALTER COLUMN id SET DEFAULT nextval('public.fieldofstudies_id_seq'::regclass);
+
+
+--
+-- Name: nqfs id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.nqfs ALTER COLUMN id SET DEFAULT nextval('public.nqfs_id_seq'::regclass);
+
+
+--
 -- Name: organizationeducations id; Type: DEFAULT; Schema: public; Owner: myuser
 --
 
@@ -534,6 +845,13 @@ ALTER TABLE ONLY public.organizationeducations ALTER COLUMN id SET DEFAULT nextv
 --
 
 ALTER TABLE ONLY public.organizations ALTER COLUMN id SET DEFAULT nextval('public.organizations_id_seq'::regclass);
+
+
+--
+-- Name: schools id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.schools ALTER COLUMN id SET DEFAULT nextval('public.schools_id_seq'::regclass);
 
 
 --
@@ -572,12 +890,28 @@ ALTER TABLE ONLY public."users-permissions_user" ALTER COLUMN id SET DEFAULT nex
 
 
 --
+-- Data for Name: academicdegrees; Type: TABLE DATA; Schema: public; Owner: myuser
+--
+
+COPY public.academicdegrees (id, identification, name_en, name_fi, name_swe, description_en, description_fi, description_swe, url, credits, nqf, school, fieldofstudy, created_at, updated_at) FROM stdin;
+\.
+
+
+--
 -- Data for Name: academies; Type: TABLE DATA; Schema: public; Owner: myuser
 --
 
 COPY public.academies (id, name, description, url, created_at, updated_at) FROM stdin;
 1	Haaga-Helia	Haaga-Helia ammattikorkeakoulu kouluttaa liike-elämän ja palveluelinkeinojen asiantuntijoita sekä tutkii ja kehittää näihin aloihin liittyvää osaamista ja toimintaa. Koulutusalamme ovat liiketalous, tietotekniikka, hotelli-, ravintola- ja matkailuala, johdon assistenttityö, toimittajakoulutus, liikunta-ala sekä ammatillinen opettajankoulutus. Meille on tärkeää, että opiskelijoillamme on heti valmistuttuaan vahvat siteet työelämään. Panostamme toiminnassamme yrittäjyyteen, yhteistyöhön, innovatiivisuuteen ja kansainvälisyyteen.	https://www.haaga-helia.fi/fi/etusivu	2019-04-30 08:28:12.391+00	2019-04-30 08:28:12.413+00
 2	Metropolia	Metropolia University of Applied Sciences is the largest University of Applied Sciences in Finland situated in Helsinki metropolitan area. The university has four fields of study: culture, business, health care and social services, and technology. Teaching is also provided in English.	https://www.metropolia.fi/	2019-04-30 08:28:33.528+00	2019-04-30 08:28:33.544+00
+\.
+
+
+--
+-- Data for Name: competence; Type: TABLE DATA; Schema: public; Owner: myuser
+--
+
+COPY public.competence (id, name_en, description_en, credits, nqf, url, name_fi, name_swe, description_fi, description_swe, created_at, updated_at, organization, identification) FROM stdin;
 \.
 
 
@@ -593,16 +927,21 @@ COPY public.core_store (id, key, value, type, environment, tag) FROM stdin;
 12	plugin_users-permissions_email	{"reset_password":{"display":"Email.template.reset_password","icon":"refresh","options":{"from":{"name":"Administration Panel","email":"no-reply@strapi.io"},"response_email":"","object":"­Reset password","message":"<p>We heard that you lost your password. Sorry about that!</p>\\n\\n<p>But don’t worry! You can use the following link to reset your password:</p>\\n\\n<p><%= URL %>?code=<%= TOKEN %></p>\\n\\n<p>Thanks.</p>"}},"email_confirmation":{"display":"Email.template.email_confirmation","icon":"check-square-o","options":{"from":{"name":"Administration Panel","email":"no-reply@strapi.io"},"response_email":"","object":"Account confirmation","message":"<p>Thank you for registering!</p>\\n\\n<p>You have to confirm your email address. Please click on the link below.</p>\\n\\n<p><%= URL %>?confirmation=<%= CODE %></p>\\n\\n<p>Thanks.</p>"}}}	object		
 13	plugin_users-permissions_advanced	{"unique_email":true,"allow_register":true,"email_confirmation":false,"email_confirmation_redirection":"http://localhost:1337/admin","default_role":"authenticated"}	object		
 17	db_model_examinations	{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"},"credits":{"type":"integer"},"nqf":{"type":"integer"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
-15	db_model_organizationeducations	{"name":{"type":"string"},"description":{"type":"text"},"credits":{"type":"integer"},"nqf":{"type":"integer"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
-1	db_model_users-permissions_permission	{"type":{"type":"string","required":true,"configurable":false},"controller":{"type":"string","required":true,"configurable":false},"action":{"type":"string","required":true,"configurable":false},"enabled":{"type":"boolean","required":true,"configurable":false},"policy":{"type":"string","configurable":false},"role":{"model":"role","via":"permissions","plugin":"users-permissions","configurable":false}}	object	\N	\N
-4	db_model_users-permissions_role	{"name":{"type":"string","minLength":3,"required":true,"configurable":false},"description":{"type":"string","configurable":false},"type":{"type":"string","unique":true,"configurable":false},"permissions":{"collection":"permission","via":"role","plugin":"users-permissions","configurable":false,"isVirtual":true},"users":{"collection":"user","via":"role","configurable":false,"plugin":"users-permissions","isVirtual":true}}	object	\N	\N
-6	db_model_upload_file_morph	{"upload_file_id":{"type":"integer"},"related_id":{"type":"integer"},"related_type":{"type":"text"},"field":{"type":"text"}}	object	\N	\N
-7	plugin_content-manager_schema	{"generalSettings":{"search":true,"filters":true,"bulkActions":true,"pageEntries":10},"models":{"plugins":{"upload":{"file":{"label":"File","labelPlural":"Files","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":["created_at","updated_at"]},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"hash":{"label":"Hash","type":"string","description":"","name":"hash","editable":true,"placeholder":""},"sha256":{"label":"Sha256","type":"string","description":"","name":"sha256","editable":true,"placeholder":""},"ext":{"label":"Ext","type":"string","description":"","name":"ext","editable":true,"placeholder":""},"mime":{"label":"Mime","type":"string","description":"","name":"mime","editable":true,"placeholder":""},"size":{"label":"Size","type":"string","description":"","name":"size","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"provider":{"label":"Provider","type":"string","description":"","name":"provider","editable":true,"placeholder":""},"public_id":{"label":"Public_id","type":"string","description":"","name":"public_id","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","hash","sha256","ext","mime","size","url","provider","public_id"],"relations":[]},"info":{"name":"file","description":""},"connection":"default","collectionName":"upload_file","attributes":{"name":{"type":"string","configurable":false,"required":true},"hash":{"type":"string","configurable":false,"required":true},"sha256":{"type":"string","configurable":false},"ext":{"type":"string","configurable":false},"mime":{"type":"string","configurable":false,"required":true},"size":{"type":"string","configurable":false,"required":true},"url":{"type":"string","configurable":false,"required":true},"provider":{"type":"string","configurable":false,"required":true},"public_id":{"type":"string","configurable":false},"related":{"collection":"*","filter":"field","configurable":false}},"globalId":"UploadFile","globalName":"UploadFile","primaryKey":"id","associations":[{"alias":"related","type":"collection","related":[],"nature":"manyMorphToMany","autoPopulate":true,"filter":"field"}],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"hash":{"label":"Hash","description":"","type":"string","disabled":false,"name":"hash","sortable":true,"searchable":true},"sha256":{"label":"Sha256","description":"","type":"string","disabled":false,"name":"sha256","sortable":true,"searchable":true},"ext":{"label":"Ext","description":"","type":"string","disabled":false,"name":"ext","sortable":true,"searchable":true},"mime":{"label":"Mime","description":"","type":"string","disabled":false,"name":"mime","sortable":true,"searchable":true},"size":{"label":"Size","description":"","type":"string","disabled":false,"name":"size","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},"provider":{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},"public_id":{"label":"Public_id","description":"","type":"string","disabled":false,"name":"public_id","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Hash","description":"","type":"string","disabled":false,"name":"hash","sortable":true,"searchable":true},{"label":"Sha256","description":"","type":"string","disabled":false,"name":"sha256","sortable":true,"searchable":true},{"label":"Ext","description":"","type":"string","disabled":false,"name":"ext","sortable":true,"searchable":true}],"relations":{"related":{"alias":"related","type":"collection","related":[],"nature":"manyMorphToMany","autoPopulate":true,"filter":"field","description":"","label":"Related","displayedAttribute":"id"}}}},"users-permissions":{"permission":{"label":"Permission","labelPlural":"Permissions","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"type":{"label":"Type","type":"string","description":"","name":"type","editable":true,"placeholder":""},"controller":{"label":"Controller","type":"string","description":"","name":"controller","editable":true,"placeholder":""},"action":{"label":"Action","type":"string","description":"","name":"action","editable":true,"placeholder":""},"enabled":{"label":"Enabled","type":"boolean","description":"","name":"enabled","editable":true,"placeholder":""},"policy":{"label":"Policy","type":"string","description":"","name":"policy","editable":true,"placeholder":""}},"displayedField":"id","fields":["type","controller","action","enabled","policy"],"relations":["role"]},"info":{"name":"permission","description":""},"connection":"default","collectionName":"users-permissions_permission","attributes":{"type":{"type":"string","required":true,"configurable":false},"controller":{"type":"string","required":true,"configurable":false},"action":{"type":"string","required":true,"configurable":false},"enabled":{"type":"boolean","required":true,"configurable":false},"policy":{"type":"string","configurable":false},"role":{"model":"role","via":"permissions","plugin":"users-permissions","configurable":false}},"globalId":"UsersPermissionsPermission","globalName":"UsersPermissionsPermission","primaryKey":"id","associations":[{"alias":"role","type":"model","model":"role","via":"permissions","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"type":{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true},"controller":{"label":"Controller","description":"","type":"string","disabled":false,"name":"controller","sortable":true,"searchable":true},"action":{"label":"Action","description":"","type":"string","disabled":false,"name":"action","sortable":true,"searchable":true},"enabled":{"label":"Enabled","description":"","type":"boolean","disabled":false,"name":"enabled","sortable":true,"searchable":true},"policy":{"label":"Policy","description":"","type":"string","disabled":false,"name":"policy","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true},{"label":"Controller","description":"","type":"string","disabled":false,"name":"controller","sortable":true,"searchable":true},{"label":"Action","description":"","type":"string","disabled":false,"name":"action","sortable":true,"searchable":true},{"label":"Enabled","description":"","type":"boolean","disabled":false,"name":"enabled","sortable":true,"searchable":true}],"relations":{"role":{"alias":"role","type":"model","model":"role","via":"permissions","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Role","displayedAttribute":"name"}}},"role":{"label":"Role","labelPlural":"Roles","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"string","description":"","name":"description","editable":true,"placeholder":""},"type":{"label":"Type","type":"string","description":"","name":"type","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","type"],"relations":["permissions","users"]},"info":{"name":"role","description":""},"connection":"default","collectionName":"users-permissions_role","attributes":{"name":{"type":"string","minLength":3,"required":true,"configurable":false},"description":{"type":"string","configurable":false},"type":{"type":"string","unique":true,"configurable":false},"permissions":{"collection":"permission","via":"role","plugin":"users-permissions","configurable":false,"isVirtual":true},"users":{"collection":"user","via":"role","configurable":false,"plugin":"users-permissions","isVirtual":true}},"globalId":"UsersPermissionsRole","globalName":"UsersPermissionsRole","primaryKey":"id","associations":[{"alias":"permissions","type":"collection","collection":"permission","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions"},{"alias":"users","type":"collection","collection":"user","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"string","disabled":false,"name":"description","sortable":true,"searchable":true},"type":{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"string","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true}],"relations":{"permissions":{"alias":"permissions","type":"collection","collection":"permission","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Permissions","displayedAttribute":"type"},"users":{"alias":"users","type":"collection","collection":"user","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Users","displayedAttribute":"username"}}},"user":{"label":"User","labelPlural":"Users","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"username":{"label":"Username","type":"string","description":"","name":"username","editable":true,"placeholder":""},"email":{"label":"Email","type":"email","description":"","name":"email","editable":true,"placeholder":""},"provider":{"label":"Provider","type":"string","description":"","name":"provider","editable":true,"placeholder":""},"password":{"label":"Password","type":"password","description":"","name":"password","editable":true,"placeholder":""},"confirmed":{"label":"Confirmed","type":"boolean","description":"","name":"confirmed","editable":true,"placeholder":""},"blocked":{"label":"Blocked","type":"boolean","description":"","name":"blocked","editable":true,"placeholder":""}},"displayedField":"id","fields":["username","email","provider","password","confirmed","blocked"],"relations":["role"]},"info":{"name":"user","description":""},"connection":"default","collectionName":"users-permissions_user","attributes":{"username":{"type":"string","minLength":3,"unique":true,"configurable":false,"required":true},"email":{"type":"email","minLength":6,"configurable":false,"required":true},"provider":{"type":"string","configurable":false},"password":{"type":"password","minLength":6,"configurable":false,"private":true},"confirmed":{"type":"boolean","default":false,"configurable":false},"blocked":{"type":"boolean","default":false,"configurable":false},"role":{"model":"role","via":"users","plugin":"users-permissions","configurable":false}},"globalId":"UsersPermissionsUser","globalName":"UsersPermissionsUser","primaryKey":"id","associations":[{"alias":"role","type":"model","model":"role","via":"users","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"username":{"label":"Username","description":"","type":"string","disabled":false,"name":"username","sortable":true,"searchable":true},"email":{"label":"Email","description":"","type":"email","disabled":false,"name":"email","sortable":true,"searchable":true},"provider":{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},"password":{"label":"Password","description":"","type":"password","disabled":false,"name":"password","sortable":true,"searchable":true},"confirmed":{"label":"Confirmed","description":"","type":"boolean","disabled":false,"name":"confirmed","sortable":true,"searchable":true},"blocked":{"label":"Blocked","description":"","type":"boolean","disabled":false,"name":"blocked","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Username","description":"","type":"string","disabled":false,"name":"username","sortable":true,"searchable":true},{"label":"Email","description":"","type":"email","disabled":false,"name":"email","sortable":true,"searchable":true},{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},{"label":"Password","description":"","type":"password","disabled":false,"name":"password","sortable":true,"searchable":true}],"relations":{"role":{"alias":"role","type":"model","model":"role","via":"users","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Role","displayedAttribute":"name"}}}}},"organization":{"label":"Organization","labelPlural":"Organizations","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"text","description":"","name":"description","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","url"],"relations":[]},"info":{"name":"organization","description":""},"connection":"default","collectionName":"organizations","attributes":{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"}},"globalId":"Organization","globalName":"Organization","primaryKey":"id","associations":[],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}],"relations":{}},"organizationeducation":{"label":"Organizationeducation","labelPlural":"Organizationeducations","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"text","description":"","name":"description","editable":true,"placeholder":""},"credits":{"label":"Credits","type":"integer","description":"","name":"credits","editable":true,"placeholder":""},"nqf":{"label":"Nqf","type":"integer","description":"","name":"nqf","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","credits","nqf"],"relations":[]},"info":{"name":"organizationeducation","description":""},"connection":"default","collectionName":"organizationeducations","attributes":{"name":{"type":"string"},"description":{"type":"text"},"credits":{"type":"integer"},"nqf":{"type":"integer"}},"globalId":"Organizationeducation","globalName":"Organizationeducation","primaryKey":"id","associations":[],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},"credits":{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true},"nqf":{"label":"Nqf","description":"","type":"integer","disabled":false,"name":"nqf","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true},{"label":"Nqf","description":"","type":"integer","disabled":false,"name":"nqf","sortable":true,"searchable":true}],"relations":{}},"academy":{"label":"Academy","labelPlural":"Academies","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"text","description":"","name":"description","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","url"],"relations":[]},"info":{"name":"academy","description":""},"connection":"default","collectionName":"academies","attributes":{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"}},"globalId":"Academy","globalName":"Academy","primaryKey":"id","associations":[],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}],"relations":{}},"examination":{"label":"Examination","labelPlural":"Examinations","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"text","description":"","name":"description","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"credits":{"label":"Credits","type":"integer","description":"","name":"credits","editable":true,"placeholder":""},"nqf":{"label":"Nqf","type":"integer","description":"","name":"nqf","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","url","credits","nqf"],"relations":[]},"info":{"name":"examination","description":""},"connection":"default","collectionName":"examinations","attributes":{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"},"credits":{"type":"integer"},"nqf":{"type":"integer"}},"globalId":"Examination","globalName":"Examination","primaryKey":"id","associations":[],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},"credits":{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true},"nqf":{"label":"Nqf","description":"","type":"integer","disabled":false,"name":"nqf","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"text","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true}],"relations":{}}},"layout":{"user":{"actions":{"create":"User.create","update":"User.update","destroy":"User.destroy","deleteall":"User.destroyAll"},"attributes":{"username":{"className":"col-md-6"},"email":{"className":"col-md-6"},"resetPasswordToken":{"className":"d-none"},"role":{"className":"d-none"}}},"organization":{"attributes":{}},"organizationeducation":{"attributes":{}},"academy":{"attributes":{}},"examination":{"attributes":{}}}}	object		
-2	db_model_core_store	{"key":{"type":"string"},"value":{"type":"text"},"type":{"type":"string"},"environment":{"type":"string"},"tag":{"type":"string"}}	object	\N	\N
+15	db_model_organizationeducations	{"name_en":{"type":"string"},"description_en":{"type":"text"},"credits":{"type":"integer"},"nqf":{"type":"integer"},"url":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"description_fi":{"type":"text"},"description_swe":{"type":"text"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
 16	db_model_academies	{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
 5	db_model_upload_file	{"name":{"type":"string","configurable":false,"required":true},"hash":{"type":"string","configurable":false,"required":true},"sha256":{"type":"string","configurable":false},"ext":{"type":"string","configurable":false},"mime":{"type":"string","configurable":false,"required":true},"size":{"type":"string","configurable":false,"required":true},"url":{"type":"string","configurable":false,"required":true},"provider":{"type":"string","configurable":false,"required":true},"public_id":{"type":"string","configurable":false},"related":{"collection":"*","filter":"field","configurable":false},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
-14	db_model_organizations	{"name":{"type":"string"},"description":{"type":"text"},"url":{"type":"string"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+2	db_model_core_store	{"key":{"type":"string"},"value":{"type":"text"},"type":{"type":"string"},"environment":{"type":"string"},"tag":{"type":"string"}}	object	\N	\N
+6	db_model_upload_file_morph	{"upload_file_id":{"type":"integer"},"related_id":{"type":"integer"},"related_type":{"type":"text"},"field":{"type":"text"}}	object	\N	\N
+7	plugin_content-manager_schema	{"generalSettings":{"search":true,"filters":true,"bulkActions":true,"pageEntries":10},"models":{"plugins":{"upload":{"file":{"label":"File","labelPlural":"Files","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":["created_at","updated_at"]},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"hash":{"label":"Hash","type":"string","description":"","name":"hash","editable":true,"placeholder":""},"sha256":{"label":"Sha256","type":"string","description":"","name":"sha256","editable":true,"placeholder":""},"ext":{"label":"Ext","type":"string","description":"","name":"ext","editable":true,"placeholder":""},"mime":{"label":"Mime","type":"string","description":"","name":"mime","editable":true,"placeholder":""},"size":{"label":"Size","type":"string","description":"","name":"size","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"provider":{"label":"Provider","type":"string","description":"","name":"provider","editable":true,"placeholder":""},"public_id":{"label":"Public_id","type":"string","description":"","name":"public_id","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","hash","sha256","ext","mime","size","url","provider","public_id"],"relations":[]},"info":{"name":"file","description":""},"connection":"default","collectionName":"upload_file","attributes":{"name":{"type":"string","configurable":false,"required":true},"hash":{"type":"string","configurable":false,"required":true},"sha256":{"type":"string","configurable":false},"ext":{"type":"string","configurable":false},"mime":{"type":"string","configurable":false,"required":true},"size":{"type":"string","configurable":false,"required":true},"url":{"type":"string","configurable":false,"required":true},"provider":{"type":"string","configurable":false,"required":true},"public_id":{"type":"string","configurable":false},"related":{"collection":"*","filter":"field","configurable":false}},"globalId":"UploadFile","globalName":"UploadFile","primaryKey":"id","associations":[{"alias":"related","type":"collection","related":["Organization","School"],"nature":"manyMorphToOne","autoPopulate":true,"filter":"field"}],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"hash":{"label":"Hash","description":"","type":"string","disabled":false,"name":"hash","sortable":true,"searchable":true},"sha256":{"label":"Sha256","description":"","type":"string","disabled":false,"name":"sha256","sortable":true,"searchable":true},"ext":{"label":"Ext","description":"","type":"string","disabled":false,"name":"ext","sortable":true,"searchable":true},"mime":{"label":"Mime","description":"","type":"string","disabled":false,"name":"mime","sortable":true,"searchable":true},"size":{"label":"Size","description":"","type":"string","disabled":false,"name":"size","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},"provider":{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},"public_id":{"label":"Public_id","description":"","type":"string","disabled":false,"name":"public_id","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Hash","description":"","type":"string","disabled":false,"name":"hash","sortable":true,"searchable":true},{"label":"Sha256","description":"","type":"string","disabled":false,"name":"sha256","sortable":true,"searchable":true},{"label":"Ext","description":"","type":"string","disabled":false,"name":"ext","sortable":true,"searchable":true}],"relations":{"related":{"alias":"related","type":"collection","related":["Organization","School"],"nature":"manyMorphToOne","autoPopulate":true,"filter":"field","description":"","label":"Related","displayedAttribute":"id"}}}},"users-permissions":{"permission":{"label":"Permission","labelPlural":"Permissions","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"type":{"label":"Type","type":"string","description":"","name":"type","editable":true,"placeholder":""},"controller":{"label":"Controller","type":"string","description":"","name":"controller","editable":true,"placeholder":""},"action":{"label":"Action","type":"string","description":"","name":"action","editable":true,"placeholder":""},"enabled":{"label":"Enabled","type":"boolean","description":"","name":"enabled","editable":true,"placeholder":""},"policy":{"label":"Policy","type":"string","description":"","name":"policy","editable":true,"placeholder":""}},"displayedField":"id","fields":["type","controller","action","enabled","policy"],"relations":["role"]},"info":{"name":"permission","description":""},"connection":"default","collectionName":"users-permissions_permission","attributes":{"type":{"type":"string","required":true,"configurable":false},"controller":{"type":"string","required":true,"configurable":false},"action":{"type":"string","required":true,"configurable":false},"enabled":{"type":"boolean","required":true,"configurable":false},"policy":{"type":"string","configurable":false},"role":{"model":"role","via":"permissions","plugin":"users-permissions","configurable":false}},"globalId":"UsersPermissionsPermission","globalName":"UsersPermissionsPermission","primaryKey":"id","associations":[{"alias":"role","type":"model","model":"role","via":"permissions","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"type":{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true},"controller":{"label":"Controller","description":"","type":"string","disabled":false,"name":"controller","sortable":true,"searchable":true},"action":{"label":"Action","description":"","type":"string","disabled":false,"name":"action","sortable":true,"searchable":true},"enabled":{"label":"Enabled","description":"","type":"boolean","disabled":false,"name":"enabled","sortable":true,"searchable":true},"policy":{"label":"Policy","description":"","type":"string","disabled":false,"name":"policy","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true},{"label":"Controller","description":"","type":"string","disabled":false,"name":"controller","sortable":true,"searchable":true},{"label":"Action","description":"","type":"string","disabled":false,"name":"action","sortable":true,"searchable":true},{"label":"Enabled","description":"","type":"boolean","disabled":false,"name":"enabled","sortable":true,"searchable":true}],"relations":{"role":{"alias":"role","type":"model","model":"role","via":"permissions","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Role","displayedAttribute":"name"}}},"role":{"label":"Role","labelPlural":"Roles","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"name":{"label":"Name","type":"string","description":"","name":"name","editable":true,"placeholder":""},"description":{"label":"Description","type":"string","description":"","name":"description","editable":true,"placeholder":""},"type":{"label":"Type","type":"string","description":"","name":"type","editable":true,"placeholder":""}},"displayedField":"id","fields":["name","description","type"],"relations":["permissions","users"]},"info":{"name":"role","description":""},"connection":"default","collectionName":"users-permissions_role","attributes":{"name":{"type":"string","minLength":3,"required":true,"configurable":false},"description":{"type":"string","configurable":false},"type":{"type":"string","unique":true,"configurable":false},"permissions":{"collection":"permission","via":"role","plugin":"users-permissions","configurable":false,"isVirtual":true},"users":{"collection":"user","via":"role","configurable":false,"plugin":"users-permissions","isVirtual":true}},"globalId":"UsersPermissionsRole","globalName":"UsersPermissionsRole","primaryKey":"id","associations":[{"alias":"permissions","type":"collection","collection":"permission","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions"},{"alias":"users","type":"collection","collection":"user","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"name":{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},"description":{"label":"Description","description":"","type":"string","disabled":false,"name":"description","sortable":true,"searchable":true},"type":{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name","description":"","type":"string","disabled":false,"name":"name","sortable":true,"searchable":true},{"label":"Description","description":"","type":"string","disabled":false,"name":"description","sortable":true,"searchable":true},{"label":"Type","description":"","type":"string","disabled":false,"name":"type","sortable":true,"searchable":true}],"relations":{"permissions":{"alias":"permissions","type":"collection","collection":"permission","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Permissions","displayedAttribute":"type"},"users":{"alias":"users","type":"collection","collection":"user","via":"role","nature":"oneToMany","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Users","displayedAttribute":"username"}}},"user":{"label":"User","labelPlural":"Users","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"timestamps":false},"editDisplay":{"availableFields":{"username":{"label":"Username","type":"string","description":"","name":"username","editable":true,"placeholder":""},"email":{"label":"Email","type":"email","description":"","name":"email","editable":true,"placeholder":""},"provider":{"label":"Provider","type":"string","description":"","name":"provider","editable":true,"placeholder":""},"password":{"label":"Password","type":"password","description":"","name":"password","editable":true,"placeholder":""},"confirmed":{"label":"Confirmed","type":"boolean","description":"","name":"confirmed","editable":true,"placeholder":""},"blocked":{"label":"Blocked","type":"boolean","description":"","name":"blocked","editable":true,"placeholder":""}},"displayedField":"id","fields":["username","email","provider","password","confirmed","blocked"],"relations":["role"]},"info":{"name":"user","description":""},"connection":"default","collectionName":"users-permissions_user","attributes":{"username":{"type":"string","minLength":3,"unique":true,"configurable":false,"required":true},"email":{"type":"email","minLength":6,"configurable":false,"required":true},"provider":{"type":"string","configurable":false},"password":{"type":"password","minLength":6,"configurable":false,"private":true},"confirmed":{"type":"boolean","default":false,"configurable":false},"blocked":{"type":"boolean","default":false,"configurable":false},"role":{"model":"role","via":"users","plugin":"users-permissions","configurable":false}},"globalId":"UsersPermissionsUser","globalName":"UsersPermissionsUser","primaryKey":"id","associations":[{"alias":"role","type":"model","model":"role","via":"users","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions"}],"fields":{"username":{"label":"Username","description":"","type":"string","disabled":false,"name":"username","sortable":true,"searchable":true},"email":{"label":"Email","description":"","type":"email","disabled":false,"name":"email","sortable":true,"searchable":true},"provider":{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},"password":{"label":"Password","description":"","type":"password","disabled":false,"name":"password","sortable":true,"searchable":true},"confirmed":{"label":"Confirmed","description":"","type":"boolean","disabled":false,"name":"confirmed","sortable":true,"searchable":true},"blocked":{"label":"Blocked","description":"","type":"boolean","disabled":false,"name":"blocked","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Username","description":"","type":"string","disabled":false,"name":"username","sortable":true,"searchable":true},{"label":"Email","description":"","type":"email","disabled":false,"name":"email","sortable":true,"searchable":true},{"label":"Provider","description":"","type":"string","disabled":false,"name":"provider","sortable":true,"searchable":true},{"label":"Password","description":"","type":"password","disabled":false,"name":"password","sortable":true,"searchable":true}],"relations":{"role":{"alias":"role","type":"model","model":"role","via":"users","nature":"manyToOne","autoPopulate":true,"dominant":true,"plugin":"users-permissions","description":"","label":"Role","displayedAttribute":"name"}}}}},"competence":{"label":"Competence","labelPlural":"Competences","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name_en":{"label":"Name_en","type":"string","description":"","name":"name_en","editable":true,"placeholder":""},"description_en":{"label":"Description_en","type":"text","description":"","name":"description_en","editable":true,"placeholder":""},"credits":{"label":"Credits","type":"integer","description":"","name":"credits","editable":true,"placeholder":""},"nqf":{"label":"Nqf","type":"integer","description":"","name":"nqf","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"name_fi":{"label":"Name_fi","type":"string","description":"","name":"name_fi","editable":true,"placeholder":""},"name_swe":{"label":"Name_swe","type":"string","description":"","name":"name_swe","editable":true,"placeholder":""},"description_fi":{"label":"Description_fi","type":"text","description":"","name":"description_fi","editable":true,"placeholder":""},"description_swe":{"label":"Description_swe","type":"text","description":"","name":"description_swe","editable":true,"placeholder":""},"organization":{"label":"Organization","type":"string","description":"","name":"organization","editable":true,"placeholder":""},"identification":{"label":"Identification","type":"string","description":"","name":"identification","editable":true,"placeholder":""}},"displayedField":"id","fields":["name_en","description_en","credits","nqf","url","name_fi","name_swe","description_fi","description_swe","organization","identification"],"relations":[]},"info":{"name":"competence","description":"Järjestön koulutus"},"connection":"default","collectionName":"organizationeducations","attributes":{"name_en":{"type":"string"},"description_en":{"type":"text"},"credits":{"type":"integer"},"nqf":{"type":"integer"},"url":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"description_fi":{"type":"text"},"description_swe":{"type":"text"},"organization":{"type":"string"},"identification":{"type":"string"}},"globalId":"Competence","globalName":"Competence","primaryKey":"id","associations":[],"fields":{"name_en":{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},"description_en":{"label":"Description_en","description":"","type":"text","disabled":false,"name":"description_en","sortable":true,"searchable":true},"credits":{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true},"nqf":{"label":"Nqf","description":"","type":"integer","disabled":false,"name":"nqf","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},"name_fi":{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},"name_swe":{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true},"description_fi":{"label":"Description_fi","description":"","type":"text","disabled":false,"name":"description_fi","sortable":true,"searchable":true},"description_swe":{"label":"Description_swe","description":"","type":"text","disabled":false,"name":"description_swe","sortable":true,"searchable":true},"organization":{"label":"Organization","description":"","type":"string","disabled":false,"name":"organization","sortable":true,"searchable":true},"identification":{"label":"Identification","description":"","type":"string","disabled":false,"name":"identification","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},{"label":"Description_en","description":"","type":"text","disabled":false,"name":"description_en","sortable":true,"searchable":true},{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true},{"label":"Nqf","description":"","type":"integer","disabled":false,"name":"nqf","sortable":true,"searchable":true}],"relations":{}},"nqf":{"label":"Nqf","labelPlural":"Nqfs","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name_en":{"label":"Name_en","type":"string","description":"","name":"name_en","editable":true,"placeholder":""},"name_fi":{"label":"Name_fi","type":"string","description":"","name":"name_fi","editable":true,"placeholder":""},"name_swe":{"label":"Name_swe","type":"string","description":"","name":"name_swe","editable":true,"placeholder":""},"level":{"label":"Level","type":"integer","description":"","name":"level","editable":true,"placeholder":""}},"displayedField":"id","fields":["name_en","name_fi","name_swe","level"],"relations":[]},"info":{"name":"nqf","description":"NQF-taso (1-8)"},"connection":"default","collectionName":"nqfs","attributes":{"name_en":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"level":{"type":"integer"}},"globalId":"Nqf","globalName":"Nqf","primaryKey":"id","associations":[],"fields":{"name_en":{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},"name_fi":{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},"name_swe":{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true},"level":{"label":"Level","description":"","type":"integer","disabled":false,"name":"level","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true},{"label":"Level","description":"","type":"integer","disabled":false,"name":"level","sortable":true,"searchable":true}],"relations":{}},"fieldofstudy":{"label":"Fieldofstudy","labelPlural":"Fieldofstudies","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name_fi":{"label":"Name_fi","type":"string","description":"","name":"name_fi","editable":true,"placeholder":""},"name_en":{"label":"Name_en","type":"string","description":"","name":"name_en","editable":true,"placeholder":""},"name_swe":{"label":"Name_swe","type":"string","description":"","name":"name_swe","editable":true,"placeholder":""}},"displayedField":"id","fields":["name_fi","name_en","name_swe"],"relations":[]},"info":{"name":"fieldofstudy","description":"Ala"},"connection":"default","collectionName":"fieldofstudies","attributes":{"name_fi":{"type":"string"},"name_en":{"type":"string"},"name_swe":{"type":"string"}},"globalId":"Fieldofstudy","globalName":"Fieldofstudy","primaryKey":"id","associations":[],"fields":{"name_fi":{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},"name_en":{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},"name_swe":{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true}],"relations":{}},"academicdegree":{"label":"Academicdegree","labelPlural":"Academicdegrees","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"identification":{"label":"Identification","type":"string","description":"","name":"identification","editable":true,"placeholder":""},"name_en":{"label":"Name_en","type":"string","description":"","name":"name_en","editable":true,"placeholder":""},"name_fi":{"label":"Name_fi","type":"string","description":"","name":"name_fi","editable":true,"placeholder":""},"name_swe":{"label":"Name_swe","type":"string","description":"","name":"name_swe","editable":true,"placeholder":""},"description_en":{"label":"Description_en","type":"text","description":"","name":"description_en","editable":true,"placeholder":""},"description_fi":{"label":"Description_fi","type":"text","description":"","name":"description_fi","editable":true,"placeholder":""},"description_swe":{"label":"Description_swe","type":"text","description":"","name":"description_swe","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"credits":{"label":"Credits","type":"integer","description":"","name":"credits","editable":true,"placeholder":""},"nqf":{"label":"Nqf","type":"integer","description":"","name":"nqf","editable":true,"placeholder":""},"school":{"label":"School","type":"string","description":"","name":"school","editable":true,"placeholder":""},"fieldofstudy":{"label":"Fieldofstudy","type":"string","description":"","name":"fieldofstudy","editable":true,"placeholder":""}},"displayedField":"id","fields":["identification","name_en","name_fi","name_swe","description_en","description_fi","description_swe","url","credits","nqf","school","fieldofstudy"],"relations":[]},"info":{"name":"academicdegree","description":"Oppilaitosten tutkinnot"},"connection":"default","collectionName":"academicdegrees","attributes":{"identification":{"type":"string"},"name_en":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"description_en":{"type":"text"},"description_fi":{"type":"text"},"description_swe":{"type":"text"},"url":{"type":"string"},"credits":{"type":"integer"},"nqf":{"type":"integer"},"school":{"type":"string"},"fieldofstudy":{"type":"string"}},"globalId":"Academicdegree","globalName":"Academicdegree","primaryKey":"id","associations":[],"fields":{"identification":{"label":"Identification","description":"","type":"string","disabled":false,"name":"identification","sortable":true,"searchable":true},"name_en":{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},"name_fi":{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},"name_swe":{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true},"description_en":{"label":"Description_en","description":"","type":"text","disabled":false,"name":"description_en","sortable":true,"searchable":true},"description_fi":{"label":"Description_fi","description":"","type":"text","disabled":false,"name":"description_fi","sortable":true,"searchable":true},"description_swe":{"label":"Description_swe","description":"","type":"text","disabled":false,"name":"description_swe","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true},"credits":{"label":"Credits","description":"","type":"integer","disabled":false,"name":"credits","sortable":true,"searchable":true},"nqf":{"label":"Nqf","description":"","type":"integer","disabled":false,"name":"nqf","sortable":true,"searchable":true},"school":{"label":"School","description":"","type":"string","disabled":false,"name":"school","sortable":true,"searchable":true},"fieldofstudy":{"label":"Fieldofstudy","description":"","type":"string","disabled":false,"name":"fieldofstudy","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Identification","description":"","type":"string","disabled":false,"name":"identification","sortable":true,"searchable":true},{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true}],"relations":{}},"school":{"label":"School","labelPlural":"Schools","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name_en":{"label":"Name_en","type":"string","description":"","name":"name_en","editable":true,"placeholder":""},"name_fi":{"label":"Name_fi","type":"string","description":"","name":"name_fi","editable":true,"placeholder":""},"name_swe":{"label":"Name_swe","type":"string","description":"","name":"name_swe","editable":true,"placeholder":""},"description_en":{"label":"Description_en","type":"text","description":"","name":"description_en","editable":true,"placeholder":""},"description_fi":{"label":"Description_fi","type":"text","description":"","name":"description_fi","editable":true,"placeholder":""},"description_swe":{"label":"Description_swe","type":"text","description":"","name":"description_swe","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"logo":{"description":"","editable":true,"label":"Logo","multiple":false,"name":"logo","placeholder":"","type":"file","disabled":false}},"displayedField":"id","fields":["name_en","name_fi","name_swe","description_en","description_fi","description_swe","url","logo"],"relations":[]},"info":{"name":"school","description":"Oppilaitokset"},"connection":"default","collectionName":"schools","attributes":{"name_en":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"description_en":{"type":"text"},"description_fi":{"type":"text"},"description_swe":{"type":"text"},"url":{"type":"string"},"logo":{"model":"file","via":"related","plugin":"upload"}},"globalId":"School","globalName":"School","primaryKey":"id","associations":[{"alias":"logo","type":"model","model":"file","via":"related","nature":"oneToManyMorph","autoPopulate":true,"dominant":true,"plugin":"upload","filter":"field"}],"fields":{"name_en":{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},"name_fi":{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},"name_swe":{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true},"description_en":{"label":"Description_en","description":"","type":"text","disabled":false,"name":"description_en","sortable":true,"searchable":true},"description_fi":{"label":"Description_fi","description":"","type":"text","disabled":false,"name":"description_fi","sortable":true,"searchable":true},"description_swe":{"label":"Description_swe","description":"","type":"text","disabled":false,"name":"description_swe","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true},{"label":"Description_en","description":"","type":"text","disabled":false,"name":"description_en","sortable":true,"searchable":true}],"relations":{"logo":{"alias":"logo","type":"model","model":"file","via":"related","nature":"oneToManyMorph","autoPopulate":true,"dominant":true,"plugin":"upload","filter":"field","description":"","label":"Logo","displayedAttribute":"name"}}},"organization":{"label":"Organization","labelPlural":"Organizations","orm":"bookshelf","search":true,"filters":true,"bulkActions":true,"pageEntries":10,"defaultSort":"id","sort":"ASC","options":{"increments":true,"timestamps":["created_at","updated_at"],"comment":""},"editDisplay":{"availableFields":{"name_en":{"label":"Name_en","type":"string","description":"","name":"name_en","editable":true,"placeholder":""},"name_fi":{"label":"Name_fi","type":"string","description":"","name":"name_fi","editable":true,"placeholder":""},"name_swe":{"label":"Name_swe","type":"string","description":"","name":"name_swe","editable":true,"placeholder":""},"description_fi":{"label":"Description_fi","type":"text","description":"","name":"description_fi","editable":true,"placeholder":""},"description_en":{"label":"Description_en","type":"text","description":"","name":"description_en","editable":true,"placeholder":""},"description_swe":{"label":"Description_swe","type":"text","description":"","name":"description_swe","editable":true,"placeholder":""},"url":{"label":"Url","type":"string","description":"","name":"url","editable":true,"placeholder":""},"logo":{"description":"","editable":true,"label":"Logo","multiple":false,"name":"logo","placeholder":"","type":"file","disabled":false}},"displayedField":"id","fields":["name_en","name_fi","name_swe","description_fi","description_en","description_swe","url","logo"],"relations":[]},"info":{"name":"organization","description":"Järjestöt"},"connection":"default","collectionName":"organizations","attributes":{"name_en":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"description_fi":{"type":"text"},"description_en":{"type":"text"},"description_swe":{"type":"text"},"url":{"type":"string"},"logo":{"model":"file","via":"related","plugin":"upload"}},"globalId":"Organization","globalName":"Organization","primaryKey":"id","associations":[{"alias":"logo","type":"model","model":"file","via":"related","nature":"oneToManyMorph","autoPopulate":true,"dominant":true,"plugin":"upload","filter":"field"}],"fields":{"name_en":{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},"name_fi":{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},"name_swe":{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true},"description_fi":{"label":"Description_fi","description":"","type":"text","disabled":false,"name":"description_fi","sortable":true,"searchable":true},"description_en":{"label":"Description_en","description":"","type":"text","disabled":false,"name":"description_en","sortable":true,"searchable":true},"description_swe":{"label":"Description_swe","description":"","type":"text","disabled":false,"name":"description_swe","sortable":true,"searchable":true},"url":{"label":"Url","description":"","type":"string","disabled":false,"name":"url","sortable":true,"searchable":true}},"listDisplay":[{"name":"id","label":"Id","type":"string","sortable":true,"searchable":true},{"label":"Name_en","description":"","type":"string","disabled":false,"name":"name_en","sortable":true,"searchable":true},{"label":"Name_fi","description":"","type":"string","disabled":false,"name":"name_fi","sortable":true,"searchable":true},{"label":"Name_swe","description":"","type":"string","disabled":false,"name":"name_swe","sortable":true,"searchable":true},{"label":"Description_fi","description":"","type":"text","disabled":false,"name":"description_fi","sortable":true,"searchable":true}],"relations":{"logo":{"alias":"logo","type":"model","model":"file","via":"related","nature":"oneToManyMorph","autoPopulate":true,"dominant":true,"plugin":"upload","filter":"field","description":"","label":"Logo","displayedAttribute":"name"}}}},"layout":{"user":{"actions":{"create":"User.create","update":"User.update","destroy":"User.destroy","deleteall":"User.destroyAll"},"attributes":{"username":{"className":"col-md-6"},"email":{"className":"col-md-6"},"resetPasswordToken":{"className":"d-none"},"role":{"className":"d-none"}}},"competence":{"attributes":{}},"nqf":{"attributes":{}},"fieldofstudy":{"attributes":{}},"academicdegree":{"attributes":{}},"school":{"attributes":{}},"organization":{"attributes":{}}}}	object		
+21	db_model_academicdegrees	{"identification":{"type":"string"},"name_en":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"description_en":{"type":"text"},"description_fi":{"type":"text"},"description_swe":{"type":"text"},"url":{"type":"string"},"credits":{"type":"integer"},"nqf":{"type":"integer"},"school":{"type":"string"},"fieldofstudy":{"type":"string"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+4	db_model_users-permissions_role	{"name":{"type":"string","minLength":3,"required":true,"configurable":false},"description":{"type":"string","configurable":false},"type":{"type":"string","unique":true,"configurable":false},"permissions":{"collection":"permission","via":"role","plugin":"users-permissions","configurable":false,"isVirtual":true},"users":{"collection":"user","via":"role","configurable":false,"plugin":"users-permissions","isVirtual":true}}	object	\N	\N
 3	db_model_users-permissions_user	{"username":{"type":"string","minLength":3,"unique":true,"configurable":false,"required":true},"email":{"type":"email","minLength":6,"configurable":false,"required":true},"provider":{"type":"string","configurable":false},"password":{"type":"password","minLength":6,"configurable":false,"private":true},"resetPasswordToken":{"type":"string","configurable":false,"private":true},"confirmed":{"type":"boolean","default":false,"configurable":false},"blocked":{"type":"boolean","default":false,"configurable":false},"role":{"model":"role","via":"users","plugin":"users-permissions","configurable":false}}	object	\N	\N
+1	db_model_users-permissions_permission	{"type":{"type":"string","required":true,"configurable":false},"controller":{"type":"string","required":true,"configurable":false},"action":{"type":"string","required":true,"configurable":false},"enabled":{"type":"boolean","required":true,"configurable":false},"policy":{"type":"string","configurable":false},"role":{"model":"role","via":"permissions","plugin":"users-permissions","configurable":false}}	object	\N	\N
+19	db_model_nqfs	{"name_en":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"level":{"type":"integer"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+20	db_model_fieldofstudies	{"name_fi":{"type":"string"},"name_en":{"type":"string"},"name_swe":{"type":"string"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+14	db_model_organizations	{"name_en":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"description_fi":{"type":"text"},"description_en":{"type":"text"},"description_swe":{"type":"text"},"url":{"type":"string"},"logo":{"model":"file","via":"related","plugin":"upload"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+22	db_model_schools	{"name_en":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"description_en":{"type":"text"},"description_fi":{"type":"text"},"description_swe":{"type":"text"},"url":{"type":"string"},"logo":{"model":"file","via":"related","plugin":"upload"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
+18	db_model_competence	{"name_en":{"type":"string"},"description_en":{"type":"text"},"credits":{"type":"integer"},"nqf":{"type":"integer"},"url":{"type":"string"},"name_fi":{"type":"string"},"name_swe":{"type":"string"},"description_fi":{"type":"text"},"description_swe":{"type":"text"},"organization":{"type":"string"},"identification":{"type":"string"},"created_at":{"type":"timestamp"},"updated_at":{"type":"timestampUpdate"}}	object	\N	\N
 \.
 
 
@@ -616,12 +955,41 @@ COPY public.examinations (id, name, description, url, credits, nqf, created_at, 
 
 
 --
+-- Data for Name: fieldofstudies; Type: TABLE DATA; Schema: public; Owner: myuser
+--
+
+COPY public.fieldofstudies (id, name_fi, name_en, name_swe, created_at, updated_at) FROM stdin;
+1	Humanistiset alat ja teologia	\N	\N	2019-05-07 09:32:46.427+00	2019-05-07 09:32:46.441+00
+2	Kasvatusala	\N	\N	2019-05-07 09:32:52.448+00	2019-05-07 09:32:52.46+00
+3	Kauppa, hallinto ja oikeustiede	\N	\N	2019-05-07 09:33:01.518+00	2019-05-07 09:33:01.528+00
+4	Luonnontieteet, matematiikka ja tilastotiede	\N	\N	2019-05-07 09:33:12.355+00	2019-05-07 09:33:12.368+00
+5	Farmasia, hammaslääketiede ja lääketiede	\N	\N	2019-05-07 09:33:22.819+00	2019-05-07 09:33:22.832+00
+6	Maa- ja metsätaloustiede, eläinlääketiede	\N	\N	2019-05-07 09:33:33.309+00	2019-05-07 09:33:33.321+00
+7	Palvelualat: liikuntatiede, sotilasala	\N	\N	2019-05-07 09:33:45.149+00	2019-05-07 09:33:45.164+00
+8	Sosiaalitieteet, journalistiikka ja viestintä	\N	\N	2019-05-07 09:33:56.027+00	2019-05-07 09:33:56.038+00
+9	Taiteet ja kulttuuri	\N	\N	2019-05-07 09:34:03.203+00	2019-05-07 09:34:03.214+00
+10	Tekniikka, teollisuus ja rakentaminen	\N	\N	2019-05-07 09:34:10.767+00	2019-05-07 09:34:10.785+00
+11	Tietojenkäsittely, tietotekniikka (ICT) ja informaatiotutkimus	\N	\N	2019-05-07 09:34:25.498+00	2019-05-07 09:34:25.511+00
+12	Terveys- ja hyvinvointi	\N	\N	2019-05-07 09:34:31.882+00	2019-05-07 09:34:31.911+00
+13	Yhteiskuntatieteet	\N	\N	2019-05-07 09:34:37.367+00	2019-05-07 09:34:37.382+00
+\.
+
+
+--
+-- Data for Name: nqfs; Type: TABLE DATA; Schema: public; Owner: myuser
+--
+
+COPY public.nqfs (id, name_en, name_fi, name_swe, level, created_at, updated_at) FROM stdin;
+\.
+
+
+--
 -- Data for Name: organizationeducations; Type: TABLE DATA; Schema: public; Owner: myuser
 --
 
-COPY public.organizationeducations (id, name, description, credits, nqf, created_at, updated_at) FROM stdin;
-1	Ensiapukoulutus	Näin opit tyrehdyttämään vuotavan haavan.	3	5	2019-04-30 08:30:55.956+00	2019-04-30 08:30:55.968+00
-2	Partiojohtajan perustutkinto	Partiojohtajan perustutkinnolla osaat johtaa pientä ryhmää (1-5) henkilöä.	3	8	2019-04-30 08:31:37.607+00	2019-04-30 08:31:37.63+00
+COPY public.organizationeducations (id, name, description, credits, nqf, created_at, updated_at, name_en, description_en, url, name_swe, description_fi, name_fi, description_swe) FROM stdin;
+1	Ensiapukoulutus	Näin opit tyrehdyttämään vuotavan haavan.	3	5	2019-04-30 08:30:55.956+00	2019-04-30 08:30:55.968+00	\N	\N	\N	\N	\N	\N	\N
+2	Partiojohtajan perustutkinto	Partiojohtajan perustutkinnolla osaat johtaa pientä ryhmää (1-5) henkilöä.	3	8	2019-04-30 08:31:37.607+00	2019-04-30 08:31:37.63+00	\N	\N	\N	\N	\N	\N	\N
 \.
 
 
@@ -629,9 +997,23 @@ COPY public.organizationeducations (id, name, description, credits, nqf, created
 -- Data for Name: organizations; Type: TABLE DATA; Schema: public; Owner: myuser
 --
 
-COPY public.organizations (id, name, description, url, created_at, updated_at) FROM stdin;
-3	Martat	Martat on kotien ja perheiden hyvinvointia ja kotitalouden arvostusta edistävä kansalaisjärjestö. Tule mukaan monipuoliseen toimintaamme!	https://www.martat.fi/	2019-04-30 08:29:18.916+00	2019-04-30 08:29:18.944+00
-4	Partio	Partio on hauska ja monipuolinen harrastus, joka sopii kaikille. Partiossa leikitään, pelataan, retkeillään, leireillään, opitaan ja saadaan uusia kavereita.	https://www.partio.fi	2019-04-30 08:30:30.583+00	2019-04-30 08:30:30.595+00
+COPY public.organizations (id, name, description, url, created_at, updated_at, name_en, description_en, name_fi, name_swe, description_fi, description_swe) FROM stdin;
+5	\N	\N	https://www.martat.fi/	2019-05-07 10:01:37.725+00	2019-05-07 10:01:37.752+00	The Marthas	The Martha Organization is a Finnish home economics organization, founded in 1899 to promote well-being and quality of life in the home. It carries out cultural and civic education and does advocacy work in Finland.	Martat	\N	Martat toimivat valtakunnallisesti ja yhdistyksiä ja marttaryhmiä on melkein jokaisessa Suomen kunnassa. Piirien opetuskeittiöitä on 16 kaupungissa ja kurssejamme järjestetään ympäri vuoden. Pääset siis helposti mukaan – ehkä innostut itsekin vetämään marttatoimintaa sinua innostavan aiheen parissa!	\N
+7	\N	\N	https://www.partio.fipartio	2019-05-07 10:02:11.827+00	2019-05-07 10:03:05.893+00	Scout	Guiding and Scouting is a wonderful means of learning new things about nature, yourself, other people and your own living environment. You get to pick up new things by doing them yourself instead of reading about them in books. Guiding and Scouting is all about doing things together: hiking, skiing, canoeing, sailing, practising first aid, making crafts and honing your woodcraft skills in the great outdoors. Guiding and Scouting is a hobby where each individual can truly make a difference!\nGuiding and Scouting is for everyone	Partio	\N	Partio on hauska ja monipuolinen harrastus, joka sopii kaikille. Partiossa leikitään, pelataan, retkeillään, leireillään, opitaan, saadaan uusia kavereita ja koetaan ikimuistoisia elämyksiä. Nuorimmat partiolaiset ovat noin 7-vuotiaita ja yläikärajaa ei ole. Tule mukaan, niin tiedät mikä kaikki on #parastapartiossa!	Scouting är en rolig, mångsidig och nyttig hobby för barn. Scouting är små och stora äventyr som du kan uppleva med dina vänner. Verksamheten sker både ute och inne. Inom scouterna får du till exempel pyssla, spela, tillreda mat, göra utflykter i naturen, delta i läger, vandra och segla. En viktig del är gemenskapen där ingen blir lämnad utanför och tankesättet “learning by doing” som genomsyrar hela verksamheten. Det finns en plats för alla, du är välkommen som du är – också som vuxen. Scouting stöder barnets fostran och uppmuntrar till att utvecklas både som individ och som en del av en grupp. Vi lär oss vardags- och medborgarfärdigheter, problemlösning och ledarskap.
+8	\N	\N	https://www.judoliitto.fi	2019-05-07 10:04:35.603+00	2019-05-07 10:04:35.622+00	Finnish Judo Association	\N	Suomen Judoliitto	\N	Suomen Judoliitto ry on perustettu vuonna 1958. Vuodesta 1963 lähtien Judoliitto on toiminut suomalaisten judoseurojen keskusjärjestönä. Judoliitossa on 122 jäsenseuraa.\n\nJudoliitto on Kansainvälisen Judoliiton (IJF) ja Euroopan Judoliiton (EJU) jäsen. Judoliitto on jäsenenä Suomen Olympiakomiteassa, Suomen Paralympiakomiteassa ja Suomen Urheilutyönantajissa.	\N
+\.
+
+
+--
+-- Data for Name: schools; Type: TABLE DATA; Schema: public; Owner: myuser
+--
+
+COPY public.schools (id, name_en, name_fi, name_swe, description_en, description_fi, description_swe, url, created_at, updated_at) FROM stdin;
+1	Haaga-Helia University of Applied Sciences	Haaga-Helia Ammattikorkeakoulu	\N	Haaga-Helia is a strongly business orientated university of applied sciences in Finland. Through education, research and development, we prepare professionals for business and services. We focus on co-operation, entrepreneurship, innovation and internationality.	Haaga-Helia ammattikorkeakoulu kouluttaa liike-elämän ja palveluelinkeinojen asiantuntijoita sekä tutkii ja kehittää näihin aloihin liittyvää osaamista ja toimintaa. Koulutusalamme ovat liiketalous, tietotekniikka, hotelli-, ravintola- ja matkailuala, johdon assistenttityö, toimittajakoulutus, liikunta-ala sekä ammatillinen opettajankoulutus. Meille on tärkeää, että opiskelijoillamme on heti valmistuttuaan vahvat siteet työelämään. Panostamme toiminnassamme yrittäjyyteen, yhteistyöhön, innovatiivisuuteen ja kansainvälisyyteen.	\N	http://www.haaga-helia.fi	2019-05-07 09:38:47.727+00	2019-05-07 09:38:47.75+00
+3	University of Helsinki	Helsingin yliopisto	\N	The University of Helsinki seeks solutions for global challenges and creates new ways of thinking for the best of humanity. Through the power of science and research, the University has contributed to society, education and welfare since 1640. We have educated nine presidents and thousands of people at the top of politics, science, culture and economics. Not to mention four Nobel prize winners.	Helsingin yliopisto on Suomen suurin ja vanhin tiedekorkeakoulu. Vuodesta 1640 se on ollut mukana luomassa reilua ja tasa-arvoista yhteiskuntaa, jota monilla mittareilla pidetään maailman parhaana. Tänään monitieteinen tiedeyhteisö ratkoo ongelmia, jotka koskettavat meistä jokaista, myös kansainvälisesti. 40 000 opiskelijan ja työntekijän tiedeyhteisö synnyttää ratkaisuja, jotka muotoilevat planeettamme ja koko ihmiskunnan tulevaisuutta.	Sedan år 1640 har vi varit den finländska civilisationens och det nya tänkandets vagga. Nu hör vi till den bästa procenten bland världens mångvetenskapliga universitet.	https://www.helsinki.fi/fi/yliopisto	2019-05-07 09:42:25.038+00	2019-05-07 09:42:25.055+00
+2	Metropolia University	Metropolia Ammattikorkeakoulu	\N	Metropolia University of Applied Sciences, Finland’s largest university of applied sciences, educates the professionals of tomorrow in the fields of Business, Culture, Health care and Social services, and Technology.\n\nIn our community people and worlds meet to create insight, expertise and well-being for both the professional life and life in general. You can count on Metropolia as a reliable partner and an innovator in higher education. Through cooperation we discover new ideas and solutions to build a better future.	Metropolia on pääkaupunkiseudulla toimiva kansainvälinen ja monialainen ammattikorkeakoulu. Koulutamme kulttuurin, liiketalouden, sosiaali- ja terveysalan sekä tekniikan asiantuntijoita ja kehittäjiä. Muodostamme yhteisön, jossa erilaiset ihmiset ja maailmat kohtaavat ja joka synnyttää oivalluksia ja osaamista työhön ja hyvinvointia elämään. Olemme vastuullinen kumppani ja korkeakoulutuksen uudistaja, joka yhteistyössä löytää uusia ratkaisuja ja rakentaa parempaa tulevaisuutta.\n\nVuoteen 2020 ulottuva strategiamme tähtää voimakkaasti uudistumiseen. Siinä korostuu tavoite vahvistaa Metropolian yhtenäisyyttä, osaamisen kehittämistä, kilpailukykyä ja yhteiskunnallista vaikuttavuutta. Tahtotilanamme on olla osaamisen rohkea uudistaja ja tulevaisuuden aktiivinen rakentaja.\n\nKeskitymme tulevina vuosina laadukkaaseen oppimiseen ja työelämäyhteistyöhön. Haluamme uudistaa toimintakulttuurimme ja osaamistamme digitalisaation sekä kehittyvien kampustemme myötä. Tutkimus-, kehittämis- ja innovaatiotoiminnassa sekä liiketoiminnassa haemme kasvua erityisesti vaikuttavuudessa ja ulkoisessa rahoituksessa.	\N	https://www.metropolia.fi/	2019-05-07 09:40:58.1+00	2019-05-07 09:42:48.873+00
+4	Aalto University	Aalto-yliopisto	\N	Aalto University is a multidisciplinary community of bold thinkers, where science and art meet technology and business. We are committed to identifying and solving grand societal challenges and building an innovative future.	Aalto-yliopisto on monialainen tiedeyhteisö, jossa tiede ja taide kohtaavat tekniikan ja talouden. Rakennamme innovatiivista yhteiskuntaa korkeatasoisen tutkimuksen, opetuksen ja taiteellisen toiminnan keinoin.	Aalto-universitetet är en flervetenskaplig gemenskap av modiga tänkare, där konst och vetenskap möter teknik och ekonomi. Vi bygger ett innovativt samhälle med hjälp av högklassig forskning, undervisning och konstnärlig verksamhet. 	https://www.aalto.fi/	2019-05-07 09:44:40.537+00	2019-05-07 09:44:40.574+00
+5	Laurea University Of Applied Sciences	Laurea-ammattikorkeakoulu	\N	Laurea University of Applied Sciences operates in Uusimaa region at six different campuses. There are about 7800 students, 500 staff members and more than 24 000 alumni in our community.	Olemme kuudella kampuksella Uudellamaalla toimiva ammattikorkeakoulu. Yhteisöömme kuuluu noin 7 800 opiskelijaa, 500 henkilökunnan jäsentä sekä yli 24 000 alumnia.	\N	https://www.laurea.fi	2019-05-07 09:45:57.785+00	2019-05-07 09:45:57.803+00
 \.
 
 
@@ -640,6 +1022,15 @@ COPY public.organizations (id, name, description, url, created_at, updated_at) F
 --
 
 COPY public.upload_file (id, name, hash, sha256, ext, mime, size, url, provider, public_id, created_at, updated_at) FROM stdin;
+1	haagahelialogo.png	b67fa8244f1147699bd6bfe4b1a437eb	oJLfTJZQee80kAUoxiEj8QRUy02Ls12017yJ79Gi1n0	.png	image/png	4.25	/uploads/b67fa8244f1147699bd6bfe4b1a437eb.png	local	\N	2019-05-07 09:38:47.781+00	2019-05-07 09:38:47.81+00
+2	hy_logo_black.png	0c76b641ae404f5090ede7a8a2132bfc	Jw8HIGrzvLv3I59z2Lf9fkX5ccA_QqoIlpQAsi8-bKA	.png	image/png	14.33	/uploads/0c76b641ae404f5090ede7a8a2132bfc.png	local	\N	2019-05-07 09:42:25.079+00	2019-05-07 09:42:25.1+00
+3	Metropolia_Ammattikorkeakoulu_logo.svg.png	d7b49103ed4646029fb6774fb9c1d36a	GtJQj7AHcVdJGeJIk8g8dYfA3G9_RD6q36DaUUlI1Ig	.png	image/png	76.80	/uploads/d7b49103ed4646029fb6774fb9c1d36a.png	local	\N	2019-05-07 09:42:48.897+00	2019-05-07 09:42:48.918+00
+4	Aalto-yliopiston_logo.svg.png	f715e5f043344961baa643bda7f83aa0	k7KFCHoYZNnfdN_PiSqP4tlfa91Pv6nIbZDrindt3dA	.png	image/png	31.65	/uploads/f715e5f043344961baa643bda7f83aa0.png	local	\N	2019-05-07 09:44:40.618+00	2019-05-07 09:44:40.646+00
+5	250px-Neliötunnus_Laurea-ammattikorkeakoulu.png	c9921e4aded94c54a7c1fc203d09ad9a	ns2Gqk0D1-47YXb1UmRn5uZp6U0PdgJtlIt2-d8qujY	.png	image/png	16.07	/uploads/c9921e4aded94c54a7c1fc203d09ad9a.png	local	\N	2019-05-07 09:45:57.829+00	2019-05-07 09:45:57.851+00
+6	syd_n_martat_martat_auttaa-1.jpg	e644e424b9674a4ea64ef04742bd473e	atyftPrfHpVJI-RBDFkemgst--4hskqemT2udPP2V4Y	.jpg	image/jpeg	225.90	/uploads/e644e424b9674a4ea64ef04742bd473e.jpg	local	\N	2019-05-07 09:55:55.098+00	2019-05-07 09:55:55.124+00
+7	syd_n_martat_martat_auttaa-1.jpg	388ddc8752c54df6aaa2d0019bb5c0f7	atyftPrfHpVJI-RBDFkemgst--4hskqemT2udPP2V4Y	.jpg	image/jpeg	225.90	/uploads/388ddc8752c54df6aaa2d0019bb5c0f7.jpg	local	\N	2019-05-07 10:01:37.788+00	2019-05-07 10:01:37.81+00
+8	partio.png	c483df0b2def4ff2bab60a24f8633374	TE9ZyTC083vgQZ27nV57uCQe8Sxd0PGCkVe2wDdC57g	.png	image/png	7.96	/uploads/c483df0b2def4ff2bab60a24f8633374.png	local	\N	2019-05-07 10:03:05.923+00	2019-05-07 10:03:05.944+00
+9	judoliitto.jpg	c7fc232ad6c640859ae83b7592cad6af	sGVs0lJ90YuYyHxpaq9aXcOrvO4jg4xpY0CJgUqxR_Q	.jpg	image/jpeg	21.95	/uploads/c7fc232ad6c640859ae83b7592cad6af.jpg	local	\N	2019-05-07 10:04:35.651+00	2019-05-07 10:04:35.671+00
 \.
 
 
@@ -648,6 +1039,15 @@ COPY public.upload_file (id, name, hash, sha256, ext, mime, size, url, provider,
 --
 
 COPY public.upload_file_morph (id, upload_file_id, related_id, related_type, field) FROM stdin;
+1	1	1	schools	logo
+2	2	3	schools	logo
+3	3	2	schools	logo
+4	4	4	schools	logo
+5	5	5	schools	logo
+6	6	3	organizations	logo
+7	7	5	organizations	logo
+8	8	7	organizations	logo
+9	9	8	organizations	logo
 \.
 
 
@@ -761,198 +1161,234 @@ COPY public."users-permissions_permission" (id, type, controller, action, enable
 121	users-permissions	auth	changepassword	f		2
 131	users-permissions	user	destroy	f		2
 141	users-permissions	userspermissions	index	f		2
-151	content-manager	contentmanager	models	f		3
-161	content-type-builder	contenttypebuilder	getmodel	f		3
-171	email	email	updatesettings	f		3
-181	settings-manager	settingsmanager	deletelanguage	f		3
-191	upload	upload	findone	f		3
-201	users-permissions	user	find	f		3
-211	users-permissions	userspermissions	getpermissions	f		3
-221	users-permissions	userspermissions	updateemailtemplate	f		3
 102	settings-manager	settingsmanager	databasemodel	f		2
 112	upload	upload	getenvironments	f		2
 122	users-permissions	auth	connect	t		2
 132	users-permissions	user	destroyall	f		2
 142	users-permissions	userspermissions	init	t		2
-152	content-manager	contentmanager	find	f		3
-162	content-type-builder	contenttypebuilder	getconnections	f		3
-172	settings-manager	settingsmanager	menu	f		3
-182	settings-manager	settingsmanager	createdatabase	f		3
-192	upload	upload	count	f		3
-202	users-permissions	user	me	t		3
-212	users-permissions	userspermissions	getpolicies	f		3
-222	users-permissions	userspermissions	getadvancedsettings	f		3
 103	settings-manager	settingsmanager	get	f		2
 113	upload	upload	getsettings	f		2
 123	users-permissions	auth	forgotpassword	f		2
 133	users-permissions	userspermissions	createrole	f		2
 143	users-permissions	userspermissions	searchusers	f		2
-153	content-manager	contentmanager	count	f		3
-163	content-type-builder	contenttypebuilder	createmodel	f		3
-173	settings-manager	settingsmanager	environments	f		3
-183	settings-manager	settingsmanager	updatedatabase	f		3
-193	upload	upload	destroy	f		3
-203	users-permissions	user	findone	f		3
-213	users-permissions	userspermissions	getrole	f		3
-223	users-permissions	userspermissions	updateadvancedsettings	f		3
 104	settings-manager	settingsmanager	update	f		2
 114	upload	upload	updatesettings	f		2
 124	users-permissions	auth	register	f		2
 134	users-permissions	userspermissions	deleteprovider	f		2
 144	users-permissions	userspermissions	updaterole	f		2
-154	content-manager	contentmanager	findone	f		3
-164	content-type-builder	contenttypebuilder	updatemodel	f		3
-174	settings-manager	settingsmanager	languages	f		3
-184	settings-manager	settingsmanager	deletedatabase	f		3
-194	upload	upload	search	f		3
-204	users-permissions	user	create	f		3
-214	users-permissions	userspermissions	getroles	f		3
-224	users-permissions	userspermissions	getproviders	f		3
 105	settings-manager	settingsmanager	createlanguage	f		2
 115	upload	upload	find	f		2
 125	users-permissions	auth	emailconfirmation	f		2
 135	users-permissions	userspermissions	deleterole	f		2
 145	users-permissions	userspermissions	getemailtemplate	f		2
-155	content-manager	contentmanager	create	f		3
-165	content-type-builder	contenttypebuilder	deletemodel	f		3
-175	settings-manager	settingsmanager	databases	f		3
-185	settings-manager	settingsmanager	autoreload	t		3
-195	users-permissions	auth	callback	t		3
-205	users-permissions	user	update	f		3
-215	users-permissions	userspermissions	getroutes	f		3
-225	users-permissions	userspermissions	updateproviders	f		3
 106	settings-manager	settingsmanager	deletelanguage	f		2
 116	upload	upload	findone	f		2
 126	users-permissions	user	find	f		2
 136	users-permissions	userspermissions	getpermissions	f		2
 146	users-permissions	userspermissions	updateemailtemplate	f		2
-156	content-manager	contentmanager	update	f		3
-166	content-type-builder	contenttypebuilder	autoreload	t		3
-176	settings-manager	settingsmanager	database	f		3
-186	upload	upload	upload	f		3
-196	users-permissions	auth	changepassword	t		3
-206	users-permissions	user	destroy	f		3
-216	users-permissions	userspermissions	index	f		3
 107	settings-manager	settingsmanager	createdatabase	f		2
 117	upload	upload	count	f		2
 127	users-permissions	user	me	t		2
 137	users-permissions	userspermissions	getpolicies	f		2
 147	users-permissions	userspermissions	getadvancedsettings	f		2
-157	content-manager	contentmanager	updatesettings	f		3
-167	content-type-builder	contenttypebuilder	checktableexists	f		3
-177	settings-manager	settingsmanager	databasemodel	f		3
-187	upload	upload	getenvironments	f		3
-197	users-permissions	auth	connect	t		3
-207	users-permissions	user	destroyall	f		3
-217	users-permissions	userspermissions	init	t		3
 108	settings-manager	settingsmanager	updatedatabase	f		2
 118	upload	upload	destroy	f		2
 128	users-permissions	user	findone	f		2
 138	users-permissions	userspermissions	getrole	f		2
 148	users-permissions	userspermissions	updateadvancedsettings	f		2
 158	content-manager	contentmanager	delete	f		3
+157	content-manager	contentmanager	updatesettings	f		3
+155	content-manager	contentmanager	create	f		3
+153	content-manager	contentmanager	count	f		3
+163	content-type-builder	contenttypebuilder	createmodel	f		3
+171	email	email	updatesettings	f		3
 168	email	email	send	f		3
+173	settings-manager	settingsmanager	environments	f		3
+181	settings-manager	settingsmanager	deletelanguage	f		3
+183	settings-manager	settingsmanager	updatedatabase	f		3
+184	settings-manager	settingsmanager	deletedatabase	f		3
+185	settings-manager	settingsmanager	autoreload	t		3
+177	settings-manager	settingsmanager	databasemodel	f		3
 178	settings-manager	settingsmanager	get	f		3
+182	settings-manager	settingsmanager	createdatabase	f		3
+175	settings-manager	settingsmanager	databases	f		3
+174	settings-manager	settingsmanager	languages	f		3
+176	settings-manager	settingsmanager	database	f		3
+172	settings-manager	settingsmanager	menu	f		3
+186	upload	upload	upload	f		3
+194	upload	upload	search	f		3
+191	upload	upload	findone	f		3
+192	upload	upload	count	f		3
+187	upload	upload	getenvironments	f		3
 188	upload	upload	getsettings	f		3
-198	users-permissions	auth	forgotpassword	t		3
+193	upload	upload	destroy	f		3
+201	users-permissions	user	find	f		3
+202	users-permissions	user	me	t		3
+203	users-permissions	user	findone	f		3
+204	users-permissions	user	create	f		3
+205	users-permissions	user	update	f		3
+206	users-permissions	user	destroy	f		3
+207	users-permissions	user	destroyall	f		3
+215	users-permissions	userspermissions	getroutes	f		3
+212	users-permissions	userspermissions	getpolicies	f		3
+214	users-permissions	userspermissions	getroles	f		3
+213	users-permissions	userspermissions	getrole	f		3
+224	users-permissions	userspermissions	getproviders	f		3
+223	users-permissions	userspermissions	updateadvancedsettings	f		3
+221	users-permissions	userspermissions	updateemailtemplate	f		3
+211	users-permissions	userspermissions	getpermissions	f		3
+217	users-permissions	userspermissions	init	t		3
+216	users-permissions	userspermissions	index	f		3
 208	users-permissions	userspermissions	createrole	f		3
-218	users-permissions	userspermissions	searchusers	f		3
+225	users-permissions	userspermissions	updateproviders	f		3
+222	users-permissions	userspermissions	getadvancedsettings	f		3
+195	users-permissions	auth	callback	t		3
+196	users-permissions	auth	changepassword	t		3
+197	users-permissions	auth	connect	t		3
+198	users-permissions	auth	forgotpassword	t		3
+330	application	nqf	count	t		3
 109	settings-manager	settingsmanager	deletedatabase	f		2
 119	upload	upload	search	f		2
 129	users-permissions	user	create	f		2
 139	users-permissions	userspermissions	getroles	f		2
 149	users-permissions	userspermissions	getproviders	f		2
-159	content-manager	contentmanager	deleteall	f		3
-169	email	email	getenvironments	f		3
-179	settings-manager	settingsmanager	update	f		3
-189	upload	upload	updatesettings	f		3
-199	users-permissions	auth	register	t		3
-209	users-permissions	userspermissions	deleteprovider	f		3
-219	users-permissions	userspermissions	updaterole	f		3
 110	settings-manager	settingsmanager	autoreload	t		2
 120	users-permissions	auth	callback	f		2
 130	users-permissions	user	update	f		2
 140	users-permissions	userspermissions	getroutes	f		2
 150	users-permissions	userspermissions	updateproviders	f		2
+298	application	competence	find	t		1
+299	application	competence	findone	t		1
+300	application	competence	count	t		1
+301	application	competence	create	t		1
+302	application	competence	update	t		1
+303	application	competence	find	f		2
+304	application	competence	destroy	t		1
+305	application	competence	findone	f		2
+306	application	competence	count	f		2
+307	application	competence	destroy	f		2
+308	application	competence	update	f		2
+310	application	competence	create	f		2
+316	application	nqf	find	t		1
+317	application	nqf	findone	t		1
+318	application	nqf	count	t		1
+319	application	nqf	create	t		1
+320	application	nqf	update	t		1
+321	application	nqf	destroy	t		1
+322	application	nqf	find	f		2
+323	application	nqf	findone	f		2
+324	application	nqf	count	f		2
+325	application	nqf	create	f		2
+326	application	nqf	update	f		2
+327	application	nqf	destroy	f		2
+334	application	fieldofstudy	find	t		1
+335	application	fieldofstudy	findone	t		1
+336	application	fieldofstudy	count	t		1
+337	application	fieldofstudy	create	t		1
+338	application	fieldofstudy	destroy	t		1
+339	application	fieldofstudy	find	f		2
+340	application	fieldofstudy	findone	f		2
+341	application	fieldofstudy	count	f		2
+342	application	fieldofstudy	create	f		2
+343	application	fieldofstudy	update	t		1
+344	application	fieldofstudy	update	f		2
+345	application	fieldofstudy	destroy	f		2
+352	application	academicdegree	find	t		1
+353	application	academicdegree	findone	t		1
+354	application	academicdegree	count	t		1
+355	application	academicdegree	create	t		1
+356	application	academicdegree	update	t		1
+357	application	academicdegree	destroy	t		1
+358	application	academicdegree	find	f		2
+359	application	academicdegree	findone	f		2
+360	application	academicdegree	count	f		2
+361	application	academicdegree	create	f		2
+365	application	academicdegree	update	f		2
+367	application	academicdegree	destroy	f		2
+370	application	school	find	t		1
+371	application	school	findone	t		1
+372	application	school	count	t		1
+373	application	school	create	t		1
+374	application	school	update	t		1
+375	application	school	destroy	t		1
+376	application	school	find	f		2
+377	application	school	findone	f		2
+378	application	school	count	f		2
+379	application	school	create	f		2
+380	application	school	destroy	f		2
+381	application	school	update	f		2
 160	content-type-builder	contenttypebuilder	getmodels	f		3
-170	email	email	getsettings	f		3
+169	email	email	getenvironments	f		3
+179	settings-manager	settingsmanager	update	f		3
 180	settings-manager	settingsmanager	createlanguage	f		3
+189	upload	upload	updatesettings	f		3
 190	upload	upload	find	f		3
-200	users-permissions	auth	emailconfirmation	t		3
-210	users-permissions	userspermissions	deleterole	f		3
 220	users-permissions	userspermissions	getemailtemplate	f		3
-226	application	organization	find	t		1
-227	application	organization	findone	t		1
-228	application	organization	count	t		1
-229	application	organization	create	t		1
-230	application	organization	update	t		1
-231	application	organization	findone	f		2
-232	application	organization	find	f		2
-233	application	organization	count	f		2
-234	application	organization	create	f		2
-235	application	organization	destroy	t		1
-236	application	organization	update	f		2
-237	application	organization	destroy	f		2
-238	application	organization	find	f		3
-239	application	organization	findone	f		3
-240	application	organization	count	f		3
-241	application	organization	create	f		3
-242	application	organization	update	f		3
-243	application	organization	destroy	f		3
-244	application	organizationeducation	find	t		1
-245	application	organizationeducation	findone	t		1
-246	application	organizationeducation	count	t		1
-247	application	organizationeducation	create	t		1
-248	application	organizationeducation	update	t		1
-249	application	organizationeducation	findone	f		2
-250	application	organizationeducation	count	f		2
-251	application	organizationeducation	destroy	t		1
-252	application	organizationeducation	find	f		2
-253	application	organizationeducation	create	f		2
-254	application	organizationeducation	update	f		2
-255	application	organizationeducation	destroy	f		2
-256	application	organizationeducation	find	f		3
-257	application	organizationeducation	findone	f		3
-258	application	organizationeducation	count	f		3
-259	application	organizationeducation	create	f		3
-260	application	organizationeducation	update	f		3
-261	application	organizationeducation	destroy	f		3
-262	application	academy	find	t		1
-263	application	academy	findone	t		1
-264	application	academy	count	t		1
-265	application	academy	create	t		1
-266	application	academy	update	t		1
-267	application	academy	destroy	t		1
-268	application	academy	find	f		2
-269	application	academy	findone	f		2
-270	application	academy	count	f		2
-271	application	academy	create	f		2
-272	application	academy	update	f		2
-273	application	academy	destroy	f		2
-274	application	academy	find	f		3
-275	application	academy	findone	f		3
-276	application	academy	count	f		3
-277	application	academy	create	f		3
-278	application	academy	update	f		3
-279	application	academy	destroy	f		3
-280	application	examination	find	t		1
-281	application	examination	count	t		1
-282	application	examination	update	t		1
-283	application	examination	create	t		1
-284	application	examination	findone	t		1
-285	application	examination	destroy	t		1
-286	application	examination	find	f		2
-287	application	examination	findone	f		2
-288	application	examination	count	f		2
-289	application	examination	create	f		2
-290	application	examination	update	f		2
-291	application	examination	destroy	f		2
-292	application	examination	find	f		3
-293	application	examination	findone	f		3
-294	application	examination	count	f		3
-295	application	examination	create	f		3
-296	application	examination	update	f		3
-297	application	examination	destroy	f		3
+219	users-permissions	userspermissions	updaterole	f		3
+209	users-permissions	userspermissions	deleteprovider	f		3
+199	users-permissions	auth	register	t		3
+200	users-permissions	auth	emailconfirmation	t		3
+328	application	nqf	find	t		3
+329	application	nqf	findone	t		3
+331	application	nqf	create	f		3
+332	application	nqf	update	f		3
+333	application	nqf	destroy	f		3
+346	application	fieldofstudy	find	t		3
+347	application	fieldofstudy	findone	t		3
+348	application	fieldofstudy	count	t		3
+349	application	fieldofstudy	create	f		3
+350	application	fieldofstudy	update	f		3
+351	application	fieldofstudy	destroy	f		3
+362	application	academicdegree	find	t		3
+363	application	academicdegree	findone	t		3
+364	application	academicdegree	count	t		3
+368	application	academicdegree	update	f		3
+369	application	academicdegree	destroy	f		3
+382	application	school	find	t		3
+383	application	school	findone	t		3
+384	application	school	count	t		3
+388	application	organization	find	t		1
+389	application	organization	findone	t		1
+390	application	organization	count	t		1
+392	application	organization	update	t		1
+391	application	organization	create	t		1
+393	application	organization	destroy	t		1
+394	application	organization	find	f		2
+395	application	organization	findone	f		2
+396	application	organization	create	f		2
+397	application	organization	count	f		2
+398	application	organization	update	f		2
+399	application	organization	destroy	f		2
+151	content-manager	contentmanager	models	f		3
+156	content-manager	contentmanager	update	f		3
+154	content-manager	contentmanager	findone	f		3
+159	content-manager	contentmanager	deleteall	f		3
+152	content-manager	contentmanager	find	f		3
+164	content-type-builder	contenttypebuilder	updatemodel	f		3
+161	content-type-builder	contenttypebuilder	getmodel	f		3
+162	content-type-builder	contenttypebuilder	getconnections	f		3
+166	content-type-builder	contenttypebuilder	autoreload	t		3
+165	content-type-builder	contenttypebuilder	deletemodel	f		3
+167	content-type-builder	contenttypebuilder	checktableexists	f		3
+170	email	email	getsettings	f		3
+218	users-permissions	userspermissions	searchusers	f		3
+210	users-permissions	userspermissions	deleterole	f		3
+309	application	competence	find	t		3
+311	application	competence	findone	t		3
+312	application	competence	count	t		3
+313	application	competence	create	f		3
+314	application	competence	update	f		3
+315	application	competence	destroy	f		3
+366	application	academicdegree	create	f		3
+385	application	school	create	f		3
+386	application	school	update	f		3
+387	application	school	destroy	f		3
+400	application	organization	find	t		3
+401	application	organization	findone	t		3
+402	application	organization	count	t		3
+403	application	organization	create	f		3
+404	application	organization	update	f		3
+405	application	organization	destroy	f		3
 \.
 
 
@@ -977,6 +1413,13 @@ COPY public."users-permissions_user" (id, username, email, provider, password, "
 
 
 --
+-- Name: academicdegrees_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
+--
+
+SELECT pg_catalog.setval('public.academicdegrees_id_seq', 1, false);
+
+
+--
 -- Name: academies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
 --
 
@@ -984,10 +1427,17 @@ SELECT pg_catalog.setval('public.academies_id_seq', 2, true);
 
 
 --
+-- Name: competence_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
+--
+
+SELECT pg_catalog.setval('public.competence_id_seq', 1, false);
+
+
+--
 -- Name: core_store_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
 --
 
-SELECT pg_catalog.setval('public.core_store_id_seq', 17, true);
+SELECT pg_catalog.setval('public.core_store_id_seq', 22, true);
 
 
 --
@@ -995,6 +1445,20 @@ SELECT pg_catalog.setval('public.core_store_id_seq', 17, true);
 --
 
 SELECT pg_catalog.setval('public.examinations_id_seq', 1, true);
+
+
+--
+-- Name: fieldofstudies_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
+--
+
+SELECT pg_catalog.setval('public.fieldofstudies_id_seq', 13, true);
+
+
+--
+-- Name: nqfs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
+--
+
+SELECT pg_catalog.setval('public.nqfs_id_seq', 1, false);
 
 
 --
@@ -1008,28 +1472,35 @@ SELECT pg_catalog.setval('public.organizationeducations_id_seq', 2, true);
 -- Name: organizations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
 --
 
-SELECT pg_catalog.setval('public.organizations_id_seq', 4, true);
+SELECT pg_catalog.setval('public.organizations_id_seq', 8, true);
+
+
+--
+-- Name: schools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
+--
+
+SELECT pg_catalog.setval('public.schools_id_seq', 5, true);
 
 
 --
 -- Name: upload_file_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
 --
 
-SELECT pg_catalog.setval('public.upload_file_id_seq', 1, false);
+SELECT pg_catalog.setval('public.upload_file_id_seq', 9, true);
 
 
 --
 -- Name: upload_file_morph_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
 --
 
-SELECT pg_catalog.setval('public.upload_file_morph_id_seq', 1, false);
+SELECT pg_catalog.setval('public.upload_file_morph_id_seq', 9, true);
 
 
 --
 -- Name: users-permissions_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: myuser
 --
 
-SELECT pg_catalog.setval('public."users-permissions_permission_id_seq"', 297, true);
+SELECT pg_catalog.setval('public."users-permissions_permission_id_seq"', 405, true);
 
 
 --
@@ -1047,11 +1518,27 @@ SELECT pg_catalog.setval('public."users-permissions_user_id_seq"', 1, true);
 
 
 --
+-- Name: academicdegrees academicdegrees_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.academicdegrees
+    ADD CONSTRAINT academicdegrees_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: academies academies_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
 --
 
 ALTER TABLE ONLY public.academies
     ADD CONSTRAINT academies_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: competence competence_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.competence
+    ADD CONSTRAINT competence_pkey PRIMARY KEY (id);
 
 
 --
@@ -1071,6 +1558,22 @@ ALTER TABLE ONLY public.examinations
 
 
 --
+-- Name: fieldofstudies fieldofstudies_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.fieldofstudies
+    ADD CONSTRAINT fieldofstudies_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: nqfs nqfs_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.nqfs
+    ADD CONSTRAINT nqfs_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: organizationeducations organizationeducations_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
 --
 
@@ -1084,6 +1587,14 @@ ALTER TABLE ONLY public.organizationeducations
 
 ALTER TABLE ONLY public.organizations
     ADD CONSTRAINT organizations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schools schools_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.schools
+    ADD CONSTRAINT schools_pkey PRIMARY KEY (id);
 
 
 --
@@ -1127,6 +1638,76 @@ ALTER TABLE ONLY public."users-permissions_user"
 
 
 --
+-- Name: search_academicdegrees_description_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_description_en ON public.academicdegrees USING gin (description_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_academicdegrees_description_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_description_fi ON public.academicdegrees USING gin (description_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_academicdegrees_description_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_description_swe ON public.academicdegrees USING gin (description_swe public.gin_trgm_ops);
+
+
+--
+-- Name: search_academicdegrees_fieldofstudy; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_fieldofstudy ON public.academicdegrees USING gin (fieldofstudy public.gin_trgm_ops);
+
+
+--
+-- Name: search_academicdegrees_identification; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_identification ON public.academicdegrees USING gin (identification public.gin_trgm_ops);
+
+
+--
+-- Name: search_academicdegrees_name_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_name_en ON public.academicdegrees USING gin (name_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_academicdegrees_name_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_name_fi ON public.academicdegrees USING gin (name_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_academicdegrees_name_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_name_swe ON public.academicdegrees USING gin (name_swe public.gin_trgm_ops);
+
+
+--
+-- Name: search_academicdegrees_school; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_school ON public.academicdegrees USING gin (school public.gin_trgm_ops);
+
+
+--
+-- Name: search_academicdegrees_url; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_academicdegrees_url ON public.academicdegrees USING gin (url public.gin_trgm_ops);
+
+
+--
 -- Name: search_academies_description; Type: INDEX; Schema: public; Owner: myuser
 --
 
@@ -1145,6 +1726,69 @@ CREATE INDEX search_academies_name ON public.academies USING gin (name public.gi
 --
 
 CREATE INDEX search_academies_url ON public.academies USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_description_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_description_en ON public.competence USING gin (description_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_description_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_description_fi ON public.competence USING gin (description_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_description_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_description_swe ON public.competence USING gin (description_swe public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_identification; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_identification ON public.competence USING gin (identification public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_name_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_name_en ON public.competence USING gin (name_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_name_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_name_fi ON public.competence USING gin (name_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_name_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_name_swe ON public.competence USING gin (name_swe public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_organization; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_organization ON public.competence USING gin (organization public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_url; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_url ON public.competence USING gin (url public.gin_trgm_ops);
 
 
 --
@@ -1204,6 +1848,48 @@ CREATE INDEX search_examinations_url ON public.examinations USING gin (url publi
 
 
 --
+-- Name: search_fieldofstudies_name_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_fieldofstudies_name_en ON public.fieldofstudies USING gin (name_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_fieldofstudies_name_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_fieldofstudies_name_fi ON public.fieldofstudies USING gin (name_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_fieldofstudies_name_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_fieldofstudies_name_swe ON public.fieldofstudies USING gin (name_swe public.gin_trgm_ops);
+
+
+--
+-- Name: search_nqfs_name_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_nqfs_name_en ON public.nqfs USING gin (name_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_nqfs_name_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_nqfs_name_fi ON public.nqfs USING gin (name_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_nqfs_name_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_nqfs_name_swe ON public.nqfs USING gin (name_swe public.gin_trgm_ops);
+
+
+--
 -- Name: search_organizationeducations_description; Type: INDEX; Schema: public; Owner: myuser
 --
 
@@ -1225,6 +1911,27 @@ CREATE INDEX search_organizations_description ON public.organizations USING gin 
 
 
 --
+-- Name: search_organizations_description_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_description_en ON public.organizations USING gin (description_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_description_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_description_fi ON public.organizations USING gin (description_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_description_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_description_swe ON public.organizations USING gin (description_swe public.gin_trgm_ops);
+
+
+--
 -- Name: search_organizations_name; Type: INDEX; Schema: public; Owner: myuser
 --
 
@@ -1232,10 +1939,80 @@ CREATE INDEX search_organizations_name ON public.organizations USING gin (name p
 
 
 --
+-- Name: search_organizations_name_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_name_en ON public.organizations USING gin (name_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_name_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_name_fi ON public.organizations USING gin (name_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_name_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_name_swe ON public.organizations USING gin (name_swe public.gin_trgm_ops);
+
+
+--
 -- Name: search_organizations_url; Type: INDEX; Schema: public; Owner: myuser
 --
 
 CREATE INDEX search_organizations_url ON public.organizations USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_schools_description_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_schools_description_en ON public.schools USING gin (description_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_schools_description_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_schools_description_fi ON public.schools USING gin (description_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_schools_description_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_schools_description_swe ON public.schools USING gin (description_swe public.gin_trgm_ops);
+
+
+--
+-- Name: search_schools_name_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_schools_name_en ON public.schools USING gin (name_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_schools_name_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_schools_name_fi ON public.schools USING gin (name_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_schools_name_swe; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_schools_name_swe ON public.schools USING gin (name_swe public.gin_trgm_ops);
+
+
+--
+-- Name: search_schools_url; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_schools_url ON public.schools USING gin (url public.gin_trgm_ops);
 
 
 --

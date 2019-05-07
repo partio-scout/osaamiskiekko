@@ -1,9 +1,9 @@
 {
   "connection": "default",
-  "collectionName": "organizations",
+  "collectionName": "academicdegrees",
   "info": {
-    "name": "organization",
-    "description": "Järjestöt"
+    "name": "academicdegree",
+    "description": "Oppilaitosten tutkinnot"
   },
   "options": {
     "increments": true,
@@ -11,6 +11,9 @@
     "comment": ""
   },
   "attributes": {
+    "identification": {
+      "type": "string"
+    },
     "name_en": {
       "type": "string"
     },
@@ -20,10 +23,10 @@
     "name_swe": {
       "type": "string"
     },
-    "description_fi": {
+    "description_en": {
       "type": "text"
     },
-    "description_en": {
+    "description_fi": {
       "type": "text"
     },
     "description_swe": {
@@ -32,10 +35,17 @@
     "url": {
       "type": "string"
     },
-    "logo": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload"
+    "credits": {
+      "type": "integer"
+    },
+    "nqf": {
+      "type": "integer"
+    },
+    "school": {
+      "type": "string"
+    },
+    "fieldofstudy": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "fieldofstudies",
+  "info": {
+    "name": "fieldofstudy",
+    "description": "Ala"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name_fi": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "name_swe": {
+      "type": "string"
+    }
+  }
+}

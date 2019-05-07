@@ -1,9 +1,9 @@
 {
   "connection": "default",
-  "collectionName": "organizations",
+  "collectionName": "schools",
   "info": {
-    "name": "organization",
-    "description": "Järjestöt"
+    "name": "school",
+    "description": "Oppilaitokset"
   },
   "options": {
     "increments": true,
@@ -20,10 +20,10 @@
     "name_swe": {
       "type": "string"
     },
-    "description_fi": {
+    "description_en": {
       "type": "text"
     },
-    "description_en": {
+    "description_fi": {
       "type": "text"
     },
     "description_swe": {

@@ -1,9 +1,9 @@
 {
   "connection": "default",
-  "collectionName": "organizations",
+  "collectionName": "competence",
   "info": {
-    "name": "organization",
-    "description": "Järjestöt"
+    "name": "competence",
+    "description": "Järjestön koulutus"
   },
   "options": {
     "increments": true,
@@ -12,6 +12,18 @@
   },
   "attributes": {
     "name_en": {
+      "type": "string"
+    },
+    "description_en": {
+      "type": "text"
+    },
+    "credits": {
+      "type": "integer"
+    },
+    "nqf": {
+      "type": "integer"
+    },
+    "url": {
       "type": "string"
     },
     "name_fi": {
@@ -23,19 +35,14 @@
     "description_fi": {
       "type": "text"
     },
-    "description_en": {
-      "type": "text"
-    },
     "description_swe": {
       "type": "text"
     },
-    "url": {
+    "organization": {
       "type": "string"
     },
-    "logo": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload"
+    "identification": {
+      "type": "string"
     }
   }
 }

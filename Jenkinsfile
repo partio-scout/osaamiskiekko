@@ -58,15 +58,15 @@ pipeline {
           
           // Create database
           sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
-          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials-dev', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
             sh "gcloud sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
           }
+          
           // Create database proxy credentials secret
           sh "gcloud iam service-accounts keys create key.json --iam-account ${GCLOUD_DB_PROXY_USERNAME}"
           sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=./key.json || true"
           sh "rm key.json"
-
-          sh "gcloud auth configure-docker"
 
           // Create or update docker registry credentials secret
           withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',
@@ -83,7 +83,7 @@ pipeline {
               -n ${env.NAMESPACE}"""
           }
           // Create or update database credentials secret
-          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials',
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials-dev',
             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
             sh """kubectl create secret generic database-credentials \
               --from-literal=username='$USERNAME' \
@@ -93,6 +93,8 @@ pipeline {
               --dry-run -o yaml \
               | kubectl apply -f -"""
           }
+
+          sh "gcloud auth configure-docker"
         }
       }
     }

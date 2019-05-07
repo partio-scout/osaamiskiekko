@@ -35,17 +35,20 @@ ifeq ($(username), )
 endif
 ifeq ($(password), )
 	$(error "password environment variable required.")
+ifeq ($(dbname), )
+	$(error "dbname environment variable required.")
 endif
 	kubectl create secret generic database-credentials \
 	--from-literal=username='${username}' \
 	--from-literal=password='${password}' \
+	--from-literal=dbname='${dbname}' \
 	-n ${namespace} \
 	--dry-run -o yaml \
 	| kubectl apply -f -
 
-
 ### Deployment ###
-deploy: check-deploy-arguments deploy-db deploy-backend deploy-frontend deploy-loadbalancer
+# deploy: check-deploy-arguments deploy-db deploy-backend deploy-frontend deploy-loadbalancer
+deploy: check-deploy-arguments deploy-backend deploy-frontend deploy-loadbalancer
 
 check-deploy-arguments:
 ifeq ($(namespace), )

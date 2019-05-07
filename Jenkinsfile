@@ -20,6 +20,8 @@ pipeline {
     DEVCLUSTER= "osaamiskiekko-dev-cluster"
     GCLOUDPARAM= "--zone europe-north1-a"
     GCLOUD_PROJECT="osaamiskiekko"
+    GCLOUD_DB_PROXY_USERNAME="proxy-user@osaamiskiekko.iam.gserviceaccount.com"
+    DATABASE_INSTANCE_ID="${env.GCLOUD_PROJECT}:europe-north1:osaamiskiekko-dev-db"
   }
 
   options {
@@ -173,6 +175,16 @@ pipeline {
           sh "gcloud container clusters get-credentials ${env.DEVCLUSTER} ${env.GCLOUDPARAM}"
           sh "kubectl get pods" // just testing connection first
           sh "kubectl create namespace ${env.NAMESPACE} || true"
+          
+          sh "kubectl sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh "kubectl sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
+          }
+          
+          sh "gcloud iam service-accounts keys create key.json --iam-account ${GCLOUD_DB_PROXY_USERNAME}"
+          sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=../key.json || true"
+          sh "rm key.json"
+
           sh "gcloud auth configure-docker"
         }
       }
@@ -204,22 +216,22 @@ pipeline {
             -n ${env.NAMESPACE}"""
         }
         // Create or update database credentials
-        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials-dev',
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials',
           usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
           sh """kubectl create secret generic database-credentials \
-            --from-literal=username='${USERNAME}' \
-            --from-literal=password='${PASSWORD}' \
+            --from-literal=username='$USERNAME' \
+            --from-literal=password='$PASSWORD' \
+            --from-literal=dbname='osaamiskiekko-${env.NAMESPACE}'
             -n ${env.NAMESPACE} \
             --dry-run -o yaml \
             | kubectl apply -f -"""
         }
         // Deploy
         script {
-          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/db-persistentvolumeclaim.yaml"
-          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/db.yaml"
           sh "sed -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g' kubectl/backend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
           sh "sed -e 's#\$FRONTENDIMAGE#${taggedFrontendImage}#g' kubectl/frontend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
-          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/load-balancer.yaml"
+          // Namespace-specific Load balancer disabled - uses one loadbalancer in default namespace configured manually 
+          // sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/load-balancer.yaml"
         }
       }
     }

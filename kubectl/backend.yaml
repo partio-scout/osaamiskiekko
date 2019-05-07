@@ -32,6 +32,10 @@ spec:
         track: stable
         phase: dev
     spec:
+      volumes:
+        - name: my-secrets-volume
+          secret:
+            secretName: cloudsql-instance-credentials
       containers:
         - name: backend
           # Replaced during Jenkins build. Use 'make deploy' to run locally
@@ -42,11 +46,14 @@ spec:
               containerPort: 1337
           env:
             - name: DATABASE_HOST
-              value: "db"
+              value: "127.0.0.1"
             - name: DATABASE_PORT
               value: "5432"
             - name: DATABASE_NAME
-              value: "mydb"
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: dbname
             - name: DATABASE_USERNAME
               valueFrom:
                 secretKeyRef:
@@ -57,3 +64,12 @@ spec:
                 secretKeyRef:
                   name: database-credentials
                   key: password
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.11
+          command: ["/cloud_sql_proxy",
+               "-instances=osaamiskiekko:europe-north1:osaamiskiekko-dev-db:5432=tcp:5432",
+               "-credential_file=/secrets/cloudsql/credentials.json"]
+          volumeMounts:
+          - name: my-secrets-volume
+            mountPath: /secrets/cloudsql
+            readOnly: true                  

@@ -90,7 +90,7 @@ pipeline {
             sh """kubectl create secret generic database-credentials \
               --from-literal=username='$USERNAME' \
               --from-literal=password='$PASSWORD' \
-              --from-literal=dbname='osaamiskiekko-${env.NAMESPACE}'
+              --from-literal=dbname='osaamiskiekko-${env.NAMESPACE}' \
               -n ${env.NAMESPACE} \
               --dry-run -o yaml \
               | kubectl apply -f -"""

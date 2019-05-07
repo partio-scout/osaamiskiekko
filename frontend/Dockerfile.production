@@ -13,4 +13,5 @@ ADD     nginx/nginx.conf /etc/nginx/
 COPY    --from=builder /usr/src/app/build /var/www
 EXPOSE  80
 EXPOSE  443
+EXPOSE  1337
 CMD     ["nginx", "-g", "daemon off;"]

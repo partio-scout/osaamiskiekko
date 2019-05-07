@@ -8,10 +8,12 @@ spec:
     tier: frontend
     phase: dev
   ports:
-  - protocol: "TCP"
+  - name: http
+    protocol: TCP
     port: 80
     targetPort: 80
-  - protocol: "TCP"
+  - name: backendproxy
+    protocol: TCP
     port: 1337
     targetPort: 1337
   type: NodePort

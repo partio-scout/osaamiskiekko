@@ -11,13 +11,6 @@ spec:
   - protocol: "TCP"
     port: 1337
     targetPort: http
-  # type: NodePort
-  # ports:
-  # - name: strapicms
-  #   protocol: TCP
-  #   nodePort: 32012
-  #   port: 1337
-  #   targetPort: 1337
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -43,6 +36,7 @@ spec:
         - name: backend
           # Replaced during Jenkins build. Use 'make deploy' to run locally
           image: $BACKENDIMAGE
+          imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 1337

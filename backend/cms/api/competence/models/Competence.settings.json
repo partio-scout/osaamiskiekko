@@ -17,12 +17,6 @@
     "description_en": {
       "type": "text"
     },
-    "credits": {
-      "type": "integer"
-    },
-    "nqf": {
-      "type": "integer"
-    },
     "url": {
       "type": "string"
     },
@@ -38,24 +32,22 @@
     "description_swe": {
       "type": "text"
     },
-    "organization": {
-      "type": "string"
-    },
     "identification": {
       "type": "string"
     },
-    "nqf_level": {
-      "enum": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8"
-      ],
-      "type": "enumeration"
+    "nqf": {
+      "model": "nqf"
+    },
+    "credits": {
+      "type": "integer"
+    },
+    "organizations": {
+      "collection": "organization",
+      "via": "competence"
+    },
+    "competencedegreelink": {
+      "model": "competencedegreelink",
+      "via": "competence"
     }
   }
 }

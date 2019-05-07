@@ -3,7 +3,7 @@
   "collectionName": "nqfs",
   "info": {
     "name": "nqf",
-    "description": "NQF-taso (1-8)"
+    "description": "NQF taso"
   },
   "options": {
     "increments": true,
@@ -12,16 +12,29 @@
   },
   "attributes": {
     "name_en": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "name_fi": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "name_swe": {
       "type": "string"
     },
     "level": {
-      "type": "integer"
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "type": "enumeration",
+      "required": true
     }
   }
 }

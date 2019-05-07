@@ -11,24 +11,6 @@
     "comment": ""
   },
   "attributes": {
-    "competencename_fi": {
-      "type": "string"
-    },
-    "competencename_en": {
-      "type": "string"
-    },
-    "competencename_swe": {
-      "type": "string"
-    },
-    "academicdegree_fi": {
-      "type": "string"
-    },
-    "academicdegree_en": {
-      "type": "string"
-    },
-    "academicdegree_swe": {
-      "type": "string"
-    },
     "url": {
       "type": "string"
     },
@@ -40,6 +22,14 @@
     },
     "description_swe": {
       "type": "text"
+    },
+    "competence": {
+      "collection": "competence",
+      "via": "competencedegreelink"
+    },
+    "academicdegree": {
+      "collection": "academicdegree",
+      "via": "competencedegreelink"
     }
   }
 }

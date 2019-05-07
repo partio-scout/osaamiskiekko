@@ -36,6 +36,13 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "logoUrl": {
+      "type": "string"
+    },
+    "academicdegree": {
+      "model": "academicdegree",
+      "via": "school"
     }
   }
 }

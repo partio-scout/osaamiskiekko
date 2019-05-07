@@ -12,10 +12,12 @@
   },
   "attributes": {
     "name_en": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "name_fi": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "name_swe": {
       "type": "string"
@@ -36,6 +38,13 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "competence": {
+      "model": "competence",
+      "via": "organizations"
+    },
+    "logoUrl": {
+      "type": "string"
     }
   }
 }

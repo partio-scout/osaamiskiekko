@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/competencedegreelinks",
+      "handler": "Competencedegreelink.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/competencedegreelinks/count",
+      "handler": "Competencedegreelink.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/competencedegreelinks/:id",
+      "handler": "Competencedegreelink.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/competencedegreelinks",
+      "handler": "Competencedegreelink.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/competencedegreelinks/:id",
+      "handler": "Competencedegreelink.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/competencedegreelinks/:id",
+      "handler": "Competencedegreelink.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

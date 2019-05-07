@@ -35,6 +35,67 @@ pipeline {
         checkout scm
       }
     }
+  
+    stage('cloud init') {
+      when {
+        expression {
+          return publishedBranches.contains(env.BRANCH_NAME);
+        }
+      }
+              
+      steps {
+        script {
+          env.NAMESPACE = cleanBranchNameForNamespace(env.BRANCH_NAME)
+        }
+
+        withCredentials([file(credentialsId: 'osaamiskiekko-google-service-account-credentials', variable: 'credfile')]) {
+          sh "gcloud auth activate-service-account --key-file \$credfile"
+          sh "rm \$credfile"
+          sh "gcloud config set project ${GCLOUD_PROJECT}"
+          sh "gcloud container clusters get-credentials ${env.DEVCLUSTER} ${env.GCLOUDPARAM}"
+          sh "kubectl get pods" // just testing connection first
+          sh "kubectl create namespace ${env.NAMESPACE} || true"
+          
+          // Create database
+          sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh "gcloud sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
+          }
+          // Create database proxy credentials secret
+          sh "gcloud iam service-accounts keys create key.json --iam-account ${GCLOUD_DB_PROXY_USERNAME}"
+          sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=./key.json || true"
+          sh "rm key.json"
+
+          sh "gcloud auth configure-docker"
+
+          // Create or update docker registry credentials secret
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',
+            usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh """kubectl create secret docker-registry eficode-artifactory-cred \
+              --docker-server=${dockerRepository} \
+              --docker-username=$USERNAME \
+              --docker-password=$PASSWORD \
+              --docker-email=partionosaamiskiekko-bot@rum.invalid \
+              -n ${env.NAMESPACE} || true"""
+
+            sh """kubectl patch serviceaccount default \
+              -p \"{\\\"imagePullSecrets\\\": [{\\\"name\\\": \\\"eficode-artifactory-cred\\\"}]}\" \
+              -n ${env.NAMESPACE}"""
+          }
+          // Create or update database credentials secret
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials',
+            usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh """kubectl create secret generic database-credentials \
+              --from-literal=username='$USERNAME' \
+              --from-literal=password='$PASSWORD' \
+              --from-literal=dbname='osaamiskiekko-${env.NAMESPACE}'
+              -n ${env.NAMESPACE} \
+              --dry-run -o yaml \
+              | kubectl apply -f -"""
+          }
+        }
+      }
+    }
 
     // stage('Analysis') {
     //   steps {
@@ -155,41 +216,7 @@ pipeline {
         }
       }
     }
-
-    stage('kubectl init') {
-      when {
-        expression {
-          return publishedBranches.contains(env.BRANCH_NAME);
-        }
-      }
-              
-      steps {
-        script {
-          env.NAMESPACE = cleanBranchNameForNamespace(env.BRANCH_NAME)
-        }
-
-        withCredentials([file(credentialsId: 'osaamiskiekko-google-service-account-credentials', variable: 'credfile')]) {
-          sh "gcloud auth activate-service-account --key-file \$credfile"
-          sh "rm \$credfile"
-          sh "gcloud config set project ${GCLOUD_PROJECT}"
-          sh "gcloud container clusters get-credentials ${env.DEVCLUSTER} ${env.GCLOUDPARAM}"
-          sh "kubectl get pods" // just testing connection first
-          sh "kubectl create namespace ${env.NAMESPACE} || true"
-          
-          sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
-          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-            sh "gcloud sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
-          }
-          
-          sh "gcloud iam service-accounts keys create key.json --iam-account ${GCLOUD_DB_PROXY_USERNAME}"
-          sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=./key.json || true"
-          sh "rm key.json"
-
-          sh "gcloud auth configure-docker"
-        }
-      }
-    }
-
+ 
     stage('Deploy') {
       when {
         expression {
@@ -200,33 +227,7 @@ pipeline {
         script {
           env.WORKSPACE = pwd()
         }
-
-        // Create or update docker registry credentials
-        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',
-          usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-          sh """kubectl create secret docker-registry eficode-artifactory-cred \
-            --docker-server=${dockerRepository} \
-            --docker-username=$USERNAME \
-            --docker-password=$PASSWORD \
-            --docker-email=partionosaamiskiekko-bot@rum.invalid \
-            -n ${env.NAMESPACE} || true"""
-
-          sh """kubectl patch serviceaccount default \
-            -p \"{\\\"imagePullSecrets\\\": [{\\\"name\\\": \\\"eficode-artifactory-cred\\\"}]}\" \
-            -n ${env.NAMESPACE}"""
-        }
-        // Create or update database credentials
-        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials',
-          usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-          sh """kubectl create secret generic database-credentials \
-            --from-literal=username='$USERNAME' \
-            --from-literal=password='$PASSWORD' \
-            --from-literal=dbname='osaamiskiekko-${env.NAMESPACE}'
-            -n ${env.NAMESPACE} \
-            --dry-run -o yaml \
-            | kubectl apply -f -"""
-        }
-        // Deploy
+        
         script {
           sh "sed -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g' kubectl/backend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
           sh "sed -e 's#\$FRONTENDIMAGE#${taggedFrontendImage}#g' kubectl/frontend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"

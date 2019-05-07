@@ -29,12 +29,12 @@ pipeline {
   }
 
   stages {
-    stage('Checkout') {
-      steps {
-        notifyBuild('STARTED')
-        checkout scm
-      }
-    }
+    // stage('Checkout') {
+    //   steps {
+    //     notifyBuild('STARTED')
+    //     checkout scm
+    //   }
+    // }
   
     stage('cloud init') {
       when {

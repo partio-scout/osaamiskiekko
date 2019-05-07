@@ -42,10 +42,10 @@ spec:
         image: $FRONTENDIMAGE
         imagePullPolicy: IfNotPresent
         ports:
-          - name: http
-            containerPort: 80
-          - name: backendproxy
-            containerPort: 1337
+        - name: http
+          containerPort: 80
+        - name: backendproxy
+          containerPort: 1337
         lifecycle:
           preStop:
             exec:

@@ -176,9 +176,9 @@ pipeline {
           sh "kubectl get pods" // just testing connection first
           sh "kubectl create namespace ${env.NAMESPACE} || true"
           
-          sh "kubectl sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
+          sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
           withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-            sh "kubectl sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
+            sh "gcloud sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
           }
           
           sh "gcloud iam service-accounts keys create key.json --iam-account ${GCLOUD_DB_PROXY_USERNAME}"

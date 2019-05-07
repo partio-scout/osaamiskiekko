@@ -21,7 +21,7 @@ pipeline {
     GCLOUDPARAM= "--zone europe-north1-a"
     GCLOUD_PROJECT="osaamiskiekko"
     GCLOUD_DB_PROXY_USERNAME="proxy-user@osaamiskiekko.iam.gserviceaccount.com"
-    DATABASE_INSTANCE_ID="${env.GCLOUD_PROJECT}:europe-north1:osaamiskiekko-dev-db"
+    DATABASE_INSTANCE_ID="osaamiskiekko-dev-db"
   }
 
   options {

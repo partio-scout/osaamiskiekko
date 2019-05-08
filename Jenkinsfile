@@ -240,7 +240,8 @@ pipeline {
         }
         
         script {
-          sh "sed -e -i 's#\$BACKENDIMAGE#${taggedBackendImage}#g;s#\$PHASE#${env.NAMESPACE}#g' ./kubectl/*"
+          sh "sed -i -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g;s#\$PHASE#${env.NAMESPACE}#g' ./kubectl/*.yaml"
+
           archive "./kubectl/*"
           
           sh "kubectl apply -n ${env.NAMESPACE} -f ./kubectl/backend.yaml"

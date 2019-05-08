@@ -1,3 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: backend
+spec:
+  selector:
+    app: osaamiskiekko
+    tier: backend
+    phase: dev
+  ports:
+  - protocol: "TCP"
+    port: 1337
+    targetPort: http
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,11 +32,44 @@ spec:
         track: stable
         phase: dev
     spec:
+      volumes:
+        - name: my-secrets-volume
+          secret:
+            secretName: cloudsql-instance-credentials
       containers:
         - name: backend
-          image: artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/backend_master:aec5463d
+          # Replaced during Jenkins build. Use 'make deploy' to run locally
+          image: $BACKENDIMAGE
+          imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 1337
-      imagePullSecrets:
-      - name: eficode-artifactory-cred
+          env:
+            - name: DATABASE_HOST
+              value: "127.0.0.1"
+            - name: DATABASE_PORT
+              value: "5432"
+            - name: DATABASE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: dbname
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: username
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: database-credentials
+                  key: password
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.11
+          command: ["/cloud_sql_proxy",
+               "-instances=osaamiskiekko:europe-north1:osaamiskiekko-dev-db:5432=tcp:5432",
+               "-credential_file=/secrets/cloudsql/credentials.json"]
+          volumeMounts:
+          - name: my-secrets-volume
+            mountPath: /secrets/cloudsql
+            readOnly: true                  

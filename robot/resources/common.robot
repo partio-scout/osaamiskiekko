@@ -16,15 +16,10 @@ Open browser and go to homepage
   Maximize Browser Window
 
 Open browser and go to backend
-  Open Browser    ${API}    browser=${BROWSER}    remote_url=${SELENIUM}
+  Open Browser    ${SERVER}api    browser=${BROWSER}    remote_url=${SELENIUM}
   Maximize Browser Window
 
-Close backend browser
-  Run Keyword And Ignore Error    Go To    ${API}
-  Close All Browsers
-
 Close browser
-  Run Keyword And Ignore Error    Go To    ${SERVER}
   Close All Browsers
 
 Verify frontend is running
@@ -32,8 +27,8 @@ Verify frontend is running
   Wait Until Page Contains    Osaamiskiekko
 
 Verify backend is running
-    Location should be          ${API}
-    Wait Until Page Contains    Welcome
+    Go to                       ${SERVER}api/Academies
+    Wait Until Page Contains    Forbidden
 
 # Login
 #   [Arguments]    ${email}    ${password}

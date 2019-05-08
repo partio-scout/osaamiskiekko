@@ -54,7 +54,9 @@ pipeline {
           sh "gcloud config set project ${GCLOUD_PROJECT}"
           sh "gcloud container clusters get-credentials ${env.DEVCLUSTER} ${env.GCLOUDPARAM}"
           sh "kubectl get pods" // just testing connection first
-          sh "kubectl create namespace ${env.NAMESPACE} || true"
+          sh """kubectl create namespace ${env.NAMESPACE} \
+          --dry-run -o yaml \
+          | kubectl apply -f -"""
           
           // Create database
           sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
@@ -65,10 +67,13 @@ pipeline {
           
           // Create database proxy credentials secret
           withCredentials([file(credentialsId: 'osaamiskiekko-google-cloudsql-proxy-credentials', variable: 'proxycredfile')]) {
-            sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=\$proxycredfile -n ${env.NAMESPACE} || true"
+            sh """kubectl create secret generic cloudsql-instance-credentials \
+            --from-file=credentials.json=\$proxycredfile \
+            -n ${env.NAMESPACE} \
+            --dry-run -o yaml \
+              | kubectl apply -f -"""
             sh "rm \$proxycredfile"
           }
-
 
           // Create or update docker registry credentials secret
           withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',
@@ -78,7 +83,9 @@ pipeline {
               --docker-username=$USERNAME \
               --docker-password=$PASSWORD \
               --docker-email=partionosaamiskiekko-bot@rum.invalid \
-              -n ${env.NAMESPACE} || true"""
+              -n ${env.NAMESPACE} \
+              --dry-run -o yaml \
+              | kubectl apply -f -"""
 
             sh """kubectl patch serviceaccount default \
               -p \"{\\\"imagePullSecrets\\\": [{\\\"name\\\": \\\"eficode-artifactory-cred\\\"}]}\" \
@@ -233,10 +240,12 @@ pipeline {
         }
         
         script {
-          sh "sed -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g;s#\$PHASE#${env.NODE_ENV}#g' kubectl/backend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
-          sh "sed -e 's#\$FRONTENDIMAGE#${taggedFrontendImage}#g;s#\$PHASE#${env.NODE_ENV}#g' kubectl/frontend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
-          // Namespace-specific Load balancer disabled - uses one loadbalancer in default namespace configured manually 
-          // sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/load-balancer.yaml"
+          sh "sed -e -i 's#\$BACKENDIMAGE#${taggedBackendImage}#g;s#\$PHASE#${env.NAMESPACE}#g' ./kubectl/*"
+          archive "./kubectl/*"
+          
+          sh "kubectl apply -n ${env.NAMESPACE} -f ./kubectl/backend.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f ./kubectl/frontend.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f ./kubectl/load-balancer.yaml"
         }
       }
     }

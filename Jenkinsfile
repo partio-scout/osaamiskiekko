@@ -240,7 +240,11 @@ pipeline {
         }
         
         script {
-          sh "sed -i -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g;s#\$PHASE#${env.NAMESPACE}#g' ./kubectl/*.yaml"
+          sh """sed -i \
+          -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g; \
+              s#\$FRONTENDIMAGE#${taggedFrontendImage}#g; \
+              s#\$PHASE#${env.NAMESPACE}#g' \
+          ./kubectl/*.yaml"""
 
           archiveArtifacts artifacts: 'kubectl/**/*.yaml', fingerprint: true
           

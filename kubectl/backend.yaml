@@ -6,7 +6,7 @@ spec:
   selector:
     app: osaamiskiekko
     tier: backend
-    phase: dev
+    phase: $PHASE
   ports:
   - protocol: "TCP"
     port: 1337
@@ -22,7 +22,7 @@ spec:
       app: osaamiskiekko
       tier: backend
       track: stable
-      phase: dev
+      phase: $PHASE
   replicas: 1
   template:
     metadata:
@@ -30,7 +30,7 @@ spec:
         app: osaamiskiekko
         tier: backend
         track: stable
-        phase: dev
+        phase: $PHASE
     spec:
       volumes:
         - name: my-secrets-volume

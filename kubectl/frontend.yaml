@@ -6,7 +6,7 @@ spec:
   selector:
     app: osaamiskiekko
     tier: frontend
-    phase: dev
+    phase: $PHASE
   ports:
   - name: http
     protocol: TCP
@@ -28,7 +28,7 @@ spec:
       app: osaamiskiekko
       tier: frontend
       track: stable
-      phase: dev
+      phase: $PHASE
   replicas: 1
   template:
     metadata:
@@ -36,7 +36,7 @@ spec:
         app: osaamiskiekko
         tier: frontend
         track: stable
-        phase: dev
+        phase: $PHASE
     spec:
       containers:
       - name: nginx

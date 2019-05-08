@@ -233,8 +233,8 @@ pipeline {
         }
         
         script {
-          sh "sed -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g' kubectl/backend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
-          sh "sed -e 's#\$FRONTENDIMAGE#${taggedFrontendImage}#g' kubectl/frontend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
+          sh "sed -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g;s#\$PHASE#${env.NODE_ENV}#g' kubectl/backend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
+          sh "sed -e 's#\$FRONTENDIMAGE#${taggedFrontendImage}#g;s#\$PHASE#${env.NODE_ENV}#g' kubectl/frontend.yaml | kubectl apply -n ${env.NAMESPACE} -f -"
           // Namespace-specific Load balancer disabled - uses one loadbalancer in default namespace configured manually 
           // sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/load-balancer.yaml"
         }

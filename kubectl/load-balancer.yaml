@@ -6,7 +6,7 @@ spec:
   selector:
     app: osaamiskiekko
     tier: frontend
-    phase: dev
+    phase: $PHASE
   type: LoadBalancer
   ports:
   - name: http

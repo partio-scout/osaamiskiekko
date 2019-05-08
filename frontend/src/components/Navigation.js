@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 const S = {};
 S.Navigation = styled.nav`
-  padding-left: 200px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
 ul {
+  grid-column-start: 2;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -17,7 +19,15 @@ ul li {
 
 ul li a {
   text-decoration: none;
+  color: #241C80;
 }
+
+  @media only screen and (max-width: 600px) { 
+    grid-template-columns: 1fr auto;
+    ul {
+      grid-column-start: 1;
+    }
+  }
 `;
 
 export default function Navigation() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
-import PlaceholderImage from '../images/square-image.png';
+import SweetJesus from '../images/sweetjesusface.png';
 
 const S = {};
 S.Header = styled.header`
@@ -64,7 +64,7 @@ export default function Header() {
           <p>Osaamiskiekon avulla löydät harrastus- ja vapaaehtoistoiminnassa hankitun osaamisen rinnakkain tutkintoon johtavien opintojen kanssa.</p>
         </div>
         <div className="header-image-container">
-          <img src={PlaceholderImage} alt="placeholder" className="header-image" />
+          <img src={SweetJesus} alt="placeholder" className="header-image" />
         </div>
       </div>
     </S.Header>

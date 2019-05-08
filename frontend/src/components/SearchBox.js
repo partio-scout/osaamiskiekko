@@ -8,34 +8,46 @@ S.SearchBox = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  width: 600px;
-  border: 1px solid #4736FF;
-  border-radius: 20px;
+  height: 125px;	
+  width: 587px;
+  background-color: #FFFFFF;
+ 	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
+  border-radius: 8px;
   padding: 20px;
-  color: #4736FF;
+  display: flex;
+  flex-direction: column;
 `;
 
 S.SearchWrapper = styled.div `
-  max-width: 250px;
   margin: auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   :nth-child(1) {
     margin-bottom: 20px;
   }
 
+label {
+  height: 16px;	
+  color: #241C80;
+  font-size: 16px;	
+  letter-spacing: 2.29px;
+  line-height: 15px;
+}
+
 input {
   width: 250px;
   height: 32px;
   border: none;
-  border-bottom: 1px solid #4736FF;
+  border-bottom: 2px solid #4736FF;
   padding-left: 22px;
   outline-width: 0;
   outline: none;
 }
 
 input::placeholder {
-  color: #4736FF;
+  color: #241C80;
   opacity: 1;
 }
 
@@ -43,6 +55,7 @@ input::placeholder {
   position: absolute;
   left: 0px;
   top: 27px;
+  color: #241C80;
 }
 `;
 

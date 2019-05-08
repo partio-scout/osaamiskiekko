@@ -145,7 +145,7 @@ pipeline {
             -f compose/frontend-unittests.yml \
             logs >unit-test.log"""
           
-          archive 'unit-test.log'
+          archiveArtifacts artifacts: 'unit-test.log', fingerprint: true
 
           sh """${compose} \
             -f compose/frontend-unittests.yml \
@@ -184,7 +184,7 @@ pipeline {
             -f compose/robot.yml \
             logs >acceptance-test.log"""
           
-          archive 'acceptance-test.log'
+          archiveArtifacts artifacts: 'acceptance-test.log', fingerprint: true
 
           sh """${compose} \
             -f docker-compose.yml \
@@ -242,11 +242,11 @@ pipeline {
         script {
           sh "sed -i -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g;s#\$PHASE#${env.NAMESPACE}#g' ./kubectl/*.yaml"
 
-          archive "./kubectl/*"
+          archiveArtifacts artifacts: 'kubectl/**/*.yaml', fingerprint: true
           
-          sh "kubectl apply -n ${env.NAMESPACE} -f ./kubectl/backend.yaml"
-          sh "kubectl apply -n ${env.NAMESPACE} -f ./kubectl/frontend.yaml"
-          sh "kubectl apply -n ${env.NAMESPACE} -f ./kubectl/load-balancer.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/frontend.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/load-balancer.yaml"
         }
       }
     }

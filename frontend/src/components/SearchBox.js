@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -24,9 +25,9 @@ S.SearchWrapper = styled.div `
   display: flex;
   flex-direction: column;
 
-  :nth-child(1) {
+  /* :nth-child(1) {
     margin-bottom: 20px;
-  }
+  } */
 
 label {
   height: 16px;	
@@ -40,7 +41,7 @@ input {
   width: 250px;
   height: 32px;
   border: none;
-  border-bottom: 2px solid #4736FF;
+  border-bottom: 2px solid #241C80;
   padding-left: 22px;
   outline-width: 0;
   outline: none;
@@ -60,18 +61,27 @@ input::placeholder {
 `;
 
 export default function SearchBox() {
+  const [academyOrSchool, setAcademyOrSchool] = useState("");
+  const apiUrl = 'http://localhost:1337/schools';
+
+  async function fetchData(value) {
+    const result = await axios(apiUrl);
+    // setAcademyOrSchool(result.data);
+    console.log('data:', result.data);
+  }
+
   return (
     <S.SearchBox>
       <S.SearchWrapper>
         <label htmlFor="search-academy">Valitse järjestö tai oppilaitos</label>
         <span className="fa fa-search"></span>
-        <input placeholder="Hae..." name="search-academy"/>
+        <input value={academyOrSchool} onChange={e => fetchData(e.target.value)} type="text" placeholder="Hae..." name="search-academy"/>
       </S.SearchWrapper>
-      <S.SearchWrapper>
+      {/* <S.SearchWrapper>
         <label htmlFor="search-academy">Valitse koulutus</label>
         <span className="fa fa-search"></span>
         <input placeholder="Hae..." name="search-academy" />
-      </S.SearchWrapper>
+      </S.SearchWrapper> */}
     </S.SearchBox>
   )
 }

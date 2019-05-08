@@ -40,6 +40,7 @@ ifeq ($(username), )
 endif
 ifeq ($(password), )
 	$(error "password environment variable required.")
+endif
 ifeq ($(dbname), )
 	$(error "dbname environment variable required.")
 endif

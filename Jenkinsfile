@@ -65,7 +65,7 @@ pipeline {
           
           // Create database proxy credentials secret
           withCredentials([file(credentialsId: 'osaamiskiekko-google-cloudsql-proxy-credentials', variable: 'proxycredfile')]) {
-            sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=\$proxycredfile || true"
+            sh "kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=\$proxycredfile -n ${env.NAMESPACE} || true"
             sh "rm \$proxycredfile"
           }
 

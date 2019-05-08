@@ -16,15 +16,15 @@ docker-cleanrun:
 backupdatamodels:
 	cp -r ./backend/cms/api ./tmp/datamodels
 
-getdatabasedump: getdatabasedump-allonly getdatabasedump-dataonly
+dump: dump-all dump-data
 
-getdatabasedump-allonly:
-	docker exec -t osaamiskiekko_db_1 pg_dump --clean --if-exists -U myuser -d mydb > ./backend/postgre/dump.sql
+dump-all:
+	docker exec -t osaamiskiekko_db_1 pg_dump -U myuser -s mydb > ./backend/postgre/01_schema.sql
 
-getdatabasedump-dataonly:
-	docker exec -t osaamiskiekko_db_1 pg_dump --data-only -U myuser -d mydb > ./backend/postgre/dump_dataonly.sql  
+dump-data:
+	docker exec -t osaamiskiekko_db_1 pg_dump --data-only -U myuser -d mydb > ./backend/postgre/02_testdata.sql  
 
-restoredata-dataonly:
+restore-data:
 	cat ./backend/postgre/dump_dataonly.sql | docker exec -i osaamiskiekko_db_1 psql -U myuser -d mydb
 
 

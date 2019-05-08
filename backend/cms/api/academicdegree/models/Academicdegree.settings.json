@@ -1,0 +1,57 @@
+{
+  "connection": "default",
+  "collectionName": "academicdegrees",
+  "info": {
+    "name": "academicdegree",
+    "description": "Oppilaitosten tutkinnot"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "identification": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "name_fi": {
+      "type": "string"
+    },
+    "name_swe": {
+      "type": "string"
+    },
+    "description_en": {
+      "type": "text"
+    },
+    "description_fi": {
+      "type": "text"
+    },
+    "description_swe": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "credits": {
+      "type": "integer"
+    },
+    "nqf": {
+      "model": "nqf"
+    },
+    "school": {
+      "collection": "school",
+      "via": "academicdegree"
+    },
+    "fieldofstudies": {
+      "collection": "fieldofstudy",
+      "via": "academicdegree"
+    },
+    "competencedegreelink": {
+      "model": "competencedegreelink",
+      "via": "academicdegree"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "competencedegreelinks",
+  "info": {
+    "name": "competencedegreelink",
+    "description": "Koulutus tutkinto. "
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "description_fi": {
+      "type": "text"
+    },
+    "description_en": {
+      "type": "text"
+    },
+    "description_swe": {
+      "type": "text"
+    },
+    "competence": {
+      "collection": "competence",
+      "via": "competencedegreelink"
+    },
+    "academicdegree": {
+      "collection": "academicdegree",
+      "via": "competencedegreelink"
+    }
+  }
+}

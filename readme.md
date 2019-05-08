@@ -86,6 +86,14 @@ make deploy
 
 If running locally in minikube, you can find the URL of the deployed service with `minikube service list`
 
+# Update Container
+
+docker-compose build servicename
+
+# Run only one container
+
+docker-compose up servicename
+
 # Docker commands 
  - list running containers: `docker ps -a`
  - remove container: `docker rm container_name`

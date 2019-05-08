@@ -1,26 +1,32 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
 import './App.css';
-import 'semantic-ui-css/semantic.min.css';
-import axios from 'axios';
-
-async function getApiData() {
-  try {
-    const response = await axios.get('/api/testendpoints');
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
-}
+// import styled from 'styled-components';
+import Curve from './images/curve.svg';
+// import { GlobalStyle } from './GlobalStyles';
+import PlaceholderImage from './images/square-image.png';
+import Navigation from './components/Navigation';
+import SearchBox from './components/SearchBox';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Osaamiskiekko</h1>
-          <Button primary onClick={getApiData}>Very semantic button</Button>
+      <div>
+        <header>
+            <Navigation />
+            <div className="header-container">
+              <div className="header-text">
+                <h1>Osaamiskiekon avulla hyödynnät osaamisesi monipuolisesti</h1>
+                <p>Osaamiskiekon avulla löydät harrastus- ja vapaaehtoistoiminnassa hankitun osaamisen rinnakkain tutkintoon johtavien opintojen kanssa.</p>  
+              </div>
+              <div className="header-image-container">
+                <img src={PlaceholderImage} alt="placeholder" className="header-image"/>
+              </div>
+            </div>
         </header>
+        <div className="curve-container">
+          <SearchBox />
+          <img src={Curve} alt="Curve" className="curve-image"/>
+        </div>
       </div>
     );
   }

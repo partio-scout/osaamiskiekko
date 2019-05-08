@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/organizations",
-      "handler": "Organization.find",
+      "path": "/fieldofstudies",
+      "handler": "Fieldofstudy.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/organizations/count",
-      "handler": "Organization.count",
+      "path": "/fieldofstudies/count",
+      "handler": "Fieldofstudy.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/organizations/:id",
-      "handler": "Organization.findOne",
+      "path": "/fieldofstudies/:id",
+      "handler": "Fieldofstudy.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/organizations",
-      "handler": "Organization.create",
+      "path": "/fieldofstudies",
+      "handler": "Fieldofstudy.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/organizations/:id",
-      "handler": "Organization.update",
+      "path": "/fieldofstudies/:id",
+      "handler": "Fieldofstudy.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/organizations/:id",
-      "handler": "Organization.destroy",
+      "path": "/fieldofstudies/:id",
+      "handler": "Fieldofstudy.destroy",
       "config": {
         "policies": []
       }

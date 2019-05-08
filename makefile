@@ -7,6 +7,7 @@ run-robot:
 	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml down
 
 docker-cleanrun:
+	docker-compose down
 	docker volume prune -f
 	docker container prune -f
 	docker-compose up
@@ -15,14 +16,16 @@ docker-cleanrun:
 backupdatamodels:
 	cp -r ./backend/cms/api ./tmp/datamodels
 
-getdatabasedump:
-	docker exec -t partio_db_1 pg_dump --clean --if-exists -U myuser -d mydb > ./backend/postgre/dump.sql
+dump: dump-all dump-data
 
-getdatabasedump-dataonly:
-	docker exec -t partio_db_1 pg_dump --data-only -U myuser -d mydb > ./backend/postgre/dump_dataonly.sql  
+dump-all:
+	docker exec -t osaamiskiekko_db_1 pg_dump -U myuser -s mydb > ./backend/postgre/01_schema.sql
 
-restoredata-dataonly:
-	cat ./backend/postgre/dump_dataonly.sql | docker exec -i partio_db_1 psql -U myuser -d mydb
+dump-data:
+	docker exec -t osaamiskiekko_db_1 pg_dump --data-only -U myuser -d mydb > ./backend/postgre/02_testdata.sql  
+
+restore-data:
+	cat ./backend/postgre/dump_dataonly.sql | docker exec -i osaamiskiekko_db_1 psql -U myuser -d mydb
 
 
 ### Cluster configuration ###
@@ -35,6 +38,7 @@ ifeq ($(username), )
 endif
 ifeq ($(password), )
 	$(error "password environment variable required.")
+endif
 ifeq ($(dbname), )
 	$(error "dbname environment variable required.")
 endif

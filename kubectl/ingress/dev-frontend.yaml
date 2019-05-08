@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1  
+  metadata:
+    name: service-v1
+    namespace: ingress-ns
+ spec:  
+   type: ExternalName
+   externalName: frontend.master.svc.cluster.local # here is a service name and namespace of your service with version v1.
+  ports:
+    - port: 80
+    - port: 1337

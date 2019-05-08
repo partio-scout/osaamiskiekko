@@ -1,9 +1,9 @@
 {
   "connection": "default",
-  "collectionName": "organizations",
+  "collectionName": "schools",
   "info": {
-    "name": "organization",
-    "description": "Järjestöt"
+    "name": "school",
+    "description": "Oppilaitokset"
   },
   "options": {
     "increments": true,
@@ -12,20 +12,18 @@
   },
   "attributes": {
     "name_en": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "name_fi": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "name_swe": {
       "type": "string"
     },
-    "description_fi": {
+    "description_en": {
       "type": "text"
     },
-    "description_en": {
+    "description_fi": {
       "type": "text"
     },
     "description_swe": {
@@ -39,12 +37,12 @@
       "via": "related",
       "plugin": "upload"
     },
-    "competence": {
-      "model": "competence",
-      "via": "organizations"
-    },
     "logoUrl": {
       "type": "string"
+    },
+    "academicdegree": {
+      "model": "academicdegree",
+      "via": "school"
     }
   }
 }

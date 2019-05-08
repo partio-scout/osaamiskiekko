@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/organizations",
-      "handler": "Organization.find",
+      "path": "/schools",
+      "handler": "School.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/organizations/count",
-      "handler": "Organization.count",
+      "path": "/schools/count",
+      "handler": "School.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/organizations/:id",
-      "handler": "Organization.findOne",
+      "path": "/schools/:id",
+      "handler": "School.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/organizations",
-      "handler": "Organization.create",
+      "path": "/schools",
+      "handler": "School.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/organizations/:id",
-      "handler": "Organization.update",
+      "path": "/schools/:id",
+      "handler": "School.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/organizations/:id",
-      "handler": "Organization.destroy",
+      "path": "/schools/:id",
+      "handler": "School.destroy",
       "config": {
         "policies": []
       }

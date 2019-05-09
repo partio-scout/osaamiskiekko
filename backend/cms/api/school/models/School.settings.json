@@ -40,8 +40,8 @@
     "logoUrl": {
       "type": "string"
     },
-    "academicdegree": {
-      "model": "academicdegree",
+    "academicdegrees": {
+      "collection": "academicdegree",
       "via": "school"
     }
   }

@@ -16,9 +16,9 @@ docker-cleanrun:
 backupdatamodels:
 	cp -r ./backend/cms/api ./tmp/datamodels
 
-dump: dump-all dump-data
+dump: dump-schema dump-data
 
-dump-all:
+dump-schema:
 	docker exec -t osaamiskiekko_db_1 pg_dump -U myuser -s mydb > ./backend/postgre/01_schema.sql
 
 dump-data:

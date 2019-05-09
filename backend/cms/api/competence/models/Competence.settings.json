@@ -11,6 +11,9 @@
     "comment": ""
   },
   "attributes": {
+    "identification": {
+      "type": "string"
+    },
     "name_en": {
       "type": "string"
     },
@@ -32,21 +35,18 @@
     "description_swe": {
       "type": "text"
     },
-    "identification": {
-      "type": "string"
-    },
     "nqf": {
       "model": "nqf"
     },
     "credits": {
       "type": "integer"
     },
-    "organizations": {
-      "collection": "organization",
-      "via": "competence"
+    "organization": {
+      "model": "organization",
+      "via": "competences"
     },
-    "competencedegreelink": {
-      "model": "competencedegreelink",
+    "competencedegreelinks": {
+      "collection": "competencedegreelink",
       "via": "competence"
     }
   }

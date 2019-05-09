@@ -129,6 +129,8 @@ pipeline {
           
           archiveArtifacts artifacts: 'unit-test.log', fingerprint: true
 
+          sh "ls ./frontend/"
+
           sh """${compose} \
             -f compose/frontend-unittests.yml \
             down"""

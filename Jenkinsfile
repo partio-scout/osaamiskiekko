@@ -129,8 +129,6 @@ pipeline {
           
           archiveArtifacts artifacts: 'unit-test.log', fingerprint: true
 
-          sh "ls ./frontend/coverage/"
-
           sh """${compose} \
             -f compose/frontend-unittests.yml \
             down"""
@@ -144,6 +142,8 @@ pipeline {
           script {
               scannerHome = tool 'SonarScanner'
           }
+
+          sh "ls ./frontend/coverage/"
 
           sh "${scannerHome}/bin/sonar-scanner -Dsonar.branch=${env.BRANCH_NAME}"
         }

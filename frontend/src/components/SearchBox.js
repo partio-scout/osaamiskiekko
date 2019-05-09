@@ -1,6 +1,7 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState }  from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { DebounceInput } from 'react-debounce-input';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -24,6 +25,7 @@ S.SearchWrapper = styled.div `
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 
   /* :nth-child(1) {
     margin-bottom: 20px;
@@ -60,28 +62,69 @@ input::placeholder {
 }
 `;
 
+S.ResultsDiv = styled.div `
+  border-bottom: 1px solid #335362;
+  padding: 10px 10px 10px 10px;
+  :last-child { border-bottom: none; }
+  :hover {
+   background-color: #E6E9EB;
+   cursor: pointer;
+  }
+`;
+
+S.ResultWrapper = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
+  width: 250px;
+  margin: auto;
+`;
+
 export default function SearchBox() {
   const [academyOrSchool, setAcademyOrSchool] = useState("");
+  const [schools, setSchools] = useState([]);
   const apiUrl = 'http://localhost:1337/schools';
 
-  async function fetchData(value) {
-    const result = await axios(apiUrl);
-    // setAcademyOrSchool(result.data);
-    console.log('data:', result.data);
+  const fetchData = async (value) => {
+    setAcademyOrSchool(value);
+    if (value) {
+      const result = await axios(apiUrl);
+      setSchools(result.data);
+    } else {
+      setSchools([]);
+    }
   }
+
+  const renderResults = (school) =>
+    <S.ResultsDiv key={school.id}>
+      <span>{school.name_fi}</span>
+    </S.ResultsDiv>
 
   return (
     <S.SearchBox>
       <S.SearchWrapper>
         <label htmlFor="search-academy">Valitse järjestö tai oppilaitos</label>
         <span className="fa fa-search"></span>
-        <input value={academyOrSchool} onChange={e => fetchData(e.target.value)} type="text" placeholder="Hae..." name="search-academy"/>
+        <DebounceInput
+          minLength={2}
+          debounceTimeout={300}
+          value={academyOrSchool}
+          type="text" 
+          placeholder="Hae..." 
+          name="search-academy"
+          onChange={e => fetchData(e.target.value)} />
       </S.SearchWrapper>
       {/* <S.SearchWrapper>
         <label htmlFor="search-academy">Valitse koulutus</label>
         <span className="fa fa-search"></span>
         <input placeholder="Hae..." name="search-academy" />
       </S.SearchWrapper> */}
+      {schools.length > 0 ? 
+        <S.ResultWrapper show={schools}>
+          {schools.map(school => renderResults(school))}
+        </S.ResultWrapper>
+        : ''  
+      }
     </S.SearchBox>
   )
 }

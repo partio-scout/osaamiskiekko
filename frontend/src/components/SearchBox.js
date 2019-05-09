@@ -19,6 +19,10 @@ S.SearchBox = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 660px) {
+    width: 350px;
+  }
 `;
 
 S.SearchWrapper = styled.div `

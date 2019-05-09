@@ -108,24 +108,6 @@ pipeline {
       }
     }
 
-    // stage('Analysis') {
-    //   steps {
-    //     script {
-    //       echo "setting scannerHome"
-    //       scannerHome = tool "Sonar Scanner 3.3.0.1492"
-    //       echo "scannerHome set"
-    //     }
-        
-    //     withSonarQubeEnv('SonarQube 5.6.6 (sonar)') {
-    //       echo "Executing sonar scanner"
-    //       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${partionosaamiskiekko-bot-w_password}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-    //         sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=${USERNAME} -Dsonar.password=${PASSWORD} -Dsonar.branch=${env.BRANCH_NAME}"
-    //       }
-    //       echo "Scan finished"
-    //     }
-    //   }
-    // }
-
     stage('Build') {
       steps {
         buildImages()
@@ -145,14 +127,34 @@ pipeline {
             -f compose/frontend-unittests.yml \
             logs >unit-test.log"""
           
-          archiveArtifacts artifacts: 'unit-test.log', fingerprint: true
+          archiveArtifacts 'unit-test.log'
 
           sh """${compose} \
             -f compose/frontend-unittests.yml \
             down"""
         }
       }
-    }    
+    }
+
+    stage('Static code analysis') {
+      steps {
+        withSonarQubeEnv('SonarQube') {
+          script {
+              scannerHome = tool 'SonarScanner'
+          }
+
+          sh "mkdir frontend/coverage"
+          sh "cp frontend/test-results/* frontend/coverage -r"
+          sh "sed s#/usr/src/app#${pwd()}/frontend#g -i frontend/coverage/lcov.info"
+          sh "sed s#/usr/src/app#${pwd()}/frontend#g -i frontend/coverage/sonar-report.xml"
+
+          archiveArtifacts 'frontend/coverage/lcov.info*'
+          archiveArtifacts 'frontend/coverage/sonar-report.xml*'
+
+          sh "${scannerHome}/bin/sonar-scanner -Dsonar.branch=${env.BRANCH_NAME}"
+        }
+      }
+    }
 
     stage('Acceptance Test') {
       steps {

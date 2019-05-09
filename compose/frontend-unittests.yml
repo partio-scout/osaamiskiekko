@@ -6,7 +6,9 @@ services:
       context: ./frontend
     environment:
       - CI=true
-    command: npm test
+    command: npm run test-sonar -- --coverage
+    volumes:
+    - ./frontend/test-results/:/usr/src/app/coverage/
 
 
  

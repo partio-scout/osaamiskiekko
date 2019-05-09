@@ -5,6 +5,18 @@ const S = {};
 S.ResultsDiv = styled.div`
   border-bottom: 1px solid #335362;
   padding: 10px 10px 10px 10px;
+
+  p {
+    color: #241C80;
+  }
+
+  .type {
+    font-size: 12px;	
+    letter-spacing: 2px;
+    line-height: 15px;
+  }
+
+
   :last-child { border-bottom: none; }
   :hover {
    background-color: #E6E9EB;
@@ -22,16 +34,18 @@ S.ResultWrapper = styled.div`
 
 
 export default function SearchResults(props) {
-  const { schools } = props;
-  const renderResults = (school) =>
-    <S.ResultsDiv key={school.id}>
-      <span>{school.name_fi}</span>
+  const { schools, organizations } = props;
+  const schoolsAndOrganizations = [...schools, ...organizations];
+  const renderResults = (item) =>
+    <S.ResultsDiv key={item.id}>
+      <p>{item.name_fi}</p>
+      <p className="type">{item.type_fi ? item.type_fi : 'Järjestö'}</p>
     </S.ResultsDiv>
 
   return (
     <div>
         <S.ResultWrapper>
-          {schools.map(renderResults)}
+          {schoolsAndOrganizations.map(renderResults)}
         </S.ResultWrapper>
     </div>
   )

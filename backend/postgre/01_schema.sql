@@ -49,12 +49,10 @@ CREATE TABLE public.academicdegrees (
     url character varying(255),
     credits integer,
     nqf integer,
-    school character varying(255),
-    fieldofstudy character varying(255),
+    school integer,
+    fieldofstudy integer,
     created_at timestamp with time zone,
-    updated_at timestamp with time zone,
-    nqf_level character varying(255),
-    competencedegreelink integer
+    updated_at timestamp with time zone
 );
 
 
@@ -83,64 +81,24 @@ ALTER SEQUENCE public.academicdegrees_id_seq OWNED BY public.academicdegrees.id;
 
 
 --
--- Name: academies; Type: TABLE; Schema: public; Owner: myuser
---
-
-CREATE TABLE public.academies (
-    id integer NOT NULL,
-    name character varying(255),
-    description text,
-    url character varying(255),
-    created_at timestamp with time zone,
-    updated_at timestamp with time zone
-);
-
-
-ALTER TABLE public.academies OWNER TO myuser;
-
---
--- Name: academies_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
---
-
-CREATE SEQUENCE public.academies_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.academies_id_seq OWNER TO myuser;
-
---
--- Name: academies_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
---
-
-ALTER SEQUENCE public.academies_id_seq OWNED BY public.academies.id;
-
-
---
 -- Name: competence; Type: TABLE; Schema: public; Owner: myuser
 --
 
 CREATE TABLE public.competence (
     id integer NOT NULL,
+    identification character varying(255),
     name_en character varying(255),
     description_en text,
-    credits integer,
-    nqf integer,
     url character varying(255),
     name_fi character varying(255),
     name_swe character varying(255),
     description_fi text,
     description_swe text,
+    nqf integer,
+    credits integer,
+    organization integer,
     created_at timestamp with time zone,
-    updated_at timestamp with time zone,
-    organization character varying(255),
-    identification character varying(255),
-    nqf_level character varying(255),
-    competencedegreelink integer
+    updated_at timestamp with time zone
 );
 
 
@@ -174,16 +132,12 @@ ALTER SEQUENCE public.competence_id_seq OWNED BY public.competence.id;
 
 CREATE TABLE public.competencedegreelinks (
     id integer NOT NULL,
-    competencename_fi character varying(255),
-    competencename_en character varying(255),
-    competencename_swe character varying(255),
-    academicdegree_fi character varying(255),
-    academicdegree_en character varying(255),
-    academicdegree_swe character varying(255),
     url character varying(255),
     description_fi text,
     description_en text,
     description_swe text,
+    competence integer,
+    academicdegree integer,
     created_at timestamp with time zone,
     updated_at timestamp with time zone
 );
@@ -252,46 +206,6 @@ ALTER SEQUENCE public.core_store_id_seq OWNED BY public.core_store.id;
 
 
 --
--- Name: examinations; Type: TABLE; Schema: public; Owner: myuser
---
-
-CREATE TABLE public.examinations (
-    id integer NOT NULL,
-    name character varying(255),
-    description text,
-    url character varying(255),
-    credits integer,
-    nqf integer,
-    created_at timestamp with time zone,
-    updated_at timestamp with time zone
-);
-
-
-ALTER TABLE public.examinations OWNER TO myuser;
-
---
--- Name: examinations_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
---
-
-CREATE SEQUENCE public.examinations_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.examinations_id_seq OWNER TO myuser;
-
---
--- Name: examinations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
---
-
-ALTER SEQUENCE public.examinations_id_seq OWNED BY public.examinations.id;
-
-
---
 -- Name: fieldofstudies; Type: TABLE; Schema: public; Owner: myuser
 --
 
@@ -301,8 +215,7 @@ CREATE TABLE public.fieldofstudies (
     name_en character varying(255),
     name_swe character varying(255),
     created_at timestamp with time zone,
-    updated_at timestamp with time zone,
-    academicdegree integer
+    updated_at timestamp with time zone
 );
 
 
@@ -341,8 +254,7 @@ CREATE TABLE public.nqfs (
     name_swe character varying(255),
     level character varying(255) NOT NULL,
     created_at timestamp with time zone,
-    updated_at timestamp with time zone,
-    competence integer
+    updated_at timestamp with time zone
 );
 
 
@@ -371,70 +283,21 @@ ALTER SEQUENCE public.nqfs_id_seq OWNED BY public.nqfs.id;
 
 
 --
--- Name: organizationeducations; Type: TABLE; Schema: public; Owner: myuser
---
-
-CREATE TABLE public.organizationeducations (
-    id integer NOT NULL,
-    name character varying(255),
-    description text,
-    credits integer,
-    nqf integer,
-    created_at timestamp with time zone,
-    updated_at timestamp with time zone,
-    name_en character varying(255),
-    description_en text,
-    url character varying(255),
-    name_swe character varying(255),
-    description_fi text,
-    name_fi character varying(255),
-    description_swe text
-);
-
-
-ALTER TABLE public.organizationeducations OWNER TO myuser;
-
---
--- Name: organizationeducations_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
---
-
-CREATE SEQUENCE public.organizationeducations_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.organizationeducations_id_seq OWNER TO myuser;
-
---
--- Name: organizationeducations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
---
-
-ALTER SEQUENCE public.organizationeducations_id_seq OWNED BY public.organizationeducations.id;
-
-
---
 -- Name: organizations; Type: TABLE; Schema: public; Owner: myuser
 --
 
 CREATE TABLE public.organizations (
     id integer NOT NULL,
-    name character varying(255),
-    description text,
-    url character varying(255),
-    created_at timestamp with time zone,
-    updated_at timestamp with time zone,
     name_en character varying(255) NOT NULL,
-    description_en text,
     name_fi character varying(255) NOT NULL,
     name_swe character varying(255),
     description_fi text,
+    description_en text,
     description_swe text,
-    competence integer,
-    "logoUrl" character varying(255)
+    url character varying(255),
+    "logoUrl" character varying(255),
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
 );
 
 
@@ -475,10 +338,9 @@ CREATE TABLE public.schools (
     description_fi text,
     description_swe text,
     url character varying(255),
-    created_at timestamp with time zone,
-    updated_at timestamp with time zone,
     "logoUrl" character varying(255),
-    academicdegree integer
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
 );
 
 
@@ -711,13 +573,6 @@ ALTER TABLE ONLY public.academicdegrees ALTER COLUMN id SET DEFAULT nextval('pub
 
 
 --
--- Name: academies id; Type: DEFAULT; Schema: public; Owner: myuser
---
-
-ALTER TABLE ONLY public.academies ALTER COLUMN id SET DEFAULT nextval('public.academies_id_seq'::regclass);
-
-
---
 -- Name: competence id; Type: DEFAULT; Schema: public; Owner: myuser
 --
 
@@ -739,13 +594,6 @@ ALTER TABLE ONLY public.core_store ALTER COLUMN id SET DEFAULT nextval('public.c
 
 
 --
--- Name: examinations id; Type: DEFAULT; Schema: public; Owner: myuser
---
-
-ALTER TABLE ONLY public.examinations ALTER COLUMN id SET DEFAULT nextval('public.examinations_id_seq'::regclass);
-
-
---
 -- Name: fieldofstudies id; Type: DEFAULT; Schema: public; Owner: myuser
 --
 
@@ -757,13 +605,6 @@ ALTER TABLE ONLY public.fieldofstudies ALTER COLUMN id SET DEFAULT nextval('publ
 --
 
 ALTER TABLE ONLY public.nqfs ALTER COLUMN id SET DEFAULT nextval('public.nqfs_id_seq'::regclass);
-
-
---
--- Name: organizationeducations id; Type: DEFAULT; Schema: public; Owner: myuser
---
-
-ALTER TABLE ONLY public.organizationeducations ALTER COLUMN id SET DEFAULT nextval('public.organizationeducations_id_seq'::regclass);
 
 
 --
@@ -824,14 +665,6 @@ ALTER TABLE ONLY public.academicdegrees
 
 
 --
--- Name: academies academies_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
---
-
-ALTER TABLE ONLY public.academies
-    ADD CONSTRAINT academies_pkey PRIMARY KEY (id);
-
-
---
 -- Name: competence competence_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
 --
 
@@ -856,14 +689,6 @@ ALTER TABLE ONLY public.core_store
 
 
 --
--- Name: examinations examinations_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
---
-
-ALTER TABLE ONLY public.examinations
-    ADD CONSTRAINT examinations_pkey PRIMARY KEY (id);
-
-
---
 -- Name: fieldofstudies fieldofstudies_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
 --
 
@@ -877,14 +702,6 @@ ALTER TABLE ONLY public.fieldofstudies
 
 ALTER TABLE ONLY public.nqfs
     ADD CONSTRAINT nqfs_pkey PRIMARY KEY (id);
-
-
---
--- Name: organizationeducations organizationeducations_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
---
-
-ALTER TABLE ONLY public.organizationeducations
-    ADD CONSTRAINT organizationeducations_pkey PRIMARY KEY (id);
 
 
 --
@@ -965,13 +782,6 @@ CREATE INDEX search_academicdegrees_description_swe ON public.academicdegrees US
 
 
 --
--- Name: search_academicdegrees_fieldofstudy; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_academicdegrees_fieldofstudy ON public.academicdegrees USING gin (fieldofstudy public.gin_trgm_ops);
-
-
---
 -- Name: search_academicdegrees_identification; Type: INDEX; Schema: public; Owner: myuser
 --
 
@@ -1000,248 +810,10 @@ CREATE INDEX search_academicdegrees_name_swe ON public.academicdegrees USING gin
 
 
 --
--- Name: search_academicdegrees_school; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_academicdegrees_school ON public.academicdegrees USING gin (school public.gin_trgm_ops);
-
-
---
 -- Name: search_academicdegrees_url; Type: INDEX; Schema: public; Owner: myuser
 --
 
 CREATE INDEX search_academicdegrees_url ON public.academicdegrees USING gin (url public.gin_trgm_ops);
-
-
---
--- Name: search_academies_description; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_academies_description ON public.academies USING gin (description public.gin_trgm_ops);
-
-
---
--- Name: search_academies_name; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_academies_name ON public.academies USING gin (name public.gin_trgm_ops);
-
-
---
--- Name: search_academies_url; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_academies_url ON public.academies USING gin (url public.gin_trgm_ops);
-
-
---
--- Name: search_competence_description_en; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competence_description_en ON public.competence USING gin (description_en public.gin_trgm_ops);
-
-
---
--- Name: search_competence_description_fi; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competence_description_fi ON public.competence USING gin (description_fi public.gin_trgm_ops);
-
-
---
--- Name: search_competence_description_swe; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competence_description_swe ON public.competence USING gin (description_swe public.gin_trgm_ops);
-
-
---
--- Name: search_competence_identification; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competence_identification ON public.competence USING gin (identification public.gin_trgm_ops);
-
-
---
--- Name: search_competence_name_en; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competence_name_en ON public.competence USING gin (name_en public.gin_trgm_ops);
-
-
---
--- Name: search_competence_name_fi; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competence_name_fi ON public.competence USING gin (name_fi public.gin_trgm_ops);
-
-
---
--- Name: search_competence_name_swe; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competence_name_swe ON public.competence USING gin (name_swe public.gin_trgm_ops);
-
-
---
--- Name: search_competence_organization; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competence_organization ON public.competence USING gin (organization public.gin_trgm_ops);
-
-
---
--- Name: search_competence_url; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competence_url ON public.competence USING gin (url public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_academicdegree_en; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_academicdegree_en ON public.competencedegreelinks USING gin (academicdegree_en public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_academicdegree_fi; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_academicdegree_fi ON public.competencedegreelinks USING gin (academicdegree_fi public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_academicdegree_swe; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_academicdegree_swe ON public.competencedegreelinks USING gin (academicdegree_swe public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_competencename_en; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_competencename_en ON public.competencedegreelinks USING gin (competencename_en public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_competencename_fi; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_competencename_fi ON public.competencedegreelinks USING gin (competencename_fi public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_competencename_swe; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_competencename_swe ON public.competencedegreelinks USING gin (competencename_swe public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_description_en; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_description_en ON public.competencedegreelinks USING gin (description_en public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_description_fi; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_description_fi ON public.competencedegreelinks USING gin (description_fi public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_description_swe; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_description_swe ON public.competencedegreelinks USING gin (description_swe public.gin_trgm_ops);
-
-
---
--- Name: search_competencedegreelinks_url; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_competencedegreelinks_url ON public.competencedegreelinks USING gin (url public.gin_trgm_ops);
-
-
---
--- Name: search_core_store_environment; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_core_store_environment ON public.core_store USING gin (environment public.gin_trgm_ops);
-
-
---
--- Name: search_core_store_key; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_core_store_key ON public.core_store USING gin (key public.gin_trgm_ops);
-
-
---
--- Name: search_core_store_tag; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_core_store_tag ON public.core_store USING gin (tag public.gin_trgm_ops);
-
-
---
--- Name: search_core_store_type; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_core_store_type ON public.core_store USING gin (type public.gin_trgm_ops);
-
-
---
--- Name: search_core_store_value; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_core_store_value ON public.core_store USING gin (value public.gin_trgm_ops);
-
-
---
--- Name: search_examinations_description; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_examinations_description ON public.examinations USING gin (description public.gin_trgm_ops);
-
-
---
--- Name: search_examinations_name; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_examinations_name ON public.examinations USING gin (name public.gin_trgm_ops);
-
-
---
--- Name: search_examinations_url; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_examinations_url ON public.examinations USING gin (url public.gin_trgm_ops);
-
-
---
--- Name: search_fieldofstudies_name_en; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_fieldofstudies_name_en ON public.fieldofstudies USING gin (name_en public.gin_trgm_ops);
-
-
---
--- Name: search_fieldofstudies_name_fi; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_fieldofstudies_name_fi ON public.fieldofstudies USING gin (name_fi public.gin_trgm_ops);
-
-
---
--- Name: search_fieldofstudies_name_swe; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_fieldofstudies_name_swe ON public.fieldofstudies USING gin (name_swe public.gin_trgm_ops);
 
 
 --
@@ -1263,90 +835,6 @@ CREATE INDEX search_nqfs_name_fi ON public.nqfs USING gin (name_fi public.gin_tr
 --
 
 CREATE INDEX search_nqfs_name_swe ON public.nqfs USING gin (name_swe public.gin_trgm_ops);
-
-
---
--- Name: search_organizationeducations_description; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizationeducations_description ON public.organizationeducations USING gin (description public.gin_trgm_ops);
-
-
---
--- Name: search_organizationeducations_name; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizationeducations_name ON public.organizationeducations USING gin (name public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_description; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_description ON public.organizations USING gin (description public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_description_en; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_description_en ON public.organizations USING gin (description_en public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_description_fi; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_description_fi ON public.organizations USING gin (description_fi public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_description_swe; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_description_swe ON public.organizations USING gin (description_swe public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_logourl; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_logourl ON public.organizations USING gin ("logoUrl" public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_name; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_name ON public.organizations USING gin (name public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_name_en; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_name_en ON public.organizations USING gin (name_en public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_name_fi; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_name_fi ON public.organizations USING gin (name_fi public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_name_swe; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_name_swe ON public.organizations USING gin (name_swe public.gin_trgm_ops);
-
-
---
--- Name: search_organizations_url; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_organizations_url ON public.organizations USING gin (url public.gin_trgm_ops);
 
 
 --
@@ -1406,27 +894,6 @@ CREATE INDEX search_schools_url ON public.schools USING gin (url public.gin_trgm
 
 
 --
--- Name: search_upload_file_ext; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_upload_file_ext ON public.upload_file USING gin (ext public.gin_trgm_ops);
-
-
---
--- Name: search_upload_file_hash; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_upload_file_hash ON public.upload_file USING gin (hash public.gin_trgm_ops);
-
-
---
--- Name: search_upload_file_mime; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_upload_file_mime ON public.upload_file USING gin (mime public.gin_trgm_ops);
-
-
---
 -- Name: search_upload_file_morph_field; Type: INDEX; Schema: public; Owner: myuser
 --
 
@@ -1438,76 +905,6 @@ CREATE INDEX search_upload_file_morph_field ON public.upload_file_morph USING gi
 --
 
 CREATE INDEX search_upload_file_morph_related_type ON public.upload_file_morph USING gin (related_type public.gin_trgm_ops);
-
-
---
--- Name: search_upload_file_name; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_upload_file_name ON public.upload_file USING gin (name public.gin_trgm_ops);
-
-
---
--- Name: search_upload_file_provider; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_upload_file_provider ON public.upload_file USING gin (provider public.gin_trgm_ops);
-
-
---
--- Name: search_upload_file_public_id; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_upload_file_public_id ON public.upload_file USING gin (public_id public.gin_trgm_ops);
-
-
---
--- Name: search_upload_file_sha256; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_upload_file_sha256 ON public.upload_file USING gin (sha256 public.gin_trgm_ops);
-
-
---
--- Name: search_upload_file_size; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_upload_file_size ON public.upload_file USING gin (size public.gin_trgm_ops);
-
-
---
--- Name: search_upload_file_url; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_upload_file_url ON public.upload_file USING gin (url public.gin_trgm_ops);
-
-
---
--- Name: search_users_permissions_permission_action; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_users_permissions_permission_action ON public."users-permissions_permission" USING gin (action public.gin_trgm_ops);
-
-
---
--- Name: search_users_permissions_permission_controller; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_users_permissions_permission_controller ON public."users-permissions_permission" USING gin (controller public.gin_trgm_ops);
-
-
---
--- Name: search_users_permissions_permission_policy; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_users_permissions_permission_policy ON public."users-permissions_permission" USING gin (policy public.gin_trgm_ops);
-
-
---
--- Name: search_users_permissions_permission_type; Type: INDEX; Schema: public; Owner: myuser
---
-
-CREATE INDEX search_users_permissions_permission_type ON public."users-permissions_permission" USING gin (type public.gin_trgm_ops);
 
 
 --

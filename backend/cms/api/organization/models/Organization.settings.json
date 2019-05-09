@@ -39,12 +39,12 @@
       "via": "related",
       "plugin": "upload"
     },
-    "competence": {
-      "model": "competence",
-      "via": "organizations"
-    },
     "logoUrl": {
       "type": "string"
+    },
+    "competences": {
+      "collection": "competence",
+      "via": "organization"
     }
   }
 }

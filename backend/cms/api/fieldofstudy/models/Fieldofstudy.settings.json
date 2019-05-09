@@ -19,10 +19,6 @@
     },
     "name_swe": {
       "type": "string"
-    },
-    "academicdegree": {
-      "model": "academicdegree",
-      "via": "fieldofstudies"
     }
   }
 }

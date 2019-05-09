@@ -24,12 +24,12 @@
       "type": "text"
     },
     "competence": {
-      "collection": "competence",
-      "via": "competencedegreelink"
+      "model": "competence",
+      "via": "competencedegreelinks"
     },
     "academicdegree": {
-      "collection": "academicdegree",
-      "via": "competencedegreelink"
+      "model": "academicdegree",
+      "via": "competencedegreelinks"
     }
   }
 }

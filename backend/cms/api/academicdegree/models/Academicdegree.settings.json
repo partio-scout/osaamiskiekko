@@ -42,15 +42,14 @@
       "model": "nqf"
     },
     "school": {
-      "collection": "school",
-      "via": "academicdegree"
+      "model": "school",
+      "via": "academicdegrees"
     },
-    "fieldofstudies": {
-      "collection": "fieldofstudy",
-      "via": "academicdegree"
+    "fieldofstudy": {
+      "model": "fieldofstudy"
     },
-    "competencedegreelink": {
-      "model": "competencedegreelink",
+    "competencedegreelinks": {
+      "collection": "competencedegreelink",
       "via": "academicdegree"
     }
   }

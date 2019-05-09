@@ -143,8 +143,8 @@ pipeline {
               scannerHome = tool 'SonarScanner'
           }
 
-          sh "sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/lcov.info"
-          sh "sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/sonar-report.xml"
+          sh "sudo sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/lcov.info"
+          sh "sudo sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/sonar-report.xml"
 
           archiveArtifacts 'frontend/coverage/lcov.info*'
           archiveArtifacts 'frontend/coverage/sonar-report.xml*'

@@ -108,20 +108,13 @@ pipeline {
       }
     }
 
-    stage('Analysis') {
+    stage('Static code analysis') {
       steps {
-        script {
-          echo "setting scannerHome"
-          scannerHome = tool "Sonar Scanner 3.3.0.1492"
-          echo "scannerHome set"
-        }
-        
-        withSonarQubeEnv('SonarQube') {
-          echo "Executing sonar scanner"
-          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${partionosaamiskiekko-bot-w_password}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-            sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=${USERNAME} -Dsonar.password=${PASSWORD} -Dsonar.branch=${env.BRANCH_NAME}"
+        withSonarQubeEnv('Sonarqube') {
+          script {
+              scannerHome = tool 'Sonar Scanner 3.3.0.1492'
           }
-          echo "Scan finished"
+          sh "${scannerHome}/bin/sonar-scanner"
         }
       }
     }

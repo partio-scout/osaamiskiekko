@@ -70,13 +70,25 @@ input::placeholder {
 export default function SearchBox() {
   const [academyOrSchool, setAcademyOrSchool] = useState("");
   const [schools, setSchools] = useState([]);
-  const apiUrl = 'http://localhost:1337/schools';
+  const apiUrl = 'http://localhost:1337/schools?name_fi_contains=';
+
+  const addTypeToArray = (schoolOrOrganization, type) => schoolOrOrganization.map(item => {
+    if (type === 'school') {
+      const o = Object.assign({}, item);
+      o.type_fi = 'Oppilaitos';
+      o.type_en = 'School';
+      o.type_se = 'Skola'
+      return o;
+    }
+    return null;
+  })
 
   const fetchData = async (value) => {
     setAcademyOrSchool(value);
     if (value) {
-      const result = await axios(apiUrl);
-      setSchools(result.data);
+      const result = await axios(`${apiUrl}${value}`);
+      const resultWithType = addTypeToArray(result.data, 'school');
+      setSchools(resultWithType);
     } else {
       setSchools([]);
     }

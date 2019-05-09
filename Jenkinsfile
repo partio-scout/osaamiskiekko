@@ -116,24 +116,25 @@ pipeline {
 
     stage('Front-End unit tests') {
       steps {
-        sh """${compose} \
-            -f compose/frontend-unittests.yml \
-            up"""
+        sh "npm run test-sonar -- --coverage"
+        // sh """${compose} \
+        //     -f compose/frontend-unittests.yml \
+        //     up"""
       }
 
-      post {
-        always {
-          sh """${compose} \
-            -f compose/frontend-unittests.yml \
-            logs >unit-test.log"""
+      // post {
+      //   always {
+      //     // sh """${compose} \
+      //     //   -f compose/frontend-unittests.yml \
+      //     //   logs >unit-test.log"""
           
-          archiveArtifacts artifacts: 'unit-test.log', fingerprint: true
+      //     archiveArtifacts artifacts: 'unit-test.log', fingerprint: true
 
-          sh """${compose} \
-            -f compose/frontend-unittests.yml \
-            down"""
-        }
-      }
+      //     // sh """${compose} \
+      //     //   -f compose/frontend-unittests.yml \
+      //     //   down"""
+      //   }
+      // }
     }
 
     stage('Static code analysis') {
@@ -143,7 +144,7 @@ pipeline {
               scannerHome = tool 'SonarScanner'
           }
 
-          sh "ls ./frontend/coverage/"
+          // sh "npm run test-sonar -- --coverage"
 
           sh "${scannerHome}/bin/sonar-scanner -Dsonar.branch=${env.BRANCH_NAME}"
         }

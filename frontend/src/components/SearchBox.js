@@ -1,6 +1,8 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState }  from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { DebounceInput } from 'react-debounce-input';
+import SearchResults from './SearchResults';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -17,6 +19,10 @@ S.SearchBox = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 660px) {
+    width: 350px;
+  }
 `;
 
 S.SearchWrapper = styled.div `
@@ -24,6 +30,7 @@ S.SearchWrapper = styled.div `
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
 
   /* :nth-child(1) {
     margin-bottom: 20px;
@@ -62,12 +69,17 @@ input::placeholder {
 
 export default function SearchBox() {
   const [academyOrSchool, setAcademyOrSchool] = useState("");
+  const [schools, setSchools] = useState([]);
   const apiUrl = 'http://localhost:1337/schools';
 
-  async function fetchData(value) {
-    const result = await axios(apiUrl);
-    // setAcademyOrSchool(result.data);
-    console.log('data:', result.data);
+  const fetchData = async (value) => {
+    setAcademyOrSchool(value);
+    if (value) {
+      const result = await axios(apiUrl);
+      setSchools(result.data);
+    } else {
+      setSchools([]);
+    }
   }
 
   return (
@@ -75,13 +87,16 @@ export default function SearchBox() {
       <S.SearchWrapper>
         <label htmlFor="search-academy">Valitse järjestö tai oppilaitos</label>
         <span className="fa fa-search"></span>
-        <input value={academyOrSchool} onChange={e => fetchData(e.target.value)} type="text" placeholder="Hae..." name="search-academy"/>
+        <DebounceInput
+          minLength={2}
+          debounceTimeout={300}
+          value={academyOrSchool}
+          type="text" 
+          placeholder="Hae..." 
+          name="search-academy"
+          onChange={e => fetchData(e.target.value)} />
       </S.SearchWrapper>
-      {/* <S.SearchWrapper>
-        <label htmlFor="search-academy">Valitse koulutus</label>
-        <span className="fa fa-search"></span>
-        <input placeholder="Hae..." name="search-academy" />
-      </S.SearchWrapper> */}
+      <SearchResults schools={schools} />
     </S.SearchBox>
   )
 }

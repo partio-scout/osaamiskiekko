@@ -117,7 +117,7 @@ pipeline {
     stage('Front-End unit tests') {
       steps {
         sh """${compose} \
-            -f compose/frontend-unittests.yml \
+            -u jenkins -f compose/frontend-unittests.yml \
             up"""
       }
 
@@ -143,8 +143,10 @@ pipeline {
               scannerHome = tool 'SonarScanner'
           }
 
-          sh "sudo sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/lcov.info"
-          sh "sudo sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/sonar-report.xml"
+          sh "mkdir frontend/coverage"
+          sh "cp frontend/test-results/* frontend/coverage"
+          sh "sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/lcov.info"
+          sh "sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/sonar-report.xml"
 
           archiveArtifacts 'frontend/coverage/lcov.info*'
           archiveArtifacts 'frontend/coverage/sonar-report.xml*'

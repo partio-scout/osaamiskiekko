@@ -128,7 +128,7 @@ pipeline {
             logs >unit-test.log"""
           
           archiveArtifacts 'unit-test.log'
-          archiveArtifacts 'coverage/**/*'
+          archiveArtifacts 'frontend/coverage/lcov.info*'
 
           sh """${compose} \
             -f compose/frontend-unittests.yml \

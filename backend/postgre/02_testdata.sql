@@ -77,7 +77,7 @@ COPY public.core_store (id, key, value, type, environment, tag) FROM stdin;
 --
 
 COPY public.fieldofstudies (id, name_fi, name_en, name_swe, created_at, updated_at) FROM stdin;
-1	Humanistitnen ja kasvatusala	Humanistitnen ja kasvatusala_en	\N	2019-05-09 09:59:54.211+00	2019-05-09 09:59:54.228+00
+1	Humanistinen ja kasvatusala	Humanistinen ja kasvatusala_en	\N	2019-05-09 09:59:54.211+00	2019-05-09 09:59:54.228+00
 \.
 
 

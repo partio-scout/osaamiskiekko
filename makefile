@@ -81,3 +81,10 @@ deploy-loadbalancer:
 	$(info deploying load balancer)
 	@kubectl apply -n $(namespace) -f kubectl/load-balancer.yaml 
 
+
+### tests ###
+sonar:
+ifeq ($(password), )
+	$(error "partionosaamiskiekko-bot password required")
+endif
+	sonar-scanner -Dsonar.login=partionosaamiskiekko-bot -Dsonar.password=$(password)

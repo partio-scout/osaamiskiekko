@@ -110,7 +110,7 @@ pipeline {
 
     stage('Static code analysis') {
       steps {
-        withSonarQubeEnv('Sonarqube') {
+        withSonarQubeEnv('SonarQube') {
           script {
               scannerHome = tool 'Sonar Scanner 3.3.0.1492'
           }

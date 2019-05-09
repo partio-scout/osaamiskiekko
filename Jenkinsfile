@@ -145,8 +145,8 @@ pipeline {
 
           sh "mkdir frontend/coverage"
           sh "cp frontend/test-results/* frontend/coverage -r"
-          sh "sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/lcov.info"
-          sh "sed s#/usr/src/app#${pwd()}#g -i frontend/coverage/sonar-report.xml"
+          sh "sed s#/usr/src/app#${pwd()}/frontend#g -i frontend/coverage/lcov.info"
+          sh "sed s#/usr/src/app#${pwd()}/frontend#g -i frontend/coverage/sonar-report.xml"
 
           archiveArtifacts 'frontend/coverage/lcov.info*'
           archiveArtifacts 'frontend/coverage/sonar-report.xml*'

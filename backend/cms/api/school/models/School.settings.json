@@ -1,0 +1,48 @@
+{
+  "connection": "default",
+  "collectionName": "schools",
+  "info": {
+    "name": "school",
+    "description": "Oppilaitokset"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name_en": {
+      "type": "string"
+    },
+    "name_fi": {
+      "type": "string"
+    },
+    "name_swe": {
+      "type": "string"
+    },
+    "description_en": {
+      "type": "text"
+    },
+    "description_fi": {
+      "type": "text"
+    },
+    "description_swe": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "logoUrl": {
+      "type": "string"
+    },
+    "academicdegrees": {
+      "collection": "academicdegree",
+      "via": "school"
+    }
+  }
+}

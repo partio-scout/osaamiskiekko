@@ -1,0 +1,40 @@
+{
+  "connection": "default",
+  "collectionName": "nqfs",
+  "info": {
+    "name": "nqf",
+    "description": "NQF taso"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name_en": {
+      "type": "string",
+      "required": true
+    },
+    "name_fi": {
+      "type": "string",
+      "required": true
+    },
+    "name_swe": {
+      "type": "string"
+    },
+    "level": {
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "type": "enumeration",
+      "required": true
+    }
+  }
+}

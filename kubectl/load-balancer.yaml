@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalancer
+spec:
+  selector:
+    app: osaamiskiekko
+    tier: frontend
+    phase: $PHASE
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  - name: backend
+    port: 1337
+    targetPort: 1337

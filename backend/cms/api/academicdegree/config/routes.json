@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/academicdegrees",
+      "handler": "Academicdegree.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/academicdegrees/count",
+      "handler": "Academicdegree.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/academicdegrees/:id",
+      "handler": "Academicdegree.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/academicdegrees",
+      "handler": "Academicdegree.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/academicdegrees/:id",
+      "handler": "Academicdegree.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/academicdegrees/:id",
+      "handler": "Academicdegree.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

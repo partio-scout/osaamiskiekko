@@ -4,8 +4,10 @@ projectName = "partionosaamiskiekko"
 dockerRepository = "artifactory.dev.eficode.io"
 dockerFrontendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/frontend_${env.BRANCH_NAME}"
 dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/backend_${env.BRANCH_NAME}"
+taggedFrontendImage = dockerFrontendImage
+taggedBackendImage = dockerBackendImage
 
-publishedBranches = [ "master", "staging", "production"]
+publishedBranches = [ "master", "test", "staging", "production"]
 
 pipeline {
   agent {
@@ -15,6 +17,11 @@ pipeline {
   environment {
     DOCKER_HOST = 'tcp://127.0.0.1:2375'
     COMPOSE_HTTP_TIMEOUT = 1000
+    DEVCLUSTER= "osaamiskiekko-dev-cluster"
+    GCLOUDPARAM= "--zone europe-north1-a"
+    GCLOUD_PROJECT="osaamiskiekko"
+    GCLOUD_DB_PROXY_USERNAME="proxy-user@osaamiskiekko.iam.gserviceaccount.com"
+    DATABASE_INSTANCE_ID="osaamiskiekko-dev-db"
   }
 
   options {
@@ -22,10 +29,82 @@ pipeline {
   }
 
   stages {
-    stage('Checkout') {
+    // stage('Checkout') {
+    //   steps {
+    //     notifyBuild('STARTED')
+    //     checkout scm
+    //   }
+    // }
+  
+    stage('Cloud init') {
+      when {
+        expression {
+          return publishedBranches.contains(env.BRANCH_NAME);
+        }
+      }
+              
       steps {
-        notifyBuild('STARTED')
-        checkout scm
+        script {
+          env.NAMESPACE = cleanBranchNameForNamespace(env.BRANCH_NAME)
+        }
+
+        withCredentials([file(credentialsId: 'osaamiskiekko-google-service-account-credentials', variable: 'credfile')]) {
+          sh "gcloud auth activate-service-account --key-file \$credfile"
+          sh "rm \$credfile"
+          sh "gcloud config set project ${GCLOUD_PROJECT}"
+          sh "gcloud container clusters get-credentials ${env.DEVCLUSTER} ${env.GCLOUDPARAM}"
+          sh "kubectl get pods" // just testing connection first
+          sh """kubectl create namespace ${env.NAMESPACE} \
+          --dry-run -o yaml \
+          | kubectl apply -f -"""
+          
+          // Create database
+          sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
+
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials-dev', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh "gcloud sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
+          }
+          
+          // Create database proxy credentials secret
+          withCredentials([file(credentialsId: 'osaamiskiekko-google-cloudsql-proxy-credentials', variable: 'proxycredfile')]) {
+            sh """kubectl create secret generic cloudsql-instance-credentials \
+            --from-file=credentials.json=\$proxycredfile \
+            -n ${env.NAMESPACE} \
+            --dry-run -o yaml \
+              | kubectl apply -f -"""
+            sh "rm \$proxycredfile"
+          }
+
+          // Create or update docker registry credentials secret
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',
+            usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh """kubectl create secret docker-registry eficode-artifactory-cred \
+              --docker-server=${dockerRepository} \
+              --docker-username=$USERNAME \
+              --docker-password=$PASSWORD \
+              --docker-email=partionosaamiskiekko-bot@rum.invalid \
+              -n ${env.NAMESPACE} \
+              --dry-run -o yaml \
+              | kubectl apply -f -"""
+
+            sh """kubectl patch serviceaccount default \
+              -p \"{\\\"imagePullSecrets\\\": [{\\\"name\\\": \\\"eficode-artifactory-cred\\\"}]}\" \
+              -n ${env.NAMESPACE}"""
+          }
+          // Create or update database credentials secret
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials-dev',
+            usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh """kubectl create secret generic database-credentials \
+              --from-literal=username='$USERNAME' \
+              --from-literal=password='$PASSWORD' \
+              --from-literal=dbname='osaamiskiekko-${env.NAMESPACE}' \
+              -n ${env.NAMESPACE} \
+              --dry-run -o yaml \
+              | kubectl apply -f -"""
+          }
+
+          sh "gcloud auth configure-docker"
+        }
       }
     }
 
@@ -66,7 +145,7 @@ pipeline {
             -f compose/frontend-unittests.yml \
             logs >unit-test.log"""
           
-          archive 'unit-test.log'
+          archiveArtifacts artifacts: 'unit-test.log', fingerprint: true
 
           sh """${compose} \
             -f compose/frontend-unittests.yml \
@@ -105,7 +184,7 @@ pipeline {
             -f compose/robot.yml \
             logs >acceptance-test.log"""
           
-          archive 'acceptance-test.log'
+          archiveArtifacts artifacts: 'acceptance-test.log', fingerprint: true
 
           sh """${compose} \
             -f docker-compose.yml \
@@ -119,7 +198,7 @@ pipeline {
     stage('Push to Artifactory') {
       when {
         expression {
-              return publishedBranches.contains(env.BRANCH_NAME);
+          return publishedBranches.contains(env.BRANCH_NAME);
         }
       }
       steps {
@@ -142,10 +221,36 @@ pipeline {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'partionosaamiskiekko-bot-w_password',
           usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
 
-          echo "Using docker username ${env.USERNAME}."
           sh "docker login ${dockerRepository} -u $USERNAME -p $PASSWORD"
 
           labelAndPush(env.VERSION)
+        }
+      }
+    }
+ 
+    stage('Deploy') {
+      when {
+        expression {
+          return publishedBranches.contains(env.BRANCH_NAME);
+        }
+      }
+      steps {
+        script {
+          env.WORKSPACE = pwd()
+        }
+        
+        script {
+          sh """sed -i \
+          -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g; \
+              s#\$FRONTENDIMAGE#${taggedFrontendImage}#g; \
+              s#\$PHASE#${env.NAMESPACE}#g' \
+          ./kubectl/*.yaml"""
+
+          archiveArtifacts artifacts: 'kubectl/**/*.yaml', fingerprint: true
+          
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/frontend.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/load-balancer.yaml"
         }
       }
     }
@@ -158,6 +263,17 @@ pipeline {
       // step([$class: 'JUnitResultArchiver', testResults: 'results/mocha/test-results.xml'])
     }
   }
+}
+
+def cleanBranchNameForNamespace(branchname) {
+    String namespaceCandidate = branchname ? branchname.split(/_.*/)[0] : '';
+    String namespace = namespaceCandidate.replaceAll("[^a-zA-Z0-9\\-]","").toLowerCase()
+    if (namespace[0].isNumber()) {
+      namespace='n'+namespace;
+    }
+    print "Namespace is set "
+    println namespace
+    return namespace
 }
 
 def buildImages() {
@@ -173,18 +289,22 @@ def labelAndPush(version) {
 }
 
 def tagImages(version) {
-  sh "docker tag ${dockerEnvironment}_frontend ${dockerFrontendImage}:${version}"
-  sh "docker tag ${dockerEnvironment}_backend ${dockerBackendImage}:${version}"
+  sh "docker tag ${dockerEnvironment}_frontend ${dockerFrontendImage}:latest"
+  sh "docker tag ${dockerEnvironment}_backend ${dockerBackendImage}:latest"
+
+  sh "docker tag ${dockerEnvironment}_frontend ${taggedFrontendImage}:${version}"
+  sh "docker tag ${dockerEnvironment}_backend ${taggedBackendImage}:${version}"
+
+  taggedFrontendImage = "${dockerFrontendImage}:${version}"
+  taggedBackendImage = "${dockerBackendImage}:${version}"  
 }
 
 def pushToDockerhub(version) {
-  // If you want to fail the pipeline when the version number is not bumped,
-  // uncomment the next 2 lines and comment out the rest.
-  // sh "docker push ${dockerFrontendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number?' && false)"
-  // sh "docker push ${dockerBackendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number?' && false)"
+  sh "docker push ${dockerFrontendImage}:latest"
+  sh "docker push ${dockerBackendImage}:latest"
 
-  sh "docker push ${dockerFrontendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number? Skipping push.' && true)"
-  sh "docker push ${dockerBackendImage}:${version} || (echo 'Looks like the push failed. Did you remember to bump the package version number? Skipping push.' && true)"
+  sh "docker push ${taggedFrontendImage}"
+  sh "docker push ${taggedBackendImage}"
 }
 
 def notifyBuild(String buildStatus = 'STARTED') {

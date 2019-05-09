@@ -46,16 +46,16 @@ Robot tests can be ran in docker (chrome default). Run makefile in project root:
 
 Firefox: Download and install firefox + geckodriver https://github.com/mozilla/geckodriver/releases
 
-## Running Sonarkube locally
-
-- Install sonar-scanner (https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner)
-- Run locally: `sonar-scanner -Dsonar.login=partionosaamiskiekko-bot -Dsonar.password=GET_FROM_RTM.DEV.EFICODE.IO`
-
 ## Frontend Jest Unit tests
 
 ```
 docker-compose --project-directory . -f compose/frontend-unittests.yml up
 ```
+
+## Running Sonarkube locally
+
+- Install sonar-scanner (https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner)
+- Run locally: `sonar-scanner -Dsonar.login=partionosaamiskiekko-bot -Dsonar.password=GET_FROM_RTM.DEV.EFICODE.IO`
 
 # Makefile
 
@@ -65,6 +65,34 @@ The makefile allows executing common development tasks more easily.
 - Get postgres database dump from docker which contains everything (can be used as test data for example): `make getdatabasedump`
 - Get only data dump from postgres: `make getdatabasedump-dataonly`
 - Restore data after Strapi has created tables accordingly: `make restoredata-dataonly`
+
+## Deploying to kubernetes
+
+Configure cubectl cluster according to the environment you're using. For example locally `minikube start` also configures kubectl cluster.
+
+Osaamiskiekko docker images must be in an artifactory accessible from the kubernetes cluster you're using. If your artifactory requires credentials add them with for example:
+
+```
+kubectl create secret docker-registry eficode-artifactory-cred --docker-server=artifactory.dev.eficode.io --docker-username=INSERT_PASSWORD_HERE --docker-password=INSERT_PASSWORD_HERE --docker-email=partionosaamiskiekko-bot@rum.invalid
+```
+
+Run `make deploy` to deploy with image names
+
+```
+backendimage=artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/backend_master:aec5463d \
+frontendimage=artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/frontend_master:aec5463d \
+make deploy
+```
+
+If running locally in minikube, you can find the URL of the deployed service with `minikube service list`
+
+# Update Container
+
+docker-compose build servicename
+
+# Run only one container
+
+docker-compose up servicename
 
 # Docker commands 
  - list running containers: `docker ps -a`

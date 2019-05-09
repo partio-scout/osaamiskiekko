@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/nqfs",
+      "handler": "Nqf.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/nqfs/count",
+      "handler": "Nqf.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/nqfs/:id",
+      "handler": "Nqf.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/nqfs",
+      "handler": "Nqf.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/nqfs/:id",
+      "handler": "Nqf.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/nqfs/:id",
+      "handler": "Nqf.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

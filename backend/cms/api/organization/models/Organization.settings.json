@@ -3,7 +3,7 @@
   "collectionName": "organizations",
   "info": {
     "name": "organization",
-    "description": ""
+    "description": "Järjestöt"
   },
   "options": {
     "increments": true,
@@ -11,14 +11,40 @@
     "comment": ""
   },
   "attributes": {
-    "name": {
+    "name_en": {
+      "type": "string",
+      "required": true
+    },
+    "name_fi": {
+      "type": "string",
+      "required": true
+    },
+    "name_swe": {
       "type": "string"
     },
-    "description": {
+    "description_fi": {
+      "type": "text"
+    },
+    "description_en": {
+      "type": "text"
+    },
+    "description_swe": {
       "type": "text"
     },
     "url": {
       "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "logoUrl": {
+      "type": "string"
+    },
+    "competences": {
+      "collection": "competence",
+      "via": "organization"
     }
   }
 }

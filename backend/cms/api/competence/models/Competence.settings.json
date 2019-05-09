@@ -1,0 +1,53 @@
+{
+  "connection": "default",
+  "collectionName": "competence",
+  "info": {
+    "name": "competence",
+    "description": "Järjestön koulutus"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "identification": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "description_en": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "name_fi": {
+      "type": "string"
+    },
+    "name_swe": {
+      "type": "string"
+    },
+    "description_fi": {
+      "type": "text"
+    },
+    "description_swe": {
+      "type": "text"
+    },
+    "nqf": {
+      "model": "nqf"
+    },
+    "credits": {
+      "type": "integer"
+    },
+    "organization": {
+      "model": "organization",
+      "via": "competences"
+    },
+    "competencedegreelinks": {
+      "collection": "competencedegreelink",
+      "via": "competence"
+    }
+  }
+}

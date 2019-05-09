@@ -6,11 +6,16 @@ spec:
   selector:
     app: osaamiskiekko
     tier: frontend
-    phase: dev
+    phase: $PHASE
   ports:
-  - protocol: "TCP"
+  - name: http
+    protocol: TCP
     port: 80
     targetPort: 80
+  - name: backendproxy
+    protocol: TCP
+    port: 1337
+    targetPort: 1337
   type: NodePort
 ---
 apiVersion: apps/v1
@@ -23,7 +28,7 @@ spec:
       app: osaamiskiekko
       tier: frontend
       track: stable
-      phase: dev
+      phase: $PHASE
   replicas: 1
   template:
     metadata:
@@ -31,14 +36,19 @@ spec:
         app: osaamiskiekko
         tier: frontend
         track: stable
-        phase: dev
+        phase: $PHASE
     spec:
       containers:
       - name: nginx
-        image: artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/frontend_master:aec5463d
+        # Replaced during Jenkins build. Use 'make deploy' to run locally
+        image: $FRONTENDIMAGE
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 80
+        - name: backendproxy
+          containerPort: 1337
         lifecycle:
           preStop:
             exec:
               command: ["nginx","-s","quit"]
-      imagePullSecrets:
-      - name: eficode-artifactory-cred

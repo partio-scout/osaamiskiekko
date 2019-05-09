@@ -114,7 +114,8 @@ pipeline {
           script {
               scannerHome = tool 'SonarScanner'
           }
-          sh "${scannerHome}/bin/sonar-scanner"
+          sh "node -v"
+          sh "${scannerHome}/bin/sonar-scanner -Dsonar.branch=${env.BRANCH_NAME}"
         }
       }
     }

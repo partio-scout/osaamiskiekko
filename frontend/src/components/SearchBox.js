@@ -2,6 +2,7 @@ import React, { useState }  from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { DebounceInput } from 'react-debounce-input';
+import SearchResults from './SearchResults';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -62,24 +63,6 @@ input::placeholder {
 }
 `;
 
-S.ResultsDiv = styled.div `
-  border-bottom: 1px solid #335362;
-  padding: 10px 10px 10px 10px;
-  :last-child { border-bottom: none; }
-  :hover {
-   background-color: #E6E9EB;
-   cursor: pointer;
-  }
-`;
-
-S.ResultWrapper = styled.div`
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
-  width: 250px;
-  margin: auto;
-`;
-
 export default function SearchBox() {
   const [academyOrSchool, setAcademyOrSchool] = useState("");
   const [schools, setSchools] = useState([]);
@@ -95,11 +78,6 @@ export default function SearchBox() {
     }
   }
 
-  const renderResults = (school) =>
-    <S.ResultsDiv key={school.id}>
-      <span>{school.name_fi}</span>
-    </S.ResultsDiv>
-
   return (
     <S.SearchBox>
       <S.SearchWrapper>
@@ -114,17 +92,7 @@ export default function SearchBox() {
           name="search-academy"
           onChange={e => fetchData(e.target.value)} />
       </S.SearchWrapper>
-      {/* <S.SearchWrapper>
-        <label htmlFor="search-academy">Valitse koulutus</label>
-        <span className="fa fa-search"></span>
-        <input placeholder="Hae..." name="search-academy" />
-      </S.SearchWrapper> */}
-      {schools.length > 0 ? 
-        <S.ResultWrapper show={schools}>
-          {schools.map(school => renderResults(school))}
-        </S.ResultWrapper>
-        : ''  
-      }
+      <SearchResults schools={schools} />
     </S.SearchBox>
   )
 }

@@ -1,11 +1,6 @@
 build-production:
 	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml build frontend backend
 
-run-robot:
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml build frontend db backend robot
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml run robot
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml down
-
 docker-cleanrun:
 	docker-compose down
 	docker volume prune -f
@@ -83,6 +78,14 @@ deploy-loadbalancer:
 
 
 ### tests ###
+run-unit:
+	docker-compose --project-directory . -f compose/frontend.yml run robot
+
+run-robot:
+	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml build frontend db backend robot
+	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml run robot
+	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml down
+
 sonar:
 ifeq ($(password), )
 	$(error "partionosaamiskiekko-bot password required")

@@ -108,18 +108,6 @@ pipeline {
       }
     }
 
-    stage('Static code analysis') {
-      steps {
-        withSonarQubeEnv('SonarQube') {
-          script {
-              scannerHome = tool 'SonarScanner'
-          }
-
-          sh "${scannerHome}/bin/sonar-scanner -Dsonar.branch=${env.BRANCH_NAME}"
-        }
-      }
-    }
-
     stage('Build') {
       steps {
         buildImages()
@@ -146,7 +134,19 @@ pipeline {
             down"""
         }
       }
-    }    
+    }
+
+    stage('Static code analysis') {
+      steps {
+        withSonarQubeEnv('SonarQube') {
+          script {
+              scannerHome = tool 'SonarScanner'
+          }
+
+          sh "${scannerHome}/bin/sonar-scanner -Dsonar.branch=${env.BRANCH_NAME}"
+        }
+      }
+    }
 
     stage('Acceptance Test') {
       steps {

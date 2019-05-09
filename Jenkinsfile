@@ -116,11 +116,13 @@ pipeline {
           echo "scannerHome set"
         }
         
-        echo "Executing sonar scanner"
-        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${partionosaamiskiekko-bot-w_password}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-          sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=${USERNAME} -Dsonar.password=${PASSWORD} -Dsonar.branch=${env.BRANCH_NAME}"
+        script {
+          echo "Executing sonar scanner"
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${partionosaamiskiekko-bot-w_password}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=${USERNAME} -Dsonar.password=${PASSWORD} -Dsonar.branch=${env.BRANCH_NAME}"
+          }
+          echo "Scan finished"
         }
-        echo "Scan finished" 
       }
     }
 

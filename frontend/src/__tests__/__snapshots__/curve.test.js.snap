@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Curve snapshot matches 1`] = `
+<div
+  className="sc-ifAKCX fpVbKk"
+>
+  <div
+    className="curve-container"
+  >
+    <div
+      className="sc-htpNat dFBUdP"
+    >
+      <div
+        className="sc-bxivhb cWkBqE"
+      >
+        <label
+          htmlFor="search-academy"
+        >
+          Valitse järjestö tai oppilaitos
+        </label>
+        <span
+          className="fa fa-search"
+        />
+        <input
+          name="search-academy"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Hae..."
+          type="text"
+          value=""
+        />
+      </div>
+      <div>
+        <div
+          className="sc-bwzfXH jsMlNV"
+        />
+      </div>
+    </div>
+    <img
+      alt="Curve"
+      className="curve-image"
+      src="curve.svg"
+    />
+  </div>
+</div>
+`;

@@ -8,7 +8,7 @@ services:
       - CI=true
     command: npm run test-sonar -- --coverage
     volumes:
-    - ./frontend/coverage/:/usr/src/app/frontend/coverage/
+    - ./frontend/coverage/:/usr/src/app/coverage/
 
 
  

@@ -128,7 +128,6 @@ pipeline {
             logs >unit-test.log"""
           
           archiveArtifacts 'unit-test.log'
-          archiveArtifacts 'frontend/coverage/lcov.info*'
 
           sh """${compose} \
             -f compose/frontend-unittests.yml \
@@ -143,6 +142,12 @@ pipeline {
           script {
               scannerHome = tool 'SonarScanner'
           }
+
+          sh "sed s#/usr/src/app#$(pwd)#g -i frontend/coverage/lcov.info"
+          sh "sed s#/usr/src/app#$(pwd)#g -i frontend/coverage/sonar-report.xml"
+
+          archiveArtifacts 'frontend/coverage/lcov.info*'
+          archiveArtifacts 'frontend/coverage/sonar-report.xml*'
 
           sh "${scannerHome}/bin/sonar-scanner -Dsonar.branch=${env.BRANCH_NAME}"
         }

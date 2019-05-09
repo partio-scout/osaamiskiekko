@@ -33,6 +33,6 @@ services:
   dev:
     build: frontend
     volumes:
-      - ./frontend/src:/usr/src/app/frontend/src
+      - ./frontend/src:/usr/src/app/src
     ports:
       - 3000:3000

@@ -34,18 +34,18 @@ S.ResultWrapper = styled.div`
 
 
 export default function SearchResults(props) {
-  const { schools } = props;
-  console.log('schools', schools);
-  const renderResults = (school) =>
-    <S.ResultsDiv key={school.id}>
-      <p>{school.name_fi}</p>
-      <p className="type">{school.type_fi}</p>
+  const { schools, organizations } = props;
+  const schoolsAndOrganizations = [...schools, ...organizations];
+  const renderResults = (item) =>
+    <S.ResultsDiv key={item.id}>
+      <p>{item.name_fi}</p>
+      <p className="type">{item.type_fi ? item.type_fi : 'Järjestö'}</p>
     </S.ResultsDiv>
 
   return (
     <div>
         <S.ResultWrapper>
-          {schools.map(renderResults)}
+          {schoolsAndOrganizations.map(renderResults)}
         </S.ResultWrapper>
     </div>
   )

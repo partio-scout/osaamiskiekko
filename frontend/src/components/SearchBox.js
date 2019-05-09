@@ -68,9 +68,11 @@ input::placeholder {
 `;
 
 export default function SearchBox() {
-  const [academyOrSchool, setAcademyOrSchool] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const [schools, setSchools] = useState([]);
-  const apiUrl = 'http://localhost:1337/schools?name_fi_contains=';
+  const [organizations, setOrganizations] = useState([]);
+  const schoolsUrl = 'http://localhost:1337/schools?name_fi_contains=';
+  const organizationsUrl = 'http://localhost:1337/organizations?name_fi_contains='
 
   const addTypeToArray = (schoolOrOrganization, type) => schoolOrOrganization.map(item => {
     if (type === 'school') {
@@ -84,13 +86,16 @@ export default function SearchBox() {
   })
 
   const fetchData = async (value) => {
-    setAcademyOrSchool(value);
+    setInputValue(value);
     if (value) {
-      const result = await axios(`${apiUrl}${value}`);
-      const resultWithType = addTypeToArray(result.data, 'school');
-      setSchools(resultWithType);
+      const schools = await axios(`${schoolsUrl}${value}`);
+      const schoolsWithType = addTypeToArray(schools.data, 'school');
+      setSchools(schoolsWithType);
+      const organizations = await axios(`${organizationsUrl}${value}`);
+      setOrganizations(organizations.data);
     } else {
       setSchools([]);
+      setOrganizations([]);
     }
   }
 
@@ -102,13 +107,13 @@ export default function SearchBox() {
         <DebounceInput
           minLength={2}
           debounceTimeout={300}
-          value={academyOrSchool}
+          value={inputValue}
           type="text" 
           placeholder="Hae..." 
           name="search-academy"
           onChange={e => fetchData(e.target.value)} />
       </S.SearchWrapper>
-      <SearchResults schools={schools} />
+      <SearchResults schools={schools} organizations={organizations}/>
     </S.SearchBox>
   )
 }

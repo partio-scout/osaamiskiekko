@@ -254,7 +254,7 @@ pipeline {
           sh """sed -i \
           -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g; \
               s#\$FRONTENDIMAGE#${taggedFrontendImage}#g; \
-              s#\$PHASE#${env.NAMESPACE}#g' \
+              s#\$PHASE#${env.NAMESPACE}#g; \
               s#\$SUBDOMAIN#${env.SUBDOMAIN}#g' \
           ./kubectl/*.yaml"""
 

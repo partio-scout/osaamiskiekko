@@ -143,8 +143,10 @@ pipeline {
               scannerHome = tool 'SonarScanner'
           }
 
+          // Copy write-protected test+coverage results to a new location
           sh "mkdir frontend/coverage"
           sh "cp frontend/test-results/* frontend/coverage -r"
+          // Rewrite container paths -> jenkins paths in the results (sonar ignores non-matching files)
           sh "sed s#/usr/src/app#${pwd()}/frontend#g -i frontend/coverage/lcov.info"
           sh "sed s#/usr/src/app#${pwd()}/frontend#g -i frontend/coverage/sonar-report.xml"
 

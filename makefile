@@ -78,10 +78,16 @@ deploy-loadbalancer:
 
 
 ### tests ###
-run-unit:
-	docker-compose --project-directory . -f compose/frontend.yml run robot
+unit:
+	CI=true npm run test-sonar --prefix frontend -- --coverage
 
-run-robot:
+unit-update:
+	CI=true npm run test --prefix frontend -- -u
+
+unit-interactive:
+	npm run test --prefix frontend
+	
+robot:
 	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml build frontend db backend robot
 	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml run robot
 	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml down

@@ -241,6 +241,13 @@ pipeline {
       steps {
         script {
           env.WORKSPACE = pwd()
+          env.SUBDOMAIN = env.NAMESPACE
+
+          if (env.BRANCH_NAME === 'production') {
+            env.SUBDOMAIN = 'www'
+          } else if (env.BRANCH_NAME === 'master') {
+            env.SUBDOMAIN = 'dev'
+          } 
         }
         
         script {
@@ -248,13 +255,15 @@ pipeline {
           -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g; \
               s#\$FRONTENDIMAGE#${taggedFrontendImage}#g; \
               s#\$PHASE#${env.NAMESPACE}#g' \
+              s#\$SUBDOMAIN#${env.SUBDOMAIN}#g' \
           ./kubectl/*.yaml"""
 
           archiveArtifacts artifacts: 'kubectl/**/*.yaml', fingerprint: true
           
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend-service.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/frontend.yaml"
-          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/load-balancer.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/ingress.yaml"
         }
       }
     }

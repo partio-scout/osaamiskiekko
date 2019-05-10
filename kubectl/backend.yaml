@@ -1,17 +1,3 @@
-kind: Service
-apiVersion: v1
-metadata:
-  name: backend
-spec:
-  selector:
-    app: osaamiskiekko
-    tier: backend
-    phase: $PHASE
-  ports:
-  - protocol: "TCP"
-    port: 1337
-    targetPort: http
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:

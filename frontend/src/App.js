@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { createContext, useState } from 'react';
 import { GlobalStyle } from './styles/GlobalStyles';
 import Curve from './components/Curve';
 import Header from './components/Header.js'
@@ -9,18 +9,21 @@ import se from 'react-intl/locale-data/se';
 import translations from './translations/translations';
 addLocaleData([...en, ...fi, ...se, translations]);
 
-class App extends Component {
-  render() {
+export const LanguageContext = createContext(null);
+
+const App = () => { 
+  const [language, setLanguage] = useState('fi');
     return (
-      <IntlProvider locale="fi" messages={translations.fi}>
-        <div>
-          <GlobalStyle />
-          <Header />
-          <Curve />
-        </div>
-      </IntlProvider>
+      <LanguageContext.Provider value={setLanguage}>
+        <IntlProvider locale={language} messages={translations[language]}>
+          <div>
+            <GlobalStyle />
+            <Header />
+            <Curve />
+          </div>
+        </IntlProvider>
+      </LanguageContext.Provider>
     );
-  }
 }
 
 export default App;

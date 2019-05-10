@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
 import SweetJesus from '../images/sweetjesusface.png';
+import { FormattedMessage } from 'react-intl';
 
 const S = {};
 S.Header = styled.header`
@@ -60,8 +61,10 @@ export default function Header() {
       <Navigation />
       <div className="header-container">
         <div className="header-text">
-          <h1>Osaamiskiekon avulla hyödynnät osaamisesi monipuolisesti</h1>
-          <p>Osaamiskiekon avulla löydät harrastus- ja vapaaehtoistoiminnassa hankitun osaamisen rinnakkain tutkintoon johtavien opintojen kanssa.</p>
+          <h1>
+            <FormattedMessage id="header.h1" />
+          </h1>
+          <p><FormattedMessage id="header.p" /></p>
         </div>
         <div className="header-image-container">
           <img src={SweetJesus} alt="placeholder" className="header-image" />

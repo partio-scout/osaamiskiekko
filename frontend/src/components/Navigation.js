@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { LanguageContext } from '../App';
 import { FormattedMessage } from 'react-intl';
 
 const S = {};
@@ -40,6 +41,7 @@ ul li a {
 `;
 
 export default function Navigation() {
+  const setLanguage = useContext(LanguageContext);
     return (
       <S.Navigation>
         <div>
@@ -55,9 +57,9 @@ export default function Navigation() {
             </a></li>
           </ul>
           <ul className="menu-right">
-            <li><a href="/#">En</a></li>
-            <li><a href="/#">Fi</a></li>
-            <li><a href="/#">Se</a></li>
+            <li><a href="/#" onClick={() => setLanguage('en')}>En</a></li>
+            <li><a href="/#" onClick={() => setLanguage('fi')}>Fi</a></li>
+            <li><a href="/#" onClick={() => setLanguage('se')}>Se</a></li>
           </ul>
         </div>
       </S.Navigation>

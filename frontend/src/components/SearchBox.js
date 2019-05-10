@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { DebounceInput } from 'react-debounce-input';
 import SearchResults from './SearchResults';
+import { FormattedMessage } from 'react-intl';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -102,16 +103,22 @@ export default function SearchBox() {
   return (
     <S.SearchBox>
       <S.SearchWrapper>
-        <label htmlFor="search-academy">Valitse järjestö tai oppilaitos</label>
+        <label htmlFor="search-academy">
+          <FormattedMessage id="searchbox.label" />
+        </label>
         <span className="fa fa-search"></span>
-        <DebounceInput
-          minLength={2}
-          debounceTimeout={300}
-          value={inputValue}
-          type="text" 
-          placeholder="Hae..." 
-          name="search-academy"
-          onChange={e => fetchData(e.target.value)} />
+        <FormattedMessage id="search.placeholder">
+        {msg => (
+          <DebounceInput
+            minLength={2}
+            debounceTimeout={300}
+            value={inputValue}
+            type="text" 
+            placeholder={msg} 
+            name="search-academy"
+            onChange={e => fetchData(e.target.value)} />
+        )}
+        </FormattedMessage>
       </S.SearchWrapper>
       <SearchResults schools={schools} organizations={organizations}/>
     </S.SearchBox>

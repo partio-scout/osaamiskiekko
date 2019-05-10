@@ -243,9 +243,9 @@ pipeline {
           env.WORKSPACE = pwd()
           env.SUBDOMAIN = env.NAMESPACE
 
-          if (env.BRANCH_NAME === 'production') {
+          if (env.BRANCH_NAME == 'production') {
             env.SUBDOMAIN = 'www'
-          } else if (env.BRANCH_NAME === 'master') {
+          } else if (env.BRANCH_NAME == 'master') {
             env.SUBDOMAIN = 'dev'
           } 
         }

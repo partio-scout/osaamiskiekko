@@ -17,11 +17,16 @@ pipeline {
   environment {
     DOCKER_HOST = 'tcp://127.0.0.1:2375'
     COMPOSE_HTTP_TIMEOUT = 1000
-    DEVCLUSTER= "osaamiskiekko-dev-cluster"
+    CLUSTER= "osaamiskiekko-dev-cluster"
     GCLOUDPARAM= "--zone europe-north1-a"
     GCLOUD_PROJECT="osaamiskiekko"
     GCLOUD_DB_PROXY_USERNAME="proxy-user@osaamiskiekko.iam.gserviceaccount.com"
     DATABASE_INSTANCE_ID="osaamiskiekko-dev-db"
+    DATABASE_CREDENTIALS_ID="database-credentials-dev"
+    
+    if (env.BRANCH_NAME == 'production') {
+      DB_CREDENTIALS_ID="database-credentials-production"
+    }
   }
 
   options {
@@ -52,7 +57,7 @@ pipeline {
           sh "gcloud auth activate-service-account --key-file \$credfile"
           sh "rm \$credfile"
           sh "gcloud config set project ${GCLOUD_PROJECT}"
-          sh "gcloud container clusters get-credentials ${env.DEVCLUSTER} ${env.GCLOUDPARAM}"
+          sh "gcloud container clusters get-credentials ${env.CLUSTER} ${env.GCLOUDPARAM}"
           sh "kubectl get pods" // just testing connection first
           sh """kubectl create namespace ${env.NAMESPACE} \
           --dry-run -o yaml \
@@ -61,7 +66,7 @@ pipeline {
           // Create database
           sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
 
-          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials-dev', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.DATABASE_CREDENTIALS_ID}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
             sh "gcloud sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
           }
           
@@ -92,7 +97,7 @@ pipeline {
               -n ${env.NAMESPACE}"""
           }
           // Create or update database credentials secret
-          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials-dev',
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.DATABASE_CREDENTIALS_ID}",
             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
             sh """kubectl create secret generic database-credentials \
               --from-literal=username='$USERNAME' \

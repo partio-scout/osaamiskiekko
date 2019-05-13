@@ -4,6 +4,7 @@ import axios from 'axios';
 import { DebounceInput } from 'react-debounce-input';
 import SearchResults from './SearchResults';
 import { FormattedMessage } from 'react-intl';
+import { addTypeToSchoolOrOrganization } from '../utils/ApiUtils';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -39,7 +40,7 @@ S.SearchWrapper = styled.div `
 
 label {
   height: 16px;	
-  color: #241C80;
+  color: ${props => props.theme.colors.osaamisKiekkoBlue};
   font-size: 16px;	
   letter-spacing: 2.29px;
   line-height: 15px;
@@ -49,14 +50,14 @@ input {
   width: 250px;
   height: 32px;
   border: none;
-  border-bottom: 2px solid #241C80;
+  border-bottom: 2px solid ${props => props.theme.colors.osaamisKiekkoBlue};
   padding-left: 22px;
   outline-width: 0;
   outline: none;
 }
 
 input::placeholder {
-  color: #241C80;
+  color: ${props => props.theme.colors.osaamisKiekkoBlue};
   opacity: 1;
 }
 
@@ -64,7 +65,7 @@ input::placeholder {
   position: absolute;
   left: 0px;
   top: 27px;
-  color: #241C80;
+  color: ${props => props.theme.colors.osaamisKiekkoBlue};
 }
 `;
 
@@ -75,22 +76,11 @@ export default function SearchBox() {
   const schoolsUrl = 'http://localhost:1337/schools?name_fi_contains=';
   const organizationsUrl = 'http://localhost:1337/organizations?name_fi_contains='
 
-  const addTypeToArray = (schoolOrOrganization, type) => schoolOrOrganization.map(item => {
-    if (type === 'school') {
-      const o = Object.assign({}, item);
-      o.type_fi = 'Oppilaitos';
-      o.type_en = 'School';
-      o.type_se = 'Skola'
-      return o;
-    }
-    return null;
-  })
-
   const fetchData = async (value) => {
     setInputValue(value);
     if (value) {
       const schools = await axios(`${schoolsUrl}${value}`);
-      const schoolsWithType = addTypeToArray(schools.data, 'school');
+      const schoolsWithType = addTypeToSchoolOrOrganization(schools.data, 'school');
       setSchools(schoolsWithType);
       const organizations = await axios(`${organizationsUrl}${value}`);
       setOrganizations(organizations.data);

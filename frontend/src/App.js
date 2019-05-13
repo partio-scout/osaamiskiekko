@@ -6,21 +6,30 @@ import fi from 'react-intl/locale-data/fi';
 import se from 'react-intl/locale-data/se';
 import { BrowserRouter } from 'react-router-dom';
 import translations from './translations/translations';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme, darkTheme } from './styles/Themes';
 addLocaleData([...en, ...fi, ...se, translations]);
 
-export const LanguageContext = createContext(null);
+export const GlobalState = createContext(null);
 
 const App = () => { 
-  const [language, setLanguage] = useState('fi');
-    return (
-      <BrowserRouter>
-        <LanguageContext.Provider value={setLanguage}>
-          <IntlProvider locale={language} messages={translations[language]}>
-            <Routes />
-          </IntlProvider>
-        </LanguageContext.Provider>
+  const [globalState, setGlobalState] = useState({
+    language: 'fi',
+    theme: 'defaultTheme'
+  });
+  const theme = globalState.theme === 'defaultTheme' ? defaultTheme : darkTheme;
+  
+  return (
+    <BrowserRouter>
+      <GlobalState.Provider value={[globalState, setGlobalState]}>
+        <ThemeProvider theme={theme}>
+            <IntlProvider locale={globalState.language} messages={translations[globalState.language]}>
+              <Routes />
+            </IntlProvider>
+          </ThemeProvider>
+        </GlobalState.Provider>
       </BrowserRouter>
-    );
+  );
 }
 
 export default App;

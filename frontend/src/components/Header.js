@@ -7,10 +7,10 @@ import { FormattedMessage } from 'react-intl';
 const S = {};
 S.Header = styled.header`
  margin: auto;
- background-color: #FFEED2;
+ background-color: ${props => props.theme.colors.osaamisKiekkoSand};
 
 h1 {
-  color: #241C80;
+  color: ${props => props.theme.colors.osaamisKiekkoBlue};
   font-size: 42px;	
   font-weight: bold;	
   line-height: 46px;
@@ -18,7 +18,7 @@ h1 {
 }
 
 p {
-	color: #241C80;
+	color: ${props => props.theme.colors.osaamisKiekkoBlue};
 	font-size: 18px;
 	line-height: 24px;
 }

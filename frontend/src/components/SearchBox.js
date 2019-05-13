@@ -39,7 +39,7 @@ S.SearchWrapper = styled.div `
 
 label {
   height: 16px;	
-  color: #241C80;
+  color: ${props => props.theme.colors.osaamisKiekkoBlue};
   font-size: 16px;	
   letter-spacing: 2.29px;
   line-height: 15px;
@@ -49,14 +49,14 @@ input {
   width: 250px;
   height: 32px;
   border: none;
-  border-bottom: 2px solid #241C80;
+  border-bottom: 2px solid ${props => props.theme.colors.osaamisKiekkoBlue};
   padding-left: 22px;
   outline-width: 0;
   outline: none;
 }
 
 input::placeholder {
-  color: #241C80;
+  color: ${props => props.theme.colors.osaamisKiekkoBlue};
   opacity: 1;
 }
 
@@ -64,7 +64,7 @@ input::placeholder {
   position: absolute;
   left: 0px;
   top: 27px;
-  color: #241C80;
+  color: ${props => props.theme.colors.osaamisKiekkoBlue};
 }
 `;
 

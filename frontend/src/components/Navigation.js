@@ -24,7 +24,7 @@ ul li {
   display: inline-block;
   a {
   text-decoration: none;
-  color: #241C80;
+  color: ${props => props.theme.colors.osaamisKiekkoBlue};
     :hover {
       color: teal;
       cursor: pointer;

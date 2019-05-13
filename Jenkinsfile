@@ -255,11 +255,19 @@ pipeline {
         }
         
         script {
+          nodeEnv = 'dev'
+          if (env.BRANCH_NAME == 'production') {
+            nodeEnv = 'production'
+          } else if (env.BRANCH_NAME == 'staging') {
+            nodeEnv = 'staging'
+          }
+
           sh """sed -i \
           -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g; \
               s#\$FRONTENDIMAGE#${taggedFrontendImage}#g; \
               s#\$PHASE#${env.NAMESPACE}#g; \
-              s#\$SUBDOMAIN#${env.SUBDOMAIN}#g' \
+              s#\$SUBDOMAIN#${env.SUBDOMAIN}#g; \
+              s#\$NODE_ENV#${nodeEnv}#g' \
           ./kubectl/*.yaml"""
 
           archiveArtifacts artifacts: 'kubectl/**/*.yaml', fingerprint: true

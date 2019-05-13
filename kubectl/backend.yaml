@@ -27,10 +27,14 @@ spec:
           # Replaced during Jenkins build. Use 'make deploy' to run locally
           image: $BACKENDIMAGE
           imagePullPolicy: IfNotPresent
+          command: ["npm"]
+          args: ["start", "--prefix", "cms"]
           ports:
             - name: http
               containerPort: 1337
           env:
+            - name: NODE_ENV
+              value: $NODE_ENV
             - name: DATABASE_HOST
               value: "127.0.0.1"
             - name: DATABASE_PORT

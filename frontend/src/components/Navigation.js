@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { LanguageContext } from '../App';
 import { FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom'
 
 const S = {};
 S.Navigation = styled.nav`
@@ -21,14 +22,17 @@ ul {
 ul li {
   padding: 20px 20px 20px 0px;
   display: inline-block;
-}
-
-ul li a {
+  a {
   text-decoration: none;
   color: #241C80;
-  :hover {
-    color: teal;
-    cursor: pointer;
+    :hover {
+      color: teal;
+      cursor: pointer;
+    }
+  }
+  button {
+    border: none; 
+    background-color: #e29871;
   }
 }
 
@@ -46,20 +50,20 @@ export default function Navigation() {
       <S.Navigation>
         <div>
           <ul className="menu-left">
-            <li><a href="/#">
+            <li><Link to="/">
               <FormattedMessage id="nav.osaamiskiekko"/>
-            </a></li>
-            <li><a href="/#">
+            </Link></li>
+            <li><Link to="/tietoa">
               <FormattedMessage id="nav.tietoa"/>
-            </a></li>
-            <li><a href="/#">
+            </Link></li>
+            <li><Link to="/otayhteytta">
               <FormattedMessage id="nav.otayhteytta"/>
-            </a></li>
+            </Link></li>
           </ul>
           <ul className="menu-right">
-            <li><a href="/#" onClick={() => setLanguage('en')}>En</a></li>
-            <li><a href="/#" onClick={() => setLanguage('fi')}>Fi</a></li>
-            <li><a href="/#" onClick={() => setLanguage('se')}>Se</a></li>
+            <li><button onClick={() => setLanguage('en')}>En</button></li>
+            <li><button onClick={() => setLanguage('fi')}>Fi</button></li>
+            <li><button onClick={() => setLanguage('se')}>Se</button></li>
           </ul>
         </div>
       </S.Navigation>

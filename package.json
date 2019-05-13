@@ -1,0 +1,16 @@
+{
+  "name": "osaamiskiekko",
+  "version": "0.0.1",
+  "description": "Partion osaamiskiekko",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.dev.eficode.io/po/osaamiskiekko.git"
+  },
+  "keywords": [
+    "partio",
+    "osaamiskiekko"
+  ],
+  "author": "Esko Rikkonen <esko.rikkonen@eficode.com>",
+  "license": "ISC"
+}

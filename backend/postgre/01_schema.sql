@@ -42,10 +42,10 @@ CREATE TABLE public.academicdegrees (
     identification character varying(255),
     name_en character varying(255),
     name_fi character varying(255),
-    name_swe character varying(255),
+    name_sv character varying(255),
     description_en text,
     description_fi text,
-    description_swe text,
+    description_sv text,
     url character varying(255),
     credits integer,
     nqf integer,
@@ -86,14 +86,14 @@ ALTER SEQUENCE public.academicdegrees_id_seq OWNED BY public.academicdegrees.id;
 
 CREATE TABLE public.competence (
     id integer NOT NULL,
-    identification character varying(255),
-    name_en character varying(255),
+    identification character varying(255) NOT NULL,
+    name_en character varying(255) NOT NULL,
     description_en text,
     url character varying(255),
-    name_fi character varying(255),
-    name_swe character varying(255),
+    name_fi character varying(255) NOT NULL,
+    name_sv character varying(255) NOT NULL,
     description_fi text,
-    description_swe text,
+    description_sv text,
     nqf integer,
     credits integer,
     organization integer,
@@ -133,9 +133,9 @@ ALTER SEQUENCE public.competence_id_seq OWNED BY public.competence.id;
 CREATE TABLE public.competencedegreelinks (
     id integer NOT NULL,
     url character varying(255),
-    description_fi text,
-    description_en text,
-    description_swe text,
+    description_fi text NOT NULL,
+    description_en text NOT NULL,
+    description_sv text NOT NULL,
     competence integer,
     academicdegree integer,
     created_at timestamp with time zone,
@@ -211,9 +211,9 @@ ALTER SEQUENCE public.core_store_id_seq OWNED BY public.core_store.id;
 
 CREATE TABLE public.fieldofstudies (
     id integer NOT NULL,
-    name_fi character varying(255),
-    name_en character varying(255),
-    name_swe character varying(255),
+    name_fi character varying(255) NOT NULL,
+    name_en character varying(255) NOT NULL,
+    name_sv character varying(255) NOT NULL,
     created_at timestamp with time zone,
     updated_at timestamp with time zone
 );
@@ -251,7 +251,7 @@ CREATE TABLE public.nqfs (
     id integer NOT NULL,
     name_en character varying(255) NOT NULL,
     name_fi character varying(255) NOT NULL,
-    name_swe character varying(255),
+    name_sv character varying(255) NOT NULL,
     level character varying(255) NOT NULL,
     created_at timestamp with time zone,
     updated_at timestamp with time zone
@@ -290,10 +290,10 @@ CREATE TABLE public.organizations (
     id integer NOT NULL,
     name_en character varying(255) NOT NULL,
     name_fi character varying(255) NOT NULL,
-    name_swe character varying(255),
+    name_sv character varying(255) NOT NULL,
     description_fi text,
     description_en text,
-    description_swe text,
+    description_sv text,
     url character varying(255),
     "logoUrl" character varying(255),
     created_at timestamp with time zone,
@@ -331,12 +331,12 @@ ALTER SEQUENCE public.organizations_id_seq OWNED BY public.organizations.id;
 
 CREATE TABLE public.schools (
     id integer NOT NULL,
-    name_en character varying(255),
-    name_fi character varying(255),
-    name_swe character varying(255),
+    name_en character varying(255) NOT NULL,
+    name_fi character varying(255) NOT NULL,
+    name_sv character varying(255) NOT NULL,
     description_en text,
     description_fi text,
-    description_swe text,
+    description_sv text,
     url character varying(255),
     "logoUrl" character varying(255),
     created_at timestamp with time zone,
@@ -775,10 +775,10 @@ CREATE INDEX search_academicdegrees_description_fi ON public.academicdegrees USI
 
 
 --
--- Name: search_academicdegrees_description_swe; Type: INDEX; Schema: public; Owner: myuser
+-- Name: search_academicdegrees_description_sv; Type: INDEX; Schema: public; Owner: myuser
 --
 
-CREATE INDEX search_academicdegrees_description_swe ON public.academicdegrees USING gin (description_swe public.gin_trgm_ops);
+CREATE INDEX search_academicdegrees_description_sv ON public.academicdegrees USING gin (description_sv public.gin_trgm_ops);
 
 
 --
@@ -803,10 +803,10 @@ CREATE INDEX search_academicdegrees_name_fi ON public.academicdegrees USING gin 
 
 
 --
--- Name: search_academicdegrees_name_swe; Type: INDEX; Schema: public; Owner: myuser
+-- Name: search_academicdegrees_name_sv; Type: INDEX; Schema: public; Owner: myuser
 --
 
-CREATE INDEX search_academicdegrees_name_swe ON public.academicdegrees USING gin (name_swe public.gin_trgm_ops);
+CREATE INDEX search_academicdegrees_name_sv ON public.academicdegrees USING gin (name_sv public.gin_trgm_ops);
 
 
 --
@@ -814,6 +814,146 @@ CREATE INDEX search_academicdegrees_name_swe ON public.academicdegrees USING gin
 --
 
 CREATE INDEX search_academicdegrees_url ON public.academicdegrees USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_description_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_description_en ON public.competence USING gin (description_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_description_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_description_fi ON public.competence USING gin (description_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_description_sv; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_description_sv ON public.competence USING gin (description_sv public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_identification; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_identification ON public.competence USING gin (identification public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_name_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_name_en ON public.competence USING gin (name_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_name_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_name_fi ON public.competence USING gin (name_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_name_sv; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_name_sv ON public.competence USING gin (name_sv public.gin_trgm_ops);
+
+
+--
+-- Name: search_competence_url; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competence_url ON public.competence USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_competencedegreelinks_description_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competencedegreelinks_description_en ON public.competencedegreelinks USING gin (description_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_competencedegreelinks_description_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competencedegreelinks_description_fi ON public.competencedegreelinks USING gin (description_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_competencedegreelinks_description_sv; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competencedegreelinks_description_sv ON public.competencedegreelinks USING gin (description_sv public.gin_trgm_ops);
+
+
+--
+-- Name: search_competencedegreelinks_url; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competencedegreelinks_url ON public.competencedegreelinks USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_core_store_environment; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_core_store_environment ON public.core_store USING gin (environment public.gin_trgm_ops);
+
+
+--
+-- Name: search_core_store_key; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_core_store_key ON public.core_store USING gin (key public.gin_trgm_ops);
+
+
+--
+-- Name: search_core_store_tag; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_core_store_tag ON public.core_store USING gin (tag public.gin_trgm_ops);
+
+
+--
+-- Name: search_core_store_type; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_core_store_type ON public.core_store USING gin (type public.gin_trgm_ops);
+
+
+--
+-- Name: search_core_store_value; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_core_store_value ON public.core_store USING gin (value public.gin_trgm_ops);
+
+
+--
+-- Name: search_fieldofstudies_name_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_fieldofstudies_name_en ON public.fieldofstudies USING gin (name_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_fieldofstudies_name_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_fieldofstudies_name_fi ON public.fieldofstudies USING gin (name_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_fieldofstudies_name_sv; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_fieldofstudies_name_sv ON public.fieldofstudies USING gin (name_sv public.gin_trgm_ops);
 
 
 --
@@ -831,10 +971,66 @@ CREATE INDEX search_nqfs_name_fi ON public.nqfs USING gin (name_fi public.gin_tr
 
 
 --
--- Name: search_nqfs_name_swe; Type: INDEX; Schema: public; Owner: myuser
+-- Name: search_nqfs_name_sv; Type: INDEX; Schema: public; Owner: myuser
 --
 
-CREATE INDEX search_nqfs_name_swe ON public.nqfs USING gin (name_swe public.gin_trgm_ops);
+CREATE INDEX search_nqfs_name_sv ON public.nqfs USING gin (name_sv public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_description_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_description_en ON public.organizations USING gin (description_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_description_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_description_fi ON public.organizations USING gin (description_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_description_sv; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_description_sv ON public.organizations USING gin (description_sv public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_logourl; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_logourl ON public.organizations USING gin ("logoUrl" public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_name_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_name_en ON public.organizations USING gin (name_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_name_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_name_fi ON public.organizations USING gin (name_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_name_sv; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_name_sv ON public.organizations USING gin (name_sv public.gin_trgm_ops);
+
+
+--
+-- Name: search_organizations_url; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_organizations_url ON public.organizations USING gin (url public.gin_trgm_ops);
 
 
 --
@@ -852,10 +1048,10 @@ CREATE INDEX search_schools_description_fi ON public.schools USING gin (descript
 
 
 --
--- Name: search_schools_description_swe; Type: INDEX; Schema: public; Owner: myuser
+-- Name: search_schools_description_sv; Type: INDEX; Schema: public; Owner: myuser
 --
 
-CREATE INDEX search_schools_description_swe ON public.schools USING gin (description_swe public.gin_trgm_ops);
+CREATE INDEX search_schools_description_sv ON public.schools USING gin (description_sv public.gin_trgm_ops);
 
 
 --
@@ -880,10 +1076,10 @@ CREATE INDEX search_schools_name_fi ON public.schools USING gin (name_fi public.
 
 
 --
--- Name: search_schools_name_swe; Type: INDEX; Schema: public; Owner: myuser
+-- Name: search_schools_name_sv; Type: INDEX; Schema: public; Owner: myuser
 --
 
-CREATE INDEX search_schools_name_swe ON public.schools USING gin (name_swe public.gin_trgm_ops);
+CREATE INDEX search_schools_name_sv ON public.schools USING gin (name_sv public.gin_trgm_ops);
 
 
 --
@@ -891,6 +1087,27 @@ CREATE INDEX search_schools_name_swe ON public.schools USING gin (name_swe publi
 --
 
 CREATE INDEX search_schools_url ON public.schools USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_upload_file_ext; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_upload_file_ext ON public.upload_file USING gin (ext public.gin_trgm_ops);
+
+
+--
+-- Name: search_upload_file_hash; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_upload_file_hash ON public.upload_file USING gin (hash public.gin_trgm_ops);
+
+
+--
+-- Name: search_upload_file_mime; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_upload_file_mime ON public.upload_file USING gin (mime public.gin_trgm_ops);
 
 
 --
@@ -905,6 +1122,76 @@ CREATE INDEX search_upload_file_morph_field ON public.upload_file_morph USING gi
 --
 
 CREATE INDEX search_upload_file_morph_related_type ON public.upload_file_morph USING gin (related_type public.gin_trgm_ops);
+
+
+--
+-- Name: search_upload_file_name; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_upload_file_name ON public.upload_file USING gin (name public.gin_trgm_ops);
+
+
+--
+-- Name: search_upload_file_provider; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_upload_file_provider ON public.upload_file USING gin (provider public.gin_trgm_ops);
+
+
+--
+-- Name: search_upload_file_public_id; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_upload_file_public_id ON public.upload_file USING gin (public_id public.gin_trgm_ops);
+
+
+--
+-- Name: search_upload_file_sha256; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_upload_file_sha256 ON public.upload_file USING gin (sha256 public.gin_trgm_ops);
+
+
+--
+-- Name: search_upload_file_size; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_upload_file_size ON public.upload_file USING gin (size public.gin_trgm_ops);
+
+
+--
+-- Name: search_upload_file_url; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_upload_file_url ON public.upload_file USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_users_permissions_permission_action; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_users_permissions_permission_action ON public."users-permissions_permission" USING gin (action public.gin_trgm_ops);
+
+
+--
+-- Name: search_users_permissions_permission_controller; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_users_permissions_permission_controller ON public."users-permissions_permission" USING gin (controller public.gin_trgm_ops);
+
+
+--
+-- Name: search_users_permissions_permission_policy; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_users_permissions_permission_policy ON public."users-permissions_permission" USING gin (policy public.gin_trgm_ops);
+
+
+--
+-- Name: search_users_permissions_permission_type; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_users_permissions_permission_type ON public."users-permissions_permission" USING gin (type public.gin_trgm_ops);
 
 
 --

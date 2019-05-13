@@ -1,13 +1,16 @@
-start:
-	docker-compose up --build
-
-build-production:
+docker-build-production:
 	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml build frontend backend
 
+docker-build:
+	docker-compose build
+	
 docker-cleanrun:
 	docker-compose down
 	docker volume prune -f
 	docker container prune -f
+	docker-compose up
+
+docker-run:
 	docker-compose up
 
 ### model import/export ###

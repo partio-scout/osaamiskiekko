@@ -19,8 +19,9 @@
       "type": "string",
       "required": true
     },
-    "name_swe": {
-      "type": "string"
+    "name_sv": {
+      "type": "string",
+      "required": true
     },
     "level": {
       "enum": [

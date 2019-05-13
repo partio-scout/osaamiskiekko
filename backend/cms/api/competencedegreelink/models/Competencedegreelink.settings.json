@@ -15,13 +15,16 @@
       "type": "string"
     },
     "description_fi": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "description_en": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
-    "description_swe": {
-      "type": "text"
+    "description_sv": {
+      "type": "text",
+      "required": true
     },
     "competence": {
       "model": "competence",

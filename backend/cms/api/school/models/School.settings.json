@@ -12,13 +12,16 @@
   },
   "attributes": {
     "name_en": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "name_fi": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "name_swe": {
-      "type": "string"
+    "name_sv": {
+      "type": "string",
+      "required": true
     },
     "description_en": {
       "type": "text"
@@ -26,7 +29,7 @@
     "description_fi": {
       "type": "text"
     },
-    "description_swe": {
+    "description_sv": {
       "type": "text"
     },
     "url": {

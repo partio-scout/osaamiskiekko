@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { LanguageContext } from '../App';
 import { FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import ThemeSelector from './ThemeSelector';
 
 const S = {};
 S.Navigation = styled.nav`
@@ -33,6 +34,8 @@ ul li {
   button {
     border: none; 
     background-color: #e29871;
+    padding: 6px;
+    color: ${props => props.theme.colors.osaamisKiekkoBlue};
   }
 }
 
@@ -64,6 +67,7 @@ export default function Navigation() {
             <li><button onClick={() => setLanguage('en')}>En</button></li>
             <li><button onClick={() => setLanguage('fi')}>Fi</button></li>
             <li><button onClick={() => setLanguage('se')}>Se</button></li>
+            <li><ThemeSelector /></li>
           </ul>
         </div>
       </S.Navigation>

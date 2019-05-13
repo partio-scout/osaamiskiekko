@@ -107,7 +107,7 @@ COPY public.organizations (id, name_en, name_fi, name_swe, description_fi, descr
 --
 
 COPY public.schools (id, name_en, name_fi, name_swe, description_en, description_fi, description_swe, url, "logoUrl", created_at, updated_at) FROM stdin;
-1	HUMAK_EN	Humanistitnen ammattikorkeakoulu	\N	\N	\N	\N	\N	\N	2019-05-09 09:59:36.683+00	2019-05-09 09:59:36.703+00
+1	HUMAK_EN	Humanistinen ammattikorkeakoulu	\N	\N	\N	\N	\N	\N	2019-05-09 09:59:36.683+00	2019-05-09 09:59:36.703+00
 \.
 
 

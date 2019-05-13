@@ -1,3 +1,6 @@
+start:
+	docker-compose up --build
+
 build-production:
 	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml build frontend backend
 

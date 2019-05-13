@@ -17,11 +17,12 @@ pipeline {
   environment {
     DOCKER_HOST = 'tcp://127.0.0.1:2375'
     COMPOSE_HTTP_TIMEOUT = 1000
-    DEVCLUSTER= "osaamiskiekko-dev-cluster"
+    CLUSTER= "osaamiskiekko-dev-cluster"
     GCLOUDPARAM= "--zone europe-north1-a"
     GCLOUD_PROJECT="osaamiskiekko"
     GCLOUD_DB_PROXY_USERNAME="proxy-user@osaamiskiekko.iam.gserviceaccount.com"
     DATABASE_INSTANCE_ID="osaamiskiekko-dev-db"
+    DATABASE_CREDENTIALS_ID="${env.BRANCH_NAME == "production" ? "database-credentials-production" : "database-credentials-dev"}"    
   }
 
   options {
@@ -52,7 +53,7 @@ pipeline {
           sh "gcloud auth activate-service-account --key-file \$credfile"
           sh "rm \$credfile"
           sh "gcloud config set project ${GCLOUD_PROJECT}"
-          sh "gcloud container clusters get-credentials ${env.DEVCLUSTER} ${env.GCLOUDPARAM}"
+          sh "gcloud container clusters get-credentials ${env.CLUSTER} ${env.GCLOUDPARAM}"
           sh "kubectl get pods" // just testing connection first
           sh """kubectl create namespace ${env.NAMESPACE} \
           --dry-run -o yaml \
@@ -61,7 +62,10 @@ pipeline {
           // Create database
           sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
 
-          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials-dev', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.DATABASE_CREDENTIALS_ID}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            echo env.BRANCH_NAME
+            echo "${env.BRANCH_NAME == "production" ? "database-credentials-production" : "database-credentials-dev"}"
+            echo env.DATABASE_CREDENTIALS_ID
             sh "gcloud sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
           }
           
@@ -92,7 +96,7 @@ pipeline {
               -n ${env.NAMESPACE}"""
           }
           // Create or update database credentials secret
-          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'database-credentials-dev',
+          withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.DATABASE_CREDENTIALS_ID}",
             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
             sh """kubectl create secret generic database-credentials \
               --from-literal=username='$USERNAME' \
@@ -143,7 +147,7 @@ pipeline {
               scannerHome = tool 'SonarScanner'
           }
 
-          // Copy write-protected test+coverage results to a new location
+          // Copy write-protected (root-owned) test+coverage results to a new location
           sh "mkdir frontend/coverage"
           sh "cp frontend/test-results/* frontend/coverage -r"
           // Rewrite container paths -> jenkins paths in the results (sonar ignores non-matching files)
@@ -241,20 +245,29 @@ pipeline {
       steps {
         script {
           env.WORKSPACE = pwd()
+          env.SUBDOMAIN = env.NAMESPACE
+
+          if (env.BRANCH_NAME == 'production') {
+            env.SUBDOMAIN = 'www'
+          } else if (env.BRANCH_NAME == 'master') {
+            env.SUBDOMAIN = 'dev'
+          } 
         }
         
         script {
           sh """sed -i \
           -e 's#\$BACKENDIMAGE#${taggedBackendImage}#g; \
               s#\$FRONTENDIMAGE#${taggedFrontendImage}#g; \
-              s#\$PHASE#${env.NAMESPACE}#g' \
+              s#\$PHASE#${env.NAMESPACE}#g; \
+              s#\$SUBDOMAIN#${env.SUBDOMAIN}#g' \
           ./kubectl/*.yaml"""
 
           archiveArtifacts artifacts: 'kubectl/**/*.yaml', fingerprint: true
           
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend-service.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/frontend.yaml"
-          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/load-balancer.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/ingress.yaml"
         }
       }
     }

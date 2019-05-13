@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
-import SweetJesus from '../images/sweetjesusface.png';
+import BackgroundImage from '../images/bg.png';
 import { FormattedMessage } from 'react-intl';
 
 const S = {};
@@ -23,6 +23,11 @@ p {
 	line-height: 24px;
 }
 
+p.important {
+  font-size: 24px;
+  color: red;
+}
+
 .header-container {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;
@@ -38,8 +43,8 @@ p {
 
 .header-image {
   border-radius: 50%;
-  border: solid 1px #4736FF;
-  max-height: 259px;
+  border: solid 1px gray;
+  max-height: 300px;
 }
 
 .header-image-container {
@@ -64,10 +69,11 @@ export default function Header() {
           <h1>
             <FormattedMessage id="header.h1" />
           </h1>
+          <p className="important"><FormattedMessage id="header.important" /></p>
           <p><FormattedMessage id="header.p" /></p>
         </div>
         <div className="header-image-container">
-          <img src={SweetJesus} alt="placeholder" className="header-image" />
+          <img src={BackgroundImage} alt="placeholder" className="header-image" />
         </div>
       </div>
     </S.Header>

@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { LanguageContext } from '../App';
+import { GlobalState } from '../App';
 import { FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import ThemeSelector from './ThemeSelector';
 
 const S = {};
 S.Navigation = styled.nav`
@@ -24,7 +25,7 @@ ul li {
   display: inline-block;
   a {
   text-decoration: none;
-  color: #241C80;
+  color: ${props => props.theme.colors.osaamisKiekkoBlue};
     :hover {
       color: teal;
       cursor: pointer;
@@ -33,6 +34,8 @@ ul li {
   button {
     border: none; 
     background-color: #e29871;
+    padding: 6px;
+    color: ${props => props.theme.colors.osaamisKiekkoBlue};
   }
 }
 
@@ -45,7 +48,8 @@ ul li {
 `;
 
 export default function Navigation() {
-  const setLanguage = useContext(LanguageContext);
+  const [globalState, setGlobalState] = useContext(GlobalState);
+  const changeLanguage = (language) => setGlobalState({ ...globalState, language});
     return (
       <S.Navigation>
         <div>
@@ -61,9 +65,10 @@ export default function Navigation() {
             </Link></li>
           </ul>
           <ul className="menu-right">
-            <li><button onClick={() => setLanguage('en')}>En</button></li>
-            <li><button onClick={() => setLanguage('fi')}>Fi</button></li>
-            <li><button onClick={() => setLanguage('se')}>Se</button></li>
+            <li><button onClick={() => changeLanguage('en')}>En</button></li>
+            <li><button onClick={() => changeLanguage('fi')}>Fi</button></li>
+            <li><button onClick={() => changeLanguage('se')}>Sv</button></li>
+            <li><ThemeSelector /></li>
           </ul>
         </div>
       </S.Navigation>

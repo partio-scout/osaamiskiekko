@@ -9,11 +9,11 @@ const Main = () => {
   return (
     <main>
       <GlobalStyle />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/tietoa' component={Information} />
-        <Route exact path='/otayhteytta' component={Contact} />
-      </Switch>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/tietoa' component={Information} />
+          <Route exact path='/otayhteytta' component={Contact} />
+        </Switch>
     </main>
   );
 }

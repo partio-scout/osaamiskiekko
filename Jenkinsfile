@@ -63,6 +63,9 @@ pipeline {
           sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
 
           withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.DATABASE_CREDENTIALS_ID}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            echo env.BRANCH_NAME
+            echo "${env.BRANCH_NAME == "production" ? "database-credentials-production" : "database-credentials-dev"}"
+            echo env.DATABASE_CREDENTIALS_ID
             sh "gcloud sql users create $USERNAME --password=$PASSWORD -i ${env.DATABASE_INSTANCE_ID} || true"
           }
           
@@ -144,7 +147,7 @@ pipeline {
               scannerHome = tool 'SonarScanner'
           }
 
-          // Copy write-protected test+coverage results to a new location
+          // Copy write-protected (root-owned) test+coverage results to a new location
           sh "mkdir frontend/coverage"
           sh "cp frontend/test-results/* frontend/coverage -r"
           // Rewrite container paths -> jenkins paths in the results (sonar ignores non-matching files)

@@ -22,11 +22,7 @@ pipeline {
     GCLOUD_PROJECT="osaamiskiekko"
     GCLOUD_DB_PROXY_USERNAME="proxy-user@osaamiskiekko.iam.gserviceaccount.com"
     DATABASE_INSTANCE_ID="osaamiskiekko-dev-db"
-    DATABASE_CREDENTIALS_ID="database-credentials-dev"
-    
-    if (env.BRANCH_NAME == 'production') {
-      DB_CREDENTIALS_ID="database-credentials-production"
-    }
+    DATABASE_CREDENTIALS_ID="${env.BRANCH_NAME == "production" ? "database-credentials-dev" : "database-credentials-production"}"    
   }
 
   options {

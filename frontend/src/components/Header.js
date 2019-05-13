@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
-import SweetJesus from '../images/sweetjesusface.png';
+import BackgroundImage from '../images/bg.png';
 
 const S = {};
 S.Header = styled.header`
@@ -22,6 +22,12 @@ p {
 	line-height: 24px;
 }
 
+p.important {
+  padding: 10px;
+  border: 2px solid red;
+  font-size: 20px;
+}
+
 .header-container {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 1fr;
@@ -37,8 +43,8 @@ p {
 
 .header-image {
   border-radius: 50%;
-  border: solid 1px #4736FF;
-  max-height: 259px;
+  border: solid 1px gray;
+  max-height: 300px;
 }
 
 .header-image-container {
@@ -61,10 +67,11 @@ export default function Header() {
       <div className="header-container">
         <div className="header-text">
           <h1>Osaamiskiekon avulla hyödynnät osaamisesi monipuolisesti</h1>
+          <p className="important">Osaamiskiekko on vielä kehitteillä ja avataan kokonaisena vasta kesällä 2019!</p>
           <p>Osaamiskiekon avulla löydät harrastus- ja vapaaehtoistoiminnassa hankitun osaamisen rinnakkain tutkintoon johtavien opintojen kanssa.</p>
         </div>
         <div className="header-image-container">
-          <img src={SweetJesus} alt="placeholder" className="header-image" />
+          <img src={BackgroundImage} alt="placeholder" className="header-image" />
         </div>
       </div>
     </S.Header>

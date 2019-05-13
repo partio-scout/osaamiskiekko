@@ -2,23 +2,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ingress-master
+  name: no-host-namespace-ingress
   annotations:
     # use the shared ingress-nginx
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: $SUBDOMAIN.osaamiskiekko.fi
-    http:
+  - http:
       paths:
       - path: /
         backend:
           serviceName: frontend
           servicePort: 80
-  - host: api.$SUBDOMAIN.osaamiskiekko.fi
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: backend
-          servicePort: 1337

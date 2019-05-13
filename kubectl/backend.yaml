@@ -27,7 +27,6 @@ spec:
           # Replaced during Jenkins build. Use 'make deploy' to run locally
           image: $BACKENDIMAGE
           imagePullPolicy: IfNotPresent
-          command: ["npm start --prefix cms"]
           ports:
             - name: http
               containerPort: 1337

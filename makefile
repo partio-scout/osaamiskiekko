@@ -53,35 +53,25 @@ endif
 
 ### Deployment ###
 # deploy: check-deploy-arguments deploy-db deploy-backend deploy-frontend deploy-loadbalancer
-deploy: check-deploy-arguments deploy-backend deploy-frontend deploy-loadbalancer
+deploy-master: check-deploy-arguments deploy-backend deploy-frontend deploy-loadbalancer
 
 check-deploy-arguments:
-ifeq ($(namespace), )
-	$(error "namespace required. Usage 'namespace=[] backendimage=[] frontendimage=[] make deploy")
+ifeq ($(tagend), )
+	$(error "tagend required.")
 endif
-ifeq ($(backendimage), )
-	$(error "backendimage required. Usage 'namespace=[] backendimage=[] frontendimage=[] make deploy")
-endif
-ifeq ($(frontendimage), )
-	$(error "frontendimage required. Usage 'namespace=[] backendimage=[] frontendimage=[] make deploy")
-endif
-
-deploy-db:
-	$(info deploying db)
-	@kubectl apply -n $(namespace) -f kubectl/db.yaml
 
 deploy-backend:
 	$(info deploying backend)
-	@sed -e 's#$$BACKENDIMAGE#$(backendimage)#g' kubectl/backend.yaml | kubectl apply -n $(namespace) -f -
+	@sed -e 's#$$BACKENDIMAGE#artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/backend_master:${tagend}#g; s#$$PHASE#master#g; s#$$NODE_ENV#development#g' kubectl/backend.yaml | kubectl apply -n master -f -
+	@sed -e 's#$$PHASE#master#g' kubectl/backend-service.yaml | kubectl apply -n master -f -
 
 deploy-frontend:
 	$(info deploying frontend)
-	@sed -e 's#$$FRONTENDIMAGE#$(frontendimage)#g' kubectl/frontend.yaml | kubectl apply -n $(namespace) -f -
+	@sed -e 's#$$FRONTENDIMAGE#artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/backend_master:${tagend}#g; s#$$PHASE#master#g; s#$$NODE_ENV#development#g' kubectl/frontend.yaml | kubectl apply -n master -f -
 
 deploy-loadbalancer:
 	$(info deploying load balancer)
-	@kubectl apply -n $(namespace) -f kubectl/load-balancer.yaml 
-
+	@sed -e 's#$$SUBDOMAIN#master#g' kubectl/ingress.yaml | kubectl apply -n master -f -
 
 ### tests ###
 unit:

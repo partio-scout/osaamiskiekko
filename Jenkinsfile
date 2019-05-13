@@ -255,7 +255,7 @@ pipeline {
         }
         
         script {
-          nodeEnv = 'dev'
+          nodeEnv = 'development'
           if (env.BRANCH_NAME == 'production') {
             nodeEnv = 'production'
           } else if (env.BRANCH_NAME == 'staging') {
@@ -275,7 +275,11 @@ pipeline {
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend-service.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/frontend.yaml"
-          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/ingress.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/namespace-ingress.yaml"
+
+          if (env.BRANCH_NAME == 'production') {
+            sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/no-host-namespace-ingress.yaml" 
+          }
         }
       }
     }

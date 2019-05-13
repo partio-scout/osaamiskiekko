@@ -9,6 +9,8 @@ RUN npm install -g strapi@alpha
 COPY . ./
 RUN chmod +x ./strapi.sh
 
+RUN npm install --prefix cms
+
 EXPOSE 1337
 
 COPY healthcheck.js ./

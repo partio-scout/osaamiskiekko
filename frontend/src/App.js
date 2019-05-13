@@ -10,21 +10,25 @@ import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from './styles/Themes';
 addLocaleData([...en, ...fi, ...se, translations]);
 
-export const LanguageContext = createContext(null);
+export const GlobalState = createContext(null);
 
 const App = () => { 
-  const [language, setLanguage] = useState('fi');
-    return (
-      <BrowserRouter>
-          <LanguageContext.Provider value={setLanguage}>
-            <ThemeProvider theme={defaultTheme}>
-              <IntlProvider locale={language} messages={translations[language]}>
-                <Routes />
-              </IntlProvider>
-            </ThemeProvider>
-          </LanguageContext.Provider>
-        </BrowserRouter>
-    );
+  const [globalState, setGlobalState] = useState({
+    language: 'fi',
+    theme: 'defaultTheme'
+  });
+
+  return (
+    <BrowserRouter>
+      <GlobalState.Provider value={[globalState, setGlobalState]}>
+          <ThemeProvider theme={defaultTheme}>
+            <IntlProvider locale={globalState.language} messages={translations[globalState.language]}>
+              <Routes />
+            </IntlProvider>
+          </ThemeProvider>
+        </GlobalState.Provider>
+      </BrowserRouter>
+  );
 }
 
 export default App;

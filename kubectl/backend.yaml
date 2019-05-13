@@ -22,6 +22,9 @@ spec:
         - name: my-secrets-volume
           secret:
             secretName: cloudsql-instance-credentials
+        - name: uploads
+          persistentVolumeClaim:
+            claimName: backend-uploads-disk
       containers:
         - name: backend
           # Replaced during Jenkins build. Use 'make deploy' to run locally
@@ -30,6 +33,9 @@ spec:
           ports:
             - name: http
               containerPort: 1337
+          volumeMounts:
+            - name: uploads
+              mountPath: /usr/app/src/myvolumehere
           env:
             - name: NODE_ENV
               value: $NODE_ENV
@@ -60,4 +66,4 @@ spec:
           volumeMounts:
           - name: my-secrets-volume
             mountPath: /secrets/cloudsql
-            readOnly: true                  
+            readOnly: true

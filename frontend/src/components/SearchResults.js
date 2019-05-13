@@ -43,10 +43,8 @@ export default function SearchResults(props) {
     </S.ResultsDiv>
 
   return (
-    <div>
-        <S.ResultWrapper>
-          {schoolsAndOrganizations.map(renderResults)}
-        </S.ResultWrapper>
-    </div>
+    <S.ResultWrapper>
+      {schoolsAndOrganizations.map(renderResults)}
+    </S.ResultWrapper>
   )
 }

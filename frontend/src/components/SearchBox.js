@@ -4,6 +4,7 @@ import axios from 'axios';
 import { DebounceInput } from 'react-debounce-input';
 import SearchResults from './SearchResults';
 import { FormattedMessage } from 'react-intl';
+import { addTypeToSchoolOrOrganization } from '../utils/ApiUtils';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -75,22 +76,11 @@ export default function SearchBox() {
   const schoolsUrl = 'http://localhost:1337/schools?name_fi_contains=';
   const organizationsUrl = 'http://localhost:1337/organizations?name_fi_contains='
 
-  const addTypeToArray = (schoolOrOrganization, type) => schoolOrOrganization.map(item => {
-    if (type === 'school') {
-      const o = Object.assign({}, item);
-      o.type_fi = 'Oppilaitos';
-      o.type_en = 'School';
-      o.type_se = 'Skola'
-      return o;
-    }
-    return null;
-  })
-
   const fetchData = async (value) => {
     setInputValue(value);
     if (value) {
       const schools = await axios(`${schoolsUrl}${value}`);
-      const schoolsWithType = addTypeToArray(schools.data, 'school');
+      const schoolsWithType = addTypeToSchoolOrOrganization(schools.data, 'school');
       setSchools(schoolsWithType);
       const organizations = await axios(`${organizationsUrl}${value}`);
       setOrganizations(organizations.data);

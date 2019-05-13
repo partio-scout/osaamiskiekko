@@ -5,4 +5,11 @@ const defaultTheme = {
   },
 }
 
-export { defaultTheme };
+const darkTheme = {
+  colors: {
+    osaamisKiekkoBlue: '#30312B;',
+    osaamisKiekkoSand: '#bac6bd'
+  },
+}
+
+export { defaultTheme, darkTheme };

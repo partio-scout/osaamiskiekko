@@ -1,72 +1,45 @@
 import React, { useState }  from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { DebounceInput } from 'react-debounce-input';
 import SearchResults from './SearchResults';
-import { FormattedMessage } from 'react-intl';
 import { addTypeToSchoolOrOrganization } from '../utils/ApiUtils';
+import SearchInput from './SearchInput';
 
 const S = {};
 S.SearchBox = styled.div`
-  top: 130px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: white;
-  height: 125px;	
+  height: 250px;	
   width: 587px;
   background-color: #FFFFFF;
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
-  padding: 20px;
+  padding: 34px;
   display: flex;
   flex-direction: column;
+  margin: auto;
+  margin-top: 50px;
+
+  button {
+    height: 45px;
+    width: 220px;
+    background-color: #7FD1AE;
+    padding: 24px;
+    margin: auto;
+    line-height: 0;
+    margin-top: 25px;
+    font-size: 16px;	
+    letter-spacing: 4px;	
+    line-height: 0px;	
+    text-align: center;
+    :hover {
+      cursor: pointer;
+      outline: none;
+    }
+  }
 
   @media only screen and (max-width: 660px) {
     width: 350px;
   }
-`;
-
-S.SearchWrapper = styled.div `
-  margin: auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-
-  /* :nth-child(1) {
-    margin-bottom: 20px;
-  } */
-
-label {
-  height: 16px;	
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
-  font-size: 16px;	
-  letter-spacing: 2.29px;
-  line-height: 15px;
-}
-
-input {
-  width: 250px;
-  height: 32px;
-  border: none;
-  border-bottom: 2px solid ${props => props.theme.colors.osaamisKiekkoBlue};
-  padding-left: 22px;
-  outline-width: 0;
-  outline: none;
-}
-
-input::placeholder {
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
-  opacity: 1;
-}
-
-.fa-search { 
-  position: absolute;
-  left: 0px;
-  top: 27px;
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
-}
 `;
 
 export default function SearchBox() {
@@ -92,25 +65,10 @@ export default function SearchBox() {
 
   return (
     <S.SearchBox>
-      <S.SearchWrapper>
-        <label htmlFor="search-academy">
-          <FormattedMessage id="searchbox.label" />
-        </label>
-        <span className="fa fa-search"></span>
-        <FormattedMessage id="search.placeholder">
-        {msg => (
-          <DebounceInput
-            minLength={2}
-            debounceTimeout={300}
-            value={inputValue}
-            type="text" 
-            placeholder={msg} 
-            name="search-academy"
-            onChange={e => fetchData(e.target.value)} />
-        )}
-        </FormattedMessage>
-      </S.SearchWrapper>
+      <SearchInput {...{ fetchData, inputValue, label: 'searchbox.label' }} />
       <SearchResults schools={schools} organizations={organizations}/>
+      <SearchInput {...{ fetchData, inputValue, label: 'searchbox.labelSecondary' }} />
+      <button>Näytä tulokset</button>
     </S.SearchBox>
   )
 }

@@ -7,13 +7,13 @@ S.themeSelector = styled.div`
 position: relative;
 
 select {
-  background-color: #e29871;
+  background-color: #c9d0b7
+  border-radius: 8px;
   color: ${props => props.theme.colors.osaamisKiekkoBlue};
   padding: 5px 5px 5px 10px;
   width: 150px;
   border: none;
   font-size: 14px;
-  border-radius: 0px;
   -webkit-appearance: button;
   appearance: button;
   outline: none;
@@ -41,8 +41,8 @@ select {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
- select option {
-  padding: 30px;
+select option {
+padding: 30px;
 }
 `;
 

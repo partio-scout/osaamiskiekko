@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
-import BackgroundImage from '../images/bg.png';
 import { FormattedMessage } from 'react-intl';
+import SearchBox from './SearchBox';
 
 const S = {};
 S.Header = styled.header`
  margin: auto;
- background-color: ${props => props.theme.colors.osaamisKiekkoSand};
 
 h1 {
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
+  color: ${props => props.theme.colors.heading};
+  font-family: ${props => props.theme.fonts.headingFontFamily};
   font-size: 42px;	
   font-weight: bold;	
   line-height: 46px;
@@ -30,7 +30,7 @@ p.important {
 
 .header-container {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 4fr 4fr;
   min-height: 400px;
 }
 
@@ -38,26 +38,8 @@ p.important {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  grid-column-start: 2;
+  padding: 40px;
 }
-
-.header-image {
-  border-radius: 50%;
-  border: solid 1px gray;
-  max-height: 300px;
-}
-
-.header-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-  @media only screen and (max-width: 600px) { 
-    .header-image-container {
-      display: none;
-    }
-  }
 `;
 
 export default function Header() {
@@ -72,10 +54,8 @@ export default function Header() {
           <p className="important"><FormattedMessage id="header.important" /></p>
           <p><FormattedMessage id="header.p" /></p>
         </div>
-        <div className="header-image-container">
-          <img src={BackgroundImage} alt="placeholder" className="header-image" />
-        </div>
       </div>
+      <SearchBox />
     </S.Header>
   )
 }

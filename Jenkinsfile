@@ -296,7 +296,7 @@ pipeline {
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/namespace-ingress.yaml"
 
           if (env.BRANCH_NAME == 'production') {
-            sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/no-host-namespace-ingress.yaml" 
+            sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/production/no-host-namespace-ingress.yaml" 
           }
         }
       }

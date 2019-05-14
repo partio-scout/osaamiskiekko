@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="1028px" viewBox="0 0 1440 1028" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>header-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M720,0 L720,652.999885 C480.010873,652.944481 240.010873,632.944519 0,593 L0,0 L720,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Visual" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Option-B-Copy">
+            <g id="header-bg">
+                <path d="M1440,593 L1440,968 C1200.00224,1008 960.002241,1028 720,1028 C479.997759,1028 239.997759,1008 0,968 L0,593 C240.344237,633 480.67757,653 721,653 C961.32243,653 1200.9891,633 1440,593 Z" id="bottom-bg" fill="#C9D0B7"></path>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Combined-Shape" fill="#E8EAE3" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

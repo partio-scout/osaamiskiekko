@@ -1,11 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import Curve from '../components/Curve.js';
+import renderWithProviders from '../testHelpers'
+import Curve from '../components/Curve';
 
 test('Curve snapshot matches', () => {
-  const component = renderer.create(
-    <Curve />,
-  );
-  let tree = component.toJSON();
+  const tree = renderWithProviders(
+        <Curve />
+  ).toJSON();
   expect(tree).toMatchSnapshot();
 });

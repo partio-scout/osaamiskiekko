@@ -50,12 +50,12 @@ export default function Navigation() {
   const [globalState, setGlobalState] = useContext(GlobalState);
   const setTheme = (e) => setGlobalState({ ...globalState, theme: e.target.value });
 
-    return (
-      <S.themeSelector>
-        <select onChange={setTheme}>
-          <option value="defaultTheme">Oletus teema</option>
-          <option value="darkTheme">Tumma teema</option>
-        </select>
-      </S.themeSelector>
-    )
+  return (
+    <S.themeSelector>
+      <select onChange={setTheme}>
+        <option value="defaultTheme">Oletusteema</option>
+        <option value="darkTheme">Tumma teema</option>
+      </select>
+    </S.themeSelector>
+  )
 }

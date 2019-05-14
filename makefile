@@ -75,6 +75,9 @@ deploy-loadbalancer:
 
 ### tests ###
 unit:
+	CI=true npm run test --prefix frontend
+	
+unit-sonar:
 	CI=true npm run test-sonar --prefix frontend -- --coverage
 
 unit-update:

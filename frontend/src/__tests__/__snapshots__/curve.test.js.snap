@@ -11,12 +11,14 @@ exports[`Curve snapshot matches 1`] = `
       className="sc-htpNat dFBUdP"
     >
       <div
-        className="sc-bxivhb cWkBqE"
+        className="sc-bxivhb hywrlk"
       >
         <label
           htmlFor="search-academy"
         >
-          Valitse järjestö tai oppilaitos
+          <span>
+            Valitse järjestö tai oppilaitos
+          </span>
         </label>
         <span
           className="fa fa-search"
@@ -31,11 +33,9 @@ exports[`Curve snapshot matches 1`] = `
           value=""
         />
       </div>
-      <div>
-        <div
-          className="sc-bwzfXH jsMlNV"
-        />
-      </div>
+      <div
+        className="sc-bwzfXH jsMlNV"
+      />
     </div>
     <img
       alt="Curve"

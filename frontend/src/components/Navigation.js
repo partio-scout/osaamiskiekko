@@ -7,17 +7,20 @@ import ThemeSelector from './ThemeSelector';
 
 const S = {};
 S.Navigation = styled.nav`
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  div {
-    grid-column-start: 2;
-    display: flex;
-    justify-content: space-between;
-  }
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 40px 0px 40px;
+  flex-wrap: wrap;
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  align-items: center;
+  display: flex;
+  img {
+    padding-right: 20px;
+  }
 }
 
 ul li {
@@ -25,6 +28,7 @@ ul li {
   display: inline-block;
   a {
   text-decoration: none;
+  font-size: 18px;	
   color: ${props => props.theme.colors.osaamisKiekkoBlue};
     :hover {
       color: teal;
@@ -33,7 +37,8 @@ ul li {
   }
   button {
     border: none; 
-    background-color: #e29871;
+    background-color: #c9d0b7;
+    border-radius: 8px;
     padding: 6px;
     color: ${props => props.theme.colors.osaamisKiekkoBlue};
   }
@@ -52,8 +57,8 @@ export default function Navigation() {
   const changeLanguage = (language) => setGlobalState({ ...globalState, language});
     return (
       <S.Navigation>
-        <div>
           <ul className="menu-left">
+            <img src={`${window.location.origin}/icons/favicon-32x32.png`} alt="logo" />
             <li><Link to="/">
               <FormattedMessage id="nav.osaamiskiekko"/>
             </Link></li>
@@ -70,7 +75,6 @@ export default function Navigation() {
             <li><button onClick={() => changeLanguage('se')}>Sv</button></li>
             <li><ThemeSelector /></li>
           </ul>
-        </div>
       </S.Navigation>
     )
 }

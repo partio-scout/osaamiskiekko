@@ -114,14 +114,14 @@ pipeline {
           // NOTE: Bucket storage had to be configured manually in Strapi UI
           sh """
             gcloud iam service-accounts create \
-              ${env.NAMESPACE}-namespace-storage-account \
-              --display-name '${env.NAMESPACE}-namespace-storage-account' \
+              ${env.NAMESPACE}-storage \
+              --display-name '${env.NAMESPACE}-storage' \
               || true"""
 
           sh "gsutil mb -c regional -l ${env.GCLOUD_REGION} -p ${env.GCLOUD_PROJECT} gs://${GCLOUD_RESOURCE_PREFIX}-${env.NAMESPACE} || true"
 
           sh """gsutil acl ch \
-            -u ${env.NAMESPACE}-namespace-storage-account@${env.GCLOUD_PROJECT}.iam.gserviceaccount.com:WRITE \
+            -u ${env.NAMESPACE}-storaget@${env.GCLOUD_PROJECT}.iam.gserviceaccount.com:WRITE \
             gs://${GCLOUD_RESOURCE_PREFIX}-${env.NAMESPACE} \
             || true"""
 
@@ -140,7 +140,7 @@ pipeline {
       steps {
         sh """${compose} \
             -f compose/frontend-unittests.yml \
-            up"""
+            run test"""
       }
 
       post {
@@ -153,7 +153,7 @@ pipeline {
 
           sh """${compose} \
             -f compose/frontend-unittests.yml \
-            down"""
+            down --remove-orphans"""
         }
       }
     }

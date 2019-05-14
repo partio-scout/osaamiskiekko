@@ -17,12 +17,15 @@ pipeline {
   environment {
     DOCKER_HOST = 'tcp://127.0.0.1:2375'
     COMPOSE_HTTP_TIMEOUT = 1000
-    CLUSTER= "osaamiskiekko-dev-cluster"
-    GCLOUDPARAM= "--zone europe-north1-a"
-    GCLOUD_PROJECT="osaamiskiekko"
-    GCLOUD_DB_PROXY_USERNAME="proxy-user@osaamiskiekko.iam.gserviceaccount.com"
-    DATABASE_INSTANCE_ID="osaamiskiekko-dev-db"
-    DATABASE_CREDENTIALS_ID="${env.BRANCH_NAME == "production" ? "database-credentials-production" : "database-credentials-dev"}"    
+    GCLOUD_PROJECT = "osaamiskiekko"
+    GCLOUD_RESOURCE_PREFIX = "osaamiskiekko"
+    GCLOUD_REGION = "europe-north1"
+    GCLOUD_ZONE = "europe-north1-a"
+    GCLOUD_PARAM = "--zone ${env.GCLOUD_ZONE}"
+    GCLOUD_CLUSTER = "osaamiskiekko-dev-cluster"
+    GCLOUD_DB_PROXY_USERNAME = "proxy-user@osaamiskiekko.iam.gserviceaccount.com"
+    DATABASE_INSTANCE_ID = "osaamiskiekko-dev-db"
+    DATABASE_CREDENTIALS_ID = "${env.BRANCH_NAME == "production" ? "database-credentials-production" : "database-credentials-dev"}"    
   }
 
   options {
@@ -52,15 +55,15 @@ pipeline {
         withCredentials([file(credentialsId: 'osaamiskiekko-google-service-account-credentials', variable: 'credfile')]) {
           sh "gcloud auth activate-service-account --key-file \$credfile"
           sh "rm \$credfile"
-          sh "gcloud config set project ${GCLOUD_PROJECT}"
-          sh "gcloud container clusters get-credentials ${env.CLUSTER} ${env.GCLOUDPARAM}"
+          sh "gcloud config set project ${env.GCLOUD_PROJECT}"
+          sh "gcloud container clusters get-credentials ${env.GCLOUD_CLUSTER} ${env.GCLOUD_PARAM}"
           sh "kubectl get pods" // just testing connection first
           sh """kubectl create namespace ${env.NAMESPACE} \
           --dry-run -o yaml \
           | kubectl apply -f -"""
           
           // Create database
-          sh "gcloud sql databases create osaamiskiekko-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
+          sh "gcloud sql databases create ${env.GCLOUD_RESOURCE_PREFIX}-${env.NAMESPACE} -i ${env.DATABASE_INSTANCE_ID} || true"
 
           withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "${env.DATABASE_CREDENTIALS_ID}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
             echo env.BRANCH_NAME
@@ -101,11 +104,26 @@ pipeline {
             sh """kubectl create secret generic database-credentials \
               --from-literal=username='$USERNAME' \
               --from-literal=password='$PASSWORD' \
-              --from-literal=dbname='osaamiskiekko-${env.NAMESPACE}' \
+              --from-literal=dbname='${GCLOUD_RESOURCE_PREFIX}-${env.NAMESPACE}' \
               -n ${env.NAMESPACE} \
               --dry-run -o yaml \
               | kubectl apply -f -"""
           }
+
+          // Create cloud storage bucket and service account for Uploads
+          // NOTE: Bucket storage had to be configured manually in Strapi UI
+          sh """
+            gcloud iam service-accounts create \
+              ${env.NAMESPACE}-namespace-storage-account \
+              --display-name '${env.NAMESPACE}-namespace-storage-account' \
+              || true"""
+
+          sh "gsutil mb -c regional -l ${env.GCLOUD_REGION} -p ${env.GCLOUD_PROJECT} gs://${GCLOUD_RESOURCE_PREFIX}-${env.NAMESPACE} || true"
+
+          sh """gsutil acl ch \
+            -u ${env.NAMESPACE}-namespace-storage-account@${env.GCLOUD_PROJECT}.iam.gserviceaccount.com:WRITE \
+            gs://${GCLOUD_RESOURCE_PREFIX}-${env.NAMESPACE} \
+            || true"""
 
           sh "gcloud auth configure-docker"
         }

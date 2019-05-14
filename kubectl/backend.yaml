@@ -60,4 +60,4 @@ spec:
           volumeMounts:
           - name: my-secrets-volume
             mountPath: /secrets/cloudsql
-            readOnly: true                  
+            readOnly: true

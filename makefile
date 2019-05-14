@@ -56,22 +56,22 @@ endif
 deploy-master: check-deploy-arguments deploy-backend deploy-frontend deploy-loadbalancer
 
 check-deploy-arguments:
-ifeq ($(tagend), )
-	$(error "tagend required.")
+ifeq ($(version), )
+	$(error "version required.")
 endif
 
 deploy-backend:
 	$(info deploying backend)
-	@sed -e 's#$$BACKENDIMAGE#artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/backend_master:${tagend}#g; s#$$PHASE#master#g; s#$$NODE_ENV#development#g' kubectl/backend.yaml | kubectl apply -n master -f -
+	@sed -e 's#$$BACKENDIMAGE#artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/backend_master:${version}#g; s#$$PHASE#master#g; s#$$NODE_ENV#development#g' kubectl/backend.yaml | kubectl apply -n master -f -
 	@sed -e 's#$$PHASE#master#g' kubectl/backend-service.yaml | kubectl apply -n master -f -
 
 deploy-frontend:
 	$(info deploying frontend)
-	@sed -e 's#$$FRONTENDIMAGE#artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/backend_master:${tagend}#g; s#$$PHASE#master#g; s#$$NODE_ENV#development#g' kubectl/frontend.yaml | kubectl apply -n master -f -
+	@sed -e 's#$$FRONTENDIMAGE#artifactory.dev.eficode.io/partionosaamiskiekko/osaamiskiekko/frontend_master:${version}#g; s#$$PHASE#master#g; s#$$NODE_ENV#development#g' kubectl/frontend.yaml | kubectl apply -n master -f -
 
 deploy-loadbalancer:
 	$(info deploying load balancer)
-	@sed -e 's#$$SUBDOMAIN#master#g' kubectl/ingress.yaml | kubectl apply -n master -f -
+	@sed -e 's#$$SUBDOMAIN#dev#g' kubectl/namespace-ingress.yaml | kubectl apply -n master -f -
 
 ### tests ###
 unit:

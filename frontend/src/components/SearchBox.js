@@ -2,7 +2,7 @@ import React, { useState }  from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import SearchResults from './SearchResults';
-import { addTypeToSchoolOrOrganization } from '../utils/ApiUtils';
+import { baseURL, addTypeToSchoolOrOrganization } from '../utils/ApiUtils';
 import SearchInput from './SearchInput';
 
 const S = {};
@@ -51,10 +51,11 @@ export default function SearchBox() {
   const [inputValue, setInputValue] = useState("");
   const [schools, setSchools] = useState([]);
   const [organizations, setOrganizations] = useState([]);
-  const schoolsUrl = 'http://localhost:1337/schools?name_fi_contains=';
-  const organizationsUrl = 'http://localhost:1337/organizations?name_fi_contains='
+  const schoolsUrl = `${baseURL}/schools?name_fi_contains=`;
+  const organizationsUrl = `${baseURL}/organizations?name_fi_contains=`
 
   const fetchData = async (value) => {
+    
     setInputValue(value);
     if (value) {
       const schools = await axios(`${schoolsUrl}${value}`);

@@ -1,3 +1,5 @@
+export const baseURL = (process.env.REACT_APP_BACKEND_URL || '/api');
+
 export const addTypeToSchoolOrOrganization = (schoolOrOrganization, type) => schoolOrOrganization.map(item => {
     if (type === 'school') {
       const o = Object.assign({}, item);

@@ -1,6 +1,7 @@
 version: "3.7"
 services:
   db:
+    container_name: osaamiskiekko_db
     image: postgres
     ports:
       - "5432:5432"
@@ -12,6 +13,7 @@ services:
      - ./backend/postgre/:/docker-entrypoint-initdb.d/
   
   backend:
+    container_name: osaamiskiekko_backend
     build: ./backend
     environment:
       - NODE_ENV=development
@@ -32,8 +34,12 @@ services:
       - db
 
   dev:
+    container_name: osaamiskiekko_frontend
     build: frontend
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:1337
     volumes:
       - ./frontend/src:/usr/src/app/src
+      - ./.env:/usr/src/app/.env
     ports:
       - 3000:3000

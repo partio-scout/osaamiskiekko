@@ -15,6 +15,9 @@ const darkTheme = {
     osaamisKiekkoBlue: '#30312B',
     osaamisKiekkoSand: '#bac6bd'
   },
+  fonts: {
+    headingFontFamily: 'Futura'
+  }
 }
 
 export { defaultTheme, darkTheme };

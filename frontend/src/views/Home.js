@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
-import headerBg from '../images/kokokaari2.png';
+import headerBg from '../images/headerbg.svg';
+import headerBgNoImage from '../images/headerbg_noimage.svg';
 
 const S = {};
 S.Home = styled.div`
@@ -15,6 +16,12 @@ S.Home = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(${headerBg});
+  }
+
+  @media only screen and (max-width: 840px) { 
+    ::before {
+    background-image: url(${headerBgNoImage});
+  }
   }
 `;
 

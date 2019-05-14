@@ -7,7 +7,7 @@ S.themeSelector = styled.div`
 position: relative;
 
 select {
-  background-color: #c9d0b7
+  background-color: #c9d0b7;
   border-radius: 8px;
   color: ${props => props.theme.colors.osaamisKiekkoBlue};
   padding: 5px 5px 5px 10px;

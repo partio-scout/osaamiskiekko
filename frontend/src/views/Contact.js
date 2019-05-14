@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
-import headerBg from '../images/kokokaari2.png';
+import headerBg from '../images/headerbg.svg';
 
 const S = {};
 S.Home = styled.div`

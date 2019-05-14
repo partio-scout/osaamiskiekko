@@ -37,8 +37,13 @@ S.SearchBox = styled.div`
     }
   }
 
-  @media only screen and (max-width: 660px) {
+  @media only screen and (max-width: 945px) {
+    margin-top: 0px;
+  }
+
+  @media only screen and (max-width: 800px) {
     width: 350px;
+    margin-top: -20px;
   }
 `;
 

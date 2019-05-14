@@ -10,11 +10,17 @@ S.Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 0px 40px 0px 40px;
+  flex-wrap: wrap;
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  align-items: center;
+  display: flex;
+  img {
+    padding-right: 20px;
+  }
 }
 
 ul li {
@@ -52,6 +58,7 @@ export default function Navigation() {
     return (
       <S.Navigation>
           <ul className="menu-left">
+            <img src={`${window.location.origin}/icons/favicon-32x32.png`} alt="logo" />
             <li><Link to="/">
               <FormattedMessage id="nav.osaamiskiekko"/>
             </Link></li>

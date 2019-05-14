@@ -121,7 +121,7 @@ pipeline {
           sh "gsutil mb -c regional -l ${env.GCLOUD_REGION} -p ${env.GCLOUD_PROJECT} gs://${GCLOUD_RESOURCE_PREFIX}-${env.NAMESPACE} || true"
 
           sh """gsutil acl ch \
-            -u ${env.NAMESPACE}-storaget@${env.GCLOUD_PROJECT}.iam.gserviceaccount.com:WRITE \
+            -u ${env.NAMESPACE}-storage@${env.GCLOUD_PROJECT}.iam.gserviceaccount.com:WRITE \
             gs://${GCLOUD_RESOURCE_PREFIX}-${env.NAMESPACE} \
             || true"""
 

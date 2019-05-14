@@ -14,12 +14,42 @@ partioadmin:6QVAjgusFD3YL7x
 
 StrapiCMS code is kept in the osaamiskiekko repository although it's not developed as part of this project. ***Do not edit /backend/cms files manually***. They can get modified when using the Strapi admin content editing features. Commit only intended changes.
 
-# DEV
+# Environment setup
+
+Osaamiskiekko can be run locally with docker-compose or in a kubernetes cluster. Docker-compose is intended for development only.
+
+## Cloud
+
+Jenkinsfile has been configured to automatically deploy changes committed to master, test, staging and production -branches to respective namespaces in the osaamiskiekko-dev-cluster. 
+
+### New cluster
+
+If Osaamiskiekko is deployed to a new cluster, the cluster and relevant service accounts and Jenkins credentials need to be configured before Jenkinsfile can deploy environments automatically. Jenkinsfile can only manage google cloud deployments.
+
+For information about setting up Google Cloud and Jenkins see https://confluence.eficode.fi/display/PRTIOKKO/Google+Cloud+and+Jenkins 
+
+### New environments
+
+Newly created environments require some manual configuration:
+
+#### Strapi uploads
+- Download key of the correct uploads service accounts from google cloud in JSON format. It's created by Jenkinsfile and named [BRANCH]-namespace-storage-account.
+- Login to strapi admin dashboard
+- Access Plugins -> File Uploads -> Settings (gear icon)
+- Switch Providers to Google Cloud Storage
+- Copy-paste JSON key contents into 'Service Account JSON'
+- Add pre-made bucket name. Jenkins creates it with osaamiskiekko-[BRANCH].
+- Save settings
+- Verify uploads on 'Files Upload' page.
+
+## Local
+
+### Development
 
 - Install docker 
 - Run locally: `docker-compose up`
 
-# PRODUCTION
+### Production
 
 Production uses nginx frontend to serve static react app and relay requests to backend. 
 Frontend is accessible by default at http://localhost
@@ -28,13 +58,13 @@ Frontend is accessible by default at http://localhost
 docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml up backend db frontend
 ```
 
-# TESTING
+### Running tests
 
-## Running End-To-End tests with Robotframework
+#### Running End-To-End tests with Robotframework
 
 Robot tests can be ran in docker (chrome default). Run makefile in project root: `make run-robot`
   
-## Running robot locally
+#### Running robot locally
 
 - Install PIP
 - Install requirements: `pip install -r ./robot/requirements.txt`
@@ -46,13 +76,13 @@ Robot tests can be ran in docker (chrome default). Run makefile in project root:
 
 Firefox: Download and install firefox + geckodriver https://github.com/mozilla/geckodriver/releases
 
-## Frontend Jest Unit tests
+#### Frontend Jest Unit tests
 
 ```
 docker-compose --project-directory . -f compose/frontend-unittests.yml up
 ```
 
-## Running Sonarkube locally
+#### Running Sonarkube locally
 
 - Install sonar-scanner (https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner)
 - Run locally: `sonar-scanner -Dsonar.login=partionosaamiskiekko-bot -Dsonar.password=GET_FROM_RTM.DEV.EFICODE.IO`

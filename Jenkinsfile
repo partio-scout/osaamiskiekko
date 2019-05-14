@@ -113,9 +113,8 @@ pipeline {
           // Create cloud storage bucket and service account for Uploads
           // NOTE: Bucket storage had to be configured manually in Strapi UI
           sh """
-            gcloud beta iam service-accounts create \
+            gcloud iam service-accounts create \
               ${env.NAMESPACE}-namespace-storage-account \
-              --description 'For ${env.NAMESPACE} environment StrapiCMS uploads plugin' \
               --display-name '${env.NAMESPACE}-namespace-storage-account' \
               || true"""
 

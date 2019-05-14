@@ -1,10 +1,10 @@
 import React from 'react';
 import renderWithProviders from '../testHelpers'
-import Curve from '../components/Curve';
+import SearchBox from '../components/SearchBox';
 
-test('Curve snapshot matches', () => {
+test('SearchBox snapshot matches', () => {
   const tree = renderWithProviders(
-        <Curve />
+        <SearchBox />
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

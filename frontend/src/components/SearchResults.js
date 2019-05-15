@@ -34,8 +34,7 @@ S.ResultWrapper = styled.div`
 
 
 export default function SearchResults(props) {
-  const { schools, organizations } = props;
-  const schoolsAndOrganizations = [...schools, ...organizations];
+  const { results } = props;
   const renderResults = (item) =>
     <S.ResultsDiv key={item.id}>
       <p>{item.name_fi}</p>
@@ -44,7 +43,7 @@ export default function SearchResults(props) {
 
   return (
     <S.ResultWrapper>
-      {schoolsAndOrganizations.map(renderResults)}
+      {results.map(renderResults)}
     </S.ResultWrapper>
   )
 }

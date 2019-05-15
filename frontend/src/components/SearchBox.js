@@ -1,9 +1,10 @@
 import React, { useState }  from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
-import SearchResults from './SearchResults';
-import { baseURL, addTypeToSchoolOrOrganization } from '../utils/ApiUtils';
 import SearchInput from './SearchInput';
+import { css } from '@emotion/core';
+import { BarLoader } from 'react-spinners';
+import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
+import SearchResults from './SearchResults';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -18,6 +19,12 @@ S.SearchBox = styled.div`
   flex-direction: column;
   margin: auto;
   margin-top: 50px;
+  justify-content: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 
   button {
     height: 45px;
@@ -47,34 +54,47 @@ S.SearchBox = styled.div`
   }
 `;
 
-export default function SearchBox() {
-  const [inputValue, setInputValue] = useState("");
-  const [schools, setSchools] = useState([]);
-  const [organizations, setOrganizations] = useState([]);
-  const schoolsUrl = `${baseURL}/schools?name_fi_contains=`;
-  const organizationsUrl = `${baseURL}/organizations?name_fi_contains=`
+const loadingSpinnerOverride = css`
+    margin: 0 auto;
+`;
 
-  const fetchData = async (value) => {
-    
-    setInputValue(value);
-    if (value) {
-      const schools = await axios(`${schoolsUrl}${value}`);
-      const schoolsWithType = addTypeToSchoolOrOrganization(schools.data, 'school');
-      setSchools(schoolsWithType);
-      const organizations = await axios(`${organizationsUrl}${value}`);
-      setOrganizations(organizations.data);
+export default function SearchBox() {
+  const { data, isLoading, isError } = getSchoolsAndOrganizations();
+  const [inputValue, setInputValue] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const filterData = (searchValue) => {
+    setInputValue(searchValue);
+    if (searchValue) {
+      const results = data.filter(item => 
+        item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
+        item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
+        item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
+        );
+      setSearchResults (results);
     } else {
-      setSchools([]);
-      setOrganizations([]);
+      setSearchResults([]);
     }
   }
 
   return (
     <S.SearchBox>
-      <SearchInput {...{ fetchData, inputValue, label: 'searchbox.label' }} />
-      <SearchResults schools={schools} organizations={organizations}/>
-      <SearchInput {...{ fetchData, inputValue, label: 'searchbox.labelSecondary' }} />
-      <button>Näytä tulokset</button>
+      {isLoading &&  
+      <BarLoader
+        css={loadingSpinnerOverride}
+        sizeUnit={"px"}
+        size={150}
+        color={'#00283B'}
+        loading={isLoading}
+      />}
+      {!isLoading &&
+        <div>
+          <SearchInput {...{ filterData, inputValue, label: 'searchbox.label' }}/>
+          <SearchResults results={searchResults}/>
+          {/* <SearchInput {...{ filterData, inputValue, label: 'searchbox.labelSecondary' }} /> */}
+          <button>Näytä tulokset</button>
+        </div>
+      }
     </S.SearchBox>
   )
 }

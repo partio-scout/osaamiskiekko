@@ -37,7 +37,7 @@ services:
     container_name: osaamiskiekko_frontend
     build: frontend
     environment:
-      - REACT_APP_BACKEND_URL=http://localhost:1337
+      - REACT_APP_BACKEND_URL=${BACKEND_URL:-http://localhost:1337}
     volumes:
       - ./frontend/src:/usr/src/app/src
       - ./.env:/usr/src/app/.env

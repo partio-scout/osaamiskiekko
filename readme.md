@@ -46,8 +46,8 @@ Newly created environments require some manual configuration:
 
 ### Development
 
-- Install docker 
-- Run locally: `docker-compose up`
+- Install docker and docker-compose
+- Run: `docker-compose up`
 
 ### Production
 

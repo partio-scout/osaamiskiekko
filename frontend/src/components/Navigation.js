@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { GlobalState } from '../App';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import ThemeSelector from './ThemeSelector';
+import LanguageSelector from './LanguageSelector';
 
 const S = {};
 S.Navigation = styled.nav`
@@ -53,8 +53,6 @@ ul li {
 `;
 
 export default function Navigation() {
-  const [globalState, setGlobalState] = useContext(GlobalState);
-  const changeLanguage = (language) => setGlobalState({ ...globalState, language});
     return (
       <S.Navigation>
           <ul className="menu-left">
@@ -70,10 +68,8 @@ export default function Navigation() {
             </Link></li>
           </ul>
           <ul className="menu-right">
-            <li><button onClick={() => changeLanguage('en')}>En</button></li>
-            <li><button onClick={() => changeLanguage('fi')}>Fi</button></li>
-            <li><button onClick={() => changeLanguage('se')}>Sv</button></li>
             <li><ThemeSelector /></li>
+            <li><LanguageSelector /></li>
           </ul>
       </S.Navigation>
     )

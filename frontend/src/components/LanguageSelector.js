@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import { GlobalState } from '../App';
 
 const S = {};
-S.themeSelector = styled.div`
+S.LanguageSelector = styled.div`
 position: relative;
 
 select {
   height: 49px;	
-  width: 160px;	
+  width: 49px;	
   border-radius: 24.5px;	
   background-color: #FFFFFF;
   color: ${props => props.theme.colors.osaamisKiekkoBlue};
-  padding: 5px 5px 5px 20px;
+  padding: 5px 5px 5px 15px;
   border: none;
   font-size: 14px;
   -webkit-appearance: button;
@@ -40,22 +40,19 @@ select {
     background-color: rgba(255, 255, 255, 0.2);
   }
 }
-
-select option {
-  padding: 30px;
-}
 `;
 
-export default function Navigation() {
+export default function LanguageSelector() {
   const [globalState, setGlobalState] = useContext(GlobalState);
-  const setTheme = (e) => setGlobalState({ ...globalState, theme: e.target.value });
+  const setLanguage = (e) => setGlobalState({ ...globalState, language: e.target.value });
 
   return (
-    <S.themeSelector>
-      <select onChange={setTheme}>
-        <option value="defaultTheme">Oletusteema</option>
-        <option value="darkTheme">Tumma teema</option>
+    <S.LanguageSelector>
+      <select onChange={setLanguage}>
+        <option value="fi">Fi</option>
+        <option value="en">En</option>
+        <option value="se">Sv</option>
       </select>
-    </S.themeSelector>
+    </S.LanguageSelector>
   )
 }

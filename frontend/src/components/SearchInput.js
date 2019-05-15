@@ -43,7 +43,7 @@ input::placeholder {
 `;
 
 export default function SearchBox(props) {
-  const {filterData, inputValue, label} = props;
+  const {handleInput, inputValue, label} = props;
   return (
       <S.SearchWrapper>
         <label htmlFor="search-input">
@@ -59,7 +59,7 @@ export default function SearchBox(props) {
               type="text"
               placeholder={msg}
               name="search-input"
-              onChange={e => filterData(e.target.value)} />
+              onChange={e => handleInput(e.target.value)} />
           )}
         </FormattedMessage>
       </S.SearchWrapper>

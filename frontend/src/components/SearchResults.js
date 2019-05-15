@@ -34,16 +34,16 @@ S.ResultWrapper = styled.div`
 
 
 export default function SearchResults(props) {
-  const { searchResults, getUserSelectionForSchoolOrAcademy, globalState } = props;
+  const { results, setSelection, globalState } = props;
   const renderResults = (item) =>
-    <S.ResultsDiv key={item.id} onClick={() => getUserSelectionForSchoolOrAcademy(item)}>
+    <S.ResultsDiv key={item.id} onClick={() => setSelection(item)}>
       <p>{item[`name_${globalState.language}`]}</p>
-      <p className="type">{item[`type_${globalState.language}`]}</p>
+      { item && item.type_fi ? <p className="type">{item[`type_${globalState.language}`]}</p> : ''}
     </S.ResultsDiv>
 
   return (
     <S.ResultWrapper>
-      {searchResults.map(renderResults)}
+      {results.map(renderResults)}
     </S.ResultWrapper>
   )
 }

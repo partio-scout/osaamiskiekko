@@ -60,11 +60,14 @@ const loadingSpinnerOverride = css`
 `;
 
 export default function SearchBox() {
-  const [globalState, setGlobalState] = useContext(GlobalState);
+  const [globalState] = useContext(GlobalState);
   const { data, isLoading } = getSchoolsAndOrganizations();
   const [inputValue, setInputValue] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const [schoolOrAcademySelection, setschoolOrAcademySelection] = useState({});
+  const [inputTrainingValue, setinputTrainingValue] = useState("");
+  const [filterResults, setfilterResults] = useState([]);
+  const [schoolOrAcademySelection, setschoolOrAcademySelection] = useState(null);
+  const [competenceOrDegreeFilter, setcompetenceOrDegreeFilter] = useState([]);
+  const [competenceOrDegreeSelection, setcompetenceOrDegreeSelection] = useState(null);
 
   const filterData = (searchValue) => {
     setInputValue(searchValue);
@@ -74,17 +77,51 @@ export default function SearchBox() {
         item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
         item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
         );
-      setSearchResults (results);
+      setfilterResults (results);
     } else {
-      setSearchResults([]);
+      setfilterResults([]);
+    }
+  }
+
+  const filterDegreesOrCompetences = (searchValue) => {
+    setinputTrainingValue(searchValue);
+    if (searchValue) {
+      if (schoolOrAcademySelection.type_en === 'School') {
+        const results = schoolOrAcademySelection.academicdegrees.filter(item =>
+          item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
+          item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
+          item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
+        );
+        setcompetenceOrDegreeFilter(results)
+      } else {
+        const results = schoolOrAcademySelection.competences.filter(item =>
+          item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
+          item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
+          item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
+        );
+        setcompetenceOrDegreeFilter(results)
+      }
+    } else {
+      setcompetenceOrDegreeFilter([]);
     }
   }
 
   const getUserSelectionForSchoolOrAcademy = (selection) => {
     setschoolOrAcademySelection(selection);
     setInputValue(selection[`name_${globalState.language}`]);
-    console.log('selection', selection);
+    setfilterResults([]);
   };
+
+  const getUserSelectionForDegreeOrCompetence = (selection) => {
+    setcompetenceOrDegreeSelection(selection);
+    setinputTrainingValue(selection[`name_${globalState.language}`]);
+    setcompetenceOrDegreeFilter([]);
+  }
+
+  const showResults = () => {
+    console.log('competenceOrDegreeSelection', competenceOrDegreeSelection);
+    console.log('schoolOrAcademySelection', schoolOrAcademySelection);
+  }
 
   return (
     <S.SearchBox>
@@ -98,10 +135,15 @@ export default function SearchBox() {
       />}
       {!isLoading &&
         <div>
-          <SearchInput {...{ filterData, inputValue, label: 'searchbox.label' }}/>
-          <SearchResults {...{ searchResults, getUserSelectionForSchoolOrAcademy, globalState }}/>
-          {/* <SearchInput {...{ filterData, inputValue, label: 'searchbox.labelSecondary' }} /> */}
-          <button>Näytä tulokset</button>
+          <SearchInput {...{ handleInput: filterData, inputValue, label: 'searchbox.label' }}/>
+          {filterResults.length > 0 &&
+          <SearchResults {...{ results: filterResults, setSelection: getUserSelectionForSchoolOrAcademy, globalState }}/>
+          }
+          {schoolOrAcademySelection &&
+          <SearchInput {...{ handleInput: filterDegreesOrCompetences, inputValue: inputTrainingValue, label: 'searchbox.labelSecondary' }} />
+          }
+          <SearchResults {...{ results: competenceOrDegreeFilter, setSelection: getUserSelectionForDegreeOrCompetence, globalState }}/>
+          <button onClick={() => showResults()}>Näytä tulokset</button>
         </div>
       }
     </S.SearchBox>

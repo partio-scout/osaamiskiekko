@@ -1,9 +1,11 @@
-import React, { useState }  from 'react';
+import React, { useState, useContext }  from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
-import SearchResults from './SearchResults';
-import { baseURL, addTypeToSchoolOrOrganization } from '../utils/ApiUtils';
 import SearchInput from './SearchInput';
+import { css } from '@emotion/core';
+import { BarLoader } from 'react-spinners';
+import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
+import SearchResults from './SearchResults';
+import { GlobalState } from '../App';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -18,6 +20,12 @@ S.SearchBox = styled.div`
   flex-direction: column;
   margin: auto;
   margin-top: 50px;
+  justify-content: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 
   button {
     height: 45px;
@@ -47,34 +55,97 @@ S.SearchBox = styled.div`
   }
 `;
 
-export default function SearchBox() {
-  const [inputValue, setInputValue] = useState("");
-  const [schools, setSchools] = useState([]);
-  const [organizations, setOrganizations] = useState([]);
-  const schoolsUrl = `${baseURL}/schools?name_fi_contains=`;
-  const organizationsUrl = `${baseURL}/organizations?name_fi_contains=`
+const loadingSpinnerOverride = css`
+    margin: 0 auto;
+`;
 
-  const fetchData = async (value) => {
-    
-    setInputValue(value);
-    if (value) {
-      const schools = await axios(`${schoolsUrl}${value}`);
-      const schoolsWithType = addTypeToSchoolOrOrganization(schools.data, 'school');
-      setSchools(schoolsWithType);
-      const organizations = await axios(`${organizationsUrl}${value}`);
-      setOrganizations(organizations.data);
+export default function SearchBox() {
+  const [globalState] = useContext(GlobalState);
+  const { data, isLoading } = getSchoolsAndOrganizations();
+  const [inputValue, setInputValue] = useState("");
+  const [inputTrainingValue, setinputTrainingValue] = useState("");
+  const [filterResults, setfilterResults] = useState([]);
+  const [schoolOrAcademySelection, setschoolOrAcademySelection] = useState(null);
+  const [competenceOrDegreeFilter, setcompetenceOrDegreeFilter] = useState([]);
+  const [competenceOrDegreeSelection, setcompetenceOrDegreeSelection] = useState(null);
+
+  const filterData = (searchValue) => {
+    setInputValue(searchValue);
+    if (searchValue) {
+      const results = data.filter(item => 
+        item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
+        item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
+        item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
+        );
+      setfilterResults (results);
     } else {
-      setSchools([]);
-      setOrganizations([]);
+      setfilterResults([]);
     }
+  }
+
+  const filterDegreesOrCompetences = (searchValue) => {
+    setinputTrainingValue(searchValue);
+    if (searchValue) {
+      if (schoolOrAcademySelection.type_en === 'School') {
+        const results = schoolOrAcademySelection.academicdegrees.filter(item =>
+          item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
+          item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
+          item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
+        );
+        setcompetenceOrDegreeFilter(results)
+      } else {
+        const results = schoolOrAcademySelection.competences.filter(item =>
+          item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
+          item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
+          item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
+        );
+        setcompetenceOrDegreeFilter(results)
+      }
+    } else {
+      setcompetenceOrDegreeFilter([]);
+    }
+  }
+
+  const getUserSelectionForSchoolOrAcademy = (selection) => {
+    setschoolOrAcademySelection(selection);
+    setInputValue(selection[`name_${globalState.language}`]);
+    setfilterResults([]);
+  };
+
+  const getUserSelectionForDegreeOrCompetence = (selection) => {
+    setcompetenceOrDegreeSelection(selection);
+    setinputTrainingValue(selection[`name_${globalState.language}`]);
+    setcompetenceOrDegreeFilter([]);
+  }
+
+  const showResults = () => {
+    console.log('competenceOrDegreeSelection', competenceOrDegreeSelection);
+    console.log('schoolOrAcademySelection', schoolOrAcademySelection);
   }
 
   return (
     <S.SearchBox>
-      <SearchInput {...{ fetchData, inputValue, label: 'searchbox.label' }} />
-      <SearchResults schools={schools} organizations={organizations}/>
-      <SearchInput {...{ fetchData, inputValue, label: 'searchbox.labelSecondary' }} />
-      <button>Näytä tulokset</button>
+      {isLoading &&  
+      <BarLoader
+        css={loadingSpinnerOverride}
+        sizeUnit={"px"}
+        size={150}
+        color={'#00283B'}
+        loading={isLoading}
+      />}
+      {!isLoading &&
+        <div>
+          <SearchInput {...{ handleInput: filterData, inputValue, label: 'searchbox.label' }}/>
+          {filterResults.length > 0 &&
+          <SearchResults {...{ results: filterResults, setSelection: getUserSelectionForSchoolOrAcademy, globalState }}/>
+          }
+          {schoolOrAcademySelection &&
+          <SearchInput {...{ handleInput: filterDegreesOrCompetences, inputValue: inputTrainingValue, label: 'searchbox.labelSecondary' }} />
+          }
+          <SearchResults {...{ results: competenceOrDegreeFilter, setSelection: getUserSelectionForDegreeOrCompetence, globalState }}/>
+          <button onClick={() => showResults()}>Näytä tulokset</button>
+        </div>
+      }
     </S.SearchBox>
   )
 }

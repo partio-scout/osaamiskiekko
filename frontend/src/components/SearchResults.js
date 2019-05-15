@@ -28,23 +28,22 @@ S.ResultWrapper = styled.div`
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
-  width: 250px;
+  width: 500px;
   margin: auto;
 `;
 
 
 export default function SearchResults(props) {
-  const { schools, organizations } = props;
-  const schoolsAndOrganizations = [...schools, ...organizations];
+  const { results, setSelection, globalState } = props;
   const renderResults = (item) =>
-    <S.ResultsDiv key={item.id}>
-      <p>{item.name_fi}</p>
-      <p className="type">{item.type_fi ? item.type_fi : 'Järjestö'}</p>
+    <S.ResultsDiv key={item.id} onClick={() => setSelection(item)}>
+      <p>{item[`name_${globalState.language}`]}</p>
+      { item && item.type_fi ? <p className="type">{item[`type_${globalState.language}`]}</p> : ''}
     </S.ResultsDiv>
 
   return (
     <S.ResultWrapper>
-      {schoolsAndOrganizations.map(renderResults)}
+      {results.map(renderResults)}
     </S.ResultWrapper>
   )
 }

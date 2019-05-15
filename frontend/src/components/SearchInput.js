@@ -43,14 +43,14 @@ input::placeholder {
 `;
 
 export default function SearchBox(props) {
-  const {fetchData, inputValue, label} = props;
+  const {handleInput, inputValue, label} = props;
   return (
       <S.SearchWrapper>
         <label htmlFor="search-input">
         <FormattedMessage id={label} />
         </label>
         <span className="fa fa-search"></span>
-      <FormattedMessage id={label}>
+        <FormattedMessage id={label}>
           {msg => (
             <DebounceInput
               minLength={2}
@@ -59,7 +59,7 @@ export default function SearchBox(props) {
               type="text"
               placeholder={msg}
               name="search-input"
-              onChange={e => fetchData(e.target.value)} />
+              onChange={e => handleInput(e.target.value)} />
           )}
         </FormattedMessage>
       </S.SearchWrapper>

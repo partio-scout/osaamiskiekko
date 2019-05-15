@@ -12,7 +12,7 @@ select {
   border-radius: 24.5px;	
   background-color: #FFFFFF;
   color: ${props => props.theme.colors.osaamisKiekkoBlue};
-  padding: 5px 5px 5px 15px;
+  padding: 5px 5px 5px 10px;
   border: none;
   font-size: 14px;
   -webkit-appearance: button;
@@ -51,7 +51,7 @@ export default function LanguageSelector() {
       <select onChange={setLanguage}>
         <option value="fi">Fi</option>
         <option value="en">En</option>
-        <option value="se">Sv</option>
+        <option value="sv">Sv</option>
       </select>
     </S.LanguageSelector>
   )

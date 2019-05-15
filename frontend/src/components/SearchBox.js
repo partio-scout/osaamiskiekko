@@ -1,10 +1,11 @@
-import React, { useState }  from 'react';
+import React, { useState, useContext }  from 'react';
 import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import SearchResults from './SearchResults';
+import { GlobalState } from '../App';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -59,9 +60,11 @@ const loadingSpinnerOverride = css`
 `;
 
 export default function SearchBox() {
-  const { data, isLoading, isError } = getSchoolsAndOrganizations();
+  const [globalState, setGlobalState] = useContext(GlobalState);
+  const { data, isLoading } = getSchoolsAndOrganizations();
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [schoolOrAcademySelection, setschoolOrAcademySelection] = useState({});
 
   const filterData = (searchValue) => {
     setInputValue(searchValue);
@@ -77,6 +80,12 @@ export default function SearchBox() {
     }
   }
 
+  const getUserSelectionForSchoolOrAcademy = (selection) => {
+    setschoolOrAcademySelection(selection);
+    setInputValue(selection[`name_${globalState.language}`]);
+    console.log('selection', selection);
+  };
+
   return (
     <S.SearchBox>
       {isLoading &&  
@@ -90,7 +99,7 @@ export default function SearchBox() {
       {!isLoading &&
         <div>
           <SearchInput {...{ filterData, inputValue, label: 'searchbox.label' }}/>
-          <SearchResults results={searchResults}/>
+          <SearchResults {...{ searchResults, getUserSelectionForSchoolOrAcademy, globalState }}/>
           {/* <SearchInput {...{ filterData, inputValue, label: 'searchbox.labelSecondary' }} /> */}
           <button>Näytä tulokset</button>
         </div>

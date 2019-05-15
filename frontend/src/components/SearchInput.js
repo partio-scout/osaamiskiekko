@@ -50,7 +50,7 @@ export default function SearchBox(props) {
         <FormattedMessage id={label} />
         </label>
         <span className="fa fa-search"></span>
-      <FormattedMessage id={label}>
+        <FormattedMessage id={label}>
           {msg => (
             <DebounceInput
               minLength={2}

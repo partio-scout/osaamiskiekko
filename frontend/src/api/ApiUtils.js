@@ -7,6 +7,12 @@ export const addTypeToSchoolOrOrganization = (schoolOrOrganization, type) => sch
       o.type_en = 'School';
       o.type_se = 'Skola'
       return o;
+    } else if (type === 'organization') {
+      const o = Object.assign({}, item);
+      o.type_fi = 'Organisaatio';
+      o.type_en = 'Organization';
+      o.type_se = 'Organisation'
+      return o;
     }
     return null;
   })

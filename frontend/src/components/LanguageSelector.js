@@ -12,7 +12,7 @@ select {
   border-radius: 24.5px;	
   background-color: #FFFFFF;
   color: ${props => props.theme.colors.osaamisKiekkoBlue};
-  padding: 5px 5px 5px 15px;
+  padding: 5px 5px 5px 10px;
   border: none;
   font-size: 14px;
   -webkit-appearance: button;

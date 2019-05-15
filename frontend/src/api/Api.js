@@ -10,7 +10,8 @@ const getSchools = async () => {
 
 const getOrganizations = async () => {
   const organizations = await axios(`${baseURL}/organizations`);
-  return organizations.data;
+  const organizationsWithType = addTypeToSchoolOrOrganization(organizations.data, 'organization');
+  return organizationsWithType;
 }
 
 const getAcademicDegrees = async () => {

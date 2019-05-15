@@ -51,7 +51,7 @@ export default function LanguageSelector() {
       <select onChange={setLanguage}>
         <option value="fi">Fi</option>
         <option value="en">En</option>
-        <option value="se">Sv</option>
+        <option value="sv">Sv</option>
       </select>
     </S.LanguageSelector>
   )

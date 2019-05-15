@@ -3,12 +3,12 @@ import Routes from './Routes';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import fi from 'react-intl/locale-data/fi';
-import se from 'react-intl/locale-data/se';
+import sv from 'react-intl/locale-data/sv';
 import { BrowserRouter } from 'react-router-dom';
 import translations from './translations/translations';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme, darkTheme } from './styles/Themes';
-addLocaleData([...en, ...fi, ...se, translations]);
+addLocaleData([...en, ...fi, ...sv, translations]);
 
 export const GlobalState = createContext(null);
 

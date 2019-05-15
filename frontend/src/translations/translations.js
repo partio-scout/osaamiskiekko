@@ -21,7 +21,7 @@ export default {
     "searchbox.labelSecondary": "Valitse koulutus",
     "search.placeholder": "Hae..."
   },
-  "se": {
+  "sv": {
     "nav.osaamiskiekko": "Osaamiskiekko",
     "nav.tietoa": "Information",
     "nav.otayhteytta": "Kontakta oss",

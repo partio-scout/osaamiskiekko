@@ -1,7 +1,6 @@
 import React from 'react';
 import {shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import renderWithProviders from '../testHelpers'
 import LanguageSelector from '../components/LanguageSelector';
 import * as GlobalStateContext from '../utils/GlobalStateContext';
 
@@ -15,7 +14,7 @@ describe('language selector', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  test('change affects globalState', () => {
+  test('sets language to global state', () => {
     const mockChangeLanguage = jest.fn(lang => { globalValues.language = lang });
     const globalValues = {
       language: 'fi',

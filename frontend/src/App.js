@@ -8,12 +8,12 @@ import GlobalStateContext from './utils/GlobalStateContext';
 import { BrowserRouter } from 'react-router-dom';
 import translations from './translations/translations';
 import { ThemeProvider } from 'styled-components';
-import { defaultTheme, darkTheme } from './styles/Themes';
+import { defaultTheme } from './styles/Themes';
 addLocaleData([...en, ...fi, ...sv, translations]);
 
 const App = () => { 
   const [language, setLanguage] = useState('fi');
-  const [theme, setTheme] = useState('defaultTheme');
+  const [theme, setTheme] = useState(defaultTheme);
 
   const changeLanguage = (language) => setLanguage(language);
   const changeTheme = (theme) => setTheme(theme);
@@ -25,12 +25,10 @@ const App = () => {
     changeTheme
   }
   
-  const actualTheme = theme === 'defaultTheme' ? defaultTheme : darkTheme;
-  
   return (
     <BrowserRouter>
       <GlobalStateContext.Provider value={globalState}>
-        <ThemeProvider theme={actualTheme}>
+        <ThemeProvider theme={theme}>
             <IntlProvider locale={language} messages={translations[language]}>
               <Routes />
             </IntlProvider>

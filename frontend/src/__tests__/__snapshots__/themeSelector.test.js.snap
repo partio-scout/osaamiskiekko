@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`theme selector snapshot matches 1`] = `
+<styled.div>
+  <select
+    onChange={[Function]}
+  >
+    <option
+      value="defaultTheme"
+    >
+      Oletusteema
+    </option>
+    <option
+      value="darkTheme"
+    >
+      Tumma teema
+    </option>
+  </select>
+</styled.div>
+`;

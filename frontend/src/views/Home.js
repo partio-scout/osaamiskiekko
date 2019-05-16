@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <S.Home>
-      <Header {...{showResults}}/>
+      <Header showResults={showResults}/>
       <div>Contentti</div>
     </S.Home>
   );

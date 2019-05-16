@@ -56,7 +56,7 @@ export default function Header(props) {
           <p><FormattedMessage id="header.p" /></p>
         </div>
       </div>
-      <SearchBox {...{showResults}}/>
+      <SearchBox showResults={showResults}/>
     </S.Header>
   )
 }

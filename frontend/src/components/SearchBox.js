@@ -65,6 +65,7 @@ export default function SearchBox(props) {
   const filterSchoolOrOrganization = (searchValue) => {
     setinputSchoolOrOrganization(searchValue);
     if (searchValue) {
+      setschoolOrOrganizationSelection(null);
       const results = data.filter(item => searchComparison(item, searchValue));
       results.length > 0 ?
       setschoolOrOrganizationFilter (results) :

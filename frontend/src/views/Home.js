@@ -22,23 +22,16 @@ S.Home = styled.div`
      content: "";
     position: absolute;
     top: 0;
-    right: 0;
-    width: 50%;
+    left: 50%;
+    width: 70%;
+    max-height: 900px;
+    overflow: hidden;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 120%;
     background-size: cover;
     z-index: -10;
     transform: rotate(180deg);
     background-image: url(${headerImage});
-    @media only screen and (min-width: 1688px) { 
-      background-position: 0px 200px;
-    }
-    @media only screen and (max-width: 1688px) { 
-      background-position: -200px 200px;
-    }
-    @media only screen and (max-width: 900px) { 
-      background-position: -350px 250px;
-    }
   }
 
   @media only screen and (max-width: 840px) { 

@@ -1,48 +1,25 @@
-import React, { useState, useContext }  from 'react';
+import React, { useState }  from 'react';
 import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import SearchResults from './SearchResults';
-import GlobalStateContext from '../utils/GlobalStateContext';
+import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
 const S = {};
 S.SearchBox = styled.div`
   background-color: white;
-  height: 250px;	
+  min-height: 125px;	
   width: 587px;
   background-color: #FFFFFF;
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
   padding: 34px;
-  display: flex;
-  flex-direction: column;
   margin: auto;
-  margin-top: 50px;
-  justify-content: center;
 
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-
-  button {
-    height: 45px;
-    width: 220px;
-    background-color: #7FD1AE;
-    padding: 24px;
-    margin: auto;
-    line-height: 0;
-    margin-top: 25px;
-    font-size: 16px;	
-    letter-spacing: 4px;	
-    line-height: 0px;	
-    text-align: center;
-    :hover {
-      cursor: pointer;
-      outline: none;
-    }
+  .search-wrapper {
+    margin-bottom: 35px;
   }
 
   @media only screen and (max-width: 945px) {
@@ -56,61 +33,68 @@ S.SearchBox = styled.div`
 `;
 
 const loadingSpinnerOverride = css`
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 60px;
 `;
 
-export default function SearchBox() {
-  const globalState = useContext(GlobalStateContext);
+export default function SearchBox(props) {
+  const { showResults } = props;
+  const globalState = useGlobalStateContext();
   const { data, isLoading } = getSchoolsAndOrganizations();
 
-  const [inputSchoolOrOrganization, setinputSchoolOrOrganization] = useState("");
+  const [inputSchoolOrOrganization, setinputSchoolOrOrganization] = useState('');
   const [schoolOrOrganizationFilter, setschoolOrOrganizationFilter] = useState([]);
   const [schoolOrOrganizationSelection, setschoolOrOrganizationSelection] = useState(null);
 
-  const [inputTrainingValue, setinputTrainingValue] = useState("");
+  const [inputTrainingValue, setinputTrainingValue] = useState('');
   const [competenceOrDegreeFilter, setcompetenceOrDegreeFilter] = useState([]);
-  const [competenceOrDegreeSelection, setcompetenceOrDegreeSelection] = useState(null);
+
+  const noResults = {
+    id: 1,
+    error: true,
+    name_fi: 'Tuloksia ei löytynyt',
+    name_en: 'No search results',
+    name_sv: "Inga resultat hittades"
+  };
+
+  const searchComparison = (item, searchValue) => 
+    item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
+    item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
+    item.name_sv.toUpperCase().includes(searchValue.toUpperCase());
 
   const filterSchoolOrOrganization = (searchValue) => {
     setinputSchoolOrOrganization(searchValue);
     if (searchValue) {
-      const results = data.filter(item => 
-        item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
-        item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
-        item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
-        );
-        if (results.length > 0) {
-          setschoolOrOrganizationFilter (results);
-        } else {
-          setschoolOrOrganizationFilter([{
-            id: 1,
-            name_fi: 'Tuloksia ei löytynyt',
-            name_en: 'No search results',
-            name_sv: "Inga resultat hittades"
-          }]);
-        }
+      setschoolOrOrganizationSelection(null);
+      const results = data.filter(item => searchComparison(item, searchValue));
+      results.length > 0 ?
+      setschoolOrOrganizationFilter (results) :
+      setschoolOrOrganizationFilter([noResults]);
+      setinputTrainingValue('');
     } else {
       setschoolOrOrganizationFilter([]);
+      setcompetenceOrDegreeFilter([]);
+      setinputTrainingValue('');
+      setschoolOrOrganizationSelection(null);
     }
   }
+
+  const setDegreeOrCompetenceResults = (results) =>
+    results.length > 0 ?
+    setcompetenceOrDegreeFilter(results) :
+    setcompetenceOrDegreeFilter([noResults]);
 
   const filterDegreesOrCompetences = (searchValue) => {
     setinputTrainingValue(searchValue);
     if (searchValue) {
       if (schoolOrOrganizationSelection.type_en === 'School') {
-        const results = schoolOrOrganizationSelection.academicdegrees.filter(item =>
-          item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
-          item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
-          item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
-        );
-        setcompetenceOrDegreeFilter(results)
+        const results = schoolOrOrganizationSelection.academicdegrees
+          .filter(item => searchComparison(item, searchValue));
+        setDegreeOrCompetenceResults(results);
       } else {
-        const results = schoolOrOrganizationSelection.competences.filter(item =>
-          item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
-          item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
-          item.name_sv.toUpperCase().includes(searchValue.toUpperCase())
-        );
-        setcompetenceOrDegreeFilter(results)
+        const results = schoolOrOrganizationSelection.competences
+          .filter(item => searchComparison(item, searchValue));
+        setDegreeOrCompetenceResults(results);
       }
     } else {
       setcompetenceOrDegreeFilter([]);
@@ -118,20 +102,17 @@ export default function SearchBox() {
   }
 
   const getUserSelectionForSchoolOrAcademy = (selection) => {
+    if (selection.error) return;
     setschoolOrOrganizationSelection(selection);
     setinputSchoolOrOrganization(selection[`name_${globalState.language}`]);
     setschoolOrOrganizationFilter([]);
   };
 
   const getUserSelectionForDegreeOrCompetence = (selection) => {
-    setcompetenceOrDegreeSelection(selection);
+    if (selection.error) return;
     setinputTrainingValue(selection[`name_${globalState.language}`]);
     setcompetenceOrDegreeFilter([]);
-  }
-
-  const showResults = () => {
-    console.log('competenceOrDegreeSelection', competenceOrDegreeSelection);
-    console.log('schoolOrOrganizationSelection', schoolOrOrganizationSelection);
+    showResults(schoolOrOrganizationSelection, selection);
   }
 
   return (
@@ -145,16 +126,27 @@ export default function SearchBox() {
         loading={isLoading}
       />}
       {!isLoading &&
-        <div>
-          <SearchInput {...{ handleInput: filterSchoolOrOrganization, inputValue: inputSchoolOrOrganization, label: 'searchbox.label' }}/>
-          {schoolOrOrganizationFilter.length > 0 &&
-          <SearchResults {...{ results: schoolOrOrganizationFilter, setSelection: getUserSelectionForSchoolOrAcademy }}/>
+        <div className="search-wrapper">
+          <SearchInput 
+            handleInput={filterSchoolOrOrganization} 
+            inputValue={inputSchoolOrOrganization} 
+            label={'searchbox.label'} 
+            name={'search-school'}/>
+          <SearchResults 
+            results={schoolOrOrganizationFilter}
+            setSelection={getUserSelectionForSchoolOrAcademy}
+          />
+        {schoolOrOrganizationSelection &&
+          <SearchInput 
+            handleInput={filterDegreesOrCompetences}
+            inputValue={inputTrainingValue} 
+            label={'searchbox.labelSecondary'}
+            name={'search-education' }/>
           }
-          {schoolOrOrganizationSelection &&
-          <SearchInput {...{ handleInput: filterDegreesOrCompetences, inputValue: inputTrainingValue, label: 'searchbox.labelSecondary' }} />
-          }
-          <SearchResults {...{ results: competenceOrDegreeFilter, setSelection: getUserSelectionForDegreeOrCompetence }}/>
-          <button onClick={() => showResults()}>Näytä tulokset</button>
+          <SearchResults 
+            results={competenceOrDegreeFilter}
+            setSelection={getUserSelectionForDegreeOrCompetence}
+          />
         </div>
       }
     </S.SearchBox>

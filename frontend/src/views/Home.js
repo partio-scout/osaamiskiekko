@@ -4,19 +4,9 @@ import styled from 'styled-components';
 import headerBgNoImage from '../images/headerbg_noimage.svg';
 import headerBgClipped from '../images/header-hole.svg';
 import headerImage from '../images/headerimage.jpg';
-// import headerBg from '../images/headerbg.svg';
-// import headerBgTest from '../images/header-bg.svg';
-// import Background from '../components/Background';
 
 const S = {};
 S.Home = styled.div`
-/* svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  width: 100%;
-} */
   ::before {
     content: " ";
     position: absolute;
@@ -32,27 +22,40 @@ S.Home = styled.div`
      content: "";
     position: absolute;
     top: 0;
-    right: 0;
-    width: 100%;
+    left: 50%;
+    width: 70%;
+    max-height: 900px;
+    overflow: hidden;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 120%;
     background-size: cover;
     z-index: -10;
-    background-position: 100% 80%;
+    transform: rotate(180deg);
     background-image: url(${headerImage});
   }
 
   @media only screen and (max-width: 840px) { 
     ::before {
-    background-image: url(${headerBgNoImage});
+      background-image: url(${headerBgNoImage});
+    }
+    ::after {
+      content: none;
     }
   }
 `;
 
 const Home = () => {
+  const showResults = (schoolOrOrganizationSelection, competenceOrDegreeSelection) => {
+    if (schoolOrOrganizationSelection && competenceOrDegreeSelection) {
+      console.log('Show results');
+    }
+    console.log('competenceOrDegreeSelection', competenceOrDegreeSelection);
+    console.log('schoolOrOrganizationSelection', schoolOrOrganizationSelection);
+  }
+
   return (
     <S.Home>
-      <Header />
+      <Header showResults={showResults}/>
       <div>Contentti</div>
     </S.Home>
   );

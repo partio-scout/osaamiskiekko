@@ -29,6 +29,25 @@ CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA public;
 COMMENT ON EXTENSION pg_trgm IS 'text similarity measurement and index searching based on trigrams';
 
 
+--
+-- Name: truncate_if_exists(text); Type: FUNCTION; Schema: public; Owner: myuser
+--
+
+CREATE FUNCTION public.truncate_if_exists(tablename text) RETURNS void
+    LANGUAGE plpgsql
+    AS $$
+begin
+    perform 1
+    from information_schema.tables 
+    where table_name = tablename;
+    if found then
+        execute format('truncate %I', tablename);
+    end if;
+end $$;
+
+
+ALTER FUNCTION public.truncate_if_exists(tablename text) OWNER TO myuser;
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;

@@ -95,6 +95,7 @@ export default function SearchBox(props) {
       setschoolOrOrganizationFilter([]);
       setcompetenceOrDegreeFilter([]);
       setinputTrainingValue('');
+      setschoolOrOrganizationSelection(null);
     }
   }
 
@@ -147,10 +148,8 @@ export default function SearchBox(props) {
       {!isLoading &&
         <div>
           <SearchInput {...{ handleInput: filterSchoolOrOrganization, inputValue: inputSchoolOrOrganization, label: 'searchbox.label' }}/>
-          {schoolOrOrganizationFilter.length > 0 &&
           <SearchResults {...{ results: schoolOrOrganizationFilter, setSelection: getUserSelectionForSchoolOrAcademy, globalState }}/>
-          }
-          {schoolOrOrganizationSelection && inputSchoolOrOrganization &&
+          {schoolOrOrganizationSelection &&
           <SearchInput {...{ handleInput: filterDegreesOrCompetences, inputValue: inputTrainingValue, label: 'searchbox.labelSecondary' }} />
           }
           <SearchResults {...{ results: competenceOrDegreeFilter, setSelection: getUserSelectionForDegreeOrCompetence, globalState }}/>

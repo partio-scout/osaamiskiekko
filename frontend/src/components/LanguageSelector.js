@@ -47,12 +47,12 @@ select:focus {
 `;
 
 export default function LanguageSelector() {
-  const { changeLanguage } = useGlobalStateContext();
+  const { language, changeLanguage } = useGlobalStateContext();
   const setLanguage = (e) => changeLanguage(e.target.value);
-
+  console.log(language);
   return (
     <S.LanguageSelector>
-      <select onChange={setLanguage}>
+      <select onChange={setLanguage} value={language}>
         <option value="fi">Fi</option>
         <option value="en">En</option>
         <option value="sv">Sv</option>

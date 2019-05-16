@@ -42,7 +42,8 @@ p.important {
 }
 `;
 
-export default function Header() {
+export default function Header(props) {
+  const { showResults } = props;
   return (
     <S.Header>
       <Navigation />
@@ -55,7 +56,7 @@ export default function Header() {
           <p><FormattedMessage id="header.p" /></p>
         </div>
       </div>
-      <SearchBox />
+      <SearchBox showResults={showResults}/>
     </S.Header>
   )
 }

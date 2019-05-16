@@ -4,14 +4,12 @@ import { addTypeToSchoolOrOrganization } from './ApiUtils';
 
 const getSchools = async () => {
   const schools = await axios(`${baseURL}/schools`);
-  const schoolsWithType = addTypeToSchoolOrOrganization(schools.data, 'school');
-  return schoolsWithType;
+  return addTypeToSchoolOrOrganization(schools.data, 'school');
 }
 
 const getOrganizations = async () => {
   const organizations = await axios(`${baseURL}/organizations`);
-  const organizationsWithType = addTypeToSchoolOrOrganization(organizations.data, 'organization');
-  return organizationsWithType;
+  return addTypeToSchoolOrOrganization(organizations.data, 'organization');
 }
 
 const getAcademicDegrees = async () => {

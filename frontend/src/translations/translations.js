@@ -8,7 +8,7 @@ export default {
     "header.p": "With the help of the disc, you will find the skills acquired in hobby and voluntary activities in parallel with the studies leading to the degree.",
     "searchbox.label": "Choose organization or school",
     "searchbox.labelSecondary": "Choose education",
-    "search.placeholder": "Search..."
+    "search.placeholder": "Search...",
   },
   "fi": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -19,7 +19,7 @@ export default {
     "header.p": "Osaamiskiekon avulla löydät harrastus- ja vapaaehtoistoiminnassa hankitun osaamisen rinnakkain tutkintoon johtavien opintojen kanssa.",
     "searchbox.label": "Valitse järjestö tai oppilaitos",
     "searchbox.labelSecondary": "Valitse koulutus",
-    "search.placeholder": "Hae..."
+    "search.placeholder": "Hae...",
   },
   "sv": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -30,6 +30,6 @@ export default {
     "header.p": "Med hjälp av skivan hittar du färdigheterna i hobby och frivilliga aktiviteter parallellt med studierna som leder till graden.",
     "searchbox.label": "Välj en organisation eller en skola",
     "searchbox.labelSecondary": "Välj utbildning",
-    "search.placeholder": "Sök..."
+    "search.placeholder": "Sök...",
   }
 };

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
+import { FormattedMessage } from 'react-intl';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import SearchResults from './SearchResults';
 import { GlobalState } from '../App';
@@ -153,7 +154,9 @@ export default function SearchBox(props) {
           <SearchInput {...{ handleInput: filterDegreesOrCompetences, inputValue: inputTrainingValue, label: 'searchbox.labelSecondary' }} />
           }
           <SearchResults {...{ results: competenceOrDegreeFilter, setSelection: getUserSelectionForDegreeOrCompetence, globalState }}/>
-          <button onClick={() => showResults(schoolOrOrganizationSelection, competenceOrDegreeSelection)}>Näytä tulokset</button>
+          <button onClick={() => showResults(schoolOrOrganizationSelection, competenceOrDegreeSelection)}>
+            <FormattedMessage id="search.resultsButton" />
+          </button>
         </div>
       }
     </S.SearchBox>

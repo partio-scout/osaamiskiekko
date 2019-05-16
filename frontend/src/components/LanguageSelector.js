@@ -8,11 +8,10 @@ position: relative;
 
 select {
   height: 49px;	
-  width: 49px;	
   border-radius: 24.5px;	
   background-color: ${props => props.theme.colors.highlight};
   color: ${props => props.theme.colors.highlightText};
-  padding: 5px 5px 5px 10px;
+  padding: 5px 23px 5px 15px;
   border: 2px solid ${props => props.theme.colors.highlight};
   font-size: 14px;
   -webkit-appearance: none;
@@ -33,7 +32,7 @@ select:focus {
   font-size: 5px;
   top: 0;
   right: 10px;
-  width: 20%;
+  width: 10px;
   height: 100%;
   text-align: center;
   font-size: 15px;

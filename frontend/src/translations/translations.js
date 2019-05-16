@@ -9,6 +9,9 @@ export default {
     "searchbox.label": "Choose organization or school",
     "searchbox.labelSecondary": "Choose education",
     "search.placeholder": "Search...",
+    "themes.grey": "Steely alloy",
+    "themes.blue": "Stark thunder",
+    "themes.green": "Coniferous forest",
   },
   "fi": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -20,6 +23,9 @@ export default {
     "searchbox.label": "Valitse järjestö tai oppilaitos",
     "searchbox.labelSecondary": "Valitse koulutus",
     "search.placeholder": "Hae...",
+    "themes.grey": "Harmahdus",
+    "themes.blue": "Sinisikermä",
+    "themes.green": "Sammal",
   },
   "sv": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -31,5 +37,9 @@ export default {
     "searchbox.label": "Välj en organisation eller en skola",
     "searchbox.labelSecondary": "Välj utbildning",
     "search.placeholder": "Sök...",
+    "themes.grey": "Järn och flodhäst",
+    "themes.blue": "Blå himmel",
+    "themes.green": "Moss matta",
+
   }
 };

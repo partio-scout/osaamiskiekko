@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import Routes from './Routes';
+import { Helmet } from 'react-helmet';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import fi from 'react-intl/locale-data/fi';
 import sv from 'react-intl/locale-data/sv';
+
+import Routes from './Routes';
 import GlobalStateContext from './utils/GlobalStateContext';
 import { BrowserRouter } from 'react-router-dom';
 import translations from './translations/translations';
@@ -16,7 +18,7 @@ const App = () => {
   const [theme, setTheme] = useState(defaultTheme);
 
   const changeLanguage = (language) => setLanguage(language);
-  const changeTheme = (theme) => {console.log(theme); setTheme(theme) };
+  const changeTheme = (theme) => { setTheme(theme) };
 
   const globalState = {
     language,
@@ -27,6 +29,9 @@ const App = () => {
   
   return (
     <BrowserRouter>
+      <Helmet>
+        <html lang={language} />
+      </Helmet>
       <GlobalStateContext.Provider value={globalState}>
         <ThemeProvider theme={theme}>
             <IntlProvider locale={language} messages={translations[language]}>

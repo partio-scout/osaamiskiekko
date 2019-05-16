@@ -6,14 +6,22 @@ exports[`theme selector snapshot matches 1`] = `
     onChange={[Function]}
   >
     <option
-      value="defaultTheme"
+      key="blue"
+      value="blue"
     >
-      Oletusteema
+      blue
     </option>
     <option
-      value="darkTheme"
+      key="green"
+      value="green"
     >
-      Tumma teema
+      green
+    </option>
+    <option
+      key="grey"
+      value="grey"
+    >
+      grey
     </option>
   </select>
 </styled.div>

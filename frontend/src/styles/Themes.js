@@ -1,4 +1,7 @@
-export const findTheme = (name) => themes.find(theme => theme.name === name);
+export const findTheme = (name) => {
+  const found = themes.find(theme => theme.name === name);
+  return (found ? found : defaultTheme);
+};
 
 const green = {
   name: 'green',

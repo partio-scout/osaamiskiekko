@@ -9,16 +9,16 @@ configure({adapter: new Adapter()});
 
 describe('themes', () => {
 
-  test('can find dark theme', () => {
-    const found = findTheme('dark');
+  test('can find green theme', () => {
+    const found = findTheme('green');
 
-    expect(found.name).toBe('dark');
+    expect(found.name).toBe('green');
   });
 
   test('returns default theme if non-existent theme is sought', () => {
-    const found = findTheme('dark');
+    const found = findTheme('iamsononexistentreallyanunicorn');
 
-    expect(found.name).toBe('dark');
+    expect(found.name).toBe('blue');
   });
 });
 
@@ -50,9 +50,9 @@ describe('theme selector', () => {
       <ThemeSelector />
     );
 
-    wrapper.find('select').simulate('change', {target: {value : 'dark'}});
+    wrapper.find('select').simulate('change', {target: {value : 'green'}});
 
     expect(mockChangeTheme.mock.calls.length).toBe(1);
-    expect(globalValues.theme.name).toBe('dark');
+    expect(globalValues.theme.name).toBe('green');
   });
 });

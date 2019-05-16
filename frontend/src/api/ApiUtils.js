@@ -1,18 +1,9 @@
 export const baseURL = (process.env.REACT_APP_BACKEND_URL || '/api');
 
 export const addTypeToSchoolOrOrganization = (schoolOrOrganization, type) => schoolOrOrganization.map(item => {
-    if (type === 'school') {
       const o = Object.assign({}, item);
-      o.type_fi = 'Oppilaitos';
-      o.type_en = 'School';
-      o.type_sv = 'Skola'
+      o.type_fi = type === 'school' ? 'Oppilaitos' : 'Organisaatio';
+      o.type_en = type === 'school' ? 'School' : 'Organization';
+      o.type_sv = type === 'school' ? 'Skola' : 'Organisation';
       return o;
-    } else if (type === 'organization') {
-      const o = Object.assign({}, item);
-      o.type_fi = 'Organisaatio';
-      o.type_en = 'Organization';
-      o.type_sv = 'Organisation'
-      return o;
-    }
-    return null;
   })

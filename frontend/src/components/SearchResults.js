@@ -12,6 +12,7 @@ S.ResultsDiv = styled.div`
 
   p {
     color: #241C80;
+    margin: 5px;
   }
 
   .type {
@@ -48,7 +49,10 @@ export default function SearchResults(props) {
       onKeyPress={() => setSelection(item)}
       tabIndex="0">
       <p>{item[`name_${globalState.language}`]}</p>
-      { item && item.type_fi ? <p className="type">{item[`type_${globalState.language}`]}</p> : ''}
+      { 
+        item && item.type_fi ? 
+        <p className="type">{item[`type_${globalState.language}`]}</p> : ''
+      }
     </S.ResultsDiv>
 
   return (

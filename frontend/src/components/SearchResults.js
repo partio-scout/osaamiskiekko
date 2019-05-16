@@ -35,7 +35,7 @@ S.ResultWrapper = styled.div`
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   width: 475px;
   margin: auto;
-  max-height: 238px;
+  max-height: 224px;
   overflow: scroll;
 `;
 
@@ -49,8 +49,7 @@ export default function SearchResults(props) {
       onKeyPress={() => setSelection(item)}
       tabIndex="0">
       <p>{item[`name_${globalState.language}`]}</p>
-      { 
-        item && item.type_fi ? 
+      {item && item.type_fi ? 
         <p className="type">{item[`type_${globalState.language}`]}</p> : ''
       }
     </S.ResultsDiv>

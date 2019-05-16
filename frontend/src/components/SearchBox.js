@@ -10,13 +10,17 @@ import { GlobalState } from '../App';
 const S = {};
 S.SearchBox = styled.div`
   background-color: white;
-  min-height: 140px;	
+  min-height: 125px;	
   width: 587px;
   background-color: #FFFFFF;
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
   padding: 34px;
   margin: auto;
+
+  .search-wrapper {
+    margin-bottom: 35px;
+  }
 
   @media only screen and (max-width: 945px) {
     margin-top: 0px;
@@ -30,7 +34,7 @@ S.SearchBox = styled.div`
 
 const loadingSpinnerOverride = css`
     margin: auto;
-    margin-top: 80px;
+    margin-top: 60px;
 `;
 
 export default function SearchBox(props) {
@@ -65,6 +69,7 @@ export default function SearchBox(props) {
       results.length > 0 ?
       setschoolOrOrganizationFilter (results) :
       setschoolOrOrganizationFilter([noResults]);
+      setinputTrainingValue('');
     } else {
       setschoolOrOrganizationFilter([]);
       setcompetenceOrDegreeFilter([]);
@@ -120,13 +125,27 @@ export default function SearchBox(props) {
         loading={isLoading}
       />}
       {!isLoading &&
-        <div>
-          <SearchInput {...{ handleInput: filterSchoolOrOrganization, inputValue: inputSchoolOrOrganization, label: 'searchbox.label' }}/>
-          <SearchResults {...{ results: schoolOrOrganizationFilter, setSelection: getUserSelectionForSchoolOrAcademy, globalState }}/>
-          {schoolOrOrganizationSelection &&
-          <SearchInput {...{ handleInput: filterDegreesOrCompetences, inputValue: inputTrainingValue, label: 'searchbox.labelSecondary' }} />
+        <div className="search-wrapper">
+          <SearchInput 
+            handleInput={filterSchoolOrOrganization} 
+            inputValue={inputSchoolOrOrganization} 
+            label={'searchbox.label'} 
+            name={'search-school'}/>
+          <SearchResults 
+            results={schoolOrOrganizationFilter}
+            setSelection={getUserSelectionForSchoolOrAcademy}
+            globalState={globalState}/>
+        {schoolOrOrganizationSelection &&
+          <SearchInput 
+            handleInput={filterDegreesOrCompetences}
+            inputValue={inputTrainingValue} 
+            label={'searchbox.labelSecondary'}
+            name={'search-education' }/>
           }
-          <SearchResults {...{ results: competenceOrDegreeFilter, setSelection: getUserSelectionForDegreeOrCompetence, globalState }}/>
+          <SearchResults 
+            results={competenceOrDegreeFilter}
+            setSelection={getUserSelectionForDegreeOrCompetence}
+            globalState={globalState}/>
         </div>
       }
     </S.SearchBox>

@@ -11,14 +11,20 @@ select {
   height: 49px;	
   width: 160px;	
   border-radius: 24.5px;	
-  background-color: #FFFFFF;
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
+  background-color: ${props => props.theme.colors.highlight};
+  color: ${props => props.theme.colors.highlightText};
   padding: 5px 5px 5px 20px;
-  border: none;
+  border: 2px solid ${props => props.theme.colors.highlight};;
   font-size: 14px;
-  -webkit-appearance: button;
-  appearance: button;
+  -webkit-appearance: none;
+  appearance: none;
   outline: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+select:focus {
+  border: 2px solid ${props => props.theme.colors.highlightText};
 }
 
 ::before {
@@ -33,9 +39,8 @@ select {
   text-align: center;
   font-size: 15px;
   line-height: 50px;
-  color: rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 255, 255, 0.1);
   pointer-events: none;
+  color: ${props => props.theme.colors.highlightText};
   :hover {
     color: rgba(0, 0, 0, 0.6);
     background-color: rgba(255, 255, 255, 0.2);
@@ -58,8 +63,11 @@ export default function Navigation() {
   return (
     <S.themeSelector>
       <select onChange={setTheme}>
-        <option value="defaultTheme">Oletusteema</option>
-        <option value="darkTheme">Tumma teema</option>
+        {themes.map(theme => { return (
+          <option key={theme.name} value={theme.name}>
+            {theme.name}
+          </option>
+        )})}
       </select>
     </S.themeSelector>
   )

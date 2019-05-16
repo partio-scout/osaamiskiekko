@@ -29,7 +29,7 @@ ul li {
   a {
   text-decoration: none;
   font-size: 18px;	
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
+  color: ${props => props.theme.colors.link};
     :hover {
       color: teal;
       cursor: pointer;
@@ -40,7 +40,7 @@ ul li {
     background-color: #c9d0b7;
     border-radius: 8px;
     padding: 6px;
-    color: ${props => props.theme.colors.osaamisKiekkoBlue};
+    color: ${props => props.theme.colors.link};
   }
 }
 

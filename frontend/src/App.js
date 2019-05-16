@@ -16,7 +16,7 @@ const App = () => {
   const [theme, setTheme] = useState(defaultTheme);
 
   const changeLanguage = (language) => setLanguage(language);
-  const changeTheme = (theme) => setTheme(theme);
+  const changeTheme = (theme) => {console.log(theme); setTheme(theme) };
 
   const globalState = {
     language,

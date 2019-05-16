@@ -10,14 +10,20 @@ select {
   height: 49px;	
   width: 49px;	
   border-radius: 24.5px;	
-  background-color: #FFFFFF;
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
+  background-color: ${props => props.theme.colors.highlight};
+  color: ${props => props.theme.colors.highlightText};
   padding: 5px 5px 5px 10px;
-  border: none;
+  border: 2px solid ${props => props.theme.colors.highlight};
   font-size: 14px;
-  -webkit-appearance: button;
-  appearance: button;
+  -webkit-appearance: none;
+  appearance: none;
   outline: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+select:focus {
+  border: 2px solid ${props => props.theme.colors.highlightText};
 }
 
 ::before {
@@ -32,8 +38,7 @@ select {
   text-align: center;
   font-size: 15px;
   line-height: 50px;
-  color: rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 255, 255, 0.1);
+  color: ${props => props.theme.colors.highlightText};
   pointer-events: none;
   :hover {
     color: rgba(0, 0, 0, 0.6);

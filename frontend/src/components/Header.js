@@ -9,7 +9,7 @@ S.Header = styled.header`
  margin: auto;
 
 h1 {
-  color: ${props => props.theme.colors.heading};
+  color: ${props => props.theme.colors.text};
   font-family: ${props => props.theme.fonts.headingFontFamily};
   font-size: 42px;	
   font-weight: bold;	
@@ -18,7 +18,7 @@ h1 {
 }
 
 p {
-	color: ${props => props.theme.colors.osaamisKiekkoBlue};
+	color: ${props => props.theme.colors.text};
 	font-size: 18px;
 	line-height: 24px;
 }

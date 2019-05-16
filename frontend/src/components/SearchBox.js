@@ -5,7 +5,7 @@ import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import SearchResults from './SearchResults';
-import { GlobalState } from '../App';
+import GlobalStateContext from '../utils/GlobalStateContext';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -60,7 +60,7 @@ const loadingSpinnerOverride = css`
 `;
 
 export default function SearchBox() {
-  const [globalState] = useContext(GlobalState);
+  const globalState = useContext(GlobalStateContext);
   const { data, isLoading } = getSchoolsAndOrganizations();
 
   const [inputSchoolOrOrganization, setinputSchoolOrOrganization] = useState("");
@@ -148,12 +148,12 @@ export default function SearchBox() {
         <div>
           <SearchInput {...{ handleInput: filterSchoolOrOrganization, inputValue: inputSchoolOrOrganization, label: 'searchbox.label' }}/>
           {schoolOrOrganizationFilter.length > 0 &&
-          <SearchResults {...{ results: schoolOrOrganizationFilter, setSelection: getUserSelectionForSchoolOrAcademy, globalState }}/>
+          <SearchResults {...{ results: schoolOrOrganizationFilter, setSelection: getUserSelectionForSchoolOrAcademy }}/>
           }
           {schoolOrOrganizationSelection &&
           <SearchInput {...{ handleInput: filterDegreesOrCompetences, inputValue: inputTrainingValue, label: 'searchbox.labelSecondary' }} />
           }
-          <SearchResults {...{ results: competenceOrDegreeFilter, setSelection: getUserSelectionForDegreeOrCompetence, globalState }}/>
+          <SearchResults {...{ results: competenceOrDegreeFilter, setSelection: getUserSelectionForDegreeOrCompetence }}/>
           <button onClick={() => showResults()}>Näytä tulokset</button>
         </div>
       }

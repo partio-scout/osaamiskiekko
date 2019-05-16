@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`language selector snapshot matches 1`] = `
+<styled.div>
+  <select
+    onChange={[Function]}
+  >
+    <option
+      value="fi"
+    >
+      Fi
+    </option>
+    <option
+      value="en"
+    >
+      En
+    </option>
+    <option
+      value="sv"
+    >
+      Sv
+    </option>
+  </select>
+</styled.div>
+`;

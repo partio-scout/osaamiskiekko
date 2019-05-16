@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { GlobalState } from '../App';
+import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
 const S = {};
 S.LanguageSelector = styled.div`
@@ -43,8 +43,8 @@ select {
 `;
 
 export default function LanguageSelector() {
-  const [globalState, setGlobalState] = useContext(GlobalState);
-  const setLanguage = (e) => setGlobalState({ ...globalState, language: e.target.value });
+  const { changeLanguage } = useGlobalStateContext();
+  const setLanguage = (e) => changeLanguage(e.target.value);
 
   return (
     <S.LanguageSelector>

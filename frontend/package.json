@@ -4,7 +4,8 @@
   "private": true,
   "devDependencies": {
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-adapter-react-16": "^1.13.0",
+    "enzyme-to-json": "^3.3.5",
     "jest-sonar-reporter": "^2.0.0",
     "react-test-renderer": "^16.8.6"
   },
@@ -43,5 +44,8 @@
     "reportPath": "coverage",
     "reportFile": "sonar-report.xml",
     "indent": 4
+  },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }

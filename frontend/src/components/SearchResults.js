@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import GlobalStateContext from '../utils/GlobalStateContext';
 
 const S = {};
 S.ResultsDiv = styled.div`
@@ -34,7 +35,8 @@ S.ResultWrapper = styled.div`
 
 
 export default function SearchResults(props) {
-  const { results, setSelection, globalState } = props;
+  const globalState = useContext(GlobalStateContext);
+  const { results, setSelection } = props;
   const renderResults = (item) =>
     <S.ResultsDiv key={item.id} onClick={() => setSelection(item)}>
       <p>{item[`name_${globalState.language}`]}</p>

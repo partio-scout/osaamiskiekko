@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { GlobalState } from '../App';
+import GlobalStateContext from '../utils/GlobalStateContext';
 
 const S = {};
 S.themeSelector = styled.div`
@@ -47,8 +47,8 @@ select option {
 `;
 
 export default function Navigation() {
-  const [globalState, setGlobalState] = useContext(GlobalState);
-  const setTheme = (e) => setGlobalState({ ...globalState, theme: e.target.value });
+  const global = useContext(GlobalStateContext);
+  const setTheme = (e) => global.changeTheme(e.target.value);
 
   return (
     <S.themeSelector>

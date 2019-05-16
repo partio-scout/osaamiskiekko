@@ -23,18 +23,30 @@ S.Home = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 50%;
     background-repeat: no-repeat;
     height: 100%;
     background-size: cover;
     z-index: -10;
-    background-position: 100% 80%;
+    transform: rotate(180deg);
     background-image: url(${headerImage});
+    @media only screen and (min-width: 1688px) { 
+      background-position: 0px 200px;
+    }
+    @media only screen and (max-width: 1688px) { 
+      background-position: -200px 200px;
+    }
+    @media only screen and (max-width: 900px) { 
+      background-position: -350px 250px;
+    }
   }
 
   @media only screen and (max-width: 840px) { 
     ::before {
-    background-image: url(${headerBgNoImage});
+      background-image: url(${headerBgNoImage});
+    }
+    ::after {
+      content: none;
     }
   }
 `;

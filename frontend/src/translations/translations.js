@@ -9,7 +9,6 @@ export default {
     "searchbox.label": "Choose organization or school",
     "searchbox.labelSecondary": "Choose education",
     "search.placeholder": "Search...",
-    "search.resultsButton": "Show results"
   },
   "fi": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -21,7 +20,6 @@ export default {
     "searchbox.label": "Valitse järjestö tai oppilaitos",
     "searchbox.labelSecondary": "Valitse koulutus",
     "search.placeholder": "Hae...",
-    "search.resultsButton": "Näytä tulokset"
   },
   "sv": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -33,6 +31,5 @@ export default {
     "searchbox.label": "Välj en organisation eller en skola",
     "searchbox.labelSecondary": "Välj utbildning",
     "search.placeholder": "Sök...",
-    "search.resultsButton": "Visa resultat"
   }
 };

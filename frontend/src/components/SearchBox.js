@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
-import { FormattedMessage } from 'react-intl';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import SearchResults from './SearchResults';
 import { GlobalState } from '../App';
@@ -11,37 +10,13 @@ import { GlobalState } from '../App';
 const S = {};
 S.SearchBox = styled.div`
   background-color: white;
-  min-height: 190px;	
+  min-height: 140px;	
   width: 587px;
   background-color: #FFFFFF;
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
-  position: relative;
   padding: 34px;
   margin: auto;
-
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-
-  button {
-    height: 45px;
-    width: 220px;
-    background-color: #7FD1AE;
-    padding: 24px;
-    margin: auto;
-    line-height: 0;
-    margin-top: 25px;
-    font-size: 16px;	
-    letter-spacing: 4px;	
-    line-height: 0px;	
-    text-align: center;
-    :hover {
-      cursor: pointer;
-      outline: none;
-    }
-  }
 
   @media only screen and (max-width: 945px) {
     margin-top: 0px;
@@ -69,7 +44,6 @@ export default function SearchBox(props) {
 
   const [inputTrainingValue, setinputTrainingValue] = useState('');
   const [competenceOrDegreeFilter, setcompetenceOrDegreeFilter] = useState([]);
-  const [competenceOrDegreeSelection, setcompetenceOrDegreeSelection] = useState(null);
 
   const noResults = {
     id: 1,
@@ -130,9 +104,9 @@ export default function SearchBox(props) {
 
   const getUserSelectionForDegreeOrCompetence = (selection) => {
     if (selection.error) return;
-    setcompetenceOrDegreeSelection(selection);
     setinputTrainingValue(selection[`name_${globalState.language}`]);
     setcompetenceOrDegreeFilter([]);
+    showResults(schoolOrOrganizationSelection, selection);
   }
 
   return (
@@ -153,9 +127,6 @@ export default function SearchBox(props) {
           <SearchInput {...{ handleInput: filterDegreesOrCompetences, inputValue: inputTrainingValue, label: 'searchbox.labelSecondary' }} />
           }
           <SearchResults {...{ results: competenceOrDegreeFilter, setSelection: getUserSelectionForDegreeOrCompetence, globalState }}/>
-          <button onClick={() => showResults(schoolOrOrganizationSelection, competenceOrDegreeSelection)}>
-            <FormattedMessage id="search.resultsButton" />
-          </button>
         </div>
       }
     </S.SearchBox>

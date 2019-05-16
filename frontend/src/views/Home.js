@@ -41,6 +41,9 @@ S.Home = styled.div`
 
 const Home = () => {
   const showResults = (schoolOrOrganizationSelection, competenceOrDegreeSelection) => {
+    if (schoolOrOrganizationSelection && competenceOrDegreeSelection) {
+      console.log('Show results');
+    }
     console.log('competenceOrDegreeSelection', competenceOrDegreeSelection);
     console.log('schoolOrOrganizationSelection', schoolOrOrganizationSelection);
   }

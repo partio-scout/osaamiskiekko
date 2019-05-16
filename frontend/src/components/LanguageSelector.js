@@ -1,62 +1,70 @@
 import React from 'react';
 import styled from 'styled-components';
+
+import translations from '../translations/translations';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
 const S = {};
 S.LanguageSelector = styled.div`
 position: relative;
 
-select {
-  height: 49px;	
+.languageSelector {
   border-radius: 24.5px;	
-  background-color: ${props => props.theme.colors.highlight};
   color: ${props => props.theme.colors.highlightText};
-  padding: 5px 23px 5px 15px;
+  background-color: ${props => props.theme.colors.highlight};
+  padding: 11px 15px 10px 15px
   border: 2px solid ${props => props.theme.colors.highlight};
-  font-size: 14px;
-  -webkit-appearance: none;
-  appearance: none;
-  outline: none;
-  text-transform: uppercase;
   font-weight: bold;
 }
 
-select:focus {
-  border: 2px solid ${props => props.theme.colors.highlightText};
+.choice button {
+  background-color: ${props => props.theme.colors.highlight};
+  color: ${props => props.theme.colors.highlightText};
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-::before {
-  content: "\f0d7";
-  font-family: FontAwesome;
-  position: absolute;
-  font-size: 5px;
-  top: 0;
-  right: 10px;
-  width: 10px;
-  height: 100%;
-  text-align: center;
-  font-size: 15px;
-  line-height: 50px;
-  color: ${props => props.theme.colors.highlightText};
-  pointer-events: none;
-  :hover {
-    color: rgba(0, 0, 0, 0.6);
-    background-color: rgba(255, 255, 255, 0.2);
-  }
+.choice button.selected {
+  text-decoration: underline;
+}
+
+.choice:after {
+  content: ' / ';
+}
+
+.choice:last-child:after {
+  content: '';
 }
 `;
 
 export default function LanguageSelector() {
   const { language, changeLanguage } = useGlobalStateContext();
-  const setLanguage = (e) => changeLanguage(e.target.value);
-  console.log(language);
+  
+  const languages = Object.keys(translations);
+
+  const choices = languages.map(langOption => {
+    return (
+      <span className='choice' key={langOption} >
+        <button 
+          onClick={() => changeLanguage(langOption)}
+          className={`languagechanger ${langOption} ${langOption === language ? 'selected' : ''}`}
+          aria-label={translations[language][`nav.language.${langOption}`]}
+        >
+          {langOption}
+        </button>
+      </span>
+    );
+  });
+
   return (
     <S.LanguageSelector>
-      <select onChange={setLanguage} value={language}>
-        <option value="fi">Fi</option>
-        <option value="en">En</option>
-        <option value="sv">Sv</option>
-      </select>
+      <div className='languageSelector'>
+        {choices}
+      </div>
     </S.LanguageSelector>
   )
 }

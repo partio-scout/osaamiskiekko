@@ -6,7 +6,7 @@ import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import { themes, findTheme, defaultTheme } from '../styles/Themes';
 
 const S = {};
-S.themeSelector = styled.div`
+S.ThemeSelector = styled.div`
 position: relative;
 
 select {
@@ -70,16 +70,17 @@ const ThemeSelector = ({intl}) => {
   )});
 
   return (
-    <S.themeSelector>
-      <select onChange={setTheme} value={theme.name}>
+    <S.ThemeSelector>
+      <select 
+        onChange={setTheme}
+        value={theme.name}
+        aria-label={intl.formatMessage({ id: `nav.changetheme`})}
+      >
         {themeOptions}
       </select>
-    </S.themeSelector>
+    </S.ThemeSelector>
   )
 }
 
-ThemeSelector.propTypes = {
-  intl: intlShape.isRequired,
-};
-
 export default injectIntl(ThemeSelector);
+

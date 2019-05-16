@@ -27,8 +27,8 @@ describe('language selector', () => {
       <LanguageSelector />
     );
 
-    wrapper.find('select').simulate('change', {target: { value : 'en'}});
-    wrapper.find('select').simulate('change', {target: { value : 'sv'}});
+    wrapper.find('.languagechanger.en').simulate('click');
+    wrapper.find('.languagechanger.sv').simulate('click');
 
     expect(mockChangeLanguage.mock.calls.length).toBe(2);
     expect(globalValues.language).toBe('sv');

@@ -1,9 +1,10 @@
 import React from 'react';
-import {shallow, configure} from 'enzyme';
+import {mount, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import ThemeSelector from '../components/ThemeSelector';
 import * as GlobalStateContext from '../utils/GlobalStateContext';
 import { themes, defaultTheme, findTheme } from '../styles/Themes';
+import wrapWithProviders from '../testHelpers';
 
 configure({adapter: new Adapter()});
 
@@ -24,16 +25,16 @@ describe('themes', () => {
 
 describe('theme selector', () => {
   test('snapshot matches', () => {
-    const wrapper = shallow(
+    const wrapper = mount(wrapWithProviders(
       <ThemeSelector />
-    );
+    ));
     expect(wrapper).toMatchSnapshot();
   });
 
   test('lists all themes', () => {
-    const wrapper = shallow(
+    const wrapper = mount(wrapWithProviders(
       <ThemeSelector />
-    );
+    ));
     expect(wrapper.find('option').length).toBe(themes.length);
   });
 
@@ -46,9 +47,9 @@ describe('theme selector', () => {
     jest.spyOn(GlobalStateContext, 'useGlobalStateContext')
       .mockImplementation(() => globalValues);
 
-    const wrapper = shallow(
+    const wrapper = mount(wrapWithProviders(
       <ThemeSelector />
-    );
+    ));
 
     wrapper.find('select').simulate('change', {target: {value : 'green'}});
 

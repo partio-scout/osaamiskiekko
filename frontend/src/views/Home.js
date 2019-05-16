@@ -40,9 +40,14 @@ S.Home = styled.div`
 `;
 
 const Home = () => {
+  const showResults = (schoolOrOrganizationSelection, competenceOrDegreeSelection) => {
+    console.log('competenceOrDegreeSelection', competenceOrDegreeSelection);
+    console.log('schoolOrOrganizationSelection', schoolOrOrganizationSelection);
+  }
+
   return (
     <S.Home>
-      <Header />
+      <Header {...{showResults}}/>
       <div>Contentti</div>
     </S.Home>
   );

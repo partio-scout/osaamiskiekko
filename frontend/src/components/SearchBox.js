@@ -10,17 +10,14 @@ import { GlobalState } from '../App';
 const S = {};
 S.SearchBox = styled.div`
   background-color: white;
-  height: 250px;	
+  min-height: 190px;	
   width: 587px;
   background-color: #FFFFFF;
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
+  position: relative;
   padding: 34px;
-  display: flex;
-  flex-direction: column;
   margin: auto;
-  margin-top: 50px;
-  justify-content: center;
 
   div {
     display: flex;
@@ -56,7 +53,8 @@ S.SearchBox = styled.div`
 `;
 
 const loadingSpinnerOverride = css`
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 80px;
 `;
 
 export default function SearchBox() {

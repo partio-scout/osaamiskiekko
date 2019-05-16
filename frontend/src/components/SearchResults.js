@@ -30,6 +30,8 @@ S.ResultWrapper = styled.div`
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   width: 500px;
   margin: auto;
+  max-height: 358px;
+  overflow: scroll;
 `;
 
 

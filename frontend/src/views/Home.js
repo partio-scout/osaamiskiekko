@@ -4,19 +4,9 @@ import styled from 'styled-components';
 import headerBgNoImage from '../images/headerbg_noimage.svg';
 import headerBgClipped from '../images/header-hole.svg';
 import headerImage from '../images/headerimage.jpg';
-// import headerBg from '../images/headerbg.svg';
-// import headerBgTest from '../images/header-bg.svg';
-// import Background from '../components/Background';
 
 const S = {};
 S.Home = styled.div`
-/* svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  width: 100%;
-} */
   ::before {
     content: " ";
     position: absolute;

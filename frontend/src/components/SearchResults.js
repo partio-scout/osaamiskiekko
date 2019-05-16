@@ -5,6 +5,10 @@ const S = {};
 S.ResultsDiv = styled.div`
   border-bottom: 1px solid #335362;
   padding: 10px 10px 10px 10px;
+  :focus {
+    outline: none;
+    background-color: #E6E9EB;
+  }
 
   p {
     color: #241C80;
@@ -38,7 +42,7 @@ S.ResultWrapper = styled.div`
 export default function SearchResults(props) {
   const { results, setSelection, globalState } = props;
   const renderResults = (item) =>
-    <S.ResultsDiv key={item.id} onClick={() => setSelection(item)}>
+    <S.ResultsDiv key={item.id} onClick={() => setSelection(item)} tabIndex="0">
       <p>{item[`name_${globalState.language}`]}</p>
       { item && item.type_fi ? <p className="type">{item[`type_${globalState.language}`]}</p> : ''}
     </S.ResultsDiv>

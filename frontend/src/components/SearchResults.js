@@ -41,8 +41,12 @@ S.ResultWrapper = styled.div`
 
 export default function SearchResults(props) {
   const { results, setSelection, globalState } = props;
-  const renderResults = (item) =>
-    <S.ResultsDiv key={item.id} onClick={() => setSelection(item)} tabIndex="0">
+  const renderResults = (item, index) =>
+    <S.ResultsDiv 
+      key={index} 
+      onClick={() => setSelection(item)} 
+      onKeyPress={() => setSelection(item)}
+      tabIndex="0">
       <p>{item[`name_${globalState.language}`]}</p>
       { item && item.type_fi ? <p className="type">{item[`type_${globalState.language}`]}</p> : ''}
     </S.ResultsDiv>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { intlShape, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import { themes, findTheme, defaultTheme } from '../styles/Themes';
@@ -53,9 +53,7 @@ select option {
 }
 `;
 
-// const isSelected = (currentTheme, theme) => 
-
-const ThemeSelector = ({intl}) => {
+function ThemeSelector({intl}) {
   const { theme, changeTheme } = useGlobalStateContext();
   const setTheme = (e) => {
     const name = e.target.value;
@@ -65,7 +63,7 @@ const ThemeSelector = ({intl}) => {
 
   const themeOptions = themes.map(theme => { return (
     <option key={theme.name} value={theme.name}>
-      {intl.formatMessage({ id: `themes.${theme.name}`})}
+      {intl.formatMessage({ id: `themes.${theme.name}` })}
     </option> 
   )});
 
@@ -74,7 +72,7 @@ const ThemeSelector = ({intl}) => {
       <select 
         onChange={setTheme}
         value={theme.name}
-        aria-label={intl.formatMessage({ id: `nav.changetheme`})}
+        aria-label="eep"
       >
         {themeOptions}
       </select>
@@ -83,4 +81,3 @@ const ThemeSelector = ({intl}) => {
 }
 
 export default injectIntl(ThemeSelector);
-

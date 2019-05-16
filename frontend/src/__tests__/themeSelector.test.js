@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import ThemeSelector from '../components/ThemeSelector';
 import * as GlobalStateContext from '../utils/GlobalStateContext';
 import { themes, defaultTheme, findTheme } from '../styles/Themes';
-import wrapWithProviders from '../testHelpers';
+import { wrapWithProviders } from '../testHelpers';
 
 configure({adapter: new Adapter()});
 
@@ -24,13 +24,6 @@ describe('themes', () => {
 });
 
 describe('theme selector', () => {
-  test('snapshot matches', () => {
-    const wrapper = mount(wrapWithProviders(
-      <ThemeSelector />
-    ));
-    expect(wrapper).toMatchSnapshot();
-  });
-
   test('lists all themes', () => {
     const wrapper = mount(wrapWithProviders(
       <ThemeSelector />

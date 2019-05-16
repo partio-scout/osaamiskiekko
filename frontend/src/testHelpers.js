@@ -8,7 +8,7 @@ import { defaultTheme } from './styles/Themes';
 
 addLocaleData([...fi, translations]);
 
-export default function wrapWithProviders(component, globalState) {
+export const wrapWithProviders = (component) => {
 
   return (
     <ThemeProvider theme={defaultTheme}>

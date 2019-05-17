@@ -8,6 +8,7 @@ const green = {
   colors: {
     backgroundPrimary: '#e7eae3',
     backgroundSecondary: '#c7d0b7',
+    backgroundTertiary: 'white',
     highlight: '#7fd2ae',
     text: '#091f29',
     link: '#0e2b3c',
@@ -23,6 +24,7 @@ const grey = {
   colors: {
     backgroundPrimary: '#b8c1d8',
     backgroundSecondary: '#dde6f8',
+    backgroundTertiary: 'white',
     highlight: '#2b44b0',
     text: '#14132c',
     link: '#1b1941',
@@ -38,6 +40,7 @@ const blue = {
   colors: {
     backgroundPrimary: '#ffffff',
     backgroundSecondary: '#d6e0e5',
+    backgroundTertiary: 'white',
     highlight: '#4300ee',
     text: '#262626',
     link: '#4300ee',
@@ -49,7 +52,7 @@ const blue = {
 };
 
 
-export const defaultTheme = blue;
+export const defaultTheme = green;
 
 export const themes = [
   blue,

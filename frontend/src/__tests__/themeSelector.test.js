@@ -19,7 +19,7 @@ describe('themes', () => {
   test('returns default theme if non-existent theme is sought', () => {
     const found = findTheme('iamsononexistentreallyanunicorn');
 
-    expect(found.name).toBe('blue');
+    expect(found.name).toBe('green');
   });
 });
 

@@ -47,7 +47,8 @@ export default function SearchResults(props) {
   
   const renderResults = (item, index) =>
     <S.ResultsDiv 
-      key={index} 
+      key={index}
+      id={item.id}
       onClick={() => setSelection(item)} 
       onKeyPress={() => setSelection(item)}
       tabIndex="0">

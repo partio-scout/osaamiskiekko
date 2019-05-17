@@ -26,7 +26,7 @@ dump-data:
 	docker exec -t osaamiskiekko_db_1 pg_dump --data-only -U myuser -d mydb > ./backend/postgre/02_testdata.sql  
 
 restore-data:
-	cat ./backend/postgre/dump_dataonly.sql | docker exec -i osaamiskiekko_db_1 psql -U myuser -d mydb
+	cat ./backend/postgre/02_testdata.sql | docker exec -i osaamiskiekko_db_1 psql -U myuser -d mydb
 
 
 ### Cluster configuration ###

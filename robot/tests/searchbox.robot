@@ -29,16 +29,16 @@ When user types partio in visible search input
     Input Text  search-school   Partio
 
 Then it should show organization search results
-    Wait Until Page Contains  Suomen Partiolaiset – Finlands Scouter ry
+    Wait Until Page Contains  Suomen Partiolaiset
 
 Given organization search results are visible
-    Page Should Contain   Suomen Partiolaiset – Finlands Scouter ry
+    Page Should Contain   Suomen Partiolaiset
 
 When user clicks organization search result
     Click Element   1
 
 Then organization partio should be selected
-    Textfield Value Should Be  search-school   Suomen Partiolaiset – Finlands Scouter ry
+    Textfield Should Contain  search-school   Suomen Partiolaiset
 
 And another input field should appear
     Page Should Contain Element   search-education
@@ -53,4 +53,4 @@ When user clicks education search result
     Click Element   1
 
 Then education partiojohtajankoulutus should be selected
-    Textfield Value Should Be  search-education   Partiojohtajan peruskoulutus
+    Textfield Should Contain  search-education   Partiojohtajan peruskoulutus

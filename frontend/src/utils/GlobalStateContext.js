@@ -6,8 +6,8 @@ export const useGlobalStateContext = () => React.useContext(GlobalStateContext);
 const defaultValues = {
   language: 'fi',
   changeLanguage: (language) => {  console.log(language) },
-  theme: 'defaultTheme',
-  changeTheme: (theme) => { console.log(theme) },
+  currentTheme: 'defaultTheme',
+  changeCurrentTheme: (theme) => { console.log(theme) },
 };
 
 const GlobalStateContext = React.createContext(defaultValues);

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { injectIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import { themes, findTheme, defaultTheme } from '../styles/Themes';
@@ -53,31 +53,38 @@ select option {
 }
 `;
 
-function ThemeSelector({intl}) {
-  const { theme, changeTheme } = useGlobalStateContext();
+export default function ThemeSelector() {
+  const { currentTheme, changeCurrentTheme } = useGlobalStateContext();
+
   const setTheme = (e) => {
     const name = e.target.value;
 
-    changeTheme(findTheme(name) || defaultTheme);
+    changeCurrentTheme(findTheme(name) || defaultTheme);
   }
 
   const themeOptions = themes.map(theme => { return (
-    <option key={theme.name} value={theme.name}>
-      {intl.formatMessage({ id: `themes.${theme.name}` })}
-    </option> 
+    <FormattedMessage key={theme.name} id={`themes.${theme.name}`}>
+      {msg => (
+        <option value={theme.name}>
+          {msg}
+        </option>
+      )}
+    </FormattedMessage>
   )});
 
   return (
     <S.ThemeSelector>
-      <select 
-        onChange={setTheme}
-        value={theme.name}
-        aria-label="eep"
-      >
-        {themeOptions}
-      </select>
+      <FormattedMessage key={currentTheme.name} id="nav.changetheme">
+        {msg => (
+            <select 
+              onChange={setTheme}
+              value={currentTheme.name}
+              aria-label={msg}
+            >
+              {themeOptions}
+            </select>
+        )}
+      </FormattedMessage>
     </S.ThemeSelector>
   )
 }
-
-export default injectIntl(ThemeSelector);

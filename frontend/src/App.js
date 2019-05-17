@@ -15,16 +15,16 @@ addLocaleData([...en, ...fi, ...sv, translations]);
 
 const App = () => { 
   const [language, setLanguage] = useState('fi');
-  const [theme, setTheme] = useState(defaultTheme);
+  const [currentTheme, setCurrentTheme] = useState(defaultTheme);
 
   const changeLanguage = (language) => setLanguage(language);
-  const changeTheme = (theme) => { setTheme(theme) };
+  const changeCurrentTheme = (theme) => { setCurrentTheme(theme) };
 
   const globalState = {
     language,
     changeLanguage,
-    theme,
-    changeTheme
+    currentTheme,
+    changeCurrentTheme
   }
   
   return (
@@ -33,7 +33,7 @@ const App = () => {
         <html lang={language} />
       </Helmet>
       <GlobalStateContext.Provider value={globalState}>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={currentTheme}>
             <IntlProvider locale={language} messages={translations[language]}>
               <Routes />
             </IntlProvider>

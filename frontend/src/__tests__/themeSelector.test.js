@@ -1,10 +1,10 @@
 import React from 'react';
-import {mount, configure} from 'enzyme';
+import {render, shallow, mount, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import ThemeSelector from '../components/ThemeSelector';
 import * as GlobalStateContext from '../utils/GlobalStateContext';
 import { themes, defaultTheme, findTheme } from '../styles/Themes';
-import { wrapWithProviders } from '../testHelpers';
+import * as testHelper from '../testHelpers';
 
 configure({adapter: new Adapter()});
 
@@ -24,23 +24,22 @@ describe('themes', () => {
 });
 
 describe('theme selector', () => {
+
   test('lists all themes', () => {
-    const wrapper = mount(wrapWithProviders(
-      <ThemeSelector />
-    ));
+    const wrapper = mount(testHelper.wrapWithProviders(<ThemeSelector/>));
     expect(wrapper.find('option').length).toBe(themes.length);
   });
 
   test('sets theme to global state', () => {
     const mockChangeTheme = jest.fn(theme => { globalValues.theme = theme });
     const globalValues = {
-      theme: defaultTheme,
-      changeTheme: mockChangeTheme
+      currentTheme: defaultTheme,
+      changeCurrentTheme: mockChangeTheme
     };
     jest.spyOn(GlobalStateContext, 'useGlobalStateContext')
       .mockImplementation(() => globalValues);
 
-    const wrapper = mount(wrapWithProviders(
+    const wrapper = mount(testHelper.wrapWithProviders(
       <ThemeSelector />
     ));
 

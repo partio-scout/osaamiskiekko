@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DebounceInput } from 'react-debounce-input';
+// import { DebounceInput } from 'react-debounce-input';
 import { FormattedMessage } from 'react-intl';
+import SearchResults from './SearchResults';
 
 const S = {};
 S.SearchWrapper = styled.div`
@@ -43,7 +44,7 @@ input::placeholder {
 `;
 
 export default function SearchBox(props) {
-  const {handleInput, inputValue, label, name} = props;
+  const { handleInput, inputValue, label, name, results, setSelection} = props;
   return (
       <S.SearchWrapper>
         <label htmlFor="search-input">
@@ -52,16 +53,21 @@ export default function SearchBox(props) {
         <span className="fa fa-search"></span>
         <FormattedMessage id={label}>
           {msg => (
-            <DebounceInput
+            <input
               minLength={2}
-              debounceTimeout={300}
+              // debounceTimeout={300}
               value={inputValue}
               type="text"
               placeholder={msg}
               name={name}
-              onChange={e => handleInput(e.target.value)} />
+              onChange={e => handleInput(e.target.value)} 
+              />
           )}
         </FormattedMessage>
+          <SearchResults
+            results={results}
+            setSelection={setSelection}
+          />
       </S.SearchWrapper>
   )
 }

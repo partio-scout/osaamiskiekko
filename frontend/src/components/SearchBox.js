@@ -4,7 +4,6 @@ import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
-import SearchResults from './SearchResults';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
 const S = {};
@@ -131,22 +130,20 @@ export default function SearchBox(props) {
             handleInput={filterSchoolOrOrganization} 
             inputValue={inputSchoolOrOrganization} 
             label={'searchbox.label'} 
-            name={'search-school'}/>
-          <SearchResults 
+            name={'search-school'}
             results={schoolOrOrganizationFilter}
             setSelection={getUserSelectionForSchoolOrAcademy}
-          />
+            />
         {schoolOrOrganizationSelection &&
           <SearchInput 
             handleInput={filterDegreesOrCompetences}
             inputValue={inputTrainingValue} 
             label={'searchbox.labelSecondary'}
-            name={'search-education' }/>
-          }
-          <SearchResults 
+            name={'search-education' }
             results={competenceOrDegreeFilter}
             setSelection={getUserSelectionForDegreeOrCompetence}
-          />
+            />
+          }
         </div>
       }
     </S.SearchBox>

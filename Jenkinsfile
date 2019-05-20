@@ -147,7 +147,7 @@ pipeline {
         always {
           sh """${compose} \
             -f compose/frontend-unittests.yml \
-            logs >unit-test.log"""
+            logs --timestamps >unit-test.log"""
           
           archiveArtifacts 'unit-test.log'
 
@@ -187,6 +187,12 @@ pipeline {
               -f docker-compose.yml \
               -f compose/frontend.yml \
               -f compose/robot.yml \
+              build frontend dev-db backend robot"""
+              
+            sh """${compose} \
+              -f docker-compose.yml \
+              -f compose/frontend.yml \
+              -f compose/robot.yml \
               run robot"""
         }
       }
@@ -208,7 +214,7 @@ pipeline {
             -f docker-compose.yml \
             -f compose/frontend.yml \
             -f compose/robot.yml \
-            logs >acceptance-test.log"""
+            logs --timestamps >acceptance-test.log"""
           
           archiveArtifacts artifacts: 'acceptance-test.log', fingerprint: true
 
@@ -327,7 +333,7 @@ def buildImages() {
   sh """${compose} \
     -f docker-compose.yml \
     -f compose/frontend.yml \
-    build --pull backend db frontend"""
+    build --pull backend dev-db frontend"""
 }
 
 def labelAndPush(version) {

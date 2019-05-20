@@ -187,6 +187,12 @@ pipeline {
               -f docker-compose.yml \
               -f compose/frontend.yml \
               -f compose/robot.yml \
+              build frontend dev-db backend robot"""
+              
+            sh """${compose} \
+              -f docker-compose.yml \
+              -f compose/frontend.yml \
+              -f compose/robot.yml \
               run robot"""
         }
       }

@@ -46,6 +46,5 @@ services:
       - ./results/robot:/results:rw
     depends_on:
       - chrome
-      - dev-db
       - backend
       - frontend

@@ -72,7 +72,12 @@ Robot tests can be ran in docker (chrome default). Run makefile in project root:
 - Download latest chromedriver http://chromedriver.chromium.org/
 - place chromedriver (osx) /usr/local/bin/chromedriver
 - Run locally:
-  `BROWSER=chrome SERVER=https://www.eficode.com/home SELENIUM= python run.py -d ./results`
+  `BROWSER=chrome SERVER=http://localhost:3000/ API=http://localhost:1337/api/ SELENIUM= python run.py -d ./results`
+
+To add additional parameters 
+- (run by testname): --test "testname"
+- (run by suite): -s filename (without file extension")
+
 
 Firefox: Download and install firefox + geckodriver https://github.com/mozilla/geckodriver/releases
 

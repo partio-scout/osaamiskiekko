@@ -16,6 +16,7 @@ const GetSchoolsAndOrganizations = () => {
         const organizations = await Api.getOrganizations();
         setData([...schools, ...organizations]);
       } catch (error) {
+        console.error(error);
         setIsError(true);
       }
       setIsLoading(false);

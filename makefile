@@ -1,17 +1,18 @@
 docker-build-production:
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml build frontend backend
+	docker-compose --project-directory . -f docker-compose.yml -f compose/production.yml build frontend backend
 
 docker-build:
 	docker-compose build
-	
-docker-cleanrun:
-	docker-compose down
+
+docker-clean: 	
+	docker-compose -f docker-compose.yml -f compose/production.yml -f compose/robot.yml down
 	docker volume prune -f
 	docker container prune -f
-	docker-compose up
 
 docker-run:
 	docker-compose up
+
+docker-cleanrun: docker-clean docker-run
 
 ### model import/export ###
 backupdatamodels:
@@ -20,13 +21,13 @@ backupdatamodels:
 dump: dump-schema dump-data
 
 dump-schema:
-	docker exec -t osaamiskiekko_db_1 pg_dump -U myuser -s mydb > ./backend/postgre/01_schema.sql
+	docker exec -t osaamiskiekko_db pg_dump -U myuser -s mydb > ./backend/postgre/01_schema.sql
 
 dump-data:
-	docker exec -t osaamiskiekko_db_1 pg_dump --data-only -U myuser -d mydb > ./backend/postgre/02_testdata.sql  
+	docker exec -t osaamiskiekko_db pg_dump --data-only -U myuser -d mydb > ./backend/postgre/02_testdata.sql  
 
 restore-data:
-	cat ./backend/postgre/dump_dataonly.sql | docker exec -i osaamiskiekko_db_1 psql -U myuser -d mydb
+	cat ./backend/postgre/02_testdata.sql | docker exec -i osaamiskiekko_db psql -U myuser -d mydb
 
 
 ### Cluster configuration ###
@@ -86,10 +87,16 @@ unit-update:
 unit-interactive:
 	npm run test --prefix frontend
 	
-robot:
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml build frontend db backend robot
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml run robot
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml down
+robot: robot-down robot-build robot-run
+
+robot-down:
+	docker-compose --project-directory . -f compose/robot.yml down
+
+robot-build:
+	docker-compose --project-directory . -f compose/robot.yml build frontend robot-db backend robot
+
+robot-run:
+	docker-compose --project-directory . -f compose/robot.yml run robot
 
 sonar:
 ifeq ($(password), )

@@ -40,7 +40,7 @@ pipeline {
     //   }
     // }
   
-    stage('Cloud init') {
+    stage('Cloud Init') {
       when {
         expression {
           return publishedBranches.contains(env.BRANCH_NAME);
@@ -130,13 +130,7 @@ pipeline {
       }
     }
 
-    stage('Build') {
-      steps {
-        buildImages()
-      }
-    }
-
-    stage('Front-End unit tests') {
+    stage('Front-End Unit Tests') {
       steps {
         sh """${compose} \
             -f compose/frontend-unittests.yml \
@@ -147,7 +141,7 @@ pipeline {
         always {
           sh """${compose} \
             -f compose/frontend-unittests.yml \
-            logs >unit-test.log"""
+            logs --timestamps >unit-test.log"""
           
           archiveArtifacts 'unit-test.log'
 
@@ -158,7 +152,7 @@ pipeline {
       }
     }
 
-    stage('Static code analysis') {
+    stage('Static Code Analysis') {
       steps {
         withSonarQubeEnv('SonarQube') {
           script {
@@ -183,11 +177,13 @@ pipeline {
     stage('Acceptance Test') {
       steps {
         script {
-            sh """${compose} \
-              -f docker-compose.yml \
-              -f compose/frontend.yml \
-              -f compose/robot.yml \
-              run robot"""
+          sh """${compose} \
+            -f compose/robot.yml \
+            build robot-db backend frontend robot"""
+            
+          sh """${compose} \
+            -f compose/robot.yml \
+            run robot"""
         }
       }
 
@@ -205,19 +201,21 @@ pipeline {
               unstableThreshold: 100]);
 
           sh """${compose} \
-            -f docker-compose.yml \
-            -f compose/frontend.yml \
             -f compose/robot.yml \
-            logs >acceptance-test.log"""
+            logs --timestamps >acceptance-test.log"""
           
           archiveArtifacts artifacts: 'acceptance-test.log', fingerprint: true
 
           sh """${compose} \
-            -f docker-compose.yml \
-            -f compose/frontend.yml \
             -f compose/robot.yml \
             down -v"""
         }
+      }
+    }
+
+    stage('Production Build') {
+      steps {
+        buildImages()
       }
     }
 
@@ -325,9 +323,8 @@ def cleanBranchNameForNamespace(branchname) {
 
 def buildImages() {
   sh """${compose} \
-    -f docker-compose.yml \
-    -f compose/frontend.yml \
-    build --pull backend db frontend"""
+    -f compose/production.yml \
+    build --pull backend frontend"""
 }
 
 def labelAndPush(version) {

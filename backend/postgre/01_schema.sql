@@ -33,20 +33,20 @@ COMMENT ON EXTENSION pg_trgm IS 'text similarity measurement and index searching
 -- Name: truncate_if_exists(text); Type: FUNCTION; Schema: public; Owner: myuser
 --
 
-CREATE FUNCTION public.truncate_if_exists(tablename text) RETURNS void
-    LANGUAGE plpgsql
-    AS $$
-begin
-    perform 1
-    from information_schema.tables 
-    where table_name = tablename;
-    if found then
-        execute format('truncate %I', tablename);
-    end if;
-end $$;
+-- CREATE FUNCTION public.truncate_if_exists(tablename text) RETURNS void
+--     LANGUAGE plpgsql
+--     AS $$
+-- begin
+--     perform 1
+--     from information_schema.tables 
+--     where table_name = tablename;
+--     if found then
+--         execute format('truncate %I', tablename);
+--     end if;
+-- end $$;
 
 
-ALTER FUNCTION public.truncate_if_exists(tablename text) OWNER TO myuser;
+-- ALTER FUNCTION public.truncate_if_exists(tablename text) OWNER TO myuser;
 
 SET default_tablespace = '';
 
@@ -58,13 +58,13 @@ SET default_with_oids = false;
 
 CREATE TABLE public.academicdegrees (
     id integer NOT NULL,
-    identification character varying(255),
-    name_en character varying(255),
-    name_fi character varying(255),
-    name_sv character varying(255),
-    description_en text,
-    description_fi text,
-    description_sv text,
+    identification character varying(255) NOT NULL,
+    name_en character varying(255) NOT NULL,
+    name_fi character varying(255) NOT NULL,
+    name_sv character varying(255) NOT NULL,
+    description_en text NOT NULL,
+    description_fi text NOT NULL,
+    description_sv text NOT NULL,
     url character varying(255),
     credits integer,
     nqf integer,

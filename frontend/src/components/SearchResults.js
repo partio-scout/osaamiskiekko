@@ -34,10 +34,12 @@ S.ResultWrapper = styled.div`
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
-  width: 80%;
-  margin: auto;
+  width: 100%;
   max-height: 224px;
-  overflow: scroll-y;
+  overflow-y: scroll;
+  position: absolute;
+  margin-top: 55px;
+  z-index: 50;
 `;
 
 
@@ -47,7 +49,8 @@ export default function SearchResults(props) {
   
   const renderResults = (item, index) =>
     <S.ResultsDiv 
-      key={index} 
+      key={index}
+      id={item.id}
       onClick={() => setSelection(item)} 
       onKeyPress={() => setSelection(item)}
       tabIndex="0">

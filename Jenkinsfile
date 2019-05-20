@@ -40,7 +40,7 @@ pipeline {
     //   }
     // }
   
-    stage('Cloud init') {
+    stage('Cloud Init') {
       when {
         expression {
           return publishedBranches.contains(env.BRANCH_NAME);
@@ -130,13 +130,7 @@ pipeline {
       }
     }
 
-    stage('Build') {
-      steps {
-        buildImages()
-      }
-    }
-
-    stage('Front-End unit tests') {
+    stage('Front-End Unit Tests') {
       steps {
         sh """${compose} \
             -f compose/frontend-unittests.yml \
@@ -158,7 +152,7 @@ pipeline {
       }
     }
 
-    stage('Static code analysis') {
+    stage('Static Code Analysis') {
       steps {
         withSonarQubeEnv('SonarQube') {
           script {
@@ -216,6 +210,12 @@ pipeline {
             -f compose/robot.yml \
             down -v"""
         }
+      }
+    }
+
+    stage('Production Build') {
+      steps {
+        buildImages()
       }
     }
 

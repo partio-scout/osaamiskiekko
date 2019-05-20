@@ -5,11 +5,11 @@
       "connector": "strapi-hook-bookshelf",
       "settings": {
         "client": "postgres",
-        "host": "${process.env.DATABASE_HOST || 'db'}",
+        "host": "${process.env.DATABASE_HOST || 'dev-db'}",
         "port": "${process.env.DATABASE_PORT || 5432}",
         "database": "${process.env.DATABASE_NAME || 'mydb'}",
         "username": "${process.env.DATABASE_USERNAME || 'myuser'}",
-        "password": "${process.env.DATABASE_PASSWORD || 'mypassword'}"
+        "password": "${process.env.DATABASE_PASSWORD || 'mypass'}"
       },
       "options": {}
     }

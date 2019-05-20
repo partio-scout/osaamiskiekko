@@ -184,12 +184,10 @@ pipeline {
       steps {
         script {
           sh """${compose} \
-            -f docker-compose.yml \
             -f compose/robot.yml \
-            build dev-db robot-backend robot-frontend robot"""
+            build robot-db backend frontend robot"""
             
           sh """${compose} \
-            -f docker-compose.yml \
             -f compose/robot.yml \
             run robot"""
         }
@@ -209,14 +207,12 @@ pipeline {
               unstableThreshold: 100]);
 
           sh """${compose} \
-            -f docker-compose.yml \
             -f compose/robot.yml \
             logs --timestamps >acceptance-test.log"""
           
           archiveArtifacts artifacts: 'acceptance-test.log', fingerprint: true
 
           sh """${compose} \
-            -f docker-compose.yml \
             -f compose/robot.yml \
             down -v"""
         }

@@ -44,7 +44,7 @@ input::placeholder {
 `;
 
 export default function SearchBox(props) {
-  const { handleInput, inputValue, label, name, results, setSelection} = props;
+  const { handleInput, inputValue, label, name, results, setSelection, showPreResults } = props;
   return (
       <S.SearchWrapper>
         <label htmlFor="search-input">
@@ -61,13 +61,15 @@ export default function SearchBox(props) {
               placeholder={msg}
               name={name}
               onChange={e => handleInput(e.target.value)} 
+              onClick={(e) => showPreResults(e.target.name)}
+              autoComplete="off"
               />
           )}
         </FormattedMessage>
-          <SearchResults
-            results={results}
-            setSelection={setSelection}
-          />
+        <SearchResults
+          results={results}
+          setSelection={setSelection}
+        />
       </S.SearchWrapper>
   )
 }

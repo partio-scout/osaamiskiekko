@@ -41,7 +41,9 @@ services:
     environment:
       POSTGRES_DB: mydb
       POSTGRES_PASSWORD: mypass
-      POSTGRES_USER: myuser   
+      POSTGRES_USER: myuser  
+    volumes:
+     - ./backend/postgre/:/docker-entrypoint-initdb.d/ 
 
   backend:
     container_name: osaamiskiekko_robot-backend

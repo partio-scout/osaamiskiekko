@@ -12,5 +12,8 @@
     "osaamiskiekko"
   ],
   "author": "Esko Rikkonen <esko.rikkonen@eficode.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-outside-click-handler": "^1.2.3"
+  }
 }

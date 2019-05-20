@@ -39,6 +39,7 @@ S.ResultWrapper = styled.div`
   overflow-y: scroll;
   position: absolute;
   margin-top: 55px;
+  z-index: 50;
 `;
 
 

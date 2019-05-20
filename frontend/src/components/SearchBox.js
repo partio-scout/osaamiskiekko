@@ -5,6 +5,7 @@ import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import OutsideClickHandler from 'react-outside-click-handler';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -61,6 +62,17 @@ export default function SearchBox(props) {
     item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
     item.name_sv.toUpperCase().includes(searchValue.toUpperCase());
 
+  const showPreResults = (e) => {
+    if (e === 'search-school') setschoolOrOrganizationFilter(data);
+    if (e === 'search-education') {
+      if (schoolOrOrganizationSelection.type_en === 'School') {
+        setDegreeOrCompetenceResults(schoolOrOrganizationSelection.academicdegrees);
+      } else {
+        setDegreeOrCompetenceResults(schoolOrOrganizationSelection.competences);
+      }
+    }
+  };
+
   const filterSchoolOrOrganization = (searchValue) => {
     setinputSchoolOrOrganization(searchValue);
     if (searchValue) {
@@ -105,6 +117,8 @@ export default function SearchBox(props) {
     setschoolOrOrganizationSelection(selection);
     setinputSchoolOrOrganization(selection[`name_${globalState.language}`]);
     setschoolOrOrganizationFilter([]);
+    setcompetenceOrDegreeFilter([]);
+    setinputTrainingValue('');
   };
 
   const getUserSelectionForDegreeOrCompetence = (selection) => {
@@ -126,6 +140,11 @@ export default function SearchBox(props) {
       />}
       {!isLoading &&
         <div className="search-wrapper">
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            setschoolOrOrganizationFilter([]);
+          }}
+        >
           <SearchInput 
             handleInput={filterSchoolOrOrganization} 
             inputValue={inputSchoolOrOrganization} 
@@ -133,16 +152,25 @@ export default function SearchBox(props) {
             name={'search-school'}
             results={schoolOrOrganizationFilter}
             setSelection={getUserSelectionForSchoolOrAcademy}
+            showPreResults={showPreResults}
             />
+        </OutsideClickHandler>
         {schoolOrOrganizationSelection &&
-          <SearchInput 
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            setcompetenceOrDegreeFilter([]);
+          }}
+        >
+          <SearchInput
             handleInput={filterDegreesOrCompetences}
             inputValue={inputTrainingValue} 
             label={'searchbox.labelSecondary'}
             name={'search-education' }
             results={competenceOrDegreeFilter}
             setSelection={getUserSelectionForDegreeOrCompetence}
+            showPreResults={showPreResults}
             />
+        </OutsideClickHandler>
           }
         </div>
       }

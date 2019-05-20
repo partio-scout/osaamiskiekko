@@ -183,17 +183,15 @@ pipeline {
     stage('Acceptance Test') {
       steps {
         script {
-            sh """${compose} \
-              -f docker-compose.yml \
-              -f compose/frontend.yml \
-              -f compose/robot.yml \
-              build frontend dev-db backend robot"""
-              
-            sh """${compose} \
-              -f docker-compose.yml \
-              -f compose/frontend.yml \
-              -f compose/robot.yml \
-              run robot"""
+          sh """${compose} \
+            -f docker-compose.yml \
+            -f compose/robot.yml \
+            build dev-db robot-backend robot-frontend robot"""
+            
+          sh """${compose} \
+            -f docker-compose.yml \
+            -f compose/robot.yml \
+            run robot"""
         }
       }
 
@@ -212,7 +210,6 @@ pipeline {
 
           sh """${compose} \
             -f docker-compose.yml \
-            -f compose/frontend.yml \
             -f compose/robot.yml \
             logs --timestamps >acceptance-test.log"""
           
@@ -220,7 +217,6 @@ pipeline {
 
           sh """${compose} \
             -f docker-compose.yml \
-            -f compose/frontend.yml \
             -f compose/robot.yml \
             down -v"""
         }
@@ -331,9 +327,8 @@ def cleanBranchNameForNamespace(branchname) {
 
 def buildImages() {
   sh """${compose} \
-    -f docker-compose.yml \
-    -f compose/frontend.yml \
-    build --pull backend dev-db frontend"""
+    -f compose/production.yml \
+    build --pull backend frontend"""
 }
 
 def labelAndPush(version) {

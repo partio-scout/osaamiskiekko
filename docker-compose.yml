@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   dev-db:
-    container_name: osaamiskiekko_db
+    container_name: osaamiskiekko_dev-db
     image: postgres
     ports:
       - "5432:5432"
@@ -12,8 +12,8 @@ services:
     volumes:
      - ./backend/postgre/:/docker-entrypoint-initdb.d/
   
-  backend:
-    container_name: osaamiskiekko_backend
+  dev-backend:
+    container_name: osaamiskiekko_dev-backend
     command: ./wait-for dev-db:5432 -- ./strapi.sh
     build: ./backend
     environment:
@@ -29,15 +29,15 @@ services:
       - DATABASE_AUTHENTICATION_DATABASE=strapi
     ports:
       - 1337:1337
-    # volumes:
-    #   - ./backend:/usr/src/api
+    volumes:
+      - ./backend:/usr/src/api
     depends_on:
       - dev-db
 
   dev-frontend:
-    container_name: osaamiskiekko_frontend
+    container_name: osaamiskiekko_dev-frontend
     build: frontend
-    command: ./wait-for backend:1337 -- npm start
+    command: npm start
     environment:
       - REACT_APP_BACKEND_URL=${BACKEND_URL:-http://localhost:1337}
     volumes:

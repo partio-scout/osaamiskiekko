@@ -1,11 +1,11 @@
 docker-build-production:
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml build frontend backend
+	docker-compose --project-directory . -f docker-compose.yml -f compose/production.yml build frontend backend
 
 docker-build:
 	docker-compose build
 
 docker-clean: 	
-	docker-compose -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml down
+	docker-compose -f docker-compose.yml -f compose/production.yml -f compose/robot.yml down
 	docker volume prune -f
 	docker container prune -f
 
@@ -87,10 +87,16 @@ unit-update:
 unit-interactive:
 	npm run test --prefix frontend
 	
-robot:
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml down
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml build frontend dev-db backend robot
-	docker-compose --project-directory . -f docker-compose.yml -f compose/frontend.yml -f compose/robot.yml run robot
+robot: robot-down robot-build robot-run
+
+robot-down:
+	docker-compose --project-directory . -f compose/robot.yml down
+
+robot-build:
+	docker-compose --project-directory . -f compose/robot.yml build frontend robot-db backend robot
+
+robot-run:
+	docker-compose --project-directory . -f compose/robot.yml run robot
 
 sonar:
 ifeq ($(password), )

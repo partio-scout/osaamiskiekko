@@ -11,7 +11,7 @@ publishedBranches = [ "master", "test", "staging", "production"]
 
 pipeline {
   agent {
-    label 'partionosaamiskiekko'
+    label 'tabletkoulu'
   }
   
   environment {

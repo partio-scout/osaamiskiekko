@@ -52,12 +52,15 @@ pipeline {
           env.NAMESPACE = cleanBranchNameForNamespace(env.BRANCH_NAME)
         }
 
+        // Setup cloud authorization and connect to cluster
         withCredentials([file(credentialsId: 'osaamiskiekko-google-service-account-credentials', variable: 'credfile')]) {
           sh "gcloud auth activate-service-account --key-file \$credfile"
           sh "rm \$credfile"
           sh "gcloud config set project ${env.GCLOUD_PROJECT}"
           sh "gcloud container clusters get-credentials ${env.GCLOUD_CLUSTER} ${env.GCLOUD_PARAM}"
           sh "kubectl get pods" // just testing connection first
+
+          // Create namespace
           sh """kubectl create namespace ${env.NAMESPACE} \
           --dry-run -o yaml \
           | kubectl apply -f -"""
@@ -124,6 +127,10 @@ pipeline {
             -u ${env.NAMESPACE}-storage@${env.GCLOUD_PROJECT}.iam.gserviceaccount.com:WRITE \
             gs://${GCLOUD_RESOURCE_PREFIX}-${env.NAMESPACE} \
             || true"""
+
+          // Configure ingress-nginx scontroller
+          sh "kubectl apply -n ingress-nginx -f kubectl/global-ingress/prerequisites.yaml"
+          sh "kubectl apply -n ingress-nginx -f kubectl/global-ingress/ingress-nginx.yaml"
 
           sh "gcloud auth configure-docker"
         }

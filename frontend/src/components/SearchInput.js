@@ -62,6 +62,7 @@ export default function SearchBox(props) {
               name={name}
               onChange={e => handleInput(e.target.value)} 
               onClick={(e) => showPreResults(e.target.name)}
+              onFocus={(e) => showPreResults(e.target.name)}
               autoComplete="off"
               />
           )}

@@ -12,6 +12,7 @@ exports[`language selector snapshot matches 1`] = `
       <button
         aria-label="Change language to English"
         className="languagechanger en "
+        lang="en"
         onClick={[Function]}
       >
         en
@@ -24,6 +25,7 @@ exports[`language selector snapshot matches 1`] = `
       <button
         aria-label="Vaihda kieli suomeksi"
         className="languagechanger fi selected"
+        lang="fi"
         onClick={[Function]}
       >
         fi
@@ -36,6 +38,7 @@ exports[`language selector snapshot matches 1`] = `
       <button
         aria-label="Byt språk till svenska"
         className="languagechanger sv "
+        lang="sv"
         onClick={[Function]}
       >
         sv

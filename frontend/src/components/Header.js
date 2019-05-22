@@ -43,7 +43,7 @@ p.important {
 `;
 
 export default function Header(props) {
-  const { showResults } = props;
+  const { showResults, data, isLoading } = props;
   return (
     <S.Header>
       <Navigation />
@@ -56,7 +56,7 @@ export default function Header(props) {
           <p><FormattedMessage id="header.p" /></p>
         </div>
       </div>
-      <SearchBox showResults={showResults}/>
+      <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
     </S.Header>
   )
 }

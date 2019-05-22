@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {useGlobalStateContext} from '../utils/GlobalStateContext';
 
 const S = {};
-S.ResultsDiv = styled.div`
+S.ResultsItem = styled.li`
   border-bottom: 1px solid #335362;
   padding: 10px 10px 10px 10px;
   :focus {
@@ -30,7 +30,7 @@ S.ResultsDiv = styled.div`
   }
 `;
 
-S.ResultWrapper = styled.div`
+S.ResultWrapper = styled.ul`
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
@@ -40,6 +40,8 @@ S.ResultWrapper = styled.div`
   position: absolute;
   margin-top: 55px;
   z-index: 50;
+  padding: 0;
+  list-style: none;
 `;
 
 
@@ -48,7 +50,7 @@ export default function SearchResults(props) {
   const globalState = useGlobalStateContext();
   
   const renderResults = (item, index) =>
-    <S.ResultsDiv 
+    <S.ResultsItem 
       key={index}
       id={item.id}
       onClick={() => setSelection(item)} 
@@ -58,7 +60,7 @@ export default function SearchResults(props) {
       {item && item.type_fi ? 
         <p className="type">{item[`type_${globalState.language}`]}</p> : ''
       }
-    </S.ResultsDiv>
+    </S.ResultsItem>
 
   return (
     <S.ResultWrapper>

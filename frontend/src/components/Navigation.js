@@ -9,8 +9,8 @@ const S = {};
 S.Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
-  padding: 0px 40px 0px 40px;
   flex-wrap: wrap;
+  grid-column: nav;
 
 ul {
   list-style-type: none;

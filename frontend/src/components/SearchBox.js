@@ -11,25 +11,30 @@ const S = {};
 S.SearchBox = styled.div`
   background-color: white;
   min-height: 125px;	
-  width: 587px;
   background-color: #FFFFFF;
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
   padding: 34px;
   margin: auto;
+  margin-top: -180px;
+  grid-column: search;
+  z-index: 20;
 
   .search-wrapper {
     margin-bottom: 35px;
   }
 
-  @media only screen and (max-width: 945px) {
+  @media only screen and (min-width: 860px) {
+    width: 587px;
+  } 
+  @media only screen and (max-width: 860px) {
+    margin-top: -80px;
+    width: 500px;
+  } 
+  @media only screen and (max-width: 600px) {
     margin-top: 0px;
-  }
-
-  @media only screen and (max-width: 800px) {
-    width: 350px;
-    margin-top: -20px;
-  }
+    width: auto;
+  } 
 `;
 
 const loadingSpinnerOverride = css`

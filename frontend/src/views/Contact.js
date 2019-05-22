@@ -1,8 +1,6 @@
 import React from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
-import headerBgNoImage from '../images/headerbg_noimage.svg';
-import headerBgClipped from '../images/header-hole.svg';
 import headerImage from '../images/headerimage.jpg';
 
 const S = {};
@@ -16,7 +14,6 @@ S.Home = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(${headerBgClipped}); 
   }
   ::after {
      content: "";
@@ -32,11 +29,6 @@ S.Home = styled.div`
     background-image: url(${headerImage});
   }
 
-  @media only screen and (max-width: 840px) { 
-    ::before {
-    background-image: url(${headerBgNoImage});
-    }
-  }
 `;
 
 const Contact = () => {

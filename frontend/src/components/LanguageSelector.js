@@ -47,6 +47,7 @@ export default function LanguageSelector() {
       <span className='choice' key={langOption} >
         <button 
           onClick={() => changeLanguage(langOption)}
+          lang={langOption}
           className={`languagechanger ${langOption} ${langOption === language ? 'selected' : ''}`}
           aria-label={translations[language][`nav.language.${langOption}`]}
         >

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
+import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 
 const S = {};
 S.Home = styled.div`
@@ -15,6 +16,8 @@ S.Home = styled.div`
 `;
 
 const Home = () => {
+  const { data, isLoading } = getSchoolsAndOrganizations();
+
   const showResults = (schoolOrOrganizationSelection, competenceOrDegreeSelection) => {
     if (schoolOrOrganizationSelection && competenceOrDegreeSelection) {
       console.log('Show results');
@@ -25,7 +28,7 @@ const Home = () => {
 
   return (
     <S.Home>
-      <Header showResults={showResults}/>
+      <Header showResults={showResults} data={data} isLoading={isLoading} />
       <div className="content-area">Contentti</div>
     </S.Home>
   );

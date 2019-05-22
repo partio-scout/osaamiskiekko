@@ -2,45 +2,44 @@
 
 exports[`language selector snapshot matches 1`] = `
 <styled.div>
-  <div
-    className="languageSelector"
+  <span
+    className="choice"
+    key="en"
   >
-    <span
-      className="choice"
-      key="en"
+    <button
+      aria-label="Change language to English"
+      className="languagechanger en "
+      lang="en"
+      onClick={[Function]}
     >
-      <button
-        aria-label="Change language to English"
-        className="languagechanger en "
-        onClick={[Function]}
-      >
-        en
-      </button>
-    </span>
-    <span
-      className="choice"
-      key="fi"
+      en
+    </button>
+  </span>
+  <span
+    className="choice"
+    key="fi"
+  >
+    <button
+      aria-label="Vaihda kieli suomeksi"
+      className="languagechanger fi selected"
+      lang="fi"
+      onClick={[Function]}
     >
-      <button
-        aria-label="Vaihda kieli suomeksi"
-        className="languagechanger fi selected"
-        onClick={[Function]}
-      >
-        fi
-      </button>
-    </span>
-    <span
-      className="choice"
-      key="sv"
+      fi
+    </button>
+  </span>
+  <span
+    className="choice"
+    key="sv"
+  >
+    <button
+      aria-label="Byt språk till svenska"
+      className="languagechanger sv "
+      lang="sv"
+      onClick={[Function]}
     >
-      <button
-        aria-label="Byt språk till svenska"
-        className="languagechanger sv "
-        onClick={[Function]}
-      >
-        sv
-      </button>
-    </span>
-  </div>
+      sv
+    </button>
+  </span>
 </styled.div>
 `;

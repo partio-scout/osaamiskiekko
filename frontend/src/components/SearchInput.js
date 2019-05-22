@@ -43,7 +43,7 @@ input::placeholder {
 }
 `;
 
-export default function SearchBox(props) {
+export default function SearchInput(props) {
   const { handleInput, inputValue, label, name, results, setSelection, showPreResults } = props;
   return (
       <S.SearchWrapper>

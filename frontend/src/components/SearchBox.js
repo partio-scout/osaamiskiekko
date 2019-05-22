@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
-import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import OutsideClickHandler from 'react-outside-click-handler';
 
@@ -43,9 +42,8 @@ const loadingSpinnerOverride = css`
 `;
 
 export default function SearchBox(props) {
-  const { showResults } = props;
+  const { showResults, data, isLoading } = props;
   const globalState = useGlobalStateContext();
-  const { data, isLoading } = getSchoolsAndOrganizations();
 
   const [inputSchoolOrOrganization, setinputSchoolOrOrganization] = useState('');
   const [schoolOrOrganizationFilter, setschoolOrOrganizationFilter] = useState([]);
@@ -153,8 +151,9 @@ export default function SearchBox(props) {
           <SearchInput 
             handleInput={filterSchoolOrOrganization} 
             inputValue={inputSchoolOrOrganization} 
-            label={'searchbox.label'} 
-            name={'search-school'}
+            label='searchbox.label' 
+            name='search-school'
+            className='search-school'
             results={schoolOrOrganizationFilter}
             setSelection={getUserSelectionForSchoolOrAcademy}
             showPreResults={showPreResults}
@@ -171,6 +170,7 @@ export default function SearchBox(props) {
             inputValue={inputTrainingValue} 
             label={'searchbox.labelSecondary'}
             name={'search-education' }
+            className='search-education'
             results={competenceOrDegreeFilter}
             setSelection={getUserSelectionForDegreeOrCompetence}
             showPreResults={showPreResults}

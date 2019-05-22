@@ -83,7 +83,7 @@ path {
 `;
 
 export default function Header(props) {
-  const { showResults } = props;
+  const { showResults, data, isLoading } = props;
 
   const svgCurve = (color) => 
     <svg version="1.1" viewBox="0 0 1440 370" xmlns="http://www.w3.org/2000/svg">
@@ -104,8 +104,8 @@ export default function Header(props) {
           <p className="important"><FormattedMessage id="header.important" /></p>
           <p><FormattedMessage id="header.p" /></p>
         </div>
-        <div className="header-image"></div>
-      <SearchBox showResults={showResults}/>
+      <div className="header-image"></div>
+      <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
       <div className="curve">
         {svgCurve()}
       </div> 

@@ -52,6 +52,7 @@ export default function SearchResults(props) {
   const renderResults = (item, index) =>
     <S.ResultsItem 
       key={index}
+      className='search-result-item'
       id={item.id}
       onClick={() => setSelection(item)} 
       onKeyPress={() => setSelection(item)}

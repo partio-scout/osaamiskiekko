@@ -15,12 +15,20 @@ h1 {
   font-weight: bold;	
   line-height: 46px;
   margin: 0px;
+    span {
+      background-size: 100% 100%;
+      background-image: linear-gradient(180deg,transparent 60%,#6DE5B8 0);
+      background-repeat: no-repeat;
+    }
+}
+
+
 }
 
 p {
 	color: ${props => props.theme.colors.text};
-	font-size: 18px;
-	line-height: 24px;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 p.important {

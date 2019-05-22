@@ -13,6 +13,7 @@ const green = {
     text: '#091f29',
     link: '#0e2b3c',
     highlightText: '#ffffff',
+    accentColor: '#6DE5B8',
   },
   fonts: {
     headingFontFamily: 'Futura'
@@ -29,6 +30,7 @@ const grey = {
     text: '#14132c',
     link: '#1b1941',
     highlightText: '#ffffff',
+    accentColor: '#6DE5B8',
   },
   fonts: {
     headingFontFamily: 'Futura'
@@ -45,6 +47,7 @@ const blue = {
     text: '#262626',
     link: '#4300ee',
     highlightText: '#ffffff',
+    accentColor: '#6DE5B8',
   },
   fonts: {
     headingFontFamily: 'Futura'

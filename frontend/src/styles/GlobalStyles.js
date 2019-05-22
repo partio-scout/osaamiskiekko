@@ -7,6 +7,7 @@ body {
   font-family: "Fira Sans";
   margin: 0px;
   padding: 0px;
+  background-color: '#FFFFFF'
 }
 `;
 

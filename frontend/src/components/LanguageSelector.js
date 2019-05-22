@@ -6,30 +6,26 @@ import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
 const S = {};
 S.LanguageSelector = styled.div`
-position: relative;
-
-.languageSelector {
+  position: relative;
   border-radius: 24.5px;	
-  color: ${props => props.theme.colors.highlightText};
-  background-color: ${props => props.theme.colors.highlight};
+  color: ${props => props.theme.colors.text};
+  background-color: ${props => props.theme.colors.backgroundPrimary};
   padding: 11px 15px 10px 15px
-  border: 2px solid ${props => props.theme.colors.highlight};
   font-weight: bold;
-}
 
 .choice button {
-  background-color: ${props => props.theme.colors.highlight};
-  color: ${props => props.theme.colors.highlightText};
+  background-color: ${props => props.theme.colors.backgroundPrimary};
+  color: ${props => props.theme.colors.text};
   -webkit-appearance: none;
   appearance: none;
   font-size: 14px;
   text-transform: uppercase;
-  font-weight: bold;
   cursor: pointer;
+  outline: none;
 }
 
 .choice button.selected {
-  text-decoration: underline;
+  font-weight: bold;
 }
 
 .choice:after {
@@ -62,9 +58,7 @@ export default function LanguageSelector() {
 
   return (
     <S.LanguageSelector>
-      <div className='languageSelector'>
         {choices}
-      </div>
     </S.LanguageSelector>
   )
 }

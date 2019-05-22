@@ -12,16 +12,15 @@ position: relative;
 select {
   height: 49px;	
   border-radius: 24.5px;	
-  background-color: ${props => props.theme.colors.highlight};
-  color: ${props => props.theme.colors.highlightText};
+  background-color: ${props => props.theme.colors.backgroundPrimary};
+  color: ${props => props.theme.colors.text};
   padding: 5px 40px 5px 20px;
-  border: 2px solid ${props => props.theme.colors.highlight};;
-  font-size: 14px;
+  font-size: 18px;	
+  line-height: 27px;
   -webkit-appearance: none;
   appearance: none;
   outline: none;
-  text-transform: uppercase;
-  font-weight: bold;
+  border: none;
 }
 
 select:focus {
@@ -34,14 +33,14 @@ select:focus {
   position: absolute;
   font-size: 5px;
   top: 0;
-  right: 10px;
+  right: 15px;
   width: 10px;
   height: 100%;
   text-align: center;
   font-size: 15px;
   line-height: 50px;
   pointer-events: none;
-  color: ${props => props.theme.colors.highlightText};
+  color: ${props => props.theme.colors.text};
   :hover {
     color: rgba(0, 0, 0, 0.6);
     background-color: rgba(255, 255, 255, 0.2);

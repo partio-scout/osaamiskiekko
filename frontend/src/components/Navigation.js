@@ -9,8 +9,8 @@ const S = {};
 S.Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
-  padding: 0px 40px 0px 40px;
   flex-wrap: wrap;
+  grid-column: nav;
 
 ul {
   list-style-type: none;
@@ -21,28 +21,29 @@ ul {
   img {
     padding-right: 20px;
   }
-}
-
-ul li {
-  padding: 20px 20px 20px 0px;
-  display: inline-block;
-  a {
-  text-decoration: none;
-  font-size: 18px;	
-  color: ${props => props.theme.colors.link};
-    :hover {
-      color: teal;
-      cursor: pointer;
+  li {
+    padding: 24px 20px 24px 0px;
+    display: inline-block;
+    a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;	
+    color: ${props => props.theme.colors.link};
+      :hover {
+        color: ${props => props.theme.colors.accentColor};
+        cursor: pointer;
+      }
+    }
+    button {
+      border: none; 
+      background-color: #c9d0b7;
+      border-radius: 8px;
+      padding: 6px;
+      color: ${props => props.theme.colors.link};
     }
   }
-  button {
-    border: none; 
-    background-color: #c9d0b7;
-    border-radius: 8px;
-    padding: 6px;
-    color: ${props => props.theme.colors.link};
-  }
 }
+
 
   @media only screen and (max-width: 600px) { 
     grid-template-columns: 1fr auto;

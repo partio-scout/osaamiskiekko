@@ -6,13 +6,14 @@ export const findTheme = (name) => {
 const green = {
   name: 'green',
   colors: {
-    backgroundPrimary: '#e7eae3',
+    backgroundPrimary: '#FFFFFF',
     backgroundSecondary: '#c7d0b7',
     backgroundTertiary: 'white',
-    highlight: '#7fd2ae',
+    highlight: '#6DE5B8',
     text: '#091f29',
     link: '#0e2b3c',
     highlightText: '#ffffff',
+    accentColor: '#6DE5B8',
   },
   fonts: {
     headingFontFamily: 'Futura'
@@ -29,6 +30,7 @@ const grey = {
     text: '#14132c',
     link: '#1b1941',
     highlightText: '#ffffff',
+    accentColor: '#b8c1d8',
   },
   fonts: {
     headingFontFamily: 'Futura'
@@ -45,6 +47,7 @@ const blue = {
     text: '#262626',
     link: '#4300ee',
     highlightText: '#ffffff',
+    accentColor: '#2b44b0',
   },
   fonts: {
     headingFontFamily: 'Futura'

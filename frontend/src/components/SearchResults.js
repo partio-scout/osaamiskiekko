@@ -65,7 +65,7 @@ export default function SearchResults(props) {
 
   return (
     <S.ResultWrapper>
-      {results.map(renderResults)}
+      {results && results.map(renderResults)}
     </S.ResultWrapper>
   )
 }

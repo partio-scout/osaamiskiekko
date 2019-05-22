@@ -6,7 +6,7 @@ export const findTheme = (name) => {
 const green = {
   name: 'green',
   colors: {
-    backgroundPrimary: '#e7eae3',
+    backgroundPrimary: '#FFFFFF',
     backgroundSecondary: '#c7d0b7',
     backgroundTertiary: 'white',
     highlight: '#7fd2ae',

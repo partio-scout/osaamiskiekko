@@ -14,6 +14,8 @@ const green = {
     link: '#0e2b3c',
     highlightText: '#ffffff',
     accentColor: '#6DE5B8',
+    carouselColor: '#0063C3',
+    carouselHover: '#3C62C5'
   },
   fonts: {
     headingFontFamily: 'Futura'
@@ -31,6 +33,8 @@ const grey = {
     link: '#1b1941',
     highlightText: '#ffffff',
     accentColor: '#b8c1d8',
+    carouselColor: '#0063C3',
+    carouselHover: '#3C62C5'
   },
   fonts: {
     headingFontFamily: 'Futura'
@@ -48,6 +52,8 @@ const blue = {
     link: '#4300ee',
     highlightText: '#ffffff',
     accentColor: '#2b44b0',
+    carouselColor: '#0063C3',
+    carouselHover: '#3C62C5'
   },
   fonts: {
     headingFontFamily: 'Futura'

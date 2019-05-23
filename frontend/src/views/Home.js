@@ -29,7 +29,9 @@ const Home = () => {
   return (
     <S.Home>
       <Header showResults={showResults} data={data} isLoading={isLoading} />
-      <div className="content-area">Contentti</div>
+      <div className="content-area">
+content area
+      </div>
     </S.Home>
   );
 }

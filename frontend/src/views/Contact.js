@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
-import headerImage from '../images/headerimage.jpg';
 
 const S = {};
 S.Home = styled.div`

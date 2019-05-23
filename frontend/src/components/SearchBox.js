@@ -34,7 +34,6 @@ S.SearchBox = styled.div`
     width: 500px;
   } 
   @media only screen and (max-width: 600px) {
-    /* margin-top: 0px; */
     width: 65%;
   } 
 `;

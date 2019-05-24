@@ -16,6 +16,8 @@ export default {
     "themes.grey": "Steely alloy",
     "themes.blue": "Stark thunder",
     "themes.green": "Coniferous forest",
+    "institution.type.school": 'School',
+    "institution.type.organization": 'Organization',
   },
   "fi": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -34,6 +36,8 @@ export default {
     "themes.grey": "Harmahdus",
     "themes.blue": "Sinisikermä",
     "themes.green": "Sammal",
+    "institution.type.school": 'Oppilaitos',
+    "institution.type.organization": 'School',
   },
   "sv": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -52,6 +56,8 @@ export default {
     "themes.grey": "Järn och flodhäst",
     "themes.blue": "Blå himmel",
     "themes.green": "Moss matta",
+    "institution.type.school": 'School',
+    "institution.type.organization": 'Organisation',
 
   }
 };

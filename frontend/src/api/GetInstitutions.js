@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as Api from './Api';
 
-const GetSchoolsAndOrganizations = () => {
+const GetInstitutions = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -27,4 +27,4 @@ const GetSchoolsAndOrganizations = () => {
   return { data, isLoading, isError };
 }
 
-export default GetSchoolsAndOrganizations;
+export default GetInstitutions;

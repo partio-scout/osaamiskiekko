@@ -67,7 +67,7 @@ p.important {
 `;
 
 export default function Header(props) {
-  const { showResults, data, isLoading } = props;
+  const { showResults, data, isLoading, carouselFields } = props;
 
   return (
     <S.Header>
@@ -84,7 +84,11 @@ export default function Header(props) {
           </p>
         </div>
       <div className="header-image"></div>
-      <Curve showResults={showResults} data={data} isLoading={isLoading}/>
+      <Curve 
+        showResults={showResults} 
+        data={data} 
+        isLoading={isLoading} 
+        carouselFields={carouselFields}/>
     </S.Header>
   )
 }

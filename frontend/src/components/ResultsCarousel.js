@@ -17,7 +17,7 @@
 //           - Renderöi koulutusalan linkit linkkilistaksi NQF - tasoittain.
 
 
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import styled from 'styled-components';
 import "slick-carousel/slick/slick.css";
@@ -25,10 +25,17 @@ import "slick-carousel/slick/slick-theme.css";
 
 const S = {};
 S.ResultsCarousel = styled.div`
+  color: #FFFFFF;
+  margin: auto;
+  max-width: 90%;
+  .slick-arrow {
+    :before {
+      color: black;
+    }
+  }
    .carousel-item {
      outline: none;
      div {
-      color: #FFFFFF;
       font-size: 18px;	
       font-weight: bold;	
       line-height: 24px;	
@@ -37,19 +44,52 @@ S.ResultsCarousel = styled.div`
       background-color: ${props => props.theme.colors.carouselColor};
       margin: 20px;
       padding: 20px; 
+      min-height: 80px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      justify-items: center;
+      p {
+        color: #FFFFFF;
+        margin: 0px;
+      }
+      h3 {
+        font-size: 16px;
+        margin: 0px;
+      }
       :hover {
-        background-color: ${props => props.theme.colors.carouselHover};;
+        background-color: ${props => props.theme.colors.carouselColor};
         cursor: pointer;
       }
     }
    }
   .slick-current {
     transform: scale(1.12);
+    div div div {
+      background-color: ${props => props.theme.colors.accentColor};
+    }
+  }
+  .slick-dots {
+    bottom: 0px;
   }
 `;
 
-export default function ResultsCarousel() {
-  // const { showResults, data, isLoading } = props;
+export default function ResultsCarousel(props) {
+  const { carouselFields } = props;
+  const slider = useRef(null);
+  
+  const sortedFields = carouselFields.sort((a, b) => {
+    if (a.competences && b.competences) {
+      // ASC  -> a.length - b.length
+      // DESC -> b.length - a.length
+      return b.competences.length - a.competences.length;
+    }
+    return null;
+  });
+  // Move Slick carousel to first slide, initialSlide not working
+  if (slider && slider.current && slider.current.slickGoTo) {
+    slider.current.slickGoTo(0);
+  } 
 
   const settings = {
     dots: true,
@@ -57,7 +97,6 @@ export default function ResultsCarousel() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    initialSlide: 0,
     accessibility: true,
     swipeToSlide: true,
     focusOnSelect: true,
@@ -91,37 +130,17 @@ export default function ResultsCarousel() {
 
   return (
     <S.ResultsCarousel>
-      <Slider {...settings}>
-      <div className="carousel-item">
-        <div>
-          <h3>1</h3>
-        </div>
-      </div>
-        <div className="carousel-item">
-        <div>
-        <h3>2</h3>
-        </div>
-      </div>
-        <div className="carousel-item">
-        <div>
-        <h3>3</h3>
-          </div>
-      </div>
-        <div className="carousel-item">
-        <div>
-        <h3>4</h3>
-          </div>
-      </div>
-        <div className="carousel-item">
-        <div>
-        <h3>5</h3>
-          </div>
-      </div>
-        <div className="carousel-item">
-        <div>
-        <h3>6</h3>
-        </div>
-      </div>
+      <Slider ref={slider} {...settings}>
+        {sortedFields.map((slide, index) => {
+          return (
+            <div className="carousel-item" key={slide}>
+              <div>
+                <h3>{slide.name_fi}</h3>
+                <p>({slide.competences.length})</p>
+              </div>
+            </div>
+          );
+        })}
     </Slider>
     </S.ResultsCarousel>
   )

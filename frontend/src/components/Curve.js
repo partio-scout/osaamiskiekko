@@ -29,7 +29,7 @@ path {
 `;
 
 export default function Curve(props) {
-  const { showResults, data, isLoading } = props;
+  const { showResults, data, isLoading, carouselFields } = props;
 
   const svgCurve = (color) =>
     <svg version="1.1" viewBox="0 0 1440 370" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ export default function Curve(props) {
         <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
         {svgCurve()}
         <div className="results-carousel">
-          <ResultsCarousel />
+        <ResultsCarousel carouselFields={carouselFields}/>
         </div>
     </S.Curve>
   )

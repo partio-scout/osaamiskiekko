@@ -22,12 +22,22 @@ const getCompetencedegreelinks = async () => {
   return competencedegreelinks.data;
 }
 
+const getCompetencedegreelinksWithId = async (id) => {
+  const competencedegreelinks = await axios(`${baseURL}/competencedegreelinks?competence.id=${id}`);
+  return competencedegreelinks.data;
+}
+
 const getCompetences = async () => {
   const competences = await axios(`${baseURL}/competences`);
   return competences.data;
 }
 
-const getFieldofstudies = async () => {
+const getFieldofstudiesWithId = async (id) => {
+  const fieldofstudies = await axios(`${baseURL}/fieldofstudies?id=${id}`);
+  return fieldofstudies.data;
+}
+
+const getFieldofstudies = async (id) => {
   const fieldofstudies = await axios(`${baseURL}/fieldofstudies`);
   return fieldofstudies.data;
 }
@@ -42,7 +52,9 @@ export {
   getOrganizations,
   getAcademicDegrees,
   getCompetencedegreelinks,
+  getCompetencedegreelinksWithId,
   getCompetences,
   getFieldofstudies,
+  getFieldofstudiesWithId,
   getNqfs
 };

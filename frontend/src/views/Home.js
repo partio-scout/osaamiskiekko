@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
+import * as Api from '../api/Api';
 
 const S = {};
 S.Home = styled.div`
@@ -17,18 +18,34 @@ S.Home = styled.div`
 
 const Home = () => {
   const { data, isLoading } = getSchoolsAndOrganizations();
+  const [carouselFields, setCarouselFields] = useState([]);
 
-  const showResults = (schoolOrOrganizationSelection, competenceOrDegreeSelection) => {
-    if (schoolOrOrganizationSelection && competenceOrDegreeSelection) {
-      console.log('Show results');
+  const getMatchingDegrees = async (competence) => {
+    const competences = await Api.getCompetencedegreelinksWithId(competence.id);
+    const fieldOfStudies = await Api.getFieldofstudies();
+    const nqfLevels = await Api.getNqfs();
+    const carouselFields = fieldOfStudies.map(field => ({
+      ...field, 
+      competences: competences.filter(competence => competence.academicdegree.fieldofstudy === field.id)
+    }));
+    setCarouselFields(carouselFields);
+  }
+
+  const showResults = (institution, competenceOrDegreeSelection) => {
+    if (institution && competenceOrDegreeSelection) {
+      if (institution.type_en === 'Organization') {
+        getMatchingDegrees(competenceOrDegreeSelection);
+      }
     }
-    console.log('competenceOrDegreeSelection', competenceOrDegreeSelection);
-    console.log('schoolOrOrganizationSelection', schoolOrOrganizationSelection);
   }
 
   return (
     <S.Home>
-      <Header showResults={showResults} data={data} isLoading={isLoading} />
+      <Header 
+        showResults={showResults}
+        data={data} 
+        isLoading={isLoading}
+        carouselFields={carouselFields}/>
       <div className="content-area">
           content area
       </div>

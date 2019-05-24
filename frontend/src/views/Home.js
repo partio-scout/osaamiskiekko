@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
-import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
+import getInstitutions from '../api/GetInstitutions';
 
 const S = {};
 S.Home = styled.div`
@@ -16,7 +16,7 @@ S.Home = styled.div`
 `;
 
 const Home = () => {
-  const { data, isLoading } = getSchoolsAndOrganizations();
+  const { data, isLoading } = getInstitutions();
 
   const showResults = (schoolOrOrganizationSelection, competenceOrDegreeSelection) => {
     if (schoolOrOrganizationSelection && competenceOrDegreeSelection) {

@@ -37,7 +37,6 @@ S.ResultsCarousel = styled.div`
      outline: none;
      div {
       font-size: 18px;	
-      font-weight: bold;	
       line-height: 24px;	
       text-align: center;
       border-radius: 8px;	
@@ -52,10 +51,13 @@ S.ResultsCarousel = styled.div`
       p {
         color: #FFFFFF;
         margin: 0px;
+        font-size: 18px;
+        font-weight: initial;
       }
       h3 {
-        font-size: 16px;
+        font-size: 18px;
         margin: 0px;
+        font-weight: initial;
       }
       :hover {
         background-color: ${props => props.theme.colors.carouselColor};
@@ -67,6 +69,10 @@ S.ResultsCarousel = styled.div`
     transform: scale(1.12);
     div div div {
       background-color: ${props => props.theme.colors.accentColor};
+      h3, p {
+        font-size: 18px;	
+        font-weight: bold;	
+      }
     }
   }
   .slick-dots {

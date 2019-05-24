@@ -20,10 +20,13 @@ const Home = () => {
   const { data, isLoading } = getSchoolsAndOrganizations();
   const [carouselFields, setCarouselFields] = useState([]);
 
+  const getSelectedCarouselField = (field) => {
+    console.log('FIELD', field);
+  }
+
   const getMatchingDegrees = async (competence) => {
     const competences = await Api.getCompetencedegreelinksWithId(competence.id);
     const fieldOfStudies = await Api.getFieldofstudies();
-    const nqfLevels = await Api.getNqfs();
     const carouselFields = fieldOfStudies.map(field => ({
       ...field, 
       competences: competences.filter(competence => competence.academicdegree.fieldofstudy === field.id)
@@ -45,7 +48,8 @@ const Home = () => {
         showResults={showResults}
         data={data} 
         isLoading={isLoading}
-        carouselFields={carouselFields}/>
+        carouselFields={carouselFields}
+        getSelectedCarouselField={getSelectedCarouselField}/>
       <div className="content-area">
           content area
       </div>

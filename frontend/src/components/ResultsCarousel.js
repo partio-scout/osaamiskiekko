@@ -81,7 +81,7 @@ S.ResultsCarousel = styled.div`
 `;
 
 export default function ResultsCarousel(props) {
-  const { carouselFields } = props;
+  const { carouselFields, getSelectedCarouselField } = props;
   const slider = useRef(null);
   
   const sortedFields = carouselFields.sort((a, b) => {
@@ -96,6 +96,7 @@ export default function ResultsCarousel(props) {
   if (slider && slider.current && slider.current.slickGoTo) {
     slider.current.slickGoTo(0);
   } 
+  getSelectedCarouselField(sortedFields[0]);
 
   const settings = {
     dots: true,
@@ -139,7 +140,7 @@ export default function ResultsCarousel(props) {
       <Slider ref={slider} {...settings}>
         {sortedFields.map((slide, index) => {
           return (
-            <div className="carousel-item" key={slide}>
+            <div className="carousel-item" key={slide} onClick={() => getSelectedCarouselField(slide)}>
               <div>
                 <h3>{slide.name_fi}</h3>
                 <p>({slide.competences.length})</p>

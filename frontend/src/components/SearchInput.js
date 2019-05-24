@@ -37,7 +37,6 @@ input::placeholder {
   opacity: 1;
   font-size: 20px;	
   line-height: 30px;
-  /* color: #202020; */
 }
 
 .fa-search { 

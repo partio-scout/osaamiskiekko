@@ -18,27 +18,33 @@ label {
   color: ${props => props.theme.colors.osaamisKiekkoBlue};
   font-size: 16px;	
   letter-spacing: 2.29px;
-  line-height: 15px;
+  line-height: 0px;
 }
 
 input {
   height: 32px;
   border: none;
   border-bottom: 2px solid ${props => props.theme.colors.osaamisKiekkoBlue};
-  padding-left: 22px;
+  padding-left: 32px;
   outline-width: 0;
   outline: none;
+  font-size: 20px;	
+  line-height: 30px;
 }
 
 input::placeholder {
   color: ${props => props.theme.colors.osaamisKiekkoBlue};
   opacity: 1;
+  font-size: 20px;	
+  line-height: 30px;
+  /* color: #202020; */
 }
 
 .fa-search { 
   position: absolute;
   left: 0px;
-  top: 27px;
+  top: 23px;
+  font-size: 22px;
   color: ${props => props.theme.colors.osaamisKiekkoBlue};
 }
 `;

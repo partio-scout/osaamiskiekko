@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import * as Api from '../api/Api';
+import ListSchools from '../components/ListSchools';
 
 const S = {};
 S.Home = styled.div`
@@ -19,14 +20,26 @@ S.Home = styled.div`
 const Home = () => {
   const { data, isLoading } = getSchoolsAndOrganizations();
   const [carouselFields, setCarouselFields] = useState([]);
+  const [selectedCarouselField, setSelectedCarouselField] = useState({});
+  const [nqfLevels, setNqfLevels] = useState(null);
+  const [fieldOfStudies, setFieldOfStudies] = useState(null);
+
+   useEffect(() => {
+     const fetchFieldsAndNqfData = async () => {
+       const nqfs = await Api.getNqfs();
+       setNqfLevels(nqfs);
+       const fieldOfStudies = await Api.getFieldofstudies();
+       setFieldOfStudies(fieldOfStudies);
+     }
+     fetchFieldsAndNqfData();
+   }, []);
 
   const getSelectedCarouselField = (field) => {
-    console.log('FIELD', field);
+    setSelectedCarouselField(field)
   }
 
   const getMatchingDegrees = async (competence) => {
     const competences = await Api.getCompetencedegreelinksWithId(competence.id);
-    const fieldOfStudies = await Api.getFieldofstudies();
     const carouselFields = fieldOfStudies.map(field => ({
       ...field, 
       competences: competences.filter(competence => competence.academicdegree.fieldofstudy === field.id)
@@ -51,7 +64,10 @@ const Home = () => {
         carouselFields={carouselFields}
         getSelectedCarouselField={getSelectedCarouselField}/>
       <div className="content-area">
-          content area
+        {
+          selectedCarouselField &&
+          <ListSchools selectedCarouselField={selectedCarouselField} nqfLevels={nqfLevels}/>
+        }
       </div>
     </S.Home>
   );

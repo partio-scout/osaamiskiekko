@@ -1,25 +1,7 @@
-// Hyväksiluku: competencedegreelinks
-// Koulutusala: Fieldofstudy
-// Järjestökoulutis: competence
-// Akateeminen koulutus: academicdegree
-// Oppilaitos: School
-// Järjestö: Organization
-// Hyväksilukujen tarkastelu
-//   - Kun järjestökoulutus on valittu
-//     - (Field of Studyt ja NQF - tasot on haettu aiemmin)
-// - Hae hyväksiluvut jossa competence.id vastaa valittua järjestökoulutusta
-//   - (/api/competencedegreelinks ? compentece.id = 123)
-//   - Pura hyväksiluvut field of studyn mukaisiin listoihin
-//     - Fieldofstudy.map -> {..fieldofstudy, links: links.find(link.academicdegree ==
-//     = fieldofstudy.id)
-//       - Renderöi listat karusellielementtiin: Koulutusalan nimi + linkkien määrä
-//         - Aktivoi eniten linkkejä sisältävä karusellielementtiin
-//           - Renderöi koulutusalan linkit linkkilistaksi NQF - tasoittain.
-
-
 import React, { useRef } from "react";
 import Slider from "react-slick";
 import styled from 'styled-components';
+import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -83,6 +65,7 @@ S.ResultsCarousel = styled.div`
 export default function ResultsCarousel(props) {
   const { carouselFields, getSelectedCarouselField } = props;
   const slider = useRef(null);
+  const globalState = useGlobalStateContext();
   
   const sortedFields = carouselFields.sort((a, b) => {
     if (a.competences && b.competences) {
@@ -142,7 +125,7 @@ export default function ResultsCarousel(props) {
           return (
             <div className="carousel-item" key={slide} onClick={() => getSelectedCarouselField(slide)}>
               <div>
-                <h3>{slide.name_fi}</h3>
+                <h3>{slide[`name_${globalState.language}`]}</h3>
                 <p>({slide.competences.length})</p>
               </div>
             </div>

@@ -66,11 +66,6 @@ export default function ResultsCarousel(props) {
   const { sortedCarouselFields, setSelectedCarouselField } = props;
   const slider = useRef(null);
   const globalState = useGlobalStateContext();
-  
-  // Move Slick carousel to first slide, initialSlide not working
-  if (slider && slider.current && slider.current.slickGoTo) {
-    slider.current.slickGoTo(0);
-  }
 
   const settings = {
     dots: true,
@@ -82,9 +77,7 @@ export default function ResultsCarousel(props) {
     swipeToSlide: true,
     focusOnSelect: true,
     afterChange(index) {
-      // console.log('wat', index);
-      // console.log('sortedCarouselFields', sortedCarouselFields);
-      // setSelectedCarouselField(sortedCarouselFields[index]);
+      setSelectedCarouselField(sortedCarouselFields[index]);
     },
     responsive: [
       {
@@ -117,7 +110,7 @@ export default function ResultsCarousel(props) {
   return (
     <S.ResultsCarousel>
       <Slider ref={slider} {...settings}>
-        {sortedCarouselFields.map((slide, index) => {
+        {sortedCarouselFields.map((slide) => {
           return (
             <div className="carousel-item" key={slide} onClick={() => setSelectedCarouselField(slide)}>
               <div>

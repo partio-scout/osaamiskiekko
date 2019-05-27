@@ -47,14 +47,12 @@ const Home = () => {
     setSortedSchoolList(sortedSchoolList);
   } 
 
-  const setSelectedCarouselField = (field) => {
-    sortSchools(field);
-  }
+  const setSelectedCarouselField = field => sortSchools(field);
 
   const sortCarouselItems = (carouselFields) => {
     const sortedFields = orderBy(carouselFields, [(item) => item.competences.length], ['desc'])
     setSortedCarouselFields(sortedFields);
-    setSelectedCarouselField(sortedFields[0]);
+    sortSchools(sortedFields[0]);
   }
 
   const getMatchingDegrees = async (competence) => {

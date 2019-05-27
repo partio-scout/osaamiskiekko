@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-import ThemeSelector from './ThemeSelector';
+// import ThemeSelector from './ThemeSelector';
 import LanguageSelector from './LanguageSelector';
 
 const S = {};
@@ -44,7 +44,6 @@ ul {
   }
 }
 
-
   @media only screen and (max-width: 600px) { 
     grid-template-columns: 1fr auto;
     ul {
@@ -57,19 +56,29 @@ export default function Navigation() {
     return (
       <S.Navigation>
           <ul className="menu-left">
-            <img src={`${window.location.origin}/icons/favicon-32x32.png`} alt="logo" />
-            <li><Link to="/">
-              <FormattedMessage id="nav.osaamiskiekko"/>
-            </Link></li>
-            <li><Link to="/tietoa">
-              <FormattedMessage id="nav.tietoa"/>
-            </Link></li>
-            <li><Link to="/otayhteytta">
-              <FormattedMessage id="nav.otayhteytta"/>
-            </Link></li>
+            <img src={`${window.location.origin}/icons/favicon-32x32.png`} alt="" />
+            <li>
+              <Link to="/">
+                <FormattedMessage id="nav.osaamiskiekko"/>
+              </Link>
+            </li>
+            <li>
+              <Link to="/ahot/1">
+                TEST: Hyväksilukusivu
+              </Link>
+            </li>
+            <li>
+              <Link to="/tietoa">
+                <FormattedMessage id="nav.tietoa"/>
+              </Link></li>
+            <li>
+              <Link to="/otayhteytta">
+                <FormattedMessage id="nav.otayhteytta"/>
+              </Link>
+            </li>
           </ul>
           <ul className="menu-right">
-            <li><ThemeSelector /></li>
+            {/* <li><ThemeSelector /></li> */}
             <li><LanguageSelector /></li>
           </ul>
       </S.Navigation>

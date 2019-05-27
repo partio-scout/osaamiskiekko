@@ -7,12 +7,12 @@ import HeaderImage from '../images/headerimage.jpg';
 
 const S = {};
 S.Header = styled.header`
- margin: auto;
- display: grid;
- grid-template-areas: "nav nav" 
-                      "text image"
-                      "search search"
-                      "curve curve";
+margin: auto;
+display: grid;
+grid-template-areas: "nav nav" 
+                     "text image"
+                     "search search"
+                     "curve curve";
 grid-template-columns: 4fr 4fr;
 
 .header-text {

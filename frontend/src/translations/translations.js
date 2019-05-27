@@ -18,6 +18,12 @@ export default {
     "themes.green": "Coniferous forest",
     "institution.type.school": 'School',
     "institution.type.organization": 'Organization',
+    "creditinginfo.notfound": "Crediting info not available",
+    "creditinginfo.scope": "Scope",
+    "creditinginfo.level": "Level",
+    "creditinginfo.degreedescription": "Degree description",
+    "creditinginfo.competencedescription": "Training description",
+    "creditinginfo.back": "Back to search"
   },
   "fi": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -38,6 +44,12 @@ export default {
     "themes.green": "Sammal",
     "institution.type.school": 'Oppilaitos',
     "institution.type.organization": 'School',
+    "creditinginfo.notfound": "Hyväksilukutieto ei ole saatavilla",
+    "creditinginfo.scope": "Laajuus",
+    "creditinginfo.level": "Taso",
+    "creditinginfo.degreedescription": "Tutkinnon kuvaus",
+    "creditinginfo.competencedescription": "Koulutuksen kuvaus",
+    "creditinginfo.back": "Takaisin hakuun"
   },
   "sv": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -58,6 +70,11 @@ export default {
     "themes.green": "Moss matta",
     "institution.type.school": 'School',
     "institution.type.organization": 'Organisation',
-
+    "creditinginfo.notfound": "Hyväksilukutieto ei saatavilla_sv",
+    "creditinginfo.scope": "Laajuus_sv",
+    "creditinginfo.level": "Taso_sv",
+    "creditinginfo.degreedescription": "Tutkinnon kuvaus_sv",
+    "creditinginfo.competencedescription": "Koulutuksen kuvaus_sv",
+    "creditinginfo.back": "Takaisin hakuun_sv"
   }
 };

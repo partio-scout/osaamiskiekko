@@ -23,7 +23,8 @@ export default {
     "creditinginfo.level": "Level",
     "creditinginfo.degreedescription": "Degree description",
     "creditinginfo.competencedescription": "Training description",
-    "creditinginfo.back": "Back to search"
+    "creditinginfo.back": "Back to search",
+    "creditinginfo.readmore": "Read more on the school's website"
   },
   "fi": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -49,7 +50,8 @@ export default {
     "creditinginfo.level": "Taso",
     "creditinginfo.degreedescription": "Tutkinnon kuvaus",
     "creditinginfo.competencedescription": "Koulutuksen kuvaus",
-    "creditinginfo.back": "Takaisin hakuun"
+    "creditinginfo.back": "Takaisin hakuun",
+    "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta"
   },
   "sv": {
     "nav.osaamiskiekko": "Osaamiskiekko",
@@ -75,6 +77,7 @@ export default {
     "creditinginfo.level": "Taso_sv",
     "creditinginfo.degreedescription": "Tutkinnon kuvaus_sv",
     "creditinginfo.competencedescription": "Koulutuksen kuvaus_sv",
-    "creditinginfo.back": "Takaisin hakuun_sv"
+    "creditinginfo.back": "Takaisin hakuun_sv",
+    "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta_sv"
   }
 };

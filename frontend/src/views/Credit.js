@@ -32,12 +32,21 @@ position: relative;
 
 .content {
   margin-top: 3rem;
-  padding: 0 14rem;
+  padding: 0 15%;
   position: relative;
 }
 
 @media only screen and (max-width: 860px) {
   padding: 0px;
+
+  .navigation {
+    padding: 0 1rem;
+  }
+
+  .content {
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
 } 
 `;
 

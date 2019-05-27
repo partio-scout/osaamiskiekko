@@ -19,10 +19,10 @@ S.Home = styled.div`
 
 const Home = () => {
   const { data, isLoading } = getSchoolsAndOrganizations();
-  const [carouselFields, setCarouselFields] = useState([]);
-  const [selectedCarouselField, setSelectedCarouselField] = useState({});
+  const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [nqfLevels, setNqfLevels] = useState(null);
   const [fieldOfStudies, setFieldOfStudies] = useState(null);
+  const [sortedSchoolList, setSortedSchoolList] = useState([]);
 
    useEffect(() => {
      const fetchFieldsAndNqfData = async () => {
@@ -34,8 +34,44 @@ const Home = () => {
      fetchFieldsAndNqfData();
    }, []);
 
-  const getSelectedCarouselField = (field) => {
-    setSelectedCarouselField(field)
+  const sortSchools = async (selectedCarouselField) => {
+    // const nqfs = await Api.getNqfs();
+    const schoolList = nqfLevels.map(level => {
+      const lvl = parseInt(level.level);
+      return {
+        ...level,
+        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === lvl)
+      }
+     });
+
+    const sortedSchoolList = schoolList.sort((a, b) => {
+      if (a.degree && b.degree) {
+        // ASC  -> a.length - b.length
+        // DESC -> b.length - a.length
+        return b.degree.length - a.degree.length;
+      }
+      return null;
+    });
+    // setSelectedCarouselField(sortedSchoolList[0])
+    setSortedSchoolList(sortedSchoolList);
+   console.log('järkäs', sortedSchoolList);
+  } 
+
+  const setSelectedCarouselField = (field) => {
+    sortSchools(field);
+  }
+
+  const sortCarouselItems = (carouselFields) => {
+    const sortedFields = carouselFields.sort((a, b) => {
+      if (a.competences && b.competences) {
+        // ASC  -> a.length - b.length
+        // DESC -> b.length - a.length
+        return b.competences.length - a.competences.length;
+      }
+      return null;
+    });
+    setSortedCarouselFields(sortedFields);
+    setSelectedCarouselField(sortedFields[0]);
   }
 
   const getMatchingDegrees = async (competence) => {
@@ -44,7 +80,8 @@ const Home = () => {
       ...field, 
       competences: competences.filter(competence => competence.academicdegree.fieldofstudy === field.id)
     }));
-    setCarouselFields(carouselFields);
+    // setCarouselFields(carouselFields);
+    sortCarouselItems(carouselFields);
   }
 
   const showResults = (institution, competenceOrDegreeSelection) => {
@@ -61,13 +98,10 @@ const Home = () => {
         showResults={showResults}
         data={data} 
         isLoading={isLoading}
-        carouselFields={carouselFields}
-        getSelectedCarouselField={getSelectedCarouselField}/>
+        sortedCarouselFields={sortedCarouselFields}
+        setSelectedCarouselField={setSelectedCarouselField}/>
       <div className="content-area">
-        {
-          selectedCarouselField &&
-          <ListSchools selectedCarouselField={selectedCarouselField} nqfLevels={nqfLevels}/>
-        }
+        <ListSchools sortedSchoolList={sortedSchoolList} />
       </div>
     </S.Home>
   );

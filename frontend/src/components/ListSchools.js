@@ -1,29 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import SchoolItem from './SchoolItem';
 
 const S = {};
 S.ListSchools = styled.div`
 
+h1 {
+  text-align: center;
+}
 `;
 
 const ListSchools = (props) => {
-  const { selectedCarouselField, nqfLevels } = props;
-
-  if (selectedCarouselField && nqfLevels) {
-    const schoolList = nqfLevels.map(level => {
-      const lvl = parseInt(level.level);
-      return {
-        ...level,
-        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === lvl)
-      }
-     });
-    console.log('schoolList', schoolList)
-  }
-
+  const { sortedSchoolList } = props;
+  const globalState = useGlobalStateContext();
 
   return (
     <S.ListSchools>
-      {/* {selectedCarouselField.} */}
+      {sortedSchoolList.map(school => school.degree.length > 0 &&
+        <div key={school.id}>
+        <h1>{school[`name_${globalState.language}`]} ({school.degree.length})</h1>
+          {school.degree.map(degree => <SchoolItem key={degree.id} degree={degree}/>)}
+        </div>
+        )}
     </S.ListSchools>
   );
 }

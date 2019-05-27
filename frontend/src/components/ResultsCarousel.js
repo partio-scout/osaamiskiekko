@@ -63,23 +63,14 @@ S.ResultsCarousel = styled.div`
 `;
 
 export default function ResultsCarousel(props) {
-  const { carouselFields, getSelectedCarouselField } = props;
+  const { sortedCarouselFields, setSelectedCarouselField } = props;
   const slider = useRef(null);
   const globalState = useGlobalStateContext();
   
-  const sortedFields = carouselFields.sort((a, b) => {
-    if (a.competences && b.competences) {
-      // ASC  -> a.length - b.length
-      // DESC -> b.length - a.length
-      return b.competences.length - a.competences.length;
-    }
-    return null;
-  });
   // Move Slick carousel to first slide, initialSlide not working
   if (slider && slider.current && slider.current.slickGoTo) {
     slider.current.slickGoTo(0);
-  } 
-  getSelectedCarouselField(sortedFields[0]);
+  }
 
   const settings = {
     dots: true,
@@ -121,9 +112,9 @@ export default function ResultsCarousel(props) {
   return (
     <S.ResultsCarousel>
       <Slider ref={slider} {...settings}>
-        {sortedFields.map((slide, index) => {
+        {sortedCarouselFields.map((slide, index) => {
           return (
-            <div className="carousel-item" key={slide} onClick={() => getSelectedCarouselField(slide)}>
+            <div className="carousel-item" key={slide} onClick={() => setSelectedCarouselField(slide)}>
               <div>
                 <h3>{slide[`name_${globalState.language}`]}</h3>
                 <p>({slide.competences.length})</p>

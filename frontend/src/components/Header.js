@@ -67,7 +67,7 @@ p.important {
 `;
 
 export default function Header(props) {
-  const { showResults, data, isLoading, carouselFields, getSelectedCarouselField } = props;
+  const { showResults, data, isLoading, sortedCarouselFields, setSelectedCarouselField } = props;
 
   return (
     <S.Header>
@@ -88,8 +88,8 @@ export default function Header(props) {
         showResults={showResults} 
         data={data} 
         isLoading={isLoading} 
-        carouselFields={carouselFields}
-        getSelectedCarouselField={getSelectedCarouselField}/>
+        sortedCarouselFields={sortedCarouselFields}
+        setSelectedCarouselField={setSelectedCarouselField}/>
     </S.Header>
   )
 }

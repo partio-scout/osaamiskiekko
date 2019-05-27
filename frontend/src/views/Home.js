@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import * as Api from '../api/Api';
 import ListSchools from '../components/ListSchools';
+import { orderBy } from 'lodash';
 
 const S = {};
 S.Home = styled.div`
@@ -34,8 +35,7 @@ const Home = () => {
      fetchFieldsAndNqfData();
    }, []);
 
-  const sortSchools = async (selectedCarouselField) => {
-    // const nqfs = await Api.getNqfs();
+  const sortSchools = selectedCarouselField => {
     const schoolList = nqfLevels.map(level => {
       const lvl = parseInt(level.level);
       return {
@@ -43,18 +43,8 @@ const Home = () => {
         degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === lvl)
       }
      });
-
-    const sortedSchoolList = schoolList.sort((a, b) => {
-      if (a.degree && b.degree) {
-        // ASC  -> a.length - b.length
-        // DESC -> b.length - a.length
-        return b.degree.length - a.degree.length;
-      }
-      return null;
-    });
-    // setSelectedCarouselField(sortedSchoolList[0])
+    const sortedSchoolList = orderBy(schoolList, [(item) => item.degree.length], ['desc'])
     setSortedSchoolList(sortedSchoolList);
-   console.log('järkäs', sortedSchoolList);
   } 
 
   const setSelectedCarouselField = (field) => {
@@ -62,14 +52,7 @@ const Home = () => {
   }
 
   const sortCarouselItems = (carouselFields) => {
-    const sortedFields = carouselFields.sort((a, b) => {
-      if (a.competences && b.competences) {
-        // ASC  -> a.length - b.length
-        // DESC -> b.length - a.length
-        return b.competences.length - a.competences.length;
-      }
-      return null;
-    });
+    const sortedFields = orderBy(carouselFields, [(item) => item.competences.length], ['desc'])
     setSortedCarouselFields(sortedFields);
     setSelectedCarouselField(sortedFields[0]);
   }
@@ -80,7 +63,6 @@ const Home = () => {
       ...field, 
       competences: competences.filter(competence => competence.academicdegree.fieldofstudy === field.id)
     }));
-    // setCarouselFields(carouselFields);
     sortCarouselItems(carouselFields);
   }
 

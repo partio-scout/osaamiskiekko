@@ -7,7 +7,9 @@ const S = {};
 S.ListSchools = styled.div`
 
 h1 {
-  text-align: center;
+  padding: 34px 0px 34px 0px;
+  margin: auto;
+  width: 654px;
 }
 `;
 

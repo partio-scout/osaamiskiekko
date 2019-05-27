@@ -81,6 +81,11 @@ export default function ResultsCarousel(props) {
     accessibility: true,
     swipeToSlide: true,
     focusOnSelect: true,
+    afterChange(index) {
+      // console.log('wat', index);
+      // console.log('sortedCarouselFields', sortedCarouselFields);
+      // setSelectedCarouselField(sortedCarouselFields[index]);
+    },
     responsive: [
       {
         breakpoint: 1024,

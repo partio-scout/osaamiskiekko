@@ -15,6 +15,12 @@ S.SchoolItem = styled.div`
   width: 587px;
   margin-bottom: 16px;
   max-height: 25px;
+  transition: 0.2s;
+  :hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 
   h2 {
     font-size: 18px;
@@ -36,7 +42,6 @@ S.SchoolItem = styled.div`
 const SchoolItem = (props) => {
   const { degree } = props;
   const globalState = useGlobalStateContext();
-  console.log('degree', degree);
 
   return (
     <S.SchoolItem>

@@ -64,15 +64,19 @@ S.Navigation = styled.nav`
         width: 48px;
         height: 48px;
         margin-left: 12px;
+        z-index: 999;
       }
       .nav-icon {
+        margin: 1em;
+        width: 40px;
+        z-index: 999;
         display: block;
         float: right;
       }
       .navbar_items {
         display: block;
-        margin-top: 75px;
-        box-shadow: -10px 10px 15px 0px rgba(0,0,0,0.29);
+        margin-top: 35px;
+        box-shadow: -6px 10px 15px -15px;
         border-bottom-left-radius:75px;
         max-height: 1px;
         position: fixed;
@@ -92,6 +96,9 @@ S.Navigation = styled.nav`
             cursor: pointer;
             text-align: center;
             width: 100%;
+            a {
+              font-weight: normal
+            }
           }
         }
       }
@@ -101,11 +108,6 @@ S.Navigation = styled.nav`
         animation: slide-down 0.5s ease-in;
       }
     }
-  }
-
-  .nav-icon {
-    margin: 1em;
-    width: 40px;
   }
   
   .nav-icon:after, 

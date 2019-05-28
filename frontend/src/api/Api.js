@@ -31,6 +31,11 @@ const getCompetences = async () => {
   return competences.data;
 }
 
+const getFieldofstudiesWithId = async (id) => {
+  const fieldofstudies = await axios.get(`${baseURL}/fieldofstudies?id=${id}`);
+  return fieldofstudies.data;
+}
+
 const getFieldofstudies = async () => {
   const fieldofstudies = await axios.get(`${baseURL}/fieldofstudies`);
   return fieldofstudies.data;
@@ -49,5 +54,6 @@ export {
   getCompetenceDegreeLink,
   getCompetences,
   getFieldofstudies,
+  getFieldofstudiesWithId,
   getNqfs
 };

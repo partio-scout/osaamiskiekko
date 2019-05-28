@@ -141,30 +141,51 @@ export default function CreditingInfo(props) {
           <div className='header' >
             <button><FormattedMessage id="creditinginfo.back" /></button>
           </div>
-          <div className='degree-info' >
-            <h2>{creditingData.academicdegree[`name_${globalState.language}`]}</h2>
-            {creditingData.academicdegree.credits &&
-              <p className='scope'>
-                <FormattedMessage id="creditinginfo.scope" />: 
-              {' '}
-                {creditingData.academicdegree.credits} op
-              </p>
-            }
-            {creditingData.academicdegree.nqf &&
-              <p className='level'>
-                TODO <FormattedMessage id="creditinginfo.level" />:
-                {' '}
-                {creditingData.academicdegree.nqf}
-              </p>
-            }
-          </div>
-          <div className='degree-description' >
-            <h2><FormattedMessage id="creditinginfo.degreedescription" /></h2>
-            <p>{creditingData.academicdegree[`description_${globalState.language}`]}</p>
-          </div>
+          { creditingData.academicdegree 
+            ? <>
+              <div className='degree-info' >
+                <h2>
+                  {creditingData.academicdegree[`name_${globalState.language}`]
+                    ? creditingData.academicdegree[`name_${globalState.language}`]
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                </h2>
+                <p className='scope'>
+                  <FormattedMessage id="creditinginfo.scope" />: 
+                  {' '}
+                  {creditingData.academicdegree.credits 
+                    ? `${creditingData.academicdegree.credits} op`
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                </p>
+                <p className='level'>
+                  TODO <FormattedMessage id="creditinginfo.level" />:
+                  {' '}
+                  {creditingData.academicdegree.nqf 
+                    ? `${creditingData.academicdegree.nqf}`
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                  </p>
+              </div>
+              <div className='degree-description' >
+                <h2><FormattedMessage id="creditinginfo.degreedescription" /></h2>
+                <p>
+                  {creditingData.academicdegree[`description_${globalState.language}`]
+                    ? creditingData.academicdegree[`description_${globalState.language}`]
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                </p>
+              </div>
+            </>
+            : <div className='degree-info' >
+              <h2>
+                <FormattedMessage id='creditinginfo.notfound' />
+              </h2>
+            </div>
+          }
           <div className='credit-info' >
             <div className='floating-box'>
-              <p>{creditingData[`description_${globalState.language}`]}</p>
+              <p>
+                  {creditingData[`description_${globalState.language}`]
+                    ? creditingData[`description_${globalState.language}`]
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                </p>
               {creditingData.url &&
               <p className='readmore'>
                 <a href={creditingData.url}>
@@ -174,27 +195,45 @@ export default function CreditingInfo(props) {
             }
             </div>
           </div>
-          <div className='competence-info' >
-            <h2>{creditingData.competence[`name_${globalState.language}`]}</h2>
-            {creditingData.competence.credits &&
-              <p className='scope'>
-                <FormattedMessage id="creditinginfo.scope" />: 
-              {' '}
-                {creditingData.competence.credits} op
-              </p>
-            }
-            {creditingData.competence.nqf &&
-              <p className='level'>
-                TODO <FormattedMessage id="creditinginfo.level" />:
-                {' '}
-                {creditingData.competence.nqf}
-              </p>
-            }
-          </div>
-          <div className='competence-description' >
-            <h2><FormattedMessage id="creditinginfo.competencedescription" /></h2>
-            <p>{creditingData.competence[`description_${globalState.language}`]}</p>
-          </div>
+          {creditingData.competence
+            ? <>
+              <div className='competence-info' >
+              <h2>
+                  {creditingData.competence[`name_${globalState.language}`]
+                    ? creditingData.competence[`name_${globalState.language}`]
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                </h2>
+                <p className='scope'>
+                  <FormattedMessage id="creditinginfo.scope" />: 
+                  {' '}
+                  {creditingData.competence.credits 
+                    ? `${creditingData.competence.credits} op`
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                </p>
+                <p className='level'>
+                  TODO <FormattedMessage id="creditinginfo.level" />:
+                  {' '}
+                  {creditingData.competence.nqf 
+                    ? `${creditingData.competence.nqf}`
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                  </p>
+              </div>
+              <div className='competence-description' >
+                <h2><FormattedMessage id="creditinginfo.competencedescription" /></h2>
+                <p>
+                  {creditingData.competence[`description_${globalState.language}`]
+                    ? creditingData.competence[`description_${globalState.language}`]
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                </p>
+              </div>
+            </>
+            : <div className='competence-info' >
+                <h2>
+                  <FormattedMessage id='creditinginfo.notfound' />
+                </h2>
+              </div>
+          }
+          
           <div className='footer' >
             <button>TODO TAKAISIN</button>
           </div>

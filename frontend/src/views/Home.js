@@ -34,7 +34,6 @@ const Home = () => {
       }
      });
     const sortedSchoolList = orderBy(schoolList, [(item) => item.degree.length], ['desc'])
-    console.log('wat', sortedSchoolList);
     setSortedSchoolList(sortedSchoolList);
   } 
 
@@ -44,7 +43,6 @@ const Home = () => {
     const sortedFields = orderBy(carouselFields, [(item) => item.competences.length], ['desc'])
     setSortedCarouselFields(sortedFields);
     sortSchools(sortedFields[0]);
-    console.log('karusellin paskat', sortedFields);
   }
 
   const getMatchingDegrees = async (competence) => {

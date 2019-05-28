@@ -12,18 +12,27 @@ S.Navigation = styled.nav`
   grid-column: nav;
 
   .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav-icon {
+      display: none;
+    }
+    img {
+      width: 32px;
+      height: 32px;
+      padding-right: 20px;
+    }
     .navbar_items {
+      width: 100%;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       .navbar_item {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        align-items: center;
         display: flex;
-        img {
-          padding-right: 20px;
-        }
         .navbar_subitem {
           padding: 24px 20px 24px 0px;
           display: inline-block;
@@ -50,41 +59,77 @@ S.Navigation = styled.nav`
 
   @media (max-width: 730px) { 
     .navbar {
-      padding-left: 0;
-      .burger {
-        width: 30px;
-        height: 30px;
+      align-items: baseline;
+      img {
+        width: 48px;
+        height: 48px;
+        margin-left: 12px;
+      }
+      .nav-icon {
+        display: block;
         float: right;
-        margin: 10px;
-        background-image: url("/icons/favicon-32x32.png");
       }
       .navbar_items {
-        box-shadow: -12px 15px 33px 0px rgba(0,0,0,0.29);
-        border-radius:0px 0px 0px 50px / 0px 0px 0px 50px;
+        display: block;
+        margin-top: 75px;
+        box-shadow: -10px 10px 15px 0px rgba(0,0,0,0.29);
+        border-bottom-left-radius:75px;
         max-height: 1px;
         position: fixed;
         display: none;
-        width: 100vw;
+        width: 100%;
         background-color: white;
-        z-index: 999;
         animation: slide-up 0.5s ease-in;
+        padding-bottom: 25px;
         .navbar_item {
           display: block;
+          img {
+            display: none;
+          }
           .navbar_subitem {
             padding: 14px 0px 14px 0px;
             display: block;
             cursor: pointer;
             text-align: center;
+            width: 100%;
           }
         }
       }
-    
       .visible {
         display: block;
         max-height: 90vh;
-        animation: slide-down 0.3s ease-in;
+        animation: slide-down 0.5s ease-in;
       }
     }
+  }
+
+  .nav-icon {
+    margin: 1em;
+    width: 40px;
+  }
+  
+  .nav-icon:after, 
+  .nav-icon:before, 
+  .nav-icon div {
+    background-color: black;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 5px;
+    margin: 7px 0;
+    transition: all .2s ease-in-out;
+  }
+
+  .nav-icon:hover:before {
+    transform: translateY(12px) rotate(135deg);
+  }
+  
+  .nav-icon:hover:after {
+    transform: translateY(-12px) rotate(-135deg);
+  }
+  
+  .nav-icon:hover div {
+    transform: scale(0);
   }
 
   @keyframes slide-down {
@@ -95,14 +140,14 @@ S.Navigation = styled.nav`
   
     100% {
       opacity: 1;
-      max-height: 90vh;
+      max-height: 100vh;
     }
   }
   
   @keyframes slide-up {
     0% {
       display: block;
-      max-height: 90vh;
+      max-height: 100vh;
     }
   
     100% {
@@ -122,9 +167,9 @@ export default function Navigation() {
   return (
     <S.Navigation>
       <div className="navbar">
+        <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt="logo" />
         <div className={classes}>
           <ul className="navbar_item">
-            <img src={`${window.location.origin}/icons/favicon-32x32.png`} alt="logo" />
             <li className="navbar_subitem"><Link to="/">
               <FormattedMessage id="nav.osaamiskiekko"/>
             </Link></li>
@@ -139,7 +184,9 @@ export default function Navigation() {
             <li className="navbar_subitem"><LanguageSelector /></li>
           </ul>
         </div>
-        <div className="burger" onClick={() => setNavmenuVisible(!navmenuVisible)} />
+        <div className="nav-icon" onClick={() => setNavmenuVisible(!navmenuVisible)}>
+          <div></div>
+        </div>
       </div>
     </S.Navigation>
   )

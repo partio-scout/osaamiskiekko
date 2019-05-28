@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
 import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import * as Api from '../api/Api';
 import ListSchools from '../components/ListSchools';
 import { orderBy } from 'lodash';
+import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
 const S = {};
 S.Home = styled.div`
@@ -21,22 +22,11 @@ S.Home = styled.div`
 const Home = () => {
   const { data, isLoading } = getSchoolsAndOrganizations();
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
-  const [nqfLevels, setNqfLevels] = useState(null);
-  const [fieldOfStudies, setFieldOfStudies] = useState(null);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
-
-   useEffect(() => {
-     const fetchFieldsAndNqfData = async () => {
-       const nqfs = await Api.getNqfs();
-       setNqfLevels(nqfs);
-       const fieldOfStudies = await Api.getFieldofstudies();
-       setFieldOfStudies(fieldOfStudies);
-     }
-     fetchFieldsAndNqfData();
-   }, []);
+  const globalState = useGlobalStateContext();
 
   const sortSchools = selectedCarouselField => {
-    const schoolList = nqfLevels.map(level => {
+    const schoolList = globalState.nqfLevels.map(level => {
       const lvl = parseInt(level.level);
       return {
         ...level,
@@ -57,7 +47,7 @@ const Home = () => {
 
   const getMatchingDegrees = async (competence) => {
     const competences = await Api.getCompetencedegreelinksWithId(competence.id);
-    const carouselFields = fieldOfStudies.map(field => ({
+    const carouselFields = globalState.fieldOfStudies.map(field => ({
       ...field, 
       competences: competences.filter(competence => competence.academicdegree.fieldofstudy === field.id)
     }));

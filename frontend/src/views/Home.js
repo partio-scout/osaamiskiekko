@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
-import getSchoolsAndOrganizations from '../api/GetSchoolsAndOrganizations';
 import * as Api from '../api/Api';
 import ListSchools from '../components/ListSchools';
 import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import getInstitutions from '../api/GetInstitutions';
 
 const S = {};
 S.Home = styled.div`
@@ -20,10 +20,10 @@ S.Home = styled.div`
 `;
 
 const Home = () => {
-  const { data, isLoading } = getSchoolsAndOrganizations();
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
   const globalState = useGlobalStateContext();
+  const { data, isLoading } = getInstitutions();
 
   const sortSchools = selectedCarouselField => {
     const schoolList = globalState.nqfLevels.map(level => {

@@ -5,6 +5,8 @@ import SchoolItem from './SchoolItem';
 
 const S = {};
 S.ListSchools = styled.div`
+  max-width: 660px;
+  margin: auto;
 
 h1 {
   padding: 34px 0px 34px 0px;

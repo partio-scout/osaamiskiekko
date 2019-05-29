@@ -90,6 +90,12 @@ S.Navigation = styled.nav`
             a {
               font-weight: normal;
             }
+            div {
+              background-color: white;
+              button {
+                background-color: white;
+              }
+            }
           }
         }
       }
@@ -136,7 +142,7 @@ S.Navigation = styled.nav`
 `;
 
 export default function Navigation() {
-  const [navmenuVisible, setNavmenuVisible] = useState(false)
+  const [navmenuVisible, setNavmenuVisible] = useState(true)
   const navbar_items = classnames({
     "navbar_items": true,
     "visible": navmenuVisible

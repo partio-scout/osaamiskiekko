@@ -7,6 +7,7 @@ const S = {};
 S.ListSchools = styled.div`
   max-width: 660px;
   margin: auto;
+  margin-bottom: 50px;
 
 h1 {
   padding: 34px 0px 34px 0px;

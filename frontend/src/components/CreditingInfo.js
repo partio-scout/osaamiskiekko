@@ -75,10 +75,24 @@ z-index: 20;
 .footer {
   grid-area: footer;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   button {
     margin: auto;
-    display: block;
+    font-size: 16px;	
+    line-height: 24px;	
+    text-align: center;
+    border-radius: 6px;	
+    color: ${props => props.theme.colors.textColorLight};
+    background-color: ${props => props.theme.colors.highlight};
+    padding: 1rem; 
+
+    span {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
   }
 }
 
@@ -253,7 +267,11 @@ export default function CreditingInfo(props) {
           }
           
           <div className='footer' >
-            <button>TODO TAKAISIN</button>
+            <Link to="/">
+              <button>
+                <FormattedMessage id="creditinginfo.back" />
+              </button>
+            </Link>
           </div>
         </>
       }

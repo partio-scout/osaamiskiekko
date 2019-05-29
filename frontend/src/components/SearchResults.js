@@ -4,7 +4,7 @@ import {useGlobalStateContext} from '../utils/GlobalStateContext';
 
 const S = {};
 S.ResultsItem = styled.li`
-  border-bottom: 1px solid #335362;
+  border-bottom: ${ props => `solid 1px ${props.theme.colors.textColor}` };
   padding: 10px 10px 10px 10px;
   :focus {
     outline: none;
@@ -12,7 +12,7 @@ S.ResultsItem = styled.li`
   }
 
   p {
-    color: #241C80;
+    color: ${props => props.theme.colors.textColor};
     margin: 5px;
   }
 

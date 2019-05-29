@@ -19,8 +19,8 @@ S.Curve = styled.div`
     margin-top: 100px;
   }
 
-  .results-carousel {
-    
+  svg {
+    min-height: 200px;
   }
 
 path {
@@ -45,9 +45,7 @@ export default function Curve(props) {
         <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
         {svgCurve()}
         { sortedCarouselFields && sortedCarouselFields.length > 0 &&
-        <div className="results-carousel">
           <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
-        </div>
         }
     </S.Curve>
   )

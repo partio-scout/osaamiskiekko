@@ -70,9 +70,7 @@ const Home = () => {
         isLoading={isLoading}
         sortedCarouselFields={sortedCarouselFields}
         setSelectedCarouselField={setSelectedCarouselField}/>
-      <div className="content-area">
-        <ListSchools sortedSchoolList={sortedSchoolList} />
-      </div>
+      <ListSchools sortedSchoolList={sortedSchoolList} />
     </S.Home>
   );
 }

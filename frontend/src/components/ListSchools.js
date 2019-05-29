@@ -8,11 +8,12 @@ S.ListSchools = styled.div`
   max-width: 660px;
   margin: auto;
   margin-bottom: 50px;
+  padding: 0px 20px 0px 20px;
 
 h1 {
   padding: 34px 0px 34px 0px;
   margin: auto;
-  width: 654px;
+  word-break: break-word;
 }
 `;
 

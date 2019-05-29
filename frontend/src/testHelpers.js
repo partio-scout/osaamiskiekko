@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import { ThemeProvider } from 'styled-components';
 
@@ -11,10 +12,12 @@ addLocaleData([...fi, translations]);
 export const wrapWithProviders = (component) => {
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <IntlProvider locale={'fi'} messages={translations['fi']}>
-        {component}
-      </IntlProvider>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={defaultTheme}>
+        <IntlProvider locale={'fi'} messages={translations['fi']}>
+          {component}
+        </IntlProvider>
+      </ThemeProvider>
+    </Router>
   );
 };

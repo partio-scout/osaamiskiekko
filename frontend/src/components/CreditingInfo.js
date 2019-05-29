@@ -125,6 +125,13 @@ export default function CreditingInfo(props) {
   const {creditingData, isLoading} = props;
   const globalState = useGlobalStateContext();
 
+  const degreeNqf = (creditingData && creditingData.academicdegree && globalState.nqfLevels 
+    ? globalState.nqfLevels.find(level => level.id === creditingData.academicdegree.nqf) 
+    : undefined);
+  const competenceNqf = (creditingData && creditingData.competence && globalState.nqfLevels
+    ? globalState.nqfLevels.find(level => level.id === creditingData.competence.nqf) 
+    : undefined);
+
   return (
     <S.CreditingInfo>
       {isLoading &&  
@@ -157,15 +164,15 @@ export default function CreditingInfo(props) {
                     : <FormattedMessage id='creditinginfo.notfound' />}
                 </p>
                 <p className='level'>
-                  TODO <FormattedMessage id="creditinginfo.level" />:
+                  <FormattedMessage id="creditinginfo.level" />:
                   {' '}
-                  {creditingData.academicdegree.nqf 
-                    ? `${creditingData.academicdegree.nqf}`
+                  {degreeNqf
+                    ? `${degreeNqf[`name_${globalState.language}`]} (NQF ${degreeNqf.level})`
                     : <FormattedMessage id='creditinginfo.notfound' />}
                   </p>
               </div>
               <div className='degree-description' >
-                <h2><FormattedMessage id="creditinginfo.degreedescription" /></h2>
+                <h3><FormattedMessage id="creditinginfo.degreedescription" /></h3>
                 <p>
                   {creditingData.academicdegree[`description_${globalState.language}`]
                     ? creditingData.academicdegree[`description_${globalState.language}`]
@@ -198,7 +205,7 @@ export default function CreditingInfo(props) {
           {creditingData.competence
             ? <>
               <div className='competence-info' >
-              <h2>
+                <h2>
                   {creditingData.competence[`name_${globalState.language}`]
                     ? creditingData.competence[`name_${globalState.language}`]
                     : <FormattedMessage id='creditinginfo.notfound' />}
@@ -211,15 +218,15 @@ export default function CreditingInfo(props) {
                     : <FormattedMessage id='creditinginfo.notfound' />}
                 </p>
                 <p className='level'>
-                  TODO <FormattedMessage id="creditinginfo.level" />:
+                  <FormattedMessage id="creditinginfo.level" />:
                   {' '}
-                  {creditingData.competence.nqf 
-                    ? `${creditingData.competence.nqf}`
+                  {competenceNqf
+                    ? `${competenceNqf[`name_${globalState.language}`]} (NQF ${competenceNqf.level})`
                     : <FormattedMessage id='creditinginfo.notfound' />}
                   </p>
               </div>
               <div className='competence-description' >
-                <h2><FormattedMessage id="creditinginfo.competencedescription" /></h2>
+                <h3><FormattedMessage id="creditinginfo.competencedescription" /></h3>
                 <p>
                   {creditingData.competence[`description_${globalState.language}`]
                     ? creditingData.competence[`description_${globalState.language}`]

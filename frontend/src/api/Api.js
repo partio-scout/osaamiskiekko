@@ -26,6 +26,16 @@ const getCompetenceDegreeLink = async (id) => {
   return competencedegreelinks.data;
 }
 
+const getCreditingInfosForCompetence = async (id) => {
+  const competencedegreelinks = await axios.get(`${baseURL}/competencedegreelinks?competence.id=${id}`);
+  return competencedegreelinks.data;
+}
+
+const getCreditingInfosForDegree = async (id) => {
+  const competencedegreelinks = await axios.get(`${baseURL}/competencedegreelinks?academicdegree.id=${id}`);
+  return competencedegreelinks.data;
+}
+
 const getCompetences = async () => {
   const competences = await axios.get(`${baseURL}/competences`);
   return competences.data;
@@ -52,6 +62,8 @@ export {
   getAcademicDegrees,
   getCompetenceDegreeLinks,
   getCompetenceDegreeLink,
+  getCreditingInfosForCompetence,
+  getCreditingInfosForDegree,
   getCompetences,
   getFieldofstudies,
   getFieldofstudiesWithId,

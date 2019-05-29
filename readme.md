@@ -14,6 +14,10 @@ partioadmin:6QVAjgusFD3YL7x
 
 StrapiCMS code is kept in the osaamiskiekko repository although it's not developed as part of this project. ***Do not edit /backend/cms files manually***. They can get modified when using the Strapi admin content editing features. Commit only intended changes.
 
+# Updating production
+
+Production branch is deployed to production automatically. See https://confluence.eficode.fi/display/PRTIOKKO/Conventions 'Production update' section for proper workflow for managing new releases.
+
 # Environment setup
 
 Osaamiskiekko can be run locally with docker-compose or in a kubernetes cluster. Docker-compose is intended for development only.

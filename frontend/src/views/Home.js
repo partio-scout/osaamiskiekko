@@ -46,7 +46,7 @@ const Home = () => {
   }
 
   const getMatchingDegrees = async (competence) => {
-    const competences = await Api.getCompetencedegreelinksWithId(competence.id);
+    const competences = await Api.getCompetenceDegreeLink(competence.id);
     const carouselFields = globalState.fieldOfStudies.map(field => ({
       ...field, 
       competences: competences.filter(competence => competence.academicdegree.fieldofstudy === field.id)

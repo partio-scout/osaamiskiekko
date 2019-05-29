@@ -8,7 +8,7 @@ body {
   font-family: "Fira Sans", sans-serif;
   margin: 0px;
   padding: 0px;
-  background-color: '#FFFFFF';
+  background-color: ${props => props.theme.colors.backgroundPrimary}
   color: #202020;
 }
 
@@ -59,7 +59,7 @@ label.secondary, span.label.secondary {
   line-height: 15px;
 }
 
-.p {
+p {
 	color: #202020;
   font-family: "Fira Sans", sans-serif;
 	font-size: 18px;
@@ -114,7 +114,7 @@ label.secondary, span.label.secondary {
     line-height: 15px;
   }
   
-  .p {
+  p {
     color: #202020;
     font-family: "Fira Sans", sans-serif;
     font-size: 16px;

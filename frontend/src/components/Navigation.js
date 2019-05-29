@@ -24,18 +24,17 @@ S.Navigation = styled.nav`
       padding-right: 20px;
     }
     .navbar_items {
-      width: 100%;
       display: flex;
+      width: 100%;
       justify-content: space-between;
       align-items: center;
       .navbar_item {
-        list-style-type: none;
+        display: flex;
         margin: 0;
         padding: 0;
-        display: flex;
         .navbar_subitem {
-          padding: 24px 20px 24px 0px;
           display: inline-block;
+          padding: 24px 20px 24px 0px;
           a {
             text-decoration: none;
             font-weight: bold;
@@ -57,7 +56,7 @@ S.Navigation = styled.nav`
     }
   }
 
-  @media (max-width: 730px) { 
+  @media (max-width: 767px) { 
     .navbar {
       align-items: baseline;
       img {
@@ -66,36 +65,24 @@ S.Navigation = styled.nav`
         margin-left: 12px;
         z-index: 999;
       }
-      .nav-icon {
-        margin: 1em;
-        width: 40px;
-        z-index: 999;
-        display: block;
-        float: right;
-      }
       .navbar_items {
-        display: block;
+        display: none;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        padding-bottom: 25px;
         margin-top: 35px;
         box-shadow: -6px 10px 15px -15px;
         border-bottom-left-radius:75px;
-        max-height: 1px;
-        position: fixed;
-        display: none;
-        width: 100%;
-        background-color: white;
-        animation: slide-up 0.5s ease-in;
-        padding-bottom: 25px;
         .navbar_item {
           display: block;
-          img {
-            display: none;
-          }
           .navbar_subitem {
-            padding: 14px 0px 14px 0px;
             display: block;
             cursor: pointer;
             text-align: center;
             width: 100%;
+            padding: 14px 0px 14px 0px;
             a {
               font-weight: normal
             }
@@ -107,9 +94,16 @@ S.Navigation = styled.nav`
         max-height: 90vh;
         animation: slide-down 0.5s ease-in;
       }
+      .nav-icon {
+        display: block;
+        margin: 1em;
+        width: 40px;
+        float: right;
+        z-index: 999;
+      }
     }
   }
-  
+
   .nav-icon:after, 
   .nav-icon:before, 
   .nav-icon div {
@@ -121,56 +115,38 @@ S.Navigation = styled.nav`
     margin: 7px 0;
     transition: all .2s ease-in-out;
   }
-
-  .nav-icon:hover:before {
-    transform: translateY(12px) rotate(135deg);
-  }
   
-  .nav-icon:hover:after {
-    transform: translateY(-12px) rotate(-135deg);
-  }
-  
-  .nav-icon:hover div {
-    transform: scale(0);
-  }
+  .activated:before { transform: translateY(12px) rotate(135deg); }
+  .activated:after { transform: translateY(-12px) rotate(-135deg); }
+  .activated div { transform: scale(0); }
 
   @keyframes slide-down {
-    0% {
-      opacity: 1;
-      max-height: 0px;
-    }
-  
-    100% {
-      opacity: 1;
-      max-height: 100vh;
-    }
+    0% { opacity: 1; max-height: 0px; }
+    100% { opacity: 1; max-height: 100vh; }
   }
   
   @keyframes slide-up {
-    0% {
-      display: block;
-      max-height: 100vh;
-    }
-  
-    100% {
-      display: none;
-      max-height: 0;
-    }
+    0% { display: block; max-height: 100vh; }
+    100% { display: none; max-height: 0; }
   }
 `;
 
 export default function Navigation() {
   const [navmenuVisible, setNavmenuVisible] = useState(false)
-  const classes = classnames({
+  const navbar_items = classnames({
     "navbar_items": true,
     "visible": navmenuVisible
+  })
+  const icon = classnames({
+    "nav-icon": true,
+    "activated": navmenuVisible
   })
 
   return (
     <S.Navigation>
       <div className="navbar">
         <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt="logo" />
-        <div className={classes}>
+        <div className={navbar_items}>
           <ul className="navbar_item">
             <li className="navbar_subitem"><Link to="/">
               <FormattedMessage id="nav.osaamiskiekko"/>
@@ -186,7 +162,7 @@ export default function Navigation() {
             <li className="navbar_subitem"><LanguageSelector /></li>
           </ul>
         </div>
-        <div className="nav-icon" onClick={() => setNavmenuVisible(!navmenuVisible)}>
+        <div className={icon} onClick={() => setNavmenuVisible(!navmenuVisible)}>
           <div></div>
         </div>
       </div>

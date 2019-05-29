@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // import ThemeSelector from './ThemeSelector';
 import LanguageSelector from './LanguageSelector';
 import classnames from 'classnames'
+import OutsideClickHandler from 'react-outside-click-handler';
 
 const S = {};
 S.Navigation = styled.nav`
@@ -60,8 +61,8 @@ S.Navigation = styled.nav`
     margin-bottom: 50px;
     .navbar {
       align-items: baseline;
-      position: fixed;
       background-color: white;
+      position: fixed;
       width: 100%;
       img {
         width: 48px;
@@ -142,7 +143,7 @@ S.Navigation = styled.nav`
 `;
 
 export default function Navigation() {
-  const [navmenuVisible, setNavmenuVisible] = useState(true)
+  const [navmenuVisible, setNavmenuVisible] = useState(false)
   const navbar_items = classnames({
     "navbar_items": true,
     "visible": navmenuVisible
@@ -153,29 +154,31 @@ export default function Navigation() {
   })
 
   return (
-    <S.Navigation>
-      <div className="navbar">
-        <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt="logo" />
-        <div className={navbar_items}>
-          <ul className="navbar_item">
-            <li className="navbar_subitem"><Link to="/">
-              <FormattedMessage id="nav.osaamiskiekko"/>
-            </Link></li>
-            <li className="navbar_subitem"><Link to="/tietoa">
-              <FormattedMessage id="nav.tietoa"/>
-            </Link></li>
-            <li className="navbar_subitem"><Link to="/otayhteytta">
-              <FormattedMessage id="nav.otayhteytta"/>
-            </Link></li>
-          </ul>
-          <ul className="navbar_item">
-            <li className="navbar_subitem"><LanguageSelector /></li>
-          </ul>
-        </div>
-        <div className={icon} onClick={() => setNavmenuVisible(!navmenuVisible)}>
-          <div></div>
-        </div>
-      </div>
-    </S.Navigation>
+    <OutsideClickHandler onOutsideClick={() => setNavmenuVisible(false)} >
+      <S.Navigation>
+          <div className="navbar">
+            <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt="logo" />
+            <div className={navbar_items}>
+              <ul className="navbar_item">
+                <li className="navbar_subitem"><Link to="/">
+                  <FormattedMessage id="nav.osaamiskiekko"/>
+                </Link></li>
+                <li className="navbar_subitem"><Link to="/tietoa">
+                  <FormattedMessage id="nav.tietoa"/>
+                </Link></li>
+                <li className="navbar_subitem"><Link to="/otayhteytta">
+                  <FormattedMessage id="nav.otayhteytta"/>
+                </Link></li>
+              </ul>
+              <ul className="navbar_item">
+                <li className="navbar_subitem"><LanguageSelector /></li>
+              </ul>
+            </div>
+            <div className={icon} onClick={() => setNavmenuVisible(!navmenuVisible)}>
+              <div></div>
+            </div>
+          </div>
+      </S.Navigation>
+    </OutsideClickHandler>
   )
 }

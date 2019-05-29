@@ -154,31 +154,31 @@ export default function Navigation() {
   })
 
   return (
-    <OutsideClickHandler onOutsideClick={() => setNavmenuVisible(false)} >
-      <S.Navigation>
-          <div className="navbar">
-            <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt="logo" />
-            <div className={navbar_items}>
-              <ul className="navbar_item">
-                <li className="navbar_subitem"><Link to="/">
-                  <FormattedMessage id="nav.osaamiskiekko"/>
-                </Link></li>
-                <li className="navbar_subitem"><Link to="/tietoa">
-                  <FormattedMessage id="nav.tietoa"/>
-                </Link></li>
-                <li className="navbar_subitem"><Link to="/otayhteytta">
-                  <FormattedMessage id="nav.otayhteytta"/>
-                </Link></li>
-              </ul>
-              <ul className="navbar_item">
-                <li className="navbar_subitem"><LanguageSelector /></li>
-              </ul>
-            </div>
-            <div className={icon} onClick={() => setNavmenuVisible(!navmenuVisible)}>
-              <div></div>
-            </div>
+    <S.Navigation>
+      <OutsideClickHandler onOutsideClick={() => setNavmenuVisible(false)} >
+        <div className="navbar">
+          <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt="logo" />
+          <div className={navbar_items}>
+            <ul className="navbar_item">
+              <li className="navbar_subitem"><Link to="/">
+                <FormattedMessage id="nav.osaamiskiekko"/>
+              </Link></li>
+              <li className="navbar_subitem"><Link to="/tietoa">
+                <FormattedMessage id="nav.tietoa"/>
+              </Link></li>
+              <li className="navbar_subitem"><Link to="/otayhteytta">
+                <FormattedMessage id="nav.otayhteytta"/>
+              </Link></li>
+            </ul>
+            <ul className="navbar_item">
+              <li className="navbar_subitem"><LanguageSelector /></li>
+            </ul>
           </div>
-      </S.Navigation>
-    </OutsideClickHandler>
+          <div className={icon} onClick={() => setNavmenuVisible(!navmenuVisible)}>
+            <div></div>
+          </div>
+        </div>
+      </OutsideClickHandler>
+    </S.Navigation>
   )
 }

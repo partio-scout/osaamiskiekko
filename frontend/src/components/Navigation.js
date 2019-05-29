@@ -39,9 +39,9 @@ S.Navigation = styled.nav`
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;	
-            color: ${props => props.theme.colors.link};
+            color: ${props => props.theme.colors.linkColor};
             :hover {
-              color: ${props => props.theme.colors.accentColor};
+              color: ${props => props.theme.colors.backgroundSecondary};
               cursor: pointer;
             }
           }
@@ -49,7 +49,7 @@ S.Navigation = styled.nav`
             border: none; 
             border-radius: 8px;
             padding: 6px;
-            color: ${props => props.theme.colors.link};
+            color: ${props => props.theme.colors.linkColor};
           }
         }
       }
@@ -75,9 +75,9 @@ S.Navigation = styled.nav`
         position: fixed;
         width: 100%;
         background-color: white;
+        padding-top: 35px;
         padding-bottom: 25px;
-        margin-top: 35px;
-        box-shadow: -6px 10px 15px -15px;
+        box-shadow: 0px 0px 12px 0px grey;
         border-bottom-left-radius:75px;
         .navbar_item {
           display: block;

@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i|Nunito+Sans:900&display=swap');
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+@import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
 
 body {
   font-family: "Fira Sans", sans-serif;

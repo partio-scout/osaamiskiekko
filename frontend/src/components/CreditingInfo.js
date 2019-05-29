@@ -4,6 +4,7 @@ import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 import { FormattedMessage } from 'react-intl';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import { Link } from 'react-router-dom';
 
 const S = {};
 S.CreditingInfo = styled.div`
@@ -35,6 +36,11 @@ z-index: 20;
 .header {
   z-index: 10;
   grid-area: header;
+
+  i {
+    font-size: 30px;
+    margin-right: 1rem;
+  }
 }
 
 .degree-info {
@@ -146,7 +152,12 @@ export default function CreditingInfo(props) {
         <>
           <div className='half-background' />
           <div className='header' >
-            <button><FormattedMessage id="creditinginfo.back" /></button>
+            <p>
+              <Link to="/">
+                <i className="fas fa-arrow-left" />
+                <FormattedMessage id="creditinginfo.back" />
+              </Link>
+            </p>
           </div>
           { creditingData.academicdegree 
             ? <>

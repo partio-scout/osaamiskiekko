@@ -63,11 +63,6 @@ export default function Navigation() {
               </Link>
             </li>
             <li>
-              <Link to="/ahot/1">
-                TEST: Hyväksilukusivu
-              </Link>
-            </li>
-            <li>
               <Link to="/tietoa">
                 <FormattedMessage id="nav.tietoa"/>
               </Link></li>

@@ -56,9 +56,13 @@ S.Navigation = styled.nav`
     }
   }
 
-  @media (max-width: 767px) { 
+  @media (max-width: 767px) {
+    margin-bottom: 50px;
     .navbar {
       align-items: baseline;
+      position: fixed;
+      background-color: white;
+      width: 100%;
       img {
         width: 48px;
         height: 48px;
@@ -84,7 +88,7 @@ S.Navigation = styled.nav`
             width: 100%;
             padding: 14px 0px 14px 0px;
             a {
-              font-weight: normal
+              font-weight: normal;
             }
           }
         }

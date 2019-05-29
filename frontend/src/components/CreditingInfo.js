@@ -146,7 +146,7 @@ export default function CreditingInfo(props) {
         <>
           <div className='half-background' />
           <div className='header' >
-            <button><FormattedMessage id="creditinginfo.back" /></button>
+            <button><i className="fas fa-arrow-left"></i><FormattedMessage id="creditinginfo.back" /></button>
           </div>
           { creditingData.academicdegree 
             ? <>

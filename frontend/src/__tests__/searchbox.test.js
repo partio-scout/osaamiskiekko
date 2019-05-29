@@ -11,7 +11,7 @@ configure({adapter: new Adapter()});
 
 describe('search results', () => {
   test('shows results', () => {
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchResults results={schoolData} />));;
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchResults results={schoolData} />));
     expect(wrapper.find('li.search-result-item').length).toBe(schoolData.length);
   });
 

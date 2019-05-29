@@ -15,7 +15,7 @@ S.SearchWrapper = styled.div`
 
 label {
   height: 16px;	
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
+  color: ${props => props.theme.colors.textColor};
   font-size: 16px;	
   letter-spacing: 2.29px;
   line-height: 0px;
@@ -24,7 +24,7 @@ label {
 input {
   height: 32px;
   border: none;
-  border-bottom: 2px solid ${props => props.theme.colors.osaamisKiekkoBlue};
+  border-bottom: 2px solid ${props => props.theme.colors.textColor};
   padding-left: 32px;
   outline-width: 0;
   outline: none;
@@ -33,7 +33,7 @@ input {
 }
 
 input::placeholder {
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
+  color: ${props => props.theme.colors.textColor};
   opacity: 1;
   font-size: 20px;	
   line-height: 30px;
@@ -44,7 +44,7 @@ input::placeholder {
   left: 0px;
   top: 23px;
   font-size: 22px;
-  color: ${props => props.theme.colors.osaamisKiekkoBlue};
+  color: ${props => props.theme.colors.textColor};
 }
 `;
 

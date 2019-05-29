@@ -22,7 +22,7 @@ S.ResultsCarousel = styled.div`
       line-height: 24px;	
       text-align: center;
       border-radius: 8px;	
-      background-color: ${props => props.theme.colors.carouselColor};
+      background-color: ${props => props.theme.colors.highlight};
       margin: 20px;
       padding: 20px; 
       min-height: 80px;
@@ -31,18 +31,19 @@ S.ResultsCarousel = styled.div`
       flex-direction: column;
       justify-items: center;
       p {
-        color: #FFFFFF;
+        color: ${props => props.theme.colors.textColorLight};;
         margin: 0px;
         font-size: 18px;
         font-weight: initial;
       }
       h3 {
+        color: ${props => props.theme.colors.textColorLight};;
         font-size: 18px;
         margin: 0px;
         font-weight: initial;
       }
       :hover {
-        background-color: ${props => props.theme.colors.carouselColor};
+        background-color: ${props => props.theme.colors.highlight};
         cursor: pointer;
       }
     }

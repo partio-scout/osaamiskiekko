@@ -6,11 +6,13 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.0",
     "enzyme-to-json": "^3.3.5",
+    "jest-mock-axios": "^3.0.0",
     "jest-sonar-reporter": "^2.0.0",
     "react-test-renderer": "^16.8.6"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-debounce-input": "^3.2.0",
     "react-dom": "^16.8.6",
@@ -19,9 +21,11 @@
     "react-outside-click-handler": "^1.2.3",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^3.0.1",
+    "react-slick": "^0.24.0",
     "react-spinners": "^0.5.4",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.86.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^4.2.0",
     "workbox-webpack-plugin": "^4.3.0"
   },

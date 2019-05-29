@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
+import Credit from './views/Credit';
 import Home from './views/Home';
 import Information from './views/Information';
 import Contact from './views/Contact';
@@ -12,6 +13,7 @@ const Main = () => {
       <GlobalStyle />
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/ahot/:id' component={Credit} />
           <Route exact path='/tietoa' component={Information} />
           <Route exact path='/otayhteytta' component={Contact} />
           <Route exact path='/curvetest' component={CurveTest} />

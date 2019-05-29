@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import * as Api from './Api';
 
-const GetSchoolsAndOrganizations = () => {
-  const [data, setData] = useState([]);
+const CreditingData = (id) => {
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -12,19 +12,21 @@ const GetSchoolsAndOrganizations = () => {
       setIsLoading(true);
 
       try {
-        const schools = await Api.getSchools();
-        const organizations = await Api.getOrganizations();
-        setData([...schools, ...organizations]);
+        const creditData = await Api.getCompetenceDegreeLink(id);
+        
+        setData(creditData[0]);
+
+        setIsLoading(false);
       } catch (error) {
         console.error(error);
         setIsError(true);
       }
-      setIsLoading(false);
     };
+
     fetchData();
-  }, []);
+  }, [id]);
 
   return { data, isLoading, isError };
 }
 
-export default GetSchoolsAndOrganizations;
+export default CreditingData;

@@ -6,59 +6,25 @@ export const findTheme = (name) => {
 const green = {
   name: 'green',
   colors: {
-    backgroundPrimary: '#FFFFFF',
-    backgroundSecondary: '#c7d0b7',
-    backgroundTertiary: 'white',
-    highlight: '#6DE5B8',
-    text: '#091f29',
-    link: '#0e2b3c',
-    highlightText: '#ffffff',
-    accentColor: '#6DE5B8',
+    backgroundPrimary: '#FCFDFC',
+    backgroundSecondary: '#6DE5B8',
+    backgroundTertiary: '#A5EFD3',
+    highlight: '#0063C3',
+    textColor: '#202020',
+    textColorSecondary: '#6E6E6E',
+    textColorLight: '#FFFFFF',
+    linkColor: '#0063C3', 
+    navButtons: '#FFFFFF',
+    textHighlight: '#6DE5B8',
   },
   fonts: {
-    headingFontFamily: 'Futura'
+    default: 'Fira Sans',
+    headingFontFamily: 'Futura',
   }
 };
-
-const grey = {
-  name: 'grey',
-  colors: {
-    backgroundPrimary: '#b8c1d8',
-    backgroundSecondary: '#dde6f8',
-    backgroundTertiary: 'white',
-    highlight: '#2b44b0',
-    text: '#14132c',
-    link: '#1b1941',
-    highlightText: '#ffffff',
-    accentColor: '#b8c1d8',
-  },
-  fonts: {
-    headingFontFamily: 'Futura'
-  }
-};
-
-const blue = {
-  name: 'blue',
-  colors: {
-    backgroundPrimary: '#ffffff',
-    backgroundSecondary: '#d6e0e5',
-    backgroundTertiary: 'white',
-    highlight: '#4300ee',
-    text: '#262626',
-    link: '#4300ee',
-    highlightText: '#ffffff',
-    accentColor: '#2b44b0',
-  },
-  fonts: {
-    headingFontFamily: 'Futura'
-  }
-};
-
 
 export const defaultTheme = green;
 
 export const themes = [
-  blue,
   green,
-  grey,
 ];

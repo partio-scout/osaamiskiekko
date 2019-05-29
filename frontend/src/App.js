@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
@@ -11,11 +11,24 @@ import { BrowserRouter } from 'react-router-dom';
 import translations from './translations/translations';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from './styles/Themes';
+import * as Api from './api/Api';
 addLocaleData([...en, ...fi, ...sv, translations]);
 
 const App = () => { 
   const [language, setLanguage] = useState('fi');
   const [currentTheme, setCurrentTheme] = useState(defaultTheme);
+  const [nqfLevels, setNqfLevels] = useState(null);
+  const [fieldOfStudies, setFieldOfStudies] = useState(null);
+
+  useEffect(() => {
+    const fetchFieldsAndNqfData = async () => {
+      const nqfs = await Api.getNqfs();
+      setNqfLevels(nqfs);
+      const fieldOfStudies = await Api.getFieldofstudies();
+      setFieldOfStudies(fieldOfStudies);
+    }
+    fetchFieldsAndNqfData();
+  }, []);
 
   const changeLanguage = (language) => setLanguage(language);
   const changeCurrentTheme = (theme) => { setCurrentTheme(theme) };
@@ -24,7 +37,9 @@ const App = () => {
     language,
     changeLanguage,
     currentTheme,
-    changeCurrentTheme
+    changeCurrentTheme,
+    nqfLevels,
+    fieldOfStudies
   }
   
   return (

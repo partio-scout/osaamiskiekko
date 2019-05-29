@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header.js';
+import Navigation from '../components/Navigation.js';
 import styled from 'styled-components';
 
 const S = {};
@@ -17,7 +17,7 @@ S.Home = styled.div`
 const Contact = () => {
   return (
     <S.Home>
-      <Header />
+      <Navigation />
       <div>Contact page</div>
     </S.Home>
   );

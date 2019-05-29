@@ -26,12 +26,12 @@
       "type": "text",
       "required": true
     },
-    "competence": {
-      "model": "competence",
-      "via": "competencedegreelinks"
-    },
     "academicdegree": {
       "model": "academicdegree",
+      "via": "competencedegreelinks"
+    },
+    "competence": {
+      "model": "competence",
       "via": "competencedegreelinks"
     }
   }

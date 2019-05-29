@@ -14,10 +14,13 @@ S.SearchBox = styled.div`
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
   padding: 34px;
-  margin: auto;
-  margin-top: -180px;
-  grid-column: search;
+  margin-top: -50px;
   z-index: 20;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 
   .search-wrapper {
     margin-bottom: 35px;
@@ -31,8 +34,7 @@ S.SearchBox = styled.div`
     width: 500px;
   } 
   @media only screen and (max-width: 600px) {
-    margin-top: 0px;
-    width: auto;
+    width: 65%;
   } 
 `;
 

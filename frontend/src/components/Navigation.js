@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-import ThemeSelector from './ThemeSelector';
+// import ThemeSelector from './ThemeSelector';
 import LanguageSelector from './LanguageSelector';
 import classnames from 'classnames'
 

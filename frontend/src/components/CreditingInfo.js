@@ -197,7 +197,7 @@ export default function CreditingInfo(props) {
   const curveMobile = (color) =>
   <svg viewBox="0 0 320 272" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>Top Curve Mobile</title>
-    <g id="Visual" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Visual" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Contact" fill="#6DE5B8">
             <path d="M320,278 L320,272 C281.333333,252 228,242 160,242 C92,242 38.6666667,252 0,272 L0,278 L0,0 L320,0 L320,278 Z" id="Combined-Shape"></path>
         </g>

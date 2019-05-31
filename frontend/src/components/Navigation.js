@@ -45,7 +45,7 @@ S.Navigation = styled.nav`
             color: ${props => props.theme.colors.textColor}
             width: 100%
             height: 100%;
-            padding: 24px 20px 24px 0px;
+            padding: 24px 0px 24px 0px;
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;	
@@ -69,12 +69,6 @@ S.Navigation = styled.nav`
               }
             }
 
-          }
-          button {
-            border: none; 
-            border-radius: 8px;
-            padding: 6px;
-            color: ${props => props.theme.colors.linkColor};
           }
         }
       }

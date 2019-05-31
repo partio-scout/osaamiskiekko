@@ -45,7 +45,7 @@ h1 {
   margin: 0px;
     span {
       background-size: 100% 100%;
-      background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.accentColor} 0)`};
+      background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
       background-repeat: no-repeat;
     }
 }

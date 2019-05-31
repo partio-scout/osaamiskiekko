@@ -51,10 +51,6 @@ z-index: 20;
 .degree-info {
   padding-right: 5rem;
   grid-area: degree-info;
-
-  h2 {
-    margin-top: 0;
-  }
 }
 .competence-info {
   padding-left: 3rem;
@@ -131,6 +127,10 @@ z-index: 20;
 
   .half-background {
     display: none;
+  }
+
+  h2, h3 {
+    margin-top: 0;
   }
 
   .header, .footer, .credit-info, .degree-info, .competence-info, .degree-description, .competence-description {

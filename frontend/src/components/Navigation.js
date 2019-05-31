@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import ThemeSelector from './ThemeSelector';
 import LanguageSelector from './LanguageSelector';
 import classnames from 'classnames'
@@ -19,32 +19,53 @@ S.Navigation = styled.nav`
     .nav-icon {
       display: none;
     }
+    
     img {
       width: 32px;
       height: 32px;
       padding-right: 20px;
     }
+
     .navbar_items {
       display: flex;
       width: 100%;
       justify-content: space-between;
       align-items: center;
+
       .navbar_item {
         display: flex;
         margin: 0;
         padding: 0;
+
         .navbar_subitem {
           display: inline-block;
           padding: 24px 20px 24px 0px;
+
           a {
+            color: ${props => props.theme.colors.textColor}
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;	
-            color: ${props => props.theme.colors.linkColor};
-            :hover {
-              color: ${props => props.theme.colors.backgroundSecondary};
-              cursor: pointer;
+
+            &:hover {
+              color: ${props => props.theme.colors.textColor}
+
+              span {
+                border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+                background-size: 100% 100%;
+                background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
+                background-repeat: no-repeat;
+              }
             }
+            
+            &.active {
+              font-weight: bold;
+
+              span {
+                border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+              }
+            }
+
           }
           button {
             border: none; 
@@ -59,38 +80,48 @@ S.Navigation = styled.nav`
 
   @media (max-width: 767px) {
     margin-bottom: 50px;
+
     .navbar {
       align-items: baseline;
       background-color: white;
-      position: fixed;
+      position: absolute;
       width: 100%;
+
       img {
         width: 48px;
         height: 48px;
         margin-left: 12px;
         z-index: 999;
       }
+
       .navbar_items {
         display: none;
         overflow: hidden;
-        position: fixed;
+        position: inherit;
         width: 100%;
         background-color: white;
         padding-top: 35px;
         padding-bottom: 25px;
         box-shadow: 0px 0px 12px 0px grey;
         border-bottom-left-radius:75px;
+
         .navbar_item {
           display: block;
+
           .navbar_subitem {
             display: block;
-            cursor: pointer;
             text-align: center;
             width: 100%;
-            padding: 14px 0px 14px 0px;
+            padding: 0;
+
             a {
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              padding: 14px 0px 14px 0px;
               font-weight: normal;
             }
+
             div {
               background-color: white;
               button {
@@ -100,11 +131,13 @@ S.Navigation = styled.nav`
           }
         }
       }
+
       .visible {
         display: block;
         max-height: 90vh;
         animation: slide-down 0.5s ease-in;
       }
+
       .nav-icon {
         display: block;
         margin: 1em;
@@ -160,15 +193,21 @@ export default function Navigation() {
           <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt="logo" />
           <div className={navbar_items}>
             <ul className="navbar_item">
-              <li className="navbar_subitem"><Link to="/">
-                <FormattedMessage id="nav.osaamiskiekko"/>
-              </Link></li>
-              <li className="navbar_subitem"><Link to="/tietoa">
-                <FormattedMessage id="nav.tietoa"/>
-              </Link></li>
-              <li className="navbar_subitem"><Link to="/otayhteytta">
-                <FormattedMessage id="nav.otayhteytta"/>
-              </Link></li>
+              <li className="navbar_subitem">
+                <NavLink exact={true} to="/">
+                  <FormattedMessage id="nav.osaamiskiekko"/>
+                </NavLink>
+              </li>
+              <li className="navbar_subitem">
+                <NavLink to="/tietoa">
+                  <FormattedMessage id="nav.tietoa"/>
+                </NavLink>
+              </li>
+              <li className="navbar_subitem">
+                <NavLink to="/otayhteytta">
+                  <FormattedMessage id="nav.otayhteytta"/>
+                </NavLink>
+              </li>
             </ul>
             <ul className="navbar_item">
               <li className="navbar_subitem"><LanguageSelector /></li>

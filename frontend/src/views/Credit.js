@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navigation from '../components/Navigation';
 import CreditingInfo from '../components/CreditingInfo';
 import CreditingData from '../api/CreditingData';
+import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
 const S = {};
 S.Credit = styled.div`
@@ -60,7 +61,7 @@ position: relative;
 `;
 
 const Credit = (props) => {
-  const { data, isLoading } = CreditingData(props.match.params.id);
+  const { data, isLoading } = CreditingData(props.match.params.id, useGlobalStateContext());
 
   const curve = (color) =>
     <svg viewBox="0 0 1440 352" version="1.1" xmlns="http://www.w3.org/2000/svg">

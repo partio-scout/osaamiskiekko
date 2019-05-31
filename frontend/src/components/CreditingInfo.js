@@ -43,6 +43,7 @@ p, p span {
 .header {
   z-index: 10;
   grid-area: header;
+  margin-bottom: 1rem;
 
   i {
     font-size: 30px;
@@ -68,6 +69,12 @@ p, p span {
     font-size: 26px;
     line-height: 28px;
     font-weight: bold;
+  }
+
+  p, p span {
+    margin: 0.5rem 0;
+    font-size: 16px;
+    line-height: 15px;
   }
 
   span:first-child {
@@ -101,6 +108,7 @@ p, p span {
     border-radius: 8px;
 
     p.readmore {
+      margin-top: 1rem;
       text-align: center;
     }
   }
@@ -182,6 +190,7 @@ p, p span {
 
   .header, .footer, .credit-info, .degree-info, .competence-info, .degree-description, .competence-description {
     padding: 0.5rem;
+    margin: 0;
     background: none;
   }
 
@@ -192,7 +201,7 @@ p, p span {
       line-height: 28px;
     }
 
-    p, p.span {
+    p, p span {
       font-size: 14px;
       line-height: 15px;
     }
@@ -238,7 +247,7 @@ p, p span {
   }
 
   .credit-info {
-    padding: 2rem 0.5rem;
+    padding: 0rem 0.5rem;
     margin: 0;
   
     .floating-box {
@@ -260,30 +269,20 @@ export default function CreditingInfo(props) {
   const {creditingData, isLoading} = props;
   const globalState = useGlobalStateContext();
 
-  const degreeNqf = (creditingData && creditingData.academicdegree && globalState.nqfLevels 
-    ? globalState.nqfLevels.find(level => level.id === creditingData.academicdegree.nqf) 
-    : undefined);
-  const competenceNqf = (creditingData && creditingData.competence && globalState.nqfLevels
-    ? globalState.nqfLevels.find(level => level.id === creditingData.competence.nqf) 
-    : undefined);
+  const curveMobile = (color) => (
+    <svg viewBox="0 0 320 272" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <title>Top Curve Mobile</title>
+      <g id="Visual" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+          <g id="Contact" fill="#6DE5B8">
+              <path d="M320,278 L320,272 C281.333333,252 228,242 160,242 C92,242 38.6666667,252 0,272 L0,278 L0,0 L320,0 L320,278 Z" id="Combined-Shape"></path>
+          </g>
+      </g>
+    </svg>);
 
-  const school = (creditingData && creditingData.academicdegree && globalState.schools
-    ? globalState.schools.find(school => school.id === creditingData.academicdegree.school)
-    : undefined);
-  const organization = (creditingData && creditingData.competence && globalState.organizations
-    ? globalState.organizations.find(organization => organization.id === creditingData.competence.organization)
-    : undefined);
-
-
-  const curveMobile = (color) =>
-  <svg viewBox="0 0 320 272" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <title>Top Curve Mobile</title>
-    <g id="Visual" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-        <g id="Contact" fill="#6DE5B8">
-            <path d="M320,278 L320,272 C281.333333,252 228,242 160,242 C92,242 38.6666667,252 0,272 L0,278 L0,0 L320,0 L320,278 Z" id="Combined-Shape"></path>
-        </g>
-    </g>
-  </svg>
+  const school = (creditingData && creditingData.academicdegree && creditingData.academicdegree.school);
+  const degreeNqf = (creditingData && creditingData.academicdegree && creditingData.academicdegree.nqf);
+  const organization = (creditingData && creditingData.competence && creditingData.competence.organization);
+  const competenceNqf = (creditingData && creditingData.competence && creditingData.competence.nqf);
 
   return (
     <S.CreditingInfo>

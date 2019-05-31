@@ -1,7 +1,6 @@
 import mockAxios from 'jest-mock-axios';
 import * as api from '../api/Api';
-import schoolData from '../__testdata__/schoolData';
-import organizationData from '../__testdata__/organizationData';
+import { schoolData, organizationData } from '../__testdata__/';
 import translations from '../translations/translations';
  
 afterEach(() => {

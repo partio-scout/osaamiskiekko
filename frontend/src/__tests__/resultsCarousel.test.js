@@ -2,7 +2,7 @@ import React from 'react';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import ResultsCarousel from '../components/ResultsCarousel';
-import fieldOfStudiesData from '../__testdata__/fieldOfStudiesData';
+import { fieldOfStudiesData } from '../__testdata__/';
 
 configure({ adapter: new Adapter() });
 

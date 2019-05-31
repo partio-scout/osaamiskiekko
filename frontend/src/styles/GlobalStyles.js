@@ -71,7 +71,7 @@ p {
 	line-height: 27px;
 }
 
-@media only screen and (max-width: 730px) {
+@media only screen and (max-width: 767px) {
   h1, h1 span {
     color: #202020;
     font-family: "Nunito Sans", sans-serif;

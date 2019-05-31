@@ -14,11 +14,10 @@ S.SearchWrapper = styled.div`
   width: 80%;
 
 label {
-  height: 16px;	
   color: ${props => props.theme.colors.textColor};
   font-size: 16px;	
   letter-spacing: 2.29px;
-  line-height: 0px;
+  line-height: 20px;
 }
 
 input {
@@ -40,9 +39,10 @@ input::placeholder {
 }
 
 .fa-search { 
-  position: absolute;
+  position: relative;
   left: 0px;
-  top: 23px;
+  top: 29px;
+  width: 22px;
   font-size: 22px;
   color: ${props => props.theme.colors.textColor};
 }

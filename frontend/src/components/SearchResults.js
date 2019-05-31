@@ -36,7 +36,7 @@ S.ResultWrapper = styled.ul`
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   width: 100%;
   max-height: 256px;
-  overflow-y: scroll;
+  overflow-y: auto;
   position: absolute;
   margin-top: 55px;
   z-index: 50;

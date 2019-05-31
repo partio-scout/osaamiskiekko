@@ -17,17 +17,31 @@ addLocaleData([...en, ...fi, ...sv, translations]);
 const App = () => { 
   const [language, setLanguage] = useState('fi');
   const [currentTheme, setCurrentTheme] = useState(defaultTheme);
-  const [nqfLevels, setNqfLevels] = useState(null);
-  const [fieldOfStudies, setFieldOfStudies] = useState(null);
+  const [organizations, setOrganizations] = useState();
+  const [schools, setSchools] = useState();
+  const [nqfLevels, setNqfLevels] = useState();
+  const [fieldOfStudies, setFieldOfStudies] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
-    const fetchFieldsAndNqfData = async () => {
-      const nqfs = await Api.getNqfs();
-      setNqfLevels(nqfs);
-      const fieldOfStudies = await Api.getFieldofstudies();
-      setFieldOfStudies(fieldOfStudies);
+    const fetchData = async () => {
+      try {
+        const nqfs = await Api.getNqfs();
+        setNqfLevels(nqfs);
+        const fieldOfStudies = await Api.getFieldofstudies();
+        setFieldOfStudies(fieldOfStudies);
+        const schools = await Api.getSchools();
+        setSchools(schools);
+        const orgs = await Api.getOrganizations();
+        setOrganizations(orgs);
+      } catch (err) {
+        console.log('Error loading data', err);
+        setError(err);
+      }
+      setIsLoading(false);
     }
-    fetchFieldsAndNqfData();
+    fetchData();
   }, []);
 
   const changeLanguage = (language) => setLanguage(language);
@@ -38,8 +52,11 @@ const App = () => {
     changeLanguage,
     currentTheme,
     changeCurrentTheme,
+    isLoading,
     nqfLevels,
-    fieldOfStudies
+    fieldOfStudies,
+    schools, 
+    organizations,
   }
   
   return (

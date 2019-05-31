@@ -5,16 +5,13 @@ import * as Api from '../api/Api';
 import ListSchools from '../components/ListSchools';
 import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
-import getInstitutions from '../api/GetInstitutions';
 
 const S = {};
 S.Home = styled.div`
   max-width: 1440px;
   margin: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 
-  @media only screen and (max-width: 860px) {
+  @media only screen and (max-width: 767px) {
     padding: 0px;
   } 
 `;
@@ -23,14 +20,15 @@ const Home = () => {
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
   const globalState = useGlobalStateContext();
-  const { data, isLoading } = getInstitutions();
+  const { isLoading, schools, organizations } = globalState;
+
+  const data = (schools && organizations ? [...schools, ...organizations] : []);
 
   const sortSchools = selectedCarouselField => {
-    const schoolList = globalState.nqfLevels.map(level => {
-      const lvl = parseInt(level.level);
+    const schoolList = globalState.nqfLevels.map(nqf => {
       return {
-        ...level,
-        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === lvl)
+        ...nqf,
+        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === nqf.id)
       }
      });
     const sortedSchoolList = orderBy(schoolList, [(item) => item.degree.length], ['desc'])
@@ -70,9 +68,7 @@ const Home = () => {
         isLoading={isLoading}
         sortedCarouselFields={sortedCarouselFields}
         setSelectedCarouselField={setSelectedCarouselField}/>
-      <div className="content-area">
-        <ListSchools sortedSchoolList={sortedSchoolList} />
-      </div>
+      <ListSchools sortedSchoolList={sortedSchoolList} />
     </S.Home>
   );
 }

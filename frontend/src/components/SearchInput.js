@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 // import { DebounceInput } from 'react-debounce-input';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import SearchResults from './SearchResults';
 
 const S = {};
@@ -14,11 +14,10 @@ S.SearchWrapper = styled.div`
   width: 80%;
 
 label {
-  height: 16px;	
   color: ${props => props.theme.colors.textColor};
   font-size: 16px;	
   letter-spacing: 2.29px;
-  line-height: 0px;
+  line-height: 20px;
 }
 
 input {
@@ -40,42 +39,39 @@ input::placeholder {
 }
 
 .fa-search { 
-  position: absolute;
+  position: relative;
   left: 0px;
-  top: 23px;
+  top: 29px;
+  width: 22px;
   font-size: 22px;
   color: ${props => props.theme.colors.textColor};
 }
 `;
 
-export default function SearchInput(props) {
-  const { handleInput, inputValue, label, name, results, setSelection, showPreResults } = props;
+export default injectIntl(function SearchInput(props) {
+  const { handleInput, inputValue, labelKey, name, results, setSelection, showPreResults } = props;
   return (
       <S.SearchWrapper>
         <label htmlFor="search-input">
-        <FormattedMessage id={label} />
+          <FormattedMessage id={labelKey} />
         </label>
         <span className="fa fa-search"></span>
-        <FormattedMessage id={label}>
-          {msg => (
-            <input
-              minLength={2}
-              // debounceTimeout={300}
-              value={inputValue}
-              type="text"
-              placeholder={msg}
-              name={name}
-              onChange={e => handleInput(e.target.value)} 
-              onClick={(e) => showPreResults(e.target.name)}
-              onFocus={(e) => showPreResults(e.target.name)}
-              autoComplete="off"
-              />
-          )}
-        </FormattedMessage>
+        <input
+          minLength={2}
+          // debounceTimeout={300}
+          value={inputValue}
+          type="text"
+          placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}
+          name={name}
+          onChange={e => handleInput(e.target.value)} 
+          onClick={(e) => showPreResults(e.target.name)}
+          onFocus={(e) => showPreResults(e.target.name)}
+          autoComplete="off"
+        />
         <SearchResults
           results={results}
           setSelection={setSelection}
         />
       </S.SearchWrapper>
   )
-}
+});

@@ -21,21 +21,15 @@ S.SearchBox = styled.div`
   margin-right: auto;
   left: 0;
   right: 0;
+  width: 587px;
 
   .search-wrapper {
     margin-bottom: 35px;
   }
 
-  @media only screen and (min-width: 860px) {
-    width: 587px;
-  } 
-  @media only screen and (max-width: 860px) {
-    margin-top: -80px;
-    width: 500px;
-  } 
-  @media only screen and (max-width: 600px) {
-    width: 65%;
-  } 
+  @media only screen and (max-width: 767px) {
+    width: 80%;
+  }
 `;
 
 const loadingSpinnerOverride = css`
@@ -47,12 +41,11 @@ export default function SearchBox(props) {
   const { showResults, data, isLoading } = props;
   const globalState = useGlobalStateContext();
 
-  const [inputSchoolOrOrganization, setinputSchoolOrOrganization] = useState('');
-  const [schoolOrOrganizationFilter, setschoolOrOrganizationFilter] = useState([]);
-  const [schoolOrOrganizationSelection, setschoolOrOrganizationSelection] = useState(null);
-
-  const [inputTrainingValue, setinputTrainingValue] = useState('');
-  const [competenceOrDegreeFilter, setcompetenceOrDegreeFilter] = useState([]);
+  const [institutionInput, setInstitutionInput] = useState('');
+  const [institutionFilter, setInstitutionFilter] = useState([]);
+  const [institutionSelection, setInstitutionSelection] = useState(null);
+  const [trainingInput, setTrainingInput] = useState('');
+  const [trainingFilter, setTrainingFilter] = useState([]);
 
   const noResults = {
     id: 1,
@@ -68,69 +61,71 @@ export default function SearchBox(props) {
     item.name_sv.toUpperCase().includes(searchValue.toUpperCase());
 
   const showPreResults = (e) => {
-    if (e === 'search-school') setschoolOrOrganizationFilter(data);
+    if (e === 'search-school') setInstitutionFilter(data);
     if (e === 'search-education') {
-      if (schoolOrOrganizationSelection.type_en === 'School') {
-        setDegreeOrCompetenceResults(schoolOrOrganizationSelection.academicdegrees);
+      if (institutionSelection.type_en === 'School') {
+        setDegreeOrCompetenceResults(institutionSelection.academicdegrees);
       } else {
-        setDegreeOrCompetenceResults(schoolOrOrganizationSelection.competences);
+        setDegreeOrCompetenceResults(institutionSelection.competences);
       }
     }
   };
 
   const filterSchoolOrOrganization = (searchValue) => {
-    setinputSchoolOrOrganization(searchValue);
+    setInstitutionInput(searchValue);
     if (searchValue) {
-      setschoolOrOrganizationSelection(null);
+      setInstitutionSelection(null);
       const results = data.filter(item => searchComparison(item, searchValue));
       results.length > 0 ?
-      setschoolOrOrganizationFilter (results) :
-      setschoolOrOrganizationFilter([noResults]);
-      setinputTrainingValue('');
+      setInstitutionFilter (results) :
+      setInstitutionFilter([noResults]);
+      setTrainingInput('');
     } else {
-      setschoolOrOrganizationFilter([]);
-      setcompetenceOrDegreeFilter([]);
-      setinputTrainingValue('');
-      setschoolOrOrganizationSelection(null);
+      setInstitutionFilter([]);
+      setTrainingFilter([]);
+      setTrainingInput('');
+      setInstitutionSelection(null);
     }
   }
 
   const setDegreeOrCompetenceResults = (results) =>
     results.length > 0 ?
-    setcompetenceOrDegreeFilter(results) :
-    setcompetenceOrDegreeFilter([noResults]);
+    setTrainingFilter(results) :
+    setTrainingFilter([noResults]);
 
   const filterDegreesOrCompetences = (searchValue) => {
-    setinputTrainingValue(searchValue);
+    setTrainingInput(searchValue);
     if (searchValue) {
-      if (schoolOrOrganizationSelection.type_en === 'School') {
-        const results = schoolOrOrganizationSelection.academicdegrees
+      if (institutionSelection.type_en === 'School') {
+        const results = institutionSelection.academicdegrees
           .filter(item => searchComparison(item, searchValue));
         setDegreeOrCompetenceResults(results);
       } else {
-        const results = schoolOrOrganizationSelection.competences
+        const results = institutionSelection.competences
           .filter(item => searchComparison(item, searchValue));
         setDegreeOrCompetenceResults(results);
       }
     } else {
-      setcompetenceOrDegreeFilter([]);
+      setTrainingFilter([]);
     }
   }
 
-  const getUserSelectionForSchoolOrAcademy = (selection) => {
+  const userInstitutionSelection = (selection) => {
     if (selection.error) return;
-    setschoolOrOrganizationSelection(selection);
-    setinputSchoolOrOrganization(selection[`name_${globalState.language}`]);
-    setschoolOrOrganizationFilter([]);
-    setcompetenceOrDegreeFilter([]);
-    setinputTrainingValue('');
+    sessionStorage.setItem('selectedInstitute', JSON.stringify(selection));
+    setInstitutionSelection(selection);
+    setInstitutionInput(selection[`name_${globalState.language}`]);
+    setInstitutionFilter([]);
+    setTrainingFilter([]);
+    setTrainingInput('');
   };
 
-  const getUserSelectionForDegreeOrCompetence = (selection) => {
+  const userTrainingSelection = (selection) => {
     if (selection.error) return;
-    setinputTrainingValue(selection[`name_${globalState.language}`]);
-    setcompetenceOrDegreeFilter([]);
-    showResults(schoolOrOrganizationSelection, selection);
+    sessionStorage.setItem('selectedTraining', JSON.stringify(selection));
+    setTrainingInput(selection[`name_${globalState.language}`]);
+    setTrainingFilter([]);
+    showResults(institutionSelection, selection);
   }
 
   return (
@@ -147,34 +142,34 @@ export default function SearchBox(props) {
         <div className="search-wrapper">
         <OutsideClickHandler
           onOutsideClick={() => {
-            setschoolOrOrganizationFilter([]);
+            setInstitutionFilter([]);
           }}
         >
           <SearchInput 
             handleInput={filterSchoolOrOrganization} 
-            inputValue={inputSchoolOrOrganization} 
-            label='searchbox.label' 
+            inputValue={institutionInput} 
+            labelKey='search.label' 
             name='search-school'
             className='search-school'
-            results={schoolOrOrganizationFilter}
-            setSelection={getUserSelectionForSchoolOrAcademy}
+            results={institutionFilter}
+            setSelection={userInstitutionSelection}
             showPreResults={showPreResults}
             />
         </OutsideClickHandler>
-        {schoolOrOrganizationSelection &&
+        {institutionSelection &&
         <OutsideClickHandler
           onOutsideClick={() => {
-            setcompetenceOrDegreeFilter([]);
+            setTrainingFilter([]);
           }}
         >
           <SearchInput
             handleInput={filterDegreesOrCompetences}
-            inputValue={inputTrainingValue} 
-            label={'searchbox.labelSecondary'}
-            name={'search-education' }
+            inputValue={trainingInput} 
+            labelKey='search.labelSecondary'
+            name='search-education' 
             className='search-education'
-            results={competenceOrDegreeFilter}
-            setSelection={getUserSelectionForDegreeOrCompetence}
+            results={trainingFilter}
+            setSelection={userTrainingSelection}
             showPreResults={showPreResults}
             />
         </OutsideClickHandler>

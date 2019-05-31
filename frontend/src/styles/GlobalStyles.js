@@ -4,6 +4,11 @@ const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i|Nunito+Sans:900&display=swap');
 @import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
 
+*{
+  min-height: 0;
+  min-width: 0;
+}
+
 body {
   font-family: "Fira Sans", sans-serif;
   margin: 0px;
@@ -66,7 +71,7 @@ p {
 	line-height: 27px;
 }
 
-@media only screen and (max-width: 730px) {
+@media only screen and (max-width: 767px) {
   h1, h1 span {
     color: #202020;
     font-family: "Nunito Sans", sans-serif;

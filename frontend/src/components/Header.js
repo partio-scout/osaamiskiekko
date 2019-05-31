@@ -15,13 +15,14 @@ S.Header = styled.header`
  grid-template-columns: 4fr 4fr;
 
 .header-text {
-  min-height: 600px;
-  @media only screen and (max-width: 730px) {
+  padding-left: 2rem;
+  padding-bottom: 170px;
+  min-height: 430px;
+
+  @media only screen and (max-width: 767px) {
     grid-column: 1 / 3;
     min-height: 420px;
-  }
-  @media only screen and (max-width: 860px) {
-    padding: 20px;
+    padding: 20px 20px 90px 20px;
   }
 }
 
@@ -31,7 +32,7 @@ S.Header = styled.header`
   background-size: cover;
   background-image: url(${HeaderImage}); 
   margin-top: -98px;
-  @media only screen and (max-width: 730px) {
+  @media only screen and (max-width: 767px) {
     display: none;
   } 
 }
@@ -44,9 +45,10 @@ h1 {
   line-height: 46px;
   margin: 0px;
     span {
-      background-size: 100% 100%;
-      background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.accentColor} 0)`};
+      background-size: 100% 2.5rem;
+      background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
       background-repeat: no-repeat;
+      background-position-y: 70%;
     }
 }
 

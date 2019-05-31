@@ -29,25 +29,6 @@ CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA public;
 COMMENT ON EXTENSION pg_trgm IS 'text similarity measurement and index searching based on trigrams';
 
 
---
--- Name: truncate_if_exists(text); Type: FUNCTION; Schema: public; Owner: myuser
---
-
--- CREATE FUNCTION public.truncate_if_exists(tablename text) RETURNS void
---     LANGUAGE plpgsql
---     AS $$
--- begin
---     perform 1
---     from information_schema.tables 
---     where table_name = tablename;
---     if found then
---         execute format('truncate %I', tablename);
---     end if;
--- end $$;
-
-
--- ALTER FUNCTION public.truncate_if_exists(tablename text) OWNER TO myuser;
-
 SET default_tablespace = '';
 
 SET default_with_oids = false;
@@ -158,7 +139,8 @@ CREATE TABLE public.competencedegreelinks (
     competence integer,
     academicdegree integer,
     created_at timestamp with time zone,
-    updated_at timestamp with time zone
+    updated_at timestamp with time zone,
+    identification character varying(255)
 );
 
 
@@ -910,6 +892,13 @@ CREATE INDEX search_competencedegreelinks_description_fi ON public.competencedeg
 --
 
 CREATE INDEX search_competencedegreelinks_description_sv ON public.competencedegreelinks USING gin (description_sv public.gin_trgm_ops);
+
+
+--
+-- Name: search_competencedegreelinks_identification; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_competencedegreelinks_identification ON public.competencedegreelinks USING gin (identification public.gin_trgm_ops);
 
 
 --

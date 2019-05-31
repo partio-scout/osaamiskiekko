@@ -10,6 +10,7 @@ S.ResultsCarousel = styled.div`
   color: #FFFFFF;
   margin: auto;
   max-width: 90%;
+  padding: 0px 40px 0px 40px;
   .slick-arrow {
     :before {
       color: black;

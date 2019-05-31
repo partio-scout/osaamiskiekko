@@ -11,6 +11,9 @@
     "comment": ""
   },
   "attributes": {
+    "identification": {
+      "type": "string"
+    },
     "url": {
       "type": "string"
     },

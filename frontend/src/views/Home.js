@@ -5,7 +5,6 @@ import * as Api from '../api/Api';
 import ListSchools from '../components/ListSchools';
 import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
-import getInstitutions from '../api/GetInstitutions';
 
 const S = {};
 S.Home = styled.div`
@@ -21,7 +20,9 @@ const Home = () => {
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
   const globalState = useGlobalStateContext();
-  const { data, isLoading } = getInstitutions();
+  const { isLoading, schools, organizations } = globalState;
+
+  const data = (schools && organizations ? [...schools, ...organizations] : []);
 
   const sortSchools = selectedCarouselField => {
     const schoolList = globalState.nqfLevels.map(nqf => {

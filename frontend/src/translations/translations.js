@@ -1,5 +1,6 @@
 export default {
   "en": {
+    "nav.frontpage": "Go to frontpage",
     "nav.osaamiskiekko": "Osaamiskiekko",
     "nav.tietoa": "Information",
     "nav.otayhteytta": "Contact",
@@ -13,9 +14,9 @@ export default {
     "searchbox.label": "Choose organization or school",
     "searchbox.labelSecondary": "Choose education",
     "search.placeholder": "Search...",
-    "themes.grey": "Steely alloy",
-    "themes.blue": "Stark thunder",
-    "themes.green": "Coniferous forest",
+    "themes.grey": "Steelification",
+    "themes.blue": "Blue binge",
+    "themes.green": "Moss",
     "institution.type.school": 'School',
     "institution.type.organization": 'Organization',
     "creditinginfo.notfound": "Not available",
@@ -27,6 +28,7 @@ export default {
     "creditinginfo.readmore": "Read more on the school's website"
   },
   "fi": {
+    "nav.frontpage": "Siirry etusivulle",
     "nav.osaamiskiekko": "Osaamiskiekko",
     "nav.tietoa": "Tietoa",
     "nav.otayhteytta": "Ota yhteyttä",
@@ -54,6 +56,7 @@ export default {
     "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta"
   },
   "sv": {
+    "nav.frontpage": "Siirry etusivulle_sv",
     "nav.osaamiskiekko": "Osaamiskiekko",
     "nav.tietoa": "Information",
     "nav.otayhteytta": "Kontakta oss",

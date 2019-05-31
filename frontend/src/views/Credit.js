@@ -36,16 +36,25 @@ position: relative;
   position: relative;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 767px) {
   padding: 0px;
 
+  .topcurve {
+    display: none;
+  }
+
   .navigation {
-    padding: 0 1rem;
+    background-color: ${props => props.theme.colors.backgroundSecondary};
+    width: 100%;
+    padding: 0;
+    z-index: 30;
+    position: relative;
   }
 
   .content {
-    margin-top: 1rem;
-    padding: 0 1rem;
+    margin-top: 0;
+    padding: 0;
+    z-index: 20;
   }
 } 
 `;
@@ -53,7 +62,7 @@ position: relative;
 const Credit = (props) => {
   const { data, isLoading } = CreditingData(props.match.params.id);
 
-  const svgCurve = (color) =>
+  const curve = (color) =>
     <svg viewBox="0 0 1440 352" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <title>Top Curve</title>
       <g id="Visual" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -63,10 +72,11 @@ const Credit = (props) => {
       </g>
     </svg>
 
+
   return (
     <S.Credit>
       <div className='topcurve'>
-        {svgCurve()}
+        {curve()}
       </div>
       <div className='navigation'>
         <Navigation />

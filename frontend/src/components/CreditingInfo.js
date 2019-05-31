@@ -41,11 +41,20 @@ z-index: 20;
     font-size: 30px;
     margin-right: 1rem;
   }
+
+  i, a {
+    color: ${props => props.theme.colors.textColor}
+    text-decoration: none;
+  }
 }
 
 .degree-info {
   padding-right: 5rem;
   grid-area: degree-info;
+
+  h2 {
+    margin-top: 0;
+  }
 }
 .competence-info {
   padding-left: 3rem;
@@ -96,31 +105,63 @@ z-index: 20;
   }
 }
 
+.topcurvemobile {
+  display: none;
+}
+
 .error {
   grid-area: header;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 767px) {
   grid-template-columns: 4fr;
   grid-template-areas: 
     "header"
     "degree-info"
     "credit-info"
-    "competence-info" 
     "degree-description"
+    "curve"
+    "competence-info" 
     "competence-description" 
     "footer";
-  padding: 0.5rem;
+  padding: 0;
   border: none;
   box-shadow: none;
+  background: none;
 
   .half-background {
     display: none;
   }
 
-  .degree-info, .competence-info, .degree-description, .competence-description {
-    padding: 0;
-    margin: 0;
+  .header, .footer, .credit-info, .degree-info, .competence-info, .degree-description, .competence-description {
+    padding: 0.5rem;
+    background: none;
+  }
+
+  .degree-info, .degree-description, .credit-info, .header {
+    background-color: ${props => props.theme.colors.backgroundSecondary}
+    position: relative;
+  }
+
+  .degree-description {
+    margin-bottom: 75px;
+  }
+
+  .topcurvemobile {
+    grid-area: curve;
+    display: block;
+    position: absolute;
+    z-index: -100;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+    svg {
+      width: 100%;
+      path {
+        fill: ${props => props.theme.colors.backgroundSecondary};
+      }
+    }
   }
 
   .credit-info {
@@ -151,6 +192,17 @@ export default function CreditingInfo(props) {
   const competenceNqf = (creditingData && creditingData.competence && globalState.nqfLevels
     ? globalState.nqfLevels.find(level => level.id === creditingData.competence.nqf) 
     : undefined);
+
+
+  const curveMobile = (color) =>
+  <svg viewBox="0 0 320 272" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Top Curve Mobile</title>
+    <g id="Visual" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Contact" fill="#6DE5B8">
+            <path d="M320,278 L320,272 C281.333333,252 228,242 160,242 C92,242 38.6666667,252 0,272 L0,278 L0,0 L320,0 L320,278 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+  </svg>
 
   return (
     <S.CreditingInfo>
@@ -203,6 +255,9 @@ export default function CreditingInfo(props) {
                     ? creditingData.academicdegree[`description_${globalState.language}`]
                     : <FormattedMessage id='creditinginfo.notfound' />}
                 </p>
+              </div>
+              <div className='topcurvemobile'>
+                  {curveMobile()}
               </div>
             </>
             : <div className='degree-info' >

@@ -80,12 +80,9 @@ S.Navigation = styled.nav`
   }
 
   @media (max-width: 767px) {
-    margin-bottom: 50px;
 
     .navbar {
       align-items: baseline;
-      background-color: white;
-      position: absolute;
       width: 100%;
       padding-left: 0;
 
@@ -99,10 +96,17 @@ S.Navigation = styled.nav`
         }
       }
 
+      .nav-icon {
+        display: block;
+        margin: 1em;
+        width: 40px;
+        z-index: 999;
+      }
+
       .navbar_items {
         display: none;
         overflow: hidden;
-        position: inherit;
+        position: absolute;
         width: 100%;
         background-color: white;
         padding-top: 35px;
@@ -141,14 +145,6 @@ S.Navigation = styled.nav`
         display: block;
         max-height: 90vh;
         animation: slide-down 0.5s ease-in;
-      }
-
-      .nav-icon {
-        display: block;
-        margin: 1em;
-        width: 40px;
-        float: right;
-        z-index: 999;
       }
     }
   }
@@ -197,7 +193,7 @@ export default function Navigation() {
         <div className="navbar">
           <NavLink exact={true} to="/">
             <FormattedMessage id="nav.frontpage">
-            {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg} /> }
+              {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg} /> }
             </FormattedMessage>
           </NavLink>
           <div className={navbar_items}>

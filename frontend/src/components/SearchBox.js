@@ -154,7 +154,7 @@ export default function SearchBox(props) {
           <SearchInput 
             handleInput={filterSchoolOrOrganization} 
             inputValue={institutionInput} 
-            label='searchbox.label' 
+            labelKey='search.label' 
             name='search-school'
             className='search-school'
             results={institutionFilter}
@@ -171,8 +171,8 @@ export default function SearchBox(props) {
           <SearchInput
             handleInput={filterDegreesOrCompetences}
             inputValue={trainingInput} 
-            label={'searchbox.labelSecondary'}
-            name={'search-education' }
+            labelKey='search.labelSecondary'
+            name='search-education' 
             className='search-education'
             results={trainingFilter}
             setSelection={userTrainingSelection}

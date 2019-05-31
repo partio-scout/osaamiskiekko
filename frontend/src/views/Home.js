@@ -11,8 +11,6 @@ const S = {};
 S.Home = styled.div`
   max-width: 1440px;
   margin: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 
   @media only screen and (max-width: 860px) {
     padding: 0px;
@@ -26,11 +24,10 @@ const Home = () => {
   const { data, isLoading } = getInstitutions();
 
   const sortSchools = selectedCarouselField => {
-    const schoolList = globalState.nqfLevels.map(level => {
-      const lvl = parseInt(level.level);
+    const schoolList = globalState.nqfLevels.map(nqf => {
       return {
-        ...level,
-        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === lvl)
+        ...nqf,
+        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === nqf.id)
       }
      });
     const sortedSchoolList = orderBy(schoolList, [(item) => item.degree.length], ['desc'])
@@ -70,9 +67,7 @@ const Home = () => {
         isLoading={isLoading}
         sortedCarouselFields={sortedCarouselFields}
         setSelectedCarouselField={setSelectedCarouselField}/>
-      <div className="content-area">
-        <ListSchools sortedSchoolList={sortedSchoolList} />
-      </div>
+      <ListSchools sortedSchoolList={sortedSchoolList} />
     </S.Home>
   );
 }

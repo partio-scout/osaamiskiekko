@@ -11,7 +11,7 @@ configure({adapter: new Adapter()});
 
 describe('search results', () => {
   test('shows results', () => {
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchResults results={schoolData} />));;
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchResults results={schoolData} />));
     expect(wrapper.find('li.search-result-item').length).toBe(schoolData.length);
   });
 
@@ -27,14 +27,14 @@ describe('search results', () => {
 describe('search input', () => {
   test('shows results', () => {
     const showPreResultsCallback = jest.fn();
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchInput label='searchbox.label' results={schoolData} showPreResults={showPreResultsCallback} />));
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchInput labelKey='search.label' results={schoolData} showPreResults={showPreResultsCallback} />));
     wrapper.find('input').simulate('click');
     expect(wrapper.find('li.search-result-item').length).toBe(schoolData.length);
   });
 
   test('calls showPreResults', () => {
     const showPreResultsCallback = jest.fn();
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchInput label='searchbox.label' results={[]} showPreResults={showPreResultsCallback} />));
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchInput labelKey='search.label' results={[]} showPreResults={showPreResultsCallback} />));
     wrapper.find('input').simulate('click');
     wrapper.find('input').simulate('focus');
     expect(showPreResultsCallback.mock.calls.length).toBe(2);
@@ -45,7 +45,7 @@ describe('search input', () => {
     const handleInputCallback = jest.fn();
     const wrapper = mount(testHelper.wrapWithProviders(
       <SearchInput 
-        label='searchbox.label' 
+        labelKey='search.label' 
         results={schoolData} 
         showPreResults={showPreResultsCallback}
         handleInput={handleInputCallback}

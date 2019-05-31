@@ -171,7 +171,7 @@ p, p span {
     display: none;
   }
 
-  p {
+  p, p span {
     margin: 5px 0;
     font-size: 16px;
     line-height: 24px;
@@ -240,7 +240,7 @@ p, p span {
     margin: 0;
   
     .floating-box {
-      padding: 1rem 0.5rem;
+      padding: 1rem 1rem;
       background-color: ${props => props.theme.colors.backgroundPrimary}
       box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
       border-radius: 8px;

@@ -86,9 +86,12 @@ S.Navigation = styled.nav`
       width: 100%;
       padding-left: 0;
 
+      >a {
+        margin-left: 12px;
+      }
+
       a {
         z-index: 999;
-        margin-left: 12px;
 
         img {
           width: 48px;

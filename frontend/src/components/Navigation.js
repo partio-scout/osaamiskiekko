@@ -39,10 +39,13 @@ S.Navigation = styled.nav`
 
         .navbar_subitem {
           display: inline-block;
-          padding: 24px 20px 24px 0px;
+          margin: 24px 20px 24px 0px;
 
           a {
             color: ${props => props.theme.colors.textColor}
+            width: 100%
+            height: 100%;
+            padding: 24px 20px 24px 0px;
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;	
@@ -190,7 +193,11 @@ export default function Navigation() {
     <S.Navigation>
       <OutsideClickHandler onOutsideClick={() => setNavmenuVisible(false)} >
         <div className="navbar">
-          <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt="logo" />
+          <NavLink exact={true} to="/">
+            <FormattedMessage id="nav.frontpage">
+            {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg} /> }
+            </FormattedMessage>
+          </NavLink>
           <div className={navbar_items}>
             <ul className="navbar_item">
               <li className="navbar_subitem">

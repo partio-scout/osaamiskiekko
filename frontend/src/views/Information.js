@@ -7,7 +7,7 @@ S.Home = styled.div`
   max-width: 1440px;
   margin: auto;
 
-  @media only screen and (max-width: 860px) {
+  @media only screen and (max-width: 767px) {
     padding: 0px;
   } 
 `;

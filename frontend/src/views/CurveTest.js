@@ -47,7 +47,7 @@ position: relative;
   background-color: ${props => props.theme.colors.backgroundSecondary}
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 767px) {
   padding: 0px;
 } 
 `;

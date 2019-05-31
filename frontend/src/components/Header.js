@@ -16,14 +16,13 @@ S.Header = styled.header`
 
 .header-text {
   padding-left: 2rem;
-  
-  min-height: 600px;
-  @media only screen and (max-width: 730px) {
+  padding-bottom: 170px;
+  min-height: 430px;
+
+  @media only screen and (max-width: 767px) {
     grid-column: 1 / 3;
     min-height: 420px;
-  }
-  @media only screen and (max-width: 860px) {
-    padding: 20px;
+    padding: 20px 20px 90px 20px;
   }
 }
 
@@ -33,7 +32,7 @@ S.Header = styled.header`
   background-size: cover;
   background-image: url(${HeaderImage}); 
   margin-top: -98px;
-  @media only screen and (max-width: 730px) {
+  @media only screen and (max-width: 767px) {
     display: none;
   } 
 }

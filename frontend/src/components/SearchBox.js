@@ -21,21 +21,15 @@ S.SearchBox = styled.div`
   margin-right: auto;
   left: 0;
   right: 0;
+  width: 587px;
 
   .search-wrapper {
     margin-bottom: 35px;
   }
 
-  @media only screen and (min-width: 860px) {
-    width: 587px;
-  } 
-  @media only screen and (max-width: 860px) {
-    margin-top: -80px;
-    width: 500px;
-  } 
-  @media only screen and (max-width: 600px) {
-    width: 65%;
-  } 
+  @media only screen and (max-width: 767px) {
+    width: 80%;
+  }
 `;
 
 const loadingSpinnerOverride = css`

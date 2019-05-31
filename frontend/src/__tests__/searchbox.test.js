@@ -5,7 +5,7 @@ import SearchBox from '../components/SearchBox';
 import SearchResults from '../components/SearchResults';
 import SearchInput from '../components/SearchInput';
 import * as testHelper from '../testHelpers';
-import schoolData from '../__testdata__/schoolData'
+import { schoolData } from '../__testdata__/'
 
 configure({adapter: new Adapter()});
 

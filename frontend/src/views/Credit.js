@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navigation from '../components/Navigation';
 import CreditingInfo from '../components/CreditingInfo';
 import CreditingData from '../api/CreditingData';
+import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
 const S = {};
 S.Credit = styled.div`
@@ -36,24 +37,33 @@ position: relative;
   position: relative;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 767px) {
   padding: 0px;
 
+  .topcurve {
+    display: none;
+  }
+
   .navigation {
-    padding: 0 1rem;
+    background-color: ${props => props.theme.colors.backgroundTertiary};
+    width: 100%;
+    padding: 0;
+    z-index: 30;
+    position: relative;
   }
 
   .content {
-    margin-top: 1rem;
-    padding: 0 1rem;
+    margin-top: 0;
+    padding: 0;
+    z-index: 20;
   }
 } 
 `;
 
 const Credit = (props) => {
-  const { data, isLoading } = CreditingData(props.match.params.id);
+  const { data, isLoading } = CreditingData(props.match.params.id, useGlobalStateContext());
 
-  const svgCurve = (color) =>
+  const curve = (color) =>
     <svg viewBox="0 0 1440 352" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <title>Top Curve</title>
       <g id="Visual" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -63,10 +73,11 @@ const Credit = (props) => {
       </g>
     </svg>
 
+
   return (
     <S.Credit>
       <div className='topcurve'>
-        {svgCurve()}
+        {curve()}
       </div>
       <div className='navigation'>
         <Navigation />

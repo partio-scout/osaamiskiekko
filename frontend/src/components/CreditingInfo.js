@@ -17,11 +17,18 @@ grid-template-areas:
   "footer footer";
 grid-template-columns: 4fr 4fr;
 padding: 2rem;
+margin-bottom: 1rem;
 box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
 border-radius: 8px;
 background-color: ${props => props.theme.colors.backgroundPrimary}
 position: relative;
 z-index: 20;
+
+p, p span {
+  margin: 5px 0;
+  font-size: 18px;
+  line-height: 27px;
+}
 
 .half-background {
   background-color: ${props => props.theme.colors.backgroundTertiary}
@@ -42,9 +49,34 @@ z-index: 20;
     margin-right: 1rem;
   }
 
+  i, span {
+    vertical-align: middle;
+  }
+
   i, a {
     color: ${props => props.theme.colors.textColor}
     text-decoration: none;
+  }
+}
+
+.degree-info, .competence-info {
+  font-size: 16px;
+  line-height: 15px;
+
+  h2, h2 span {
+    margin: 5px 0;
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: bold;
+  }
+
+  span:first-child {
+    font-weight: bold;
+  }
+  
+  .institution {
+    font-size: 18px;
+    line-height: 27px;
   }
 }
 
@@ -58,7 +90,8 @@ z-index: 20;
 }
 .credit-info {
   grid-area: credit-info;
-  padding: 1rem 3rem;
+  margin: 1.5rem 0;
+  padding: 0 3rem;
   z-index: 10;
 
   .floating-box {
@@ -66,9 +99,21 @@ z-index: 20;
     background-color: ${props => props.theme.colors.backgroundPrimary}
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
     border-radius: 8px;
+
+    p.readmore {
+      text-align: center;
+    }
   }
 }
 
+.degree-description, .competence-description {
+  h3, h3 span {
+    margin: 10px 0;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+  }
+}
 .degree-description {
   padding-right: 5rem;
   grid-area: degree-description;
@@ -129,13 +174,41 @@ z-index: 20;
     display: none;
   }
 
-  h2, h3 {
-    margin-top: 0;
+  p {
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .header, .footer, .credit-info, .degree-info, .competence-info, .degree-description, .competence-description {
     padding: 0.5rem;
     background: none;
+  }
+
+  .degree-info, .competence-info {
+    h2, h2 span {
+      margin: 5px 0;
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    p, p.span {
+      font-size: 14px;
+      line-height: 15px;
+    }
+
+    p.institution, p.institution span {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .degree-description, .competence-description {
+    h3, h3 span {
+      margin: 5px 0;
+      font-size: 18px;
+      line-height: 27px;
+    }
   }
 
   .degree-info, .degree-description, .credit-info, .header {
@@ -165,10 +238,11 @@ z-index: 20;
   }
 
   .credit-info {
-    padding: 1rem;
+    padding: 2rem 0.5rem;
+    margin: 0;
   
     .floating-box {
-      padding: 1rem 1rem;
+      padding: 1rem 0.5rem;
       background-color: ${props => props.theme.colors.backgroundPrimary}
       box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
       border-radius: 8px;
@@ -191,6 +265,13 @@ export default function CreditingInfo(props) {
     : undefined);
   const competenceNqf = (creditingData && creditingData.competence && globalState.nqfLevels
     ? globalState.nqfLevels.find(level => level.id === creditingData.competence.nqf) 
+    : undefined);
+
+  const school = (creditingData && creditingData.academicdegree && globalState.schools
+    ? globalState.schools.find(school => school.id === creditingData.academicdegree.school)
+    : undefined);
+  const organization = (creditingData && creditingData.competence && globalState.organizations
+    ? globalState.organizations.find(organization => organization.id === creditingData.competence.organization)
     : undefined);
 
 
@@ -233,6 +314,9 @@ export default function CreditingInfo(props) {
                     ? creditingData.academicdegree[`name_${globalState.language}`]
                     : <FormattedMessage id='creditinginfo.notfound' />}
                 </h2>
+                <p className='institution'>
+                  {school && school[`name_${globalState.language}`]}
+                </p>
                 <p className='scope'>
                   <FormattedMessage id="creditinginfo.scope" />: 
                   {' '}
@@ -290,6 +374,9 @@ export default function CreditingInfo(props) {
                     ? creditingData.competence[`name_${globalState.language}`]
                     : <FormattedMessage id='creditinginfo.notfound' />}
                 </h2>
+                <p className='institution'>
+                  {organization && organization[`name_${globalState.language}`]}
+                </p>
                 <p className='scope'>
                   <FormattedMessage id="creditinginfo.scope" />: 
                   {' '}

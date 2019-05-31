@@ -11,11 +11,11 @@
     "comment": ""
   },
   "attributes": {
-    "name_fi": {
+    "name_en": {
       "type": "string",
       "required": true
     },
-    "name_en": {
+    "name_fi": {
       "type": "string",
       "required": true
     },

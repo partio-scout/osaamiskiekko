@@ -14,6 +14,7 @@ S.Curve = styled.div`
 
   svg {
     min-height: 400px;
+    width: 100%;
   }
 
 path {

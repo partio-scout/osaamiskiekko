@@ -5,6 +5,7 @@ import { BarLoader } from 'react-spinners';
 import { FormattedMessage } from 'react-intl';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import { Link } from 'react-router-dom';
+import Button from './atoms/Button';
 
 const S = {};
 S.CreditingInfo = styled.div`
@@ -138,19 +139,7 @@ p, p span {
   align-items: center;
 
   button {
-    margin: auto;
-    font-size: 16px;	
-    line-height: 24px;	
-    text-align: center;
-    border-radius: 6px;	
-    color: ${props => props.theme.colors.textColorLight};
-    background-color: ${props => props.theme.colors.highlight};
-    padding: 1rem; 
-
-    span {
-      text-transform: uppercase;
-      letter-spacing: 4px;
-    }
+    margin-top: 2rem;
   }
 }
 
@@ -189,7 +178,7 @@ p, p span {
   }
 
   .header, .footer, .credit-info, .degree-info, .competence-info, .degree-description, .competence-description {
-    padding: 0.5rem;
+    padding: 1rem;
     margin: 0;
     background: none;
   }
@@ -221,7 +210,7 @@ p, p span {
   }
 
   .degree-info, .degree-description, .credit-info, .header {
-    background-color: ${props => props.theme.colors.backgroundSecondary}
+    background-color: ${props => props.theme.colors.backgroundTertiary}
     position: relative;
   }
 
@@ -241,7 +230,7 @@ p, p span {
     svg {
       width: 100%;
       path {
-        fill: ${props => props.theme.colors.backgroundSecondary};
+        fill: ${props => props.theme.colors.backgroundTertiary};
       }
     }
   }
@@ -408,10 +397,12 @@ export default function CreditingInfo(props) {
           }
           
           <div className='footer' >
-            <Link to="/">
-              <button>
-                <FormattedMessage id="creditinginfo.back" />
-              </button>
+            <Link to="/" tabIndex={-1}>
+              <FormattedMessage id="creditinginfo.back">
+              {msg =>
+                <Button value={msg} />
+              }
+              </FormattedMessage>
             </Link>
           </div>
         </>

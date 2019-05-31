@@ -45,7 +45,7 @@ position: relative;
   }
 
   .navigation {
-    background-color: ${props => props.theme.colors.backgroundSecondary};
+    background-color: ${props => props.theme.colors.backgroundTertiary};
     width: 100%;
     padding: 0;
     z-index: 30;

@@ -13,17 +13,21 @@ S.Navigation = styled.nav`
   grid-column: nav;
 
   .navbar {
+    padding-left: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .nav-icon {
       display: none;
     }
-    
-    img {
-      width: 32px;
-      height: 32px;
-      padding-right: 20px;
+
+    a {
+      img {
+        width: 32px;
+        height: 32px;
+        margin-right: 20px;
+      }
     }
 
     .navbar_items {
@@ -83,12 +87,16 @@ S.Navigation = styled.nav`
       background-color: white;
       position: absolute;
       width: 100%;
+      padding-left: 0;
 
-      img {
-        width: 48px;
-        height: 48px;
-        margin-left: 12px;
+      a {
         z-index: 999;
+        margin-left: 12px;
+
+        img {
+          width: 48px;
+          height: 48px;
+        }
       }
 
       .navbar_items {

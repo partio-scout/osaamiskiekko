@@ -19,7 +19,7 @@ S.LanguageSelector = styled.div`
   -webkit-appearance: none;
   appearance: none;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 20px;
   text-transform: capitalize;
   cursor: pointer;

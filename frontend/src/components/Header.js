@@ -15,6 +15,8 @@ S.Header = styled.header`
  grid-template-columns: 4fr 4fr;
 
 .header-text {
+  padding-left: 2rem;
+  
   min-height: 600px;
   @media only screen and (max-width: 730px) {
     grid-column: 1 / 3;
@@ -44,9 +46,10 @@ h1 {
   line-height: 46px;
   margin: 0px;
     span {
-      background-size: 100% 100%;
+      background-size: 100% 2.5rem;
       background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
       background-repeat: no-repeat;
+      background-position-y: 70%;
     }
 }
 

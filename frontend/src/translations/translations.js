@@ -46,7 +46,7 @@ export default {
     "themes.blue": "Sinisikermä",
     "themes.green": "Sammal",
     "institution.type.school": 'Oppilaitos',
-    "institution.type.organization": 'School',
+    "institution.type.organization": 'Organisaatio',
     "creditinginfo.notfound": "Ei saatavilla",
     "creditinginfo.scope": "Laajuus",
     "creditinginfo.level": "Taso",

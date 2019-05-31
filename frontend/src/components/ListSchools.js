@@ -25,7 +25,7 @@ const ListSchools = (props) => {
     <S.ListSchools>
       {sortedSchoolList.map(school => school.degree.length > 0 &&
         <div key={school.id}>
-        <h1>{school[`name_${globalState.language}`]} ({school.degree.length})</h1>
+        <h2>{school[`name_${globalState.language}`]} ({school.degree.length})</h2>
           {school.degree.map(degree => <SchoolItem key={degree.id} degree={degree}/>)}
         </div>
         )}

@@ -24,11 +24,10 @@ const Home = () => {
   const { data, isLoading } = getInstitutions();
 
   const sortSchools = selectedCarouselField => {
-    const schoolList = globalState.nqfLevels.map(level => {
-      const lvl = parseInt(level.level);
+    const schoolList = globalState.nqfLevels.map(nqf => {
       return {
-        ...level,
-        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === lvl)
+        ...nqf,
+        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === nqf.id)
       }
      });
     const sortedSchoolList = orderBy(schoolList, [(item) => item.degree.length], ['desc'])

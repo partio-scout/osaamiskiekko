@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
 import * as Api from '../api/Api';
-import ListSchools from '../components/search/ListSchools';
+import SchoolList from '../components/search/SchoolList';
 import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
@@ -68,7 +68,7 @@ const Home = () => {
         isLoading={isLoading}
         sortedCarouselFields={sortedCarouselFields}
         setSelectedCarouselField={setSelectedCarouselField}/>
-      <ListSchools sortedSchoolList={sortedSchoolList} />
+      <SchoolList sortedSchoolList={sortedSchoolList} />
     </S.Home>
   );
 }

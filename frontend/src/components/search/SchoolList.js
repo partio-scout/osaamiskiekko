@@ -4,7 +4,7 @@ import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import SchoolItem from './SchoolItem';
 
 const S = {};
-S.ListSchools = styled.div`
+S.SchoolList = styled.div`
   max-width: 660px;
   margin: auto;
   margin-bottom: 50px;
@@ -17,20 +17,20 @@ h1 {
 }
 `;
 
-const ListSchools = (props) => {
+const SchoolList = (props) => {
   const { sortedSchoolList } = props;
   const globalState = useGlobalStateContext();
 
   return (
-    <S.ListSchools>
+    <S.SchoolList>
       {sortedSchoolList.map(school => school.degree.length > 0 &&
         <div key={school.id}>
         <h2>{school[`name_${globalState.language}`]} ({school.degree.length})</h2>
           {school.degree.map(degree => <SchoolItem key={degree.id} degree={degree}/>)}
         </div>
         )}
-    </S.ListSchools>
+    </S.SchoolList>
   );
 }
 
-export default ListSchools;
+export default SchoolList;

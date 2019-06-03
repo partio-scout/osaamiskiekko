@@ -9,7 +9,7 @@ import GlobalStyle from './styles/GlobalStyles';
 
 const Main = () => {
   return (
-    <main>
+    <>
       <GlobalStyle />
         <Switch>
           <Route exact path='/' component={Home} />
@@ -18,7 +18,7 @@ const Main = () => {
           <Route exact path='/otayhteytta' component={Contact} />
           <Route exact path='/curvetest' component={CurveTest} />
         </Switch>
-    </main>
+    </>
   );
 }
 

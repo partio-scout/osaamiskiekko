@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
 import styled from 'styled-components';
-import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -117,7 +117,7 @@ export default function ResultsCarousel(props) {
             <div className="carousel-item" key={slide} onClick={() => setSelectedCarouselField(slide)}>
               <div>
                 <h3>{slide[`name_${globalState.language}`]}</h3>
-                <p>({slide.competences.length})</p>
+                <p>({slide.creditingInfos.length})</p>
               </div>
             </div>
           );

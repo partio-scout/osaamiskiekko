@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
-import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 const S = {};

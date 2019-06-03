@@ -22,7 +22,7 @@ const App = () => {
   const [nqfLevels, setNqfLevels] = useState();
   const [fieldOfStudies, setFieldOfStudies] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState();
+  const [error, setError] = useState(); // eslint-disable-line
 
   useEffect(() => {
     const fetchData = async () => {

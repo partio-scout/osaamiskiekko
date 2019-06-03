@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
 import * as Api from '../api/Api';
-import ListSchools from '../components/ListSchools';
+import SchoolList from '../components/search/SchoolList';
+import OrganizationList from '../components/search/OrganizationList';
 import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import { fillData, transformToByOrganization } from '../api/CreditingData';
 
 const S = {};
 S.Home = styled.div`
@@ -19,6 +21,8 @@ S.Home = styled.div`
 const Home = () => {
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
+  const [creditingInfoForDegree, setCreditingInfoForDegree] = useState([]);
+
   const globalState = useGlobalStateContext();
   const { isLoading, schools, organizations } = globalState;
 
@@ -28,34 +32,52 @@ const Home = () => {
     const schoolList = globalState.nqfLevels.map(nqf => {
       return {
         ...nqf,
-        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === nqf.id)
+        creditingInfos: selectedCarouselField.creditingInfos.filter(creditingInfo => creditingInfo.academicdegree.nqf === nqf.id)
       }
      });
-    const sortedSchoolList = orderBy(schoolList, [(item) => item.degree.length], ['desc'])
+    const sortedSchoolList = orderBy(schoolList, [(item) => item.creditingInfos.length], ['desc'])
     setSortedSchoolList(sortedSchoolList);
   } 
 
   const setSelectedCarouselField = field => sortSchools(field);
 
   const sortCarouselItems = (carouselFields) => {
-    const sortedFields = orderBy(carouselFields, [(item) => item.competences.length], ['desc'])
+    const sortedFields = orderBy(carouselFields, [(item) => item.creditingInfos.length], ['desc'])
     setSortedCarouselFields(sortedFields);
     sortSchools(sortedFields[0]);
   }
 
-  const getMatchingDegrees = async (competence) => {
-    const competences = await Api.getCreditingInfosForCompetence(competence.id);
+  const initializeMatchingDegrees = async (competence) => {
+    const links = await Api.getCreditingInfosForCompetence(competence.id);
     const carouselFields = globalState.fieldOfStudies.map(field => ({
       ...field, 
-      competences: competences.filter(competence => competence.academicdegree.fieldofstudy === field.id)
+      creditingInfos: links.filter(link => link.academicdegree.fieldofstudy === field.id)
     }));
     sortCarouselItems(carouselFields);
   }
 
-  const showResults = (institution, competenceOrDegreeSelection) => {
+  const getCreditingInfoForDegree = async (degree) => {
+    const links = await Api.getCreditingInfosForDegree(degree.id);
+    const deep = links.map(link => fillData(link, globalState));
+    const transformed = transformToByOrganization(deep);
+
+    return transformed;
+  }
+
+  const showResults = async (institution, competenceOrDegreeSelection) => {
     if (institution && competenceOrDegreeSelection) {
       if (institution.type_en === 'Organization') {
-        getMatchingDegrees(competenceOrDegreeSelection);
+        // Clear degree-specific data before displaying links for competence
+        setCreditingInfoForDegree([]);
+
+        initializeMatchingDegrees(competenceOrDegreeSelection);
+      } else {
+        // Clear competence-specific data before displaying links for degree
+        setSortedSchoolList([]);
+        setSortedCarouselFields([]);
+
+        const creditingInfo = await getCreditingInfoForDegree(competenceOrDegreeSelection);
+        setCreditingInfoForDegree(creditingInfo);
       }
     }
   }
@@ -68,7 +90,12 @@ const Home = () => {
         isLoading={isLoading}
         sortedCarouselFields={sortedCarouselFields}
         setSelectedCarouselField={setSelectedCarouselField}/>
-      <ListSchools sortedSchoolList={sortedSchoolList} />
+      
+      { (sortedSchoolList && sortedSchoolList.length > 0) 
+        && <SchoolList sortedSchoolList={sortedSchoolList} /> }
+      
+      { (creditingInfoForDegree && creditingInfoForDegree.length > 0) 
+        && <OrganizationList creditingInfoByOrganization={creditingInfoForDegree} /> }
     </S.Home>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 
 const S = {};
 S.SchoolItem = styled.div`
@@ -47,16 +47,16 @@ const StyledLink = styled(Link)`
 `;
 
 const SchoolItem = (props) => {
-  const { degree } = props;
+  const { creditingInfo } = props;
   const globalState = useGlobalStateContext();
   return (
-    <StyledLink to={`/ahot/${degree.id}`}>
+    <StyledLink to={`/ahot/${creditingInfo.id}`}>
     <S.SchoolItem>
         <div className="image-container">
           <img src="http://placekitten.com/200/200" alt="katti" align="left"/>
         </div>
         <div className="text-container">
-          <h2>{degree.academicdegree[`name_${globalState.language}`]}</h2>
+          <h2>{creditingInfo.academicdegree[`name_${globalState.language}`]}</h2>
           <p>Oppilaitos</p>
         </div>
     </S.SchoolItem>

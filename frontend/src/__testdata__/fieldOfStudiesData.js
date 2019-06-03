@@ -6,7 +6,7 @@ export default [
 "name_sv": "Humanistiset alat ja teologia_sv",
 "created_at": "2019-05-09T09:59:54.211Z",
 "updated_at": "2019-05-13T09:22:54.804Z",
-"competences": [],
+"creditingInfos": [],
 },
 {
 "id": 2,
@@ -15,7 +15,7 @@ export default [
 "name_sv": "Kasvatusala_sv",
 "created_at": "2019-05-07T09:32:52.448Z",
 "updated_at": "2019-05-13T09:23:02.280Z",
-"competences": [],
+"creditingInfos": [],
 },
 {
 "id": 3,
@@ -24,7 +24,7 @@ export default [
 "name_sv": "Kauppa, hallinto ja oikeustiede_sv",
 "created_at": "2019-05-07T09:33:01.518Z",
 "updated_at": "2019-05-13T09:23:09.600Z",
-"competences": [],
+"creditingInfos": [],
 },
 {
 "id": 4,
@@ -33,7 +33,7 @@ export default [
 "name_sv": "Luonnontieteet, matematiikka ja tilastotiede_sv",
 "created_at": "2019-05-07T09:33:12.355Z",
 "updated_at": "2019-05-13T09:23:18.439Z",
-"competences": [],
+"creditingInfos": [],
 },
 {
 "id": 5,
@@ -42,7 +42,7 @@ export default [
 "name_sv": "Farmasia, hammaslääketiede ja lääketiede_sv",
 "created_at": "2019-05-07T09:33:22.819Z",
 "updated_at": "2019-05-13T09:23:33.571Z",
-"competences": [],
+"creditingInfos": [],
 },
 {
 "id": 6,
@@ -51,7 +51,7 @@ export default [
 "name_sv": "Maa- ja metsätaloustiede, eläinlääketiede_sv",
 "created_at": "2019-05-07T09:33:33.309Z",
 "updated_at": "2019-05-13T09:23:39.329Z",
-"competences": [],
+"creditingInfos": [],
 },
 {
 "id": 7,
@@ -60,7 +60,7 @@ export default [
 "name_sv": "Palvelualat: liikuntatiede, sotilasala_sv",
 "created_at": "2019-05-07T09:33:45.149Z",
 "updated_at": "2019-05-13T09:23:49.825Z",
-"competences": [],
+"creditingInfos": [],
 },
 {
 "id": 8,
@@ -69,7 +69,7 @@ export default [
 "name_sv": "Sosiaalitieteet, journalistiikka ja viestintä_sv",
 "created_at": "2019-05-07T09:33:56.027Z",
 "updated_at": "2019-05-13T09:23:56.038Z",
-"competences": [],
+"creditingInfos": [],
 },
 {
 "id": 9,
@@ -78,7 +78,7 @@ export default [
 "name_sv": "Taiteet ja kulttuuri_sv",
 "created_at": "2019-05-07T09:34:03.203Z",
 "updated_at": "2019-05-13T09:24:02.096Z",
-"competences": [],
+"creditingInfos": [],
 },
 {
 "id": 10,
@@ -87,6 +87,6 @@ export default [
 "name_sv": "Tekniikka, teollisuus ja rakentaminen_sv",
 "created_at": "2019-05-07T09:34:10.767Z",
 "updated_at": "2019-05-13T09:24:07.713Z",
-"competences": [],
+"creditingInfos": [],
 }
 ]

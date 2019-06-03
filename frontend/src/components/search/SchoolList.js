@@ -23,10 +23,10 @@ const SchoolList = (props) => {
 
   return (
     <S.SchoolList>
-      {sortedSchoolList.map(school => school.degree.length > 0 &&
+      {sortedSchoolList.map(school => school.creditingInfos.length > 0 &&
         <div key={school.id}>
-        <h2>{school[`name_${globalState.language}`]} ({school.degree.length})</h2>
-          {school.degree.map(degree => <SchoolItem key={degree.id} degree={degree}/>)}
+        <h2>{school[`name_${globalState.language}`]} ({school.creditingInfos.length})</h2>
+          {school.creditingInfos.map(info => <SchoolItem key={info.id} creditingInfo={info}/>)}
         </div>
         )}
     </S.SchoolList>

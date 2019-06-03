@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
+import CompetenceCreditingList from './CompetenceCreditingList';
 
 const S = {};
-S.SchoolItem = styled.div`
+S.OrganizationItem = styled.div`
   display: flex;
   align-items: center;
   background-color: white;
@@ -42,26 +42,21 @@ S.SchoolItem = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-`;
-
-const SchoolItem = (props) => {
-  const { creditingInfo } = props;
+const OrganizationItem = (props) => {
+  const data = props.creditingInfoForOrganization;
   const globalState = useGlobalStateContext();
+  
   return (
-    <StyledLink to={`/ahot/${creditingInfo.id}`}>
-    <S.SchoolItem>
+    <S.OrganizationItem>
         <div className="image-container">
-          <img src="http://placekitten.com/200/200" alt="katti" align="left"/>
+          <img src={data.url} alt="" align="left"/>
         </div>
         <div className="text-container">
-          <h2>{creditingInfo.academicdegree[`name_${globalState.language}`]}</h2>
-          <p>Oppilaitos</p>
+          <h2 className='name'>{data[`name_${globalState.language}`]}</h2>
         </div>
-    </S.SchoolItem>
-    </StyledLink>
+        <CompetenceCreditingList className='credit-list' data={data.creditingInfos} />
+    </S.OrganizationItem>
   );
 }
 
-export default SchoolItem;
+export default OrganizationItem;

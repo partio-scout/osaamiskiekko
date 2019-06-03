@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import _ from 'lodash';
 import * as Api from './Api';
 
 const fillData = (creditingData, globalState) => {
@@ -32,6 +33,19 @@ const fillData = (creditingData, globalState) => {
     };
 }
 
+const transformToByOrganization = (filledCreditingData) => {
+  const organizations = filledCreditingData.map(creditingInfo => creditingInfo.competence.organization);
+  const uniqueOrganizations = _.uniqBy(organizations, 'id');
+  const withCreditingInfo = uniqueOrganizations.map(org => {
+    return {
+      ...org,
+      creditingInfos: filledCreditingData.filter(cred => cred.competence && cred.competence.organization && cred.competence.organization.id === org.id)
+    }
+  });
+
+  return withCreditingInfo;
+}
+
 const CreditingData = (id, globalState) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -62,4 +76,4 @@ const CreditingData = (id, globalState) => {
 
 export default CreditingData;
 
-export { fillData };
+export { fillData, transformToByOrganization };

@@ -63,6 +63,7 @@ const App = () => {
     <BrowserRouter>
       <Helmet>
         <html lang={language} />
+        <title>{translations[language].title}</title>
       </Helmet>
       <GlobalStateContext.Provider value={globalState}>
         <ThemeProvider theme={currentTheme}>

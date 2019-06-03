@@ -1,4 +1,6 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import Navigation from '../components/Navigation';
 import CreditingInfo from '../components/CreditingInfo';
@@ -32,6 +34,12 @@ position: relative;
 }
 
 .content {
+  .hide {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+ }
+
   margin-top: 3rem;
   padding: 0 15%;
   position: relative;
@@ -76,6 +84,13 @@ const Credit = (props) => {
 
   return (
     <S.Credit>
+      <FormattedMessage id='creditinginfo.creditingTitle'>
+        {msg =>
+          <Helmet>
+            <title>{msg}</title>
+          </Helmet>
+        }
+      </FormattedMessage>
       <div className='topcurve'>
         {curve()}
       </div>
@@ -83,7 +98,10 @@ const Credit = (props) => {
         <Navigation />
       </div>
       <div className='content'>
-        <CreditingInfo creditingData={data} isLoading={isLoading}  />
+        <h1 className='hide'>
+          <FormattedMessage id='creditinginfo.crediting' />
+        </h1>
+        <CreditingInfo creditingData={data} isLoading={isLoading} />
       </div>
     </S.Credit>
   );

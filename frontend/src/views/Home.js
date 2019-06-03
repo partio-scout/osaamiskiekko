@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
 import * as Api from '../api/Api';
-import ListSchools from '../components/ListSchools';
+import ListSchools from '../components/search/ListSchools';
 import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 

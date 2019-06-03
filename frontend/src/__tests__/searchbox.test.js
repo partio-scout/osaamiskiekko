@@ -1,9 +1,9 @@
 import React from 'react';
 import {render, shallow, mount, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import SearchBox from '../components/SearchBox';
-import SearchResults from '../components/SearchResults';
-import SearchInput from '../components/SearchInput';
+import SearchBox from '../components/search/SearchBox';
+import SearchResults from '../components/search/SearchResults';
+import SearchInput from '../components/search/SearchInput';
 import * as testHelper from '../testHelpers';
 import { schoolData } from '../__testdata__/'
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import SchoolItem from './SchoolItem';
 
 const S = {};

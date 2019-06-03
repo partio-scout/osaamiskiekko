@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchBox from './SearchBox';
-import ResultsCarousel from './ResultsCarousel';
+import SearchBox from './search/SearchBox';
+import ResultsCarousel from './search/ResultsCarousel';
 
 const S = {};
 S.Curve = styled.div`

@@ -1,60 +1,89 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import CompetenceCreditingList from './CompetenceCreditingList';
+import { getFullImageURL } from '../../api/ApiUtils'; 
 
 const S = {};
 S.OrganizationItem = styled.div`
+.item {
+  position: relative;
   display: flex;
   align-items: center;
-  background-color: white;
-  background-color: #FFFFFF;
- 	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
+  border: none;
+  padding: 0;
+  background-color: ${props => props.theme.colors.highlight};
+  color: ${props => props.theme.colors.textColorLight}; 
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
-  padding: 34px;
   margin-bottom: 16px;
-  max-height: 25px;
   transition: 0.2s;
-  text-decoration: none;
+  width: 100%;
+  text-align: left;
+
   :hover {
     transition: 0.2s;
     transform: scale(1.05);
     cursor: pointer;
   }
 
-  h2 {
+  .logo {
+    position: absolute;
+    flex: 0 0 auto;
+    width: 69px;
+    height: 100%;
+    overflow: hidden;
+    background: url('${props => props.logoUrl}') no-repeat center;
+    background-size: cover;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .name {
+    background-color: ${props => props.theme.colors.highlight};
+    color: ${props => props.theme.colors.textColorLight};
+    flex: 1 1 auto;
     font-size: 18px;
     font-weight: bold;
     line-height: 26px;
-    margin: 0px;
-    color: ${props => props.theme.colors.link};
-  }
-  p {
-    margin: 0px;
+    margin: 1em 0.1em 1em 79px
+    overflow: hidden;
     color: ${props => props.theme.colors.link};
   }
 
-  .image-container {
-    margin-right: 20px;
-    img {
-      max-width: 55px;
-    }
+  i {
+    background-color: ${props => props.theme.colors.highlight};
+    color: ${props => props.theme.colors.textColorLight};
+    font-size: 22px;
+    margin: 0 1em 0 0.5em;
+    flex: 0 0 auto;
   }
+}
+
+.credit-list {
+  display: none;
+}
 `;
 
 const OrganizationItem = (props) => {
   const data = props.creditingInfoForOrganization;
   const globalState = useGlobalStateContext();
+  const [showCreditingList, setShowCreditingList] = useState(false); 
+
+  const toggleCreditingList = () => setShowCreditingList(!showCreditingList);
   
+  const logoUrl = (data.logo ? getFullImageURL(data.logo.url) : data.logoUrl);
+
   return (
-    <S.OrganizationItem>
-        <div className="image-container">
-          <img src={data.url} alt="" align="left"/>
-        </div>
-        <div className="text-container">
-          <h2 className='name'>{data[`name_${globalState.language}`]}</h2>
-        </div>
-        <CompetenceCreditingList className='credit-list' data={data.creditingInfos} />
+    <S.OrganizationItem logoUrl={logoUrl}>
+        <button className='item' onClick={toggleCreditingList}>
+          <div className='logo' />
+          <span className='name'>{data[`name_${globalState.language}`]}</span>
+          {!showCreditingList && <i className="fas fa-chevron-down"></i>}
+          {showCreditingList && <i className="fas fa-chevron-up"></i>}
+        </button>
+        {showCreditingList && <div className='crediting-list'>
+          <CompetenceCreditingList data={data.creditingInfos} />
+        </div>}
     </S.OrganizationItem>
   );
 }

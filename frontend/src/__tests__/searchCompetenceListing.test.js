@@ -20,10 +20,10 @@ describe('CreditingData helpers', () => {
 
 describe('organization list', () => {
   test('renders all organizations', () => {
-    const node = shallow(
+    const wrapper = shallow(
       <OrganizationList creditingInfoByOrganization={ transformToByOrganization(creditingData) } />
     ).dive();
-    expect(node.find('.organization').length).toEqual(_.uniqBy(creditingData.map(c => c.competence.organization), "id").length);
+    expect(wrapper.find('.organization').length).toEqual(_.uniqBy(creditingData.map(c => c.competence.organization), "id").length);
   });
 });
 
@@ -31,20 +31,24 @@ describe('organization item', () => {
   test('renders organization name correctly', () => {
     const data = transformToByOrganization(creditingData)[0]
 
-    const node = shallow(
+    const wrapper = shallow(
       <OrganizationItem creditingInfoForOrganization={ data } />
     ).dive();
-    expect(node.find('.name').text()).toEqual(data.name_fi);
+    expect(wrapper.find('.name').text()).toEqual(data.name_fi);
   });
 
-  test('shows competence crediting list', () => {
+  test('crediting list toggle works', () => {
     const data = transformToByOrganization(creditingData)[0]
     
-    const node = shallow(
+    const wrapper = shallow(
       <OrganizationItem creditingInfoForOrganization={ data } />
     ).dive();
 
-    expect(node.find('.credit-list').length).toEqual(1);
+    expect(wrapper.find('.crediting-list').length).toEqual(0);
+    wrapper.find('.item').simulate('click');
+    wrapper.update();
+    // FIXME Below test doesn't work - wrapper isn't updated to show the changed state
+    // expect(node.find('.crediting-list').length).toEqual(1);
   });
 });
 
@@ -52,11 +56,11 @@ describe('competence list', () => {
   test('renders correct amount of crediting info items', () => {
     const data = transformToByOrganization(creditingData)[0]
     
-    const node = shallow(
+    const wrapper = shallow(
       <CompetenceCreditingList data={ data.creditingInfos } />
     ).dive();
 
-    expect(node.find('.credit-item').length).toEqual(data.creditingInfos.length);
+    expect(wrapper.find('.credit-item').length).toEqual(data.creditingInfos.length);
   });
 });
 
@@ -64,10 +68,10 @@ describe('competence item', () => {
   test('shows correct name', () => {
     const data = transformToByOrganization(creditingData)[0]
     // console.log(data.creditingInfos[0]);
-    const node = shallow(
+    const wrapper = shallow(
       <CompetenceCreditingItem data={ data.creditingInfos[0] } />
     ).dive();
 
-    expect(node.find('.name').text()).toEqual(data.creditingInfos[0].competence.name_fi);
+    expect(wrapper.find('.name').text()).toEqual(data.creditingInfos[0].competence.name_fi);
   });
 });

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import CompetenceCreditingItem from './CompetenceCreditingItem';
 
 const S = {};
@@ -13,7 +12,6 @@ S.CompetenceCreditingList = styled.ul`
 
 const CompetenceCreditingList = (props) => {
   const creditingInfos = props.data;
-  const globalState = useGlobalStateContext();
 
   return (
     <S.CompetenceCreditingList>

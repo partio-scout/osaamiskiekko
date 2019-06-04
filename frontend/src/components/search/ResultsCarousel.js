@@ -55,6 +55,12 @@ S.ResultsCarousel = styled.div`
       }
     }
   }
+
+ @media only screen and (max-width: 400px) {
+  .slick-dots {
+    bottom: initial;
+  }
+}
 `;
 
 export default function ResultsCarousel(props) {

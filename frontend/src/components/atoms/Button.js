@@ -8,7 +8,7 @@ margin: auto;
 font-size: 16px;	
 line-height: 24px;	
 text-align: center;
-border-radius: 3px;	
+border-radius: 8px;	
 border: none;
 color: ${props => props.theme.colors.textColorLight}
 background-color: ${props => props.theme.colors.highlight}

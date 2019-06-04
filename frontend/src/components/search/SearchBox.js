@@ -24,7 +24,6 @@ S.SearchBox = styled.div`
   width: 587px;
 
   .search-wrapper {
-    margin-bottom: 35px;
   }
 
   @media only screen and (max-width: 767px) {

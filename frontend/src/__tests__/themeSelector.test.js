@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, shallow, mount, configure} from 'enzyme';
+import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import ThemeSelector from '../components/ThemeSelector';
 import * as GlobalStateContext from '../utils/GlobalStateContext';

@@ -7,9 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 const S = {};
 S.ResultsCarousel = styled.div`
-  color: #FFFFFF;
-  margin: auto;
-  max-width: 90%;
   padding: 0px 40px 0px 40px;
   .slick-arrow {
     :before {
@@ -25,8 +22,7 @@ S.ResultsCarousel = styled.div`
       border-radius: 8px;	
       background-color: ${props => props.theme.colors.highlight};
       margin: 20px;
-      padding: 20px; 
-      min-height: 80px;
+      min-height: 125px;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -53,15 +49,18 @@ S.ResultsCarousel = styled.div`
     transform: scale(1.12);
     div div div {
       background-color: ${props => props.theme.colors.accentColor};
-      h3, p {
+      p {
         font-size: 18px;	
         font-weight: bold;	
       }
     }
   }
+
+ @media only screen and (max-width: 400px) {
   .slick-dots {
-    bottom: 0px;
+    bottom: initial;
   }
+}
 `;
 
 export default function ResultsCarousel(props) {
@@ -70,10 +69,13 @@ export default function ResultsCarousel(props) {
   const globalState = useGlobalStateContext();
 
   const settings = {
+    className: 'center',
+    centerMode: true,
+    centerPadding: '60px',
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     accessibility: true,
     swipeToSlide: true,
@@ -83,27 +85,32 @@ export default function ResultsCarousel(props) {
     },
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1240,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
+          slidesToScroll: 1,
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 990,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
+          slidesToShow: 3,
+          slidesToScroll: 1,
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 760,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 470,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false
         }
       }
     ]
@@ -116,7 +123,7 @@ export default function ResultsCarousel(props) {
           return (
             <div className="carousel-item" key={slide} onClick={() => setSelectedCarouselField(slide)}>
               <div>
-                <h3>{slide[`name_${globalState.language}`]}</h3>
+                <p>{slide[`name_${globalState.language}`]}</p>
                 <p>({slide.creditingInfos.length})</p>
               </div>
             </div>

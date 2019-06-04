@@ -13,7 +13,7 @@ S.Curve = styled.div`
   }
 
   svg {
-    min-height: 400px;
+    min-height: 350px;
     width: 100%;
   }
 
@@ -23,8 +23,7 @@ path {
 `;
 
 export default function Curve(props) {
-  const { showResults, data, isLoading, sortedCarouselFields, setSelectedCarouselField } = props;
-
+  const { showResults, data, isLoading, sortedCarouselFields, setSelectedCarouselField, examinationAmount } = props;
   const svgCurve = (color) =>
     <svg version="1.1" viewBox="0 0 1440 370" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fillRule="evenodd">
@@ -36,7 +35,7 @@ export default function Curve(props) {
 
   return (
     <S.Curve>
-        <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
+      <SearchBox showResults={showResults} data={data} isLoading={isLoading} examinationAmount={examinationAmount} />
         {svgCurve()}
         { sortedCarouselFields && sortedCarouselFields.length > 0 &&
           <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>

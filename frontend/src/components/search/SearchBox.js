@@ -5,15 +5,14 @@ import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import OutsideClickHandler from 'react-outside-click-handler';
+import { FormattedMessage } from 'react-intl';
 
 const S = {};
 S.SearchBox = styled.div`
-  background-color: white;
   min-height: 125px;	
   background-color: #FFFFFF;
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
-  padding: 34px;
   margin-top: -50px;
   z-index: 20;
   position: absolute;
@@ -22,9 +21,21 @@ S.SearchBox = styled.div`
   left: 0;
   right: 0;
   width: 587px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 34px;
 
   .search-wrapper {
-    margin-bottom: 35px;
+    width: 100%;
+  }
+
+  .results-amount {
+    position: absolute;
+    bottom: -100px;
+  }
+  .examination-number {
+    padding: 5px;
   }
 
   @media only screen and (max-width: 767px) {
@@ -38,7 +49,7 @@ const loadingSpinnerOverride = css`
 `;
 
 export default function SearchBox(props) {
-  const { showResults, data, isLoading } = props;
+  const { showResults, data, isLoading, examinationAmount } = props;
   const globalState = useGlobalStateContext();
 
   const [institutionInput, setInstitutionInput] = useState('');
@@ -175,6 +186,14 @@ export default function SearchBox(props) {
         </OutsideClickHandler>
           }
         </div>
+      }
+      {
+        examinationAmount > 0 &&
+        <p className="results-amount">
+          <FormattedMessage id="examination.info" />
+            <span className="examination-number">{examinationAmount}</span>
+          <FormattedMessage id="examination.infoEnd" />
+        :</p>
       }
     </S.SearchBox>
   )

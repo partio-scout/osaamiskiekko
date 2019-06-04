@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { DebounceInput } from 'react-debounce-input';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import SearchResults from './SearchResults';
 
@@ -10,8 +9,8 @@ S.SearchWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
   width: 80%;
+  padding: 10px 0px 20px 0px;
 
 label {
   color: ${props => props.theme.colors.textColor};
@@ -58,7 +57,6 @@ export default injectIntl(function SearchInput(props) {
         <span className="fa fa-search"></span>
         <input
           minLength={2}
-          // debounceTimeout={300}
           value={inputValue}
           type="text"
           placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}

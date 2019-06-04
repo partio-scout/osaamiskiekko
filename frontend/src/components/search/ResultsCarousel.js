@@ -127,7 +127,7 @@ export default function ResultsCarousel(props) {
             <button className="carousel-item" key={slide} onClick={() => setSelectedCarouselField(slide)}>
               <div>
                 <p>{slide[`name_${globalState.language}`]}</p>
-                <p>({slide.creditingInfos.length})</p>
+                <p className="credits-length">({slide.creditingInfos.length})</p>
               </div>
             </button>
           );

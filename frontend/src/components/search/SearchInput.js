@@ -10,7 +10,6 @@ margin: auto;
 position: relative;
 display: flex;
 flex-direction: column;
-margin-top: 1rem;
 width: 80%;
 padding: 10px 0px 20px 0px;
 
@@ -22,7 +21,6 @@ label {
 
   span {
     display: block;
-    margin-bottom: 1.5rem;
   }
 
   .input-area {
@@ -31,15 +29,17 @@ label {
   
   input {
     box-sizing: border-box;
-    height: 32px;
+    height: 45px;
     width: 100%;
     border: none;
-    border-bottom: 2px solid ${props => props.theme.colors.textColor};
+    border-bottom: 1px solid ${props => props.theme.colors.textColor};
     padding-left: 32px;
     outline-width: 0;
     outline: none;
     font-size: 20px;	
     line-height: 30px;
+    font-style: italic;	
+    font-weight: 300;
   }
   
   input::placeholder {
@@ -53,7 +53,7 @@ label {
     position: absolute;
     width: 22px;
     font-size: 22px;
-    line-height: 30px;
+    line-height: 45px;
     color: ${props => props.theme.colors.textColor};
   }
 }
@@ -71,7 +71,6 @@ export default injectIntl(function SearchInput(props) {
          <span className="fa fa-search"></span>
         <input
           minLength={2}
-          // debounceTimeout={300}
           value={inputValue}
           type="text"
           placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}

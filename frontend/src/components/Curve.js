@@ -13,7 +13,7 @@ S.Curve = styled.div`
   }
 
   svg {
-    min-height: 350px;
+    min-height: 300px;
     width: 100%;
   }
 

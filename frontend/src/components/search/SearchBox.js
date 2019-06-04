@@ -32,7 +32,7 @@ S.SearchBox = styled.div`
 
   .results-amount {
     position: absolute;
-    bottom: -100px;
+    bottom: -75px;
   }
   .examination-number {
     padding: 5px;

@@ -38,7 +38,7 @@ S.ResultWrapper = styled.ul`
   max-height: 256px;
   overflow-y: auto;
   position: absolute;
-  margin-top: 80px;
+  margin-top: 65px;
   z-index: 50;
   padding: 0;
   list-style: none;

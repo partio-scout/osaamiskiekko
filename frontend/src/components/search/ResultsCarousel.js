@@ -15,6 +15,9 @@ S.ResultsCarousel = styled.div`
   }
    .carousel-item {
      outline: none;
+     background: none;
+     border: none;
+     
      div {
       font-size: 18px;	
       line-height: 24px;	
@@ -121,12 +124,12 @@ export default function ResultsCarousel(props) {
       <Slider ref={slider} {...settings}>
         {sortedCarouselFields.map((slide) => {
           return (
-            <div className="carousel-item" key={slide} onClick={() => setSelectedCarouselField(slide)}>
+            <button className="carousel-item" key={slide} onClick={() => setSelectedCarouselField(slide)}>
               <div>
                 <p>{slide[`name_${globalState.language}`]}</p>
                 <p>({slide.creditingInfos.length})</p>
               </div>
-            </div>
+            </button>
           );
         })}
     </Slider>

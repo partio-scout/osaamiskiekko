@@ -20,6 +20,8 @@ S.Navigation = styled.nav`
 
     .nav-icon {
       display: none;
+      border: none;
+      background: none;
     }
 
     a {
@@ -221,9 +223,9 @@ export default function Navigation() {
               <li className="navbar_subitem"><LanguageSelector /></li>
             </ul>
           </div>
-          <div className={icon} onClick={() => setNavmenuVisible(!navmenuVisible)}>
+          <button className={icon} onClick={() => setNavmenuVisible(!navmenuVisible)}>
             <div></div>
-          </div>
+          </button>
         </div>
       </OutsideClickHandler>
     </S.Navigation>

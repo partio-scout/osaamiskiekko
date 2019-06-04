@@ -8,6 +8,7 @@ S.CompetenceCreditingList = styled.ul`
   margin: auto;
   margin-bottom: 50px;
   padding: 0px 20px 0px 20px;
+  list-style: none;
 `;
 
 const CompetenceCreditingList = (props) => {

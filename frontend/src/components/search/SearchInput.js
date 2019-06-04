@@ -1,62 +1,77 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import _ from 'lodash';
 import SearchResults from './SearchResults';
 
 const S = {};
 S.SearchWrapper = styled.div`
-  margin: auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  padding: 10px 0px 20px 0px;
+margin: auto;
+position: relative;
+display: flex;
+flex-direction: column;
+margin-top: 1rem;
+width: 80%;
+padding: 10px 0px 20px 0px;
 
 label {
   color: ${props => props.theme.colors.textColor};
   font-size: 16px;	
   letter-spacing: 2.29px;
   line-height: 20px;
-}
 
-input {
-  height: 32px;
-  border: none;
-  border-bottom: 2px solid ${props => props.theme.colors.textColor};
-  padding-left: 32px;
-  outline-width: 0;
-  outline: none;
-  font-size: 20px;	
-  line-height: 30px;
-}
+  span {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
 
-input::placeholder {
-  color: ${props => props.theme.colors.textColor};
-  opacity: 1;
-  font-size: 20px;	
-  line-height: 30px;
-}
-
-.fa-search { 
-  position: relative;
-  left: 0px;
-  top: 29px;
-  width: 22px;
-  font-size: 22px;
-  color: ${props => props.theme.colors.textColor};
+  .input-area {
+    position:relative;
+  }
+  
+  input {
+    box-sizing: border-box;
+    height: 32px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid ${props => props.theme.colors.textColor};
+    padding-left: 32px;
+    outline-width: 0;
+    outline: none;
+    font-size: 20px;	
+    line-height: 30px;
+  }
+  
+  input::placeholder {
+    color: ${props => props.theme.colors.textColor};
+    opacity: 1;
+    font-size: 20px;	
+    line-height: 30px;
+  }
+  
+  .fa-search { 
+    position: absolute;
+    width: 22px;
+    font-size: 22px;
+    line-height: 30px;
+    color: ${props => props.theme.colors.textColor};
+  }
 }
 `;
 
 export default injectIntl(function SearchInput(props) {
   const { handleInput, inputValue, labelKey, name, results, setSelection, showPreResults } = props;
+  const [id] = useState(_.uniqueId());
+
   return (
       <S.SearchWrapper>
-        <label htmlFor="search-input">
+        <label htmlFor={id}>
           <FormattedMessage id={labelKey} />
-        </label>
-        <span className="fa fa-search"></span>
+          <div className="input-area">
+         <span className="fa fa-search"></span>
         <input
           minLength={2}
+          // debounceTimeout={300}
           value={inputValue}
           type="text"
           placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}
@@ -66,6 +81,8 @@ export default injectIntl(function SearchInput(props) {
           onFocus={(e) => showPreResults(e.target.name)}
           autoComplete="off"
         />
+          </div>
+        </label>
         <SearchResults
           results={results}
           setSelection={setSelection}

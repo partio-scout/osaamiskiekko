@@ -75,6 +75,7 @@ export default function ThemeSelector() {
     <S.ThemeSelector>
       <FormattedMessage key={currentTheme.name} id="nav.changetheme">
         {msg => (
+            // eslint-disable-next-line jsx-a11y/no-onchange
             <select 
               onChange={setTheme}
               value={currentTheme.name}

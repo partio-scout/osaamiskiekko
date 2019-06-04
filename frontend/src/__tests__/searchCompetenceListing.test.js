@@ -45,7 +45,7 @@ describe('organization item', () => {
     ).dive();
 
     expect(wrapper.find('.crediting-list').length).toEqual(0);
-    wrapper.find('.item').simulate('click');
+    wrapper.find('.organization-item').simulate('click');
     wrapper.update();
     // FIXME Below test doesn't work - wrapper isn't updated to show the changed state
     // expect(node.find('.crediting-list').length).toEqual(1);

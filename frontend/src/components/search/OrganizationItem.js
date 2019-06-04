@@ -6,7 +6,7 @@ import { getFullImageURL } from '../../api/ApiUtils';
 
 const S = {};
 S.OrganizationItem = styled.div`
-.item {
+.organization-item {
   position: relative;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@ S.OrganizationItem = styled.div`
   width: 100%;
   text-align: left;
 
-  :hover {
+  :hover, :focus {
     transition: 0.2s;
     transform: scale(1.05);
     cursor: pointer;
@@ -47,7 +47,6 @@ S.OrganizationItem = styled.div`
     line-height: 26px;
     margin: 1em 0.1em 1em 79px
     overflow: hidden;
-    color: ${props => props.theme.colors.link};
   }
 
   i {
@@ -75,13 +74,19 @@ const OrganizationItem = (props) => {
 
   return (
     <S.OrganizationItem logoUrl={logoUrl}>
-        <button className='item' onClick={toggleCreditingList}>
-          <div className='logo' />
-          <span className='name'>{data[`name_${globalState.language}`]}</span>
-          {!showCreditingList && <i className="fas fa-chevron-down"></i>}
-          {showCreditingList && <i className="fas fa-chevron-up"></i>}
-        </button>
-        {showCreditingList && <div className='crediting-list'>
+        <h3>
+          <button 
+              className='organization-item' 
+              aria-expanded={showCreditingList} 
+              aria-controls={`crediting-list-${data.id}`}
+              onClick={toggleCreditingList}>
+            <div className='logo' />
+            <span className='name'>{data[`name_${globalState.language}`]}</span>
+            {!showCreditingList && <i className="fas fa-chevron-down"></i>}
+            {showCreditingList && <i className="fas fa-chevron-up"></i>}
+          </button>
+        </h3>
+        {showCreditingList && <div className='crediting-list' id={`crediting-list-${data.id}`}>
           <CompetenceCreditingList data={data.creditingInfos} />
         </div>}
     </S.OrganizationItem>

@@ -7,9 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 const S = {};
 S.ResultsCarousel = styled.div`
-  color: #FFFFFF;
-  margin: auto;
-  max-width: 90%;
   padding: 0px 40px 0px 40px;
   .slick-arrow {
     :before {
@@ -25,7 +22,6 @@ S.ResultsCarousel = styled.div`
       border-radius: 8px;	
       background-color: ${props => props.theme.colors.highlight};
       margin: 20px;
-      /* padding: 20px;  */
       min-height: 125px;
       display: flex;
       justify-content: center;

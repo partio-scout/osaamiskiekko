@@ -13,6 +13,7 @@ S.Header = styled.header`
                       "text image"
                       "curve curve";
  grid-template-columns: 4fr 4fr;
+ margin-bottom: 50px;
 
 .header-text {
   padding-left: 2rem;
@@ -69,7 +70,7 @@ p.important {
 `;
 
 export default function Header(props) {
-  const { showResults, data, isLoading, sortedCarouselFields, setSelectedCarouselField } = props;
+  const { showResults, data, isLoading, sortedCarouselFields, setSelectedCarouselField, examinationAmount } = props;
 
   return (
     <S.Header>
@@ -91,7 +92,8 @@ export default function Header(props) {
         data={data} 
         isLoading={isLoading} 
         sortedCarouselFields={sortedCarouselFields}
-        setSelectedCarouselField={setSelectedCarouselField}/>
+        setSelectedCarouselField={setSelectedCarouselField}
+        examinationAmount={examinationAmount} />
     </S.Header>
   )
 }

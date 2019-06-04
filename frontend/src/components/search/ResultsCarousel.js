@@ -25,8 +25,8 @@ S.ResultsCarousel = styled.div`
       border-radius: 8px;	
       background-color: ${props => props.theme.colors.highlight};
       margin: 20px;
-      padding: 20px; 
-      min-height: 80px;
+      /* padding: 20px;  */
+      min-height: 125px;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -59,9 +59,6 @@ S.ResultsCarousel = styled.div`
       }
     }
   }
-  .slick-dots {
-    bottom: 0px;
-  }
 `;
 
 export default function ResultsCarousel(props) {
@@ -70,11 +67,14 @@ export default function ResultsCarousel(props) {
   const globalState = useGlobalStateContext();
 
   const settings = {
+    className: 'center',
+    centerMode: true,
+    centerPadding: '60px',
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     accessibility: true,
     swipeToSlide: true,
     focusOnSelect: true,
@@ -85,22 +85,22 @@ export default function ResultsCarousel(props) {
       {
         breakpoint: 1240,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToShow: 3,
+          slidesToScroll: 1,
         }
       },
       {
         breakpoint: 990,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
         }
       },
       {
         breakpoint: 760,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       },
       {

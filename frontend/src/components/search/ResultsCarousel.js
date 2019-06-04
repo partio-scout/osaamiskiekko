@@ -53,7 +53,7 @@ S.ResultsCarousel = styled.div`
     transform: scale(1.12);
     div div div {
       background-color: ${props => props.theme.colors.accentColor};
-      h3, p {
+      p {
         font-size: 18px;	
         font-weight: bold;	
       }
@@ -73,8 +73,8 @@ export default function ResultsCarousel(props) {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     accessibility: true,
     swipeToSlide: true,
     focusOnSelect: true,
@@ -83,24 +83,28 @@ export default function ResultsCarousel(props) {
     },
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1240,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        }
+      },
+      {
+        breakpoint: 990,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: true
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 760,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
+          slidesToScroll: 2
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 470,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
@@ -116,7 +120,7 @@ export default function ResultsCarousel(props) {
           return (
             <div className="carousel-item" key={slide} onClick={() => setSelectedCarouselField(slide)}>
               <div>
-                <h3>{slide[`name_${globalState.language}`]}</h3>
+                <p>{slide[`name_${globalState.language}`]}</p>
                 <p>({slide.creditingInfos.length})</p>
               </div>
             </div>

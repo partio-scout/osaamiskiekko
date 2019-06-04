@@ -21,11 +21,17 @@ S.SearchBox = styled.div`
   left: 0;
   right: 0;
   width: 587px;
-  padding: 20px 34px 0px 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 34px;
+
+  .search-wrapper {
+    width: 100%;
+  }
 
   .results-amount {
-    text-align: center;
-    position: relative;
+    position: absolute;
     bottom: -100px;
   }
   .examination-number {

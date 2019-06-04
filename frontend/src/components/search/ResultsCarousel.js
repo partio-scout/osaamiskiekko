@@ -103,7 +103,8 @@ export default function ResultsCarousel(props) {
         breakpoint: 470,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          centerMode: false
         }
       }
     ]

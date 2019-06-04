@@ -22,6 +22,7 @@ const Home = () => {
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
   const [creditingInfoForDegree, setCreditingInfoForDegree] = useState([]);
+  const [examinationAmount, setExaminationAmount] = useState(0);
 
   const globalState = useGlobalStateContext();
   const { isLoading, schools, organizations } = globalState;
@@ -39,11 +40,17 @@ const Home = () => {
     setSortedSchoolList(sortedSchoolList);
   } 
 
+  const countExaminationAmount = (fields) => {
+    const amount = fields.reduce((total, field) => total + field.creditingInfos.length, 0)
+    setExaminationAmount(amount);
+  }
+
   const setSelectedCarouselField = field => sortSchools(field);
 
   const sortCarouselItems = (carouselFields) => {
     const sortedFields = orderBy(carouselFields, [(item) => item.creditingInfos.length], ['desc'])
     setSortedCarouselFields(sortedFields);
+    countExaminationAmount(sortedFields);
     sortSchools(sortedFields[0]);
   }
 
@@ -89,7 +96,8 @@ const Home = () => {
         data={data} 
         isLoading={isLoading}
         sortedCarouselFields={sortedCarouselFields}
-        setSelectedCarouselField={setSelectedCarouselField}/>
+        setSelectedCarouselField={setSelectedCarouselField}
+        examinationAmount={examinationAmount} />
       
       { (sortedSchoolList && sortedSchoolList.length > 0) 
         && <SchoolList sortedSchoolList={sortedSchoolList} /> }

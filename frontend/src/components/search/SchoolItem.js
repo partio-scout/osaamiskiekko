@@ -22,7 +22,7 @@ S.SchoolItem = styled.div`
     cursor: pointer;
   }
 
-  h2 {
+  p:first-child {
     font-size: 18px;
     font-weight: bold;
     line-height: 26px;
@@ -56,7 +56,7 @@ const SchoolItem = (props) => {
           <img src="http://placekitten.com/200/200" alt="katti" align="left"/>
         </div>
         <div className="text-container">
-          <h2>{creditingInfo.academicdegree[`name_${globalState.language}`]}</h2>
+          <p>{creditingInfo.academicdegree[`name_${globalState.language}`]}</p>
           <p>Oppilaitos</p>
         </div>
     </S.SchoolItem>

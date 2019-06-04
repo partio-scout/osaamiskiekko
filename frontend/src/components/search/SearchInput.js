@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-// import { DebounceInput } from 'react-debounce-input';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import _ from 'lodash';
 import SearchResults from './SearchResults';
@@ -13,6 +12,7 @@ display: flex;
 flex-direction: column;
 margin-top: 1rem;
 width: 80%;
+padding: 10px 0px 20px 0px;
 
 label {
   color: ${props => props.theme.colors.textColor};
@@ -68,20 +68,19 @@ export default injectIntl(function SearchInput(props) {
         <label htmlFor={id}>
           <FormattedMessage id={labelKey} />
           <div className="input-area">
-            <span className="fa fa-search"></span>
-            <input
-              id={id}
-              minLength={2}
-              // debounceTimeout={300}
-              value={inputValue}
-              type="text"
-              placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}
-              name={name}
-              onChange={e => handleInput(e.target.value)} 
-              onClick={(e) => showPreResults(e.target.name)}
-              onFocus={(e) => showPreResults(e.target.name)}
-              autoComplete="off"
-            />
+         <span className="fa fa-search"></span>
+        <input
+          minLength={2}
+          // debounceTimeout={300}
+          value={inputValue}
+          type="text"
+          placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}
+          name={name}
+          onChange={e => handleInput(e.target.value)} 
+          onClick={(e) => showPreResults(e.target.name)}
+          onFocus={(e) => showPreResults(e.target.name)}
+          autoComplete="off"
+        />
           </div>
         </label>
         <SearchResults

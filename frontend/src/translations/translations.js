@@ -28,7 +28,9 @@ export default {
     "creditinginfo.back": "Back to search",
     "creditinginfo.readmore": "Read more on the school's website",
     "creditinginfo.crediting": "Hyväksiluku_en",
-    "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot_en"
+    "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot_en",
+    "examination.info": "Can be used in",
+    "examination.infoEnd": "degrees"
   },
   "fi": {
     "title": "Osaamiskiekko",
@@ -59,7 +61,9 @@ export default {
     "creditinginfo.back": "Takaisin hakuun",
     "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta",
     "creditinginfo.crediting": "Hyväksiluku",
-    "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot"
+    "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot",
+    "examination.info": "Voidaan tunnustaa",
+    "examination.infoEnd": "tutkinnossa"
   },
   "sv": {
     "title": "Osaamiskiekko_sv",
@@ -90,6 +94,8 @@ export default {
     "creditinginfo.back": "Takaisin hakuun_sv",
     "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta_sv",
     "creditinginfo.crediting": "Hyväksiluku_sv",
-    "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot_sv"
+    "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot_sv",
+    "examination.info": "Kan erkännas i",
+    "examination.infoEnd": "grad"
   }
 };

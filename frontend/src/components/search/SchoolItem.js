@@ -51,15 +51,15 @@ const SchoolItem = (props) => {
   const globalState = useGlobalStateContext();
   return (
     <StyledLink to={`/ahot/${creditingInfo.id}`}>
-    <S.SchoolItem>
-        <div className="image-container">
-          <img src="http://placekitten.com/200/200" alt="katti" align="left"/>
-        </div>
-        <div className="text-container">
-          <p>{creditingInfo.academicdegree[`name_${globalState.language}`]}</p>
-          <p>{creditingInfo.academicdegree.school[`name_${globalState.language}`]}</p>
-        </div>
-    </S.SchoolItem>
+      <S.SchoolItem>
+          <div className="image-container">
+            <img src="http://placekitten.com/200/200" alt="katti" align="left"/>
+          </div>
+          <div className="text-container">
+            <p>{creditingInfo.academicdegree[`name_${globalState.language}`]}</p>
+            <p>{creditingInfo.academicdegree.school[`name_${globalState.language}`]}</p>
+          </div>
+      </S.SchoolItem>
     </StyledLink>
   );
 }

@@ -57,7 +57,7 @@ const SchoolItem = (props) => {
         </div>
         <div className="text-container">
           <p>{creditingInfo.academicdegree[`name_${globalState.language}`]}</p>
-          <p>Oppilaitos</p>
+          <p>{creditingInfo.academicdegree.school[`name_${globalState.language}`]}</p>
         </div>
     </S.SchoolItem>
     </StyledLink>

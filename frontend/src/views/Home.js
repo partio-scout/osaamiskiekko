@@ -48,7 +48,13 @@ const Home = () => {
       }
      });
     const sortedSchoolList = orderBy(schoolList, [(item) => item.creditingInfos.length], ['desc'])
-    setSortedSchoolList(sortedSchoolList);
+
+    const sortedAndImportedSchoolNames = sortedSchoolList.map(school => ({
+      ...school,
+      creditingInfos: school.creditingInfos.map(creditingInfo => fillData(creditingInfo, globalState))
+    }))
+
+    setSortedSchoolList(sortedAndImportedSchoolNames);
   } 
 
   const setSelectedCarouselField = field => sortSchools(field);

@@ -10,8 +10,6 @@ margin: auto;
 position: relative;
 display: flex;
 flex-direction: column;
-width: 80%;
-padding: 10px 0px 20px 0px;
 
 label {
   color: ${props => props.theme.colors.textColor};
@@ -21,6 +19,7 @@ label {
 
   span {
     display: block;
+    margin-bottom: 0.7em;
   }
 
   .input-area {
@@ -38,7 +37,6 @@ label {
     outline: none;
     font-size: 20px;	
     line-height: 30px;
-    font-style: italic;	
     font-weight: 300;
   }
   
@@ -47,6 +45,7 @@ label {
     opacity: 1;
     font-size: 20px;	
     line-height: 30px;
+    font-style: italic;	
   }
   
   .fa-search { 
@@ -56,6 +55,24 @@ label {
     line-height: 45px;
     color: ${props => props.theme.colors.textColor};
   }
+}
+
+@media only screen and (max-width: 767px) {
+  label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 15px;
+
+    input, input::placeholder {
+      font-size: 16px;
+      line-height: 24px
+    }
+  
+    fa-search: {
+      font-size: 20px;
+    }
+  }
+
 }
 `;
 

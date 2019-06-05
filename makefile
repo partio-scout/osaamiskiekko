@@ -98,6 +98,9 @@ robot-build:
 robot-run:
 	docker-compose --project-directory . -f compose/robot.yml run robot
 
+robot-run-local:
+	cd robot && BROWSER=chrome SERVER=http://localhost:3000/ API=http://localhost:1337/api/ SELENIUM= python run.py -d ./results
+
 sonar:
 ifeq ($(password), )
 	$(error "partionosaamiskiekko-bot password required")

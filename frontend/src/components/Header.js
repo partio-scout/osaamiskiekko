@@ -17,7 +17,7 @@ S.Header = styled.header`
 
 .header-text {
   padding-left: 2rem;
-  padding-bottom: 170px;
+  padding-bottom: 230px;
   min-height: 430px;
 
   @media only screen and (max-width: 767px) {
@@ -69,9 +69,7 @@ p.important {
 }
 `;
 
-export default function Header(props) {
-  const { showResults, data, isLoading, sortedCarouselFields, setSelectedCarouselField, examinationAmount } = props;
-
+export default function Header() {
   return (
     <S.Header>
       <Navigation />
@@ -87,13 +85,7 @@ export default function Header(props) {
           </p>
         </div>
       <div className="header-image"></div>
-      <Curve 
-        showResults={showResults} 
-        data={data} 
-        isLoading={isLoading} 
-        sortedCarouselFields={sortedCarouselFields}
-        setSelectedCarouselField={setSelectedCarouselField}
-        examinationAmount={examinationAmount} />
+      <Curve />
     </S.Header>
   )
 }

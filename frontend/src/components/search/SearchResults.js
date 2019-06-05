@@ -64,7 +64,7 @@ export default function SearchResults(props) {
     </S.ResultsItem>
 
   return (
-    <S.ResultWrapper>
+    <S.ResultWrapper className='search-results'>
       {results && results.map(renderResults)}
     </S.ResultWrapper>
   )

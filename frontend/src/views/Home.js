@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FormattedMessage } from 'react-intl';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
 import * as Api from '../api/Api';
@@ -10,6 +9,7 @@ import OrganizationList from '../components/search/OrganizationList';
 import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import { fillData, transformToByOrganization } from '../api/CreditingData';
+import ExaminationNumber from '../components/ExaminationNumber';
 
 const S = {};
 S.Home = styled.div`
@@ -53,7 +53,6 @@ const Home = () => {
       ...school,
       creditingInfos: school.creditingInfos.map(creditingInfo => fillData(creditingInfo, globalState))
     }))
-
     setSortedSchoolList(sortedAndImportedSchoolNames);
   } 
 
@@ -109,17 +108,11 @@ const Home = () => {
 
       <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
       { creditingInfoForCompetence.length > 0 &&
-        <p className="results-amount">
-          <FormattedMessage id="examination.info" />
-            <span className="examination-number">{creditingInfoForCompetence.length}</span>
-          <FormattedMessage id="examination.infoEnd" />
-        </p> }
+        <ExaminationNumber creditingInfoForDegree={creditingInfoForCompetence} />
+      }
       { creditingInfoForDegree.length > 0 &&
-        <p className="results-amount">
-          <FormattedMessage id="examination.info" />
-            <span className="examination-number">{creditingInfoForDegree.length}</span>
-          <FormattedMessage id="examination.infoEnd" />
-        </p> }
+        <ExaminationNumber creditingInfoForDegree={creditingInfoForDegree}/>
+      }
       { sortedCarouselFields && sortedCarouselFields.length > 0 &&
         <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
       }

@@ -81,7 +81,7 @@ export default injectIntl(function SearchInput(props) {
   const [id] = useState(_.uniqueId());
 
   return (
-      <S.SearchWrapper>
+      <S.SearchWrapper name={`${name}-component`}>
         <label htmlFor={id}>
           <FormattedMessage id={labelKey} />
           <div className="input-area">

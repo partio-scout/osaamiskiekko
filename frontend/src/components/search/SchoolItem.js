@@ -51,7 +51,7 @@ const SchoolItem = (props) => {
   const globalState = useGlobalStateContext();
   return (
     <StyledLink to={`/ahot/${creditingInfo.id}`}>
-      <S.SchoolItem>
+      <S.SchoolItem className='school-item' name={`school-item-${creditingInfo.id}`}>
           <div className="image-container">
             <img src="http://placekitten.com/200/200" alt="katti" align="left"/>
           </div>

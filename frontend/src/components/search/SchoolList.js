@@ -22,7 +22,7 @@ const SchoolList = (props) => {
   const globalState = useGlobalStateContext();
 
   return (
-    <S.SchoolList>
+    <S.SchoolList className='school-list'>
       {sortedSchoolList.map(school => school.creditingInfos.length > 0 &&
         <div key={school.id}>
         <h2>{school[`name_${globalState.language}`]} ({school.creditingInfos.length})</h2>

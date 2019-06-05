@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
@@ -49,11 +49,34 @@ export default function SearchBox(props) {
   const { showResults, data, isLoading } = props;
   const globalState = useGlobalStateContext();
 
+  const {selectedInstitution, selectedTraining} = globalState;
+
   const [institutionInput, setInstitutionInput] = useState('');
   const [institutionFilter, setInstitutionFilter] = useState([]);
   const [institutionSelection, setInstitutionSelection] = useState(null);
   const [trainingInput, setTrainingInput] = useState('');
   const [trainingFilter, setTrainingFilter] = useState([]);
+
+  const updateInputsWithInstitution = (institution) => {
+    setInstitutionSelection(institution);
+    setInstitutionInput(institution[`name_${globalState.language}`]);
+    setInstitutionFilter([]);
+    setTrainingFilter([]);
+    setTrainingInput('');
+  }
+
+  const updateInputsWithTraining = (training) => {
+    setTrainingInput(training[`name_${globalState.language}`]);
+    setTrainingFilter([]);
+  }
+  
+  useEffect(() => {
+    if (selectedInstitution && selectedTraining) {
+      updateInputsWithInstitution(selectedInstitution);
+      updateInputsWithTraining(selectedTraining);
+      showResults(selectedInstitution, selectedTraining);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const noResults = {
     id: 1,
@@ -117,22 +140,19 @@ export default function SearchBox(props) {
       setTrainingFilter([]);
     }
   }
-
+  
   const userInstitutionSelection = (selection) => {
     if (selection.error) return;
-    sessionStorage.setItem('selectedInstitute', JSON.stringify(selection));
-    setInstitutionSelection(selection);
-    setInstitutionInput(selection[`name_${globalState.language}`]);
-    setInstitutionFilter([]);
-    setTrainingFilter([]);
-    setTrainingInput('');
+
+    globalState.selectedInstitution = selection;
+    updateInputsWithInstitution(selection);
   };
 
   const userTrainingSelection = (selection) => {
     if (selection.error) return;
-    sessionStorage.setItem('selectedTraining', JSON.stringify(selection));
-    setTrainingInput(selection[`name_${globalState.language}`]);
-    setTrainingFilter([]);
+
+    globalState.selectedTraining = selection;
+    updateInputsWithTraining(selection);
     showResults(institutionSelection, selection);
   }
 

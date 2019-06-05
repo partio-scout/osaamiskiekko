@@ -14,6 +14,8 @@ const defaultValues = {
   fieldOfStudies: undefined,
   schools: undefined, 
   organizations: undefined,
+  selectedInstitution: undefined,
+  selectedTraining: undefined,
 };
 
 const GlobalStateContext = React.createContext(defaultValues);

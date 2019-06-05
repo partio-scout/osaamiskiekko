@@ -13,7 +13,7 @@ Search remembers selections after changing page
     When user searches for      org2    org2-comp1
     And accesses crediting page    10
     And returns to search
-    Then search should show     org2    org2-comp1
+    Then search should show     org2    org2-comp1    10
 
 *** Keywords ***
 
@@ -40,6 +40,7 @@ And returns to search
     Click Element    xpath://div[@class='footer']//button
 
 Then search should show
-    [Arguments]    ${institution}    ${training}
+    [Arguments]    ${institution}    ${training}    ${creditingId}
     Textfield Should Contain    search-school    ${institution}
     Textfield Should Contain    search-education    ${training}
+    Page Should Contain Element    school-item-${creditingId}

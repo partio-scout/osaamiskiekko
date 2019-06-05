@@ -53,7 +53,6 @@ const Home = () => {
       ...school,
       creditingInfos: school.creditingInfos.map(creditingInfo => fillData(creditingInfo, globalState))
     }))
-
     setSortedSchoolList(sortedAndImportedSchoolNames);
   } 
 

@@ -108,7 +108,6 @@ const Home = () => {
 
       <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
       { creditingInfoForCompetence.length > 0 &&
-        console.log(creditingInfoForCompetence) &&
         <ExaminationNumber creditingInfoForDegree={creditingInfoForCompetence} />
       }
       { creditingInfoForDegree.length > 0 &&

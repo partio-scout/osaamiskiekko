@@ -72,8 +72,9 @@ export default function SearchBox(props) {
   
   useEffect(() => {
     if (selectedInstitution && selectedTraining) {
-      updateInputsWithInstitution(selectedInstitution)
+      updateInputsWithInstitution(selectedInstitution);
       updateInputsWithTraining(selectedTraining);
+      showResults(selectedInstitution, selectedTraining);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 

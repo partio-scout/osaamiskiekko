@@ -9,7 +9,6 @@ import { FormattedMessage } from 'react-intl';
 
 const S = {};
 S.SearchBox = styled.div`
-  min-height: 125px;	
   background-color: #FFFFFF;
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
@@ -23,11 +22,19 @@ S.SearchBox = styled.div`
   width: 587px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 34px;
+  align-items: start;
+  padding: 32px 73px;
 
   .search-wrapper {
     width: 100%;
+
+    > div {
+      margin-top: 2.5em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 
   .results-amount {
@@ -39,7 +46,8 @@ S.SearchBox = styled.div`
   }
 
   @media only screen and (max-width: 767px) {
-    width: 80%;
+    width: 85%;
+    padding: 16px;
   }
 `;
 

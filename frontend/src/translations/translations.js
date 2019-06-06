@@ -1,5 +1,6 @@
 export default {
   "en": {
+    "title": "Osaamiskiekko_en",
     "nav.frontpage": "Go to frontpage",
     "nav.osaamiskiekko": "Osaamiskiekko",
     "nav.tietoa": "Information",
@@ -25,9 +26,14 @@ export default {
     "creditinginfo.degreedescription": "Degree description:",
     "creditinginfo.competencedescription": "Training description:",
     "creditinginfo.back": "Back to search",
-    "creditinginfo.readmore": "Read more on the school's website"
+    "creditinginfo.readmore": "Read more on the school's website",
+    "creditinginfo.crediting": "Hyväksiluku_en",
+    "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot_en",
+    "examination.creditingInfoForDegree": "{amount, plural, =0 {no trainings} one {# training} other {# trainings}} can be credited in the degree:",
+    "examination.creditingInfoForCompetence": "Training can be credited in {amount, plural, =0 {no degrees} one {# degree} other {# degrees}}:",
   },
   "fi": {
+    "title": "Osaamiskiekko",
     "nav.frontpage": "Siirry etusivulle",
     "nav.osaamiskiekko": "Osaamiskiekko",
     "nav.tietoa": "Tietoa",
@@ -53,9 +59,14 @@ export default {
     "creditinginfo.degreedescription": "Tutkinnon kuvaus:",
     "creditinginfo.competencedescription": "Koulutuksen kuvaus:",
     "creditinginfo.back": "Takaisin hakuun",
-    "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta"
+    "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta",
+    "creditinginfo.crediting": "Hyväksiluku",
+    "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot",
+    "examination.creditingInfoForDegree": "Tutkintoon voi tunnustaa seuraavat {amount} koulutusta:",
+    "examination.creditingInfoForCompetence": "Koulutus voidaan tunnustaa {amount} tutkinnossa:",
   },
   "sv": {
+    "title": "Osaamiskiekko_sv",
     "nav.frontpage": "Siirry etusivulle_sv",
     "nav.osaamiskiekko": "Osaamiskiekko",
     "nav.tietoa": "Information",
@@ -81,6 +92,10 @@ export default {
     "creditinginfo.degreedescription": "Tutkinnon kuvaus_sv:",
     "creditinginfo.competencedescription": "Koulutuksen kuvaus_sv:",
     "creditinginfo.back": "Takaisin hakuun_sv",
-    "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta_sv"
+    "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta_sv",
+    "creditinginfo.crediting": "Hyväksiluku_sv",
+    "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot_sv",
+    "examination.creditingInfoForDegree": "Tutkintoon voi tunnustaa seuraavat {amount} koulutusta:_sv",
+    "examination.creditingInfoForCompetence": "Koulutus voidaan tunnustaa {amount} tutkinnossa:_sv",
   }
 };

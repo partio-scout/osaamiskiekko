@@ -1,30 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchBox from './SearchBox';
-import ResultsCarousel from './ResultsCarousel';
 
 const S = {};
 S.Curve = styled.div`
-  grid-column: curve;
-  margin-top: -100px;
-  min-height: 200px;
-  @media only screen and (max-width: 767px) {
-    margin-top: 0px;
-  }
+grid-column: curve;
+margin-top: -100px;
+height: 370px;
 
-  svg {
-    min-height: 400px;
-    width: 100%;
-  }
+svg {
+  height: 370px;
+  width: 100%;
 
-path {
-  fill: ${props => props.theme.colors.accentColor};
+  path {
+    fill: ${props => props.theme.colors.accentColor};
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  margin-top: 0px;
 }
 `;
 
 export default function Curve(props) {
-  const { showResults, data, isLoading, sortedCarouselFields, setSelectedCarouselField } = props;
-
   const svgCurve = (color) =>
     <svg version="1.1" viewBox="0 0 1440 370" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" fillRule="evenodd">
@@ -36,11 +33,7 @@ export default function Curve(props) {
 
   return (
     <S.Curve>
-        <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
         {svgCurve()}
-        { sortedCarouselFields && sortedCarouselFields.length > 0 &&
-          <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
-        }
     </S.Curve>
   )
 }

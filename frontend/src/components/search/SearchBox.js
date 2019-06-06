@@ -1,34 +1,42 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
 import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
-import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 const S = {};
 S.SearchBox = styled.div`
-  background-color: white;
-  min-height: 125px;	
   background-color: #FFFFFF;
  	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
   border-radius: 8px;
-  padding: 34px;
-  margin-top: -50px;
+  margin-top: -500px;
   z-index: 20;
-  position: absolute;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
-  left: 0;
-  right: 0;
   width: 587px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 32px 73px;
 
   .search-wrapper {
-    margin-bottom: 35px;
+    width: 100%;
+
+    > div {
+      margin-top: 2.5em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 
   @media only screen and (max-width: 767px) {
-    width: 80%;
+    width: 85%;
+    padding: 16px;
   }
 `;
 
@@ -41,11 +49,34 @@ export default function SearchBox(props) {
   const { showResults, data, isLoading } = props;
   const globalState = useGlobalStateContext();
 
+  const {selectedInstitution, selectedTraining} = globalState;
+
   const [institutionInput, setInstitutionInput] = useState('');
   const [institutionFilter, setInstitutionFilter] = useState([]);
   const [institutionSelection, setInstitutionSelection] = useState(null);
   const [trainingInput, setTrainingInput] = useState('');
   const [trainingFilter, setTrainingFilter] = useState([]);
+
+  const updateInputsWithInstitution = (institution) => {
+    setInstitutionSelection(institution);
+    setInstitutionInput(institution[`name_${globalState.language}`]);
+    setInstitutionFilter([]);
+    setTrainingFilter([]);
+    setTrainingInput('');
+  }
+
+  const updateInputsWithTraining = (training) => {
+    setTrainingInput(training[`name_${globalState.language}`]);
+    setTrainingFilter([]);
+  }
+  
+  useEffect(() => {
+    if (selectedInstitution && selectedTraining) {
+      updateInputsWithInstitution(selectedInstitution);
+      updateInputsWithTraining(selectedTraining);
+      showResults(selectedInstitution, selectedTraining);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const noResults = {
     id: 1,
@@ -109,22 +140,19 @@ export default function SearchBox(props) {
       setTrainingFilter([]);
     }
   }
-
+  
   const userInstitutionSelection = (selection) => {
     if (selection.error) return;
-    sessionStorage.setItem('selectedInstitute', JSON.stringify(selection));
-    setInstitutionSelection(selection);
-    setInstitutionInput(selection[`name_${globalState.language}`]);
-    setInstitutionFilter([]);
-    setTrainingFilter([]);
-    setTrainingInput('');
+
+    globalState.selectedInstitution = selection;
+    updateInputsWithInstitution(selection);
   };
 
   const userTrainingSelection = (selection) => {
     if (selection.error) return;
-    sessionStorage.setItem('selectedTraining', JSON.stringify(selection));
-    setTrainingInput(selection[`name_${globalState.language}`]);
-    setTrainingFilter([]);
+
+    globalState.selectedTraining = selection;
+    updateInputsWithTraining(selection);
     showResults(institutionSelection, selection);
   }
 

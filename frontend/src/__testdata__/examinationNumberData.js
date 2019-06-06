@@ -1,25 +1,25 @@
 export default [
   {
-    "id": 9,
+    "id": 10,
     "url": null,
-    "description_fi": "s1d1-o1c2",
-    "description_en": "s1d1-o1c2",
-    "description_sv": "s1d1-o1c2",
+    "description_fi": "s1d1-o2c1",
+    "description_en": "s1d1-o2c1",
+    "description_sv": "s1d1-o2c1",
     "competence": {
-      "id": 7,
-      "identification": "org1-comp2",
-      "name_en": "org1-comp2",
+      "id": 8,
+      "identification": "org2-comp1",
+      "name_en": "org2-comp1",
       "description_en": null,
       "url": null,
-      "name_fi": "org1-comp2",
-      "name_sv": "org1-comp2",
+      "name_fi": "org2-comp1",
+      "name_sv": "org2-comp1",
       "description_fi": null,
       "description_sv": null,
-      "nqf": 4,
+      "nqf": 1,
       "credits": null,
-      "organization": 4,
-      "created_at": "2019-06-03T08:30:14.434Z",
-      "updated_at": "2019-06-03T08:38:33.122Z"
+      "organization": 5,
+      "created_at": "2019-06-03T08:30:26.765Z",
+      "updated_at": "2019-06-03T08:30:26.783Z"
     },
     "academicdegree": {
       "id": 3,
@@ -38,8 +38,8 @@ export default [
       "created_at": "2019-06-03T08:31:16.758Z",
       "updated_at": "2019-06-03T08:39:35.832Z"
     },
-    "created_at": "2019-06-03T08:33:26.293Z",
+    "created_at": "2019-06-03T08:33:55.943Z",
     "updated_at": "2019-06-03T08:36:14.783Z",
-    "identification": "s1d1-o1c2"
+    "identification": "s1d1-o2c1"
   }
 ]

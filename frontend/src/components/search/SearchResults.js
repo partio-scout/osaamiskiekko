@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useGlobalStateContext} from '../utils/GlobalStateContext';
+import {useGlobalStateContext} from '../../utils/GlobalStateContext';
 
 const S = {};
 S.ResultsItem = styled.li`
@@ -37,8 +37,8 @@ S.ResultWrapper = styled.ul`
   width: 100%;
   max-height: 256px;
   overflow-y: auto;
-  position: relative;
-  margin-top: 5px;
+  position: absolute;
+  margin-top: 65px;
   z-index: 50;
   padding: 0;
   list-style: none;
@@ -64,7 +64,7 @@ export default function SearchResults(props) {
     </S.ResultsItem>
 
   return (
-    <S.ResultWrapper>
+    <S.ResultWrapper className='search-results'>
       {results && results.map(renderResults)}
     </S.ResultWrapper>
   )

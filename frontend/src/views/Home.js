@@ -2,14 +2,26 @@ import React, { useState } from 'react';
 import Header from '../components/Header.js';
 import styled from 'styled-components';
 import * as Api from '../api/Api';
-import ListSchools from '../components/ListSchools';
+import SearchBox from '../components/search/SearchBox';
+import ResultsCarousel from '../components/search/ResultsCarousel';
+import SchoolList from '../components/search/SchoolList';
+import OrganizationList from '../components/search/OrganizationList';
 import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
+import { fillData, transformToByOrganization } from '../api/CreditingData';
+import ExaminationNumber from '../components/ExaminationNumber';
 
 const S = {};
 S.Home = styled.div`
   max-width: 1440px;
   margin: auto;
+
+  padding-bottom: 500px;
+
+  .results-amount {
+    text-align: center;
+    margin: 1em;
+  }
 
   @media only screen and (max-width: 767px) {
     padding: 0px;
@@ -17,8 +29,13 @@ S.Home = styled.div`
 `;
 
 const Home = () => {
+  const [creditingInfoForCompetence, setCreditingInfoForCompetence] = useState([]);
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
+
+  const [creditingInfoForDegree, setCreditingInfoForDegree] = useState([]);
+  const [creditingInfoForDegreeByOrganization, setCreditingInfoForDegreeByOrganization] = useState([]);
+
   const globalState = useGlobalStateContext();
   const { isLoading, schools, organizations } = globalState;
 
@@ -28,47 +45,87 @@ const Home = () => {
     const schoolList = globalState.nqfLevels.map(nqf => {
       return {
         ...nqf,
-        degree: selectedCarouselField.competences.filter(competence => competence.academicdegree.nqf === nqf.id)
+        creditingInfos: selectedCarouselField.creditingInfos.filter(creditingInfo => creditingInfo.academicdegree.nqf === nqf.id)
       }
      });
-    const sortedSchoolList = orderBy(schoolList, [(item) => item.degree.length], ['desc'])
-    setSortedSchoolList(sortedSchoolList);
+    const sortedSchoolList = orderBy(schoolList, [(item) => item.creditingInfos.length], ['desc'])
+
+    const sortedAndImportedSchoolNames = sortedSchoolList.map(school => ({
+      ...school,
+      creditingInfos: school.creditingInfos.map(creditingInfo => fillData(creditingInfo, globalState))
+    }))
+    setSortedSchoolList(sortedAndImportedSchoolNames);
   } 
 
   const setSelectedCarouselField = field => sortSchools(field);
 
   const sortCarouselItems = (carouselFields) => {
-    const sortedFields = orderBy(carouselFields, [(item) => item.competences.length], ['desc'])
+    const sortedFields = orderBy(carouselFields, [(item) => item.creditingInfos.length], ['desc'])
     setSortedCarouselFields(sortedFields);
     sortSchools(sortedFields[0]);
   }
 
-  const getMatchingDegrees = async (competence) => {
-    const competences = await Api.getCreditingInfosForCompetence(competence.id);
+  const initializeMatchingDegrees = async (competence) => {
+    const links = await Api.getCreditingInfosForCompetence(competence.id);
+    setCreditingInfoForCompetence(links);
+
     const carouselFields = globalState.fieldOfStudies.map(field => ({
       ...field, 
-      competences: competences.filter(competence => competence.academicdegree.fieldofstudy === field.id)
+      creditingInfos: links.filter(link => link.academicdegree.fieldofstudy === field.id)
     }));
     sortCarouselItems(carouselFields);
   }
 
-  const showResults = (institution, competenceOrDegreeSelection) => {
+  const getCreditingInfoForDegree = async (degree) => {
+    const links = await Api.getCreditingInfosForDegree(degree.id);
+    const deep = links.map(link => fillData(link, globalState));
+
+    return deep;
+  }
+
+  const showResults = async (institution, competenceOrDegreeSelection) => {
     if (institution && competenceOrDegreeSelection) {
       if (institution.type_en === 'Organization') {
-        getMatchingDegrees(competenceOrDegreeSelection);
+        // Clear degree-specific data before displaying links for competence
+        setCreditingInfoForDegree([]);
+        setCreditingInfoForDegreeByOrganization([]);
+
+        initializeMatchingDegrees(competenceOrDegreeSelection);
+      } else {
+        // Clear competence-specific data before displaying links for degree
+        setCreditingInfoForCompetence([]);
+        setSortedSchoolList([]);
+        setSortedCarouselFields([]);
+
+        const creditingInfo = await getCreditingInfoForDegree(competenceOrDegreeSelection);
+        const transformed = transformToByOrganization(creditingInfo);
+
+        setCreditingInfoForDegree(creditingInfo);
+        setCreditingInfoForDegreeByOrganization(transformed);
       }
     }
   }
 
   return (
     <S.Home>
-      <Header 
-        showResults={showResults}
-        data={data} 
-        isLoading={isLoading}
-        sortedCarouselFields={sortedCarouselFields}
-        setSelectedCarouselField={setSelectedCarouselField}/>
-      <ListSchools sortedSchoolList={sortedSchoolList} />
+      <Header />
+
+      <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
+      { creditingInfoForCompetence.length > 0 &&
+        <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />
+      }
+      { creditingInfoForDegree.length > 0 &&
+        <ExaminationNumber creditingAmountForCompetence={creditingInfoForDegree.length}/>
+      }
+      { sortedCarouselFields && sortedCarouselFields.length > 0 &&
+        <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
+      }
+      
+      { (sortedSchoolList && sortedSchoolList.length > 0) 
+        && <SchoolList sortedSchoolList={sortedSchoolList} /> }
+      
+      { (creditingInfoForDegreeByOrganization && creditingInfoForDegreeByOrganization.length > 0) 
+        && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
     </S.Home>
   );
 }

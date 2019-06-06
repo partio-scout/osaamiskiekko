@@ -29,6 +29,7 @@ p, p span {
   margin: 5px 0;
   font-size: 18px;
   line-height: 27px;
+  white-space: pre-wrap;
 }
 
 .half-background {
@@ -107,6 +108,13 @@ p, p span {
     background-color: ${props => props.theme.colors.backgroundPrimary}
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
     border-radius: 8px;
+
+    h2, h2 span {
+      margin: 10px 0;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: bold;
+    }
 
     p.readmore {
       margin-top: 1rem;
@@ -244,6 +252,12 @@ p, p span {
       background-color: ${props => props.theme.colors.backgroundPrimary}
       box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
       border-radius: 8px;
+
+      h2, h2 span {
+        margin: 5px 0;
+        font-size: 18px;
+        line-height: 27px;
+      }
     }
   }
 } 
@@ -340,6 +354,9 @@ export default function CreditingInfo(props) {
           }
           <div className='credit-info' >
             <div className='floating-box'>
+              <h2>
+                <FormattedMessage id='creditinginfo.crediting' />
+              </h2>
               <p>
                   {creditingData[`description_${globalState.language}`]
                     ? creditingData[`description_${globalState.language}`]

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Helmet from 'react-helmet';
+import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import Navigation from '../components/Navigation';
 import CreditingInfo from '../components/CreditingInfo';
@@ -32,6 +34,12 @@ position: relative;
 }
 
 .content {
+  .hide {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+ }
+
   margin-top: 3rem;
   padding: 0 15%;
   position: relative;
@@ -61,7 +69,14 @@ position: relative;
 `;
 
 const Credit = (props) => {
+  let contentContainer;
   const { data, isLoading } = CreditingData(props.match.params.id, useGlobalStateContext());
+
+  useEffect(() => {
+    console.log('ue', contentContainer);
+    contentContainer.focus();
+    window.scrollTo(0, 0);
+  }, [contentContainer]);
 
   const curve = (color) =>
     <svg viewBox="0 0 1440 352" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -76,14 +91,26 @@ const Credit = (props) => {
 
   return (
     <S.Credit>
-      <div className='topcurve'>
+      <FormattedMessage id='creditinginfo.creditingTitle'>
+        {msg =>
+          <Helmet>
+            <title>{msg}</title>
+          </Helmet>
+        }
+      </FormattedMessage>
+      <div className='topcurve' aria-hidden={true}>
         {curve()}
       </div>
       <div className='navigation'>
         <Navigation />
       </div>
       <div className='content'>
-        <CreditingInfo creditingData={data} isLoading={isLoading}  />
+        <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">
+          <h1 id='pageTitle' className='hide'>
+            <FormattedMessage id='creditinginfo.crediting' />
+          </h1>
+          <CreditingInfo creditingData={data} isLoading={isLoading} />
+        </div>
       </div>
     </S.Credit>
   );

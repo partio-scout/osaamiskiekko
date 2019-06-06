@@ -88,6 +88,7 @@ const Home = () => {
       if (institution.type_en === 'Organization') {
         // Clear degree-specific data before displaying links for competence
         setCreditingInfoForDegree([]);
+        setCreditingInfoForDegreeByOrganization([]);
 
         initializeMatchingDegrees(competenceOrDegreeSelection);
       } else {

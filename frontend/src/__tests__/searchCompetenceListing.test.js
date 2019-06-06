@@ -28,13 +28,22 @@ describe('organization list', () => {
 });
 
 describe('organization item', () => {
-  test('renders organization name correctly', () => {
+  test('renders organization name', () => {
     const data = transformToByOrganization(creditingData)[0]
 
     const wrapper = shallow(
       <OrganizationItem creditingInfoForOrganization={ data } />
     ).dive();
-    expect(wrapper.find('.name').text()).toEqual(data.name_fi);
+    expect(wrapper.find('.name').text()).toMatch(data.name_fi);
+  });
+
+  test('renders organization creditinginfo amount', () => {
+    const data = transformToByOrganization(creditingData)[0]
+
+    const wrapper = shallow(
+      <OrganizationItem creditingInfoForOrganization={ data } />
+    ).dive();
+    expect(wrapper.find('.name').text()).toMatch(`(${data.creditingInfos.length})`);
   });
 
   test('crediting list toggle works', () => {

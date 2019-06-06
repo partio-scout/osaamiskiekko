@@ -34,6 +34,7 @@ const Home = () => {
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
 
   const [creditingInfoForDegree, setCreditingInfoForDegree] = useState([]);
+  const [creditingInfoForDegreeByOrganization, setCreditingInfoForDegreeByOrganization] = useState([]);
 
   const globalState = useGlobalStateContext();
   const { isLoading, schools, organizations } = globalState;
@@ -78,9 +79,8 @@ const Home = () => {
   const getCreditingInfoForDegree = async (degree) => {
     const links = await Api.getCreditingInfosForDegree(degree.id);
     const deep = links.map(link => fillData(link, globalState));
-    const transformed = transformToByOrganization(deep);
 
-    return transformed;
+    return deep;
   }
 
   const showResults = async (institution, competenceOrDegreeSelection) => {
@@ -88,6 +88,7 @@ const Home = () => {
       if (institution.type_en === 'Organization') {
         // Clear degree-specific data before displaying links for competence
         setCreditingInfoForDegree([]);
+        setCreditingInfoForDegreeByOrganization([]);
 
         initializeMatchingDegrees(competenceOrDegreeSelection);
       } else {
@@ -97,7 +98,10 @@ const Home = () => {
         setSortedCarouselFields([]);
 
         const creditingInfo = await getCreditingInfoForDegree(competenceOrDegreeSelection);
+        const transformed = transformToByOrganization(creditingInfo);
+
         setCreditingInfoForDegree(creditingInfo);
+        setCreditingInfoForDegreeByOrganization(transformed);
       }
     }
   }
@@ -108,10 +112,10 @@ const Home = () => {
 
       <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
       { creditingInfoForCompetence.length > 0 &&
-        <ExaminationNumber creditingInfoForDegree={creditingInfoForCompetence} />
+        <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />
       }
       { creditingInfoForDegree.length > 0 &&
-        <ExaminationNumber creditingInfoForDegree={creditingInfoForDegree}/>
+        <ExaminationNumber creditingAmountForCompetence={creditingInfoForDegree.length}/>
       }
       { sortedCarouselFields && sortedCarouselFields.length > 0 &&
         <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
@@ -120,8 +124,8 @@ const Home = () => {
       { (sortedSchoolList && sortedSchoolList.length > 0) 
         && <SchoolList sortedSchoolList={sortedSchoolList} /> }
       
-      { (creditingInfoForDegree && creditingInfoForDegree.length > 0) 
-        && <OrganizationList creditingInfoByOrganization={creditingInfoForDegree} /> }
+      { (creditingInfoForDegreeByOrganization && creditingInfoForDegreeByOrganization.length > 0) 
+        && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
     </S.Home>
   );
 }

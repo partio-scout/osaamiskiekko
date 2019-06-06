@@ -73,7 +73,6 @@ const Credit = (props) => {
   const { data, isLoading } = CreditingData(props.match.params.id, useGlobalStateContext());
 
   useEffect(() => {
-    console.log('ue', contentContainer);
     contentContainer.focus();
     window.scrollTo(0, 0);
   }, [contentContainer]);

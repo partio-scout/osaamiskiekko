@@ -29,8 +29,8 @@ export default {
     "creditinginfo.readmore": "Read more on the school's website",
     "creditinginfo.crediting": "Hyväksiluku_en",
     "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot_en",
-    "examination.info": "Can be used in",
-    "examination.infoEnd": "degrees"
+    "examination.creditingInfoForDegree": "{amount, plural, =0 {no trainings} one {# training} other {# trainings}} can be credited in the degree:",
+    "examination.creditingInfoForCompetence": "Training can be credited in {amount, plural, =0 {no degrees} one {# degree} other {# degrees}}:",
   },
   "fi": {
     "title": "Osaamiskiekko",
@@ -62,8 +62,8 @@ export default {
     "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta",
     "creditinginfo.crediting": "Hyväksiluku",
     "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot",
-    "examination.info": "Voidaan tunnustaa",
-    "examination.infoEnd": "tutkinnossa"
+    "examination.creditingInfoForDegree": "Tutkintoon voi tunnustaa seuraavat {amount} koulutusta:",
+    "examination.creditingInfoForCompetence": "Koulutus voidaan tunnustaa {amount} tutkinnossa:",
   },
   "sv": {
     "title": "Osaamiskiekko_sv",
@@ -95,7 +95,7 @@ export default {
     "creditinginfo.readmore": "Lue lisää oppilaitoksen sivuilta_sv",
     "creditinginfo.crediting": "Hyväksiluku_sv",
     "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot_sv",
-    "examination.info": "Kan erkännas i",
-    "examination.infoEnd": "grad"
+    "examination.creditingInfoForDegree": "Tutkintoon voi tunnustaa seuraavat {amount} koulutusta:_sv",
+    "examination.creditingInfoForCompetence": "Koulutus voidaan tunnustaa {amount} tutkinnossa:_sv",
   }
 };

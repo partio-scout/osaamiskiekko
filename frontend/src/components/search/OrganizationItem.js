@@ -81,7 +81,7 @@ const OrganizationItem = (props) => {
               aria-controls={`crediting-list-${data.id}`}
               onClick={toggleCreditingList}>
             <div className='logo' />
-            <span className='name'>{data[`name_${globalState.language}`]}</span>
+            <span className='name'>{data[`name_${globalState.language}`]} ({data.creditingInfos && data.creditingInfos.length})</span>
             {!showCreditingList && <i className="fas fa-chevron-down"></i>}
             {showCreditingList && <i className="fas fa-chevron-up"></i>}
           </button>

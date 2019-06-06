@@ -7,10 +7,16 @@ import * as testHelper from '../testHelpers';
 
 configure({ adapter: new Adapter() });
 
-describe('Examination number amount render', () => {
-  test('Number renders properly', () => {
-    const wrapper = mount(testHelper.wrapWithProviders(<ExaminationNumber creditingInfoForDegree={examinationNumberData} />));
+describe('Examination amount component', () => {
+  test('renders properly for degrees', () => {
+    const wrapper = mount(testHelper.wrapWithProviders(<ExaminationNumber creditingAmountForDegree={3} />));
 
-    expect(wrapper.find('p').first().text()).toEqual('Voidaan tunnustaa1tutkinnossa:')
+    expect(wrapper.find('p').first().text()).toMatch('Tutkintoon voi tunnustaa seuraavat 3 koulutusta')
+  });
+
+  test('renders properly for competencies', () => {
+    const wrapper = mount(testHelper.wrapWithProviders(<ExaminationNumber creditingAmountForCompetence={5} />));
+
+    expect(wrapper.find('p').first().text()).toMatch('Koulutus voidaan tunnustaa 5 tutkinnossa')
   })
 });

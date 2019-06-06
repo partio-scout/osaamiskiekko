@@ -12,15 +12,21 @@ S.ExaminationNumber = styled.div`
 
 
 const ExaminationNumber = (props) => {
-  const { creditingInfoForDegree } = props;
+  const { creditingAmountForDegree, creditingAmountForCompetence } = props;
 
   return (
       <S.ExaminationNumber>
         <p className="results-amount">
-          <FormattedMessage id="examination.info" />
-             <span className="examination-number">{creditingInfoForDegree.length}</span>
-          <FormattedMessage id="examination.infoEnd" />
-          :
+          { creditingAmountForDegree &&
+            <FormattedMessage id="examination.creditingInfoForDegree" values= {{
+              amount: creditingAmountForDegree
+             }} />
+          }
+          { creditingAmountForCompetence &&
+            <FormattedMessage id="examination.creditingInfoForCompetence" values= {{
+              amount: creditingAmountForCompetence
+             }} />
+          }
         </p> 
       </S.ExaminationNumber>
   );

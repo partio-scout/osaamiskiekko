@@ -11,7 +11,9 @@
         "username": "${process.env.DATABASE_USERNAME || 'myuser'}",
         "password": "${process.env.DATABASE_PASSWORD || 'mypass'}"
       },
-      "options": {}
+      "options": {
+        "debug": true
+      }
     }
   }
 }

@@ -49,6 +49,12 @@ pipeline {
               
       steps {
         script {
+          if (env.BRANCH_NAME == 'production') {
+            sh "rm frontend/public/robots.txt"
+          }
+        }
+
+        script {
           env.NAMESPACE = cleanBranchNameForNamespace(env.BRANCH_NAME)
         }
 
@@ -139,6 +145,8 @@ pipeline {
 
     stage('Front-End Unit Tests') {
       steps {
+        sh "rm frontend/public/robots.txt"
+        
         sh """${compose} \
             -f compose/frontend-unittests.yml \
             run test"""

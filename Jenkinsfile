@@ -145,8 +145,6 @@ pipeline {
 
     stage('Front-End Unit Tests') {
       steps {
-        sh "rm frontend/public/robots.txt"
-        
         sh """${compose} \
             -f compose/frontend-unittests.yml \
             run test"""

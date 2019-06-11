@@ -1,0 +1,38 @@
+{
+  "connection": "default",
+  "collectionName": "pages",
+  "info": {
+    "name": "page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "path_identifier": {
+      "unique": true,
+      "required": true,
+      "type": "string"
+    },
+    "title_en": {
+      "type": "string"
+    },
+    "title_fi": {
+      "type": "string"
+    },
+    "title_sv": {
+      "type": "string"
+    },
+    "text_en": {
+      "type": "text"
+    },
+    "text_fi": {
+      "type": "text"
+    },
+    "text_sv": {
+      "type": "text"
+    }
+  }
+}

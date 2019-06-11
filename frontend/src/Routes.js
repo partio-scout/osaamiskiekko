@@ -1,9 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Credit from './views/Credit';
+import MarkdownPage from './views/MarkdownPage';
 import Home from './views/Home';
-import Information from './views/Information';
-import Contact from './views/Contact';
 import CurveTest from './views/CurveTest';
 import GlobalStyle from './styles/GlobalStyles';
 
@@ -14,9 +13,8 @@ const Main = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/ahot/:id' component={Credit} />
-          <Route exact path='/tietoa' component={Information} />
-          <Route exact path='/otayhteytta' component={Contact} />
           <Route exact path='/curvetest' component={CurveTest} />
+          <Route exact path='/:pageName' component={MarkdownPage} />
         </Switch>
     </>
   );

@@ -56,6 +56,11 @@ const getNqfs = async () => {
   return nqfs.data;
 }
 
+const getMarkdownPages = async () => {
+  const pages = await axios.get(`${baseURL}/pages`);
+  return pages;
+}
+
 export { 
   getSchools,
   getOrganizations,
@@ -67,5 +72,6 @@ export {
   getCompetences,
   getFieldofstudies,
   getFieldofstudiesWithId,
-  getNqfs
+  getNqfs,
+  getMarkdownPages
 };

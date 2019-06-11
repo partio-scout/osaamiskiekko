@@ -15,15 +15,15 @@ const MarkdownData = (name) => {
         const mdData = await Api.getMarkdownPages(name);
         const page = mdData.data.filter(function(item) { return item.path_identifier === name; })[0];
         setData(page);
-        setIsLoading(false);
         if (typeof page === 'undefined') {
-          throw 404;
+          throw new Error(404);
         }
+        setIsLoading(false);
         setStatus(200);
       } catch (error) {
-        setIsLoading(false);
         console.error(error);
         setStatus(error);
+        setIsLoading(false);
       }
     };
 

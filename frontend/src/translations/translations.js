@@ -31,7 +31,7 @@ export default {
     "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot_en",
     "examination.creditingInfoForDegree": "{amount, plural, =0 {no trainings} one {# training} other {# trainings}} can be credited in the degree:",
     "examination.creditingInfoForCompetence": "Training can be credited in {amount, plural, =0 {no degrees} one {# degree} other {# degrees}}:",
-    "error.title": "Error ",
+    "error.title": "Error: ",
     "error.text": "the server was unable to complete your request.",
   },
   "fi": {
@@ -66,7 +66,7 @@ export default {
     "creditinginfo.creditingTitle": "Osaamiskiekko - Hyväksilukutiedot",
     "examination.creditingInfoForDegree": "Tutkintoon voi tunnustaa seuraavat {amount} koulutusta:",
     "examination.creditingInfoForCompetence": "Koulutus voidaan tunnustaa {amount} tutkinnossa:",
-    "error.title": "Virhe ",
+    "error.title": "Virhe: ",
     "error.text": "Palvelin ei kyennyt käsittelemään pyyntöäsi. Pahoittelut!",
   },
   "sv": {

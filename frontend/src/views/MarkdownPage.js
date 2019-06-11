@@ -115,7 +115,7 @@ const MarkdownPage = (props) => {
             ? ''
             : typeof data !== 'undefined'
               ? <>{data[`title_${globalState.language}`]}</>
-              : <><FormattedMessage id='error.title'/>{status}</>}
+              : <><FormattedMessage id='error.title'/>{status.message}</>}
         </h1>
       </div>
       <div className='topcurve' aria-hidden={true}>

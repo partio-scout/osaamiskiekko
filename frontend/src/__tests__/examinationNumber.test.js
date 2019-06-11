@@ -11,12 +11,12 @@ describe('Examination amount component', () => {
   test('renders properly for degrees', () => {
     const wrapper = mount(testHelper.wrapWithProviders(<ExaminationNumber creditingAmountForDegree={3} />));
 
-    expect(wrapper.find('p').first().text()).toMatch('Tutkintoon voi tunnustaa seuraavat 3 koulutusta')
+    expect(wrapper.find('p').first().text()).toMatch('Tutkinnossa voi hyödyntää seuraavat 3 koulutusta tai osaamismerkkiä:')
   });
 
   test('renders properly for competencies', () => {
     const wrapper = mount(testHelper.wrapWithProviders(<ExaminationNumber creditingAmountForCompetence={5} />));
 
-    expect(wrapper.find('p').first().text()).toMatch('Koulutus voidaan tunnustaa 5 tutkinnossa')
+    expect(wrapper.find('p').first().text()).toMatch('Koulutuksen tai osaamismerkin voi hyödyntää 5 tutkinnossa:')
   })
 });

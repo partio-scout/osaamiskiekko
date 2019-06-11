@@ -14,10 +14,9 @@ margin: auto;
 position: relative;
 
 .title {
-  padding: 0 156px 0 156px;
+  padding: 30px 15% 30px 15%;
   background-color: ${props => props.theme.colors.backgroundSecondary};
   h1 {
-    padding-top: 30px;
     margin-block-start: 0px;
     margin-block-end: 0px;
   }
@@ -85,11 +84,11 @@ const MarkdownPage = (props) => {
   }, [contentContainer]);
 
   const curve = (color) =>
-    <svg viewBox="0 0 1439.7041 91" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1440 72" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <title>Top Curve</title>
-      <g id="Visual" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-        <g id="Desktop---info" fill="#6DE5B8">
-          <path d="M 0.29591526,351.93962 0.99930604,0 H 1440 V 426 352 C 1212.6667,305.33333 973,282 721,282 469.1087,282 228.87401,305.31321 0.29591526,351.93962 Z" id="top-curve"></path>
+      <g id="Visual" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop---contact" transform="translate(0.000000, -280.000000)" fill="#6DE5B8">
+            <path d="M0,426 L0,280 L1440,280 L1440,426 L1440,352 C1212.66667,305.333333 973,282 721,282 C469,282 228.666667,305.333333 0,352 L0,426 Z" id="Combined-Shape"></path>
         </g>
       </g>
     </svg>

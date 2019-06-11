@@ -6,16 +6,25 @@ metadata:
   annotations:
     # use the shared ingress-nginx
     kubernetes.io/ingress.class: "nginx"
+    # use managed certificate
+    kubernetes.io/ingress.global-static-ip-name: 35.228.37.144
+    networking.gke.io/managed-certificates: example-managed-certificate
 spec:
+  tls:
+  - hosts:
+    - dev.osaamiskiekko.fi
+    secretName: dev-selfsigned-test
   rules:
-  - host: $SUBDOMAIN.osaamiskiekko.fi
+  # - host: $SUBDOMAIN.osaamiskiekko.fi
+  - host: dev.osaamiskiekko.fi
     http:
       paths:
       - path: /
         backend:
           serviceName: frontend
           servicePort: 80
-  - host: api.$SUBDOMAIN.osaamiskiekko.fi
+  # - host: api.$SUBDOMAIN.osaamiskiekko.fi
+  - host: api.dev.osaamiskiekko.fi
     http:
       paths:
       - path: /

@@ -3,7 +3,7 @@
   "collectionName": "pages",
   "info": {
     "name": "page",
-    "description": ""
+    "description": "Muiden sivujen sisältö"
   },
   "options": {
     "increments": true,

@@ -1,10 +1,13 @@
-FROM node:11.1.0-alpine
+FROM node:lts-alpine
 
 WORKDIR /usr/src/api
 
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
-RUN npm install -g strapi@alpha
+RUN apk update
+RUN apk add --no-cache build-base gcc autoconf automake libtool zlib-dev libpng-dev nasm
+
+RUN npm install -g strapi@beta --unsafe-perm
 
 COPY . ./
 RUN chmod +x ./strapi.sh

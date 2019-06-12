@@ -3,8 +3,8 @@ import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import Markdown from 'markdown-to-jsx';
 import styled from 'styled-components';
-import Navigation from '../components/Navigation';
 import MarkdownData from '../api/MarkdownData';
+import NavigationWithCurveAndTitle from '../components/NavigationWithCurveAndTitle'
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 
 const S = {};
@@ -12,35 +12,6 @@ S.MarkdownPage = styled.div`
 max-width: 1440px;
 margin: auto;
 position: relative;
-
-.title {
-  padding: 30px 15% 30px 15%;
-  background-color: ${props => props.theme.colors.backgroundSecondary};
-  h1 {
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-  }
-}
-
-.navigation {
-  background-color: ${props => props.theme.colors.backgroundSecondary};
-}
-
-.topcurve {
-  display: block;
-  position: relative;
-  top: 0;
-  z-index: -100;
-  left: 0;
-  right: 0;
-
-  svg {
-    width: 100%;
-    path {
-      fill: ${props => props.theme.colors.backgroundSecondary};
-    }
-  }
-}
 
 .content {
   margin-top: 3rem;
@@ -51,21 +22,6 @@ position: relative;
 
 @media only screen and (max-width: 767px) {
   padding: 0px;
-
-  .title {
-    padding: 5%;
-    h1 {
-      padding-top: 0px;
-    }
-  }
-
-  .navigation {
-    background-color: ${props => props.theme.colors.backgroundSecondary};
-    width: 100%;
-    padding: 0;
-    z-index: 30;
-    position: relative;
-  }
 
   .content {
     margin: 0 0 0 0;
@@ -105,21 +61,11 @@ const MarkdownPage = (props) => {
               : 'Error'}
         </title>
       </Helmet>
-      <div className='navigation'>
-        <Navigation />
-      </div>
-      <div className='title'>
-        <h1>
-          {isLoading
-            ? ''
-            : typeof data !== 'undefined'
-              ? <>{data[`title_${globalState.language}`]}</>
-              : <><FormattedMessage id='error.title'/>{status.message}</>}
-        </h1>
-      </div>
-      <div className='topcurve' aria-hidden={true}>
-        {curve()}
-      </div>
+      <NavigationWithCurveAndTitle title={isLoading
+                                            ? ''
+                                            : typeof data !== 'undefined'
+                                              ? <>{data[`title_${globalState.language}`]}</>
+                                              : <><FormattedMessage id='error.title'/>{status.message}</>} />
       <div className='content'>
         <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">
           {isLoading 

@@ -44,6 +44,7 @@ position: relative;
 
 .content {
   margin-top: 3rem;
+  margin-bottom: 3rem;
   padding: 0 15%;
   position: relative;
 }
@@ -67,7 +68,7 @@ position: relative;
   }
 
   .content {
-    margin-top: 0;
+    margin: 0 0 0 0;
     padding: 5%;
     z-index: 20;
   }

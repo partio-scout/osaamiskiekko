@@ -94,8 +94,6 @@ const MarkdownPage = (props) => {
       </g>
     </svg>
 
-
-  //TODO proper title and pageTitle
   return (
     <S.MarkdownPage>
       <Helmet>

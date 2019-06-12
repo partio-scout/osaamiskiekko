@@ -15,6 +15,7 @@ const Main = () => {
           <Route exact path='/ahot/:id' component={Credit} />
           <Route exact path='/curvetest' component={CurveTest} />
           <Route exact path='/:pageName' component={MarkdownPage} />
+          <Route component={MarkdownPage} />
         </Switch>
     </>
   );

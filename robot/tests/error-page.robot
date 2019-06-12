@@ -17,4 +17,4 @@ Open browser and go to frontend/tietoa
   Maximize Browser Window
 
 The front page should have error message
-  Wait Until Page Contains  Virhe 404
+  Wait Until Page Contains  Virhe: 404

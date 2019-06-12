@@ -80,7 +80,7 @@ export default {
     "nav.language.en": "Change language to English",
     "nav.language.sv": "Byt språk till svenska",
     "header.h1": "Med hjälp av kompetenscirkeln kommer du att få ut det mesta av din kompetens",
-    "header.important": "",
+    "header.important": "Kunskapshjulet är fortfarande under utveckling och kommer bara att öppnas sommaren 2019!",
     "header.p": "Med hjälp av skivan hittar du färdigheterna i hobby och frivilliga aktiviteter parallellt med studierna som leder till graden.",
     "search.label": "Välj en organisation eller en skola",
     "search.labelSecondary": "Välj utbildning",

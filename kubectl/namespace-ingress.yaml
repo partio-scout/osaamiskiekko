@@ -6,7 +6,16 @@ metadata:
   annotations:
     # use the shared ingress-nginx
     kubernetes.io/ingress.class: "nginx"
+    certmanager.k8s.io/issuer: "letsencrypt-prod"
+    certmanager.k8s.io/acme-challenge-type: http01
 spec:
+  tls:
+  - hosts:
+    - $SUBDOMAIN.osaamiskiekko.fi
+    secretName: frontend-tls
+  - hosts:
+    - api.$SUBDOMAIN.osaamiskiekko.fi
+    secretName: backend-tls
   rules:
   - host: $SUBDOMAIN.osaamiskiekko.fi
     http:
@@ -22,3 +31,4 @@ spec:
         backend:
           serviceName: backend
           servicePort: 1337
+---

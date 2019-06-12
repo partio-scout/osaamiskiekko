@@ -49,6 +49,12 @@ pipeline {
               
       steps {
         script {
+          if (env.BRANCH_NAME == 'production') {
+            sh "rm frontend/public/robots.txt"
+          }
+        }
+
+        script {
           env.NAMESPACE = cleanBranchNameForNamespace(env.BRANCH_NAME)
         }
 
@@ -129,8 +135,8 @@ pipeline {
             || true"""
 
           // Configure ingress-nginx scontroller
-          sh "kubectl apply -n ingress-nginx -f kubectl/global-ingress/prerequisites.yaml"
-          sh "kubectl apply -n ingress-nginx -f kubectl/global-ingress/ingress-nginx.yaml"
+          sh "kubectl apply -n ingress-nginx -f kubectl/global/ingress-prerequisites.yaml"
+          sh "kubectl apply -n ingress-nginx -f kubectl/global/ingress-nginx.yaml"
 
           sh "gcloud auth configure-docker"
         }
@@ -299,6 +305,7 @@ pipeline {
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend-service.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/frontend.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/namespace-ingress.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/prod-issuer.yaml"
 
           if (env.BRANCH_NAME == 'production') {
             sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/production/no-host-namespace-ingress.yaml" 

@@ -18,8 +18,9 @@ COPY ./cms/public ./cms/public
 COPY ./cms/package.json ./cms/package.json
 COPY ./cms/favicon.ico ./cms/favicon.ico
 # STARTUP SCRIPT
+COPY ./wait-for ./
+RUN chmod +x ./wait-for
 COPY ./strapi.sh ./
-
 RUN chmod +x ./strapi.sh
 
 RUN (cd cms && npm install)

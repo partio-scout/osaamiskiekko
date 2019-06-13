@@ -123,6 +123,7 @@ S.Navigation = styled.nav`
           display: block;
 
           .navbar_subitem {
+            margin: 24px 0px 24px 0px;
             display: block;
             text-align: center;
             width: 100%;
@@ -203,17 +204,17 @@ export default function Navigation() {
           </NavLink>
           <div className={navbar_items}>
             <ul className="navbar_item">
-              <li className="navbar_subitem">
+              <li className="navbar_subitem" onClick={() => setNavmenuVisible(!navmenuVisible)}>
                 <NavLink exact={true} to="/">
                   <FormattedMessage id="nav.osaamiskiekko"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem">
+              <li className="navbar_subitem" onClick={() => setNavmenuVisible(!navmenuVisible)}>
                 <NavLink to="/tietoa">
                   <FormattedMessage id="nav.tietoa"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem">
+              <li className="navbar_subitem" onClick={() => setNavmenuVisible(!navmenuVisible)}>
                 <NavLink to="/otayhteytta">
                   <FormattedMessage id="nav.otayhteytta"/>
                 </NavLink>

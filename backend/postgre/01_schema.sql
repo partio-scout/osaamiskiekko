@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 11.2 (Debian 11.2-1.pgdg90+1)
--- Dumped by pg_dump version 11.2 (Debian 11.2-1.pgdg90+1)
+-- Dumped from database version 11.3 (Debian 11.3-1.pgdg90+1)
+-- Dumped by pg_dump version 11.3 (Debian 11.3-1.pgdg90+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -12,6 +12,7 @@ SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
@@ -327,6 +328,48 @@ ALTER SEQUENCE public.organizations_id_seq OWNED BY public.organizations.id;
 
 
 --
+-- Name: pages; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.pages (
+    id integer NOT NULL,
+    path_identifier character varying(255) NOT NULL,
+    title_en character varying(255),
+    title_fi character varying(255),
+    title_sv character varying(255),
+    text_en text,
+    text_fi text,
+    text_sv text,
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
+);
+
+
+ALTER TABLE public.pages OWNER TO myuser;
+
+--
+-- Name: pages_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.pages_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.pages_id_seq OWNER TO myuser;
+
+--
+-- Name: pages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.pages_id_seq OWNED BY public.pages.id;
+
+
+--
 -- Name: schools; Type: TABLE; Schema: public; Owner: myuser
 --
 
@@ -616,6 +659,13 @@ ALTER TABLE ONLY public.organizations ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: pages id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.pages ALTER COLUMN id SET DEFAULT nextval('public.pages_id_seq'::regclass);
+
+
+--
 -- Name: schools id; Type: DEFAULT; Schema: public; Owner: myuser
 --
 
@@ -711,6 +761,14 @@ ALTER TABLE ONLY public.nqfs
 
 ALTER TABLE ONLY public.organizations
     ADD CONSTRAINT organizations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: pages pages_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.pages
+    ADD CONSTRAINT pages_pkey PRIMARY KEY (id);
 
 
 --
@@ -1039,6 +1097,55 @@ CREATE INDEX search_organizations_name_sv ON public.organizations USING gin (nam
 --
 
 CREATE INDEX search_organizations_url ON public.organizations USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_pages_path_identifier; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_pages_path_identifier ON public.pages USING gin (path_identifier public.gin_trgm_ops);
+
+
+--
+-- Name: search_pages_text_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_pages_text_en ON public.pages USING gin (text_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_pages_text_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_pages_text_fi ON public.pages USING gin (text_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_pages_text_sv; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_pages_text_sv ON public.pages USING gin (text_sv public.gin_trgm_ops);
+
+
+--
+-- Name: search_pages_title_en; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_pages_title_en ON public.pages USING gin (title_en public.gin_trgm_ops);
+
+
+--
+-- Name: search_pages_title_fi; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_pages_title_fi ON public.pages USING gin (title_fi public.gin_trgm_ops);
+
+
+--
+-- Name: search_pages_title_sv; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_pages_title_sv ON public.pages USING gin (title_sv public.gin_trgm_ops);
 
 
 --

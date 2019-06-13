@@ -306,6 +306,7 @@ pipeline {
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/backend-service.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/frontend.yaml"
           sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/namespace-ingress.yaml"
+          sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/prod-issuer.yaml"
 
           if (env.BRANCH_NAME == 'production') {
             sh "kubectl apply -n ${env.NAMESPACE} -f kubectl/production/no-host-namespace-ingress.yaml" 

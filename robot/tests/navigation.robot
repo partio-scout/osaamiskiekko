@@ -25,7 +25,7 @@ Open browser and go to frontend/tietoa
   Maximize Browser Window
 
 Information page should be displayed
-  Wait Until Page Contains  Information page
+  Wait Until Page Contains  Tietoa osaamiskiekosta
   Location Should Be  ${SERVER}tietoa
 
 When user click Osaamiskiekko
@@ -39,7 +39,7 @@ When user click Ota yhteyttä
   Click Link  Ota yhteyttä
 
 Then contact form should be displayed
-  Wait Until Page Contains  Contact page
+  Wait Until Page Contains  Ota yhteyttä
   Location Should Be  ${SERVER}otayhteytta
 
 When user click Tietoa

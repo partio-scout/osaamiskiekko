@@ -19,8 +19,8 @@ spec:
     - name: https
       port: 443
       targetPort: https
-    - name: backend-tcp-service
+    - name: proxied-tcp-1337
       port: 1337
       targetPort: 1337
-
+      protocol: TCP
 ---

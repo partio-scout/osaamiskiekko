@@ -13,6 +13,7 @@ COPY . ./
 RUN chmod +x ./strapi.sh
 
 RUN npm install --prefix cms
+RUN cd cms && strapi build
 
 EXPOSE 1337
 

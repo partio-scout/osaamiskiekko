@@ -23,7 +23,14 @@ then
     npm install
 fi
 
-strapi start &
+if [[ $NODE_ENV == "development" ]];
+then 
+  echo "dev environment starting"
+  strapi develop
+else 
+  echo "production environment starting"
+  strapi start
+fi
 
 strapiPID=$!
 wait "$strapiPID"

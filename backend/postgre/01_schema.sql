@@ -413,6 +413,44 @@ ALTER SEQUENCE public.schools_id_seq OWNED BY public.schools.id;
 
 
 --
+-- Name: strapi_administrator; Type: TABLE; Schema: public; Owner: myuser
+--
+
+CREATE TABLE public.strapi_administrator (
+    id integer NOT NULL,
+    username character varying(255) NOT NULL,
+    email character varying(255) NOT NULL,
+    password character varying(255) NOT NULL,
+    "resetPasswordToken" character varying(255),
+    blocked boolean
+);
+
+
+ALTER TABLE public.strapi_administrator OWNER TO myuser;
+
+--
+-- Name: strapi_administrator_id_seq; Type: SEQUENCE; Schema: public; Owner: myuser
+--
+
+CREATE SEQUENCE public.strapi_administrator_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.strapi_administrator_id_seq OWNER TO myuser;
+
+--
+-- Name: strapi_administrator_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: myuser
+--
+
+ALTER SEQUENCE public.strapi_administrator_id_seq OWNED BY public.strapi_administrator.id;
+
+
+--
 -- Name: upload_file; Type: TABLE; Schema: public; Owner: myuser
 --
 
@@ -581,7 +619,9 @@ CREATE TABLE public."users-permissions_user" (
     "resetPasswordToken" character varying(255),
     confirmed boolean,
     blocked boolean,
-    role integer
+    role integer,
+    created_at timestamp with time zone,
+    updated_at timestamp with time zone
 );
 
 
@@ -670,6 +710,13 @@ ALTER TABLE ONLY public.pages ALTER COLUMN id SET DEFAULT nextval('public.pages_
 --
 
 ALTER TABLE ONLY public.schools ALTER COLUMN id SET DEFAULT nextval('public.schools_id_seq'::regclass);
+
+
+--
+-- Name: strapi_administrator id; Type: DEFAULT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.strapi_administrator ALTER COLUMN id SET DEFAULT nextval('public.strapi_administrator_id_seq'::regclass);
 
 
 --
@@ -777,6 +824,14 @@ ALTER TABLE ONLY public.pages
 
 ALTER TABLE ONLY public.schools
     ADD CONSTRAINT schools_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: strapi_administrator strapi_administrator_pkey; Type: CONSTRAINT; Schema: public; Owner: myuser
+--
+
+ALTER TABLE ONLY public.strapi_administrator
+    ADD CONSTRAINT strapi_administrator_pkey PRIMARY KEY (id);
 
 
 --
@@ -1202,6 +1257,20 @@ CREATE INDEX search_schools_name_sv ON public.schools USING gin (name_sv public.
 --
 
 CREATE INDEX search_schools_url ON public.schools USING gin (url public.gin_trgm_ops);
+
+
+--
+-- Name: search_strapi_administrator_resetpasswordtoken; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_strapi_administrator_resetpasswordtoken ON public.strapi_administrator USING gin ("resetPasswordToken" public.gin_trgm_ops);
+
+
+--
+-- Name: search_strapi_administrator_username; Type: INDEX; Schema: public; Owner: myuser
+--
+
+CREATE INDEX search_strapi_administrator_username ON public.strapi_administrator USING gin (username public.gin_trgm_ops);
 
 
 --

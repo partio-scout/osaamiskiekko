@@ -1,15 +1,30 @@
-FROM node:11.1.0-alpine
+FROM node:lts-alpine
 
 WORKDIR /usr/src/api
 
 RUN echo "unsafe-perm = true" >> ~/.npmrc
 
-RUN npm install -g strapi@alpha
+RUN apk update
+RUN apk add --no-cache build-base gcc autoconf automake libtool zlib-dev libpng-dev nasm
 
-COPY . ./
+RUN npm install -g strapi@beta --unsafe-perm
+
+# DIRECTORIES
+COPY ./cms/api ./cms/api
+COPY ./cms/config ./cms/config
+COPY ./cms/extensions ./cms/extensions
+COPY ./cms/public ./cms/public
+# ROOT FILES
+COPY ./cms/package.json ./cms/package.json
+COPY ./cms/favicon.ico ./cms/favicon.ico
+# STARTUP SCRIPT
+COPY ./wait-for ./
+RUN chmod +x ./wait-for
+COPY ./strapi.sh ./
 RUN chmod +x ./strapi.sh
 
-RUN npm install --prefix cms
+RUN (cd cms && npm install)
+RUN (cd cms && strapi build)
 
 EXPOSE 1337
 

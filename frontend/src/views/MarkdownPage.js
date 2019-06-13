@@ -36,6 +36,8 @@ const MarkdownPage = (props) => {
   const { data, isLoading, status } = MarkdownData(props.match.params.pageName);
   const globalState = useGlobalStateContext();
 
+  const title = (!isLoading && data) ? data[`title_${globalState.language}`] : props.match.params.pageName;
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [contentContainer]);
@@ -52,15 +54,13 @@ const MarkdownPage = (props) => {
 
   return (
     <S.MarkdownPage>
-      <Helmet>
-        <title>
-          {isLoading
-            ? ''
-            : typeof data !== 'undefined'
-              ? data[`title_${globalState.language}`]
-              : 'Error'}
-        </title>
-      </Helmet>
+      <FormattedMessage id='pageTitle' values={{ subpage: title }}>
+        {msg =>
+          <Helmet>
+            <title>{msg}</title>
+          </Helmet>
+        }
+      </FormattedMessage>
       <NavigationWithCurveAndTitle title={isLoading
                                             ? ''
                                             : typeof data !== 'undefined'

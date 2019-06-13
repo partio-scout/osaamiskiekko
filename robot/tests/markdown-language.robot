@@ -10,11 +10,11 @@ Test Teardown       Close browser
 
 User must be able to change languages in markdown pages
   The page should be in Finnish
-  When user click EN
+  When user set language to    en
   Then the page should be in English
-  When user click SV
+  When user set language to    sv
   Then the page should be in Swedish
-  When user click FI
+  When user set language to    fi
   Then the page should be in Finnish
 
 *** Keywords ***
@@ -22,20 +22,15 @@ Open browser and go to frontend/tietoa
   Open Browser    ${SERVER}tietoa    browser=${BROWSER}    remote_url=${SELENIUM}
   Maximize Browser Window
 
-The page should be in Finnish
-  Wait Until Page Contains  Tietoa -sivu
+When user set language to
+  [Arguments]    ${languagecode}
+  Click Button    ${languagecode}
 
-When user click EN
-  Click Button  en
+The page should be in Finnish
+  Wait Until Page Contains  Tietoa osaamiskiekosta
 
 Then the page should be in English
-  Wait Until Page Contains  Information page
-
-When user click SV
-  Click button  sv
+  Wait Until Page Contains  Information
 
 Then the page should be in Swedish
-  Wait Until Page Contains  Informationssida
-
-When user click FI
-  Click Button  fi
+  Wait Until Page Contains  Information

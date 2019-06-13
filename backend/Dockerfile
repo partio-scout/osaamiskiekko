@@ -9,11 +9,22 @@ RUN apk add --no-cache build-base gcc autoconf automake libtool zlib-dev libpng-
 
 RUN npm install -g strapi@beta --unsafe-perm
 
-COPY . ./
+# DIRECTORIES
+COPY ./cms/api ./cms/api
+COPY ./cms/config ./cms/config
+COPY ./cms/extensions ./cms/extensions
+COPY ./cms/public ./cms/public
+# ROOT FILES
+COPY ./cms/package.json ./cms/package.json
+COPY ./cms/package-lock.json ./cms/package-lock.json
+COPY ./cms/favicon.ico ./cms/favicon.ico
+# STARTUP SCRIPT
+COPY ./strapi.sh ./
+
 RUN chmod +x ./strapi.sh
 
-RUN npm install --prefix cms
-RUN cd cms && strapi build
+RUN (cd cms && npm install)
+RUN (cd cms && strapi build)
 
 EXPOSE 1337
 

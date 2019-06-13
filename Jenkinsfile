@@ -2,12 +2,13 @@ dockerEnvironment = "osaamiskiekko"
 compose = "docker-compose --project-directory . -p ${dockerEnvironment}"
 projectName = "partionosaamiskiekko"
 dockerRepository = "artifactory.dev.eficode.io"
-dockerFrontendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/frontend_${env.BRANCH_NAME}"
-dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/backend_${env.BRANCH_NAME}"
+namespace = cleanBranchNameForNamespace(env.BRANCH_NAME)
+dockerFrontendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/frontend_${namespace}"
+dockerBackendImage = "${dockerRepository}/${projectName}/${dockerEnvironment}/backend_${namespace}"
 taggedFrontendImage = dockerFrontendImage
 taggedBackendImage = dockerBackendImage
 
-publishedBranches = [ "master", "test", "staging", "production"]
+publishedBranches = [ "master", "test", "staging", "production", "PTOSKKO-145"]
 
 pipeline {
   agent {

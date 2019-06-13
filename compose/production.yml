@@ -15,7 +15,7 @@ services:
     command: ./strapi.sh
     build: ./backend
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
       - APP_NAME=strapi-app
       - DATABASE_CLIENT=postgres
       - DATABASE_HOST=${DATABASE_HOST}

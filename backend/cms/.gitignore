@@ -80,7 +80,7 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
-# public/uploads/*
+public/uploads/*
 !public/uploads/.gitkeep
 
 ############################
@@ -102,3 +102,11 @@ node_modules
 
 testApp
 coverage
+
+############################
+# Strapi
+############################
+
+exports
+.cache
+build

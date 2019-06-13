@@ -16,7 +16,6 @@ COPY ./cms/extensions ./cms/extensions
 COPY ./cms/public ./cms/public
 # ROOT FILES
 COPY ./cms/package.json ./cms/package.json
-COPY ./cms/package-lock.json ./cms/package-lock.json
 COPY ./cms/favicon.ico ./cms/favicon.ico
 # STARTUP SCRIPT
 COPY ./strapi.sh ./

@@ -84,7 +84,7 @@ S.Navigation = styled.nav`
   @media (max-width: 767px) {
 
     .navbar {
-      align-items: baseline;
+      align-items: flex-start;
       width: 100%;
       padding-left: 0;
 
@@ -98,6 +98,8 @@ S.Navigation = styled.nav`
         img {
           width: 48px;
           height: 48px;
+          margin-top: 11.833333333px;
+          // PLEASE NOTICE: Fixed manually to the center!
         }
       }
 
@@ -146,11 +148,13 @@ S.Navigation = styled.nav`
           }
         }
       }
-
-      .visible {
+      .show {
         display: block;
-        max-height: 90vh;
         animation: slide-down 0.5s ease-in;
+      }
+      .hide {
+        display: block;
+        animation: slide-up 0.5s ease-out forwards;
       }
     }
   }
@@ -162,9 +166,11 @@ S.Navigation = styled.nav`
     border-radius: 3px;
     content: '';
     display: block;
+    transition: all .2s ease-in-out;
     height: 5px;
     margin: 7px 0;
-    transition: all .2s ease-in-out;
+    // When changing the height of the icon, change the translateY
+    // below to be height+margin to make the rotation work.
   }
   
   .activated:before { transform: translateY(12px) rotate(135deg); }
@@ -172,21 +178,30 @@ S.Navigation = styled.nav`
   .activated div { transform: scale(0); }
 
   @keyframes slide-down {
-    0% { opacity: 1; max-height: 0px; }
+    0% { opacity: 1; max-height: 0; }
     100% { opacity: 1; max-height: 100vh; }
   }
   
   @keyframes slide-up {
-    0% { display: block; max-height: 100vh; }
-    100% { display: none; max-height: 0; }
+    0% { max-height: 100vh; }
+    99% { opacity: 1; max-height: 0; }
+    100% { opacity: 0; }
   }
 `;
 
 export default function Navigation() {
   const [navmenuVisible, setNavmenuVisible] = useState(false)
+  const [hideNavMenu, setHideMenu] = useState(false)
+
+  function navmenuAction() {
+    setNavmenuVisible(!navmenuVisible);
+    setHideMenu(navmenuVisible);
+  }
+
   const navbar_items = classnames({
     "navbar_items": true,
-    "visible": navmenuVisible
+    "show": navmenuVisible,
+    "hide": hideNavMenu
   })
   const icon = classnames({
     "nav-icon": true,
@@ -195,7 +210,7 @@ export default function Navigation() {
 
   return (
     <S.Navigation>
-      <OutsideClickHandler onOutsideClick={() => setNavmenuVisible(false)} >
+      <OutsideClickHandler onOutsideClick={() => navmenuAction()} >
         <div className="navbar">
           <NavLink exact={true} to="/">
             <FormattedMessage id="nav.frontpage">
@@ -204,17 +219,17 @@ export default function Navigation() {
           </NavLink>
           <div className={navbar_items}>
             <ul className="navbar_item">
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(!navmenuVisible)}>
+              <li className="navbar_subitem" onClick={() => navmenuAction()}>
                 <NavLink exact={true} to="/">
                   <FormattedMessage id="nav.osaamiskiekko"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(!navmenuVisible)}>
+              <li className="navbar_subitem" onClick={() => navmenuAction()}>
                 <NavLink to="/tietoa">
                   <FormattedMessage id="nav.tietoa"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(!navmenuVisible)}>
+              <li className="navbar_subitem" onClick={() => navmenuAction()}>
                 <NavLink to="/otayhteytta">
                   <FormattedMessage id="nav.otayhteytta"/>
                 </NavLink>
@@ -224,7 +239,7 @@ export default function Navigation() {
               <li className="navbar_subitem"><LanguageSelector /></li>
             </ul>
           </div>
-          <button className={icon} onClick={() => setNavmenuVisible(!navmenuVisible)}>
+          <button className={icon} onClick={() => navmenuAction()}>
             <div></div>
           </button>
         </div>

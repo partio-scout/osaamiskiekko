@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import Markdown from 'markdown-to-jsx';
@@ -31,15 +31,10 @@ position: relative;
 `;
 
 const MarkdownPage = (props) => {
-  let contentContainer;
   const { data, isLoading, status } = MarkdownData(props.match.params.pageName);
   const globalState = useGlobalStateContext();
 
   const title = (!isLoading && data) ? data[`title_${globalState.language}`] : props.match.params.pageName;
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [contentContainer]);
 
   return (
     <S.MarkdownPage>
@@ -57,13 +52,11 @@ const MarkdownPage = (props) => {
             ? <>{data[`title_${globalState.language}`]}</>
             : <><FormattedMessage id='error.title'/>{status.message}</>} />
       <div className='content'>
-        <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">
-          {isLoading 
-            ? ''
-            : typeof data !== 'undefined'
-              ? <Markdown>{data[`text_${globalState.language}`]}</Markdown>
-              : <FormattedMessage id='error.text'/>}
-        </div>
+        {isLoading 
+          ? ''
+          : typeof data !== 'undefined'
+            ? <Markdown>{data[`text_${globalState.language}`]}</Markdown>
+            : <FormattedMessage id='error.text'/>}
       </div>
     </S.MarkdownPage>
   );

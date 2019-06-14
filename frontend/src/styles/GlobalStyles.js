@@ -13,7 +13,7 @@ body {
   font-family: "Fira Sans", sans-serif;
   margin: 0px;
   padding: 0px;
-  background-color: ${props => props.theme.colors.backgroundPrimary}
+  background-color: ${props => props.theme.colors.backgroundPrimary};
   color: #202020;
 }
 
@@ -21,7 +21,7 @@ h1, h1 span {
   color: #202020;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 900;
-  font-size: 48px
+  font-size: 48px;
   line-height: 52px;
 }
 
@@ -29,7 +29,7 @@ h2, h2 span {
   color: #202020;
   font-family: "Fira Sans", sans-serif;
   font-weight: bold;
-  font-size: 33px
+  font-size: 33px;
   line-height: 36px;
 }
 
@@ -37,14 +37,14 @@ h3, h3 span {
   color: #202020;
   font-family: "Fira Sans", sans-serif;
   font-weight: bold;
-  font-size: 26px
+  font-size: 26px;
   line-height: 28px;
 }
 
 p.lead {
   color: #202020;
   font-family: "Fira Sans", sans-serif;
-  font-size: 20px
+  font-size: 20px;
   line-height: 30px;
 }
 
@@ -76,7 +76,7 @@ p {
     color: #202020;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 900;
-    font-size: 37px
+    font-size: 37px;
     line-height: 36px;
   }
   
@@ -84,7 +84,7 @@ p {
     color: #202020;
     font-family: "Fira Sans", sans-serif;
     font-weight: bold;
-    font-size: 26px
+    font-size: 26px;
     line-height: 32px;
   }
   
@@ -92,14 +92,14 @@ p {
     color: #202020;
     font-family: "Fira Sans", sans-serif;
     font-weight: bold;
-    font-size: 20px
+    font-size: 20px;
     line-height: 28px;
   }
   
   p.lead {
     color: #202020;
     font-family: "Fira Sans", sans-serif;
-    font-size: 18px
+    font-size: 18px;
     line-height: 26px;
   }
   

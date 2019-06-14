@@ -15,13 +15,7 @@ const S = {};
 S.Home = styled.div`
   max-width: 1440px;
   margin: auto;
-
   padding-bottom: 500px;
-
-  .results-amount {
-    text-align: center;
-    margin: 1em;
-  }
 
   @media only screen and (max-width: 767px) {
     padding: 0px;

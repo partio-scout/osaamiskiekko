@@ -156,8 +156,19 @@ export default function SearchBox(props) {
     showResults(institutionSelection, selection);
   }
 
+  const scrollToRef = (ref) => {
+    console.log(ref)
+    /*return ref.current && window.scrollTo({
+      top: ref.current.offsetParent.offsetParent.offsetParent.offsetTop,
+      behavior: 'smooth'
+    });*/
+    var elmnt = document.getElementById("haloo");
+    console.log(elmnt)
+    elmnt.scrollIntoView({behavior: 'smooth'});
+  };
+
   return (
-    <S.SearchBox>
+    <S.SearchBox id={"haloo"} onClick={(e) => scrollToRef()}>
       {isLoading &&  
       <BarLoader
         css={loadingSpinnerOverride}
@@ -168,11 +179,11 @@ export default function SearchBox(props) {
       />}
       {!isLoading &&
         <div className="search-wrapper">
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            setInstitutionFilter([]);
-          }}
-        >
+          <OutsideClickHandler
+            onOutsideClick={() => {
+              setInstitutionFilter([]);
+            }}
+          >
           <SearchInput 
             handleInput={filterSchoolOrOrganization} 
             inputValue={institutionInput} 
@@ -183,25 +194,25 @@ export default function SearchBox(props) {
             setSelection={userInstitutionSelection}
             showPreResults={showPreResults}
             />
-        </OutsideClickHandler>
-        {institutionSelection &&
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            setTrainingFilter([]);
-          }}
-        >
-          <SearchInput
-            handleInput={filterDegreesOrCompetences}
-            inputValue={trainingInput} 
-            labelKey='search.labelSecondary'
-            name='search-education' 
-            className='search-education'
-            results={trainingFilter}
-            setSelection={userTrainingSelection}
-            showPreResults={showPreResults}
+          </OutsideClickHandler>
+            {institutionSelection &&
+              <OutsideClickHandler
+                onOutsideClick={() => {
+                  setTrainingFilter([]);
+                }}
+              >
+            <SearchInput
+              handleInput={filterDegreesOrCompetences}
+              inputValue={trainingInput} 
+              labelKey='search.labelSecondary'
+              name='search-education' 
+              className='search-education'
+              results={trainingFilter}
+              setSelection={userTrainingSelection}
+              showPreResults={showPreResults}
             />
-        </OutsideClickHandler>
-          }
+          </OutsideClickHandler>
+            }
         </div>
       }
     </S.SearchBox>

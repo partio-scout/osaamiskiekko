@@ -190,27 +190,33 @@ S.Navigation = styled.nav`
 `;
 
 export default function Navigation() {
-  const [navmenuVisible, setNavmenuVisible] = useState(false)
-  const [hideNavMenu, setHideMenu] = useState(false)
+  const [navmenuVisible, setNavmenuVisible] = useState(false);
+  const [hideNavMenu, setHideMenu] = useState(false);
 
   function navmenuAction() {
     setNavmenuVisible(!navmenuVisible);
     setHideMenu(navmenuVisible);
   }
 
+  function hideIfVisible() {
+    if (navmenuVisible) {
+      navmenuAction();
+    }
+  }
+
   const navbar_items = classnames({
     "navbar_items": true,
     "show": navmenuVisible,
     "hide": hideNavMenu
-  })
+  });
   const icon = classnames({
     "nav-icon": true,
     "activated": navmenuVisible
-  })
+  });
 
   return (
     <S.Navigation>
-      <OutsideClickHandler onOutsideClick={() => navmenuAction()} >
+      <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
           <NavLink exact={true} to="/">
             <FormattedMessage id="nav.frontpage">
@@ -219,17 +225,17 @@ export default function Navigation() {
           </NavLink>
           <div className={navbar_items}>
             <ul className="navbar_item">
-              <li className="navbar_subitem" onClick={() => navmenuAction()}>
+              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
                 <NavLink exact={true} to="/">
                   <FormattedMessage id="nav.osaamiskiekko"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => navmenuAction()}>
+              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
                 <NavLink to="/tietoa">
                   <FormattedMessage id="nav.tietoa"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => navmenuAction()}>
+              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
                 <NavLink to="/otayhteytta">
                   <FormattedMessage id="nav.otayhteytta"/>
                 </NavLink>
@@ -245,5 +251,5 @@ export default function Navigation() {
         </div>
       </OutsideClickHandler>
     </S.Navigation>
-  )
+  );
 }

@@ -154,7 +154,7 @@ S.Navigation = styled.nav`
       }
       .hide {
         display: block;
-        animation: slide-up 0.5s ease-out forwards;
+        animation: slide-up 0.25s ease-out forwards;
       }
     }
   }

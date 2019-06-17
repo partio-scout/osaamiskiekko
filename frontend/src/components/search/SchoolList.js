@@ -10,6 +10,7 @@ S.SchoolList = styled.div`
   margin: auto;
   margin-bottom: 50px;
   padding: 0px 20px 0px 20px;
+  margin-top: 50px;
 
 h1 {
   padding: 34px 0px 34px 0px;
@@ -21,7 +22,10 @@ h1 {
   line-height: 50px;
   text-align: center;
 }
-.
+
+@media only screen and (max-width: 400px) {
+  margin-top: 70px;
+}
 `;
 
 const SchoolList = (props) => {

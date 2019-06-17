@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 const S = {};
 S.ExaminationNumber = styled.div`
   text-align: center;
+  margin-top: 2em;
   .examination-number {
     padding: 5px;
   }

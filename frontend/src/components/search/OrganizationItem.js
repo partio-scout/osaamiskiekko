@@ -23,7 +23,7 @@ S.OrganizationItem = styled.div`
 
   :hover, :focus {
     transition: 0.2s;
-    transform: scale(1.05);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.5);
     cursor: pointer;
   }
 

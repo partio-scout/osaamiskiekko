@@ -34,6 +34,7 @@ export default {
     "examination.creditingInfoForCompetence": "Training can be credited in {amount, plural, =0 {no degrees} one {# degree} other {# degrees}}:",
     "error.title": "Error: ",
     "error.text": "the server was unable to complete your request.",
+    "noresults": "No search results",
   },
   "fi": {
     "title": "Osaamiskiekko",
@@ -70,6 +71,7 @@ export default {
     "examination.creditingInfoForCompetence": "Koulutuksen tai osaamismerkin voi hyödyntää {amount} tutkinnossa:",
     "error.title": "Virhe: ",
     "error.text": "Palvelin ei kyennyt käsittelemään pyyntöäsi. Pahoittelut!",
+    "noresults": "Tuloksia ei löytynyt",
   },
   "sv": {
     "title": "Kompetenscirkeln",
@@ -106,5 +108,6 @@ export default {
     "examination.creditingInfoForCompetence": "Koulutus voidaan tunnustaa {amount} tutkinnossa:_sv",
     "error.title": "Error: ",
     "error.text": "Palvelin ei kyennyt käsittelemään pyyntöäsi. Pahoittelut!",
+    "noresults": "Inga resultat hittades",
   }
 };

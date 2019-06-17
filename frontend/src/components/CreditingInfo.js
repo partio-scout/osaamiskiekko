@@ -364,7 +364,7 @@ export default function CreditingInfo(props) {
                 </p>
               {creditingData.url &&
               <p className='readmore'>
-                <a href={creditingData.url}>
+              <a href={creditingData.url} target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id="creditinginfo.readmore" />
                 </a>
               </p>

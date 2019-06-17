@@ -10,6 +10,7 @@ import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import { fillData, transformToByOrganization } from '../api/CreditingData';
 import ExaminationNumber from '../components/ExaminationNumber';
+import Footer from '../components/Footer';
 
 const S = {};
 S.Home = styled.div`
@@ -120,6 +121,7 @@ const Home = () => {
       
       { (creditingInfoForDegreeByOrganization && creditingInfoForDegreeByOrganization.length > 0) 
         && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
+      <Footer />
     </S.Home>
   );
 }

@@ -19,7 +19,6 @@ h1 {
 }
 
 .noresults {
-  line-height: 50px;
   text-align: center;
 }
 

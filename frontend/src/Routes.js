@@ -5,6 +5,7 @@ import MarkdownPage from './views/MarkdownPage';
 import Home from './views/Home';
 import CurveTest from './views/CurveTest';
 import GlobalStyle from './styles/GlobalStyles';
+import Footer from './components/Footer';
 
 const Main = () => {
   return (
@@ -17,6 +18,7 @@ const Main = () => {
           <Route exact path='/:pageName' component={MarkdownPage} />
           <Route component={MarkdownPage} />
         </Switch>
+        <Footer />
     </>
   );
 }

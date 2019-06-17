@@ -32,7 +32,7 @@ When user click SV
   Click button  sv
 
 Then the front page should be in Swedish
-  Wait Until Page Contains  Välj en organisation
+  Wait Until Page Contains  Välj organisation eller läroanstalt
 
 When user click FI
   Click Button  fi

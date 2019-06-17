@@ -27,6 +27,8 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const language = localStorage.getItem('language') || 'fi';
+        setLanguage(language);
         const nqfs = await Api.getNqfs();
         setNqfLevels(nqfs);
         const fieldOfStudies = await Api.getFieldofstudies();
@@ -44,7 +46,10 @@ const App = () => {
     fetchData();
   }, []);
 
-  const changeLanguage = (language) => setLanguage(language);
+  const changeLanguage = (language) => {
+    localStorage.setItem('language', language);
+    setLanguage(language);
+  };
   const changeCurrentTheme = (theme) => { setCurrentTheme(theme) };
 
   const globalState = {

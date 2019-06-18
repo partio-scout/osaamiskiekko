@@ -155,22 +155,9 @@ export default function SearchBox(props) {
     updateInputsWithTraining(selection);
     showResults(institutionSelection, selection);
   }
-
-  const scrollToRef = (ref) => {
-    console.log(ref)
-    /*return ref.current && window.scrollTo({
-      top: ref.current.offsetParent.offsetParent.offsetParent.offsetTop,
-      behavior: 'smooth'
-    });*/
-    var elmnt = document.getElementById("haloo");
-    console.log(elmnt)
-    if (window.innerHeight <= 767) {
-      elmnt.scrollIntoView();
-    }
-  };
-
+  
   return (
-    <S.SearchBox id={"haloo"} onClick={(e) => scrollToRef()}>
+    <S.SearchBox id={"search-box"}>
       {isLoading &&  
       <BarLoader
         css={loadingSpinnerOverride}

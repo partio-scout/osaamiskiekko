@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import Markdown from 'markdown-to-jsx';
@@ -36,10 +36,6 @@ const MarkdownPage = (props) => {
   const globalState = useGlobalStateContext();
 
   const title = (!isLoading && data) ? data[`title_${globalState.language}`] : props.match.params.pageName;
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [contentContainer]);
 
   return (
     <S.MarkdownPage>

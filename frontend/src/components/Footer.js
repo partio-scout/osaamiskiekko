@@ -12,6 +12,8 @@ S.Footer = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  max-width: 1400px;
+  margin: auto;
 
   ul {
     padding: 0px;

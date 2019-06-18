@@ -17,10 +17,6 @@ position: relative;
   }
 }
 
-.navigation {
-  background-color: ${props => props.theme.colors.backgroundSecondary};
-}
-
 .topcurve {
   display: block;
   position: relative;
@@ -73,7 +69,7 @@ const NavigationWithCurveAndTitle = (props) => {
   return (
     <S.NacigationWithCurveAndTitle fixedPadding={fixedPadding}>
       <div className='navigation'>
-        <Navigation />
+        <Navigation textHighlightColor="backgroundPrimary" backgroundColor="backgroundSecondary"/>
       </div>
       <div className='title'>
         <h1>

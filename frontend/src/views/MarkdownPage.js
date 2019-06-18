@@ -31,7 +31,6 @@ position: relative;
 `;
 
 const MarkdownPage = (props) => {
-  let contentContainer;
   const { data, isLoading, status } = MarkdownData(props.match.params.pageName);
   const globalState = useGlobalStateContext();
 

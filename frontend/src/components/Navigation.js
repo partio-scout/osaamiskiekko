@@ -197,7 +197,7 @@ S.Navigation = styled.nav`
   @keyframes slide-up {
     0% { max-height: 100vh; }
     99% { opacity: 1; max-height: 0; }
-    100% { opacity: 0; }
+    100% { opacity: 0; max-height: 0; }
   }
 `;
 

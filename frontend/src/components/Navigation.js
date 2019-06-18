@@ -202,7 +202,7 @@ S.Navigation = styled.nav`
 `;
 
 export default function Navigation(props) {
-  var {textHighlightColor, backgroundColor} = props;
+  let {textHighlightColor, backgroundColor} = props;
   if (!textHighlightColor) { textHighlightColor = "textHighlight"; }
   const [navmenuVisible, setNavmenuVisible] = useState(false);
   const [hideNavMenu, setHideMenu] = useState(false);

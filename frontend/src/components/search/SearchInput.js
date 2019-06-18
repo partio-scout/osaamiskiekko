@@ -80,29 +80,36 @@ export default injectIntl(function SearchInput(props) {
   const { handleInput, inputValue, labelKey, name, results, setSelection, showPreResults } = props;
   const [id] = useState(_.uniqueId());
 
+  const mobileAutoScroll = () => {
+    var elmnt = document.getElementById("search-box");
+    if (window.innerWidth <= 767) {
+      elmnt.scrollIntoView();
+    }
+  };
+
   return (
-      <S.SearchWrapper name={`${name}-component`}>
-        <label htmlFor={id}>
-          <FormattedMessage id={labelKey} />
-          <div className="input-area">
-         <span className="fa fa-search"></span>
-        <input
-          minLength={2}
-          value={inputValue}
-          type="text"
-          placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}
-          name={name}
-          onChange={e => handleInput(e.target.value)} 
-          onClick={(e) => showPreResults(e.target.name)}
-          onFocus={(e) => showPreResults(e.target.name)}
-          autoComplete="off"
-        />
-          </div>
-        </label>
-        <SearchResults
-          results={results}
-          setSelection={setSelection}
-        />
-      </S.SearchWrapper>
+    <S.SearchWrapper name={`${name}-component`}>
+      <label htmlFor={id}>
+        <FormattedMessage id={labelKey} />
+        <div className="input-area" onClick={(e) => mobileAutoScroll()}>
+        <span className="fa fa-search"></span>
+      <input
+        minLength={2}
+        value={inputValue}
+        type="text"
+        placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}
+        name={name}
+        onChange={e => handleInput(e.target.value)} 
+        onClick={(e) => showPreResults(e.target.name)}
+        onFocus={(e) => showPreResults(e.target.name)}
+        autoComplete="off"
+      />
+        </div>
+      </label>
+      <SearchResults
+        results={results}
+        setSelection={setSelection}
+      />
+    </S.SearchWrapper>
   )
 });

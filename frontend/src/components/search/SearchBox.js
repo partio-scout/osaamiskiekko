@@ -157,7 +157,7 @@ export default function SearchBox(props) {
   }
 
   return (
-    <S.SearchBox>
+    <S.SearchBox id="search-box">
       {isLoading &&  
       <BarLoader
         css={loadingSpinnerOverride}
@@ -168,11 +168,11 @@ export default function SearchBox(props) {
       />}
       {!isLoading &&
         <div className="search-wrapper">
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            setInstitutionFilter([]);
-          }}
-        >
+          <OutsideClickHandler
+            onOutsideClick={() => {
+              setInstitutionFilter([]);
+            }}
+          >
           <SearchInput 
             handleInput={filterSchoolOrOrganization} 
             inputValue={institutionInput} 
@@ -183,25 +183,25 @@ export default function SearchBox(props) {
             setSelection={userInstitutionSelection}
             showPreResults={showPreResults}
             />
-        </OutsideClickHandler>
-        {institutionSelection &&
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            setTrainingFilter([]);
-          }}
-        >
-          <SearchInput
-            handleInput={filterDegreesOrCompetences}
-            inputValue={trainingInput} 
-            labelKey='search.labelSecondary'
-            name='search-education' 
-            className='search-education'
-            results={trainingFilter}
-            setSelection={userTrainingSelection}
-            showPreResults={showPreResults}
+          </OutsideClickHandler>
+            {institutionSelection &&
+              <OutsideClickHandler
+                onOutsideClick={() => {
+                  setTrainingFilter([]);
+                }}
+              >
+            <SearchInput
+              handleInput={filterDegreesOrCompetences}
+              inputValue={trainingInput} 
+              labelKey='search.labelSecondary'
+              name='search-education' 
+              className='search-education'
+              results={trainingFilter}
+              setSelection={userTrainingSelection}
+              showPreResults={showPreResults}
             />
-        </OutsideClickHandler>
-          }
+          </OutsideClickHandler>
+            }
         </div>
       }
     </S.SearchBox>

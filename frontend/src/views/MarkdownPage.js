@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import Markdown from 'markdown-to-jsx';
@@ -31,10 +31,14 @@ position: relative;
 `;
 
 const MarkdownPage = (props) => {
+  let contentContainer;
   const { data, isLoading, status } = MarkdownData(props.match.params.pageName);
   const globalState = useGlobalStateContext();
 
   const title = (!isLoading && data) ? data[`title_${globalState.language}`] : props.match.params.pageName;
+
+  // For later use.
+  useEffect(() => {}, [contentContainer]);
 
   return (
     <S.MarkdownPage>

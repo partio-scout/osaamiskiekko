@@ -164,7 +164,9 @@ export default function SearchBox(props) {
     });*/
     var elmnt = document.getElementById("haloo");
     console.log(elmnt)
-    elmnt.scrollIntoView({behavior: 'smooth'});
+    if (window.innerHeight <= 767) {
+      elmnt.scrollIntoView();
+    }
   };
 
   return (

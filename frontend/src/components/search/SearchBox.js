@@ -155,9 +155,9 @@ export default function SearchBox(props) {
     updateInputsWithTraining(selection);
     showResults(institutionSelection, selection);
   }
-  
+
   return (
-    <S.SearchBox id={"search-box"}>
+    <S.SearchBox id="search-box">
       {isLoading &&  
       <BarLoader
         css={loadingSpinnerOverride}

@@ -82,7 +82,7 @@ export default injectIntl(function SearchInput(props) {
 
   const mobileAutoScroll = () => {
     var elmnt = document.getElementById("search-box");
-    if (window.innerHeight <= 767) {
+    if (window.innerWidth <= 767) {
       elmnt.scrollIntoView();
     }
   };

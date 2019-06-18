@@ -14,7 +14,6 @@ margin: auto;
 position: relative;
 
 .content {
-  margin-top: 3rem;
   margin-bottom: 3rem;
   padding: 0 15%;
   position: relative;

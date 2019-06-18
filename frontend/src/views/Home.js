@@ -15,7 +15,10 @@ const S = {};
 S.Home = styled.div`
   max-width: 1440px;
   margin: auto;
-  padding-bottom: 500px;
+
+  .invisible-block {
+    height: 400px;
+  }
 
   @media only screen and (max-width: 767px) {
     padding: 0px;
@@ -100,6 +103,8 @@ const Home = () => {
     }
   }
 
+  const testForInvisibleBLock = () => sortedSchoolList.length === 0 && creditingInfoForDegreeByOrganization.length === 0;
+
   return (
     <S.Home>
       <Header />
@@ -120,6 +125,8 @@ const Home = () => {
       
       { (creditingInfoForDegreeByOrganization && creditingInfoForDegreeByOrganization.length > 0) 
         && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
+      
+      {testForInvisibleBLock() && <div className="invisible-block"></div>}
     </S.Home>
   );
 }

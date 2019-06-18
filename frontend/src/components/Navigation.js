@@ -17,6 +17,7 @@ S.Navigation = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: ${props => props.theme.colors[props.backgroundColor]};
 
     .nav-icon {
       display: none;
@@ -60,9 +61,9 @@ S.Navigation = styled.nav`
               color: ${props => props.theme.colors.textColor}
 
               span {
-                border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+                border-bottom: 2px solid ${props => props.theme.colors[props.textHighlightColor]};
                 background-size: 100% 100%;
-                background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
+                background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors[props.textHighlightColor]} 0)`};
                 background-repeat: no-repeat;
               }
             }
@@ -71,10 +72,9 @@ S.Navigation = styled.nav`
               font-weight: bold;
 
               span {
-                border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+                border-bottom: 2px solid ${props => props.theme.colors[props.textHighlightColor]};
               }
             }
-
           }
         }
       }
@@ -137,7 +137,19 @@ S.Navigation = styled.nav`
               height: 100%;
               padding: 14px 0px 14px 0px;
               font-weight: normal;
+              &:hover {
+                span {
+                  border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+                  background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
+                }
+              }
+              &.active {
+                span {
+                  border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+                }
+              }
             }
+            
 
             div {
               background-color: white;
@@ -189,7 +201,9 @@ S.Navigation = styled.nav`
   }
 `;
 
-export default function Navigation() {
+export default function Navigation(props) {
+  var {textHighlightColor, backgroundColor} = props;
+  if (!textHighlightColor) { textHighlightColor = "textHighlight"; }
   const [navmenuVisible, setNavmenuVisible] = useState(false);
   const [hideNavMenu, setHideMenu] = useState(false);
 
@@ -215,7 +229,7 @@ export default function Navigation() {
   });
 
   return (
-    <S.Navigation>
+    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor}>
       <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
           <NavLink exact={true} to="/">

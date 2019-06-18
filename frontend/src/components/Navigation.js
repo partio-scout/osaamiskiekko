@@ -259,9 +259,11 @@ export default function Navigation(props) {
               <li className="navbar_subitem"><LanguageSelector /></li>
             </ul>
           </div>
-          <button className={icon} onClick={() => navmenuAction()}>
-            <div></div>
-          </button>
+          <FormattedMessage id="nav.navicon">
+            {msg => <button className={icon} onClick={() => navmenuAction()} aria-label={msg} aria-expanded={navmenuVisible}>
+              <div></div>
+            </button> }
+          </FormattedMessage>
         </div>
       </OutsideClickHandler>
     </S.Navigation>

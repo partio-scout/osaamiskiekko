@@ -31,6 +31,7 @@ position: relative;
 `;
 
 const MarkdownPage = (props) => {
+  let contentContainer;
   const { data, isLoading, status } = MarkdownData(props.match.params.pageName);
   const globalState = useGlobalStateContext();
 
@@ -52,11 +53,13 @@ const MarkdownPage = (props) => {
             ? <>{data[`title_${globalState.language}`]}</>
             : <><FormattedMessage id='error.title'/>{status.message}</>} />
       <div className='content'>
-        {isLoading 
-          ? ''
-          : typeof data !== 'undefined'
-            ? <Markdown>{data[`text_${globalState.language}`]}</Markdown>
-            : <FormattedMessage id='error.text'/>}
+        <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">
+          {isLoading 
+            ? ''
+            : typeof data !== 'undefined'
+              ? <Markdown>{data[`text_${globalState.language}`]}</Markdown>
+              : <FormattedMessage id='error.text'/>}
+        </div>
       </div>
     </S.MarkdownPage>
   );

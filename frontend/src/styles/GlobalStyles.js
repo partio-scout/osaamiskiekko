@@ -15,6 +15,16 @@ body {
   padding: 0px;
   background-color: ${props => props.theme.colors.backgroundPrimary};
   color: #202020;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+#router-content-area {
+  padding-bottom: 230px;
 }
 
 h1, h1 span {

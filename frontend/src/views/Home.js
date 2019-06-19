@@ -108,25 +108,26 @@ const Home = () => {
   return (
     <S.Home>
       <Header />
-
-      <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
-      { creditingInfoForCompetence.length > 0 &&
-        <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />
-      }
-      { creditingInfoForDegree.length > 0 &&
-        <ExaminationNumber creditingAmountForCompetence={creditingInfoForDegree.length}/>
-      }
-      { sortedCarouselFields && sortedCarouselFields.length > 0 &&
-        <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
-      }
-      
-      { (sortedSchoolList && sortedSchoolList.length > 0) 
-        && <SchoolList sortedSchoolList={sortedSchoolList} /> }
-      
-      { (creditingInfoForDegreeByOrganization && creditingInfoForDegreeByOrganization.length > 0) 
-        && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
-      
-      {testForInvisibleBLock() && <div className="invisible-block"></div>}
+      <body>
+        <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
+        { creditingInfoForCompetence.length > 0 &&
+          <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />
+        }
+        { creditingInfoForDegree.length > 0 &&
+          <ExaminationNumber creditingAmountForCompetence={creditingInfoForDegree.length}/>
+        }
+        { sortedCarouselFields && sortedCarouselFields.length > 0 &&
+          <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
+        }
+        
+        { (sortedSchoolList && sortedSchoolList.length > 0) 
+          && <SchoolList sortedSchoolList={sortedSchoolList} /> }
+        
+        { (creditingInfoForDegreeByOrganization && creditingInfoForDegreeByOrganization.length > 0) 
+          && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
+        
+        {testForInvisibleBLock() && <div className="invisible-block"></div>}
+      </body>
     </S.Home>
   );
 }

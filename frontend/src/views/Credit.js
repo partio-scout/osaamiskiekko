@@ -103,14 +103,14 @@ const Credit = (props) => {
       <div className='navigation'>
         <Navigation />
       </div>
-      <div className='content'>
+      <main className='content'>
         <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">
           <h1 id='pageTitle' className='hide'>
             <FormattedMessage id='creditinginfo.crediting' />
           </h1>
           <CreditingInfo creditingData={data} isLoading={isLoading} />
         </div>
-      </div>
+      </main>
     </S.Credit>
   );
 }

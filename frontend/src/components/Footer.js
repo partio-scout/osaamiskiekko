@@ -5,15 +5,20 @@ import { NavLink } from 'react-router-dom';
 
 const S = {};
 S.Footer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: ${props => props.theme.colors.highlight};
   padding: 20px;
-  min-height: 150px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   max-width: 1400px;
+  max-height: 220px;
   margin: auto;
+
 
   ul {
     padding: 0px;
@@ -51,8 +56,11 @@ S.Footer = styled.div`
   }
 
   @media only screen and (max-width: 540px) {
+    align-items: flex-start;
+
     ul li {
       display: inherit;
+      margin-left: 0;
     }
   } 
 `;

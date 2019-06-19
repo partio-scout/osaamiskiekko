@@ -294,8 +294,11 @@ export default function CreditingInfo(props) {
   const competenceNqf = (creditingData && creditingData.competence && creditingData.competence.nqf);
 
   const testForChromeOrSafariAndMobileForWebShare = () => {
-    if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") >= 0) {
+    console.log('testi');
+    if (navigator.userAgent.search("Safari") >= 0 || navigator.userAgent.search("Chrome") >= 0) {
+      console.log('on safari');
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        console.log('i luuri');
         return true;
       }
     }

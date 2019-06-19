@@ -11,13 +11,15 @@ const Main = () => {
   return (
     <>
       <GlobalStyle />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/ahot/:id' component={Credit} />
-          <Route exact path='/curvetest' component={CurveTest} />
-          <Route exact path='/:pageName' component={MarkdownPage} />
-          <Route component={MarkdownPage} />
-        </Switch>
+        <div id='router-content-area'>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/ahot/:id' component={Credit} />
+            <Route exact path='/curvetest' component={CurveTest} />
+            <Route exact path='/:pageName' component={MarkdownPage} />
+            <Route component={MarkdownPage} />
+          </Switch>
+        </div>
         <Footer />
     </>
   );

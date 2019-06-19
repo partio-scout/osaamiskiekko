@@ -101,6 +101,7 @@ const Home = () => {
         setCreditingInfoForDegreeByOrganization(transformed);
       }
     }
+
   }
 
   const testForInvisibleBLock = () => sortedSchoolList.length === 0 && creditingInfoForDegreeByOrganization.length === 0;
@@ -114,7 +115,7 @@ const Home = () => {
         <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />
       }
       { creditingInfoForDegree.length > 0 &&
-        <ExaminationNumber creditingAmountForCompetence={creditingInfoForDegree.length}/>
+        <ExaminationNumber creditingAmountForDegree={creditingInfoForDegree.length}/>
       }
       { sortedCarouselFields && sortedCarouselFields.length > 0 &&
         <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>

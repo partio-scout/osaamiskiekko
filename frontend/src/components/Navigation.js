@@ -25,11 +25,13 @@ S.Navigation = styled.nav`
       background: none;
     }
 
-    a {
-      img {
-        width: 32px;
-        height: 32px;
-        margin-right: 20px;
+    .logo {
+      margin-right: 20px;
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+        }
       }
     }
 
@@ -88,18 +90,16 @@ S.Navigation = styled.nav`
       width: 100%;
       padding-left: 0;
 
-      >a {
+      .logo {
         margin-left: 12px;
-      }
-
-      a {
+        margin-top: 11.833333333px;
+        // PLEASE NOTE: Fixed manually to the center!
         z-index: 999;
-
-        img {
-          width: 48px;
-          height: 48px;
-          margin-top: 11.833333333px;
-          // PLEASE NOTICE: Fixed manually to the center!
+        a {
+          img {
+            width: 48px;
+            height: 48px;
+          }
         }
       }
 
@@ -232,11 +232,13 @@ export default function Navigation(props) {
     <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor}>
       <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
-          <NavLink exact={true} to="/">
-            <FormattedMessage id="nav.frontpage">
-              {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg} /> }
-            </FormattedMessage>
-          </NavLink>
+          <div className="logo">
+            <NavLink exact={true} to="/" tabIndex="1">
+              <FormattedMessage id="nav.frontpage">
+                {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg}/> }
+              </FormattedMessage>
+            </NavLink>
+          </div>
           <div className={navbar_items}>
             <ul className="navbar_item">
               <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
@@ -260,7 +262,7 @@ export default function Navigation(props) {
             </ul>
           </div>
           <FormattedMessage id="nav.navicon">
-            {msg => <button className={icon} onClick={() => navmenuAction()} aria-label={msg} aria-expanded={navmenuVisible}>
+            {msg => <button className={icon} onClick={() => navmenuAction()} aria-label={msg} aria-expanded={navmenuVisible} tabIndex="2">
               <div></div>
             </button> }
           </FormattedMessage>

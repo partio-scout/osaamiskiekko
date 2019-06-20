@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 // import ThemeSelector from './ThemeSelector';
 import LanguageSelector from './LanguageSelector';
 import classnames from 'classnames'
@@ -149,7 +149,6 @@ S.Navigation = styled.nav`
                 }
               }
             }
-            
 
             div {
               background-color: white;
@@ -233,11 +232,11 @@ export default function Navigation(props) {
       <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
           <div className="logo">
-            <NavLink exact={true} to="/" tabIndex="1">
+            <Link to="/" tabIndex="1">
               <FormattedMessage id="nav.frontpage">
                 {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg}/> }
               </FormattedMessage>
-            </NavLink>
+            </Link>
           </div>
           <div className={navbar_items}>
             <ul className="navbar_item">

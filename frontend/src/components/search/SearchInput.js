@@ -103,6 +103,7 @@ export default injectIntl(function SearchInput(props) {
             onClick={(e) => showPreResults(e.target.name)}
             onFocus={(e) => showPreResults(e.target.name)}
             autoComplete="off"
+            id={id}
           />
         </div>
       </label>

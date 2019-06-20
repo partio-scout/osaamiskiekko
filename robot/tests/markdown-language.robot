@@ -28,9 +28,12 @@ When user set language to
 
 The page should be in Finnish
   Wait Until Page Contains  Tietoa osaamiskiekosta
+  Wait Until Page Contains  osaamiskeskukseen.
 
 Then the page should be in English
-  Wait Until Page Contains  Information
+  Wait Until Page Contains  Information_en
+  Wait Until Page Contains  osaamiskeskukseen._en
 
 Then the page should be in Swedish
   Wait Until Page Contains  Information
+  Wait Until Page Contains  osaamiskeskukseen._sv

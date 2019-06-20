@@ -16,11 +16,8 @@ S.Home = styled.div`
   max-width: 1440px;
   margin: auto;
 
-  padding-bottom: 500px;
-
-  .results-amount {
-    text-align: center;
-    margin: 1em;
+  .invisible-block {
+    height: 400px;
   }
 
   @media only screen and (max-width: 767px) {
@@ -104,28 +101,34 @@ const Home = () => {
         setCreditingInfoForDegreeByOrganization(transformed);
       }
     }
+
   }
+
+  const testForInvisibleBLock = () => sortedSchoolList.length === 0 && creditingInfoForDegreeByOrganization.length === 0;
 
   return (
     <S.Home>
       <Header />
-
-      <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
-      { creditingInfoForCompetence.length > 0 &&
-        <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />
-      }
-      { creditingInfoForDegree.length > 0 &&
-        <ExaminationNumber creditingAmountForCompetence={creditingInfoForDegree.length}/>
-      }
-      { sortedCarouselFields && sortedCarouselFields.length > 0 &&
-        <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
-      }
-      
-      { (sortedSchoolList && sortedSchoolList.length > 0) 
-        && <SchoolList sortedSchoolList={sortedSchoolList} /> }
-      
-      { (creditingInfoForDegreeByOrganization && creditingInfoForDegreeByOrganization.length > 0) 
-        && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
+      <main>
+        <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
+        { creditingInfoForCompetence.length > 0 &&
+          <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />
+        }
+        { creditingInfoForDegree.length > 0 &&
+          <ExaminationNumber creditingAmountForDegree={creditingInfoForDegree.length}/>
+        }
+        { sortedCarouselFields && sortedCarouselFields.length > 0 &&
+          <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
+        }
+        
+        { (sortedSchoolList && sortedSchoolList.length > 0) 
+          && <SchoolList sortedSchoolList={sortedSchoolList} /> }
+        
+        { (creditingInfoForDegreeByOrganization && creditingInfoForDegreeByOrganization.length > 0) 
+          && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
+        
+        {testForInvisibleBLock() && <div className="invisible-block"></div>}
+      </main>
     </S.Home>
   );
 }

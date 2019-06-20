@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Navigation from '../components/Navigation';
 
 const S = {};
-S.NacigationWithCurveAndTitle = styled.div`
+S.NacigationWithCurveAndTitle = styled.header`
 max-width: 1440px;
 margin: auto;
 position: relative;
@@ -15,10 +15,6 @@ position: relative;
     margin-block-start: 0px;
     margin-block-end: 0px;
   }
-}
-
-.navigation {
-  background-color: ${props => props.theme.colors.backgroundSecondary};
 }
 
 .topcurve {
@@ -73,9 +69,9 @@ const NavigationWithCurveAndTitle = (props) => {
   return (
     <S.NacigationWithCurveAndTitle fixedPadding={fixedPadding}>
       <div className='navigation'>
-        <Navigation />
+        <Navigation textHighlightColor="backgroundPrimary" backgroundColor="backgroundSecondary"/>
       </div>
-      <div className='title'>
+      <div className='title' aria-live="polite">
         <h1>
           {title}
         </h1>

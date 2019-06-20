@@ -17,6 +17,7 @@ S.Navigation = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: ${props => props.theme.colors[props.backgroundColor]};
 
     .nav-icon {
       display: none;
@@ -24,11 +25,13 @@ S.Navigation = styled.nav`
       background: none;
     }
 
-    a {
-      img {
-        width: 32px;
-        height: 32px;
-        margin-right: 20px;
+    .logo {
+      margin-right: 20px;
+      a {
+        img {
+          width: 32px;
+          height: 32px;
+        }
       }
     }
 
@@ -60,9 +63,9 @@ S.Navigation = styled.nav`
               color: ${props => props.theme.colors.textColor}
 
               span {
-                border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+                border-bottom: 2px solid ${props => props.theme.colors[props.textHighlightColor]};
                 background-size: 100% 100%;
-                background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
+                background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors[props.textHighlightColor]} 0)`};
                 background-repeat: no-repeat;
               }
             }
@@ -71,10 +74,9 @@ S.Navigation = styled.nav`
               font-weight: bold;
 
               span {
-                border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+                border-bottom: 2px solid ${props => props.theme.colors[props.textHighlightColor]};
               }
             }
-
           }
         }
       }
@@ -84,20 +86,20 @@ S.Navigation = styled.nav`
   @media (max-width: 767px) {
 
     .navbar {
-      align-items: baseline;
+      align-items: flex-start;
       width: 100%;
       padding-left: 0;
 
-      >a {
+      .logo {
         margin-left: 12px;
-      }
-
-      a {
+        margin-top: 11.833333333px;
+        // PLEASE NOTE: Fixed manually to the center!
         z-index: 999;
-
-        img {
-          width: 48px;
-          height: 48px;
+        a {
+          img {
+            width: 48px;
+            height: 48px;
+          }
         }
       }
 
@@ -135,7 +137,19 @@ S.Navigation = styled.nav`
               height: 100%;
               padding: 14px 0px 14px 0px;
               font-weight: normal;
+              &:hover {
+                span {
+                  border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+                  background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
+                }
+              }
+              &.active {
+                span {
+                  border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
+                }
+              }
             }
+            
 
             div {
               background-color: white;
@@ -146,11 +160,13 @@ S.Navigation = styled.nav`
           }
         }
       }
-
-      .visible {
+      .show {
         display: block;
-        max-height: 90vh;
         animation: slide-down 0.5s ease-in;
+      }
+      .hide {
+        display: block;
+        animation: slide-up 0.25s ease-out forwards;
       }
     }
   }
@@ -162,9 +178,11 @@ S.Navigation = styled.nav`
     border-radius: 3px;
     content: '';
     display: block;
+    transition: all .2s ease-in-out;
     height: 5px;
     margin: 7px 0;
-    transition: all .2s ease-in-out;
+    // When changing the height of the icon, change the translateY
+    // below to be height+margin to make the rotation work.
   }
   
   .activated:before { transform: translateY(12px) rotate(135deg); }
@@ -172,49 +190,68 @@ S.Navigation = styled.nav`
   .activated div { transform: scale(0); }
 
   @keyframes slide-down {
-    0% { opacity: 1; max-height: 0px; }
+    0% { opacity: 1; max-height: 0; }
     100% { opacity: 1; max-height: 100vh; }
   }
   
   @keyframes slide-up {
-    0% { display: block; max-height: 100vh; }
-    100% { display: none; max-height: 0; }
+    0% { max-height: 100vh; }
+    99% { opacity: 1; max-height: 0; }
+    100% { opacity: 0; max-height: 0; }
   }
 `;
 
-export default function Navigation() {
-  const [navmenuVisible, setNavmenuVisible] = useState(false)
+export default function Navigation(props) {
+  let {textHighlightColor, backgroundColor} = props;
+  if (!textHighlightColor) { textHighlightColor = "textHighlight"; }
+  const [navmenuVisible, setNavmenuVisible] = useState(false);
+  const [hideNavMenu, setHideMenu] = useState(false);
+
+  function navmenuAction() {
+    setNavmenuVisible(!navmenuVisible);
+    setHideMenu(navmenuVisible);
+  }
+
+  function hideIfVisible() {
+    if (navmenuVisible) {
+      navmenuAction();
+    }
+  }
+
   const navbar_items = classnames({
     "navbar_items": true,
-    "visible": navmenuVisible
-  })
+    "show": navmenuVisible,
+    "hide": hideNavMenu
+  });
   const icon = classnames({
     "nav-icon": true,
     "activated": navmenuVisible
-  })
+  });
 
   return (
-    <S.Navigation>
-      <OutsideClickHandler onOutsideClick={() => setNavmenuVisible(false)} >
+    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor}>
+      <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
-          <NavLink exact={true} to="/">
-            <FormattedMessage id="nav.frontpage">
-              {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg} /> }
-            </FormattedMessage>
-          </NavLink>
+          <div className="logo">
+            <NavLink exact={true} to="/" tabIndex="1">
+              <FormattedMessage id="nav.frontpage">
+                {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg}/> }
+              </FormattedMessage>
+            </NavLink>
+          </div>
           <div className={navbar_items}>
             <ul className="navbar_item">
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(!navmenuVisible)}>
+              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
                 <NavLink exact={true} to="/">
                   <FormattedMessage id="nav.osaamiskiekko"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(!navmenuVisible)}>
+              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
                 <NavLink to="/tietoa">
                   <FormattedMessage id="nav.tietoa"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(!navmenuVisible)}>
+              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
                 <NavLink to="/otayhteytta">
                   <FormattedMessage id="nav.otayhteytta"/>
                 </NavLink>
@@ -224,11 +261,13 @@ export default function Navigation() {
               <li className="navbar_subitem"><LanguageSelector /></li>
             </ul>
           </div>
-          <button className={icon} onClick={() => setNavmenuVisible(!navmenuVisible)}>
-            <div></div>
-          </button>
+          <FormattedMessage id="nav.navicon">
+            {msg => <button className={icon} onClick={() => navmenuAction()} aria-label={msg} aria-expanded={navmenuVisible} tabIndex="2">
+              <div></div>
+            </button> }
+          </FormattedMessage>
         </div>
       </OutsideClickHandler>
     </S.Navigation>
-  )
+  );
 }

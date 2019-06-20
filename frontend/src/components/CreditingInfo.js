@@ -21,7 +21,7 @@ padding: 2rem;
 margin-bottom: 1rem;
 box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
 border-radius: 8px;
-background-color: ${props => props.theme.colors.backgroundPrimary}
+background-color: ${props => props.theme.colors.backgroundPrimary};
 position: relative;
 z-index: 20;
 
@@ -32,8 +32,14 @@ p, p span {
   white-space: pre-wrap;
 }
 
+.link-and-share {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .half-background {
-  background-color: ${props => props.theme.colors.backgroundTertiary}
+  background-color: ${props => props.theme.colors.backgroundTertiary};
   position: absolute;
   top: 0;
   left: 50%;
@@ -57,7 +63,7 @@ p, p span {
   }
 
   i, a {
-    color: ${props => props.theme.colors.textColor}
+    color: ${props => props.theme.colors.textColor};
     text-decoration: none;
   }
 }
@@ -105,7 +111,7 @@ p, p span {
 
   .floating-box {
     padding: 1rem 2rem;
-    background-color: ${props => props.theme.colors.backgroundPrimary}
+    background-color: ${props => props.theme.colors.backgroundPrimary};
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
     border-radius: 8px;
 
@@ -287,6 +293,35 @@ export default function CreditingInfo(props) {
   const organization = (creditingData && creditingData.competence && creditingData.competence.organization);
   const competenceNqf = (creditingData && creditingData.competence && creditingData.competence.nqf);
 
+  const testForChromeOrSafariAndMobileForWebShare = () => {
+    if (navigator.userAgent.search("Safari") >= 0 || navigator.userAgent.search("Chrome") >= 0) {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true;
+      }
+    }
+  }
+
+  const shareMessages = {
+    en: 'Osaamiskiekko - Check out this degree and school:',
+    fi: 'Osaamiskiekko - Suositus osaamisen tunnustamisesta:',
+    sv: 'Kompetenscirkeln - Se denna grad och skolan:'
+  }
+
+  const shareText = {
+    en: 'Share',
+    fi: 'Jaa',
+    sv: 'Dela'
+  }
+
+  const mobileShareOnClickHandler = () => {
+    navigator.share({
+      title: shareMessages[globalState.language],
+      text: shareMessages[globalState.language],
+      url: window.location.href
+    }).then(() => console.log('Successful share'))
+      .catch(error => console.log('Error sharing:', error));
+  }
+
   return (
     <S.CreditingInfo>
       {isLoading &&  
@@ -301,12 +336,15 @@ export default function CreditingInfo(props) {
         <>
           <div className='half-background' />
           <div className='header' >
-            <p>
+            <div className='link-and-share'>
               <Link to="/">
                 <i className="fas fa-arrow-left" />
                 <FormattedMessage id="creditinginfo.back" />
               </Link>
-            </p>
+              {testForChromeOrSafariAndMobileForWebShare() &&
+              <Button value={shareText[globalState.language]} icon='fas fa-share-alt' onClick={mobileShareOnClickHandler}></Button>
+              }
+            </div>
           </div>
           { creditingData.academicdegree 
             ? <>
@@ -364,7 +402,7 @@ export default function CreditingInfo(props) {
                 </p>
               {creditingData.url &&
               <p className='readmore'>
-                <a href={creditingData.url}>
+              <a href={creditingData.url} target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id="creditinginfo.readmore" />
                 </a>
               </p>

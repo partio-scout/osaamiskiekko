@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { NavLink } from 'react-router-dom';
 
 const S = {};
-S.Footer = styled.div`
+S.Footer = styled.footer`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -88,7 +88,7 @@ export default function Footer() {
         </ul>
       </div>
       <div className="copyright">
-        <p>Sivuston toteutti <u><a href="https://www.eficode.com" target="_blank" rel="noopener noreferrer">Eficode</a></u> yhdessä <u><a href="http://osaamiskeskus.partio.fi/" target="_blank" rel="noopener noreferrer">Suomen Partiolaisten nuorisoalan osaamiskeskuksen kanssa.</a></u></p>
+        <p>Sivuston toteutti <u><a href="https://www.eficode.com" target="_blank" rel="noopener noreferrer">Eficode</a></u> yhdessä <u><a href="http://osaamiskeskus.partio.fi/" target="_blank" rel="noopener noreferrer">Suomen Partiolaisten nuorisoalan osaamiskeskuksen</a></u> kanssa.</p>
       </div>
     </S.Footer>
   )

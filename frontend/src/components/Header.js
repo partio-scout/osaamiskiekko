@@ -73,14 +73,14 @@ export default function Header() {
   return (
     <S.Header>
       <Navigation />
-      <div className="content header-text">
-        <h1>
+      <div className="header-text">
+        <h1 aria-live="polite">
           <FormattedMessage id="header.h1" />
         </h1>
-        <p className="important">
+        <p className="important" aria-live="polite">
           <FormattedMessage id="header.important" />
         </p>
-        <p>
+        <p aria-live="polite">
           <FormattedMessage id="header.p" />
         </p>
       </div>

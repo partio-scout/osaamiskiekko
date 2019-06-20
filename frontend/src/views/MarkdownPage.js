@@ -31,14 +31,10 @@ position: relative;
 `;
 
 const MarkdownPage = (props) => {
-  let contentContainer;
   const { data, isLoading, status } = MarkdownData(props.match.params.pageName);
   const globalState = useGlobalStateContext();
 
   const title = (!isLoading && data) ? data[`title_${globalState.language}`] : props.match.params.pageName;
-
-  // For later use.
-  useEffect(() => {}, [contentContainer]);
 
   return (
     <S.MarkdownPage>
@@ -56,7 +52,7 @@ const MarkdownPage = (props) => {
             ? <>{data[`title_${globalState.language}`]}</>
             : <><FormattedMessage id='error.title'/>{status.message}</>} />
       <main className='content' aria-live="polite">
-        <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">
+        <div>
           {isLoading 
             ? ''
             : typeof data !== 'undefined'

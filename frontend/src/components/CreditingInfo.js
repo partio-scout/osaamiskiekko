@@ -323,7 +323,7 @@ export default function CreditingInfo(props) {
   }
 
   return (
-    <S.CreditingInfo>
+    <S.CreditingInfo aria-live='polite' > 
       {isLoading &&  
         <BarLoader
           css={loadingSpinnerOverride}

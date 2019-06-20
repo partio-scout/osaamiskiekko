@@ -109,7 +109,7 @@ const Home = () => {
   return (
     <S.Home>
       <Header />
-      <body>
+      <main>
         <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
         { creditingInfoForCompetence.length > 0 &&
           <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />
@@ -128,7 +128,7 @@ const Home = () => {
           && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
         
         {testForInvisibleBLock() && <div className="invisible-block"></div>}
-      </body>
+      </main>
     </S.Home>
   );
 }

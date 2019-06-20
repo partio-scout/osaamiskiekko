@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Navigation from '../components/Navigation';
 
 const S = {};
-S.NacigationWithCurveAndTitle = styled.div`
+S.NacigationWithCurveAndTitle = styled.header`
 max-width: 1440px;
 margin: auto;
 position: relative;
@@ -71,7 +71,7 @@ const NavigationWithCurveAndTitle = (props) => {
       <div className='navigation'>
         <Navigation textHighlightColor="backgroundPrimary" backgroundColor="backgroundSecondary"/>
       </div>
-      <div className='title'>
+      <div className='title' aria-live="polite">
         <h1>
           {title}
         </h1>

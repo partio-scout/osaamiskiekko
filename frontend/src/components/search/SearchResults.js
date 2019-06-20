@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import {useGlobalStateContext} from '../../utils/GlobalStateContext';
 
@@ -48,6 +48,26 @@ S.ResultWrapper = styled.ul`
 export default function SearchResults(props) {
   const { results, setSelection } = props;
   const globalState = useGlobalStateContext();
+
+  const resultsRef = useRef();
+
+  useEffect(() => {
+    moveFocus();
+  }, []);
+
+  const moveFocus = () => {
+    const node = resultsRef.current;
+    node.addEventListener('keydown', function (e) {
+      const active = document.activeElement;
+      if (e.keyCode === 40 && active.nextSibling) {
+        active.nextSibling.focus();
+      }
+      if (e.keyCode === 38 && active.previousSibling) {
+        active.previousSibling.focus();
+      }
+      // if (e.keyCode === 9) e.preventDefault(); 
+    });
+  };
   
   const renderResults = (item, index) =>
     <S.ResultsItem 
@@ -64,7 +84,7 @@ export default function SearchResults(props) {
     </S.ResultsItem>
 
   return (
-    <S.ResultWrapper className='search-results'>
+    <S.ResultWrapper className='search-results' ref={resultsRef}>
       {results && results.map(renderResults)}
     </S.ResultWrapper>
   )

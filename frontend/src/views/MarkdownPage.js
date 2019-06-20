@@ -55,7 +55,7 @@ const MarkdownPage = (props) => {
           : typeof data !== 'undefined'
             ? <>{data[`title_${globalState.language}`]}</>
             : <><FormattedMessage id='error.title'/>{status.message}</>} />
-      <div className='content'>
+      <main className='content' aria-live="polite">
         <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">
           {isLoading 
             ? ''
@@ -63,7 +63,7 @@ const MarkdownPage = (props) => {
               ? <Markdown>{data[`text_${globalState.language}`]}</Markdown>
               : <FormattedMessage id='error.text'/>}
         </div>
-      </div>
+      </main>
     </S.MarkdownPage>
   );
 }

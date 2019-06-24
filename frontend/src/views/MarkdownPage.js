@@ -50,8 +50,9 @@ const MarkdownPage = (props) => {
           ? ''
           : typeof data !== 'undefined'
             ? <>{data[`title_${globalState.language}`]}</>
-            : <><FormattedMessage id='error.title'/>{status.message}</>} />
-      <main className='content' aria-live="polite">
+            : <><FormattedMessage id='error.title'/>{status.message}</>}
+          isLoading={isLoading} />
+      <main className='content' aria-live="polite" aria-busy={isLoading} aria-atomic={true}>
         <div>
           {isLoading 
             ? ''

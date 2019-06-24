@@ -29,6 +29,7 @@ header .title {
 
   header .title {
     padding-bottom: 10px;
+    padding-left: 1rem;
   }
 
   .topcurve {
@@ -72,14 +73,10 @@ const Credit = (props) => {
       </FormattedMessage>
       
       <NavigationWithCurveAndTitle title={data &&
-        <>
-          <h1>
-            <FormattedMessage id="creditinginfo.title" values= {{
-              degree: data.academicdegree[`name_${globalState.language}`],
-              competence: data.competence[`name_${globalState.language}`],
-            }} />
-          </h1>
-        </>
+        <FormattedMessage id="creditinginfo.title" values= {{
+          degree: data.academicdegree[`name_${globalState.language}`],
+          competence: data.competence[`name_${globalState.language}`],
+        }} />
       } />
       <main className='content'>
         <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">

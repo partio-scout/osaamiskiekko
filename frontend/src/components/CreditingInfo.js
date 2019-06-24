@@ -230,7 +230,7 @@ p, p span {
     display: block;
     position: absolute;
     z-index: -100;
-    bottom: -65px;
+    bottom: -75px;
     left: 0;
     right: 0;
   
@@ -243,7 +243,7 @@ p, p span {
   }
 
   .competence-info {
-    margin-top: 65px;
+    margin-top: 75px;
     background-color: ${props => props.theme.colors.backgroundPrimary}
   }
 } 

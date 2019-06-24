@@ -93,7 +93,7 @@ export default function SearchBox(props) {
     item.name_sv.toUpperCase().includes(searchValue.toUpperCase());
 
   const showPreResults = (e) => {
-    if (e === 'search-school') { setInstitutionFilter(data); }
+    if (e === 'search-school') setInstitutionFilter(data);
     if (e === 'search-education') {
       if (institutionSelection.type_en === 'School') {
         setDegreeOrCompetenceResults(institutionSelection.academicdegrees);

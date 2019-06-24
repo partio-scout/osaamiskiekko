@@ -29,6 +29,7 @@ const Home = () => {
   const [creditingInfoForCompetence, setCreditingInfoForCompetence] = useState([]);
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
+  const [currentCarouselField, setcurrentCarouselField] = useState({id: 0});
 
   const [creditingInfoForDegree, setCreditingInfoForDegree] = useState([]);
   const [creditingInfoForDegreeByOrganization, setCreditingInfoForDegreeByOrganization] = useState([]);
@@ -54,12 +55,15 @@ const Home = () => {
     setSortedSchoolList(sortedAndImportedSchoolNames);
   } 
 
-  const setSelectedCarouselField = field => sortSchools(field);
+  const setSelectedCarouselField = field => {
+    setcurrentCarouselField(field);
+    return sortSchools(field);
+  };
 
   const sortCarouselItems = (carouselFields) => {
     const sortedFields = orderBy(carouselFields, [(item) => item.creditingInfos.length], ['desc'])
     setSortedCarouselFields(sortedFields);
-    sortSchools(sortedFields[0]);
+    sortSchools(sortedFields[currentCarouselField.id]);
   }
 
   const initializeMatchingDegrees = async (competence) => {
@@ -92,7 +96,6 @@ const Home = () => {
         // Clear competence-specific data before displaying links for degree
         setCreditingInfoForCompetence([]);
         setSortedSchoolList([]);
-        setSortedCarouselFields([]);
 
         const creditingInfo = await getCreditingInfoForDegree(competenceOrDegreeSelection);
         const transformed = transformToByOrganization(creditingInfo);

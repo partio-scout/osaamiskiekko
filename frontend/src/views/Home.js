@@ -101,7 +101,14 @@ const Home = () => {
         setCreditingInfoForDegreeByOrganization(transformed);
       }
     }
-
+  }
+  
+  const clearResults = () => {
+    setCreditingInfoForCompetence([]);
+    setSortedSchoolList([]);
+    setSortedCarouselFields([]);
+    setCreditingInfoForDegree([]);
+    setCreditingInfoForDegreeByOrganization([]);
   }
 
   const testForInvisibleBLock = () => sortedSchoolList.length === 0 && creditingInfoForDegreeByOrganization.length === 0;
@@ -110,7 +117,7 @@ const Home = () => {
     <S.Home>
       <Header />
       <main>
-        <SearchBox showResults={showResults} data={data} isLoading={isLoading} />
+        <SearchBox showResults={showResults} data={data} isLoading={isLoading} clearResults={clearResults}/>
         { creditingInfoForCompetence.length > 0 &&
           <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />
         }

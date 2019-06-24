@@ -46,7 +46,7 @@ const loadingSpinnerOverride = css`
 `;
 
 export default function SearchBox(props) {
-  const { showResults, data, isLoading } = props;
+  const { showResults, data, isLoading, clearResults } = props;
   const globalState = useGlobalStateContext();
 
   const {selectedInstitution, selectedTraining} = globalState;
@@ -63,6 +63,7 @@ export default function SearchBox(props) {
     setInstitutionFilter([]);
     setTrainingFilter([]);
     setTrainingInput('');
+    clearResults();
   }
 
   const updateInputsWithTraining = (training) => {
@@ -92,7 +93,7 @@ export default function SearchBox(props) {
     item.name_sv.toUpperCase().includes(searchValue.toUpperCase());
 
   const showPreResults = (e) => {
-    if (e === 'search-school') setInstitutionFilter(data);
+    if (e === 'search-school') { setInstitutionFilter(data); }
     if (e === 'search-education') {
       if (institutionSelection.type_en === 'School') {
         setDegreeOrCompetenceResults(institutionSelection.academicdegrees);

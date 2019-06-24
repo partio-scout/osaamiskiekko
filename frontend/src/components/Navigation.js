@@ -51,7 +51,7 @@ S.Navigation = styled.nav`
           margin: 24px 20px 24px 0px;
 
           a {
-            color: ${props => props.theme.colors.textColor}
+            color: ${props => props.theme.colors.textColor};
             width: 100%
             height: 100%;
             padding: 24px 0px 24px 0px;
@@ -60,7 +60,7 @@ S.Navigation = styled.nav`
             font-size: 18px;	
 
             &:hover {
-              color: ${props => props.theme.colors.textColor}
+              color: ${props => props.theme.colors.textColor};
 
               span {
                 border-bottom: 2px solid ${props => props.theme.colors[props.textHighlightColor]};
@@ -89,6 +89,7 @@ S.Navigation = styled.nav`
       align-items: flex-start;
       width: 100%;
       padding-left: 0;
+      background-color: ${props => props.theme.colors[props.mobileBackgroundColor]};
 
       .logo {
         margin-left: 12px;
@@ -137,12 +138,14 @@ S.Navigation = styled.nav`
               height: 100%;
               padding: 14px 0px 14px 0px;
               font-weight: normal;
+
               &:hover {
                 span {
                   border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
                   background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
                 }
               }
+
               &.active {
                 span {
                   border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
@@ -202,8 +205,17 @@ S.Navigation = styled.nav`
 `;
 
 export default function Navigation(props) {
-  let {textHighlightColor, backgroundColor} = props;
-  if (!textHighlightColor) { textHighlightColor = "textHighlight"; }
+  let { mode } = props;
+  let textHighlightColor = "textHighlight";
+  let backgroundColor = "backgroundPrimary";
+  let mobileBackgroundColor = "backgroundPrimary";
+
+  if (mode === 'colorful') { 
+    textHighlightColor = "textColorLight";
+    backgroundColor = "backgroundSecondary";
+    mobileBackgroundColor = "backgroundTertiary";
+  }
+
   const [navmenuVisible, setNavmenuVisible] = useState(false);
   const [hideNavMenu, setHideMenu] = useState(false);
 
@@ -229,11 +241,11 @@ export default function Navigation(props) {
   });
 
   return (
-    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor}>
+    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor} mobileBackgroundColor={mobileBackgroundColor}>
       <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
           <div className="logo">
-            <NavLink exact={true} to="/" tabIndex="1">
+            <NavLink exact={true} to="/">
               <FormattedMessage id="nav.frontpage">
                 {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg}/> }
               </FormattedMessage>

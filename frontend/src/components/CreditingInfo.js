@@ -12,16 +12,15 @@ S.CreditingInfo = styled.div`
 display: grid;
 grid-template-areas: 
   "header header"
-  "degree-info competence-info" 
   "credit-info credit-info"
-  "degree-description competence-description" 
+  "degree-info competence-info" 
   "footer footer";
 grid-template-columns: 4fr 4fr;
-padding: 2rem;
-margin-bottom: 1rem;
-box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
-border-radius: 8px;
-background-color: ${props => props.theme.colors.backgroundPrimary};
+// padding: 2rem;
+// margin-bottom: 1rem;
+// box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
+// border-radius: 8px;
+// background-color: ${props => props.theme.colors.backgroundPrimary};
 position: relative;
 z-index: 20;
 
@@ -33,19 +32,7 @@ p, p span {
 }
 
 .link-and-share {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.half-background {
-  background-color: ${props => props.theme.colors.backgroundTertiary};
-  position: absolute;
-  top: 0;
-  left: 50%;
-  right: 0;
-  bottom: 0;
-  z-index: -10;
+  display: none;
 }
 
 .header {
@@ -73,13 +60,30 @@ p, p span {
   line-height: 15px;
 
   h2, h2 span {
+    display: inline-block;
     margin: 5px 0;
     font-size: 26px;
     line-height: 28px;
     font-weight: bold;
+    background-size: 100% 1.5rem;
+    background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
+    background-repeat: no-repeat;
+    background-position-y: 70%;
+  }
+
+  h3, h3 span {
+    margin: 20px 0 10px 0;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
   }
 
   p, p span {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  p.level, p.level span, p.scope, p.scope span {
     margin: 0.5rem 0;
     font-size: 16px;
     line-height: 15px;
@@ -88,63 +92,44 @@ p, p span {
   span:first-child {
     font-weight: bold;
   }
-  
-  .institution {
-    font-size: 18px;
-    line-height: 27px;
+}
+
+.floating-box {
+  padding: 1rem 2rem;
+  background-color: ${props => props.theme.colors.backgroundPrimary};
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
+  border-radius: 8px;
+}
+
+.credit-info {
+  grid-area: credit-info;
+  margin-top: -30px;
+  margin-bottom: 1.5rem;
+  z-index: 10;
+
+  h2, h2 span {
+    margin: 10px 0;
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: bold;
+  }
+
+  p.readmore {
+    margin-top: 1rem;
+    text-align: left;
   }
 }
 
 .degree-info {
-  padding-right: 5rem;
   grid-area: degree-info;
+  margin-right: 14px;
 }
+
 .competence-info {
-  padding-left: 3rem;
   grid-area: competence-info;
-}
-.credit-info {
-  grid-area: credit-info;
-  margin: 1.5rem 0;
-  padding: 0 3rem;
-  z-index: 10;
-
-  .floating-box {
-    padding: 1rem 2rem;
-    background-color: ${props => props.theme.colors.backgroundPrimary};
-    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
-    border-radius: 8px;
-
-    h2, h2 span {
-      margin: 10px 0;
-      font-size: 20px;
-      line-height: 30px;
-      font-weight: bold;
-    }
-
-    p.readmore {
-      margin-top: 1rem;
-      text-align: center;
-    }
-  }
+  margin-left: 14px;
 }
 
-.degree-description, .competence-description {
-  h3, h3 span {
-    margin: 10px 0;
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: bold;
-  }
-}
-.degree-description {
-  padding-right: 5rem;
-  grid-area: degree-description;
-}
-.competence-description {
-  padding-left: 3rem;
-  grid-area: competence-description;
-}
 .footer {
   grid-area: footer;
   z-index: 10;
@@ -169,20 +154,18 @@ p, p span {
   grid-template-columns: 4fr;
   grid-template-areas: 
     "header"
-    "degree-info"
     "credit-info"
-    "degree-description"
+    "degree-info"
     "curve"
     "competence-info" 
-    "competence-description" 
     "footer";
   padding: 0;
   border: none;
   box-shadow: none;
   background: none;
 
-  .half-background {
-    display: none;
+  h1, h1 span {
+    margin-bottom: 0;
   }
 
   p, p span {
@@ -191,45 +174,55 @@ p, p span {
     line-height: 24px;
   }
 
-  .header, .footer, .credit-info, .degree-info, .competence-info, .degree-description, .competence-description {
+  .link-and-share {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header, .footer, .credit-info, .degree-info, .competence-info {
     padding: 1rem;
     margin: 0;
     background: none;
   }
 
+  .degree-info, .credit-info, .header {
+    background-color: ${props => props.theme.colors.backgroundTertiary}
+  }
+
+  .degree-info {
+    padding-bottom: 0;
+  }
+
+  .credit-info {
+    padding: 0rem 0.5rem;
+    margin: 0;
+
+    p.readmore {
+      text-align: center;
+    }
+  }
+
   .degree-info, .competence-info {
+    border-radius: 0;
+    box-shadow: none;
+
     h2, h2 span {
       margin: 5px 0;
       font-size: 20px;
       line-height: 28px;
+      background: none;
     }
 
     p, p span {
-      font-size: 14px;
-      line-height: 15px;
-    }
-
-    p.institution, p.institution span {
       font-size: 16px;
       line-height: 24px;
     }
-  }
 
-  .degree-description, .competence-description {
-    h3, h3 span {
-      margin: 5px 0;
-      font-size: 18px;
-      line-height: 27px;
+    p.level, p.level span, p.scope, p.scope span {
+      font-size: 14px;
+      line-height: 15px;
     }
-  }
-
-  .degree-info, .degree-description, .credit-info, .header {
-    background-color: ${props => props.theme.colors.backgroundTertiary}
-    position: relative;
-  }
-
-  .degree-description {
-    margin-bottom: 75px;
   }
 
   .topcurvemobile {
@@ -237,7 +230,7 @@ p, p span {
     display: block;
     position: absolute;
     z-index: -100;
-    bottom: 0;
+    bottom: -75px;
     left: 0;
     right: 0;
   
@@ -249,22 +242,9 @@ p, p span {
     }
   }
 
-  .credit-info {
-    padding: 0rem 0.5rem;
-    margin: 0;
-  
-    .floating-box {
-      padding: 1rem 1rem;
-      background-color: ${props => props.theme.colors.backgroundPrimary}
-      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
-      border-radius: 8px;
-
-      h2, h2 span {
-        margin: 5px 0;
-        font-size: 18px;
-        line-height: 27px;
-      }
-    }
+  .competence-info {
+    margin-top: 75px;
+    background-color: ${props => props.theme.colors.backgroundPrimary}
   }
 } 
 `;
@@ -334,7 +314,6 @@ export default function CreditingInfo(props) {
       }
       {creditingData &&
         <>
-          <div className='half-background' />
           <div className='header' >
             <div className='link-and-share'>
               <Link to="/">
@@ -344,52 +323,9 @@ export default function CreditingInfo(props) {
               {testForChromeOrSafariAndMobileForWebShare() &&
               <Button value={shareText[globalState.language]} icon='fas fa-share-alt' onClick={mobileShareOnClickHandler}></Button>
               }
+              
             </div>
           </div>
-          { creditingData.academicdegree 
-            ? <>
-              <div className='degree-info' >
-                <h2>
-                  {creditingData.academicdegree[`name_${globalState.language}`]
-                    ? creditingData.academicdegree[`name_${globalState.language}`]
-                    : <FormattedMessage id='creditinginfo.notfound' />}
-                </h2>
-                <p className='institution'>
-                  {school && school[`name_${globalState.language}`]}
-                </p>
-                <p className='scope'>
-                  <FormattedMessage id="creditinginfo.scope" />: 
-                  {' '}
-                  {creditingData.academicdegree.credits 
-                    ? `${creditingData.academicdegree.credits} op`
-                    : <FormattedMessage id='creditinginfo.notfound' />}
-                </p>
-                <p className='level'>
-                  <FormattedMessage id="creditinginfo.level" />:
-                  {' '}
-                  {degreeNqf
-                    ? `${degreeNqf[`name_${globalState.language}`]} (NQF ${degreeNqf.level})`
-                    : <FormattedMessage id='creditinginfo.notfound' />}
-                  </p>
-              </div>
-              <div className='degree-description' >
-                <h3><FormattedMessage id="creditinginfo.degreedescription" /></h3>
-                <p>
-                  {creditingData.academicdegree[`description_${globalState.language}`]
-                    ? creditingData.academicdegree[`description_${globalState.language}`]
-                    : <FormattedMessage id='creditinginfo.notfound' />}
-                </p>
-              </div>
-              <div className='topcurvemobile'>
-                  {curveMobile()}
-              </div>
-            </>
-            : <div className='degree-info' >
-              <h2>
-                <FormattedMessage id='creditinginfo.notfound' />
-              </h2>
-            </div>
-          }
           <div className='credit-info' >
             <div className='floating-box'>
               <h2>
@@ -402,55 +338,90 @@ export default function CreditingInfo(props) {
                 </p>
               {creditingData.url &&
               <p className='readmore'>
-              <a href={creditingData.url} target="_blank" rel="noopener noreferrer">
+                <a href={creditingData.url} target="_blank" rel="noopener noreferrer">
                   <FormattedMessage id="creditinginfo.readmore" />
                 </a>
               </p>
             }
             </div>
           </div>
-          {creditingData.competence
+          <div className='degree-info floating-box' >
+          { creditingData.academicdegree 
             ? <>
-              <div className='competence-info' >
-                <h2>
-                  {creditingData.competence[`name_${globalState.language}`]
-                    ? creditingData.competence[`name_${globalState.language}`]
-                    : <FormattedMessage id='creditinginfo.notfound' />}
-                </h2>
-                <p className='institution'>
-                  {organization && organization[`name_${globalState.language}`]}
-                </p>
-                <p className='scope'>
-                  <FormattedMessage id="creditinginfo.scope" />: 
-                  {' '}
-                  {creditingData.competence.credits 
-                    ? `${creditingData.competence.credits} op`
-                    : <FormattedMessage id='creditinginfo.notfound' />}
-                </p>
-                <p className='level'>
-                  <FormattedMessage id="creditinginfo.level" />:
-                  {' '}
-                  {competenceNqf
-                    ? `${competenceNqf[`name_${globalState.language}`]} (NQF ${competenceNqf.level})`
-                    : <FormattedMessage id='creditinginfo.notfound' />}
-                  </p>
-              </div>
-              <div className='competence-description' >
-                <h3><FormattedMessage id="creditinginfo.competencedescription" /></h3>
-                <p>
-                  {creditingData.competence[`description_${globalState.language}`]
-                    ? creditingData.competence[`description_${globalState.language}`]
-                    : <FormattedMessage id='creditinginfo.notfound' />}
-                </p>
-              </div>
+              <h2>
+                {creditingData.academicdegree[`name_${globalState.language}`]
+                  ? creditingData.academicdegree[`name_${globalState.language}`]
+                  : <FormattedMessage id='creditinginfo.notfound' />}
+              </h2>
+              <p className='institution'>
+                {school && school[`name_${globalState.language}`]}
+              </p>
+              <p className='scope'>
+                <FormattedMessage id="creditinginfo.scope" />: 
+                {' '}
+                {creditingData.academicdegree.credits 
+                  ? `${creditingData.academicdegree.credits} op`
+                  : <FormattedMessage id='creditinginfo.notfound' />}
+              </p>
+              <p className='level'>
+                <FormattedMessage id="creditinginfo.level" />:
+                {' '}
+                {degreeNqf
+                  ? `${degreeNqf[`name_${globalState.language}`]} (NQF ${degreeNqf.level})`
+                  : <FormattedMessage id='creditinginfo.notfound' />}
+              </p>
+              <h3><FormattedMessage id="creditinginfo.degreedescription" /></h3>
+              <p>
+                {creditingData.academicdegree[`description_${globalState.language}`]
+                  ? creditingData.academicdegree[`description_${globalState.language}`]
+                  : <FormattedMessage id='creditinginfo.notfound' />}
+              </p>
             </>
-            : <div className='competence-info' >
-                <h2>
+            : <h2>
+                <FormattedMessage id='creditinginfo.notfound' />
+              </h2>
+          }
+          </div>
+          <div className='topcurvemobile'>
+            {curveMobile()}
+          </div>
+          <div className='competence-info floating-box' >
+            {creditingData.competence
+              ? <>
+                  <h2>
+                    {creditingData.competence[`name_${globalState.language}`]
+                      ? creditingData.competence[`name_${globalState.language}`]
+                      : <FormattedMessage id='creditinginfo.notfound' />}
+                  </h2>
+                  <p className='institution'>
+                    {organization && organization[`name_${globalState.language}`]}
+                  </p>
+                  <p className='scope'>
+                    <FormattedMessage id="creditinginfo.scope" />: 
+                    {' '}
+                    {creditingData.competence.credits 
+                      ? `${creditingData.competence.credits} op`
+                      : <FormattedMessage id='creditinginfo.notfound' />}
+                  </p>
+                  <p className='level'>
+                    <FormattedMessage id="creditinginfo.level" />:
+                    {' '}
+                    {competenceNqf
+                      ? `${competenceNqf[`name_${globalState.language}`]} (NQF ${competenceNqf.level})`
+                      : <FormattedMessage id='creditinginfo.notfound' />}
+                  </p>
+                  <h3><FormattedMessage id="creditinginfo.competencedescription" /></h3>
+                  <p>
+                    {creditingData.competence[`description_${globalState.language}`]
+                      ? creditingData.competence[`description_${globalState.language}`]
+                      : <FormattedMessage id='creditinginfo.notfound' />}
+                  </p>
+                </>
+              : <h2>
                   <FormattedMessage id='creditinginfo.notfound' />
                 </h2>
-              </div>
-          }
-          
+            }
+          </div>
           <div className='footer' >
             <Link to="/" tabIndex={-1}>
               <FormattedMessage id="creditinginfo.back">

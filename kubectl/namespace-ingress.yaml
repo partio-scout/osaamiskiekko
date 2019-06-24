@@ -13,20 +13,20 @@ spec:
   tls:
   - hosts:
     - osaamiskiekko.fi
-    - $SUBDOMAIN.osaamiskiekko.fi
+    - test.osaamiskiekko.fi
     secretName: frontend-tls
   - hosts:
-    - api.$SUBDOMAIN.osaamiskiekko.fi
+    - api.test.osaamiskiekko.fi
     secretName: backend-tls
   rules:
-  - host: $SUBDOMAIN.osaamiskiekko.fi
+  - host: test.osaamiskiekko.fi
     http:
       paths:
       - path: /
         backend:
           serviceName: frontend
           servicePort: 80
-  - host: api.$SUBDOMAIN.osaamiskiekko.fi
+  - host: api.test.osaamiskiekko.fi
     http:
       paths:
       - path: /

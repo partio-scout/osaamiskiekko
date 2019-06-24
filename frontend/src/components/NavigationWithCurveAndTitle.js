@@ -71,7 +71,7 @@ const NavigationWithCurveAndTitle = (props) => {
       <div className='navigation'>
         <Navigation textHighlightColor="backgroundPrimary" backgroundColor="backgroundSecondary"/>
       </div>
-      <div className='title' aria-live="polite" aria-busy={isLoading}>
+      <div className='title' aria-live="polite" aria-busy={isLoading} aria-atomic={true}>
         <h1>
           {title}
         </h1>

@@ -7,7 +7,7 @@ S.CompetenceCreditingList = styled.ul`
   max-width: 660px;
   margin: auto;
   margin-bottom: 50px;
-  padding: 0px 20px 0px 20px;
+  padding: 0;
   list-style: none;
 `;
 

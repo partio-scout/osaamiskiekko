@@ -91,7 +91,7 @@ export default injectIntl(function SearchInput(props) {
     <S.SearchWrapper name={`${name}-component`}>
       <label htmlFor={id}>
         <FormattedMessage id={labelKey} />
-        <div className="input-area" onClick={(e) => mobileAutoScroll()}>
+        <div className="input-area" role='button' onFocus={(e) => mobileAutoScroll()}> 
           <span className="fa fa-search" aria-hidden={true}></span>
           <input
             minLength={2}

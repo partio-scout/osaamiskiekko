@@ -75,13 +75,13 @@ export default function Header() {
       <Navigation />
       <div className="header-text">
         <h1>
-          <FormattedMessage id="header.h1" />
+          <FormattedMessage id="header.h1"/>
         </h1>
-        <p className="important">
-          <FormattedMessage id="header.important" />
+        <p className="important" aria-live="off">
+          <FormattedMessage id="header.important"/>
         </p>
-        <p>
-          <FormattedMessage id="header.p" />
+        <p aria-live="off">
+          <FormattedMessage id="header.p"/>
         </p>
       </div>
       <div className="header-image"></div>

@@ -240,7 +240,7 @@ export default function Navigation(props) {
   });
 
   return (
-    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor} mobileBackgroundColor={mobileBackgroundColor}>
+    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor} mobileBackgroundColor={mobileBackgroundColor} aria-live="off">
       <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
           <div className="logo">

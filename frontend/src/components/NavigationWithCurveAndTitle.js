@@ -74,11 +74,11 @@ const NavigationWithCurveAndTitle = (props) => {
     </svg>
 
   return (
-    <S.NacigationWithCurveAndTitle fixedPadding={fixedPadding}>
+    <S.NacigationWithCurveAndTitle fixedPadding={fixedPadding} >
       <div className='navigation'>
         <Navigation mode="colorful" />
       </div>
-      <div className='title' aria-live="polite" aria-busy={isLoading} aria-atomic={true}>
+      <div className='title' aria-busy={isLoading}>
         <h1>
           {title}
         </h1>

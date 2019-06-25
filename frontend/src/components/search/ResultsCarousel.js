@@ -80,7 +80,7 @@ export default function ResultsCarousel(props) {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    accessibility: true,
+    accessibility: false,
     swipeToSlide: true,
     focusOnSelect: true,
     afterChange(index) {
@@ -121,6 +121,7 @@ export default function ResultsCarousel(props) {
 
   return (
     <S.ResultsCarousel>
+      
       <Slider ref={slider} {...settings}>
         {sortedCarouselFields.map((slide) => {
           return (

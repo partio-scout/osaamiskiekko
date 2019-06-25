@@ -19,7 +19,7 @@ const MarkdownData = (name) => {
           throw new Error(404);
         }
         setIsLoading(false);
-        setStatus(200);
+        //setStatus(200);
       } catch (error) {
         console.error(error);
         setStatus(error);

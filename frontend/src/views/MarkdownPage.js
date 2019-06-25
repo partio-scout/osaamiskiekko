@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import Markdown from 'markdown-to-jsx';
@@ -37,7 +37,7 @@ const MarkdownPage = (props) => {
   const title = (!isLoading && data) ? data[`title_${globalState.language}`] : props.match.params.pageName;
 
   return (
-    <S.MarkdownPage>
+    <S.MarkdownPage aria-busy={isLoading} aria-atomic={true}>
       <FormattedMessage id='pageTitle' values={{ subpage: title }}>
         {msg =>
           <Helmet>
@@ -52,7 +52,7 @@ const MarkdownPage = (props) => {
             ? <>{data[`title_${globalState.language}`]}</>
             : <><FormattedMessage id='error.title'/>{status.message}</>}
           isLoading={isLoading} />
-      <main className='content' aria-live="polite" aria-busy={isLoading} aria-atomic={true}>
+      <main className='content' aria-live="off" aria-busy={isLoading}>
         <div>
           {isLoading 
             ? ''

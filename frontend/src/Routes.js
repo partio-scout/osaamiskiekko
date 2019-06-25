@@ -11,7 +11,7 @@ const Main = () => {
   return (
     <>
       <GlobalStyle />
-        <div id='router-content-area'>
+        <div id='router-content-area' aria-live="polite">
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/ahot/:id' component={Credit} />

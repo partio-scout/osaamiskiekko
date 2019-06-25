@@ -33,7 +33,7 @@ const SchoolList = (props) => {
   let amountOfResults = sortedSchoolList.filter(school => school.creditingInfos.length > 0)
   if (amountOfResults.length > 0) {
     return (
-      <S.SchoolList className='school-list'>
+      <S.SchoolList className='school-list' id='school-list'>
         {sortedSchoolList.map(school => school.creditingInfos.length > 0 &&
           <div key={school.id}>
             <h3>{school[`name_${globalState.language}`]} ({school.creditingInfos.length})</h3>
@@ -44,7 +44,7 @@ const SchoolList = (props) => {
     );
   }
   return (
-    <S.SchoolList className='school-list'>
+    <S.SchoolList className='school-list' id='school-list'>
       <h3 className='noresults'>
         <FormattedMessage id='noresults'/>
       </h3>

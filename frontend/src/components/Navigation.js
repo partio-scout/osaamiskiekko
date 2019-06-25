@@ -246,23 +246,28 @@ export default function Navigation(props) {
           <div className="logo">
             <Link to="/" tabIndex="1">
               <FormattedMessage id="nav.frontpage">
-                {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg}/> }
+                {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg}/>}
               </FormattedMessage>
             </Link>
           </div>
+          <FormattedMessage id="nav.navicon">
+            {msg => <button className={icon} onClick={() => navmenuAction()} aria-label={msg} aria-expanded={navmenuVisible}>
+              <div></div>
+            </button> }
+          </FormattedMessage>
           <div className={navbar_items}>
             <ul className="navbar_item">
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
+              <li className="navbar_subitem">
                 <NavLink exact={true} to="/">
                   <FormattedMessage id="nav.osaamiskiekko"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
+              <li className="navbar_subitem">
                 <NavLink to="/tietoa">
                   <FormattedMessage id="nav.tietoa"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
+              <li className="navbar_subitem">
                 <NavLink to="/otayhteytta">
                   <FormattedMessage id="nav.otayhteytta"/>
                 </NavLink>
@@ -272,11 +277,6 @@ export default function Navigation(props) {
               <li className="navbar_subitem"><LanguageSelector /></li>
             </ul>
           </div>
-          <FormattedMessage id="nav.navicon">
-            {msg => <button className={icon} onClick={() => navmenuAction()} aria-label={msg} aria-expanded={navmenuVisible} tabIndex="2">
-              <div></div>
-            </button> }
-          </FormattedMessage>
         </div>
       </OutsideClickHandler>
     </S.Navigation>

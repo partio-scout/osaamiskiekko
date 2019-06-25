@@ -184,6 +184,18 @@ p, p span {
     padding: 1rem;
     margin: 0;
     background: none;
+
+    h2, h2 span {
+      margin: 5px 0;
+      font-size: 20px;
+      line-height: 28px;
+      background: none;
+    }
+
+    p, p span {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   .degree-info, .credit-info, .header {
@@ -206,18 +218,6 @@ p, p span {
   .degree-info, .competence-info {
     border-radius: 0;
     box-shadow: none;
-
-    h2, h2 span {
-      margin: 5px 0;
-      font-size: 20px;
-      line-height: 28px;
-      background: none;
-    }
-
-    p, p span {
-      font-size: 16px;
-      line-height: 24px;
-    }
 
     p.level, p.level span, p.scope, p.scope span {
       font-size: 14px;

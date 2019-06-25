@@ -11,6 +11,6 @@ describe('SchoolList renders schools', () => {
     const schoolList = shallow(
       <SchoolList sortedSchoolList={sortedSchoolListData} />
     )
-    expect(schoolList.find('h2').first().text()).toEqual('Erikoisammattitukinnot (1)')
+    expect(schoolList.find('h3').first().text()).toEqual('Erikoisammattitukinnot (1)')
   })
 });

@@ -31,7 +31,7 @@ position: relative;
 `;
 
 const MarkdownPage = (props) => {
-  const { data, isLoading, status } = MarkdownData(props.match.params.pageName);
+  const { data, isLoading, status } = MarkdownData(props.pageName);
   const globalState = useGlobalStateContext();
 
   const title = (!isLoading && data) ? data[`title_${globalState.language}`] : props.match.params.pageName;

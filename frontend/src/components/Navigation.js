@@ -225,7 +225,6 @@ const Navigation = (props) => {
       setPath(locPath);
 
       setNavMenuVisible(false);
-
       document.body.focus();
     }
   }, [locPath, path, setPath, setNavMenuVisible]);

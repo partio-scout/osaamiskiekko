@@ -52,7 +52,7 @@ const MarkdownPage = (props) => {
             ? <>{data[`title_${globalState.language}`]}</>
             : <><FormattedMessage id='error.title'/>{status.message}</>}
           isLoading={isLoading} />
-      <main className='content' aria-live="off" aria-busy={isLoading}>
+      <main className='content' aria-busy={isLoading}>
         <div>
           {isLoading 
             ? ''

@@ -140,7 +140,6 @@ export default injectIntl(function ResultsCarousel(props) {
       dots[i].setAttribute("aria-controls", "school-list");
     };
     // Selected
-    
   };
 
   return (

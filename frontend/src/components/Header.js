@@ -77,10 +77,10 @@ export default function Header() {
         <h1>
           <FormattedMessage id="header.h1"/>
         </h1>
-        <p className="important" aria-live="off">
+        <p className="important">
           <FormattedMessage id="header.important"/>
         </p>
-        <p aria-live="off">
+        <p>
           <FormattedMessage id="header.p"/>
         </p>
       </div>

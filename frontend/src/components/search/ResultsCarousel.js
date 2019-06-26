@@ -125,11 +125,12 @@ export default injectIntl(function ResultsCarousel(props) {
     // Arrows
     document.getElementsByClassName("slick-prev").item(0).innerText = props.intl.formatMessage({id: 'carousel.previous'});
     document.getElementsByClassName("slick-next").item(0).innerText = props.intl.formatMessage({id: 'carousel.next'});
+
     // Dots
     const dots = document.getElementsByClassName("slick-dots").item(0).getElementsByTagName("li");
     for (var i = 0; i < dots.length; i++) {
       if (dots[i].className === "slick-active") {
-        dots[i].setAttribute("aria-active", true);        
+        dots[i].setAttribute("aria-active", true);
         dots[i].getElementsByTagName("button")[0].innerText = `${props.intl.formatMessage({id: 'carousel.dot.chosen'})} ${sortedCarouselFields[i][`name_${globalState.language}`]}`;
       }
       else {
@@ -139,7 +140,6 @@ export default injectIntl(function ResultsCarousel(props) {
       dots[i].setAttribute("role", "tab");
       dots[i].setAttribute("aria-controls", "school-list");
     };
-    // Selected
   };
 
   return (
@@ -155,7 +155,7 @@ export default injectIntl(function ResultsCarousel(props) {
             </button>
           );
         })}
-    </Slider>
+      </Slider>
     </S.ResultsCarousel>
   )
 });

@@ -29,7 +29,7 @@ const Home = () => {
   const [creditingInfoForCompetence, setCreditingInfoForCompetence] = useState([]);
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
-  const [currentCarouselField, setcurrentCarouselField] = useState({id: 0});
+  const [currentCarouselField, setCurrentCarouselField] = useState({id: 0});
 
   const [creditingInfoForDegree, setCreditingInfoForDegree] = useState([]);
   const [creditingInfoForDegreeByOrganization, setCreditingInfoForDegreeByOrganization] = useState([]);
@@ -56,13 +56,14 @@ const Home = () => {
   } 
 
   const setSelectedCarouselField = field => {
-    setcurrentCarouselField(field);
+    setCurrentCarouselField(field);
     return sortSchools(field);
   };
 
   const sortCarouselItems = (carouselFields) => {
     const sortedFields = orderBy(carouselFields, [(item) => item.creditingInfos.length], ['desc'])
     setSortedCarouselFields(sortedFields);
+    setCurrentCarouselField(sortedFields[0]);
     sortSchools(sortedFields[currentCarouselField.id]);
   }
 
@@ -132,7 +133,7 @@ const Home = () => {
         }
         
         { (sortedSchoolList && sortedSchoolList.length > 0) 
-          && <SchoolList sortedSchoolList={sortedSchoolList} /> }
+          && <SchoolList sortedSchoolList={sortedSchoolList} currentCarouselField={currentCarouselField} /> }
         
         { (creditingInfoForDegreeByOrganization && creditingInfoForDegreeByOrganization.length > 0) 
           && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }

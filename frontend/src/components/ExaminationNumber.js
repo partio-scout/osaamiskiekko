@@ -10,6 +10,11 @@ S.ExaminationNumber = styled.div`
     padding: 5px;
   }
 
+  .accessible-text {
+    position: absolute;
+    left: -9999px;
+  }
+
   h2, h2 span {
     font-size: 18px;
     line-height: 27px;
@@ -29,20 +34,25 @@ const ExaminationNumber = (props) => {
   const { creditingAmountForDegree, creditingAmountForCompetence } = props;
 
   return (
-      <S.ExaminationNumber>
-        <h2 className="results-amount">
-          { creditingAmountForDegree &&
-            <FormattedMessage id="examination.creditingInfoForDegree" values= {{
-              amount: creditingAmountForDegree
-             }} />
-          }
-          { creditingAmountForCompetence &&
+    <S.ExaminationNumber>
+      <h2 className="results-amount">
+        { creditingAmountForDegree &&
+          <FormattedMessage id="examination.creditingInfoForDegree" values= {{
+            amount: creditingAmountForDegree
+            }} />
+        }
+        { creditingAmountForCompetence &&
+          <>
+            <div className='accessible-text'>
+              <FormattedMessage id="examination.notificationForAccessiblePeople"/>
+            </div>
             <FormattedMessage id="examination.creditingInfoForCompetence" values= {{
               amount: creditingAmountForCompetence
-             }} />
-          }
-        </h2> 
-      </S.ExaminationNumber>
+              }} />
+          </>
+        }
+      </h2> 
+    </S.ExaminationNumber>
   );
 }
 

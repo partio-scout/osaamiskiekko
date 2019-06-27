@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
+import FormattedMessageForScreenReaders from './FormattedMessageForScreenReaders';
 
 const S = {};
 S.ExaminationNumber = styled.div`
@@ -8,11 +9,6 @@ S.ExaminationNumber = styled.div`
   margin-top: 2em;
   .examination-number {
     padding: 5px;
-  }
-
-  .screenreader-only {
-    position: absolute;
-    left: -9999px;
   }
 
   h2, h2 span {
@@ -43,9 +39,7 @@ const ExaminationNumber = (props) => {
         }
         { creditingAmountForCompetence &&
           <>
-            <div className='screenreader-only'>
-              <FormattedMessage id="examination.notificationForAccessiblePeople"/>
-            </div>
+            <FormattedMessageForScreenReaders id='examination.extraInfoForScreenReaders'/>
             <FormattedMessage id="examination.creditingInfoForCompetence" values= {{
               amount: creditingAmountForCompetence
               }} />

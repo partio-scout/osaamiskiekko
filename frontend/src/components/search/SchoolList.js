@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import SchoolItem from './SchoolItem';
+import FormattedMessageForScreenReaders from '../FormattedMessageForScreenReaders';
 
 const S = {};
 S.SchoolList = styled.div`
@@ -18,11 +19,6 @@ h1 {
   word-break: break-word;
 }
 
-.screenreader-only {
-  position: absolute;
-  left: -9999px;
-}
-
 .noresults {
   text-align: center;
 }
@@ -35,6 +31,7 @@ h1 {
 const Results = (props) => {
   const { sortedSchoolList, globalState } = props;
   let amountOfResults = sortedSchoolList.filter(school => school.creditingInfos.length > 0)
+  console.log(sortedSchoolList)
   if (amountOfResults.length > 0) {
     return (
       <div>
@@ -60,11 +57,7 @@ const SchoolList = (props) => {
 
   return (
     <S.SchoolList className='school-list' id='school-list' aria-atomic={true}>
-      <h2 className='screenreader-only'>
-        <FormattedMessage id="schoolResults.resultsForAccessiblePeople" values= {{
-          fieldOfStudy: currentCarouselField[`name_${globalState.language}`]
-        }} />
-      </h2>
+      <FormattedMessageForScreenReaders id='schoolResults.extraInfoForScreenReaders' fieldOfStudy={currentCarouselField[`name_${globalState.language}`]}/>
       <Results sortedSchoolList={sortedSchoolList} globalState={globalState}/>
     </S.SchoolList>
   );

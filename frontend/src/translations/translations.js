@@ -34,7 +34,7 @@ export default {
     "creditinginfo.title": "Recognition of {competence} in {degree}",
     "examination.creditingInfoForDegree": "{amount, plural, =0 {no trainings} one {# training} other {# trainings}} can be credited in the degree:",
     "examination.creditingInfoForCompetence": "Training can be credited in {amount, plural, =0 {no degrees} one {# degree} other {# degrees}}:",
-    "examination.notificationForAccessiblePeople": "Search complete. Now choose field of study.",
+    "examination.extraInfoForScreenReaders": "Search complete. Now choose field of study.",
     "carousel.previous": "Previous degree",
     "carousel.next": "Next degree",
     "carousel.dot": "Choose degree:",
@@ -47,7 +47,7 @@ export default {
     "navigation.message.contact": "Navigated to contact information page",
     "navigation.message.information": "Navigated to more information page",
     "navigation.message.error": "Navigated to error page",
-    "schoolResults.resultsForAccessiblePeople": "Currently chosen field of study {fieldOfStudy} results:",
+    "schoolResults.extraInfoForScreenReaders": "Currently chosen field of study {fieldOfStudy} results:",
     "schoolResults.noresults": "No search results",
   },
   "fi": {
@@ -85,7 +85,7 @@ export default {
     "creditinginfo.title": "{competence} tunnustaminen tutkinnossa {degree}",
     "examination.creditingInfoForDegree": "Tutkinnossa voi hyödyntää seuraavat {amount} koulutusta tai osaamismerkkiä:",
     "examination.creditingInfoForCompetence": "Koulutuksen tai osaamismerkin voi hyödyntää {amount} tutkinnossa:",
-    "examination.notificationForAccessiblePeople": "Haku suoritettu. Valitse seuraavaksi koulutusala.",
+    "examination.extraInfoForScreenReaders": "Haku suoritettu. Valitse seuraavaksi koulutusala.",
     "carousel.previous": "Edellinen tutkinto",
     "carousel.next": "Seuraava tutkinto",
     "carousel.dot": "Valitse tutkinto:",
@@ -98,7 +98,7 @@ export default {
     "navigation.message.contact": "Siirryttiin yhteystietosivulle",
     "navigation.message.information": "Siirryttiin lisätietosivulle",
     "navigation.message.error": "Siirryttiin virhesivulle",
-    "schoolResults.resultsForAccessiblePeople": "Tällä hetkellä valitun koulutusalan {fieldOfStudy} tulokset:",
+    "schoolResults.extraInfoForScreenReaders": "Tällä hetkellä valitun koulutusalan {fieldOfStudy} tulokset:",
     "schoolResults.noresults": "Tuloksia ei löytynyt",
   },
   "sv": {
@@ -136,7 +136,7 @@ export default {
     "creditinginfo.title": "Tillgodoräknande av {competence} i {degree}",
     "examination.creditingInfoForDegree": "I den valda examensinriktade utbildningen kan du dra nytta av följande {amount} utbildningar eller digitala kompetensmärken:",
     "examination.creditingInfoForCompetence": "Du kan dra nytta av den valda utbildningen eller det digitala kompetensmärket i följande {amount} examensinriktade utbildningar:",
-    "examination.notificationForAccessiblePeople": "Haku suoritettu. Valitse seuraavaksi koulutusala._sv",
+    "examination.extraInfoForScreenReaders": "Haku suoritettu. Valitse seuraavaksi koulutusala._sv",
     "carousel.previous": "Previous degree_sv",
     "carousel.next": "Next degree_sv",
     "carousel.dot": "Choose degree:_sv",
@@ -149,7 +149,7 @@ export default {
     "navigation.message.contact": "Navigerade till kontakt information sida",
     "navigation.message.information": "Navigerade till information sida",
     "navigation.message.error": "Navigerade till felsida",
-    "schoolResults.resultsForAccessiblePeople": "Tällä hetkellä valitun koulutusalan {fieldOfStudy} tulokset:_sv",
+    "schoolResults.extraInfoForScreenReaders": "Tällä hetkellä valitun koulutusalan {fieldOfStudy} tulokset:_sv",
     "schoolResults.noresults": "Inga resultat hittades",
   }
 };

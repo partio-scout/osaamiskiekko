@@ -29,7 +29,7 @@ const Home = () => {
   const [creditingInfoForCompetence, setCreditingInfoForCompetence] = useState([]);
   const [sortedCarouselFields, setSortedCarouselFields] = useState([]);
   const [sortedSchoolList, setSortedSchoolList] = useState([]);
-  const [currentCarouselField, setCurrentCarouselField] = useState({id: 0});
+  const [currentCarouselField, setCurrentCarouselField] = useState([]);
 
   const [creditingInfoForDegree, setCreditingInfoForDegree] = useState([]);
   const [creditingInfoForDegreeByOrganization, setCreditingInfoForDegreeByOrganization] = useState([]);
@@ -55,16 +55,17 @@ const Home = () => {
     setSortedSchoolList(sortedAndImportedSchoolNames);
   } 
 
-  const setSelectedCarouselField = field => {
+  const selectCarouselField = field => {
     setCurrentCarouselField(field);
-    return sortSchools(field);
+    sortSchools(field);
   };
 
   const sortCarouselItems = (carouselFields) => {
+    setSortedCarouselFields([]);
     const sortedFields = orderBy(carouselFields, [(item) => item.creditingInfos.length], ['desc'])
     setSortedCarouselFields(sortedFields);
     setCurrentCarouselField(sortedFields[0]);
-    sortSchools(sortedFields[currentCarouselField.id]);
+    sortSchools(sortedFields[0]);
   }
 
   const initializeMatchingDegrees = async (competence) => {
@@ -72,7 +73,7 @@ const Home = () => {
     setCreditingInfoForCompetence(links);
 
     const carouselFields = globalState.fieldOfStudies.map(field => ({
-      ...field, 
+      ...field,
       creditingInfos: links.filter(link => link.academicdegree.fieldofstudy === field.id)
     }));
     sortCarouselItems(carouselFields);
@@ -107,12 +108,12 @@ const Home = () => {
     }
   }
   
-  const clearResults = () => {
-    setCreditingInfoForCompetence([]);
-    setSortedSchoolList([]);
-    setSortedCarouselFields([]);
-    setCreditingInfoForDegree([]);
-    setCreditingInfoForDegreeByOrganization([]);
+    const clearResults = () => {
+      setCreditingInfoForCompetence([]);
+      setSortedSchoolList([]);
+      setSortedCarouselFields([]);
+      setCreditingInfoForDegree([]);
+      setCreditingInfoForDegreeByOrganization([]);
   }
 
   const testForInvisibleBLock = () => sortedSchoolList.length === 0 && creditingInfoForDegreeByOrganization.length === 0;
@@ -129,7 +130,7 @@ const Home = () => {
           <ExaminationNumber creditingAmountForDegree={creditingInfoForDegree.length}/>
         }
         { sortedCarouselFields && sortedCarouselFields.length > 0 &&
-          <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={setSelectedCarouselField}/>
+          <ResultsCarousel sortedCarouselFields={sortedCarouselFields} setSelectedCarouselField={selectCarouselField}/>
         }
         
         { (sortedSchoolList && sortedSchoolList.length > 0) 

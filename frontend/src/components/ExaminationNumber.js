@@ -10,7 +10,7 @@ S.ExaminationNumber = styled.div`
     padding: 5px;
   }
 
-  .accessible-text {
+  .screenreader-only {
     position: absolute;
     left: -9999px;
   }
@@ -39,15 +39,15 @@ const ExaminationNumber = (props) => {
         { creditingAmountForDegree &&
           <FormattedMessage id="examination.creditingInfoForDegree" values= {{
             amount: creditingAmountForDegree
-            }} />
+          }} />
         }
         { creditingAmountForCompetence &&
           <>
-            <div className='accessible-text'>
+            <div className='screenreader-only'>
               <FormattedMessage id="examination.notificationForAccessiblePeople"/>
             </div>
             <FormattedMessage id="examination.creditingInfoForCompetence" values= {{
-              fieldOfStudy: creditingAmountForCompetence
+              amount: creditingAmountForCompetence
               }} />
           </>
         }

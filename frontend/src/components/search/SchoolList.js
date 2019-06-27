@@ -18,7 +18,7 @@ h1 {
   word-break: break-word;
 }
 
-.accessible-text {
+.screenreader-only {
   position: absolute;
   left: -9999px;
 }
@@ -60,9 +60,9 @@ const SchoolList = (props) => {
 
   return (
     <S.SchoolList className='school-list' id='school-list' aria-atomic={true}>
-      <h2 className='accessible-text'>
+      <h2 className='screenreader-only'>
         <FormattedMessage id="schoolResults.resultsForAccessiblePeople" values= {{
-          degree: currentCarouselField[`name_${globalState.language}`]
+          fieldOfStudy: currentCarouselField[`name_${globalState.language}`]
         }} />
       </h2>
       <Results sortedSchoolList={sortedSchoolList} globalState={globalState}/>

@@ -47,7 +47,7 @@ const ExaminationNumber = (props) => {
               <FormattedMessage id="examination.notificationForAccessiblePeople"/>
             </div>
             <FormattedMessage id="examination.creditingInfoForCompetence" values= {{
-              amount: creditingAmountForCompetence
+              fieldOfStudy: creditingAmountForCompetence
               }} />
           </>
         }

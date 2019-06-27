@@ -60,11 +60,15 @@ S.ResultsCarousel = styled.div`
     }
   }
 
- @media only screen and (max-width: 768px) {
-  .slick-dots {
-    bottom: initial;
+  @media only screen and (max-width: 768px) {
+    .slick-dots {
+      bottom: initial;
+    }
   }
-}
+  
+  .arrows-opacity:before {
+    opacity: 0.5;
+  }
 `;
 
 export default injectIntl(function ResultsCarousel(props) {
@@ -125,7 +129,7 @@ export default injectIntl(function ResultsCarousel(props) {
     // Arrows
     document.getElementsByClassName("slick-prev").item(0).innerText = props.intl.formatMessage({id: 'carousel.previous'});
     document.getElementsByClassName("slick-next").item(0).innerText = props.intl.formatMessage({id: 'carousel.next'});
-
+    document.getElementsByClassName("slick-next").item(0).classList.add('arrows-opacity');
     // Dots
     const dots = document.getElementsByClassName("slick-dots").item(0).getElementsByTagName("li");
     for (var i = 0; i < dots.length; i++) {

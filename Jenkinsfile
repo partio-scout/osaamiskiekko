@@ -138,6 +138,7 @@ pipeline {
           // Configure ingress-nginx scontroller
           sh "kubectl apply -n ingress-nginx -f kubectl/global/ingress-prerequisites.yaml"
           sh "kubectl apply -n ingress-nginx -f kubectl/global/ingress-nginx.yaml"
+          sh "kubectl apply -n ingress-nginx -f kubectl/global/nginx-configuration.yaml"
 
           sh "gcloud auth configure-docker"
         }

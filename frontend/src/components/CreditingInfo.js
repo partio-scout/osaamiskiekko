@@ -303,7 +303,7 @@ export default function CreditingInfo(props) {
   }
 
   return (
-    <S.CreditingInfo>
+    <S.CreditingInfo aria-live='polite' aria-busy={isLoading} aria-atomic={true} > 
       {isLoading &&  
         <BarLoader
           css={loadingSpinnerOverride}
@@ -316,7 +316,7 @@ export default function CreditingInfo(props) {
         <>
           <div className='header' >
             <div className='link-and-share'>
-              <Link to="/">
+              <Link to="/" aria-live='off'>
                 <i className="fas fa-arrow-left" />
                 <FormattedMessage id="creditinginfo.back" />
               </Link>

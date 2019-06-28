@@ -46,7 +46,7 @@ const loadingSpinnerOverride = css`
 `;
 
 export default function SearchBox(props) {
-  const { showResults, data, isLoading } = props;
+  const { showResults, data, isLoading, clearResults } = props;
   const globalState = useGlobalStateContext();
 
   const {selectedInstitution, selectedTraining} = globalState;
@@ -63,6 +63,7 @@ export default function SearchBox(props) {
     setInstitutionFilter([]);
     setTrainingFilter([]);
     setTrainingInput('');
+    clearResults();
   }
 
   const updateInputsWithTraining = (training) => {

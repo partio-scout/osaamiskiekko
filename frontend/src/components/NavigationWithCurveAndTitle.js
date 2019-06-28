@@ -61,7 +61,7 @@ position: relative;
 `;
 
 const NavigationWithCurveAndTitle = (props) => {
-  const {title, fixedPadding} = props;
+  const {title, fixedPadding, isLoading} = props;
 
   const curve = (color) =>
     <svg viewBox="0 0 1440 72" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -74,11 +74,11 @@ const NavigationWithCurveAndTitle = (props) => {
     </svg>
 
   return (
-    <S.NacigationWithCurveAndTitle fixedPadding={fixedPadding}>
+    <S.NacigationWithCurveAndTitle fixedPadding={fixedPadding} >
       <div className='navigation'>
         <Navigation mode="colorful" />
       </div>
-      <div className='title' aria-live="polite">
+      <div className='title' aria-busy={isLoading}>
         <h1>
           {title}
         </h1>

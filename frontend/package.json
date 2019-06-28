@@ -17,6 +17,8 @@
     "lodash": "^4.17.11",
     "markdown-to-jsx": "^6.10.2",
     "react": "^16.8.6",
+    "react-aria-live": "^2.0.5",
+    "react-aria-live-route": "^1.0.1",
     "react-debounce-input": "^3.2.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
@@ -28,7 +30,7 @@
     "react-spinners": "^0.5.4",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.86.0",
-    "slick-carousel": "^1.8.1",
+    "slick-carousel": "1.8.1",
     "styled-components": "^4.2.0",
     "workbox-webpack-plugin": "^4.3.0"
   },

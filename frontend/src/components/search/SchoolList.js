@@ -31,7 +31,6 @@ h1 {
 const Results = (props) => {
   const { sortedSchoolList, globalState } = props;
   let amountOfResults = sortedSchoolList.filter(school => school.creditingInfos.length > 0)
-  console.log(sortedSchoolList)
   if (amountOfResults.length > 0) {
     return (
       <div>

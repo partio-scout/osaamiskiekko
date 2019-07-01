@@ -79,7 +79,7 @@ const Credit = (props) => {
         }} />
       } />
       <main className='content'>
-        <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">
+        <div ref={(container) => { contentContainer = container; }}>
           <CreditingInfo creditingData={data} isLoading={isLoading} />
         </div>
       </main>

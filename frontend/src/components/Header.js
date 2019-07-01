@@ -73,15 +73,15 @@ export default function Header() {
   return (
     <S.Header>
       <Navigation />
-      <div className="content header-text">
+      <div className="header-text">
         <h1>
-          <FormattedMessage id="header.h1" />
+          <FormattedMessage id="header.h1"/>
         </h1>
         <p className="important">
-          <FormattedMessage id="header.important" />
+          <FormattedMessage id="header.important"/>
         </p>
         <p>
-          <FormattedMessage id="header.p" />
+          <FormattedMessage id="header.p"/>
         </p>
       </div>
       <div className="header-image"></div>

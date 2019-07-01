@@ -217,14 +217,13 @@ const Navigation = (props) => {
   }
 
   const [path, setPath] = useState();
-  const [navMenuVisible, setNavMenuVisible] = useState(false);
+  const [navMenuVisible, setNavMenuVisible] = useState();
 
   const locPath = (history && history.location) ? history.location.pathname : undefined;
   useEffect(() => {
     if (locPath !== path) {
       setPath(locPath);
-
-      setNavMenuVisible(false);
+      hideIfVisible(false);
       document.body.focus();
     }
   }, [locPath, path, setPath, setNavMenuVisible]);
@@ -242,8 +241,9 @@ const Navigation = (props) => {
   const navbar_items = classnames({
     "navbar_items": true,
     "show": navMenuVisible,
-    "hide": !navMenuVisible,
+    "hide": (navMenuVisible === undefined) ? false : !navMenuVisible,
   });
+
   const icon = classnames({
     "nav-icon": true,
     "activated": navMenuVisible

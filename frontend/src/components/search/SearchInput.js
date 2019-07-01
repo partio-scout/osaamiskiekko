@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import _ from 'lodash';
-import SearchResults from './SearchResults';
+import {useGlobalStateContext} from '../../utils/GlobalStateContext';
+
+import { Dropdown } from 'semantic-ui-react';
 
 const S = {};
 S.SearchWrapper = styled.div`
-margin: auto;
-position: relative;
-display: flex;
-flex-direction: column;
+// margin: auto;
+// position: relative;
+// display: flex;
+// flex-direction: column;
 
 label {
   color: ${props => props.theme.colors.textColor};
@@ -22,38 +24,45 @@ label {
     margin-bottom: 0.7em;
   }
 
-  .input-area {
-    position:relative;
+  // .input-area {
+  //   position:relative;
+  // }
+  
+  // Input field
+  .ui.search.selection.dropdown>input.search {
+    // font-size: 20px;
+    // line-height: 30px;
+    // padding: inherit;
+  }
+
+  // Menu items
+  .ui.dropdown .menu>.item {
+    // padding: 20px 10px 20px 10px;
+    // border-bottom: solid 1px #202020;
+    span {
+      // color: ${props => props.theme.colors.textColor};
+      // margin: 0px;
+      letter-spacing: normal;
+      // font-size: 18;
+    }
   }
   
-  input {
-    box-sizing: border-box;
-    height: 45px;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid ${props => props.theme.colors.textColor};
-    padding-left: 32px;
-    outline-width: 0;
-    outline: none;
-    font-size: 20px;	
-    line-height: 30px;
-    font-weight: 300;
+  // Placeholder
+  .default.text {
+    // color: ${props => props.theme.colors.textColor};
+    // opacity: 1;
+    // font-size: 20px;
+    // line-height: 30px;
+    font-style: italic;
   }
-  
-  input::placeholder {
-    color: ${props => props.theme.colors.textColor};
-    opacity: 1;
-    font-size: 20px;	
-    line-height: 30px;
-    font-style: italic;	
-  }
-  
-  .fa-search { 
-    position: absolute;
-    width: 22px;
-    font-size: 22px;
-    line-height: 45px;
-    color: ${props => props.theme.colors.textColor};
+
+  // Normal text
+  .text, .message {
+    // color: ${props => props.theme.colors.textColor};
+    // opacity: 1;
+    // font-size: 20px;
+    // line-height: 30px;
+    letter-spacing: normal;
   }
 }
 
@@ -61,24 +70,40 @@ label {
   label {
     font-size: 14px;
     letter-spacing: 2px;
-    line-height: 15px;
+    line-height: 15px;  
 
-    input, input::placeholder {
-      font-size: 16px;
-      line-height: 24px
-    }
+    // input, input::placeholder {
+    //   font-size: 16px;
+    //   line-height: 24px
+    // }
   
-    fa-search: {
-      font-size: 20px;
-    }
+    // fa-search: {
+    //   font-size: 20px;
+    // }
   }
-
 }
+
+// .item {
+//   display: flex !important;
+//   flex-direction: column-reverse;
+// }
+
+// .text {
+//   color: ${props => props.theme.colors.textColor};
+//   margin: 0px;
+// }
+
+// .description {
+//   font-size: 12px;	
+//   letter-spacing: 2px;
+//   line-height: 15px;
+// }
 `;
 
 export default injectIntl(function SearchInput(props) {
-  const { handleInput, inputValue, labelKey, name, results, setSelection, showPreResults } = props;
+  const { labelKey, name, setSelection, options, value } = props;
   const [id] = useState(_.uniqueId());
+  const globalState = useGlobalStateContext();
 
   const mobileAutoScroll = () => {
     var elmnt = document.getElementById("search-box");
@@ -87,30 +112,41 @@ export default injectIntl(function SearchInput(props) {
     }
   };
 
+  const dropdownOptions = (options) =>
+    options.map((item) => {
+      const value = (item.typed_id ? item.typed_id : item.id)
+      const text = item[`name_${globalState.language}`];
+      const description = item[`type_${globalState.language}`];
+
+      return ({ key: value, value, text, description });
+    });
+
+  const handleChange = (value) => {
+    setSelection(options.find(item => (item.typed_id ? item.typed_id : item.id) === value));
+  }
+
   return (
     <S.SearchWrapper name={`${name}-component`}>
+      { /* eslint-disable jsx-a11y/label-has-for */}
       <label htmlFor={id}>
+        { /* eslint-enable jsx-a11y/label-has-for */}
         <FormattedMessage id={labelKey} />
-        <div className="input-area" role='button' onFocus={(e) => mobileAutoScroll()}> 
-          <span className="fa fa-search" aria-hidden={true}></span>
-          <input
-            minLength={2}
-            value={inputValue}
-            type="text"
-            placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}
-            name={name}
-            onChange={e => handleInput(e.target.value)} 
-            onClick={(e) => showPreResults(e.target.name)}
-            onFocus={(e) => showPreResults(e.target.name)}
-            autoComplete="off"
+        <div className="input-area" onFocus={(e) => mobileAutoScroll()} role='button'> 
+          <Dropdown
             id={id}
+            icon='search'
+            placeholder={props.intl.formatMessage({id: 'search.placeholder', defaultMessage: 'Search...'})}
+            noResultsMessage={props.intl.formatMessage({id: 'search.noResults', defaultMessage: 'Search...'})}
+            fluid
+            search
+            selection
+            autoComplete
+            value={value && (value.typed_id ? value.typed_id : value.id)}
+            onChange={(e, {value}) => handleChange(value)}
+            options={options && dropdownOptions(options)}
           />
         </div>
       </label>
-      <SearchResults
-        results={results}
-        setSelection={setSelection}
-      />
     </S.SearchWrapper>
   )
 });

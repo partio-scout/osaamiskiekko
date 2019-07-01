@@ -1,6 +1,7 @@
 export default [
   {
     "id": 8,
+    "typed_id": "SCHOOL_8",
     "name_en": "school2",
     "name_fi": "school2",
     "name_sv": "school2",
@@ -33,6 +34,7 @@ export default [
   },
   {
     "id": 9,
+    "typed_id": "SCHOOL_9",
     "name_en": "school3",
     "name_fi": "school3",
     "name_sv": "school3",
@@ -47,6 +49,7 @@ export default [
   },
   {
     "id": 7,
+    "typed_id": "SCHOOL_7",
     "name_en": "school1  has a long name that doesn't fit on one row_sv",
     "name_fi": "school1 nimi ei mahdu yhdelle riville koska se on hirmu pitkä_fi",
     "name_sv": "school1  har ett långt namn som inte passar på en rad_sv",

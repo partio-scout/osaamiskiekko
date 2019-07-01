@@ -16,6 +16,8 @@ export const addTypeToInstitution = (schoolOrOrganization, type) => schoolOrOrga
   const o = Object.assign({}, item);
   const translationKey = `institution.type.${type}`;
 
+  o.typed_id = `${type}_${item.id}`;
+
   o.type_fi = translations.fi[translationKey];
   o.type_en = translations.en[translationKey];
   o.type_sv = translations.sv[translationKey];

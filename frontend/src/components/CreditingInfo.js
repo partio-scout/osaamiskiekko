@@ -60,7 +60,7 @@ p, p span {
   line-height: 15px;
 
   h2, h2 span {
-    display: inline-block;
+    display: inline;
     margin: 5px 0;
     font-size: 26px;
     line-height: 28px;
@@ -349,9 +349,11 @@ export default function CreditingInfo(props) {
           { creditingData.academicdegree 
             ? <>
               <h2>
-                {creditingData.academicdegree[`name_${globalState.language}`]
-                  ? creditingData.academicdegree[`name_${globalState.language}`]
-                  : <FormattedMessage id='creditinginfo.notfound' />}
+                <span>
+                  {creditingData.academicdegree[`name_${globalState.language}`]
+                    ? creditingData.academicdegree[`name_${globalState.language}`]
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                </span>
               </h2>
               <p className='institution'>
                 {school && school[`name_${globalState.language}`]}
@@ -389,9 +391,11 @@ export default function CreditingInfo(props) {
             {creditingData.competence
               ? <>
                   <h2>
-                    {creditingData.competence[`name_${globalState.language}`]
-                      ? creditingData.competence[`name_${globalState.language}`]
-                      : <FormattedMessage id='creditinginfo.notfound' />}
+                    <span>
+                      {creditingData.competence[`name_${globalState.language}`]
+                        ? creditingData.competence[`name_${globalState.language}`]
+                        : <FormattedMessage id='creditinginfo.notfound' />}
+                    </span>
                   </h2>
                   <p className='institution'>
                     {organization && organization[`name_${globalState.language}`]}

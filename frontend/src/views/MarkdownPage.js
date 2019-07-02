@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import Markdown from 'markdown-to-jsx';
@@ -31,17 +31,13 @@ position: relative;
 `;
 
 const MarkdownPage = (props) => {
-  let contentContainer;
-  const { data, isLoading, status } = MarkdownData(props.match.params.pageName);
+  const { data, isLoading, status } = MarkdownData(props.pageName);
   const globalState = useGlobalStateContext();
 
   const title = (!isLoading && data) ? data[`title_${globalState.language}`] : props.match.params.pageName;
 
-  // For later use.
-  useEffect(() => {}, [contentContainer]);
-
   return (
-    <S.MarkdownPage>
+    <S.MarkdownPage aria-busy={isLoading} aria-atomic={true}>
       <FormattedMessage id='pageTitle' values={{ subpage: title }}>
         {msg =>
           <Helmet>
@@ -54,9 +50,10 @@ const MarkdownPage = (props) => {
           ? ''
           : typeof data !== 'undefined'
             ? <>{data[`title_${globalState.language}`]}</>
-            : <><FormattedMessage id='error.title'/>{status.message}</>} />
-      <main className='content' aria-live="polite">
-        <div ref={(container) => { contentContainer = container; }} tabIndex="-1" aria-labelledby="pageTitle">
+            : <><FormattedMessage id='error.title'/>{status.message}</>}
+          isLoading={isLoading} />
+      <main className='content' aria-busy={isLoading}>
+        <div>
           {isLoading 
             ? ''
             : typeof data !== 'undefined'

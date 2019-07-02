@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { LiveAnnouncer } from 'react-aria-live';
 import { Helmet } from 'react-helmet';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
@@ -65,36 +66,38 @@ const App = () => {
   }
   
   return (
-    <BrowserRouter>
-      <Helmet>
-        <html lang={language} />
-        <title>{translations[language].title}</title>
-        <script>
-          {`
-          (function(w,d,s,l,i){w[l] = w[l] || []; w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-NK65GGN');
-          `}
-          </script>
-        
-          <noscript>
-          {`
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK65GGN"
-              height="0" width="0" style="display:none;visibility:hidden">
-            </iframe>
-          `}
-          </noscript>
-      </Helmet>
-      <GlobalStateContext.Provider value={globalState}>
-        <ThemeProvider theme={currentTheme}>
-            <IntlProvider locale={language} messages={translations[language]}>
-              <Routes />
-            </IntlProvider>
-          </ThemeProvider>
-        </GlobalStateContext.Provider>
-      </BrowserRouter>
+    <LiveAnnouncer>
+      <BrowserRouter>
+        <Helmet>
+          <html lang={language} />
+          <title>{translations[language].title}</title>
+          <script>
+            {`
+            (function(w,d,s,l,i){w[l] = w[l] || []; w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NK65GGN');
+            `}
+            </script>
+          
+            <noscript>
+            {`
+              <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK65GGN"
+                height="0" width="0" style="display:none;visibility:hidden">
+              </iframe>
+            `}
+            </noscript>
+        </Helmet>
+        <GlobalStateContext.Provider value={globalState}>
+          <ThemeProvider theme={currentTheme}>
+              <IntlProvider locale={language} messages={translations[language]}>
+                <Routes />
+              </IntlProvider>
+            </ThemeProvider>
+          </GlobalStateContext.Provider>
+        </BrowserRouter>
+      </LiveAnnouncer>
   );
 }
 

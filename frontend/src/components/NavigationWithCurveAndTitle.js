@@ -11,6 +11,7 @@ position: relative;
 .title {
   padding: ${props => props.fixedPadding || 30}px 15%;
   background-color: ${props => props.theme.colors.backgroundSecondary};
+
   h1 {
     margin-block-start: 0px;
     margin-block-end: 0px;
@@ -38,23 +39,29 @@ position: relative;
 
   .title {
     padding: 5%;
+    background-color: ${props => props.theme.colors.backgroundTertiary};
+
     h1 {
       padding-top: 0px;
     }
   }
 
   .navigation {
-    background-color: ${props => props.theme.colors.backgroundSecondary};
+    background-color: ${props => props.theme.colors.backgroundTertiary};
     width: 100%;
     padding: 0;
     z-index: 30;
     position: relative;
   }
+
+  .topcurve svg path {
+    fill: ${props => props.theme.colors.backgroundTertiary};
+  }
 } 
 `;
 
 const NavigationWithCurveAndTitle = (props) => {
-  const {title, fixedPadding} = props;
+  const {title, fixedPadding, isLoading} = props;
 
   const curve = (color) =>
     <svg viewBox="0 0 1440 72" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -67,11 +74,11 @@ const NavigationWithCurveAndTitle = (props) => {
     </svg>
 
   return (
-    <S.NacigationWithCurveAndTitle fixedPadding={fixedPadding}>
+    <S.NacigationWithCurveAndTitle fixedPadding={fixedPadding} >
       <div className='navigation'>
-        <Navigation textHighlightColor="backgroundPrimary" backgroundColor="backgroundSecondary"/>
+        <Navigation mode="colorful" />
       </div>
-      <div className='title' aria-live="polite">
+      <div className='title' aria-busy={isLoading}>
         <h1>
           {title}
         </h1>

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 // import ThemeSelector from './ThemeSelector';
 import LanguageSelector from './LanguageSelector';
 import classnames from 'classnames'
@@ -51,7 +52,7 @@ S.Navigation = styled.nav`
           margin: 24px 20px 24px 0px;
 
           a {
-            color: ${props => props.theme.colors.textColor}
+            color: ${props => props.theme.colors.textColor};
             width: 100%
             height: 100%;
             padding: 24px 0px 24px 0px;
@@ -60,7 +61,7 @@ S.Navigation = styled.nav`
             font-size: 18px;	
 
             &:hover {
-              color: ${props => props.theme.colors.textColor}
+              color: ${props => props.theme.colors.textColor};
 
               span {
                 border-bottom: 2px solid ${props => props.theme.colors[props.textHighlightColor]};
@@ -89,6 +90,7 @@ S.Navigation = styled.nav`
       align-items: flex-start;
       width: 100%;
       padding-left: 0;
+      background-color: ${props => props.theme.colors[props.mobileBackgroundColor]};
 
       .logo {
         margin-left: 12px;
@@ -137,19 +139,20 @@ S.Navigation = styled.nav`
               height: 100%;
               padding: 14px 0px 14px 0px;
               font-weight: normal;
+
               &:hover {
                 span {
                   border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
                   background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
                 }
               }
+
               &.active {
                 span {
                   border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
                 }
               }
             }
-            
 
             div {
               background-color: white;
@@ -201,57 +204,80 @@ S.Navigation = styled.nav`
   }
 `;
 
-export default function Navigation(props) {
-  let {textHighlightColor, backgroundColor} = props;
-  if (!textHighlightColor) { textHighlightColor = "textHighlight"; }
-  const [navmenuVisible, setNavmenuVisible] = useState(false);
-  const [hideNavMenu, setHideMenu] = useState(false);
+const Navigation = (props) => {
+  let { mode, history } = props;
+  let textHighlightColor = "textHighlight";
+  let backgroundColor = "backgroundPrimary";
+  let mobileBackgroundColor = "backgroundPrimary";
 
-  function navmenuAction() {
-    setNavmenuVisible(!navmenuVisible);
-    setHideMenu(navmenuVisible);
+  if (mode === 'colorful') { 
+    textHighlightColor = "textColorLight";
+    backgroundColor = "backgroundSecondary";
+    mobileBackgroundColor = "backgroundTertiary";
+  }
+
+  const [path, setPath] = useState();
+  const [navMenuVisible, setNavMenuVisible] = useState(false);
+
+  const locPath = (history && history.location) ? history.location.pathname : undefined;
+  useEffect(() => {
+    if (locPath !== path) {
+      setPath(locPath);
+
+      setNavMenuVisible(false);
+      document.body.focus();
+    }
+  }, [locPath, path, setPath, setNavMenuVisible]);
+
+  function navMenuToggle() {
+    setNavMenuVisible(!navMenuVisible);
   }
 
   function hideIfVisible() {
-    if (navmenuVisible) {
-      navmenuAction();
+    if (navMenuVisible) {
+      setNavMenuVisible(false);
     }
   }
 
   const navbar_items = classnames({
     "navbar_items": true,
-    "show": navmenuVisible,
-    "hide": hideNavMenu
+    "show": navMenuVisible,
+    "hide": !navMenuVisible,
   });
   const icon = classnames({
     "nav-icon": true,
-    "activated": navmenuVisible
+    "activated": navMenuVisible
   });
 
   return (
-    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor}>
+    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor} mobileBackgroundColor={mobileBackgroundColor} aria-live="off">
       <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
           <div className="logo">
-            <NavLink exact={true} to="/" tabIndex="1">
+            <Link to="/" id="focusableLogoLink">
               <FormattedMessage id="nav.frontpage">
-                {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg}/> }
+                {msg => <img src={`${window.location.origin}/icons/favicon-96x96.png`} alt={msg}/>}
               </FormattedMessage>
-            </NavLink>
+            </Link>
           </div>
+          <FormattedMessage id="nav.navicon">
+            {msg => <button id='focusableHamburger' className={icon} onClick={() => navMenuToggle()} aria-label={msg} aria-expanded={navMenuVisible}>
+              <div></div>
+            </button> }
+          </FormattedMessage>
           <div className={navbar_items}>
             <ul className="navbar_item">
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
+              <li className="navbar_subitem">
                 <NavLink exact={true} to="/">
                   <FormattedMessage id="nav.osaamiskiekko"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
+              <li className="navbar_subitem">
                 <NavLink to="/tietoa">
                   <FormattedMessage id="nav.tietoa"/>
                 </NavLink>
               </li>
-              <li className="navbar_subitem" onClick={() => setNavmenuVisible(false)}>
+              <li className="navbar_subitem">
                 <NavLink to="/otayhteytta">
                   <FormattedMessage id="nav.otayhteytta"/>
                 </NavLink>
@@ -261,13 +287,10 @@ export default function Navigation(props) {
               <li className="navbar_subitem"><LanguageSelector /></li>
             </ul>
           </div>
-          <FormattedMessage id="nav.navicon">
-            {msg => <button className={icon} onClick={() => navmenuAction()} aria-label={msg} aria-expanded={navmenuVisible} tabIndex="2">
-              <div></div>
-            </button> }
-          </FormattedMessage>
         </div>
       </OutsideClickHandler>
     </S.Navigation>
   );
 }
+
+export default withRouter(Navigation);

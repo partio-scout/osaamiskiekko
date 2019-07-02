@@ -30,7 +30,7 @@ services:
     ports:
       - 1337:1337
     volumes:
-      - ./backend:/usr/src/api
+      - ./backend/cms/api:/usr/src/api/cms/api
     depends_on:
       - dev-db
 

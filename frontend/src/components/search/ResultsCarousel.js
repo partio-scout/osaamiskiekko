@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import styled from 'styled-components';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
+import { injectIntl } from 'react-intl';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -10,10 +11,11 @@ S.ResultsCarousel = styled.div`
   padding: 0px 40px 0px 40px;
   .slick-arrow {
     :before {
+      opacity: .5;
       color: black;
     }
   }
-   .carousel-item {
+  .carousel-item {
      outline: none;
      background: none;
      border: none;
@@ -47,7 +49,7 @@ S.ResultsCarousel = styled.div`
         cursor: pointer;
       }
     }
-   }
+  }
   .slick-current {
     transform: scale(1.12);
     div div div {
@@ -59,14 +61,14 @@ S.ResultsCarousel = styled.div`
     }
   }
 
- @media only screen and (max-width: 768px) {
-  .slick-dots {
-    bottom: initial;
+  @media only screen and (max-width: 768px) {
+    .slick-dots {
+      bottom: initial;
+    }
   }
-}
 `;
 
-export default function ResultsCarousel(props) {
+export default injectIntl(function ResultsCarousel(props) {
   const { sortedCarouselFields, setSelectedCarouselField } = props;
   const slider = useRef(null);
   const globalState = useGlobalStateContext();
@@ -80,7 +82,7 @@ export default function ResultsCarousel(props) {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    accessibility: true,
+    accessibility: false,
     swipeToSlide: true,
     focusOnSelect: true,
     afterChange(index) {
@@ -119,8 +121,29 @@ export default function ResultsCarousel(props) {
     ]
   };
 
+  // Some hackaround to make the carousel accessible
+  if(document.getElementsByClassName("slick-initialized").item(0)) {
+    // Arrows
+    document.getElementsByClassName("slick-prev").item(0).innerText = props.intl.formatMessage({id: 'carousel.previous'});
+    document.getElementsByClassName("slick-next").item(0).innerText = props.intl.formatMessage({id: 'carousel.next'});
+    // Dots
+    const dots = document.getElementsByClassName("slick-dots").item(0).getElementsByTagName("li");
+    for (var i = 0; i < dots.length; i++) {
+      if (dots[i].className === "slick-active") {
+        dots[i].setAttribute("aria-active", true);
+        dots[i].getElementsByTagName("button")[0].innerText = `${props.intl.formatMessage({id: 'carousel.dot.chosen'})} ${sortedCarouselFields[i][`name_${globalState.language}`]}`;
+      }
+      else {
+        dots[i].setAttribute("aria-active", false);
+        dots[i].getElementsByTagName("button")[0].innerText = `${props.intl.formatMessage({id: 'carousel.dot'})} ${sortedCarouselFields[i][`name_${globalState.language}`]}`;
+      }
+      dots[i].setAttribute("role", "tab");
+      dots[i].setAttribute("aria-controls", "school-list");
+    };
+  };
+
   return (
-    <S.ResultsCarousel>
+    <S.ResultsCarousel aria-live="off">
       <Slider ref={slider} {...settings}>
         {sortedCarouselFields.map((slide) => {
           return (
@@ -132,7 +155,7 @@ export default function ResultsCarousel(props) {
             </button>
           );
         })}
-    </Slider>
+      </Slider>
     </S.ResultsCarousel>
   )
-}
+});

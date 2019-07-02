@@ -67,7 +67,7 @@ S.Footer = styled.footer`
 
 export default function Footer() {
   return (
-    <S.Footer>
+    <S.Footer aria-live="off">
       <div className="footer-links">
         <ul>
           <li className="footer-link">

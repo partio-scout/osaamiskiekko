@@ -14,6 +14,9 @@ docker-run:
 
 docker-cleanrun: docker-clean docker-run
 
+clean-cms: 
+	rm -rf backend/cms/build && rm -rf backend/cms/.cache && rm -rf backend/cms/node_modules
+
 ### model import/export ###
 backupdatamodels:
 	cp -r ./backend/cms/api ./tmp/datamodels

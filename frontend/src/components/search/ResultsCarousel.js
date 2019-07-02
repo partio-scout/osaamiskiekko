@@ -11,10 +11,11 @@ S.ResultsCarousel = styled.div`
   padding: 0px 40px 0px 40px;
   .slick-arrow {
     :before {
+      opacity: .5;
       color: black;
     }
   }
-   .carousel-item {
+  .carousel-item {
      outline: none;
      background: none;
      border: none;
@@ -48,7 +49,7 @@ S.ResultsCarousel = styled.div`
         cursor: pointer;
       }
     }
-   }
+  }
   .slick-current {
     transform: scale(1.12);
     div div div {
@@ -64,11 +65,6 @@ S.ResultsCarousel = styled.div`
     .slick-dots {
       bottom: initial;
     }
-  }
-  
-  .slick-prev:before,
-  .slick-next:before {
-    opacity: 0.5;
   }
 `;
 

@@ -6,3 +6,5 @@
 .travis.yml
 README.md
 docker-compose.yml
+cms/.cache
+cms/build

@@ -11,8 +11,14 @@ S.ResultsCarousel = styled.div`
   padding: 0px 40px 0px 40px;
   .slick-arrow {
     :before {
-      opacity: .5;
+      opacity: 0.5;
       color: black;
+    }
+    :hover {
+      :before {
+        opacity: 0.75;
+        color: black;
+      }
     }
   }
   .carousel-item {

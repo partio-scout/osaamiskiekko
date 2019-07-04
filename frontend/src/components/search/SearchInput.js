@@ -85,7 +85,7 @@ export default injectIntl(function SearchInput(props) {
       <label htmlFor={id}>
         { /* eslint-enable jsx-a11y/label-has-for */}
         <FormattedMessage id={labelKey} />
-        <div className="input-area" onFocus={(e) => mobileAutoScroll()} role='button'> 
+        <div className="input-area" onFocus={(e) => mobileAutoScroll()}> 
           <Dropdown
             id={id}
             icon='search'

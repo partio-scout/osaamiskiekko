@@ -121,7 +121,7 @@ const Home = () => {
   return (
     <S.Home>
       <Header />
-      <main aria-live="polite">
+      <main>
         <SearchBox showResults={showResults} data={data} isLoading={isLoading} clearResults={clearResults}/>
         { creditingInfoForCompetence.length > 0 &&
           <ExaminationNumber creditingAmountForCompetence={creditingInfoForCompetence.length} />

@@ -80,7 +80,7 @@ services:
     build: robot
     command: sh -c '/robot/wait-for hub:4444 -- sleep 5 && python /robot/run.py --outputdir /results'
     environment:
-      BROWSER: chrome
+      BROWSER: firefox
       SELENIUM: http://hub:4444/wd/hub
       SERVER: http://frontend/
       API: http://frontend/api/
@@ -88,6 +88,6 @@ services:
       - ./robot:/robot:ro
       - ./results/robot:/results:rw
     depends_on:
-      - chrome
+      - firefox
       - backend
       - frontend

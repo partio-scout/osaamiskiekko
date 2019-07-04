@@ -140,7 +140,6 @@ export default injectIntl(function SearchInput(props) {
             fluid
             search
             selection
-            autoComplete
             value={value && (value.typed_id ? value.typed_id : value.id)}
             onChange={(e, {value}) => handleChange(value)}
             options={options && dropdownOptions(options)}

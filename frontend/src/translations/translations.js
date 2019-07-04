@@ -50,6 +50,8 @@ export default {
     "navigation.message.error": "Navigated to error page",
     "schoolResults.extraInfoForScreenReaders": "Currently selected field of study {fieldOfStudy} results:",
     "schoolResults.noresults": "No search results",
+    "shareButton": "Share",
+    "shareMessage": "Osaamiskiekko - Check out this degree and school:"
   },
   "fi": {
     "title": "Osaamiskiekko",
@@ -102,6 +104,8 @@ export default {
     "navigation.message.error": "Siirryttiin virhesivulle",
     "schoolResults.extraInfoForScreenReaders": "Tällä hetkellä valitun koulutusalan {fieldOfStudy} tulokset:",
     "schoolResults.noresults": "Tuloksia ei löytynyt",
+    "shareButton": "Jaa",
+    "shareMessage": "Osaamiskiekko - Suositus osaamisen tunnustamisesta:"
   },
   "sv": {
     "title": "Kompetensvisaren",
@@ -139,7 +143,7 @@ export default {
     "creditinginfo.title": "Tillgodoräknande av {competence} i {degree}",
     "examination.creditingInfoForDegree": "I den valda examensinriktade utbildningen kan du dra nytta av följande {amount} utbildningar eller digitala kompetensmärken:",
     "examination.creditingInfoForCompetence": "Du kan dra nytta av den valda utbildningen eller det digitala kompetensmärket i följande {amount} examensinriktade utbildningar:",
-    "examination.extraInfoForScreenReaders": "Haku suoritettu. Valitse seuraavaksi koulutusala.",
+    "examination.extraInfoForScreenReaders": "Search complete. Now select field of study.",
     "carousel.previous": "Previous field of study",
     "carousel.next": "Next field of study",
     "carousel.dot": "Choose field of study:",
@@ -152,7 +156,9 @@ export default {
     "navigation.message.contact": "Navigerade till kontakt information sida",
     "navigation.message.information": "Navigerade till information sida",
     "navigation.message.error": "Navigerade till felsida",
-    "schoolResults.extraInfoForScreenReaders": "Tällä hetkellä valitun koulutusalan {fieldOfStudy} tulokset:",
+    "schoolResults.extraInfoForScreenReaders": "Currently selected field of study {fieldOfStudy} results:",
     "schoolResults.noresults": "Inga resultat hittades",
+    "shareButton": "Dela",
+    "shareMessage": "Kompetenscirkeln - Se denna grad och skolan:"
   }
 };

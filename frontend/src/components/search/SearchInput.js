@@ -3,16 +3,12 @@ import styled from 'styled-components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import _ from 'lodash';
 import {useGlobalStateContext} from '../../utils/GlobalStateContext';
+import {getElementByXpath} from '../../utils/xpathLocator';
 
 import { Dropdown } from 'semantic-ui-react';
 
 const S = {};
 S.SearchWrapper = styled.div`
-// margin: auto;
-// position: relative;
-// display: flex;
-// flex-direction: column;
-
 label {
   color: ${props => props.theme.colors.textColor};
   font-size: 16px;	
@@ -24,44 +20,20 @@ label {
     margin-bottom: 0.7em;
   }
 
-  // .input-area {
-  //   position:relative;
-  // }
-  
-  // Input field
-  .ui.search.selection.dropdown>input.search {
-    // font-size: 20px;
-    // line-height: 30px;
-    // padding: inherit;
-  }
-
   // Menu items
   .ui.dropdown .menu>.item {
-    // padding: 20px 10px 20px 10px;
-    // border-bottom: solid 1px #202020;
     span {
-      // color: ${props => props.theme.colors.textColor};
-      // margin: 0px;
       letter-spacing: normal;
-      // font-size: 18;
     }
   }
   
   // Placeholder
   .default.text {
-    // color: ${props => props.theme.colors.textColor};
-    // opacity: 1;
-    // font-size: 20px;
-    // line-height: 30px;
     font-style: italic;
   }
 
   // Normal text
   .text, .message {
-    // color: ${props => props.theme.colors.textColor};
-    // opacity: 1;
-    // font-size: 20px;
-    // line-height: 30px;
     letter-spacing: normal;
   }
 }
@@ -71,33 +43,9 @@ label {
     font-size: 14px;
     letter-spacing: 2px;
     line-height: 15px;  
-
-    // input, input::placeholder {
-    //   font-size: 16px;
-    //   line-height: 24px
-    // }
-  
-    // fa-search: {
-    //   font-size: 20px;
-    // }
   }
 }
 
-// .item {
-//   display: flex !important;
-//   flex-direction: column-reverse;
-// }
-
-// .text {
-//   color: ${props => props.theme.colors.textColor};
-//   margin: 0px;
-// }
-
-// .description {
-//   font-size: 12px;	
-//   letter-spacing: 2px;
-//   line-height: 15px;
-// }
 `;
 
 export default injectIntl(function SearchInput(props) {
@@ -124,6 +72,12 @@ export default injectIntl(function SearchInput(props) {
   const handleChange = (value) => {
     setSelection(options.find(item => (item.typed_id ? item.typed_id : item.id) === value));
   }
+
+  const alertText = getElementByXpath(`//*[@id="${id}"]//div[@class="text" and @role="alert"]`);
+  if (alertText && !alertText.getAttribute('aria-atomic')) {
+    console.log('alerts', alertText.getAttribute('aria-atomic'), alertText);
+    alertText.setAttribute("aria-atomic", true);
+  } else { console.log(`${id} not found`); }
 
   return (
     <S.SearchWrapper name={`${name}-component`}>

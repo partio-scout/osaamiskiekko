@@ -20,13 +20,13 @@ Use must be able to change languages
 *** Keywords ***
 
 The front page should be in Finnish
-  Wait Until Page Contains  Valitse järjestö
+  Wait Until Page Contains  Valitse järjestö tai oppilaitos
 
 When user click EN
   Click Button  en
 
 Then the front page should be in English
-  Wait Until Page Contains  Choose organization
+  Wait Until Page Contains  elect organisation or education institute
 
 When user click SV
   Click button  sv

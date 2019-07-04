@@ -22,13 +22,13 @@ Given frontpage is open
 
 When user searches for      
     [Arguments]    ${institution}    ${training}
-    Wait Until Page Contains Element    search-school
-    # Fill search
-    Input Text    search-school   ${institution}
-    Click Element      xpath://div[@name='search-school-component']//li[contains(@class, 'search-result-item')]//p[contains(text(), '${institution}')]
-    Input Text    search-education   ${training}
-    Click Element      xpath://div[@name='search-education-component']//li[contains(@class, 'search-result-item')]//p[contains(text(), '${institution}')]
-    # Click search result
+    Wait Until Page Contains Element    xpath://div[@name='search-school-component']
+    Click Element    xpath://div[@name='search-school-component']
+    Input Text    xpath://div[@name='search-school-component']//input   ${institution}
+    Click Element      xpath://div[@name='search-school-component']//div[contains(@class, 'item')]//span[contains(text(), '${institution}')]
+    Click Element    xpath://div[@name='search-education-component']
+    Input Text    xpath://div[@name='search-education-component']//input   ${training}
+    Click Element      xpath://div[@name='search-education-component']//div[contains(@class, 'item')]//span[contains(text(), '${training}')]
 
 And accesses crediting page
     [Arguments]    ${creditingId}
@@ -37,10 +37,11 @@ And accesses crediting page
     Wait Until Page Contains Element    class:degree-info
 
 And returns to search
-    Click Element    xpath://div[@class='footer']//button
+    Click Element    xpath://main[@class='content']//div[@class='footer']//button
 
 Then search should show
     [Arguments]    ${institution}    ${training}    ${creditingId}
-    Textfield Should Contain    search-school    ${institution}
-    Textfield Should Contain    search-education    ${training}
+    Wait Until Page Contains Element    xpath://div[@name='search-education-component']
+    Element Should Contain    xpath://div[@name='search-school-component']//div[@class='text']    ${institution}
+    Element Should Contain    xpath://div[@name='search-education-component']//div[@class='text']    ${training}
     Page Should Contain Element    school-item-${creditingId}

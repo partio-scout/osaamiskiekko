@@ -1,7 +1,4 @@
 import os
 
-BROWSER=os.environ['BROWSER']
-SERVER=os.environ['SERVER']
-API=os.environ['API']
-SELENIUM=os.environ['SELENIUM']
-
+BROWSER=os.environ.get('BROWSER', 'HeadlessChrome')
+SERVER=os.environ.get('SERVER', 'http://frontend/')

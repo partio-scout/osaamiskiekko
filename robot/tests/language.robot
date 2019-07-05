@@ -1,14 +1,13 @@
 *** Settings ***
 
-Resource   ${PROJECTROOT}${/}resources${/}common.robot
-Resource   ${PROJECTROOT}${/}resources${/}variables.robot
+Resource   ${CURDIR}/../resources/common.robot
 
 Test Setup          Open browser and go to homepage
 Test Teardown       Close browser
 
 *** Test cases ***
 
-Use must be able to change languages
+User must be able to change languages
   The front page should be in Finnish
   When user click EN
   Then the front page should be in English

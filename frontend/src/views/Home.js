@@ -10,6 +10,7 @@ import { orderBy } from 'lodash';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import { fillData, transformToByOrganization } from '../api/CreditingData';
 import ExaminationNumber from '../components/ExaminationNumber';
+import translations from '../translations/translations';
 
 const S = {};
 S.Home = styled.div`
@@ -88,7 +89,7 @@ const Home = () => {
 
   const showResults = async (institution, competenceOrDegreeSelection) => {
     if (institution && competenceOrDegreeSelection) {
-      if (institution.type_en === 'Organization') {
+      if (institution.type_en === translations.en["institution.type.organization"]) {
         // Clear degree-specific data before displaying links for competence
         setCreditingInfoForDegree([]);
         setCreditingInfoForDegreeByOrganization([]);

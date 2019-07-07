@@ -8,6 +8,8 @@ robot/output.xml
 robot/report.html
 robot/selenium-*.png
 robot/results
+robot/geckodriver.log
+robot/results/geckodriver.log
 .scannerwork
 testResults
 test-results

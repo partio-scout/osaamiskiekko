@@ -4,6 +4,7 @@ import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
+import translations from '../../translations/translations';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -64,11 +65,10 @@ export default function SearchBox(props) {
 
     globalState.selectedInstitution = selection;
     clearResults();
-    
-    if (selection.type_en === 'School') {
-      setSecondData(selection.academicdegrees);
+    if (selection.type_en === translations.en["institution.type.school"]) {
+      setSecondData(selection.academicdegrees || []);
     } else {
-      setSecondData(selection.competences);
+      setSecondData(selection.competences || []);
     }
   };
 

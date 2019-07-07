@@ -17,10 +17,8 @@ letter-spacing: 4px;
 cursor: pointer;
 
 .button-icon:before {
-  font-size: 20px;
   color: white;
   margin-left: 5px;
-  float: right;
 }
 
 
@@ -45,7 +43,6 @@ cursor: pointer;
 
 export default function Curve(props) {
   const { onClick, value, className, active, icon } = props;
-  const shareButton = icon ? {float : 'right'} : undefined;
   const classes = classnames(
     className, 
     {
@@ -54,7 +51,7 @@ export default function Curve(props) {
   )
 
   return (
-    <S.Button onClick={onClick} className={classes} style={shareButton}>
+    <S.Button onClick={onClick} className={classes}>
       {value}
       {icon ? <i className={`button-icon ${icon}`} style={{ marginRight: '0px' }}></i> : undefined}
     </S.Button>

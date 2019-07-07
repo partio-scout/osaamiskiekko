@@ -75,9 +75,8 @@ export default injectIntl(function SearchInput(props) {
 
   const alertText = getElementByXpath(`//*[@id="${id}"]//div[@class="text" and @role="alert"]`);
   if (alertText && !alertText.getAttribute('aria-atomic')) {
-    console.log('alerts', alertText.getAttribute('aria-atomic'), alertText);
     alertText.setAttribute("aria-atomic", true);
-  } else { console.log(`${id} not found`); }
+  }
 
   return (
     <S.SearchWrapper name={`${name}-component`}>

@@ -1,38 +1,6 @@
 version: '3.7'
 
 services:
-  hub:
-    image: selenium/hub
-    environment:
-      GRID_MAX_SESSION: 50
-      GRID_UNREGISTER_IF_STILL_DOWN_AFTER: 10000
-      GRID_NEW_SESSION_WAIT_TIMEOUT: 5000
-      DBUS_SESSION_BUS_ADDRESS: /dev/null
-    expose:
-      - 4444
-    ports:
-      - 4444:4444
-
-  chrome:
-    image: selenium/node-chrome
-    environment:
-      HUB_PORT_4444_TCP_ADDR: hub
-      HUB_PORT_4444_TCP_PORT: 4444
-    ports:
-      - 5900:5900
-    depends_on:
-      - hub
-
-  firefox:
-    image: selenium/node-firefox
-    environment:
-      HUB_PORT_4444_TCP_ADDR: hub
-      HUB_PORT_4444_TCP_PORT: 4444
-    ports:
-      - 5901:5900
-    depends_on:
-      - hub
-
   robot-db:
     container_name: osaamiskiekko_robot-db
     image: postgres
@@ -78,16 +46,12 @@ services:
 
   robot:
     build: robot
-    command: sh -c '/robot/wait-for hub:4444 -- sleep 5 && python /robot/run.py --outputdir /results'
+    command: sh -c '/robot/wait-for backend:1337 -t 5 -r 10 --wget -- robot --outputdir /robot/results /robot/tests'
     environment:
-      BROWSER: chrome
-      SELENIUM: http://hub:4444/wd/hub
+      BROWSER: HeadlessChrome
       SERVER: http://frontend/
-      API: http://frontend/api/
     volumes:
-      - ./robot:/robot:ro
-      - ./results/robot:/results:rw
+      - ./robot:/robot
     depends_on:
-      - chrome
       - backend
       - frontend

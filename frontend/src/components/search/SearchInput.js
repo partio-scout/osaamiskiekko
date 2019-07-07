@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import _ from 'lodash';
 import {useGlobalStateContext} from '../../utils/GlobalStateContext';
-import {getElementByXpath} from '../../utils/xpathLocator';
 
 import { Dropdown } from 'semantic-ui-react';
 

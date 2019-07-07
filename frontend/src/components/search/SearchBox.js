@@ -55,14 +55,17 @@ export default function SearchBox(props) {
   
   useEffect(() => {
     if (selectedInstitution && selectedTraining) {
+      const tempSelectedTraining = selectedTraining;
       handleInstitutionSelection(selectedInstitution);
+      globalState.selectedTraining = tempSelectedTraining;
       showResults(selectedInstitution, selectedTraining);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleInstitutionSelection = (selection) => {
     if (!selection) return;
-
+    
+    globalState.selectedTraining = null;
     globalState.selectedInstitution = selection;
     clearResults();
     if (selection.type_en === translations.en["institution.type.school"]) {

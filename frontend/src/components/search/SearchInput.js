@@ -73,11 +73,6 @@ export default injectIntl(function SearchInput(props) {
     setSelection(options.find(item => (item.typed_id ? item.typed_id : item.id) === value));
   }
 
-  const alertText = getElementByXpath(`//*[@id="${id}"]//div[@class="text" and @role="alert"]`);
-  if (alertText && !alertText.getAttribute('aria-atomic')) {
-    alertText.setAttribute("aria-atomic", true);
-  }
-
   return (
     <S.SearchWrapper name={`${name}-component`}>
       {/* eslint-disable-next-line jsx-a11y/label-has-for */ }

@@ -1,7 +1,6 @@
 *** Settings ***
 
-Resource   ${PROJECTROOT}${/}resources${/}common.robot
-Resource   ${PROJECTROOT}${/}resources${/}variables.robot
+Resource   ${CURDIR}/../resources/common.robot
 
 Test Setup          Open browser and go to homepage
 Test Teardown       Close browser

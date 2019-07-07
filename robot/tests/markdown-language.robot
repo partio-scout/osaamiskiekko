@@ -1,7 +1,6 @@
 *** Settings ***
 
-Resource   ${PROJECTROOT}${/}resources${/}common.robot
-Resource   ${PROJECTROOT}${/}resources${/}variables.robot
+Resource   ${CURDIR}/../resources/common.robot
 
 Test Setup          Open browser and go to frontend/tietoa
 Test Teardown       Close browser
@@ -19,8 +18,8 @@ User must be able to change languages in markdown pages
 
 *** Keywords ***
 Open browser and go to frontend/tietoa
-  Open Browser    ${SERVER}tietoa    browser=${BROWSER}    remote_url=${SELENIUM}
-  Maximize Browser Window
+  Open browser and go to homepage
+  Go to  ${SERVER}tietoa
 
 When user set language to
   [Arguments]    ${languagecode}

@@ -80,11 +80,11 @@ export default injectIntl(function SearchInput(props) {
 
   return (
     <S.SearchWrapper name={`${name}-component`}>
-      { /* eslint-disable jsx-a11y/label-has-for */}
+      {/* eslint-disable-next-line jsx-a11y/label-has-for */ }
       <label htmlFor={id}>
-        { /* eslint-enable jsx-a11y/label-has-for */}
         <FormattedMessage id={labelKey} />
-        <div className="input-area" onFocus={(e) => mobileAutoScroll()} role='button'> 
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */ }
+        <div className="input-area" onFocus={(e) => mobileAutoScroll()}>
           <Dropdown
             id={id}
             icon='search'

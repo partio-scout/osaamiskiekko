@@ -73,8 +73,9 @@ Robot tests can be ran in docker (chrome default). Run makefile in project root:
 - Install Google Chrome
 - Download latest chromedriver http://chromedriver.chromium.org/
 - place chromedriver (osx) /usr/local/bin/chromedriver
-- Run locally:
-  `BROWSER=chrome SERVER=http://localhost:3000/ API=http://localhost:1337/api/ SELENIUM= python run.py -d ./results`
+- Run locally (cd in robot folder):
+  `robot -v BROWSER:Chrome -v SERVER:http://localhost:3000/ -d results .`
+  `robot -v BROWSER:HeadlessChrome -v SERVER:http://localhost:3000/ -d results .`
 
 To add additional parameters 
 - (run by testname): --test "testname"

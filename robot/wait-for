@@ -1,7 +1,9 @@
 #!/bin/sh
 
-TIMEOUT=15
+TIMEOUT=1
+RETRIES=15
 QUIET=0
+WGET=0
 
 echoerr() {
   if [ "$QUIET" -ne 1 ]; then printf "%s\n" "$*" 1>&2; fi
@@ -13,7 +15,9 @@ usage() {
 Usage:
   $cmdname host:port [-t timeout] [-- command args]
   -q | --quiet                        Do not output any status messages
-  -t TIMEOUT | --timeout=timeout      Timeout in seconds, zero for no timeout
+  -w | --wget                         Use wget instead of netcat
+  -t TIMEOUT | --timeout=timeout      Timeout in seconds (default 1).
+  -r RETRIES | --retries=retries      How many times to retry connection, zero for infinity (default 15).
   -- COMMAND ARGS                     Execute command with args after the test finishes
 USAGE
   exit "$exitcode"
@@ -21,18 +25,26 @@ USAGE
 
 wait_for() {
   command="$*"
-  for i in `seq $TIMEOUT` ; do
-    nc -z "$HOST" "$PORT"
-    result=$?
+  result=1
+  for i in `seq $RETRIES` ; do
+    if [ "$WGET" -ne 1 ]; then
+      nc -z "$HOST" "$PORT"
+      result=$?
+    else
+      wget -q -T $TIMEOUT "$HOST:$PORT"
+      result=$?
+      echoerr "Timed out: $i" >&2
+    fi
+
     if [ $result -eq 0 ] ; then
       if [ -n "$command" ] ; then
         exec $command
       fi
       exit 0
     fi
-    sleep 1
+    sleep $TIMEOUT
   done
-  echo "Operation timed out" >&2
+  echoerr "Operation timed out" >&2
   exit 1
 }
 
@@ -48,13 +60,26 @@ do
     QUIET=1
     shift 1
     ;;
+    -w | --wget)
+    WGET=1
+    shift 1
+    ;;
     -t)
     TIMEOUT="$2"
     if [ "$TIMEOUT" = "" ]; then break; fi
     shift 2
     ;;
+    -r)
+    RETRIES="$2"
+    if [ "$RETRIES" = "" ]; then break; fi
+    shift 2
+    ;;
     --timeout=*)
     TIMEOUT="${1#*=}"
+    shift 1
+    ;;
+    --retries=*)
+    RETRIES="${1#*=}"
     shift 1
     ;;
     --)

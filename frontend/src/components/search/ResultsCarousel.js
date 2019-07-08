@@ -149,7 +149,7 @@ export default injectIntl(function ResultsCarousel(props) {
   };
 
   return (
-    <S.ResultsCarousel aria-live="off">
+    <S.ResultsCarousel>
       <Slider ref={slider} {...settings}>
         {sortedCarouselFields.map((slide) => {
           return (

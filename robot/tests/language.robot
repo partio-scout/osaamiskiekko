@@ -1,14 +1,13 @@
 *** Settings ***
 
-Resource   ${PROJECTROOT}${/}resources${/}common.robot
-Resource   ${PROJECTROOT}${/}resources${/}variables.robot
+Resource   ${CURDIR}/../resources/common.robot
 
 Test Setup          Open browser and go to homepage
 Test Teardown       Close browser
 
 *** Test cases ***
 
-Use must be able to change languages
+User must be able to change languages
   The front page should be in Finnish
   When user click EN
   Then the front page should be in English
@@ -20,13 +19,13 @@ Use must be able to change languages
 *** Keywords ***
 
 The front page should be in Finnish
-  Wait Until Page Contains  Valitse järjestö
+  Wait Until Page Contains  Valitse järjestö tai oppilaitos
 
 When user click EN
   Click Button  en
 
 Then the front page should be in English
-  Wait Until Page Contains  Choose organization
+  Wait Until Page Contains  elect organisation or education institute
 
 When user click SV
   Click button  sv

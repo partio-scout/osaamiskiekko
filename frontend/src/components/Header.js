@@ -57,6 +57,7 @@ p {
 	color: ${props => props.theme.colors.text};
   font-size: 20px;
   line-height: 30px;
+  margin: 24px 0 24px 0px;
 }
 
 p.important {

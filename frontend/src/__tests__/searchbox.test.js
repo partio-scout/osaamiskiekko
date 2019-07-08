@@ -2,80 +2,40 @@ import React from 'react';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import SearchBox from '../components/search/SearchBox';
-import SearchResults from '../components/search/SearchResults';
 import SearchInput from '../components/search/SearchInput';
 import * as testHelper from '../testHelpers';
 import { schoolData } from '../__testdata__/'
 
 configure({adapter: new Adapter()});
 
-describe('search results', () => {
-  test('shows results', () => {
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchResults results={schoolData} />));
-    expect(wrapper.find('li.search-result-item').length).toBe(schoolData.length);
-  });
-
-  test('calls selection handler', () => {
-    const setSelectionCallback = jest.fn();
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchResults results={schoolData} setSelection={setSelectionCallback} />));
-    wrapper.find('li.search-result-item').first().simulate('click');
-    expect(setSelectionCallback.mock.calls.length).toBe(1);
-  });
-});
-
-
 describe('search input', () => {
   test('shows results', () => {
-    const showPreResultsCallback = jest.fn();
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchInput labelKey='search.label' results={schoolData} showPreResults={showPreResultsCallback} />));
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchInput labelKey='search.label' options={schoolData} />));
     wrapper.find('input').simulate('click');
-    expect(wrapper.find('li.search-result-item').length).toBe(schoolData.length);
-  });
-
-  test('calls showPreResults', () => {
-    const showPreResultsCallback = jest.fn();
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchInput labelKey='search.label' results={[]} showPreResults={showPreResultsCallback} />));
-    wrapper.find('input').simulate('click');
-    wrapper.find('input').simulate('focus');
-    expect(showPreResultsCallback.mock.calls.length).toBe(2);
-  });
-
-  test('calls handleInput', () => {
-    const showPreResultsCallback = jest.fn();
-    const handleInputCallback = jest.fn();
-    const wrapper = mount(testHelper.wrapWithProviders(
-      <SearchInput 
-        labelKey='search.label' 
-        results={schoolData} 
-        showPreResults={showPreResultsCallback}
-        handleInput={handleInputCallback}
-      />));
-    wrapper.find('input').simulate('change', { target: { value: 'Partio' }});
-    wrapper.find('input').simulate('change', { target: { value: 'Doesntexist' }});
-    expect(handleInputCallback.mock.calls.length).toBe(2);
+    expect(wrapper.find('.dropdown .item').length).toBe(schoolData.length);
   });
 
   test('calls selection handler', () => {
     const setSelectionCallback = jest.fn();
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchResults results={schoolData} setSelection={setSelectionCallback} />));
-    wrapper.find('li.search-result-item').first().simulate('click');
-    expect(setSelectionCallback.mock.calls.length).toBe(1);
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchInput labelKey='search.label' options={schoolData} setSelection={setSelectionCallback} />));
+    wrapper.find('.dropdown .item').at(1).simulate('click');
+    wrapper.find('.dropdown .item').at(2).simulate('click');   
+    expect(setSelectionCallback.mock.calls.length).toBe(2);
   });
 });
 
 describe('search box', () => {
   test('shows results', () => {
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchBox data={schoolData} isLoading={false} />));
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchBox data={schoolData} isLoading={false} clearResults={() => true} />));
     wrapper.find('.search-school input').simulate('click');
-    expect(wrapper.find('li.search-result-item').length).toBe(schoolData.length);
+    expect(wrapper.find('.search-school .dropdown .item').length).toBe(schoolData.length);
   });
 
   test('filters results', () => {
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchBox data={schoolData} isLoading={false} />));
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchBox data={schoolData} isLoading={false} clearResults={() => true} />));
     wrapper.find('.search-school input').simulate('click');
-    expect(wrapper.find('li.search-result-item').length).toBe(schoolData.length);
-    wrapper.find('input').simulate('change', { target: { value: 'Partio' }});
-    expect(wrapper.find('li.search-result-item').length).toBe(1);
+    expect(wrapper.find('.search-school .dropdown .item').length).toBe(schoolData.length);
+    wrapper.find('input').simulate('change', { target: { value: schoolData[0].name_fi }});
+    expect(wrapper.find('.search-school .dropdown .item').length).toBe(1);
   });
-
 });

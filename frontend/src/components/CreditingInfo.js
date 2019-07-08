@@ -6,6 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import { Link } from 'react-router-dom';
 import Button from './atoms/Button';
+import translations from '../translations/translations';
 
 const S = {};
 S.CreditingInfo = styled.div`
@@ -60,7 +61,7 @@ p, p span {
   line-height: 15px;
 
   h2, h2 span {
-    display: inline-block;
+    display: inline;
     margin: 5px 0;
     font-size: 26px;
     line-height: 28px;
@@ -282,15 +283,15 @@ export default function CreditingInfo(props) {
   }
 
   const shareMessages = {
-    en: 'Osaamiskiekko - Check out this degree and school:',
-    fi: 'Osaamiskiekko - Suositus osaamisen tunnustamisesta:',
-    sv: 'Kompetenscirkeln - Se denna grad och skolan:'
+    en: translations.en["shareMessage"],
+    fi: translations.fi["shareMessage"],
+    sv: translations.sv["shareMessage"]
   }
 
   const shareText = {
-    en: 'Share',
-    fi: 'Jaa',
-    sv: 'Dela'
+    en: translations.en["shareButton"],
+    fi: translations.fi["shareButton"],
+    sv: translations.sv["shareButton"],
   }
 
   const mobileShareOnClickHandler = () => {
@@ -319,11 +320,7 @@ export default function CreditingInfo(props) {
               <Link to="/" aria-live='off'>
                 <i className="fas fa-arrow-left" />
                 <FormattedMessage id="creditinginfo.back" />
-              </Link>
-              {testForChromeOrSafariAndMobileForWebShare() &&
-              <Button value={shareText[globalState.language]} icon='fas fa-share-alt' onClick={mobileShareOnClickHandler}></Button>
-              }
-              
+              </Link>             
             </div>
           </div>
           <div className='credit-info' >
@@ -336,6 +333,9 @@ export default function CreditingInfo(props) {
                     ? creditingData[`description_${globalState.language}`]
                     : <FormattedMessage id='creditinginfo.notfound' />}
                 </p>
+              {testForChromeOrSafariAndMobileForWebShare() &&
+                <Button value={shareText[globalState.language]} icon='fas fa-share-alt' onClick={mobileShareOnClickHandler}></Button>
+              }
               {creditingData.url &&
               <p className='readmore'>
                 <a href={creditingData.url} target="_blank" rel="noopener noreferrer">
@@ -349,9 +349,11 @@ export default function CreditingInfo(props) {
           { creditingData.academicdegree 
             ? <>
               <h2>
-                {creditingData.academicdegree[`name_${globalState.language}`]
-                  ? creditingData.academicdegree[`name_${globalState.language}`]
-                  : <FormattedMessage id='creditinginfo.notfound' />}
+                <span>
+                  {creditingData.academicdegree[`name_${globalState.language}`]
+                    ? creditingData.academicdegree[`name_${globalState.language}`]
+                    : <FormattedMessage id='creditinginfo.notfound' />}
+                </span>
               </h2>
               <p className='institution'>
                 {school && school[`name_${globalState.language}`]}
@@ -389,9 +391,11 @@ export default function CreditingInfo(props) {
             {creditingData.competence
               ? <>
                   <h2>
-                    {creditingData.competence[`name_${globalState.language}`]
-                      ? creditingData.competence[`name_${globalState.language}`]
-                      : <FormattedMessage id='creditinginfo.notfound' />}
+                    <span>
+                      {creditingData.competence[`name_${globalState.language}`]
+                        ? creditingData.competence[`name_${globalState.language}`]
+                        : <FormattedMessage id='creditinginfo.notfound' />}
+                    </span>
                   </h2>
                   <p className='institution'>
                     {organization && organization[`name_${globalState.language}`]}
@@ -436,7 +440,6 @@ export default function CreditingInfo(props) {
       {!isLoading && !creditingData && 
         <h1 className='error'><FormattedMessage id="creditinginfo.notfound" /></h1>
       }
-
     </S.CreditingInfo>
   );
 }

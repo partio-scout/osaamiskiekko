@@ -33,7 +33,7 @@ const Results = (props) => {
   let amountOfResults = sortedSchoolList.filter(school => school.creditingInfos.length > 0)
   if (amountOfResults.length > 0) {
     return (
-      <div>
+      <div aria-live={'off'}>
         {sortedSchoolList.map(school => school.creditingInfos.length > 0 &&
           <div key={school.id}>
             <h3>{school[`name_${globalState.language}`]} ({school.creditingInfos.length})</h3>
@@ -55,7 +55,7 @@ const SchoolList = (props) => {
   const globalState = useGlobalStateContext();
 
   return (
-    <S.SchoolList className='school-list' id='school-list' aria-atomic={true}>
+    <S.SchoolList className='school-list' id='school-list' aria-live={'polite'} aria-atomic={true}>
       <FormattedMessageForScreenReaders id='schoolResults.extraInfoForScreenReaders' fieldOfStudy={currentCarouselField[`name_${globalState.language}`]}/>
       <Results sortedSchoolList={sortedSchoolList} globalState={globalState}/>
     </S.SchoolList>

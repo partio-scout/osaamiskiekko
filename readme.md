@@ -6,9 +6,11 @@
 - frontend is created with create-react-app and can be found in the frontend folder
 - postgres is used as database
 
-## Concerning StrapiCMS source code and backend code
+## Concerning StrapiCMS source code and backend code development
 
 StrapiCMS code is kept in the osaamiskiekko repository although it's not developed as part of this project. ***Do not edit /backend/cms files manually***. They can get modified when using the Strapi admin content editing features. Commit only intended changes.
+
+If you want to include your test data or new tables to version control, you can export database chemas with command `make dump-schema` and if you want to export data, use `make dump-data`.
 
 # Updating production
 
@@ -71,8 +73,9 @@ Robot tests can be ran in docker (chrome default). Run makefile in project root:
 - Install Google Chrome
 - Download latest chromedriver http://chromedriver.chromium.org/
 - place chromedriver (osx) /usr/local/bin/chromedriver
-- Run locally:
-  `BROWSER=chrome SERVER=http://localhost:3000/ API=http://localhost:1337/api/ SELENIUM= python run.py -d ./results`
+- Run locally (cd in robot folder):
+  `robot -v BROWSER:Chrome -v SERVER:http://localhost:3000/ -d results .`
+  `robot -v BROWSER:HeadlessChrome -v SERVER:http://localhost:3000/ -d results .`
 
 To add additional parameters 
 - (run by testname): --test "testname"
@@ -91,15 +94,6 @@ docker-compose --project-directory . -f compose/frontend-unittests.yml up
 
 - Install sonar-scanner (https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner)
 - Run locally: `sonar-scanner -Dsonar.login=partionosaamiskiekko-bot -Dsonar.password=GET_FROM_RTM.DEV.EFICODE.IO`
-
-# Makefile
-
-The makefile allows executing common development tasks more easily.
-
-- Copy strapi datamodels from docker to tmp folder (just in case): `make backupdatamodels`
-- Get postgres database dump from docker which contains everything (can be used as test data for example): `make getdatabasedump`
-- Get only data dump from postgres: `make getdatabasedump-dataonly`
-- Restore data after Strapi has created tables accordingly: `make restoredata-dataonly`
 
 ## Deploying to kubernetes
 

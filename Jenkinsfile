@@ -206,13 +206,13 @@ pipeline {
         always {
           step([$class: 'RobotPublisher',
               disableArchiveOutput: false,
-              logFileName: 'results/robot/log.html',
+              logFileName: 'robot/results/log.html',
               onlyCritical: true,
-              otherFiles: 'results/robot/*.png',
-              outputFileName: 'results/robot/output.xml',
+              otherFiles: 'robot/results/*.png',
+              outputFileName: 'robot/results/output.xml',
               outputPath: '.',
               passThreshold: 90,
-              reportFileName: 'results/robot/report.html',
+              reportFileName: 'robot/results/report.html',
               unstableThreshold: 100]);
 
           sh """${compose} \

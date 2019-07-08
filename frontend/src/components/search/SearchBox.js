@@ -4,7 +4,7 @@ import SearchInput from './SearchInput';
 import { css } from '@emotion/core';
 import { BarLoader } from 'react-spinners';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
-import OutsideClickHandler from 'react-outside-click-handler';
+import translations from '../../translations/translations';
 
 const S = {};
 S.SearchBox = styled.div`
@@ -16,7 +16,7 @@ S.SearchBox = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 587px;
+  width: 733px;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -49,112 +49,43 @@ export default function SearchBox(props) {
   const { showResults, data, isLoading, clearResults } = props;
   const globalState = useGlobalStateContext();
 
-  const {selectedInstitution, selectedTraining} = globalState;
+  const [secondData, setSecondData] = useState([]);
 
-  const [institutionInput, setInstitutionInput] = useState('');
-  const [institutionFilter, setInstitutionFilter] = useState([]);
-  const [institutionSelection, setInstitutionSelection] = useState(null);
-  const [trainingInput, setTrainingInput] = useState('');
-  const [trainingFilter, setTrainingFilter] = useState([]);
-
-  const updateInputsWithInstitution = (institution) => {
-    setInstitutionSelection(institution);
-    setInstitutionInput(institution[`name_${globalState.language}`]);
-    setInstitutionFilter([]);
-    setTrainingFilter([]);
-    setTrainingInput('');
+  // When changing language, globalState loses the selected institution and will be undefined.
+  // If we set it as null, the dropdown knows we want to render empty input.
+  // TODO investigate why globalState lose the selected institution when changing language.
+  if (globalState.selectedInstitution === undefined) {
+    globalState.selectedInstitution = null;
     clearResults();
   }
 
-  const updateInputsWithTraining = (training) => {
-    setTrainingInput(training[`name_${globalState.language}`]);
-    setTrainingFilter([]);
-  }
-  
   useEffect(() => {
-    if (selectedInstitution && selectedTraining) {
-      updateInputsWithInstitution(selectedInstitution);
-      updateInputsWithTraining(selectedTraining);
-      showResults(selectedInstitution, selectedTraining);
+    if (globalState.selectedInstitution && globalState.selectedTraining) {
+      const tempSelectedTraining = globalState.selectedTraining;
+      handleInstitutionSelection(globalState.selectedInstitution);
+      globalState.selectedTraining = tempSelectedTraining;
+      showResults(globalState.selectedInstitution, globalState.selectedTraining);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const noResults = {
-    id: 1,
-    error: true,
-    name_fi: 'Tuloksia ei löytynyt',
-    name_en: 'No search results',
-    name_sv: "Inga resultat hittades"
-  };
-
-  const searchComparison = (item, searchValue) => 
-    item.name_en.toUpperCase().includes(searchValue.toUpperCase()) ||
-    item.name_fi.toUpperCase().includes(searchValue.toUpperCase()) ||
-    item.name_sv.toUpperCase().includes(searchValue.toUpperCase());
-
-  const showPreResults = (e) => {
-    if (e === 'search-school') setInstitutionFilter(data);
-    if (e === 'search-education') {
-      if (institutionSelection.type_en === 'School') {
-        setDegreeOrCompetenceResults(institutionSelection.academicdegrees);
-      } else {
-        setDegreeOrCompetenceResults(institutionSelection.competences);
-      }
-    }
-  };
-
-  const filterSchoolOrOrganization = (searchValue) => {
-    setInstitutionInput(searchValue);
-    if (searchValue) {
-      setInstitutionSelection(null);
-      const results = data.filter(item => searchComparison(item, searchValue));
-      results.length > 0 ?
-      setInstitutionFilter (results) :
-      setInstitutionFilter([noResults]);
-      setTrainingInput('');
-    } else {
-      setInstitutionFilter([]);
-      setTrainingFilter([]);
-      setTrainingInput('');
-      setInstitutionSelection(null);
-    }
-  }
-
-  const setDegreeOrCompetenceResults = (results) =>
-    results.length > 0 ?
-    setTrainingFilter(results) :
-    setTrainingFilter([noResults]);
-
-  const filterDegreesOrCompetences = (searchValue) => {
-    setTrainingInput(searchValue);
-    if (searchValue) {
-      if (institutionSelection.type_en === 'School') {
-        const results = institutionSelection.academicdegrees
-          .filter(item => searchComparison(item, searchValue));
-        setDegreeOrCompetenceResults(results);
-      } else {
-        const results = institutionSelection.competences
-          .filter(item => searchComparison(item, searchValue));
-        setDegreeOrCompetenceResults(results);
-      }
-    } else {
-      setTrainingFilter([]);
-    }
-  }
-  
-  const userInstitutionSelection = (selection) => {
-    if (selection.error) return;
-
+  const handleInstitutionSelection = (selection) => {
+    if (!selection) return;
+    
+    globalState.selectedTraining = null;
     globalState.selectedInstitution = selection;
-    updateInputsWithInstitution(selection);
+    clearResults();
+    if (selection.type_en === translations.en["institution.type.school"]) {
+      setSecondData(selection.academicdegrees || []);
+    } else {
+      setSecondData(selection.competences || []);
+    }
   };
 
-  const userTrainingSelection = (selection) => {
-    if (selection.error) return;
+  const handleTrainingSelection = (selection) => {
+    if (!selection) return;
 
     globalState.selectedTraining = selection;
-    updateInputsWithTraining(selection);
-    showResults(institutionSelection, selection);
+    showResults(globalState.selectedInstitution, selection);
   }
 
   return (
@@ -167,42 +98,26 @@ export default function SearchBox(props) {
         color={'#00283B'}
         loading={isLoading}
       />}
-      {!isLoading &&
+      {!isLoading && data &&
         <div className="search-wrapper">
-          <OutsideClickHandler
-            onOutsideClick={() => {
-              setInstitutionFilter([]);
-            }}
-          >
-          <SearchInput 
-            handleInput={filterSchoolOrOrganization} 
-            inputValue={institutionInput} 
+          <SearchInput
+            options={data}
+            value={globalState.selectedInstitution}
+            setSelection={handleInstitutionSelection}
             labelKey='search.label' 
             name='search-school'
             className='search-school'
-            results={institutionFilter}
-            setSelection={userInstitutionSelection}
-            showPreResults={showPreResults}
             />
-          </OutsideClickHandler>
-            {institutionSelection &&
-              <OutsideClickHandler
-                onOutsideClick={() => {
-                  setTrainingFilter([]);
-                }}
-              >
+          {globalState.selectedInstitution && 
             <SearchInput
-              handleInput={filterDegreesOrCompetences}
-              inputValue={trainingInput} 
+              options={secondData}
+              value={globalState.selectedTraining}
+              setSelection={handleTrainingSelection}
               labelKey='search.labelSecondary'
-              name='search-education' 
+              name='search-education'
               className='search-education'
-              results={trainingFilter}
-              setSelection={userTrainingSelection}
-              showPreResults={showPreResults}
             />
-          </OutsideClickHandler>
-            }
+          }
         </div>
       }
     </S.SearchBox>

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
-import FormattedMessageForScreenReaders from './FormattedMessageForScreenReaders';
 
 const S = {};
 S.ExaminationNumber = styled.div`
@@ -38,12 +37,9 @@ const ExaminationNumber = (props) => {
           }} />
         }
         { creditingAmountForCompetence &&
-          <>
-            <FormattedMessageForScreenReaders id='examination.extraInfoForScreenReaders'/>
-            <FormattedMessage id="examination.creditingInfoForCompetence" values= {{
-              amount: creditingAmountForCompetence
-              }} />
-          </>
+          <FormattedMessage id="examination.creditingInfoForCompetence" values= {{
+            amount: creditingAmountForCompetence
+            }} />
         }
       </h2> 
     </S.ExaminationNumber>

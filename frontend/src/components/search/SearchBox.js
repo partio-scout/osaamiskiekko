@@ -49,16 +49,22 @@ export default function SearchBox(props) {
   const { showResults, data, isLoading, clearResults } = props;
   const globalState = useGlobalStateContext();
 
-  const {selectedInstitution, selectedTraining} = globalState;
-
   const [secondData, setSecondData] = useState([]);
-  
+
+  // When changing language, globalState loses the selected institution and will be undefined.
+  // If we set it as null, the dropdown knows we want to render empty input.
+  // TODO investigate why globalState lose the selected institution when changing language.
+  if (globalState.selectedInstitution === undefined) {
+    globalState.selectedInstitution = null;
+    clearResults();
+  }
+
   useEffect(() => {
-    if (selectedInstitution && selectedTraining) {
-      const tempSelectedTraining = selectedTraining;
-      handleInstitutionSelection(selectedInstitution);
+    if (globalState.selectedInstitution && globalState.selectedTraining) {
+      const tempSelectedTraining = globalState.selectedTraining;
+      handleInstitutionSelection(globalState.selectedInstitution);
       globalState.selectedTraining = tempSelectedTraining;
-      showResults(selectedInstitution, selectedTraining);
+      showResults(globalState.selectedInstitution, globalState.selectedTraining);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -79,7 +85,7 @@ export default function SearchBox(props) {
     if (!selection) return;
 
     globalState.selectedTraining = selection;
-    showResults(selectedInstitution, selection);
+    showResults(globalState.selectedInstitution, selection);
   }
 
   return (
@@ -96,16 +102,16 @@ export default function SearchBox(props) {
         <div className="search-wrapper">
           <SearchInput
             options={data}
-            value={selectedInstitution}
+            value={globalState.selectedInstitution}
             setSelection={handleInstitutionSelection}
             labelKey='search.label' 
             name='search-school'
             className='search-school'
             />
-          {selectedInstitution && 
+          {globalState.selectedInstitution && 
             <SearchInput
               options={secondData}
-              value={selectedTraining}
+              value={globalState.selectedTraining}
               setSelection={handleTrainingSelection}
               labelKey='search.labelSecondary'
               name='search-education'

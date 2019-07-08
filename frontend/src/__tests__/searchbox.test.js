@@ -26,13 +26,13 @@ describe('search input', () => {
 
 describe('search box', () => {
   test('shows results', () => {
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchBox data={schoolData} isLoading={false} />));
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchBox data={schoolData} isLoading={false} clearResults={() => true} />));
     wrapper.find('.search-school input').simulate('click');
     expect(wrapper.find('.search-school .dropdown .item').length).toBe(schoolData.length);
   });
 
   test('filters results', () => {
-    const wrapper = mount(testHelper.wrapWithProviders(<SearchBox data={schoolData} isLoading={false} />));
+    const wrapper = mount(testHelper.wrapWithProviders(<SearchBox data={schoolData} isLoading={false} clearResults={() => true} />));
     wrapper.find('.search-school input').simulate('click');
     expect(wrapper.find('.search-school .dropdown .item').length).toBe(schoolData.length);
     wrapper.find('input').simulate('change', { target: { value: schoolData[0].name_fi }});

@@ -1,0 +1,43 @@
+{
+  "id": 101,
+  "url": "https://www.hamk.fi/opiskelijan-ohjeet/valinnaiset-opinnot/",
+  "description_fi": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
+  "description_en": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
+  "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
+  "competence": {
+    "id": 8,
+    "identification": "partio-kogi",
+    "name_en": "Advanced Training for Guide and Scout Leaders",
+    "description_en": "Partiojohtaja -jatkokoulutus (Ko-Gi) on toiselta nimeltään Kolmiapila-Gilwell -koulutus. Se on Suomen Partiolaiset ry:n johtamiskoulutusta. Koulutus koostuu tyypillisesti luonto-, seminaari- ja toimintaosista. Luonto-osalla vietetään perinteistä leirielämää ja verkostoidutaan uusien, eri puolilta Suomea saapuvien partiolaisten kanssa.\n\nSekä luonto- että seminaariosa sisältävät monipuolista, laadukasta koulutusta ja tukea toimintaosaan. Toimintaosa sisältää projektimuotoisen kehittämishankkeen, joka toteutetaan 6-12 kuukauden aikana, pohdintatehtäviä sekä syventävän oppimistehtävän kouluttautujan itse valitsemasta aiheesta. Koulutuksen aikana oppija käy ohjauskeskusteluja oman ohjaajan kanssa ja hänelle tehdään henkilökohtainen kehittymissuunnitelma. Kehittämishankkeessa oppijaa tukevat oma ohjaaja ja kouluttajat.\n\nPartiojohtaja -jatkokoulutuksen suoritettuaan partiojohtaja osaa arvioida omaa toimintaansa partiojohtajana, johtaa partiotoimintaa omassa toimintaympäristössään, osaa arvioida ja kehittää partiotoiminnan laatua, ohjata aikuisia partiolaisia, selittää partion roolin kasvatusjärjestönä ja soveltaa partion päämäärää ja arvopohjaa toiminnassaan sekä osaa analysoida partion roolia kasvatusjärjestönä.",
+    "url": "https://www.partio.fi/lippukunnille/pestien-tuki/koulutus/jatkotaso/partiojohtajajatkokoulutus-ko-gi/",
+    "name_fi": "Partiojohtaja -jatkokoulutus (Ko-Gi)",
+    "name_sv": "Scoutledarfortsättningsutbildning",
+    "description_fi": "Partiojohtaja -jatkokoulutus (Ko-Gi) on toiselta nimeltään Kolmiapila-Gilwell -koulutus. Se on Suomen Partiolaiset ry:n johtamiskoulutusta. Koulutus koostuu tyypillisesti luonto-, seminaari- ja toimintaosista. Luonto-osalla vietetään perinteistä leirielämää ja verkostoidutaan uusien, eri puolilta Suomea saapuvien partiolaisten kanssa.\n\nSekä luonto- että seminaariosa sisältävät monipuolista, laadukasta koulutusta ja tukea toimintaosaan. Toimintaosa sisältää projektimuotoisen kehittämishankkeen, joka toteutetaan 6-12 kuukauden aikana, pohdintatehtäviä sekä syventävän oppimistehtävän kouluttautujan itse valitsemasta aiheesta. Koulutuksen aikana oppija käy ohjauskeskusteluja oman ohjaajan kanssa ja hänelle tehdään henkilökohtainen kehittymissuunnitelma. Kehittämishankkeessa oppijaa tukevat oma ohjaaja ja kouluttajat.\n\nPartiojohtaja -jatkokoulutuksen suoritettuaan partiojohtaja osaa arvioida omaa toimintaansa partiojohtajana, johtaa partiotoimintaa omassa toimintaympäristössään, osaa arvioida ja kehittää partiotoiminnan laatua, ohjata aikuisia partiolaisia, selittää partion roolin kasvatusjärjestönä ja soveltaa partion päämäärää ja arvopohjaa toiminnassaan sekä osaa analysoida partion roolia kasvatusjärjestönä.",
+    "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
+    "nqf": 3,
+    "credits": 25,
+    "organization": 1,
+    "created_at": "2019-06-07T12:44:30.740Z",
+    "updated_at": "2019-10-17T07:35:42.669Z"
+  },
+  "academicdegree": {
+    "id": 13,
+    "identification": "hamk-konetekniikka",
+    "name_en": "Konetekniikka, insinööri (AMK)",
+    "name_fi": "Konetekniikka, insinööri (AMK)",
+    "name_sv": "Konetekniikka, insinööri (AMK)",
+    "description_en": "Konetekniikan opinnoissa kehität insinöörin perustaitojen lisäksi erikoisosaamista koneiden, laitteiden, tuotteiden ja rakenteiden suunnitteluprosesseihin ja -menetelmiin sekä tuotantotekniikkaan, moderneihin valmistusmenetelmiin ja tuotannonsuunnitteluun. Voit halutessasi myös keskittyä teollisen tuotantoprosessin kehittämiseen ja hallintaan.\n\nKonetekniikan insinööri on tekniikan alan moniosaaja, jolle löytyy työpaikkoja monipuolisesti eri teollisuuden aloilta niin kotimaassa ja ulkomailla. Tehtäväkenttääsi voi kuulua tuotekehitystä, koneensuunnittelua, tutkimusta, logistiikkaa, tuotantoa tai koulutusta. Myös erilaiset teknologiaan liittyvät palvelut ja kaupalliset tehtävät voivat kuulua koneinsinöörin työnkuvaan.​​",
+    "description_fi": "Konetekniikan opinnoissa kehität insinöörin perustaitojen lisäksi erikoisosaamista koneiden, laitteiden, tuotteiden ja rakenteiden suunnitteluprosesseihin ja -menetelmiin sekä tuotantotekniikkaan, moderneihin valmistusmenetelmiin ja tuotannonsuunnitteluun. Voit halutessasi myös keskittyä teollisen tuotantoprosessin kehittämiseen ja hallintaan.\n\nKonetekniikan insinööri on tekniikan alan moniosaaja, jolle löytyy työpaikkoja monipuolisesti eri teollisuuden aloilta niin kotimaassa ja ulkomailla. Tehtäväkenttääsi voi kuulua tuotekehitystä, koneensuunnittelua, tutkimusta, logistiikkaa, tuotantoa tai koulutusta. Myös erilaiset teknologiaan liittyvät palvelut ja kaupalliset tehtävät voivat kuulua koneinsinöörin työnkuvaan.​​",
+    "description_sv": "Konetekniikan opinnoissa kehität insinöörin perustaitojen lisäksi erikoisosaamista koneiden, laitteiden, tuotteiden ja rakenteiden suunnitteluprosesseihin ja -menetelmiin sekä tuotantotekniikkaan, moderneihin valmistusmenetelmiin ja tuotannonsuunnitteluun. Voit halutessasi myös keskittyä teollisen tuotantoprosessin kehittämiseen ja hallintaan.\n\nKonetekniikan insinööri on tekniikan alan moniosaaja, jolle löytyy työpaikkoja monipuolisesti eri teollisuuden aloilta niin kotimaassa ja ulkomailla. Tehtäväkenttääsi voi kuulua tuotekehitystä, koneensuunnittelua, tutkimusta, logistiikkaa, tuotantoa tai koulutusta. Myös erilaiset teknologiaan liittyvät palvelut ja kaupalliset tehtävät voivat kuulua koneinsinöörin työnkuvaan.​​",
+    "url": "https://www.hamk.fi/amk-tutkinto/konetekniikka-insinoori-amk/",
+    "credits": 240,
+    "nqf": 4,
+    "school": 3,
+    "fieldofstudy": 10,
+    "created_at": "2019-07-09T14:17:16.927Z",
+    "updated_at": "2019-10-16T10:53:43.964Z"
+  },
+  "created_at": "2019-07-15T14:09:52.401Z",
+  "updated_at": "2019-07-15T14:09:52.410Z",
+  "identification": "hamk-konetekniikka-partio-kogi"
+}

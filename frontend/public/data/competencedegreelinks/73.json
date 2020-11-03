@@ -1,0 +1,43 @@
+{
+  "id": 73,
+  "url": "https://www.hamk.fi/opiskelijan-ohjeet/valinnaiset-opinnot/",
+  "description_fi": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
+  "description_en": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
+  "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
+  "competence": {
+    "id": 6,
+    "identification": "partio-koulutusohjaajakoulutus",
+    "name_en": "Regional Training Commissioner training ",
+    "description_en": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
+    "url": "https://www.partio.fi/lippukunnille/pestien-tuki/koulutus/syventava-taso/koulutusohjaajakoulutus/",
+    "name_fi": "Koulutusohjaajakoulutus",
+    "name_sv": "Koulutusohjaajakoulutus",
+    "description_fi": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
+    "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
+    "nqf": 3,
+    "credits": 3,
+    "organization": 1,
+    "created_at": "2019-06-07T11:41:01.064Z",
+    "updated_at": "2019-10-17T07:35:42.669Z"
+  },
+  "academicdegree": {
+    "id": 5,
+    "identification": "hamk-tieto-ja-viestintatekniikka",
+    "name_en": "Tieto- ja viestintätekniikka, Insinööri (AMK)",
+    "name_fi": "Tieto- ja viestintätekniikka, Insinööri (AMK)",
+    "name_sv": "Tieto- ja viestintätekniikka, Insinööri (AMK)",
+    "description_en": "HAMKin tieto- ja viestintätekniikan opiskelijana opit, miten käytät, suunnittelet ja toteutat erilaisia tietotekniikkaan pohjautuvia järjestelmiä. Opintosi painottuvat ohjelmistojen, laitteistojen, verkon, tietoliikenteen ja mediateknologian osaamiseen. Teknisen osaamisen lisäksi opit tiimityötä, projektinhallintakykyä, kielitaitoa, viestintävalmiuksia, kulttuurien tuntemusta, esiintymis- ja ihmissuhdetaitoja sekä talousosaamista.\n\nKun valmistut tieto- ja viestintätekniikan insinööriksi (AMK), työskentelet tietotekniikan soveltamiseen liittyvissä suunnittelu-, käyttö- tai ylläpitotehtävissä. Vaihtoehtoihisi kuuluvat myös alan johtoon, myyntiin ja koulutukseen liittyvät tehtävät. Ammattinimikkeitä ovat mm. suunnitteluinsinööri, ohjelmistosuunnittelija, testausinsinööri, tietoliikenneinsinööri, projektipäällikkö, konsultti tai kouluttaja sekä yrittäjä.",
+    "description_fi": "HAMKin tieto- ja viestintätekniikan opiskelijana opit, miten käytät, suunnittelet ja toteutat erilaisia tietotekniikkaan pohjautuvia järjestelmiä. Opintosi painottuvat ohjelmistojen, laitteistojen, verkon, tietoliikenteen ja mediateknologian osaamiseen. Teknisen osaamisen lisäksi opit tiimityötä, projektinhallintakykyä, kielitaitoa, viestintävalmiuksia, kulttuurien tuntemusta, esiintymis- ja ihmissuhdetaitoja sekä talousosaamista.\n\nKun valmistut tieto- ja viestintätekniikan insinööriksi (AMK), työskentelet tietotekniikan soveltamiseen liittyvissä suunnittelu-, käyttö- tai ylläpitotehtävissä. Vaihtoehtoihisi kuuluvat myös alan johtoon, myyntiin ja koulutukseen liittyvät tehtävät. Ammattinimikkeitä ovat mm. suunnitteluinsinööri, ohjelmistosuunnittelija, testausinsinööri, tietoliikenneinsinööri, projektipäällikkö, konsultti tai kouluttaja sekä yrittäjä.",
+    "description_sv": "HAMKin tieto- ja viestintätekniikan opiskelijana opit, miten käytät, suunnittelet ja toteutat erilaisia tietotekniikkaan pohjautuvia järjestelmiä. Opintosi painottuvat ohjelmistojen, laitteistojen, verkon, tietoliikenteen ja mediateknologian osaamiseen. Teknisen osaamisen lisäksi opit tiimityötä, projektinhallintakykyä, kielitaitoa, viestintävalmiuksia, kulttuurien tuntemusta, esiintymis- ja ihmissuhdetaitoja sekä talousosaamista.\n\nKun valmistut tieto- ja viestintätekniikan insinööriksi (AMK), työskentelet tietotekniikan soveltamiseen liittyvissä suunnittelu-, käyttö- tai ylläpitotehtävissä. Vaihtoehtoihisi kuuluvat myös alan johtoon, myyntiin ja koulutukseen liittyvät tehtävät. Ammattinimikkeitä ovat mm. suunnitteluinsinööri, ohjelmistosuunnittelija, testausinsinööri, tietoliikenneinsinööri, projektipäällikkö, konsultti tai kouluttaja sekä yrittäjä.",
+    "url": "https://www.hamk.fi/amk-tutkinto/tieto-ja-viestintatekniikka-insinoori-amk/",
+    "credits": 240,
+    "nqf": 4,
+    "school": 3,
+    "fieldofstudy": 11,
+    "created_at": "2019-06-07T13:32:28.317Z",
+    "updated_at": "2019-10-16T10:53:43.964Z"
+  },
+  "created_at": "2019-07-12T08:56:39.733Z",
+  "updated_at": "2019-07-12T08:56:39.742Z",
+  "identification": "hamk-tietojaviestintatekniikka-partio-koulutusohjaajakoulutus"
+}

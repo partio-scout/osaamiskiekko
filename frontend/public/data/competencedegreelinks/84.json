@@ -1,0 +1,43 @@
+{
+  "id": 84,
+  "url": "https://www.hamk.fi/opiskelijan-ohjeet/valinnaiset-opinnot/",
+  "description_fi": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
+  "description_en": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
+  "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
+  "competence": {
+    "id": 7,
+    "identification": "partio-partiokouluttajakoulutus",
+    "name_en": "Trainer training",
+    "description_en": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
+    "url": "https://www.partio.fi/lippukunnille/pestien-tuki/koulutus/jatkotaso/partiokouluttajakoulutus/",
+    "name_fi": "Partiokouluttajakoulutus",
+    "name_sv": "Scoututbildarutbildning",
+    "description_fi": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
+    "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
+    "nqf": 3,
+    "credits": 2,
+    "organization": 1,
+    "created_at": "2019-06-07T12:13:11.670Z",
+    "updated_at": "2019-10-17T07:35:42.669Z"
+  },
+  "academicdegree": {
+    "id": 15,
+    "identification": "hamk-agrologi",
+    "name_en": "Maaseutuelinkeinot, agrologi (AMK)",
+    "name_fi": "Maaseutuelinkeinot, agrologi (AMK)",
+    "name_sv": "Maaseutuelinkeinot, agrologi (AMK)",
+    "description_en": "Opit monipuoliset työtaidot nykyaikaisella opetusmaatilalla ja harjoittelutiloilla. Opinnoissa kehität myös esiintymistaitoasi, oma-aloitteisuuttasi, yhteistyökykyäsi ja kielitaitoasi. Maatalous on osa elintarvikeketjua, elinkeinoelämää ja vastuullista biotaloutta. Opiskelusi varmistaa, että osaat toimia näissä maaseudun verkostoissa ja rakentaa omaa ammatillista ja henkilökohtaista suhdeverkostoa.\n\nMaaseutuyritysten lisäksi työpaikkasi voi löytyä elinkeinoelämästä (esim. kauppa ja teollisuus) tai valtionhallinnosta, kunnasta, neuvonnasta tai muusta järjestöstä. Agrologina ammattinimikkeesi voi olla esimerkiksi maaseutuyrittäjä, myyntipäällikkö, maaseutuasiamies, neuvonta-agrologi, tarkastaja tai tutkimusmestari.​",
+    "description_fi": "Opit monipuoliset työtaidot nykyaikaisella opetusmaatilalla ja harjoittelutiloilla. Opinnoissa kehität myös esiintymistaitoasi, oma-aloitteisuuttasi, yhteistyökykyäsi ja kielitaitoasi. Maatalous on osa elintarvikeketjua, elinkeinoelämää ja vastuullista biotaloutta. Opiskelusi varmistaa, että osaat toimia näissä maaseudun verkostoissa ja rakentaa omaa ammatillista ja henkilökohtaista suhdeverkostoa.\n\nMaaseutuyritysten lisäksi työpaikkasi voi löytyä elinkeinoelämästä (esim. kauppa ja teollisuus) tai valtionhallinnosta, kunnasta, neuvonnasta tai muusta järjestöstä. Agrologina ammattinimikkeesi voi olla esimerkiksi maaseutuyrittäjä, myyntipäällikkö, maaseutuasiamies, neuvonta-agrologi, tarkastaja tai tutkimusmestari.​",
+    "description_sv": "Opit monipuoliset työtaidot nykyaikaisella opetusmaatilalla ja harjoittelutiloilla. Opinnoissa kehität myös esiintymistaitoasi, oma-aloitteisuuttasi, yhteistyökykyäsi ja kielitaitoasi. Maatalous on osa elintarvikeketjua, elinkeinoelämää ja vastuullista biotaloutta. Opiskelusi varmistaa, että osaat toimia näissä maaseudun verkostoissa ja rakentaa omaa ammatillista ja henkilökohtaista suhdeverkostoa.\n\nMaaseutuyritysten lisäksi työpaikkasi voi löytyä elinkeinoelämästä (esim. kauppa ja teollisuus) tai valtionhallinnosta, kunnasta, neuvonnasta tai muusta järjestöstä. Agrologina ammattinimikkeesi voi olla esimerkiksi maaseutuyrittäjä, myyntipäällikkö, maaseutuasiamies, neuvonta-agrologi, tarkastaja tai tutkimusmestari.​",
+    "url": "https://www.hamk.fi/amk-tutkinto/maaseutuelinkeinot-agrologi-amk/",
+    "credits": 240,
+    "nqf": 4,
+    "school": 3,
+    "fieldofstudy": 6,
+    "created_at": "2019-07-10T08:33:51.486Z",
+    "updated_at": "2019-10-16T10:53:43.964Z"
+  },
+  "created_at": "2019-07-12T14:11:51.464Z",
+  "updated_at": "2019-07-12T14:11:51.473Z",
+  "identification": "hamk-agrologi-partio-partiokouluttajakoulutus"
+}

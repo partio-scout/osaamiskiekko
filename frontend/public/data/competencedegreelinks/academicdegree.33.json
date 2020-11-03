@@ -1,0 +1,43 @@
+{
+  "id": 154,
+  "url": "https://www.samk.fi/opiskelu/opintojen-aikana/neuvonta-ja-tuki/",
+  "description_fi": "Palloliiton valmennus- tai joukkueenjohtajatehtävissä toimimisesta voi saada 5 opintopistettä kohtaan Projektiopinnot (edellyttää lisäksi NQF6-tason saavuttamista osoittavaa kirjallisuuteen tutustumista).",
+  "description_en": "Palloliiton valmennus- tai joukkueenjohtajatehtävissä toimimisesta voi saada 5 opintopistettä kohtaan Projektiopinnot (edellyttää lisäksi NQF6-tason saavuttamista osoittavaa kirjallisuuteen tutustumista).",
+  "description_sv": "Palloliiton valmennus- tai joukkueenjohtajatehtävissä toimimisesta voi saada 5 opintopistettä kohtaan Projektiopinnot (edellyttää lisäksi NQF6-tason saavuttamista osoittavaa kirjallisuuteen tutustumista).",
+  "competence": {
+    "id": 25,
+    "identification": "Suomen Palloliitto_Valmentajana toimiminen",
+    "name_en": "Suomen Palloliitto_Valmentajana toimiminen",
+    "description_en": "almentajana toimiminen pitää sisällään seuraavat Suomen Palloliiton koulutukset:\n\nFutisvalmentajan startti -kokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen aloittelevia valmentajia.\n\n5 – 7 v ikävaihekoulutuskokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkko-opiskelusta, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen alkutaipaleella olevia valmentajia ja erityisesti niille, jotka toimivat 5-7 vuotiaiden valmentajina. TOIMINTA: valmentaminen ja pelien johtaminen\n\n8-11 v ikävaihekoulutuskokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen alkutaipaleella olevia valmentajia ja erityisesti niille, jotka toimivat 8-11 vuotiaiden valmentajina. TOIMINTA: valmentaminen ja pelien johtaminen\n\nUEFA C -kokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, tutoroinneista sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan etenkin 12–15-vuotiaiden valmentajia ja se antaa perustan myös aikuisten tai vanhempien nuorten valmentamiselle. TOIMINTA: valmentaminen ja pelien johtaminen.",
+    "url": "https://www.palloliitto.fi/jalkapalloperhe/palvelut-valmentajille/valmentajakoulutus",
+    "name_fi": "Valmentajana toimiminen",
+    "name_sv": "Valmentajana toimiminen",
+    "description_fi": "Valmentajana toimiminen pitää sisällään seuraavat Suomen Palloliiton koulutukset:\n\nFutisvalmentajan startti -kokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen aloittelevia valmentajia.\n\n5 – 7 v ikävaihekoulutuskokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkko-opiskelusta, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen alkutaipaleella olevia valmentajia ja erityisesti niille, jotka toimivat 5-7 vuotiaiden valmentajina. TOIMINTA: valmentaminen ja pelien johtaminen\n\n8-11 v ikävaihekoulutuskokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen alkutaipaleella olevia valmentajia ja erityisesti niille, jotka toimivat 8-11 vuotiaiden valmentajina. TOIMINTA: valmentaminen ja pelien johtaminen\n\nUEFA C -kokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, tutoroinneista sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan etenkin 12–15-vuotiaiden valmentajia ja se antaa perustan myös aikuisten tai vanhempien nuorten valmentamiselle. TOIMINTA: valmentaminen ja pelien johtaminen.",
+    "description_sv": "Valmentajana toimiminen pitää sisällään seuraavat Suomen Palloliiton koulutukset:\n\nFutisvalmentajan startti -kokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen aloittelevia valmentajia.\n\n5 – 7 v ikävaihekoulutuskokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkko-opiskelusta, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen alkutaipaleella olevia valmentajia ja erityisesti niille, jotka toimivat 5-7 vuotiaiden valmentajina. TOIMINTA: valmentaminen ja pelien johtaminen\n\n8-11 v ikävaihekoulutuskokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen alkutaipaleella olevia valmentajia ja erityisesti niille, jotka toimivat 8-11 vuotiaiden valmentajina. TOIMINTA: valmentaminen ja pelien johtaminen\n\nUEFA C -kokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, tutoroinneista sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan etenkin 12–15-vuotiaiden valmentajia ja se antaa perustan myös aikuisten tai vanhempien nuorten valmentamiselle. TOIMINTA: valmentaminen ja pelien johtaminen.",
+    "nqf": null,
+    "credits": 0,
+    "organization": 6,
+    "created_at": "2019-12-09T12:01:23.692Z",
+    "updated_at": "2019-12-10T05:29:55.004Z"
+  },
+  "academicdegree": {
+    "id": 33,
+    "identification": "SAMK, tradenomi",
+    "name_en": "Liiketalous, Tradenomi (AMK)",
+    "name_fi": "Liiketalous, Tradenomi (AMK)",
+    "name_sv": "Liiketalous, Tradenomi (AMK)",
+    "description_en": "Opinnoissa perehdyt laaja-alaisesti yrityksen ja yhteisön liiketoimintaan ja opit tarkastelemaan sitä eri näkökulmista.\n\nSAMK:n Porin kampuksella voit erikoistua taloushallintoon tai luovaan markkinointiin.\n\nTaloushallinnon tradenomina sinulla on valmiudet toimia yritysten ja yhteisöjen taloushallinnon tehtävissä. Taloushallinto on yksi keskeisimmistä yrityksen ja yhteisön tukitoiminnoista. Se tuottaa toiminnan jatkuvuuden kannalta ratkaisevan tärkeää tietoa sekä organisaation johdolle että ulkoisille sidosryhmille. Tietoa hyödynnetään kannattavuuden ja taloudellisen aseman seurannassa ja ohjauksessa.\n\nLuovan markkinoinnin tradenomi toimii esimerkiksi markkinointisuunnittelijana, avainasiakas- tai myyntipäällikkönä, yritysmyyjänä, online-markkinoinninkehittäjänä tai brand managerina. Hän voi myös työskennellä yritysten ja yhteisöjen erilaisissa markkinointi- ja viestintätehtävissä.",
+    "description_fi": "Opinnoissa perehdyt laaja-alaisesti yrityksen ja yhteisön liiketoimintaan ja opit tarkastelemaan sitä eri näkökulmista.\n\nSAMK:n Porin kampuksella voit erikoistua taloushallintoon tai luovaan markkinointiin.\n\nTaloushallinnon tradenomina sinulla on valmiudet toimia yritysten ja yhteisöjen taloushallinnon tehtävissä. Taloushallinto on yksi keskeisimmistä yrityksen ja yhteisön tukitoiminnoista. Se tuottaa toiminnan jatkuvuuden kannalta ratkaisevan tärkeää tietoa sekä organisaation johdolle että ulkoisille sidosryhmille. Tietoa hyödynnetään kannattavuuden ja taloudellisen aseman seurannassa ja ohjauksessa.\n\nLuovan markkinoinnin tradenomi toimii esimerkiksi markkinointisuunnittelijana, avainasiakas- tai myyntipäällikkönä, yritysmyyjänä, online-markkinoinninkehittäjänä tai brand managerina. Hän voi myös työskennellä yritysten ja yhteisöjen erilaisissa markkinointi- ja viestintätehtävissä.",
+    "description_sv": "Opinnoissa perehdyt laaja-alaisesti yrityksen ja yhteisön liiketoimintaan ja opit tarkastelemaan sitä eri näkökulmista.\n\nSAMK:n Porin kampuksella voit erikoistua taloushallintoon tai luovaan markkinointiin.\n\nTaloushallinnon tradenomina sinulla on valmiudet toimia yritysten ja yhteisöjen taloushallinnon tehtävissä. Taloushallinto on yksi keskeisimmistä yrityksen ja yhteisön tukitoiminnoista. Se tuottaa toiminnan jatkuvuuden kannalta ratkaisevan tärkeää tietoa sekä organisaation johdolle että ulkoisille sidosryhmille. Tietoa hyödynnetään kannattavuuden ja taloudellisen aseman seurannassa ja ohjauksessa.\n\nLuovan markkinoinnin tradenomi toimii esimerkiksi markkinointisuunnittelijana, avainasiakas- tai myyntipäällikkönä, yritysmyyjänä, online-markkinoinninkehittäjänä tai brand managerina. Hän voi myös työskennellä yritysten ja yhteisöjen erilaisissa markkinointi- ja viestintätehtävissä.",
+    "url": "https://www.samk.fi/opiskelu/hae-opiskelijaksi/amk-tutkinto/liiketalouspori/",
+    "credits": 210,
+    "nqf": 4,
+    "school": 7,
+    "fieldofstudy": 3,
+    "created_at": "2019-12-09T12:07:37.061Z",
+    "updated_at": "2019-12-10T05:40:10.569Z"
+  },
+  "created_at": "2019-12-09T12:09:46.591Z",
+  "updated_at": "2019-12-10T05:38:56.403Z",
+  "identification": "Palloliitto SAMK"
+}

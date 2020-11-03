@@ -5,7 +5,7 @@ export const institutionTypes = {
   SCHOOL: 'school',
 };
 
-export const baseURL = (process.env.REACT_APP_BACKEND_URL || '/api');
+export const baseURL = (process.env.REACT_APP_BACKEND_URL || '/data');
 
 export const getFullImageURL = imageURL => (imageURL.startsWith("http")
     ? imageURL

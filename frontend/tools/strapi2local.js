@@ -28,7 +28,7 @@ const main = async () => {
  * @param contentType
  * @returns {Promise<any>}
  */
-const saveContent = async (contentType) => {
+const saveContent = async (contentType, storeElementsAsSeparateFiles = false) => {
     // See: https://strapi.io/documentation/v3.x/content-api/parameters.html#limit
     const url = 'https://api.www.osaamiskiekko.fi/' + contentType + '?_limit=-1'
 
@@ -53,6 +53,28 @@ const saveContent = async (contentType) => {
 
         const dataPath = path.join(__dirname, '/../public/data/' + contentType + '.json')
         fs.writeFileSync(dataPath, JSON.stringify(elements, null, 2))
+
+        // If the content type is competencedegreelinks, create separate json files based on the id, competence.id and
+        // academicdegree.id. Having separate files, will speed up things.
+        if (contentType === 'competencedegreelinks') {
+            const dirPath = path.join(__dirname, '/../public/data/' + contentType)
+            if (fs.existsSync(dirPath) === false){
+                fs.mkdirSync(dirPath)
+            }
+
+            for (const element of elements) {
+                let dataPath
+
+                dataPath = path.join(__dirname, '/../public/data/' + contentType + '/' + element.id + '.json')
+                fs.writeFileSync(dataPath, JSON.stringify(element, null, 2))
+
+                dataPath = path.join(__dirname, '/../public/data/' + contentType + '/competence.' + element.competence.id + '.json')
+                fs.writeFileSync(dataPath, JSON.stringify(element, null, 2))
+
+                dataPath = path.join(__dirname, '/../public/data/' + contentType + '/academicdegree.' + element.academicdegree.id + '.json')
+                fs.writeFileSync(dataPath, JSON.stringify(element, null, 2))
+            }
+        }
     } catch (error) {
         console.error(error.message)
         throw new Error('ERROR downloading data from: ' + url)

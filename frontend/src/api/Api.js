@@ -22,25 +22,18 @@ const getCompetenceDegreeLinks = async () => {
 }
 
 const getCompetenceDegreeLink = async (id) => {
-  id = parseInt(id)
-  const competencedegreelinks = await axios.get(`${baseURL}/competencedegreelinks.json`);
-
-  const element = competencedegreelinks.data.find(element => element.id === id)
-  return element !== undefined ? [element] : []
+  const competencedegreelinks = await axios.get(`${baseURL}/competencedegreelinks/${id}.json`);
+  return [competencedegreelinks.data]
 }
 
 const getCreditingInfosForCompetence = async (id) => {
-  id = parseInt(id)
-  const competencedegreelinks = await axios.get(`${baseURL}/competencedegreelinks.json`);
-
-  return competencedegreelinks.data.filter(element => element.competence.id === id)
+  const competencedegreelinks = await axios.get(`${baseURL}/competencedegreelinks/competence.${id}.json`);
+  return [competencedegreelinks.data]
 }
 
 const getCreditingInfosForDegree = async (id) => {
-  id = parseInt(id)
-  const competencedegreelinks = await axios.get(`${baseURL}/competencedegreelinks.json`);
-
-  return competencedegreelinks.data.filter(element => element.academicdegree.id === id)
+  const competencedegreelinks = await axios.get(`${baseURL}/competencedegreelinks/academicdegree.${id}.json`);
+  return [competencedegreelinks.data]
 }
 
 const getCompetences = async () => {

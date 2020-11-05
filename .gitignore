@@ -1,19 +1,6 @@
 .env
 frontend/build
 
-# Test results
-results
-robot/log.html
-robot/output.xml
-robot/report.html
-robot/selenium-*.png
-robot/results
-robot/geckodriver.log
-robot/results/geckodriver.log
-.scannerwork
-testResults
-test-results
-
 # OSX
 .DS_Store
 # Node

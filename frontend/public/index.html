@@ -47,6 +47,15 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Osaamiskiekko</title>
+
+    <script>
+      // Temporary code to unregister service workers.
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(registration => {
+          registration.unregister();
+        });
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app. Javascriptin tulee olla käytössä sovelluksen käyttämiseksi.</noscript>

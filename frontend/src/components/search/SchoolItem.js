@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
-import { getFullImageURL } from '../../api/ApiUtils'; 
+import { getFullImageURL } from '../../api/ApiUtils';
 
 const S = {};
 S.SchoolItem = styled.div`
@@ -63,9 +63,7 @@ const SchoolItem = (props) => {
   const globalState = useGlobalStateContext();
 
   const school = creditingInfo.academicdegree.school;
-  const logoUrl = (school.logo 
-    ? getFullImageURL(school.logo.url) 
-    : school.logoUrl);
+  const logoUrl = `data/images/${school.logo}`;
 
   return (
     <StyledLink to={`/ahot/${creditingInfo.id}`}>

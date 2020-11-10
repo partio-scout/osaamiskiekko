@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import CompetenceCreditingList from './CompetenceCreditingList';
-import { getFullImageURL } from '../../api/ApiUtils'; 
+import { getFullImageURL } from '../../api/ApiUtils';
 
 const S = {};
 S.OrganizationItem = styled.div`
@@ -66,18 +66,18 @@ S.OrganizationItem = styled.div`
 const OrganizationItem = (props) => {
   const data = props.creditingInfoForOrganization;
   const globalState = useGlobalStateContext();
-  const [showCreditingList, setShowCreditingList] = useState(false); 
+  const [showCreditingList, setShowCreditingList] = useState(false);
 
   const toggleCreditingList = () => setShowCreditingList(!showCreditingList);
-  
-  const logoUrl = (data.logo ? getFullImageURL(data.logo.url) : data.logoUrl);
+
+  const logoUrl = `data/images/${data.logo}`;
 
   return (
     <S.OrganizationItem logoUrl={logoUrl}>
         <h3>
-          <button 
-              className='organization-item' 
-              aria-expanded={showCreditingList} 
+          <button
+              className='organization-item'
+              aria-expanded={showCreditingList}
               aria-controls={`crediting-list-${data.id}`}
               onClick={toggleCreditingList}>
             <div className='logo' />

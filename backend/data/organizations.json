@@ -8,24 +8,9 @@
     "description_en": "Suomen Partiolaiset – Finlands Scouter ry on Suomen suurin nuorisojärjestö, jonka toiminnassa on vuosittain mukana yli 65 000 jäsentä. Maailmanlaajuisesti partiolaisia on yli 40 miljoonaa yli 200 maassa. ",
     "description_sv": "Suomen Partiolaiset – Finlands Scouter ry on Suomen suurin nuorisojärjestö, jonka toiminnassa on vuosittain mukana yli 65 000 jäsentä. Maailmanlaajuisesti partiolaisia on yli 40 miljoonaa yli 200 maassa. ",
     "url": "https://www.partio.fi",
-    "logoUrl": null,
+    "logo": "sp-logosymboli.jpg",
     "created_at": "2019-05-09T09:55:05.648Z",
     "updated_at": "2019-10-17T07:35:42.667Z",
-    "logo": {
-      "id": 11,
-      "name": "sp-logosymboli.jpg",
-      "hash": "ac30bdb0aee44ec691b5971c1d7bff68",
-      "sha256": "_QAHbpYdz8jG9us-8ueynLtepk6lbc2gVAay7o4UMO4",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": "256.75",
-      "url": "/images/sp-logosymboli.jpg",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-10-17T07:35:42.796Z",
-      "updated_at": "2019-10-17T07:35:42.822Z",
-      "provider_metadata": null
-    },
     "competences": [
       {
         "id": 11,
@@ -245,25 +230,10 @@
     "description_fi": null,
     "description_en": null,
     "description_sv": null,
-    "url": null,
+    "url": "/images/120v-logo-Marttaliitto.png",
     "logoUrl": null,
     "created_at": "2019-05-29T09:46:35.336Z",
     "updated_at": "2019-06-07T11:14:34.169Z",
-    "logo": {
-      "id": 4,
-      "name": "120v-logo-Marttaliitto.png",
-      "hash": "b38649ef54bd4bd6a6405dd9dd69c28b",
-      "sha256": "jzSD_PDVWZ0FgosvFvXwTE0MoGN4qrLsaOpEu824eNI",
-      "ext": ".png",
-      "mime": "image/png",
-      "size": "33.60",
-      "url": "/images/120v-logo-Marttaliitto.png",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-06-07T11:14:34.621Z",
-      "updated_at": "2019-06-07T11:14:34.642Z",
-      "provider_metadata": null
-    },
     "competences": [
       {
         "id": 13,
@@ -340,24 +310,9 @@
     "description_en": null,
     "description_sv": null,
     "url": null,
-    "logoUrl": null,
+    "logo": "4H_RGB.png",
     "created_at": "2019-05-29T09:47:21.436Z",
     "updated_at": "2019-06-07T11:16:54.687Z",
-    "logo": {
-      "id": 5,
-      "name": "4H_RGB.png.png",
-      "hash": "8b596aabc0aa4d3a88c98b888387ed2b",
-      "sha256": "2QdQU4bH5K01Z-jJ4QVI9sS8-2fpegNYZRuOu-OLfXc",
-      "ext": ".png",
-      "mime": "image/png",
-      "size": "8.53",
-      "url": "/images/4H_RGB.png",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-06-07T11:16:55.013Z",
-      "updated_at": "2019-06-07T11:16:55.045Z",
-      "provider_metadata": null
-    },
     "competences": [
       {
         "id": 10,
@@ -402,24 +357,9 @@
     "description_en": "The Mannerheim League is an NGO and membership is open to everyone. It promotes the wellbeing of children and of families with children, increases respect for childhood and seeks to make it more visible, and sees that children’s views are taken into account in public decision-making.\n\nThe Mannerheim League is the largest child welfare organization in Finland. It has 87 000 members and 556 local associations throughout the country. The work of these local associations is supported by the League’s 10 district organizations.",
     "description_sv": "MLL är en medborgarorganisation öppen för envar. Vårt mål är att \n- främja barnets och familjens välbefinnande\n- öka respekten för barndomen och ger den en mer framträdande plats i samhället\n- få barnens synpunkter beaktade i beslutsfattandet\n\nVi är Finlands största barnskyddsorganisation. Vi har 87 000 medlemmar i 556 lokalföreningar runt om i Finland (2016). Lokalföreningarnas verksamhet stöds av 10 distriktsorganisationer.",
     "url": "www.mll.fi",
-    "logoUrl": null,
+    "logo": "mll_ver_rgb.png",
     "created_at": "2019-10-09T09:17:44.624Z",
     "updated_at": "2019-10-16T07:06:32.230Z",
-    "logo": {
-      "id": 8,
-      "name": "mll_ver_rgb.png",
-      "hash": "11d1958d2cb04985b7459b8d48947470",
-      "sha256": "pbEOZdqhhW3aNN7kpod7iv67Hzc9BCP2UnWft01LC3A",
-      "ext": ".png",
-      "mime": "image/png",
-      "size": "74.22",
-      "url": "/images/mll_ver_rgb.png",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-10-16T07:06:25.885Z",
-      "updated_at": "2019-10-16T07:06:25.930Z",
-      "provider_metadata": null
-    },
     "competences": [
       {
         "id": 15,
@@ -448,24 +388,9 @@
     "description_en": "Riihimäen Nuorisoteatteri on vuonna 1991 perustettu laajaa teatteritaiteen perusopetusta antava yhdistys. Nuorisoteatteri toimii 1917 perustetussa vanhassa elokuvateatterissa, Kino Sammossa sekä Kauppakeskus Majakan 3. kerroksen harjoitussaleissa. Riihimäen Nuorisoteatterilla on myös ryhmiä Hyvinkäällä, Lopella sekä Hausjärvellä.\n\nVuoden 2018 syksyllä Riihimäen Nuorisoteatterissa on n. 550 aktiivista jäsentä, jotka harrastavat 41:ssä harrastusryhmässä. Riihimäen Nuorisoteatteri tuottaa n. 20 ensi-iltaa vuodessa ja on Suomen suurin Nuorisoteatteri",
     "description_sv": "Riihimäen Nuorisoteatteri on vuonna 1991 perustettu laajaa teatteritaiteen perusopetusta antava yhdistys. Nuorisoteatteri toimii 1917 perustetussa vanhassa elokuvateatterissa, Kino Sammossa sekä Kauppakeskus Majakan 3. kerroksen harjoitussaleissa. Riihimäen Nuorisoteatterilla on myös ryhmiä Hyvinkäällä, Lopella sekä Hausjärvellä.\n\nVuoden 2018 syksyllä Riihimäen Nuorisoteatterissa on n. 550 aktiivista jäsentä, jotka harrastavat 41:ssä harrastusryhmässä. Riihimäen Nuorisoteatteri tuottaa n. 20 ensi-iltaa vuodessa ja on Suomen suurin Nuorisoteatteri",
     "url": "https://www.rnt.fi/",
-    "logoUrl": null,
+    "logo": "rnt-nelio.jpg",
     "created_at": "2019-10-25T12:44:47.114Z",
     "updated_at": "2019-10-31T10:31:33.353Z",
-    "logo": {
-      "id": 14,
-      "name": "rnt-nelio.jpg",
-      "hash": "a5904b5638b541889cd737f73561493f",
-      "sha256": "bbmgJw-zchMc8EA4igY1oyDwF70vfeRYDP5DX_o07ZQ",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": "153.71",
-      "url": "/images/rnt-nelio.jpg",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-10-29T06:39:41.578Z",
-      "updated_at": "2019-10-29T06:39:41.604Z",
-      "provider_metadata": null
-    },
     "competences": [
       {
         "id": 16,
@@ -529,7 +454,6 @@
     "logoUrl": null,
     "created_at": "2019-12-09T11:54:56.167Z",
     "updated_at": "2019-12-09T12:20:57.319Z",
-    "logo": null,
     "competences": [
       {
         "id": 25,

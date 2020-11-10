@@ -28,7 +28,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": null,
       "created_at": "2019-10-25T12:47:58.597Z",
       "updated_at": "2019-10-28T11:36:47.848Z"
     },
@@ -98,7 +97,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -204,7 +202,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -310,7 +307,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": null,
       "created_at": "2019-10-31T08:36:34.368Z",
       "updated_at": "2019-10-31T08:36:34.393Z"
     },
@@ -380,7 +376,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": null,
       "created_at": "2019-10-31T08:36:34.368Z",
       "updated_at": "2019-10-31T08:36:34.393Z"
     },
@@ -450,7 +445,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": null,
       "created_at": "2019-10-31T08:36:34.368Z",
       "updated_at": "2019-10-31T08:36:34.393Z"
     },
@@ -520,7 +514,6 @@
       "description_fi": "Humanistinen ammattikorkeakoulu (Humak) on vahvasti profiloitunut, valtakunnallinen ammattikorkeakoulu, joka on erikoistunut järjestö- ja nuorisotyön, työyhteisöjen kehittämisen, kulttuurituotannon ja luovan toimialan yrittäjyyden sekä tulkkausalan erityisosaamisen ja toiminnan kehittämiseen. Humakissa on 1500 opiskelijaa ja noin 130 asiantuntijaa eri tehtävissä.",
       "description_sv": "Humanistinen ammattikorkeakoulu (Humak) on vahvasti profiloitunut, valtakunnallinen ammattikorkeakoulu, joka on erikoistunut järjestö- ja nuorisotyön, työyhteisöjen kehittämisen, kulttuurituotannon ja luovan toimialan yrittäjyyden sekä tulkkausalan erityisosaamisen ja toiminnan kehittämiseen. Humakissa on 1500 opiskelijaa ja noin 130 asiantuntijaa eri tehtävissä.",
       "url": "https://www.humak.fi/",
-      "logoUrl": null,
       "created_at": "2019-05-09T09:59:36.683Z",
       "updated_at": "2019-06-07T12:53:03.787Z"
     },
@@ -626,7 +619,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": null,
       "created_at": "2019-10-31T14:28:22.481Z",
       "updated_at": "2019-10-31T14:28:22.508Z"
     },
@@ -756,7 +748,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -862,7 +853,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -968,7 +958,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": "",
       "created_at": "2019-05-16T11:50:53.034Z",
       "updated_at": "2019-10-16T10:53:36.749Z"
     },
@@ -1038,7 +1027,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": "",
       "created_at": "2019-05-16T11:50:53.034Z",
       "updated_at": "2019-10-16T10:53:36.749Z"
     },
@@ -1108,7 +1096,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": "",
       "created_at": "2019-05-16T11:50:53.034Z",
       "updated_at": "2019-10-16T10:53:36.749Z"
     },
@@ -1178,7 +1165,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -1284,7 +1270,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -1390,7 +1375,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -1496,7 +1480,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -1602,7 +1585,6 @@
       "description_fi": "SAMK on noin 6000 opiskelijan ja 400 työntekijän monialainen ja kansainvälisesti suuntautunut korkeakoulu. Länsirannikon vaikutusalueella SAMK on merkittävä osaajien tekijä, kehittäjä, kansainvälistäjä ja yrittäjyyden edistäjä.",
       "description_sv": "SAMK on noin 6000 opiskelijan ja 400 työntekijän monialainen ja kansainvälisesti suuntautunut korkeakoulu. Länsirannikon vaikutusalueella SAMK on merkittävä osaajien tekijä, kehittäjä, kansainvälistäjä ja yrittäjyyden edistäjä.",
       "url": "https://www.samk.fi/",
-      "logoUrl": null,
       "created_at": "2019-12-10T05:28:50.849Z",
       "updated_at": "2019-12-10T05:40:10.553Z"
     },
@@ -1660,7 +1642,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -1766,7 +1747,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -1872,7 +1852,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -1978,7 +1957,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": "",
       "created_at": "2019-05-16T11:50:53.034Z",
       "updated_at": "2019-10-16T10:53:36.749Z"
     },
@@ -2048,7 +2026,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": null,
-      "logoUrl": "",
       "created_at": "2019-05-16T11:50:53.034Z",
       "updated_at": "2019-10-16T10:53:36.749Z"
     },
@@ -2142,7 +2119,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -2248,7 +2224,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -2354,7 +2329,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -2448,7 +2422,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -2554,7 +2527,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -2660,7 +2632,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -2766,7 +2737,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -2896,7 +2866,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -3002,7 +2971,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },
@@ -3108,7 +3076,6 @@
       "description_fi": null,
       "description_sv": null,
       "url": "https://www.hamk.fi",
-      "logoUrl": "",
       "created_at": "2019-05-17T12:42:47.514Z",
       "updated_at": "2019-10-16T10:53:43.960Z"
     },

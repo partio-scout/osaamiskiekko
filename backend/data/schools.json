@@ -8,24 +8,9 @@
     "description_fi": "Humanistinen ammattikorkeakoulu (Humak) on vahvasti profiloitunut, valtakunnallinen ammattikorkeakoulu, joka on erikoistunut järjestö- ja nuorisotyön, työyhteisöjen kehittämisen, kulttuurituotannon ja luovan toimialan yrittäjyyden sekä tulkkausalan erityisosaamisen ja toiminnan kehittämiseen. Humakissa on 1500 opiskelijaa ja noin 130 asiantuntijaa eri tehtävissä.",
     "description_sv": "Humanistinen ammattikorkeakoulu (Humak) on vahvasti profiloitunut, valtakunnallinen ammattikorkeakoulu, joka on erikoistunut järjestö- ja nuorisotyön, työyhteisöjen kehittämisen, kulttuurituotannon ja luovan toimialan yrittäjyyden sekä tulkkausalan erityisosaamisen ja toiminnan kehittämiseen. Humakissa on 1500 opiskelijaa ja noin 130 asiantuntijaa eri tehtävissä.",
     "url": "https://www.humak.fi/",
-    "logoUrl": null,
+    "logo": "Humak_tunnus_pysty_RGB_C.png",
     "created_at": "2019-05-09T09:59:36.683Z",
     "updated_at": "2019-06-07T12:53:03.787Z",
-    "logo": {
-      "id": 6,
-      "name": "Humak_tunnus_pysty_RGB_C.png",
-      "hash": "998d20271af94c338a9ceaac4b5b173e",
-      "sha256": "aLwRtIOW2lyAVLAx74kBpxhGu2UtfI4807yIuG09xw4",
-      "ext": ".png",
-      "mime": "image/png",
-      "size": "8.79",
-      "url": "/images/Humak_tunnus_pysty_RGB_C.png",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-06-07T12:53:04.162Z",
-      "updated_at": "2019-06-07T12:53:04.179Z",
-      "provider_metadata": null
-    },
     "academicdegrees": [
       {
         "id": 1,
@@ -55,24 +40,9 @@
     "description_fi": null,
     "description_sv": null,
     "url": null,
-    "logoUrl": "",
+    "logo": "srkopistonelio.png",
     "created_at": "2019-05-16T11:50:53.034Z",
     "updated_at": "2019-10-16T10:53:36.749Z",
-    "logo": {
-      "id": 9,
-      "name": "srkopistonelio.png",
-      "hash": "185a270d163d4daf88e6b4538ea8e4ac",
-      "sha256": "IOVgAeBzqe4mOLJhWB5I6Yq9GAsXCzoJJG0yIJb_LeY",
-      "ext": ".png",
-      "mime": "image/png",
-      "size": "75.09",
-      "url": "/images/srkopistonelio.png",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-10-16T10:02:16.282Z",
-      "updated_at": "2019-10-16T10:02:16.331Z",
-      "provider_metadata": null
-    },
     "academicdegrees": [
       {
         "id": 2,
@@ -170,24 +140,9 @@
     "description_fi": null,
     "description_sv": null,
     "url": "https://www.hamk.fi",
-    "logoUrl": "",
+    "logo": "hamk_nelio.png",
     "created_at": "2019-05-17T12:42:47.514Z",
     "updated_at": "2019-10-16T10:53:43.960Z",
-    "logo": {
-      "id": 10,
-      "name": "hamk_nelio.png",
-      "hash": "6dea5429529b4c38bfb696b6fa517d33",
-      "sha256": "1bXELY59HWn65h0wbWthDhwDPyDRo_RzFXz4pzFTxmQ",
-      "ext": ".png",
-      "mime": "image/png",
-      "size": "4.50",
-      "url": "/images/hamk_nelio.png",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-10-16T10:53:29.708Z",
-      "updated_at": "2019-10-16T10:53:29.738Z",
-      "provider_metadata": null
-    },
     "academicdegrees": [
       {
         "id": 5,
@@ -557,24 +512,9 @@
     "description_fi": null,
     "description_sv": null,
     "url": null,
-    "logoUrl": null,
+    "logo": "RiLu2.gif",
     "created_at": "2019-10-25T12:47:58.597Z",
     "updated_at": "2019-10-28T11:36:47.848Z",
-    "logo": {
-      "id": 12,
-      "name": "RiLu2.gif",
-      "hash": "3a3ae52bbb544909b414c59b44d4c713",
-      "sha256": "Z89jIbQWbi8UT94tfrIBwJQMnvN-eO7lf9c1EA81Xao",
-      "ext": ".gif",
-      "mime": "image/gif",
-      "size": "1.08",
-      "url": "/images/RiLu2.gif",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-10-28T11:36:48.017Z",
-      "updated_at": "2019-10-28T11:36:48.049Z",
-      "provider_metadata": null
-    },
     "academicdegrees": [
       {
         "id": 25,
@@ -604,24 +544,9 @@
     "description_fi": null,
     "description_sv": null,
     "url": null,
-    "logoUrl": null,
+    "logo": "Careeria-logo-tumma-pysty-ilman-taustaa-1.png",
     "created_at": "2019-10-31T08:36:34.368Z",
     "updated_at": "2019-10-31T08:36:34.393Z",
-    "logo": {
-      "id": 15,
-      "name": "Careeria logo tumma pysty ilman taustaa-1.png",
-      "hash": "e79677ab7e6f4d67b450b867737cb547",
-      "sha256": "OpvfNmvHcZ0Gelt1oH_XHbMUZK4qFIQGDu6jaRZcwag",
-      "ext": ".png",
-      "mime": "image/png",
-      "size": "151.04",
-      "url": "/images/Careeria-logo-tumma-pysty-ilman-taustaa-1.png",
-      "provider": "google-cloud-storage",
-      "public_id": null,
-      "created_at": "2019-10-31T08:36:34.517Z",
-      "updated_at": "2019-10-31T08:36:34.542Z",
-      "provider_metadata": null
-    },
     "academicdegrees": [
       {
         "id": 28,
@@ -688,7 +613,6 @@
     "logoUrl": null,
     "created_at": "2019-10-31T14:28:22.481Z",
     "updated_at": "2019-10-31T14:28:22.508Z",
-    "logo": null,
     "academicdegrees": [
       {
         "id": 29,
@@ -721,7 +645,6 @@
     "logoUrl": null,
     "created_at": "2019-12-10T05:28:50.849Z",
     "updated_at": "2019-12-10T05:40:10.553Z",
-    "logo": null,
     "academicdegrees": [
       {
         "id": 33,

@@ -17,9 +17,7 @@
       "description_sv": "Valmentajana toimiminen pitää sisällään seuraavat Suomen Palloliiton koulutukset:\n\nFutisvalmentajan startti -kokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen aloittelevia valmentajia.\n\n5 – 7 v ikävaihekoulutuskokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkko-opiskelusta, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen alkutaipaleella olevia valmentajia ja erityisesti niille, jotka toimivat 5-7 vuotiaiden valmentajina. TOIMINTA: valmentaminen ja pelien johtaminen\n\n8-11 v ikävaihekoulutuskokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan Palloliiton valmentajakoulutuksen alkutaipaleella olevia valmentajia ja erityisesti niille, jotka toimivat 8-11 vuotiaiden valmentajina. TOIMINTA: valmentaminen ja pelien johtaminen\n\nUEFA C -kokonaisuus muodostuu kontaktiopetuksesta, itseopiskelusta, verkkomoduuleista, tutoroinneista sekä kokemuskortista. Kokonaisuus on rakennettu palvelemaan etenkin 12–15-vuotiaiden valmentajia ja se antaa perustan myös aikuisten tai vanhempien nuorten valmentamiselle. TOIMINTA: valmentaminen ja pelien johtaminen.",
       "nqf": null,
       "credits": 0,
-      "organization": 6,
-      "created_at": "2019-12-09T12:01:23.692Z",
-      "updated_at": "2019-12-10T05:29:55.004Z"
+      "organization": 6
     },
     "academicdegree": {
       "id": 33,
@@ -34,12 +32,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 7,
-      "fieldofstudy": 3,
-      "created_at": "2019-12-09T12:07:37.061Z",
-      "updated_at": "2019-12-10T05:40:10.569Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-12-09T12:09:46.591Z",
-    "updated_at": "2019-12-10T05:38:56.403Z",
     "identification": "Palloliitto SAMK"
   },
   {
@@ -60,9 +54,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 3,
@@ -77,12 +69,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-05-17T12:45:47.633Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-05-17T12:53:29.125Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-metsatalous-sp-partiojohtaja-peruskoulutus"
   },
   {
@@ -103,9 +91,7 @@
       "description_sv": "Gruppledarutbildningen riktar sig till explorerscouter (15-17 år) som vill börja leda en scoutgrupp eller som redan nu fungerar som patrulledare. Gruppledarutbildningen är en del av varje explorerscouts scoutstig och den ger dig färdigheter att fungera som ledare för en scoutgrupp.",
       "nqf": 8,
       "credits": 10,
-      "organization": 1,
-      "created_at": "2019-05-16T11:49:51.070Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 2,
@@ -120,12 +106,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 5,
-      "created_at": "2019-05-16T11:45:19.370Z",
-      "updated_at": "2019-10-16T10:53:36.753Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-05-16T11:46:33.373Z",
-    "updated_at": "2019-08-12T11:02:02.917Z",
     "identification": null
   },
   {
@@ -146,9 +128,7 @@
       "description_sv": "Tehtävä Z on neljän neuvontajärjestön yhteistyöllä toteutettava opintojakso. Toiminta on suunnattu nuorille (alle 29-vuotiaille). Nuoret suunnittelevat toiminnallisen tehtävän neuvontajärjestön ohjaajan tuella. Tehtävä z -ohjelma toteutetaan projektinomaisesti, jossa osallistujat vastaavat tehtävän suunnittelusta ja toteutumisesta. Z-ohjelma sisältää erilaisia sisältöalueita; ryhmäytyminen ja ryhmässä toimiminen, järjestötaidot, työelämätaidot, projektiosaaminen, verkostot, taloustaidot sekä tapahtuman järjestäminen. Edellä mainittujen lisäksi nuorten arjen ja käden taidot lisääntyvät ja hyvinvointi vahvistuu itse opittujen taitojen kautta. Toiminta tarjoaa myös vertaistukea.\nOSAAMISTAVOITTEET: \n•\tOsaa noudattaa työtään ohjaavia säädöksiä, määräyksiä ja toimintaperiaatteita.\n•\tOsaa työskennellä tuntien järjestötoiminnan organisaatiorakenteen ja toimintatavat. \n•\tOsaa suunnitella ja toteuttaa toimintaa järjestötoiminnan arvojen, päämäärien ja toimintaperiaatteiden mukaan.\n•\tYmmärtää neuvontajärjestön vapaaehtoistoiminnan merkityksen ja vaikutuksen yhteiskunnan palvelujärjestäjänä.\n•\tOsaa projektityön keskeiset toiminnot ja osaa työskennellä yhdessä ryhmän kanssa projektin tavoitteet saavuttaen.\n•\tOsaa innostaa ja motivoida osallistumaan toimintaan.\n•\tOsaa työskennellä tuntien erilaisia yhteistyömahdollisuuksia ja verkostoja. Osaa työelämätaitoja ja hyödyntää niitä erilaisissa tilanteissa.\n•\tOsaa toimia ehkäisevän työn näkökulmasta ts. tekee toimillaan hyvää edistäen ihmisten hyvinvointia ja ehkäisee erilaisten haittojen syntyä.\n•\tOsaa uusia arjen ja käden taitoja.\n•\tOsaa arvioida ja kehittää omaa toimintaansa ja antaa palautetta muille toimijoille osana projektin arviointia.\n\n",
       "nqf": 8,
       "credits": 2,
-      "organization": 2,
-      "created_at": "2019-10-31T11:16:16.528Z",
-      "updated_at": "2019-10-31T11:16:16.551Z"
+      "organization": 2
     },
     "academicdegree": {
       "id": 2,
@@ -163,12 +143,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 5,
-      "created_at": "2019-05-16T11:45:19.370Z",
-      "updated_at": "2019-10-16T10:53:36.753Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-10-31T11:55:01.836Z",
-    "updated_at": "2019-11-13T13:54:52.760Z",
     "identification": null
   },
   {
@@ -189,9 +165,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 1,
@@ -206,12 +180,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 1,
-      "fieldofstudy": 1,
-      "created_at": "2019-05-09T10:01:07.693Z",
-      "updated_at": "2019-08-13T07:52:10.026Z"
+      "fieldofstudy": 1
     },
-    "created_at": "2019-05-09T10:02:00.360Z",
-    "updated_at": "2019-08-13T07:52:10.030Z",
     "identification": "humak-yhteisopadagogi_amk-sp-valmentajakoulutus"
   },
   {
@@ -232,9 +202,7 @@
       "description_sv": "• Osaa suunnitella ja järjestää vapaaehtoistoimintaa Marttajärjestön arvojen, päämäärien ja toimintatapojen mukaisesti. \n• Osaa perustella kansalais- ja järjestötoiminnan ennaltaehkäisevän merkityksen yhteiskunnassa. \n• Ymmärtää vapaaehtoistoiminnan vaikutukset ja huomioi niitä omassa toiminnassaan. \n• Ymmärtää vapaaehtoistoiminnan periaatteet ja osaa soveltaa niitä toiminnassa. \n• Osaa toimia yhteistyössä muiden vapaaehtoisten ja ammattilaisten kanssa. \n• Osaa ohjata ja opastaa sekä organisoida vapaaehtoistoimintaa. \n• Osaa ohjata ikääntyvien tai lapsiperheiden ryhmiä voimavaralähtöisesti. \n• Osaa motivoida osallistujia toimintaan. \n• Osaa arvioida ja kehittää omaa toimintaansa ja antaa palautetta muille toimijoille osana kehittämishankkeen arviointia.",
       "nqf": 2,
       "credits": 2,
-      "organization": 2,
-      "created_at": "2019-05-29T09:53:40.925Z",
-      "updated_at": "2019-08-12T11:02:49.626Z"
+      "organization": 2
     },
     "academicdegree": {
       "id": 2,
@@ -249,12 +217,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 5,
-      "created_at": "2019-05-16T11:45:19.370Z",
-      "updated_at": "2019-10-16T10:53:36.753Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-05-29T09:55:36.791Z",
-    "updated_at": "2019-11-14T14:04:35.813Z",
     "identification": "seurakuntaopisto-kaso-martat-vilppu"
   },
   {
@@ -275,9 +239,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 1,
@@ -292,12 +254,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 1,
-      "fieldofstudy": 1,
-      "created_at": "2019-05-09T10:01:07.693Z",
-      "updated_at": "2019-08-13T07:52:10.026Z"
+      "fieldofstudy": 1
     },
-    "created_at": "2019-06-07T13:00:17.733Z",
-    "updated_at": "2019-08-13T07:52:10.030Z",
     "identification": "humak-yhteisopedagogi_amk-partio-koulutusohjaajakoulutus"
   },
   {
@@ -318,9 +276,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 1,
@@ -335,12 +291,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 1,
-      "fieldofstudy": 1,
-      "created_at": "2019-05-09T10:01:07.693Z",
-      "updated_at": "2019-08-13T07:52:10.026Z"
+      "fieldofstudy": 1
     },
-    "created_at": "2019-06-07T13:12:10.331Z",
-    "updated_at": "2019-08-13T07:52:10.030Z",
     "identification": "humak-yhteisopedagogi_amk-partio-partiokouluttajakoulutus"
   },
   {
@@ -361,9 +313,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 1,
@@ -378,12 +328,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 1,
-      "fieldofstudy": 1,
-      "created_at": "2019-05-09T10:01:07.693Z",
-      "updated_at": "2019-08-13T07:52:10.026Z"
+      "fieldofstudy": 1
     },
-    "created_at": "2019-05-09T10:01:27.377Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "humak-yhteisöpedagogi_amk-sp-partiojohtaja-peruskoulutus"
   },
   {
@@ -404,9 +350,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 3,
@@ -421,12 +365,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-05-17T12:45:47.633Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-06-07T13:22:25.854Z",
-    "updated_at": "2019-08-12T12:04:13.839Z",
     "identification": "hamk-metsatalous-partio-partiokouluttajakoulutus"
   },
   {
@@ -447,9 +387,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 1,
@@ -464,12 +402,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 1,
-      "fieldofstudy": 1,
-      "created_at": "2019-05-09T10:01:07.693Z",
-      "updated_at": "2019-08-13T07:52:10.026Z"
+      "fieldofstudy": 1
     },
-    "created_at": "2019-06-07T13:14:07.687Z",
-    "updated_at": "2019-08-13T07:52:10.030Z",
     "identification": "humak-yhteisopedagogi_amk-partio-kogi"
   },
   {
@@ -490,9 +424,7 @@
       "description_sv": "Kurssilla tutustutaan taimikonhoidon menetelmiin sekä työvälineiden turvalliseen käyttöön sekä teoriassa että käytännössä.\n\nOsaamistavoitteet:\nOsallistuja osaa hoitaa itsenäisesti eri puulajien taimikoita (taimikon varhaishoito, taimikonhoito, omavalvonta)\nOsaa ottaa käyttöön raivaussahan sekä osaa huoltaa sitä\nOsaa toimia turvallisesti taimikonhoitotyössä\nOsallistuja osaa käyttää ja huoltaa turvavarusteita\n",
       "nqf": 8,
       "credits": 2,
-      "organization": 3,
-      "created_at": "2019-06-27T13:13:57.180Z",
-      "updated_at": "2019-06-27T13:13:57.204Z"
+      "organization": 3
     },
     "academicdegree": {
       "id": 3,
@@ -507,12 +439,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-05-17T12:45:47.633Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-06-27T13:18:03.409Z",
-    "updated_at": "2019-10-11T05:44:20.494Z",
     "identification": "hamk-metsatalous-4h-taimikonhoito"
   },
   {
@@ -533,9 +461,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 4,
@@ -550,12 +476,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 8,
-      "created_at": "2019-06-07T13:26:10.856Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 8
     },
-    "created_at": "2019-06-07T13:27:22.594Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-sosionomi-partiojohtaja-peruskoulutus"
   },
   {
@@ -576,9 +498,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 20,
@@ -593,12 +513,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:07:29.102Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-10T13:54:21.277Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-rakennusmestari-sp-pjpk"
   },
   {
@@ -619,9 +535,7 @@
       "description_sv": "Gruppledarutbildningen riktar sig till explorerscouter (15-17 år) som vill börja leda en scoutgrupp eller som redan nu fungerar som patrulledare. Gruppledarutbildningen är en del av varje explorerscouts scoutstig och den ger dig färdigheter att fungera som ledare för en scoutgrupp.",
       "nqf": 8,
       "credits": 10,
-      "organization": 1,
-      "created_at": "2019-05-16T11:49:51.070Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 29,
@@ -636,12 +550,8 @@
       "credits": null,
       "nqf": 2,
       "school": 6,
-      "fieldofstudy": 15,
-      "created_at": "2019-10-31T14:30:12.575Z",
-      "updated_at": "2019-10-31T14:30:12.591Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-10-31T14:31:50.840Z",
-    "updated_at": "2019-10-31T14:31:50.857Z",
     "identification": "pihtiputaanlukio-partiolinja-partio-rok"
   },
   {
@@ -662,9 +572,7 @@
       "description_sv": "Gruppledarutbildningen riktar sig till explorerscouter (15-17 år) som vill börja leda en scoutgrupp eller som redan nu fungerar som patrulledare. Gruppledarutbildningen är en del av varje explorerscouts scoutstig och den ger dig färdigheter att fungera som ledare för en scoutgrupp.",
       "nqf": 8,
       "credits": 10,
-      "organization": 1,
-      "created_at": "2019-05-16T11:49:51.070Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 10,
@@ -679,12 +587,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-04T12:53:55.388Z",
-      "updated_at": "2019-11-13T13:37:59.115Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-04T12:55:43.818Z",
-    "updated_at": "2019-11-13T13:37:59.118Z",
     "identification": "seurakuntaopisto-sote-partio-rok"
   },
   {
@@ -705,9 +609,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 12,
@@ -722,12 +624,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-09T06:56:00.288Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-10T13:08:11.697Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-ymparistosuunnittelija-sp-pjpk"
   },
   {
@@ -748,9 +646,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 6,
@@ -765,12 +661,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T13:36:10.205Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-06-07T13:37:18.122Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-liiketalous-sp-partiojohtaja-peruskoulutus"
   },
   {
@@ -791,9 +683,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 13,
@@ -808,12 +698,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:17:16.927Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-10T13:14:32.902Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-konetekniikka-sp-pjpk"
   },
   {
@@ -834,9 +720,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 11,
@@ -851,12 +735,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-08T08:20:10.929Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-10T12:50:44.370Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-hevostalous-sp-pjpk"
   },
   {
@@ -877,9 +757,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 8,
@@ -894,12 +772,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:58:21.940Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-10T12:49:53.514Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-biotalous-sp-pjpk"
   },
   {
@@ -920,9 +794,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 3,
@@ -937,12 +809,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-05-17T12:45:47.633Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-09T10:17:24.244Z",
-    "updated_at": "2019-08-12T12:04:13.839Z",
     "identification": "partio-kogi-hamk-metsatalous"
   },
   {
@@ -963,9 +831,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 29,
@@ -980,12 +846,8 @@
       "credits": null,
       "nqf": 2,
       "school": 6,
-      "fieldofstudy": 15,
-      "created_at": "2019-10-31T14:30:12.575Z",
-      "updated_at": "2019-10-31T14:30:12.591Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-10-31T14:33:23.671Z",
-    "updated_at": "2019-10-31T14:33:23.681Z",
     "identification": "pihtiputaanlukio-partiolinja-partio-pjpk"
   },
   {
@@ -1006,9 +868,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 16,
@@ -1023,12 +883,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 9,
-      "created_at": "2019-07-10T08:41:03.994Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 9
     },
-    "created_at": "2019-07-10T13:37:45.052Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-muotoilu-sp-pjpk"
   },
   {
@@ -1049,9 +905,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 17,
@@ -1066,12 +920,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:44:59.906Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-10T13:38:32.938Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-puutarhatalous-sp-pjpk"
   },
   {
@@ -1092,9 +942,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 18,
@@ -1109,12 +957,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:52:38.416Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-10T13:39:53.862Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-rakennettuymparisto-sp-pjpk"
   },
   {
@@ -1135,9 +979,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 19,
@@ -1152,12 +994,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T10:48:29.969Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-10T13:51:19.992Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-rakennusjayhdyskuntatekniikka-sp-pjpk"
   },
   {
@@ -1178,9 +1016,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 21,
@@ -1195,12 +1031,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-10T12:24:05.232Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-10T13:57:16.142Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-sairaanhoitaja-sp-pjpk"
   },
   {
@@ -1221,9 +1053,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 24,
@@ -1238,12 +1068,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-07-10T12:48:02.720Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-07-10T13:59:23.427Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-tietojenkäsittely-sp-pjpk"
   },
   {
@@ -1264,9 +1090,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 15,
@@ -1281,12 +1105,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:33:51.486Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-10T13:33:06.207Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-agrologi-sp-pjpk"
   },
   {
@@ -1307,9 +1127,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 7,
@@ -1324,12 +1142,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:54:42.200Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-11T06:49:00.989Z",
-    "updated_at": "2019-07-11T06:49:01.001Z",
     "identification": "hamk-bio-ja-elintarviketekniikka-partio-valmentajakoulutus"
   },
   {
@@ -1350,9 +1164,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 8,
@@ -1367,12 +1179,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:58:21.940Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-11T06:50:04.099Z",
-    "updated_at": "2019-07-11T06:50:04.109Z",
     "identification": "hamk-biotalous-partio-valmentajakoulutus"
   },
   {
@@ -1393,9 +1201,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 9,
@@ -1410,12 +1216,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T14:08:48.722Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-07-11T06:51:13.647Z",
-    "updated_at": "2019-07-11T06:51:13.656Z",
     "identification": "hamk-hevosala-partio-valmentajakoulutus"
   },
   {
@@ -1436,9 +1238,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 11,
@@ -1453,12 +1253,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-08T08:20:10.929Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-11T06:51:58.124Z",
-    "updated_at": "2019-07-11T06:51:58.140Z",
     "identification": "hamk-hevostalous-partio-valmentajakoulutus"
   },
   {
@@ -1479,9 +1275,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 12,
@@ -1496,12 +1290,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-09T06:56:00.288Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-11T06:54:30.532Z",
-    "updated_at": "2019-07-11T06:54:30.542Z",
     "identification": "hamk-ymparistosuunnittelija-partio-valmentajakoulutus"
   },
   {
@@ -1522,9 +1312,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 13,
@@ -1539,12 +1327,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:17:16.927Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-11T06:58:30.868Z",
-    "updated_at": "2019-07-11T06:58:30.877Z",
     "identification": "hamk-konetekniikka-partio-valmentajakoulutus"
   },
   {
@@ -1565,9 +1349,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 23,
@@ -1582,12 +1364,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-10T12:44:44.379Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-10T13:58:15.826Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-terveydenhoitaja-sp-pjpk"
   },
   {
@@ -1608,9 +1386,7 @@
       "description_sv": "Osaamismerkin saaja on osallistunut vapaaehtoistyöntekijänä tapahtuman tekemiseen omaa osaamistaan kehittäen. Tätä merkkiä voivat hakea kaikki ne, jotka eivät ennen leiriä tehneet vielä mitään pestiä, mutta käärivät hihansa leirin alettua. Myös samoajat (15-17-vuotiaat partiolaiset), jotka tekevät leirillä pestiä vain osan aikaa, voivat hakea tätä merkkiä.\n\nMerkin saaja:\n\n- osaa toimia vapaaehtoistyöntekijänä tapahtumassa.\n- osaa kertoa tehtävässä oppimaansa työelämän ymmärtämällä kielellä.\n- osaa vastaanottaa palautetta ja kehittää edelleen omaa osaamistaan palautteen perusteella.",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T08:59:25.385Z",
-      "updated_at": "2019-10-31T10:35:56.168Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 29,
@@ -1625,12 +1401,8 @@
       "credits": null,
       "nqf": 2,
       "school": 6,
-      "fieldofstudy": 15,
-      "created_at": "2019-10-31T14:30:12.575Z",
-      "updated_at": "2019-10-31T14:30:12.591Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-10-31T14:34:46.447Z",
-    "updated_at": "2019-10-31T14:34:46.456Z",
     "identification": "pihtiputaanlukio-partiolinja-partio-vtmerkki"
   },
   {
@@ -1651,9 +1423,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 14,
@@ -1668,12 +1438,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:23:26.283Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-11T07:01:09.535Z",
-    "updated_at": "2019-07-11T07:01:09.545Z",
     "identification": "hamk-liikenneala-partio-valmentajakoulutus"
   },
   {
@@ -1694,9 +1460,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 6,
@@ -1711,12 +1475,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T13:36:10.205Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-07-11T07:17:30.820Z",
-    "updated_at": "2019-07-11T07:17:30.830Z",
     "identification": "hamk-liiketalous-partio-valmentajakoulutus"
   },
   {
@@ -1737,9 +1497,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 15,
@@ -1754,12 +1512,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:33:51.486Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-11T07:19:03.670Z",
-    "updated_at": "2019-07-11T07:19:03.680Z",
     "identification": "hamk-agrologi-partio-valmentajakoulutus"
   },
   {
@@ -1780,9 +1534,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 16,
@@ -1797,12 +1549,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 9,
-      "created_at": "2019-07-10T08:41:03.994Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 9
     },
-    "created_at": "2019-07-11T07:30:09.173Z",
-    "updated_at": "2019-07-11T07:30:09.184Z",
     "identification": "hamk-muotoilu-partio-valmentajakoulutus"
   },
   {
@@ -1823,9 +1571,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 17,
@@ -1840,12 +1586,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:44:59.906Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-11T07:33:11.216Z",
-    "updated_at": "2019-07-11T07:33:11.226Z",
     "identification": "hamk-puutarhatalous-partio-valmentajakoulutus"
   },
   {
@@ -1866,9 +1608,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 18,
@@ -1883,12 +1623,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:52:38.416Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-11T07:34:54.484Z",
-    "updated_at": "2019-07-11T07:34:54.496Z",
     "identification": "hamk-rakennettuymparisto-partio-valmentajakoulutus"
   },
   {
@@ -1909,9 +1645,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 19,
@@ -1926,12 +1660,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T10:48:29.969Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-11T07:55:03.204Z",
-    "updated_at": "2019-07-11T07:55:03.213Z",
     "identification": "hamk-rakennusjayhdyskuntatekniikka-partio-valmentajakoulutus"
   },
   {
@@ -1952,9 +1682,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 20,
@@ -1969,12 +1697,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:07:29.102Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-11T08:10:50.075Z",
-    "updated_at": "2019-07-11T08:10:50.085Z",
     "identification": "hamk-rakennusmestari-partio-valmentajakoulutus"
   },
   {
@@ -1995,9 +1719,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 21,
@@ -2012,12 +1734,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-10T12:24:05.232Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-11T08:11:59.771Z",
-    "updated_at": "2019-07-11T08:11:59.785Z",
     "identification": "hamk-sairaanhoitaja-partio-valmentajakoulutus"
   },
   {
@@ -2038,9 +1756,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 4,
@@ -2055,12 +1771,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 8,
-      "created_at": "2019-06-07T13:26:10.856Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 8
     },
-    "created_at": "2019-07-11T08:13:31.405Z",
-    "updated_at": "2019-07-11T08:13:31.414Z",
     "identification": "hamk-sosionomi-partio-valmentajakoulutus"
   },
   {
@@ -2081,9 +1793,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 22,
@@ -2098,12 +1808,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:43:05.143Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-11T08:14:55.763Z",
-    "updated_at": "2019-07-11T08:14:55.773Z",
     "identification": "hamk-sähköjaautomaatiotekniikka-partio-valmentajakoulutus"
   },
   {
@@ -2124,9 +1830,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 23,
@@ -2141,12 +1845,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-10T12:44:44.379Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-11T08:18:52.055Z",
-    "updated_at": "2019-07-11T08:18:52.066Z",
     "identification": "hamk-terveydenhoitaja-partio-valmentajakoulutus"
   },
   {
@@ -2167,9 +1867,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 5,
@@ -2184,12 +1882,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-06-07T13:32:28.317Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-07-11T08:27:26.442Z",
-    "updated_at": "2019-07-11T08:27:26.453Z",
     "identification": "hamk-tietojaviestintätekniikka-partio-valmentajakoulutus"
   },
   {
@@ -2210,9 +1904,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 24,
@@ -2227,12 +1919,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-07-10T12:48:02.720Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-07-11T08:28:23.579Z",
-    "updated_at": "2019-07-11T08:28:23.590Z",
     "identification": "hamk-tietojenkäsittely-partio-valmentajakoulutus"
   },
   {
@@ -2253,9 +1941,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 7,
@@ -2270,12 +1956,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:54:42.200Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-11T12:40:18.312Z",
-    "updated_at": "2019-07-11T12:40:18.321Z",
     "identification": "hamk-bio-ja-elintarviketekniikka-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2296,9 +1978,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 8,
@@ -2313,12 +1993,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:58:21.940Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-11T12:41:08.490Z",
-    "updated_at": "2019-07-11T12:41:08.499Z",
     "identification": "hamk-biotalous-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2339,9 +2015,7 @@
       "description_sv": "Osaamismerkin saaja on toiminut vapaaehtoistyöntekijänä vastuullisessa ja pitkäkestoisessa johtamis- tai asiantuntijatehtävässä osaamistaan kehittäen. Partiossa tällaisia tehtäviä ovat päällikö- ja mestaritasoiset pestit piirileireillä ja sitä suuremmilla leireillä. \n\nMerkin saaja:\n- on sitoutuneesti toiminut vapaaehtoistyöntekijänä pitkäkestoisessa työtehtävässä.\n- osaa kantaa taloudellista tai toiminnallista vastuuta.\n- osaa tuloksekkaasti johtaa yhtä tai useampaa henkilöä tai osaa tuloksekkaasti kehittää ja jakaa asiantuntemustaan.\n- osaa arvioida omaa toimintaansa ja kehittymistään sekä osaa sanoittaa työtehtävässään vahvistuneen osaamisensa työelämän ymmärtämällä kielellä.\n- osaa vastaanottaa palautetta sekä arvioida ja kehittää toimintaa palautteen perusteella.\n- osaa viestiä vuorovaikutteisesti eri ympäristöissä ja erilaisissa kanavissa.",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T10:34:35.558Z",
-      "updated_at": "2019-10-31T10:34:35.571Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 29,
@@ -2356,12 +2030,8 @@
       "credits": null,
       "nqf": 2,
       "school": 6,
-      "fieldofstudy": 15,
-      "created_at": "2019-10-31T14:30:12.575Z",
-      "updated_at": "2019-10-31T14:30:12.591Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-10-31T14:36:01.460Z",
-    "updated_at": "2019-10-31T14:36:01.481Z",
     "identification": "pihtiputaanlukio-partiolinja-partio-ovmerkki"
   },
   {
@@ -2382,9 +2052,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 9,
@@ -2399,12 +2067,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T14:08:48.722Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-07-11T12:56:58.996Z",
-    "updated_at": "2019-07-11T12:56:59.006Z",
     "identification": "hamk-hevosala-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2425,9 +2089,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 12,
@@ -2442,12 +2104,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-09T06:56:00.288Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T08:05:01.830Z",
-    "updated_at": "2019-07-12T08:05:01.841Z",
     "identification": "hamk-ymparistosuunnittelija-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2468,9 +2126,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 13,
@@ -2485,12 +2141,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:17:16.927Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T08:06:01.487Z",
-    "updated_at": "2019-07-12T08:06:01.497Z",
     "identification": "hamk-konetekniikka-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2511,9 +2163,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 14,
@@ -2528,12 +2178,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:23:26.283Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T08:07:00.166Z",
-    "updated_at": "2019-07-12T08:07:00.174Z",
     "identification": "hamk-liikenneala-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2554,9 +2200,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 6,
@@ -2571,12 +2215,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T13:36:10.205Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-07-12T08:34:41.099Z",
-    "updated_at": "2019-07-12T08:34:41.108Z",
     "identification": "hamk-liiketalous-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2597,9 +2237,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 15,
@@ -2614,12 +2252,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:33:51.486Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T08:35:25.919Z",
-    "updated_at": "2019-07-12T08:35:25.931Z",
     "identification": "hamk-agrologi-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2640,9 +2274,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 16,
@@ -2657,12 +2289,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 9,
-      "created_at": "2019-07-10T08:41:03.994Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 9
     },
-    "created_at": "2019-07-12T08:36:27.650Z",
-    "updated_at": "2019-07-12T08:36:27.663Z",
     "identification": "hamk-muotoilu-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2683,9 +2311,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 17,
@@ -2700,12 +2326,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:44:59.906Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T08:41:04.022Z",
-    "updated_at": "2019-07-12T08:41:04.031Z",
     "identification": "hamk-puutarhatalous-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2726,9 +2348,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 18,
@@ -2743,12 +2363,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:52:38.416Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T08:41:57.384Z",
-    "updated_at": "2019-07-12T08:41:57.396Z",
     "identification": "hamk-rakennettuymparisto-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2769,9 +2385,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 19,
@@ -2786,12 +2400,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T10:48:29.969Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T08:43:30.926Z",
-    "updated_at": "2019-07-12T08:43:30.935Z",
     "identification": "hamk-rakennusjayhdyskuntatekniikka-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2812,9 +2422,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 20,
@@ -2829,12 +2437,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:07:29.102Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T08:48:27.517Z",
-    "updated_at": "2019-07-12T08:48:27.527Z",
     "identification": "hamk-rakennusmestari-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2855,9 +2459,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 21,
@@ -2872,12 +2474,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-10T12:24:05.232Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-12T08:49:13.334Z",
-    "updated_at": "2019-07-12T08:49:13.359Z",
     "identification": "hamk-sairaanhoitaja-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2898,9 +2496,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 4,
@@ -2915,12 +2511,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 8,
-      "created_at": "2019-06-07T13:26:10.856Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 8
     },
-    "created_at": "2019-07-12T08:50:03.003Z",
-    "updated_at": "2019-07-12T08:50:03.013Z",
     "identification": "hamk-sosionomi-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2941,9 +2533,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 22,
@@ -2958,12 +2548,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:43:05.143Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T08:55:02.331Z",
-    "updated_at": "2019-07-12T08:55:02.352Z",
     "identification": "hamk-sähköjaautomaatiotekniikka-partio-koulutusohjaajakoulutus"
   },
   {
@@ -2984,9 +2570,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 23,
@@ -3001,12 +2585,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-10T12:44:44.379Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-12T08:55:50.174Z",
-    "updated_at": "2019-07-12T08:55:50.183Z",
     "identification": "hamk-terveydenhoitaja-partio-koulutusohjaajakoulutus"
   },
   {
@@ -3027,9 +2607,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 5,
@@ -3044,12 +2622,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-06-07T13:32:28.317Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-07-12T08:56:39.733Z",
-    "updated_at": "2019-07-12T08:56:39.742Z",
     "identification": "hamk-tietojaviestintatekniikka-partio-koulutusohjaajakoulutus"
   },
   {
@@ -3070,9 +2644,7 @@
       "description_sv": "Merkin saaja osaa ohjata leirillä sekä ymmärtää järjestön kasvatustavoitteet huomioivia ohjaustapoja leiriolosuhteissa.\n\nMerkin saaja:\n\n•\ton toiminut leiri- tai retkiolosuhteissa ohjaajan tehtävissä ja ymmärtää erilaisia ohjausmenetelmiä. (Leiri on kolme yötä tai pidempään kestävä yhtäjaksoinen tapahtuma)\n•\tkykenee pitämään yllä oman toimintakykynsä koko tehtävän ajan.\n•\tosaa toimia tavoitteellisesti ja suunnitelmallisesti. Tunnistaa roolinsa ohjaajana.\n",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T14:39:09.163Z",
-      "updated_at": "2019-10-31T14:39:09.176Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 29,
@@ -3087,12 +2659,8 @@
       "credits": null,
       "nqf": 2,
       "school": 6,
-      "fieldofstudy": 15,
-      "created_at": "2019-10-31T14:30:12.575Z",
-      "updated_at": "2019-10-31T14:30:12.591Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-10-31T14:40:26.365Z",
-    "updated_at": "2019-10-31T14:40:26.374Z",
     "identification": "pihtiputaanlukio-partiolinja-partio-olmerkki"
   },
   {
@@ -3113,9 +2681,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 24,
@@ -3130,12 +2696,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-07-10T12:48:02.720Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-07-12T08:57:27.375Z",
-    "updated_at": "2019-07-12T08:57:27.383Z",
     "identification": "hamk-tietojenkäsittely-partio-koulutusohjaajakoulutus"
   },
   {
@@ -3156,9 +2718,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 11,
@@ -3173,12 +2733,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-08T08:20:10.929Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T09:00:42.018Z",
-    "updated_at": "2019-07-12T09:00:42.028Z",
     "identification": "hamk-hevostalous-partio-koulutusohjaajakoulutus"
   },
   {
@@ -3199,9 +2755,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 9,
@@ -3216,12 +2770,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T14:08:48.722Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-07-12T14:04:00.387Z",
-    "updated_at": "2019-07-12T14:04:00.397Z",
     "identification": "hamk-hevosala-partio-partiokouluttajakoulutus"
   },
   {
@@ -3242,9 +2792,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 8,
@@ -3259,12 +2807,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:58:21.940Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T14:02:26.759Z",
-    "updated_at": "2019-07-12T14:02:26.768Z",
     "identification": "hamk-biotalous-partio-partiokouluttajakoulutus"
   },
   {
@@ -3285,9 +2829,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 7,
@@ -3302,12 +2844,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:54:42.200Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T14:01:44.028Z",
-    "updated_at": "2019-07-12T14:02:54.872Z",
     "identification": "hamk-biojaelintarviketekniikka-partio-partiokouluttajakoulutus"
   },
   {
@@ -3328,9 +2866,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 11,
@@ -3345,12 +2881,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-08T08:20:10.929Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T14:05:18.022Z",
-    "updated_at": "2019-07-12T14:05:18.031Z",
     "identification": "hamk-hevostalous-partio-partiokouluttajakoulutus"
   },
   {
@@ -3371,9 +2903,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 12,
@@ -3388,12 +2918,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-09T06:56:00.288Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T14:06:08.449Z",
-    "updated_at": "2019-07-12T14:06:08.460Z",
     "identification": "hamk-ymparistosuunnittelija-partio-partiokouluttajakoulutus"
   },
   {
@@ -3414,9 +2940,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 13,
@@ -3431,12 +2955,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:17:16.927Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T14:09:12.234Z",
-    "updated_at": "2019-07-12T14:09:12.246Z",
     "identification": "hamk-konetekniikka-partio-partiokouluttajakoulutus"
   },
   {
@@ -3457,9 +2977,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 14,
@@ -3474,12 +2992,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:23:26.283Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T14:09:54.839Z",
-    "updated_at": "2019-07-12T14:09:54.857Z",
     "identification": "hamk-liikenneala-partio-partiokouluttajakoulutus"
   },
   {
@@ -3500,9 +3014,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 6,
@@ -3517,12 +3029,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T13:36:10.205Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-07-12T14:10:43.941Z",
-    "updated_at": "2019-07-12T14:10:43.951Z",
     "identification": "hamk-liiketalous-partio-partiokouluttajakoulutus"
   },
   {
@@ -3543,9 +3051,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 15,
@@ -3560,12 +3066,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:33:51.486Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T14:11:51.464Z",
-    "updated_at": "2019-07-12T14:11:51.473Z",
     "identification": "hamk-agrologi-partio-partiokouluttajakoulutus"
   },
   {
@@ -3586,9 +3088,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 16,
@@ -3603,12 +3103,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 9,
-      "created_at": "2019-07-10T08:41:03.994Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 9
     },
-    "created_at": "2019-07-12T14:14:12.018Z",
-    "updated_at": "2019-07-12T14:14:12.028Z",
     "identification": "hamk-muotoilu-partio-partiokouluttajakoulutus"
   },
   {
@@ -3629,9 +3125,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 17,
@@ -3646,12 +3140,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:44:59.906Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T14:15:50.724Z",
-    "updated_at": "2019-07-12T14:15:50.740Z",
     "identification": "hamk-puutarhatalous-partio-partiokouluttajakoulutus"
   },
   {
@@ -3672,9 +3162,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 18,
@@ -3689,12 +3177,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:52:38.416Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T14:16:57.424Z",
-    "updated_at": "2019-07-12T14:16:57.433Z",
     "identification": "hamk-rakennettuymparisto-partio-partiokouluttajakoulutus"
   },
   {
@@ -3715,9 +3199,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 19,
@@ -3732,12 +3214,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T10:48:29.969Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T14:18:40.828Z",
-    "updated_at": "2019-07-12T14:18:40.847Z",
     "identification": "hamk-rakennusjayhdyskuntatekniikka-partio-partiokouluttajakoulutus"
   },
   {
@@ -3758,9 +3236,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 20,
@@ -3775,12 +3251,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:07:29.102Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T14:19:33.541Z",
-    "updated_at": "2019-07-12T14:19:33.559Z",
     "identification": "hamk-rakennusmestari-partio-partiokouluttajakoulutus"
   },
   {
@@ -3801,9 +3273,7 @@
       "description_sv": "Merkin saaja osaa johtaa useamman ihmisen muodostamaa ryhmää ja toimintaa suunnitelmallisesti sekä vastaanotetun toimeksiannon mukaisesti leiri- tai retkiolosuhteissa.\n\nMerkin saaja:\n•\tOn toiminut leiri- tai retkiolosuhteissa ryhmän johtajana. (Leiri on kolme yötä tai pidempään kestävä yhtäjaksoinen tapahtuma)\n•\tOsaa johtaa ihmisiä vuorovaikutuksellisesti, kannustavasti ja vastuuta jakaen.\n•\tSaa ihmiset toimimaan tavoitteiden mukaisesti.\n•\tOsaa toimia toimeksiannon tavoitteiden mukaisesti ja viedä prosessin loppuun saakka.\n•\tOsaa toimia projektiorganisaatiossa sekä suunnitella, toteuttaa ja arvioida projekteja tehtävän vaatimalla tasolla.\n•\tKykenee pitämään yllä oman toimintakykynsä koko projektin ajan.\n•\tOsaa toimia johtajana kansainvälisessä yhteisössä. (jos kyseessä kansainvälinen leiri)",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T14:43:01.996Z",
-      "updated_at": "2019-10-31T14:43:02.011Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 29,
@@ -3818,12 +3288,8 @@
       "credits": null,
       "nqf": 2,
       "school": 6,
-      "fieldofstudy": 15,
-      "created_at": "2019-10-31T14:30:12.575Z",
-      "updated_at": "2019-10-31T14:30:12.591Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-10-31T14:43:57.634Z",
-    "updated_at": "2019-10-31T14:43:57.645Z",
     "identification": "pihtiputaanlukio-partiolinja-partio-rlmerkki"
   },
   {
@@ -3844,9 +3310,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 4,
@@ -3861,12 +3325,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 8,
-      "created_at": "2019-06-07T13:26:10.856Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 8
     },
-    "created_at": "2019-07-12T14:20:41.781Z",
-    "updated_at": "2019-07-12T14:20:41.801Z",
     "identification": "hamk-sosionomi-partio-partiokouluttajakoulutus"
   },
   {
@@ -3887,9 +3347,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 22,
@@ -3904,12 +3362,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:43:05.143Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-12T14:25:32.711Z",
-    "updated_at": "2019-07-12T14:25:32.722Z",
     "identification": "hamk-sähköjaautomaatiotekniikka-partio-partiokouluttajakoulutus"
   },
   {
@@ -3930,9 +3384,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 23,
@@ -3947,12 +3399,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-10T12:44:44.379Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-12T14:26:23.644Z",
-    "updated_at": "2019-07-12T14:26:23.654Z",
     "identification": "hamk-terveydenhoitaja-partio-partiokouluttajakoulutus"
   },
   {
@@ -3973,9 +3421,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 5,
@@ -3990,12 +3436,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-06-07T13:32:28.317Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-07-12T14:27:19.244Z",
-    "updated_at": "2019-07-12T14:27:19.254Z",
     "identification": "hamk-tietojaviestintatekniikka-partio-partiokouluttajakoulutus"
   },
   {
@@ -4016,9 +3458,7 @@
       "description_sv": "Koulutus antaa valmiuksia partiomaisen koulutuksen suunnitteluun, toteutukseen ja arviointiin, sekä antaa eväitä kouluttajana toimimiseen lippukunnassa, piirissä, keskusjärjestössä tai partion ulkopuolella. Koulutuksessa tutustutaan partiotoiminnalle tyypillisiin oppimiskäsityksiin, erilaisiin koulutusmenetelmiin ja oppimistyyleihin.\n\nPartiokouluttaja -koulutuksen suoritettuaan partiojohtaja osaa perustaidot ja -tiedot koulutussuunnittelusta, kouluttamisesta ja koulutustapahtuman järjestämisestä. Koulutus antaa kattavan pohjan kaikelle partiossa tapahtuvalle koulutustoiminnalle mukaan lukien taitokoulutukset.",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-06-07T12:13:11.670Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 24,
@@ -4033,12 +3473,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-07-10T12:48:02.720Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-07-12T14:28:11.029Z",
-    "updated_at": "2019-07-12T14:28:11.040Z",
     "identification": "hamk-tietojenkäsittely-partio-partiokouluttajakoulutus"
   },
   {
@@ -4059,9 +3495,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 14,
@@ -4076,12 +3510,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:23:26.283Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-15T14:11:20.771Z",
-    "updated_at": "2019-07-15T14:11:20.782Z",
     "identification": "hamk-liikenneala-partio-kogi"
   },
   {
@@ -4102,9 +3532,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 6,
@@ -4119,12 +3547,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T13:36:10.205Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-07-15T14:12:10.786Z",
-    "updated_at": "2019-07-15T14:12:10.796Z",
     "identification": "hamk-liiketalous-partio-kogi"
   },
   {
@@ -4145,9 +3569,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 15,
@@ -4162,12 +3584,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:33:51.486Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-15T14:12:50.382Z",
-    "updated_at": "2019-07-15T14:12:50.390Z",
     "identification": "hamk-agrologi-partio-kogi"
   },
   {
@@ -4188,9 +3606,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 16,
@@ -4205,12 +3621,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 9,
-      "created_at": "2019-07-10T08:41:03.994Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 9
     },
-    "created_at": "2019-07-15T14:13:37.692Z",
-    "updated_at": "2019-07-15T14:13:37.712Z",
     "identification": "hamk-muotoilu-partio-kogi"
   },
   {
@@ -4231,9 +3643,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 7,
@@ -4248,12 +3658,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:54:42.200Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-15T13:06:24.935Z",
-    "updated_at": "2019-07-15T13:06:24.946Z",
     "identification": "hamk-biojaelintarviketekniikka-partio-kogi"
   },
   {
@@ -4274,9 +3680,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 8,
@@ -4291,12 +3695,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:58:21.940Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-15T13:35:47.215Z",
-    "updated_at": "2019-07-15T13:35:47.224Z",
     "identification": "hamk-biotalous-partio-kogi"
   },
   {
@@ -4317,9 +3717,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 9,
@@ -4334,12 +3732,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T14:08:48.722Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-07-15T13:36:30.318Z",
-    "updated_at": "2019-07-15T13:36:30.333Z",
     "identification": "hamk-hevosala-partio-kogi"
   },
   {
@@ -4360,9 +3754,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 11,
@@ -4377,12 +3769,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-08T08:20:10.929Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-15T13:37:07.311Z",
-    "updated_at": "2019-07-15T13:37:07.320Z",
     "identification": "hamk-hevostalous-partio-kogi"
   },
   {
@@ -4403,9 +3791,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 12,
@@ -4420,12 +3806,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-09T06:56:00.288Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-15T14:08:18.969Z",
-    "updated_at": "2019-07-15T14:08:18.979Z",
     "identification": "hamk-ymparistosuunnittelija-partio-kogi"
   },
   {
@@ -4446,9 +3828,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 13,
@@ -4463,12 +3843,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:17:16.927Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-15T14:09:52.401Z",
-    "updated_at": "2019-07-15T14:09:52.410Z",
     "identification": "hamk-konetekniikka-partio-kogi"
   },
   {
@@ -4489,9 +3865,7 @@
       "description_sv": "Opiskelija osaa käyttää ääntään ja kehoaan taiteellisen ilmaisun välineenä. Opiskelija osaa kehitellä tarinoita ja hahmottaa näyttämötilanteita eläytymiskykyään ja mielikuvitustaan hyödyntäen. Opiskelija osaa havainnoida ja  soveltaa luonteenomaisia piirteitä ihmisten ilmaisukielestä. Opiskelija osaa kohdata  katsottavana olemisen haasteen. Opiskelija tutustuu omaan kehoonsa ja persoonaansa teatteritaiteen ilmaisun välineenä. https://www.rnt.fi/oppilaille/ ",
       "nqf": 2,
       "credits": 4,
-      "organization": 5,
-      "created_at": "2019-10-25T12:46:48.393Z",
-      "updated_at": "2019-10-31T12:20:36.045Z"
+      "organization": 5
     },
     "academicdegree": {
       "id": 25,
@@ -4506,12 +3880,8 @@
       "credits": null,
       "nqf": 2,
       "school": 4,
-      "fieldofstudy": 15,
-      "created_at": "2019-10-25T12:50:04.276Z",
-      "updated_at": "2019-10-28T11:36:47.852Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-10-31T08:12:21.554Z",
-    "updated_at": "2019-10-31T12:20:36.048Z",
     "identification": "riihimäenlukio-lukio-rnt-1"
   },
   {
@@ -4532,9 +3902,7 @@
       "description_sv": "Erfarenhetsmärket beviljas åt personer som har erfarenhet av internationell verksamhet. Dessa personer kan nätverka internationellt och kommunicera med människor från olika kulturer. De är intresserade av olika kulturer och den globala miljön. De vill främja vänskap över gränser.\n\nDen som beviljas märket\n\n- har deltagit i internationell verksamhet och delat med sig av sina erfarenheter på ett sätt som samtidigt främjar internationalism på hemmaplan.\n- har lärt sig nytt om kulturell mångfald.\n- kan föra dialog med människor från olika kulturer.\n- kan skapa internationella nätverk och upprätthålla dem",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T14:47:52.595Z",
-      "updated_at": "2019-10-31T14:47:52.611Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 29,
@@ -4549,12 +3917,8 @@
       "credits": null,
       "nqf": 2,
       "school": 6,
-      "fieldofstudy": 15,
-      "created_at": "2019-10-31T14:30:12.575Z",
-      "updated_at": "2019-10-31T14:30:12.591Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-10-31T14:49:08.833Z",
-    "updated_at": "2019-10-31T14:49:08.843Z",
     "identification": "pihtiputaanlukio-partiolinja-partio-ieb"
   },
   {
@@ -4575,9 +3939,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 17,
@@ -4592,12 +3954,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:44:59.906Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-15T14:14:47.575Z",
-    "updated_at": "2019-07-15T14:14:47.584Z",
     "identification": "hamk-puutarhatalous-partio-kogi"
   },
   {
@@ -4618,9 +3976,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 18,
@@ -4635,12 +3991,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-07-10T08:52:38.416Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-15T14:15:32.926Z",
-    "updated_at": "2019-07-15T14:15:32.936Z",
     "identification": "hamk-rakennettuymparisto-partio-kogi"
   },
   {
@@ -4661,9 +4013,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 19,
@@ -4678,12 +4028,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T10:48:29.969Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-15T14:17:20.777Z",
-    "updated_at": "2019-07-15T14:17:20.786Z",
     "identification": "hamk-rakennusjayhdyskuntatekniikka-partio-kogi"
   },
   {
@@ -4704,9 +4050,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 20,
@@ -4721,12 +4065,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:07:29.102Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-15T14:22:24.091Z",
-    "updated_at": "2019-07-15T14:22:24.101Z",
     "identification": "hamk-rakennusmestari-partio-kogi"
   },
   {
@@ -4747,9 +4087,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 21,
@@ -4764,12 +4102,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-10T12:24:05.232Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-15T14:23:59.873Z",
-    "updated_at": "2019-07-15T14:23:59.883Z",
     "identification": "hamk-sairaanhoitaja-partio-kogi"
   },
   {
@@ -4790,9 +4124,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 4,
@@ -4807,12 +4139,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 8,
-      "created_at": "2019-06-07T13:26:10.856Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 8
     },
-    "created_at": "2019-07-15T14:24:58.486Z",
-    "updated_at": "2019-07-15T14:24:58.494Z",
     "identification": "hamk-sosionomi-partio-kogi"
   },
   {
@@ -4833,9 +4161,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 22,
@@ -4850,12 +4176,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:43:05.143Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-15T14:35:32.264Z",
-    "updated_at": "2019-07-15T14:35:32.275Z",
     "identification": "hamk-sähköjaautomaatiotekniikka-partio-kogi"
   },
   {
@@ -4876,9 +4198,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 23,
@@ -4893,12 +4213,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-10T12:44:44.379Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-07-15T14:36:15.254Z",
-    "updated_at": "2019-07-15T14:36:15.265Z",
     "identification": "hamk-terveydenhoitaja-partio-kogi"
   },
   {
@@ -4919,9 +4235,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 5,
@@ -4936,12 +4250,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-06-07T13:32:28.317Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-07-15T14:36:53.129Z",
-    "updated_at": "2019-07-15T14:36:53.140Z",
     "identification": "hamk-tietojaviestintätekniikka-partio-kogi"
   },
   {
@@ -4962,9 +4272,7 @@
       "description_sv": "Scoutledarfortsättningsutbildningen är en del av Suomen Partiolaiset - Finlands Scouter rf:s ledarskapsutbildning. Utbildningen består vanligtvis av natur-, seminarie- och verksamhetsdelar. Naturdelen tillbringar man traditionellt på läger tillsammans med nya scoutbekantskaper som samlats från flera olika orter i Finland. Både natur- och seminariedelen innehåller mångsidig, högklassig utbildning och ger stöd till verksamhetsdelen. Verksamhetsdelen innehåller en utvecklingsuppgift i form av ett projekt som genomförs under 6-12 månader, reflektionsuppgifter samt en fördjupad inlärningsuppgift baserad på ett ämne som deltagaren själv valt. Under utbildningen har deltagaren handledningssamtal med sin egen handledare och en individuell utvecklingsplan görs åt deltagaren. I utvecklingsprojektet får deltagaren stöd av sin handledare och utbildarna.\n",
       "nqf": 3,
       "credits": 25,
-      "organization": 1,
-      "created_at": "2019-06-07T12:44:30.740Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 24,
@@ -4979,12 +4287,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-07-10T12:48:02.720Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-07-15T14:37:36.371Z",
-    "updated_at": "2019-07-15T14:37:36.380Z",
     "identification": "hamk-tietojenkäsittely-partio-kogi"
   },
   {
@@ -5005,9 +4309,7 @@
       "description_sv": "Koulutus on suunnattu partion koulutustoiminnan asiantuntijoille. Se antaa kattavat valmiudet toimia koulutusohjaajana partiopiirissä tai muussa koulutustoiminnan keskeisessä tehtävässä. Koulutuksen käytyään kouluttautuja osaa suunnitella ja toteuttaa erilaisia koulutuskokonaisuuksia monipuolisesti sekä arvioida ja kehittää koulutustoimintaa. Hän osaa myös tukea partiokouluttajia ja pestausvalmentajia tehtävässään sekä ohjata Ko-Gi -suorituksia. Koulutus koostuu lähijaksoista sekä erilaisista oppimistehtävistä ja pestissä oppimisesta.",
       "nqf": 3,
       "credits": 3,
-      "organization": 1,
-      "created_at": "2019-06-07T11:41:01.064Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 3,
@@ -5022,12 +4324,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-05-17T12:45:47.633Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-09T10:18:54.786Z",
-    "updated_at": "2019-08-12T12:04:13.839Z",
     "identification": "partio-ko-hamk-metsatalous"
   },
   {
@@ -5048,9 +4346,7 @@
       "description_sv": "Coachutbildningen riktar sig till kår-, program- och uppdragscoacher samt till andra vuxna som arbetar med kårstöd. Förhandskrav till utbildningen är att man ska ha gått grundutbildning för scoutledare och chefsutbildning. TG-utbildning rekommenderas men är inte ett krav. Utbildningen ger färdighet att fungera som kår-, program- eller uppdragscoach och i andra uppdrag som hör till kårstödet. Efter avklarad utbildning kan deltagaren coacha ledarna i kåren, stöda kårens verksamhet och hen känner till aktuella frågor inom scoutingen som hen kan ta med i sitt coachande. Utbildningen består av närundervisning och övningsuppgifter ",
       "nqf": 3,
       "credits": 2,
-      "organization": 1,
-      "created_at": "2019-05-09T09:58:26.655Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 3,
@@ -5065,12 +4361,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-05-17T12:45:47.633Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-09T10:20:26.404Z",
-    "updated_at": "2019-08-12T12:04:13.839Z",
     "identification": "partio-valmentaja-hamk-metsatalous"
   },
   {
@@ -5091,9 +4383,7 @@
       "description_sv": "Metsäosaajan merkki myönnetään henkilölle, joka hallitsee perustiedot metsästä ja metsäalasta. Merkkiä suositellaan 15-vuotiaasta ylöspäin. Osaamismerkki on kehitetty yhdessä Hämeen ammattikorkeakoulun kanssa.\n\nMerkin saaja:\n\nOsaa järjestää retken, toimia ohjaajana sekä markkinoida tapahtuman.\nOsaa hyödyntää luontoa omien kiinnostuksen kohteiden mukaisesti.\nOsaa havainnoida luonnossa liikkuessaan metsien erilaisia käyttömuotoja ja osaa kertoa niistä muille.\nOsaa liikkua maastossa karttojen avulla ja käyttää satelliittipaikannuslaitetta.\nTuntee suomalaisen luonnon ominaispiirteet ja osaa liikkua siellä havainnoiden ympäristöä.\nYmmärtää luonnon monimuotoisuuden merkityksen ja osaa toimia sen puolesta.\nTunnistaa luonnonsuojelualueiden ominaispiirteitä ja osallistuu niiden hoitoon ja käyttöön.\nTunnistaa keskeiset metsäkasvit, keskeiset puu- ja pensaslajit sekä erilaiset kasvupaikat.\nYmmärtää suomalaisen metsänhoidon käsitteet, toimintatavat ja pääpuulajit.\nTuntee ja osaa käyttää erilaisia työvälineitä metsän tutkimiseen ja arvioimiseen.\nOn tutustunut 3-5 erilaiseen metsäalan ammattiin.\nTietää, minkälaisia koulutusvaihtoehtoja metsäalan ammatteihin tarvitaan ja missä niitä voi opiskella.\nArviointi on tehty hakijan toimittamien dokumenttien ja itsearvioinnin pohjalta.",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-07-12T14:30:42.627Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 3,
@@ -5108,12 +4398,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 6,
-      "created_at": "2019-05-17T12:45:47.633Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 6
     },
-    "created_at": "2019-07-12T14:31:49.821Z",
-    "updated_at": "2019-08-12T12:04:13.839Z",
     "identification": "hamk-metsatalous-partio-metsaosaaja"
   },
   {
@@ -5134,9 +4420,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 5,
@@ -5151,12 +4435,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 11,
-      "created_at": "2019-06-07T13:32:28.317Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 11
     },
-    "created_at": "2019-06-07T13:33:24.627Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-tieto-ja-viestintätekniikka-sp-partiojohtaja-peruskoulutus"
   },
   {
@@ -5177,9 +4457,7 @@
       "description_sv": "Koulutus vahvistaa tietoja ja taitoja sekä valmiuksia arjen toimintoihin, kodin hoitamiseen ja omassa elämässä selviytymiseen. Koulutus vahvistaa kuluttaja- ja talousosaamista ja edistää hyvinvointia terveellisten ruokailutottumusten ja elämäntapojen avulla.\n\nOsaamistavoitteet:\n\nOsaa terveellisen ruokavalion perusteet.\nOsaa tavalliset ruokalajit ja ateriajärjestyksen sekä ruokarytmin.\nOsaa arvioida riittävän energian kulutuksen suhteessa päivittäiseen energiansaantiin.\nOsaa suunnitella ja valmistaa arkiruokaa.\nTuntee arkiruokailussa käyttötarkoitukseen sopivat välineet.\nTuntee yleisimmät raaka-aineet ja osaa valita sekä valmistaa niistä ruokaa.\nOsaa käsitellä, varastoida ja käyttää ruuanvalmistuksessa sesongin mukaisia raaka-aineita.\nOsaa suunnitella kodin ruokaostokset.\nOsaa tehdä taloudellisia ja ekologisia ruokavalintoja.\nOsaa varastoida, valmistaa ja säilöä ruokaa niin, ettei synny ruokahävikkiä.\nOsaa lajitella ruoanvalmistuksessa syntyviä jätteitä.\nOsaa vertailla tuotteiden hintoja.\nOsaa laskea kotona valmistetun ruoan hinnan.\nOsaa valita oikeat siivousaineet.\nOsaa säilyttää siivousaineita.\nOsaa valita sopivat siivousvälineet.\nTuntee ympäristömerkit ja osaa valita ympäristöystävällisiä siivousaineita.\nTuntee tekstiilien hoito-ohjemerkinnät ja osaa pestä vaatteita oikein.\nOsaa pohtia omaa suhdettaan rahaan, kulutukseen ja rahankäyttöön.\nOsaa suunnitella, seurata ja arvioida omaa taloutta.\nOsaa ennakoida, miten toimia, jos oma taloustilanne muuttuu ja tietää, mistä saa apua taloudellisiin vaikeuksiin.",
       "nqf": 8,
       "credits": 2,
-      "organization": 2,
-      "created_at": "2019-08-29T08:15:58.581Z",
-      "updated_at": "2019-08-29T08:15:58.604Z"
+      "organization": 2
     },
     "academicdegree": {
       "id": 31,
@@ -5194,12 +4472,8 @@
       "credits": 60,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 15,
-      "created_at": "2019-11-13T13:35:55.495Z",
-      "updated_at": "2019-11-13T13:39:24.133Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-11-14T06:38:38.165Z",
-    "updated_at": "2019-11-25T08:30:49.513Z",
     "identification": null
   },
   {
@@ -5220,9 +4494,7 @@
       "description_sv": "Opiskelija osaa kertoa  pääperiaatteita roolityöskentelyn perusteista ja klassikkoteksteistä. Opiskelija osaa valmistaa pareittain tai pienryhmissä kohtauksia valitsemistaan teksteistä julkisesti esitettäväksi.",
       "nqf": 2,
       "credits": 5,
-      "organization": 5,
-      "created_at": "2019-10-25T12:52:04.871Z",
-      "updated_at": "2019-10-31T12:18:23.193Z"
+      "organization": 5
     },
     "academicdegree": {
       "id": 25,
@@ -5237,12 +4509,8 @@
       "credits": null,
       "nqf": 2,
       "school": 4,
-      "fieldofstudy": 15,
-      "created_at": "2019-10-25T12:50:04.276Z",
-      "updated_at": "2019-10-28T11:36:47.852Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-10-31T08:34:32.186Z",
-    "updated_at": "2019-10-31T12:18:23.198Z",
     "identification": "riihimäenlukio-lukio-rnt-2"
   },
   {
@@ -5263,9 +4531,7 @@
       "description_sv": "Arkitreeni-koulutus on 10 osaamispistettä, sisältäen seuraavat koulutuksen osiot:\n\nRuoanvalmistus ja ravitsemus 5 osp\nPuhtaanapito ja tekstiilienhoito 2 osp\nKodin talous ja kuluttaja-asiat 2 osp\nHOPS 1 osp\n\nArkitreeni-koulutus antavat tietoja ja taitoja sekä valmiuksia arjen toimintoihin, kodin hoitamiseen ja omassa elämässä selviytymiseen. Koulutus vahvistaa kuluttaja- ja talousosaamista ja edistää hyvinvointia terveellisten ruokailutottumusten ja elämäntapojen avulla.\n\nOsaamistavoitteet:\n\nOsaa toimia yksilönä ja ryhmässä vastuullisesti, tasa-arvoa ja turvallisuutta edistävästi.\nOsaa toimia hyvien käytöstapojen mukaisesti ja käyttäytyä asiallisesti.\nOsaa suunnitella ajankäyttöään ja noudattaa sovittuja aikatauluja.\nOsaa hakeutua sosiaaliseen kanssakäymiseen muiden kanssa itselleen sopivalla tavalla ja ylläpitää sosiaalisia suhteita ja verkostoja.\nOsaa laatia itselleen terveellisiä elämäntapoja ja vapaa-aikaa koskeva suunnitelma oman hyvinvointinsa edistämiseksi ottaen huomioon voimavaransa ja tarpeensa.\nOsaa käyttää ja soveltaa kädentaitoja monipuolisesti arjen toiminnoissa.\nOsaa valita terveellistä ja taloudellista ruokaa kestävää toimintatapaa noudattaen.\nOsaa huoltaa vaatteensa hoito-ohjeiden mukaan.\nOsaa oman talouden suunnittelemiseen ja hoitamiseen.\nOsaa huolehtia henkilökohtaisesta hygieniasta.\nOsaa huolehtia asuinympäristön siisteydestä ja turvallisuudesta.",
       "nqf": 8,
       "credits": 10,
-      "organization": 2,
-      "created_at": "2019-08-29T08:04:46.869Z",
-      "updated_at": "2019-08-29T08:09:29.691Z"
+      "organization": 2
     },
     "academicdegree": {
       "id": 31,
@@ -5280,12 +4546,8 @@
       "credits": 60,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 15,
-      "created_at": "2019-11-13T13:35:55.495Z",
-      "updated_at": "2019-11-13T13:39:24.133Z"
+      "fieldofstudy": 15
     },
-    "created_at": "2019-11-14T06:37:30.611Z",
-    "updated_at": "2019-11-25T08:33:12.848Z",
     "identification": null
   },
   {
@@ -5306,9 +4568,7 @@
       "description_sv": "Osaamismerkin saaja on toiminut vapaaehtoistyöntekijänä vastuullisessa ja pitkäkestoisessa johtamis- tai asiantuntijatehtävässä osaamistaan kehittäen. Partiossa tällaisia tehtäviä ovat päällikö- ja mestaritasoiset pestit piirileireillä ja sitä suuremmilla leireillä. \n\nMerkin saaja:\n- on sitoutuneesti toiminut vapaaehtoistyöntekijänä pitkäkestoisessa työtehtävässä.\n- osaa kantaa taloudellista tai toiminnallista vastuuta.\n- osaa tuloksekkaasti johtaa yhtä tai useampaa henkilöä tai osaa tuloksekkaasti kehittää ja jakaa asiantuntemustaan.\n- osaa arvioida omaa toimintaansa ja kehittymistään sekä osaa sanoittaa työtehtävässään vahvistuneen osaamisensa työelämän ymmärtämällä kielellä.\n- osaa vastaanottaa palautetta sekä arvioida ja kehittää toimintaa palautteen perusteella.\n- osaa viestiä vuorovaikutteisesti eri ympäristöissä ja erilaisissa kanavissa.",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T10:34:35.558Z",
-      "updated_at": "2019-10-31T10:34:35.571Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 26,
@@ -5323,12 +4583,8 @@
       "credits": 10,
       "nqf": 2,
       "school": 5,
-      "fieldofstudy": 7,
-      "created_at": "2019-10-31T08:55:39.568Z",
-      "updated_at": "2019-10-31T08:55:39.588Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-10-31T14:57:07.212Z",
-    "updated_at": "2019-11-14T09:34:55.563Z",
     "identification": "careeria-rav-partio-ovmerkki"
   },
   {
@@ -5349,9 +4605,7 @@
       "description_sv": "Koulutus vahvistaa tietoja ja taitoja sekä valmiuksia arjen toimintoihin, kodin hoitamiseen ja omassa elämässä selviytymiseen. Koulutus vahvistaa kuluttaja- ja talousosaamista ja edistää hyvinvointia terveellisten ruokailutottumusten ja elämäntapojen avulla.\n\nOsaamistavoitteet:\n\nOsaa terveellisen ruokavalion perusteet.\nOsaa tavalliset ruokalajit ja ateriajärjestyksen sekä ruokarytmin.\nOsaa arvioida riittävän energian kulutuksen suhteessa päivittäiseen energiansaantiin.\nOsaa suunnitella ja valmistaa arkiruokaa.\nTuntee arkiruokailussa käyttötarkoitukseen sopivat välineet.\nTuntee yleisimmät raaka-aineet ja osaa valita sekä valmistaa niistä ruokaa.\nOsaa käsitellä, varastoida ja käyttää ruuanvalmistuksessa sesongin mukaisia raaka-aineita.\nOsaa suunnitella kodin ruokaostokset.\nOsaa tehdä taloudellisia ja ekologisia ruokavalintoja.\nOsaa varastoida, valmistaa ja säilöä ruokaa niin, ettei synny ruokahävikkiä.\nOsaa lajitella ruoanvalmistuksessa syntyviä jätteitä.\nOsaa vertailla tuotteiden hintoja.\nOsaa laskea kotona valmistetun ruoan hinnan.\nOsaa valita oikeat siivousaineet.\nOsaa säilyttää siivousaineita.\nOsaa valita sopivat siivousvälineet.\nTuntee ympäristömerkit ja osaa valita ympäristöystävällisiä siivousaineita.\nTuntee tekstiilien hoito-ohjemerkinnät ja osaa pestä vaatteita oikein.\nOsaa pohtia omaa suhdettaan rahaan, kulutukseen ja rahankäyttöön.\nOsaa suunnitella, seurata ja arvioida omaa taloutta.\nOsaa ennakoida, miten toimia, jos oma taloustilanne muuttuu ja tietää, mistä saa apua taloudellisiin vaikeuksiin.",
       "nqf": 8,
       "credits": 2,
-      "organization": 2,
-      "created_at": "2019-08-29T08:15:58.581Z",
-      "updated_at": "2019-08-29T08:15:58.604Z"
+      "organization": 2
     },
     "academicdegree": {
       "id": 30,
@@ -5366,12 +4620,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 7,
-      "created_at": "2019-11-13T10:05:06.631Z",
-      "updated_at": "2019-11-13T13:37:10.804Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-11-14T06:49:08.231Z",
-    "updated_at": "2019-11-25T08:28:07.654Z",
     "identification": null
   },
   {
@@ -5392,9 +4642,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 22,
@@ -5409,12 +4657,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-10T12:43:05.143Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-10T13:56:23.382Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-sähköjaautomaatiotekniikka-sp-pjpk"
   },
   {
@@ -5435,9 +4679,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 7,
@@ -5452,12 +4694,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-06-07T13:54:42.200Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-06-07T13:55:45.478Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-bio-ja-elintarviketekniikka-sp-partiojohtaja-peruskoulutus"
   },
   {
@@ -5478,9 +4716,7 @@
       "description_sv": "• Osaa suunnitella ja järjestää vapaaehtoistoimintaa Marttajärjestön arvojen, päämäärien ja toimintatapojen mukaisesti. \n• Osaa perustella kansalais- ja järjestötoiminnan ennaltaehkäisevän merkityksen yhteiskunnassa. \n• Ymmärtää vapaaehtoistoiminnan vaikutukset ja huomioi niitä omassa toiminnassaan. \n• Ymmärtää vapaaehtoistoiminnan periaatteet ja osaa soveltaa niitä toiminnassa. \n• Osaa toimia yhteistyössä muiden vapaaehtoisten ja ammattilaisten kanssa. \n• Osaa ohjata ja opastaa sekä organisoida vapaaehtoistoimintaa. \n• Osaa ohjata ikääntyvien tai lapsiperheiden ryhmiä voimavaralähtöisesti. \n• Osaa motivoida osallistujia toimintaan. \n• Osaa arvioida ja kehittää omaa toimintaansa ja antaa palautetta muille toimijoille osana kehittämishankkeen arviointia.",
       "nqf": 2,
       "credits": 2,
-      "organization": 2,
-      "created_at": "2019-05-29T09:53:40.925Z",
-      "updated_at": "2019-08-12T11:02:49.626Z"
+      "organization": 2
     },
     "academicdegree": {
       "id": 10,
@@ -5495,12 +4731,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 5,
-      "created_at": "2019-07-04T12:53:55.388Z",
-      "updated_at": "2019-11-13T13:37:59.115Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-09-25T12:36:15.640Z",
-    "updated_at": "2019-11-13T14:04:37.385Z",
     "identification": "seurakuntaopisto-sote-martat-vilppu"
   },
   {
@@ -5521,9 +4753,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 9,
@@ -5538,12 +4768,8 @@
       "credits": 210,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 3,
-      "created_at": "2019-06-07T14:08:48.722Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 3
     },
-    "created_at": "2019-06-07T14:09:38.910Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-hevosala-sp-partiojohtaja-peruskoulutus"
   },
   {
@@ -5564,9 +4790,7 @@
       "description_sv": "Arkitreeni-koulutus on 10 osaamispistettä, sisältäen seuraavat koulutuksen osiot:\n\nRuoanvalmistus ja ravitsemus 5 osp\nPuhtaanapito ja tekstiilienhoito 2 osp\nKodin talous ja kuluttaja-asiat 2 osp\nHOPS 1 osp\n\nArkitreeni-koulutus antavat tietoja ja taitoja sekä valmiuksia arjen toimintoihin, kodin hoitamiseen ja omassa elämässä selviytymiseen. Koulutus vahvistaa kuluttaja- ja talousosaamista ja edistää hyvinvointia terveellisten ruokailutottumusten ja elämäntapojen avulla.\n\nOsaamistavoitteet:\n\nOsaa toimia yksilönä ja ryhmässä vastuullisesti, tasa-arvoa ja turvallisuutta edistävästi.\nOsaa toimia hyvien käytöstapojen mukaisesti ja käyttäytyä asiallisesti.\nOsaa suunnitella ajankäyttöään ja noudattaa sovittuja aikatauluja.\nOsaa hakeutua sosiaaliseen kanssakäymiseen muiden kanssa itselleen sopivalla tavalla ja ylläpitää sosiaalisia suhteita ja verkostoja.\nOsaa laatia itselleen terveellisiä elämäntapoja ja vapaa-aikaa koskeva suunnitelma oman hyvinvointinsa edistämiseksi ottaen huomioon voimavaransa ja tarpeensa.\nOsaa käyttää ja soveltaa kädentaitoja monipuolisesti arjen toiminnoissa.\nOsaa valita terveellistä ja taloudellista ruokaa kestävää toimintatapaa noudattaen.\nOsaa huoltaa vaatteensa hoito-ohjeiden mukaan.\nOsaa oman talouden suunnittelemiseen ja hoitamiseen.\nOsaa huolehtia henkilökohtaisesta hygieniasta.\nOsaa huolehtia asuinympäristön siisteydestä ja turvallisuudesta.",
       "nqf": 8,
       "credits": 10,
-      "organization": 2,
-      "created_at": "2019-08-29T08:04:46.869Z",
-      "updated_at": "2019-08-29T08:09:29.691Z"
+      "organization": 2
     },
     "academicdegree": {
       "id": 32,
@@ -5581,12 +4805,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 7,
-      "created_at": "2019-11-25T07:18:53.967Z",
-      "updated_at": "2019-11-25T07:40:07.134Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-11-25T07:35:36.223Z",
-    "updated_at": "2019-11-25T08:28:40.444Z",
     "identification": "seurakuntaopisto-raca-martat-arkitreeni"
   },
   {
@@ -5607,9 +4827,7 @@
       "description_sv": "Grundutbildning för scoutledare ingår i Suomen Partiolaiset – Finlands Scouter ry:s ledarskapsutbildning. Under utbildningen får deltagaren lära sig grundläggande kunskaper och färdigheter i ledarskap och i att arrangera evenemang och projekt. Deltagaren lär sig också om scoutprogrammet och om verksamheten i en scoutkår dvs. en lokalförening inom scouting. En central del av utbildningen är grunderna i trygg och säker verksamhet samt första hjälpen -färdigheter. I utbildningen ingår en ledarskapsövning, under vilken deltagaren leder och handleder andra vuxna i genomförandet av ett evenemang eller projekt.",
       "nqf": 2,
       "credits": 7,
-      "organization": 1,
-      "created_at": "2019-05-09T09:56:07.855Z",
-      "updated_at": "2019-10-17T07:35:42.669Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 14,
@@ -5624,12 +4842,8 @@
       "credits": 240,
       "nqf": 4,
       "school": 3,
-      "fieldofstudy": 10,
-      "created_at": "2019-07-09T14:23:26.283Z",
-      "updated_at": "2019-10-16T10:53:43.964Z"
+      "fieldofstudy": 10
     },
-    "created_at": "2019-07-10T13:29:18.864Z",
-    "updated_at": "2019-10-08T08:29:02.113Z",
     "identification": "hamk-liikenneala-sp-pjpk"
   },
   {
@@ -5650,9 +4864,7 @@
       "description_sv": "Tukioppilastoiminta on peruskoulun luokilla 7–9 toimiva vertaistukeen perustuva järjestelmä. Tukioppilas auttaa muita oppilaita, yleensä kouluun uusina tulevia oppilaita, ja haluaa toimia vapaaehtoisesti kouluyhteisön hyväksi. Koulussa tukioppilaiden koulutuksesta ja toiminnasta vastaa  opettaja.\n\nTukioppilas:\n- Osaa suunnitella ja toteuttaa toimintaa ryhmälle ja yhteisölle\n- Osaa kohdata ohjattavat yksilöitä ja ryhmän jäseninä\n- Osaa kertoa ryhmän kehitysvaiheet\n- Tiedostaa ryhmän periaatteet, säännöt ja sopimukset ohjatessaan ryhmiä\n- Osaa työskennellä käyttäen ryhmänohjauksen menetelmiä / luovia ja toiminnallisia ohjauksen menetelmiä\n- Osaa kannustaa ohjattaviaan vuorovaikutukseen ja yhteistyöhön keskenään\n- Osaa antaa ohjattaville monipuolisesti mahdollisuuksia vaikuttaa asioihin\n- Osaa kannustaa, motivoida ja antaa palautetta ohjattavilleen sekä luoda omalla toiminnallaan myönteistä ilmapiiriä\n- Osaa laatia ohjeiden mukaan aikataulutetun ohjaussuunnitelman, toimia sen mukaan ja tiedostaa varasuunnitelman merkityksen työssään\n- Osaa tiedottaa tukioppilastoiminnasta ja sen osa-alueista kouluyhteisölle\n- Osaa ratkaista ongelmatilanteita yhdessä muiden tukioppilaiden ja koulun aikuisten kanssa\n",
       "nqf": 8,
       "credits": 2,
-      "organization": 4,
-      "created_at": "2019-10-16T06:15:15.105Z",
-      "updated_at": "2019-10-16T07:11:35.241Z"
+      "organization": 4
     },
     "academicdegree": {
       "id": 2,
@@ -5667,12 +4879,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 5,
-      "created_at": "2019-05-16T11:45:19.370Z",
-      "updated_at": "2019-10-16T10:53:36.753Z"
+      "fieldofstudy": 5
     },
-    "created_at": "2019-10-16T06:20:08.308Z",
-    "updated_at": "2019-11-13T13:59:14.774Z",
     "identification": null
   },
   {
@@ -5693,9 +4901,7 @@
       "description_sv": "Osaamismerkin saaja on osallistunut vapaaehtoistyöntekijänä tapahtuman tekemiseen omaa osaamistaan kehittäen. Tätä merkkiä voivat hakea kaikki ne, jotka eivät ennen leiriä tehneet vielä mitään pestiä, mutta käärivät hihansa leirin alettua. Myös samoajat (15-17-vuotiaat partiolaiset), jotka tekevät leirillä pestiä vain osan aikaa, voivat hakea tätä merkkiä.\n\nMerkin saaja:\n\n- osaa toimia vapaaehtoistyöntekijänä tapahtumassa.\n- osaa kertoa tehtävässä oppimaansa työelämän ymmärtämällä kielellä.\n- osaa vastaanottaa palautetta ja kehittää edelleen omaa osaamistaan palautteen perusteella.",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T08:59:25.385Z",
-      "updated_at": "2019-10-31T10:35:56.168Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 26,
@@ -5710,12 +4916,8 @@
       "credits": 10,
       "nqf": 2,
       "school": 5,
-      "fieldofstudy": 7,
-      "created_at": "2019-10-31T08:55:39.568Z",
-      "updated_at": "2019-10-31T08:55:39.588Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-10-31T09:02:00.808Z",
-    "updated_at": "2019-11-14T09:36:35.889Z",
     "identification": "careeria-rav-partio-vtmerkki"
   },
   {
@@ -5736,9 +4938,7 @@
       "description_sv": "Osaamismerkin saaja on osallistunut vapaaehtoistyöntekijänä tapahtuman tekemiseen omaa osaamistaan kehittäen. Tätä merkkiä voivat hakea kaikki ne, jotka eivät ennen leiriä tehneet vielä mitään pestiä, mutta käärivät hihansa leirin alettua. Myös samoajat (15-17-vuotiaat partiolaiset), jotka tekevät leirillä pestiä vain osan aikaa, voivat hakea tätä merkkiä.\n\nMerkin saaja:\n\n- osaa toimia vapaaehtoistyöntekijänä tapahtumassa.\n- osaa kertoa tehtävässä oppimaansa työelämän ymmärtämällä kielellä.\n- osaa vastaanottaa palautetta ja kehittää edelleen omaa osaamistaan palautteen perusteella.",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T08:59:25.385Z",
-      "updated_at": "2019-10-31T10:35:56.168Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 27,
@@ -5753,12 +4953,8 @@
       "credits": 15,
       "nqf": 2,
       "school": 5,
-      "fieldofstudy": 7,
-      "created_at": "2019-10-31T13:05:52.449Z",
-      "updated_at": "2019-10-31T13:05:52.467Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-10-31T15:01:04.081Z",
-    "updated_at": "2019-11-14T09:34:12.321Z",
     "identification": "careeria-mat-partio-vtmerkki"
   },
   {
@@ -5779,9 +4975,7 @@
       "description_sv": "Osaamismerkin saaja on toiminut vapaaehtoistyöntekijänä vastuullisessa ja pitkäkestoisessa johtamis- tai asiantuntijatehtävässä osaamistaan kehittäen. Partiossa tällaisia tehtäviä ovat päällikö- ja mestaritasoiset pestit piirileireillä ja sitä suuremmilla leireillä. \n\nMerkin saaja:\n- on sitoutuneesti toiminut vapaaehtoistyöntekijänä pitkäkestoisessa työtehtävässä.\n- osaa kantaa taloudellista tai toiminnallista vastuuta.\n- osaa tuloksekkaasti johtaa yhtä tai useampaa henkilöä tai osaa tuloksekkaasti kehittää ja jakaa asiantuntemustaan.\n- osaa arvioida omaa toimintaansa ja kehittymistään sekä osaa sanoittaa työtehtävässään vahvistuneen osaamisensa työelämän ymmärtämällä kielellä.\n- osaa vastaanottaa palautetta sekä arvioida ja kehittää toimintaa palautteen perusteella.\n- osaa viestiä vuorovaikutteisesti eri ympäristöissä ja erilaisissa kanavissa.",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T10:34:35.558Z",
-      "updated_at": "2019-10-31T10:34:35.571Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 28,
@@ -5796,12 +4990,8 @@
       "credits": 15,
       "nqf": 2,
       "school": 5,
-      "fieldofstudy": 7,
-      "created_at": "2019-10-31T13:15:55.569Z",
-      "updated_at": "2019-10-31T13:15:55.586Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-10-31T15:05:57.475Z",
-    "updated_at": "2019-11-14T09:34:06.922Z",
     "identification": "careeria-matrak-partio-ovmerkki"
   },
   {
@@ -5822,9 +5012,7 @@
       "description_sv": "Koulutus vahvistaa tietoja ja taitoja sekä valmiuksia arjen toimintoihin, kodin hoitamiseen ja omassa elämässä selviytymiseen. Koulutus vahvistaa kuluttaja- ja talousosaamista ja edistää hyvinvointia terveellisten ruokailutottumusten ja elämäntapojen avulla.\n\nOsaamistavoitteet:\n\nOsaa terveellisen ruokavalion perusteet.\nOsaa tavalliset ruokalajit ja ateriajärjestyksen sekä ruokarytmin.\nOsaa arvioida riittävän energian kulutuksen suhteessa päivittäiseen energiansaantiin.\nOsaa suunnitella ja valmistaa arkiruokaa.\nTuntee arkiruokailussa käyttötarkoitukseen sopivat välineet.\nTuntee yleisimmät raaka-aineet ja osaa valita sekä valmistaa niistä ruokaa.\nOsaa käsitellä, varastoida ja käyttää ruuanvalmistuksessa sesongin mukaisia raaka-aineita.\nOsaa suunnitella kodin ruokaostokset.\nOsaa tehdä taloudellisia ja ekologisia ruokavalintoja.\nOsaa varastoida, valmistaa ja säilöä ruokaa niin, ettei synny ruokahävikkiä.\nOsaa lajitella ruoanvalmistuksessa syntyviä jätteitä.\nOsaa vertailla tuotteiden hintoja.\nOsaa laskea kotona valmistetun ruoan hinnan.\nOsaa valita oikeat siivousaineet.\nOsaa säilyttää siivousaineita.\nOsaa valita sopivat siivousvälineet.\nTuntee ympäristömerkit ja osaa valita ympäristöystävällisiä siivousaineita.\nTuntee tekstiilien hoito-ohjemerkinnät ja osaa pestä vaatteita oikein.\nOsaa pohtia omaa suhdettaan rahaan, kulutukseen ja rahankäyttöön.\nOsaa suunnitella, seurata ja arvioida omaa taloutta.\nOsaa ennakoida, miten toimia, jos oma taloustilanne muuttuu ja tietää, mistä saa apua taloudellisiin vaikeuksiin.",
       "nqf": 8,
       "credits": 2,
-      "organization": 2,
-      "created_at": "2019-08-29T08:15:58.581Z",
-      "updated_at": "2019-08-29T08:15:58.604Z"
+      "organization": 2
     },
     "academicdegree": {
       "id": 32,
@@ -5839,12 +5027,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 7,
-      "created_at": "2019-11-25T07:18:53.967Z",
-      "updated_at": "2019-11-25T07:40:07.134Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-11-25T07:38:35.087Z",
-    "updated_at": "2019-11-25T07:40:07.136Z",
     "identification": "seurakuntaopisto-raca-martat-kesti"
   },
   {
@@ -5865,9 +5049,7 @@
       "description_sv": "Arkitreeni-koulutus on 10 osaamispistettä, sisältäen seuraavat koulutuksen osiot:\n\nRuoanvalmistus ja ravitsemus 5 osp\nPuhtaanapito ja tekstiilienhoito 2 osp\nKodin talous ja kuluttaja-asiat 2 osp\nHOPS 1 osp\n\nArkitreeni-koulutus antavat tietoja ja taitoja sekä valmiuksia arjen toimintoihin, kodin hoitamiseen ja omassa elämässä selviytymiseen. Koulutus vahvistaa kuluttaja- ja talousosaamista ja edistää hyvinvointia terveellisten ruokailutottumusten ja elämäntapojen avulla.\n\nOsaamistavoitteet:\n\nOsaa toimia yksilönä ja ryhmässä vastuullisesti, tasa-arvoa ja turvallisuutta edistävästi.\nOsaa toimia hyvien käytöstapojen mukaisesti ja käyttäytyä asiallisesti.\nOsaa suunnitella ajankäyttöään ja noudattaa sovittuja aikatauluja.\nOsaa hakeutua sosiaaliseen kanssakäymiseen muiden kanssa itselleen sopivalla tavalla ja ylläpitää sosiaalisia suhteita ja verkostoja.\nOsaa laatia itselleen terveellisiä elämäntapoja ja vapaa-aikaa koskeva suunnitelma oman hyvinvointinsa edistämiseksi ottaen huomioon voimavaransa ja tarpeensa.\nOsaa käyttää ja soveltaa kädentaitoja monipuolisesti arjen toiminnoissa.\nOsaa valita terveellistä ja taloudellista ruokaa kestävää toimintatapaa noudattaen.\nOsaa huoltaa vaatteensa hoito-ohjeiden mukaan.\nOsaa oman talouden suunnittelemiseen ja hoitamiseen.\nOsaa huolehtia henkilökohtaisesta hygieniasta.\nOsaa huolehtia asuinympäristön siisteydestä ja turvallisuudesta.",
       "nqf": 8,
       "credits": 10,
-      "organization": 2,
-      "created_at": "2019-08-29T08:04:46.869Z",
-      "updated_at": "2019-08-29T08:09:29.691Z"
+      "organization": 2
     },
     "academicdegree": {
       "id": 30,
@@ -5882,12 +5064,8 @@
       "credits": 180,
       "nqf": 2,
       "school": 2,
-      "fieldofstudy": 7,
-      "created_at": "2019-11-13T10:05:06.631Z",
-      "updated_at": "2019-11-13T13:37:10.804Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-11-14T06:47:59.065Z",
-    "updated_at": "2019-11-25T08:34:23.964Z",
     "identification": null
   },
   {
@@ -5908,9 +5086,7 @@
       "description_sv": "Osaamismerkin saaja on osallistunut vapaaehtoistyöntekijänä tapahtuman tekemiseen omaa osaamistaan kehittäen. Tätä merkkiä voivat hakea kaikki ne, jotka eivät ennen leiriä tehneet vielä mitään pestiä, mutta käärivät hihansa leirin alettua. Myös samoajat (15-17-vuotiaat partiolaiset), jotka tekevät leirillä pestiä vain osan aikaa, voivat hakea tätä merkkiä.\n\nMerkin saaja:\n\n- osaa toimia vapaaehtoistyöntekijänä tapahtumassa.\n- osaa kertoa tehtävässä oppimaansa työelämän ymmärtämällä kielellä.\n- osaa vastaanottaa palautetta ja kehittää edelleen omaa osaamistaan palautteen perusteella.",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T08:59:25.385Z",
-      "updated_at": "2019-10-31T10:35:56.168Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 28,
@@ -5925,12 +5101,8 @@
       "credits": 15,
       "nqf": 2,
       "school": 5,
-      "fieldofstudy": 7,
-      "created_at": "2019-10-31T13:15:55.569Z",
-      "updated_at": "2019-10-31T13:15:55.586Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-10-31T15:06:55.105Z",
-    "updated_at": "2019-11-14T09:34:02.014Z",
     "identification": "careeria-matrak-partio-vtmerkki"
   },
   {
@@ -5951,9 +5123,7 @@
       "description_sv": "Osaamismerkin saaja on toiminut vapaaehtoistyöntekijänä vastuullisessa ja pitkäkestoisessa johtamis- tai asiantuntijatehtävässä osaamistaan kehittäen. Partiossa tällaisia tehtäviä ovat päällikö- ja mestaritasoiset pestit piirileireillä ja sitä suuremmilla leireillä. \n\nMerkin saaja:\n- on sitoutuneesti toiminut vapaaehtoistyöntekijänä pitkäkestoisessa työtehtävässä.\n- osaa kantaa taloudellista tai toiminnallista vastuuta.\n- osaa tuloksekkaasti johtaa yhtä tai useampaa henkilöä tai osaa tuloksekkaasti kehittää ja jakaa asiantuntemustaan.\n- osaa arvioida omaa toimintaansa ja kehittymistään sekä osaa sanoittaa työtehtävässään vahvistuneen osaamisensa työelämän ymmärtämällä kielellä.\n- osaa vastaanottaa palautetta sekä arvioida ja kehittää toimintaa palautteen perusteella.\n- osaa viestiä vuorovaikutteisesti eri ympäristöissä ja erilaisissa kanavissa.",
       "nqf": null,
       "credits": null,
-      "organization": 1,
-      "created_at": "2019-10-31T10:34:35.558Z",
-      "updated_at": "2019-10-31T10:34:35.571Z"
+      "organization": 1
     },
     "academicdegree": {
       "id": 27,
@@ -5968,12 +5138,8 @@
       "credits": 15,
       "nqf": 2,
       "school": 5,
-      "fieldofstudy": 7,
-      "created_at": "2019-10-31T13:05:52.449Z",
-      "updated_at": "2019-10-31T13:05:52.467Z"
+      "fieldofstudy": 7
     },
-    "created_at": "2019-10-31T15:00:00.567Z",
-    "updated_at": "2019-11-14T09:34:49.372Z",
     "identification": "careeria-mat-partio-ovmerkki"
   }
 ]

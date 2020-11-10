@@ -15,9 +15,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 4,
@@ -27,20 +25,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-10-25T12:47:58.597Z",
-      "updated_at": "2019-10-28T11:36:47.848Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 15,
       "name_fi": "Yleissivistävä koulutus",
       "name_en": "General education",
-      "name_sv": "Allmänbildande utbildning",
-      "created_at": "2019-05-17T12:35:16.228Z",
-      "updated_at": "2019-07-05T11:58:38.832Z"
+      "name_sv": "Allmänbildande utbildning"
     },
-    "created_at": "2019-10-25T12:50:04.276Z",
-    "updated_at": "2019-10-28T11:36:47.852Z",
     "competencedegreelinks": [
       {
         "id": 120,
@@ -50,8 +42,6 @@
         "description_sv": "Opiskelija voi halutessaan anoa teatteri-ilmaisun opintoja luettavaksi osaksi lukion oppimäärän koulukohtaisia soveltavia kursseja enintään 12 kurssin verran. (Teatteri-ilmaisun kurssit voi suorittaa myös 75 kurssin lisäksi.)\n\nJotta opiskelija voi osallistua lukiodiplomikurssille, hänellä on oltava suoritettuna vähintään kolme teatteriin, draamaan tai ilmaisutaitoon keskittyvää lukiokurssia. Niiden aikana hän on kehittänyt tiedollisia ja taidollisia valmiuksiaan perehtymällä teatterin traditioihin ja esityksellisiin keinoihin. Teatterin lukiodiplomi on esityksen ja portfolion muodostama kokonaisuus. Esityksen osat ovat esitysprosessi (suunnittelu, harjoittelu, esittäminen) sekä suullinen ja kirjallinen reflektio. Portfolio toimii opiskelijan oppimisprosessin tukena. Työsuunnitelman lisäksi se voi sisältää muun muassa harjoitusten ja esitysten dokumentointia sekä koota yhteen esityksen valmistamisprosessissa käytetyn materiaalin mahdollisine käsikirjoituksineen.",
         "competence": 17,
         "academicdegree": 25,
-        "created_at": "2019-10-31T08:34:32.186Z",
-        "updated_at": "2019-10-31T12:18:23.198Z",
         "identification": "riihimäenlukio-lukio-rnt-2"
       },
       {
@@ -62,8 +52,6 @@
         "description_sv": "Opiskelija voi halutessaan anoa teatteri-ilmaisun opintoja luettavaksi osaksi lukion oppimäärän koulukohtaisia soveltavia kursseja enintään 12 kurssin verran. (Teatteri-ilmaisun kurssit voi suorittaa myös 75 kurssin lisäksi.)\n\nJotta opiskelija voi osallistua lukiodiplomikurssille, hänellä on oltava suoritettuna vähintään kolme teatteriin, draamaan tai ilmaisutaitoon keskittyvää lukiokurssia. Niiden aikana hän on kehittänyt tiedollisia ja taidollisia valmiuksiaan perehtymällä teatterin traditioihin ja esityksellisiin keinoihin. Teatterin lukiodiplomi on esityksen ja portfolion muodostama kokonaisuus. Esityksen osat ovat esitysprosessi (suunnittelu, harjoittelu, esittäminen) sekä suullinen ja kirjallinen reflektio. Portfolio toimii opiskelijan oppimisprosessin tukena. Työsuunnitelman lisäksi se voi sisältää muun muassa harjoitusten ja esitysten dokumentointia sekä koota yhteen esityksen valmistamisprosessissa käytetyn materiaalin mahdollisine käsikirjoituksineen.",
         "competence": 16,
         "academicdegree": 25,
-        "created_at": "2019-10-31T08:12:21.554Z",
-        "updated_at": "2019-10-31T12:20:36.048Z",
         "identification": "riihimäenlukio-lukio-rnt-1"
       }
     ]
@@ -84,9 +72,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -96,20 +82,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 8,
       "name_fi": "Sosiaaliala",
       "name_en": "Social Services",
-      "name_sv": "Sociala området",
-      "created_at": "2019-05-07T09:33:56.027Z",
-      "updated_at": "2019-07-05T11:56:20.210Z"
+      "name_sv": "Sociala området"
     },
-    "created_at": "2019-06-07T13:26:10.856Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 111,
@@ -119,8 +99,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 4,
-        "created_at": "2019-07-15T14:24:58.486Z",
-        "updated_at": "2019-07-15T14:24:58.494Z",
         "identification": "hamk-sosionomi-partio-kogi"
       },
       {
@@ -131,8 +109,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 4,
-        "created_at": "2019-07-12T14:20:41.781Z",
-        "updated_at": "2019-07-12T14:20:41.801Z",
         "identification": "hamk-sosionomi-partio-partiokouluttajakoulutus"
       },
       {
@@ -143,8 +119,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 2,
         "academicdegree": 4,
-        "created_at": "2019-07-11T08:13:31.405Z",
-        "updated_at": "2019-07-11T08:13:31.414Z",
         "identification": "hamk-sosionomi-partio-valmentajakoulutus"
       },
       {
@@ -155,8 +129,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 4,
-        "created_at": "2019-07-12T08:50:03.003Z",
-        "updated_at": "2019-07-12T08:50:03.013Z",
         "identification": "hamk-sosionomi-partio-koulutusohjaajakoulutus"
       },
       {
@@ -167,8 +139,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 4,
-        "created_at": "2019-06-07T13:27:22.594Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-sosionomi-partiojohtaja-peruskoulutus"
       }
     ]
@@ -189,9 +159,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -201,20 +169,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 11,
       "name_fi": "Tietojenkäsittely ja tieto- ja viestintätekniikka",
       "name_en": "Computing and ICT",
-      "name_sv": "Databehandling och informations- och kommunikationsteknik ",
-      "created_at": "2019-05-07T09:34:25.498Z",
-      "updated_at": "2019-07-05T11:57:43.920Z"
+      "name_sv": "Databehandling och informations- och kommunikationsteknik "
     },
-    "created_at": "2019-06-07T13:32:28.317Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 93,
@@ -224,8 +186,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 5,
-        "created_at": "2019-07-12T14:27:19.244Z",
-        "updated_at": "2019-07-12T14:27:19.254Z",
         "identification": "hamk-tietojaviestintatekniikka-partio-partiokouluttajakoulutus"
       },
       {
@@ -236,8 +196,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 5,
-        "created_at": "2019-06-07T13:33:24.627Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-tieto-ja-viestintätekniikka-sp-partiojohtaja-peruskoulutus"
       },
       {
@@ -248,8 +206,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 2,
         "academicdegree": 5,
-        "created_at": "2019-07-11T08:27:26.442Z",
-        "updated_at": "2019-07-11T08:27:26.453Z",
         "identification": "hamk-tietojaviestintätekniikka-partio-valmentajakoulutus"
       },
       {
@@ -260,8 +216,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 5,
-        "created_at": "2019-07-15T14:36:53.129Z",
-        "updated_at": "2019-07-15T14:36:53.140Z",
         "identification": "hamk-tietojaviestintätekniikka-partio-kogi"
       },
       {
@@ -272,8 +226,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 5,
-        "created_at": "2019-07-12T08:56:39.733Z",
-        "updated_at": "2019-07-12T08:56:39.742Z",
         "identification": "hamk-tietojaviestintatekniikka-partio-koulutusohjaajakoulutus"
       }
     ]
@@ -294,9 +246,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 5,
@@ -306,20 +256,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-10-31T08:36:34.368Z",
-      "updated_at": "2019-10-31T08:36:34.393Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 7,
       "name_fi": "Palvelualat",
       "name_en": "Services",
-      "name_sv": "Tjänstebranscher",
-      "created_at": "2019-05-07T09:33:45.149Z",
-      "updated_at": "2019-07-05T11:55:57.318Z"
+      "name_sv": "Tjänstebranscher"
     },
-    "created_at": "2019-10-31T08:55:39.568Z",
-    "updated_at": "2019-10-31T08:55:39.588Z",
     "competencedegreelinks": [
       {
         "id": 121,
@@ -329,8 +273,6 @@
         "description_sv": "Tutkinto-opiskelijalle on myönnetty Vapaaehtoisena Tapahtumassa -osaamismerkki tai Osaamista Vapaaehtoistyöstä -osaamismerkki, Turvallisesti yhdessä –kurssin suoritus, hänellä on hygieniatodistus ja suurleirillä pesti leirikahvilassa sisältäen seuraavat tehtävät:\n\n- Kahvilan työ- ja asiakastilojen huoltaminen ja asiakkaiden saapumisen valmistelut.\n- Valmistaa tuotteita myyntiin ja huolehtii esillepanosta.\n- Palvelee asiakkaita suomeksi ja hoitaa palvelutilanteen ruotsiksi ja yhdellä vieraalla kielellä. \n- Työskentelee kassalla ja tekee tarvittaessa hintamerkinnät.\n- Tekee tilityksen ja huolehtii astiahuollosta ja loppusiivouksesta.\n- Työskentelee osana tiimiä, välittää vuorokohtaisia tietoja ja arvioi omaa osaamistaan.\n\nOpiskelija välittää kouluttajalle Pestinjohtajan yhteystiedot mahdollista tarkempaa haastattelua varten. \n\nMitä tarkemmin opiskelija on todentanut osaamistaan (kuvat, blogit, arvioinnit) sen helpommin osaaminen on tunnistettavissa.",
         "competence": 19,
         "academicdegree": 26,
-        "created_at": "2019-10-31T09:02:00.808Z",
-        "updated_at": "2019-11-14T09:36:35.889Z",
         "identification": "careeria-rav-partio-vtmerkki"
       },
       {
@@ -341,8 +283,6 @@
         "description_sv": "Tutkinto-opiskelijalle on myönnetty Vapaaehtoisena Tapahtumassa -osaamismerkki tai Osaamista Vapaaehtoistyöstä -osaamismerkki, Turvallisesti yhdessä –kurssin suoritus, hänellä on hygieniatodistus ja suurleirillä pesti leirikahvilassa sisältäen seuraavat tehtävät:\n\n- Kahvilan työ- ja asiakastilojen huoltaminen ja asiakkaiden saapumisen valmistelut.\n- Valmistaa tuotteita myyntiin ja huolehtii esillepanosta.\n- Palvelee asiakkaita suomeksi ja hoitaa palvelutilanteen ruotsiksi ja yhdellä vieraalla kielellä. \n- Työskentelee kassalla ja tekee tarvittaessa hintamerkinnät.\n- Tekee tilityksen ja huolehtii astiahuollosta ja loppusiivouksesta.\n- Työskentelee osana tiimiä, välittää vuorokohtaisia tietoja ja arvioi omaa osaamistaan.\n\nOpiskelija välittää kouluttajalle Pestinjohtajan yhteystiedot mahdollista tarkempaa haastattelua varten. \n\nMitä tarkemmin opiskelija on todentanut osaamistaan (kuvat, blogit, arvioinnit) sen helpommin osaaminen on tunnistettavissa.",
         "competence": 20,
         "academicdegree": 26,
-        "created_at": "2019-10-31T14:57:07.212Z",
-        "updated_at": "2019-11-14T09:34:55.563Z",
         "identification": "careeria-rav-partio-ovmerkki"
       }
     ]
@@ -363,9 +303,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 5,
@@ -375,20 +313,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-10-31T08:36:34.368Z",
-      "updated_at": "2019-10-31T08:36:34.393Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 7,
       "name_fi": "Palvelualat",
       "name_en": "Services",
-      "name_sv": "Tjänstebranscher",
-      "created_at": "2019-05-07T09:33:45.149Z",
-      "updated_at": "2019-07-05T11:55:57.318Z"
+      "name_sv": "Tjänstebranscher"
     },
-    "created_at": "2019-10-31T13:05:52.449Z",
-    "updated_at": "2019-10-31T13:05:52.467Z",
     "competencedegreelinks": [
       {
         "id": 131,
@@ -398,8 +330,6 @@
         "description_sv": "Tutkinto-opiskelijalle on myönnetty Vapaaehtoisena Tapahtumassa -osaamismerkki tai Osaamista Vapaaehtoistyöstä -osaamismerkki, Turvallisesti yhdessä –kurssin suoritus, hänellä on hygieniatodistus ja suurleirillä pesti leirihotellissa sisältäen seuraavat tehtävät:\n- Majoitus- ja asiakastilojen huoltaminen ja asiakkaiden saapumisen valmistelut.\n- Varausjärjestelmän hoitaminen ja asiakkaiden vastaanottaminen ja majoittaminen.\n- Aamiaisen valmistaminen ja tarjolle laittaminen.\n- Asiakkaan laskuttaminen tai laskutustietojen välittäminen.\n\nOpiskelija välittää kouluttajalle Pestinjohtajan yhteystiedot mahdollista tarkempaa haastattelua varten. \n\nMitä tarkemmin opiskelija on todentanut osaamistaan (kuvat, blogit, arvioinnit) sen helpommin osaaminen on tunnistettavissa.",
         "competence": 20,
         "academicdegree": 27,
-        "created_at": "2019-10-31T15:00:00.567Z",
-        "updated_at": "2019-11-14T09:34:49.372Z",
         "identification": "careeria-mat-partio-ovmerkki"
       },
       {
@@ -410,8 +340,6 @@
         "description_sv": "Tutkinto-opiskelijalle on myönnetty Vapaaehtoisena Tapahtumassa -osaamismerkki tai Osaamista Vapaaehtoistyöstä -osaamismerkki, Turvallisesti yhdessä –kurssin suoritus, hänellä on hygieniatodistus ja suurleirillä pesti leirihotellissa sisältäen seuraavat tehtävät:\n- Majoitus- ja asiakastilojen huoltaminen ja asiakkaiden saapumisen valmistelut.\n- Varausjärjestelmän hoitaminen ja asiakkaiden vastaanottaminen ja majoittaminen.\n- Aamiaisen valmistaminen ja tarjolle laittaminen.\n- Asiakkaan laskuttaminen tai laskutustietojen välittäminen.\n\nOpiskelija välittää kouluttajalle Pestinjohtajan yhteystiedot mahdollista tarkempaa haastattelua varten. \n\nMitä tarkemmin opiskelija on todentanut osaamistaan (kuvat, blogit, arvioinnit) sen helpommin osaaminen on tunnistettavissa.",
         "competence": 19,
         "academicdegree": 27,
-        "created_at": "2019-10-31T15:01:04.081Z",
-        "updated_at": "2019-11-14T09:34:12.321Z",
         "identification": "careeria-mat-partio-vtmerkki"
       }
     ]
@@ -432,9 +360,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 5,
@@ -444,20 +370,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-10-31T08:36:34.368Z",
-      "updated_at": "2019-10-31T08:36:34.393Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 7,
       "name_fi": "Palvelualat",
       "name_en": "Services",
-      "name_sv": "Tjänstebranscher",
-      "created_at": "2019-05-07T09:33:45.149Z",
-      "updated_at": "2019-07-05T11:55:57.318Z"
+      "name_sv": "Tjänstebranscher"
     },
-    "created_at": "2019-10-31T13:15:55.569Z",
-    "updated_at": "2019-10-31T13:15:55.586Z",
     "competencedegreelinks": [
       {
         "id": 134,
@@ -467,8 +387,6 @@
         "description_sv": "Tutkinto-opiskelijalle on myönnetty Vapaaehtoisena Tapahtumassa -osaamismerkki tai Osaamista Vapaaehtoistyöstä -osaamismerkki, Turvallisesti yhdessä –kurssin suoritus ja suurleirin rakennusleirillä pesti sisältäen seuraavat tehtävät:\n- Suunnittelee rakentamis-, kunnossapito- tai huoltotöitä.\n- Lukee suunnitelmia ja toimii niiden ja ohjaajan ohjeiden mukaisesti oikeita työvälineitä käyttäen.\n- Huoltaa tai puhdistaa työvälineet ja hoitaa jätehuollon ohjeiden mukaisesti.\n- Käyttää työn tekemiseen osoitettuja koneita ja laitteita turvallisesti ympäristöä säästäen.\n- Hoitaa jätehuollon kestävän toiminnan periaatteiden \tmukaisesti.\n\nOpiskelija välittää kouluttajalle Pestinjohtajan yhteystiedot mahdollista tarkempaa haastattelua varten. \n\nMitä tarkemmin opiskelija on todentanut osaamistaan (kuvat, blogit, arvioinnit) sen helpommin osaaminen on tunnistettavissa.",
         "competence": 19,
         "academicdegree": 28,
-        "created_at": "2019-10-31T15:06:55.105Z",
-        "updated_at": "2019-11-14T09:34:02.014Z",
         "identification": "careeria-matrak-partio-vtmerkki"
       },
       {
@@ -479,8 +397,6 @@
         "description_sv": "Tutkinto-opiskelijalle on myönnetty Vapaaehtoisena Tapahtumassa -osaamismerkki tai Osaamista Vapaaehtoistyöstä -osaamismerkki, Turvallisesti yhdessä –kurssin suoritus ja suurleirin rakennusleirillä pesti sisältäen seuraavat tehtävät:\n- Suunnittelee rakentamis-, kunnossapito- tai huoltotöitä.\n- Lukee suunnitelmia ja toimii niiden ja ohjaajan ohjeiden mukaisesti oikeita työvälineitä käyttäen.\n- Huoltaa tai puhdistaa työvälineet ja hoitaa jätehuollon ohjeiden mukaisesti.\n- Käyttää työn tekemiseen osoitettuja koneita ja laitteita turvallisesti ympäristöä säästäen.\n- Hoitaa jätehuollon kestävän toiminnan periaatteiden \tmukaisesti.\n\nOpiskelija välittää kouluttajalle Pestinjohtajan yhteystiedot mahdollista tarkempaa haastattelua varten. \n\nMitä tarkemmin opiskelija on todentanut osaamistaan (kuvat, blogit, arvioinnit) sen helpommin osaaminen on tunnistettavissa.",
         "competence": 20,
         "academicdegree": 28,
-        "created_at": "2019-10-31T15:05:57.475Z",
-        "updated_at": "2019-11-14T09:34:06.922Z",
         "identification": "careeria-matrak-partio-ovmerkki"
       }
     ]
@@ -501,9 +417,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 1,
@@ -513,20 +427,14 @@
       "description_en": "Humanistinen ammattikorkeakoulu (Humak) on vahvasti profiloitunut, valtakunnallinen ammattikorkeakoulu, joka on erikoistunut järjestö- ja nuorisotyön, työyhteisöjen kehittämisen, kulttuurituotannon ja luovan toimialan yrittäjyyden sekä tulkkausalan erityisosaamisen ja toiminnan kehittämiseen. Humakissa on 1500 opiskelijaa ja noin 130 asiantuntijaa eri tehtävissä.",
       "description_fi": "Humanistinen ammattikorkeakoulu (Humak) on vahvasti profiloitunut, valtakunnallinen ammattikorkeakoulu, joka on erikoistunut järjestö- ja nuorisotyön, työyhteisöjen kehittämisen, kulttuurituotannon ja luovan toimialan yrittäjyyden sekä tulkkausalan erityisosaamisen ja toiminnan kehittämiseen. Humakissa on 1500 opiskelijaa ja noin 130 asiantuntijaa eri tehtävissä.",
       "description_sv": "Humanistinen ammattikorkeakoulu (Humak) on vahvasti profiloitunut, valtakunnallinen ammattikorkeakoulu, joka on erikoistunut järjestö- ja nuorisotyön, työyhteisöjen kehittämisen, kulttuurituotannon ja luovan toimialan yrittäjyyden sekä tulkkausalan erityisosaamisen ja toiminnan kehittämiseen. Humakissa on 1500 opiskelijaa ja noin 130 asiantuntijaa eri tehtävissä.",
-      "url": "https://www.humak.fi/",
-      "created_at": "2019-05-09T09:59:36.683Z",
-      "updated_at": "2019-06-07T12:53:03.787Z"
+      "url": "https://www.humak.fi/"
     },
     "fieldofstudy": {
       "id": 1,
       "name_fi": "Humanistinen ala",
       "name_en": "Humanities",
-      "name_sv": "Det humanistiska området",
-      "created_at": "2019-05-09T09:59:54.211Z",
-      "updated_at": "2019-07-05T10:30:21.039Z"
+      "name_sv": "Det humanistiska området"
     },
-    "created_at": "2019-05-09T10:01:07.693Z",
-    "updated_at": "2019-08-13T07:52:10.026Z",
     "competencedegreelinks": [
       {
         "id": 8,
@@ -536,8 +444,6 @@
         "description_sv": "15 opintopistettä osaksi kokonaisuutta Vapaaehtoistyön ohjaaminen ja kehittäminen vapaasti valittavissa opinnoissa",
         "competence": 8,
         "academicdegree": 1,
-        "created_at": "2019-06-07T13:14:07.687Z",
-        "updated_at": "2019-08-13T07:52:10.030Z",
         "identification": "humak-yhteisopedagogi_amk-partio-kogi"
       },
       {
@@ -548,8 +454,6 @@
         "description_sv": "2 opintopistettä osaksi kokonaisuutta Vapaaehtoistyön ohjaaminen ja kehittäminen vapaasti valittavissa opinnoissa",
         "competence": 7,
         "academicdegree": 1,
-        "created_at": "2019-06-07T13:12:10.331Z",
-        "updated_at": "2019-08-13T07:52:10.030Z",
         "identification": "humak-yhteisopedagogi_amk-partio-partiokouluttajakoulutus"
       },
       {
@@ -560,8 +464,6 @@
         "description_sv": "2 opintopistettä kohtaan valmentava työote (edellyttää lisäksi NQF6-tason saavuttamista osoittavaa näyttöä, jos valmentava työote tulee tällä ja edellisellä kohdalla suoritetuksi kokonaan Partion koulutusten kautta)\nTAI\n2 opintopistettä osaksi kokonaisuutta Vapaaehtoistyön ohjaaminen ja kehittäminen vapaasti valittavissa opinnoissa\n",
         "competence": 2,
         "academicdegree": 1,
-        "created_at": "2019-05-09T10:02:00.360Z",
-        "updated_at": "2019-08-13T07:52:10.030Z",
         "identification": "humak-yhteisopadagogi_amk-sp-valmentajakoulutus"
       },
       {
@@ -572,8 +474,6 @@
         "description_sv": "5 opintopistettä jakautuen vuosittain määriteltävällä tavalla opintojaksoihin Toimijuuden edistäminen ja Valmentava työote (korvaa yleensä näiden 5 op:n laajuisen harjoittelun)\nTAI\n5 opintopistettä osaksi kokonaisuutta Vapaaehtoistyön ohjaaminen ja kehittäminen vapaasti valittavissa opinnoissa\n",
         "competence": 1,
         "academicdegree": 1,
-        "created_at": "2019-05-09T10:01:27.377Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "humak-yhteisöpedagogi_amk-sp-partiojohtaja-peruskoulutus"
       },
       {
@@ -584,8 +484,6 @@
         "description_sv": "2 opintopistettä osaksi kokonaisuutta Vapaaehtoistyön ohjaaminen ja kehittäminen vapaasti valittavissa opinnoissa",
         "competence": 6,
         "academicdegree": 1,
-        "created_at": "2019-06-07T13:00:17.733Z",
-        "updated_at": "2019-08-13T07:52:10.030Z",
         "identification": "humak-yhteisopedagogi_amk-partio-koulutusohjaajakoulutus"
       }
     ]
@@ -606,9 +504,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 6,
@@ -618,20 +514,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-10-31T14:28:22.481Z",
-      "updated_at": "2019-10-31T14:28:22.508Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 15,
       "name_fi": "Yleissivistävä koulutus",
       "name_en": "General education",
-      "name_sv": "Allmänbildande utbildning",
-      "created_at": "2019-05-17T12:35:16.228Z",
-      "updated_at": "2019-07-05T11:58:38.832Z"
+      "name_sv": "Allmänbildande utbildning"
     },
-    "created_at": "2019-10-31T14:30:12.575Z",
-    "updated_at": "2019-10-31T14:30:12.591Z",
     "competencedegreelinks": [
       {
         "id": 125,
@@ -641,8 +531,6 @@
         "description_sv": "Partioleirille osallistuminen hyväksytään valinnaiseksi kurssisuoritukseksi, mikäli opiskelijalla on leirillä jokin pesti. Pestistä tarvitsee osaamismerkin tai oppimispäiväkirjan.",
         "competence": 19,
         "academicdegree": 29,
-        "created_at": "2019-10-31T14:34:46.447Z",
-        "updated_at": "2019-10-31T14:34:46.456Z",
         "identification": "pihtiputaanlukio-partiolinja-partio-vtmerkki"
       },
       {
@@ -653,8 +541,6 @@
         "description_sv": "Partioleirille osallistuminen hyväksytään valinnaiseksi kurssisuoritukseksi, mikäli opiskelijalla on leirillä jokin pesti. Pestistä tarvitsee osaamismerkin tai oppimispäiväkirjan.",
         "competence": 22,
         "academicdegree": 29,
-        "created_at": "2019-10-31T14:40:26.365Z",
-        "updated_at": "2019-10-31T14:40:26.374Z",
         "identification": "pihtiputaanlukio-partiolinja-partio-olmerkki"
       },
       {
@@ -665,8 +551,6 @@
         "description_sv": "Partioleirille osallistuminen hyväksytään valinnaiseksi kurssisuoritukseksi, mikäli opiskelijalla on leirillä jokin pesti. Pestistä tarvitsee osaamismerkin tai oppimispäiväkirjan.",
         "competence": 23,
         "academicdegree": 29,
-        "created_at": "2019-10-31T14:43:57.634Z",
-        "updated_at": "2019-10-31T14:43:57.645Z",
         "identification": "pihtiputaanlukio-partiolinja-partio-rlmerkki"
       },
       {
@@ -677,8 +561,6 @@
         "description_sv": "Ryhmänohjaajakoulutus sisältyy Partiolinjan opintoihin, kurssin sisältöjä ja erityisesti toteutustapaa on sovellettu Partiolinjan opintoihin sopivaksi. Aiemmin suoritettu ROK huomioidaan osittain.",
         "competence": 4,
         "academicdegree": 29,
-        "created_at": "2019-10-31T14:31:50.840Z",
-        "updated_at": "2019-10-31T14:31:50.857Z",
         "identification": "pihtiputaanlukio-partiolinja-partio-rok"
       },
       {
@@ -689,8 +571,6 @@
         "description_sv": "Partioleirille osallistuminen hyväksytään valinnaiseksi kurssisuoritukseksi, mikäli opiskelijalla on leirillä jokin pesti. Pestistä tarvitsee osaamismerkin tai oppimispäiväkirjan.",
         "competence": 20,
         "academicdegree": 29,
-        "created_at": "2019-10-31T14:36:01.460Z",
-        "updated_at": "2019-10-31T14:36:01.481Z",
         "identification": "pihtiputaanlukio-partiolinja-partio-ovmerkki"
       },
       {
@@ -701,8 +581,6 @@
         "description_sv": "International Experience -merkistä (Jamboree) voi saada joko linjan kv-kurssin tai valinnaisen kurssin.",
         "competence": 24,
         "academicdegree": 29,
-        "created_at": "2019-10-31T14:49:08.833Z",
-        "updated_at": "2019-10-31T14:49:08.843Z",
         "identification": "pihtiputaanlukio-partiolinja-partio-ieb"
       },
       {
@@ -713,8 +591,6 @@
         "description_sv": "Partiojohtaja-peruskoulutus luetaan hyväksi linjaopinnoissa. Opiskelijan tilanteen ja tarpeen mukaan koulutus voidaan hyväksilukea linjan valinnaiseksi kurssiksi tai kolmannen vuoden johtamisen kurssiksi.",
         "competence": 1,
         "academicdegree": 29,
-        "created_at": "2019-10-31T14:33:23.671Z",
-        "updated_at": "2019-10-31T14:33:23.681Z",
         "identification": "pihtiputaanlukio-partiolinja-partio-pjpk"
       }
     ]
@@ -735,9 +611,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -747,20 +621,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 9,
       "name_fi": "Taiteet ja kulttuuri",
       "name_en": "Arts and Culture",
-      "name_sv": "De konstnärliga områdena och kultur",
-      "created_at": "2019-05-07T09:34:03.203Z",
-      "updated_at": "2019-07-05T11:56:49.544Z"
+      "name_sv": "De konstnärliga områdena och kultur"
     },
-    "created_at": "2019-07-10T08:41:03.994Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 105,
@@ -770,8 +638,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 16,
-        "created_at": "2019-07-15T14:13:37.692Z",
-        "updated_at": "2019-07-15T14:13:37.712Z",
         "identification": "hamk-muotoilu-partio-kogi"
       },
       {
@@ -782,8 +648,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 16,
-        "created_at": "2019-07-10T13:37:45.052Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-muotoilu-sp-pjpk"
       },
       {
@@ -794,8 +658,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 16,
-        "created_at": "2019-07-12T08:36:27.650Z",
-        "updated_at": "2019-07-12T08:36:27.663Z",
         "identification": "hamk-muotoilu-partio-koulutusohjaajakoulutus"
       },
       {
@@ -806,8 +668,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 16,
-        "created_at": "2019-07-11T07:30:09.173Z",
-        "updated_at": "2019-07-11T07:30:09.184Z",
         "identification": "hamk-muotoilu-partio-valmentajakoulutus"
       },
       {
@@ -818,8 +678,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 16,
-        "created_at": "2019-07-12T14:14:12.018Z",
-        "updated_at": "2019-07-12T14:14:12.028Z",
         "identification": "hamk-muotoilu-partio-partiokouluttajakoulutus"
       }
     ]
@@ -840,9 +698,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -852,20 +708,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 6,
       "name_fi": "Maa- ja metsätalous",
       "name_en": "Agriculture and Forestry",
-      "name_sv": "Lant- och skogsbruk",
-      "created_at": "2019-05-07T09:33:33.309Z",
-      "updated_at": "2019-07-05T11:55:30.282Z"
+      "name_sv": "Lant- och skogsbruk"
     },
-    "created_at": "2019-07-10T08:52:38.416Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 87,
@@ -875,8 +725,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 18,
-        "created_at": "2019-07-12T14:16:57.424Z",
-        "updated_at": "2019-07-12T14:16:57.433Z",
         "identification": "hamk-rakennettuymparisto-partio-partiokouluttajakoulutus"
       },
       {
@@ -887,8 +735,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 18,
-        "created_at": "2019-07-11T07:34:54.484Z",
-        "updated_at": "2019-07-11T07:34:54.496Z",
         "identification": "hamk-rakennettuymparisto-partio-valmentajakoulutus"
       },
       {
@@ -899,8 +745,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 18,
-        "created_at": "2019-07-15T14:15:32.926Z",
-        "updated_at": "2019-07-15T14:15:32.936Z",
         "identification": "hamk-rakennettuymparisto-partio-kogi"
       },
       {
@@ -911,8 +755,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 18,
-        "created_at": "2019-07-12T08:41:57.384Z",
-        "updated_at": "2019-07-12T08:41:57.396Z",
         "identification": "hamk-rakennettuymparisto-partio-koulutusohjaajakoulutus"
       },
       {
@@ -923,8 +765,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 18,
-        "created_at": "2019-07-10T13:39:53.862Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-rakennettuymparisto-sp-pjpk"
       }
     ]
@@ -945,9 +785,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 2,
@@ -957,20 +795,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-05-16T11:50:53.034Z",
-      "updated_at": "2019-10-16T10:53:36.749Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 7,
       "name_fi": "Palvelualat",
       "name_en": "Services",
-      "name_sv": "Tjänstebranscher",
-      "created_at": "2019-05-07T09:33:45.149Z",
-      "updated_at": "2019-07-05T11:55:57.318Z"
+      "name_sv": "Tjänstebranscher"
     },
-    "created_at": "2019-11-13T10:05:06.631Z",
-    "updated_at": "2019-11-13T13:37:10.804Z",
     "competencedegreelinks": [
       {
         "id": 151,
@@ -980,8 +812,6 @@
         "description_sv": "Tutkinnon osat:  Kodin ruokapalvelujen tuottaminen 20 osp, tunnustetaan 1 osp, Lounasruokien valmistus 40 osp, tunnustetaan 1 osp. \n",
         "competence": 13,
         "academicdegree": 30,
-        "created_at": "2019-11-14T06:49:08.231Z",
-        "updated_at": "2019-11-25T08:28:07.654Z",
         "identification": null
       },
       {
@@ -992,8 +822,6 @@
         "description_sv": "Tutkinnon osa-alueesta Ylläpitosiivouspalvelut 30 osp, tunnustetaan 2 osp Marttojen Arkitreenien Puhtaanapito ja tekstiilien hoito: Puhtaanapito osuuden suorittaneille. \n\nTutkinnon osasta Vaatteiden ja tekstiilien huoltaminen 20 osp, tunnustetaan 2 osp Marttojen Arkitreenien Puhtaanapito ja tekstiilien hoito: Puhtaanapito osuuden suorittaneille. \n\nTutkinnon osasta Kodin ruokapalvelujen tuottaminen 20 osp, tunnustetaan 5 osp Marttojen Arkitreenien Ruuanvalmistus ja ravitsemus osuuden suorittaneille. \n\nTutkinnon osasta Lounasruokien valmistus 40 osp, tunnustetaan 5 osp Marttojen Arkitreenien Ruuanvalmistus ja ravitsemus osuuden suorittaneille. \n\nTutkinnon osasta Yhteiskunnassa ja kansalaisena toimiminen 2 osp, yhteisten opintojen pakollinen tutkinnon osa tunnustetaan 0,5 osp Marttojen Arkitreenien Kodin talous ja kuluttaja-asiat osuuden suorittaneille. \n",
         "competence": 12,
         "academicdegree": 30,
-        "created_at": "2019-11-14T06:47:59.065Z",
-        "updated_at": "2019-11-25T08:34:23.964Z",
         "identification": null
       }
     ]
@@ -1014,9 +842,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 2,
@@ -1026,20 +852,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-05-16T11:50:53.034Z",
-      "updated_at": "2019-10-16T10:53:36.749Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 15,
       "name_fi": "Yleissivistävä koulutus",
       "name_en": "General education",
-      "name_sv": "Allmänbildande utbildning",
-      "created_at": "2019-05-17T12:35:16.228Z",
-      "updated_at": "2019-07-05T11:58:38.832Z"
+      "name_sv": "Allmänbildande utbildning"
     },
-    "created_at": "2019-11-13T13:35:55.495Z",
-    "updated_at": "2019-11-13T13:39:24.133Z",
     "competencedegreelinks": [
       {
         "id": 148,
@@ -1049,8 +869,6 @@
         "description_sv": "Tutkinnon osasta Osallisuuden ja käytännön taitojen vahvistaminen tunnustetaan 1 osp Marttojen Arkitreenien Kodin talous ja kuluttaja-asiat kokonaisuuden suorittaneille, 1 osp Marttojen Arkitreenien Puhtaanapito ja tekstiilien hoito: Puhtaanapito kokonaisuuden suorittaneille ja 1 osp Marttojen Arkitreenien Ruuanvalmistus ja ravitsemus kokonaisuuden suorittaneille. ",
         "competence": 12,
         "academicdegree": 31,
-        "created_at": "2019-11-14T06:37:30.611Z",
-        "updated_at": "2019-11-25T08:33:12.848Z",
         "identification": null
       },
       {
@@ -1061,8 +879,6 @@
         "description_sv": "Tutkinnon osasta Osallisuuden ja käytännön taitojen vahvistaminen tunnustetaan 1 osp.  Suoritus myönnetään kokonaisuudesta.",
         "competence": 13,
         "academicdegree": 31,
-        "created_at": "2019-11-14T06:38:38.165Z",
-        "updated_at": "2019-11-25T08:30:49.513Z",
         "identification": null
       }
     ]
@@ -1083,9 +899,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 2,
@@ -1095,20 +909,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-05-16T11:50:53.034Z",
-      "updated_at": "2019-10-16T10:53:36.749Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 7,
       "name_fi": "Palvelualat",
       "name_en": "Services",
-      "name_sv": "Tjänstebranscher",
-      "created_at": "2019-05-07T09:33:45.149Z",
-      "updated_at": "2019-07-05T11:55:57.318Z"
+      "name_sv": "Tjänstebranscher"
     },
-    "created_at": "2019-11-25T07:18:53.967Z",
-    "updated_at": "2019-11-25T07:40:07.134Z",
     "competencedegreelinks": [
       {
         "id": 152,
@@ -1118,8 +926,6 @@
         "description_sv": "Tutkinnon osasta Yhteiskunnassa ja kansalaisena toimiminen 2osp, tunnustetaan 2 osp Arkitreenien Kodin talous ja kuluttaja-asiat suorittaneille. \n\nTutkinnon osasta Lounasruokien valmistus, 40 osp, tunnustetaan 5 osp Arkitreenien Ruuanvalmistus ja ravitsemus suorittaneille.",
         "competence": 12,
         "academicdegree": 32,
-        "created_at": "2019-11-25T07:35:36.223Z",
-        "updated_at": "2019-11-25T08:28:40.444Z",
         "identification": "seurakuntaopisto-raca-martat-arkitreeni"
       },
       {
@@ -1130,8 +936,6 @@
         "description_sv": "Tutkinnon osasta Lounasruokien valmistus, 40 osp, tunnustetaan 1 osp Marttojen Kesti koulutuksen suorittaneille. ",
         "competence": 13,
         "academicdegree": 32,
-        "created_at": "2019-11-25T07:38:35.087Z",
-        "updated_at": "2019-11-25T07:40:07.136Z",
         "identification": "seurakuntaopisto-raca-martat-kesti"
       }
     ]
@@ -1152,9 +956,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -1164,20 +966,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 10,
       "name_fi": "Tekniikka",
       "name_en": "Technology",
-      "name_sv": "Teknik",
-      "created_at": "2019-05-07T09:34:10.767Z",
-      "updated_at": "2019-07-05T11:57:15.075Z"
+      "name_sv": "Teknik"
     },
-    "created_at": "2019-06-07T13:54:42.200Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 96,
@@ -1187,8 +983,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.\n",
         "competence": 8,
         "academicdegree": 7,
-        "created_at": "2019-07-15T13:06:24.935Z",
-        "updated_at": "2019-07-15T13:06:24.946Z",
         "identification": "hamk-biojaelintarviketekniikka-partio-kogi"
       },
       {
@@ -1199,8 +993,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 7,
-        "created_at": "2019-07-12T14:01:44.028Z",
-        "updated_at": "2019-07-12T14:02:54.872Z",
         "identification": "hamk-biojaelintarviketekniikka-partio-partiokouluttajakoulutus"
       },
       {
@@ -1211,8 +1003,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 7,
-        "created_at": "2019-06-07T13:55:45.478Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-bio-ja-elintarviketekniikka-sp-partiojohtaja-peruskoulutus"
       },
       {
@@ -1223,8 +1013,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 7,
-        "created_at": "2019-07-11T06:49:00.989Z",
-        "updated_at": "2019-07-11T06:49:01.001Z",
         "identification": "hamk-bio-ja-elintarviketekniikka-partio-valmentajakoulutus"
       },
       {
@@ -1235,8 +1023,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 6,
         "academicdegree": 7,
-        "created_at": "2019-07-11T12:40:18.312Z",
-        "updated_at": "2019-07-11T12:40:18.321Z",
         "identification": "hamk-bio-ja-elintarviketekniikka-partio-koulutusohjaajakoulutus"
       }
     ]
@@ -1257,9 +1043,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -1269,20 +1053,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 5,
       "name_fi": "Terveys- ja hyvinvointi",
       "name_en": "Health and Welfare",
-      "name_sv": "Hälsovård och välfärd",
-      "created_at": "2019-05-07T09:33:22.819Z",
-      "updated_at": "2019-07-05T11:55:07.001Z"
+      "name_sv": "Hälsovård och välfärd"
     },
-    "created_at": "2019-07-10T12:44:44.379Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 113,
@@ -1292,8 +1070,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 23,
-        "created_at": "2019-07-15T14:36:15.254Z",
-        "updated_at": "2019-07-15T14:36:15.265Z",
         "identification": "hamk-terveydenhoitaja-partio-kogi"
       },
       {
@@ -1304,8 +1080,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 23,
-        "created_at": "2019-07-12T08:55:50.174Z",
-        "updated_at": "2019-07-12T08:55:50.183Z",
         "identification": "hamk-terveydenhoitaja-partio-koulutusohjaajakoulutus"
       },
       {
@@ -1316,8 +1090,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 23,
-        "created_at": "2019-07-10T13:58:15.826Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-terveydenhoitaja-sp-pjpk"
       },
       {
@@ -1328,8 +1100,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 23,
-        "created_at": "2019-07-12T14:26:23.644Z",
-        "updated_at": "2019-07-12T14:26:23.654Z",
         "identification": "hamk-terveydenhoitaja-partio-partiokouluttajakoulutus"
       },
       {
@@ -1340,8 +1110,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 2,
         "academicdegree": 23,
-        "created_at": "2019-07-11T08:18:52.055Z",
-        "updated_at": "2019-07-11T08:18:52.066Z",
         "identification": "hamk-terveydenhoitaja-partio-valmentajakoulutus"
       }
     ]
@@ -1362,9 +1130,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -1374,20 +1140,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 10,
       "name_fi": "Tekniikka",
       "name_en": "Technology",
-      "name_sv": "Teknik",
-      "created_at": "2019-05-07T09:34:10.767Z",
-      "updated_at": "2019-07-05T11:57:15.075Z"
+      "name_sv": "Teknik"
     },
-    "created_at": "2019-07-10T12:43:05.143Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 52,
@@ -1397,8 +1157,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 2,
         "academicdegree": 22,
-        "created_at": "2019-07-11T08:14:55.763Z",
-        "updated_at": "2019-07-11T08:14:55.773Z",
         "identification": "hamk-sähköjaautomaatiotekniikka-partio-valmentajakoulutus"
       },
       {
@@ -1409,8 +1167,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 22,
-        "created_at": "2019-07-12T14:25:32.711Z",
-        "updated_at": "2019-07-12T14:25:32.722Z",
         "identification": "hamk-sähköjaautomaatiotekniikka-partio-partiokouluttajakoulutus"
       },
       {
@@ -1421,8 +1177,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 22,
-        "created_at": "2019-07-15T14:35:32.264Z",
-        "updated_at": "2019-07-15T14:35:32.275Z",
         "identification": "hamk-sähköjaautomaatiotekniikka-partio-kogi"
       },
       {
@@ -1433,8 +1187,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 22,
-        "created_at": "2019-07-12T08:55:02.331Z",
-        "updated_at": "2019-07-12T08:55:02.352Z",
         "identification": "hamk-sähköjaautomaatiotekniikka-partio-koulutusohjaajakoulutus"
       },
       {
@@ -1445,8 +1197,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 22,
-        "created_at": "2019-07-10T13:56:23.382Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-sähköjaautomaatiotekniikka-sp-pjpk"
       }
     ]
@@ -1467,9 +1217,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -1479,20 +1227,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 11,
       "name_fi": "Tietojenkäsittely ja tieto- ja viestintätekniikka",
       "name_en": "Computing and ICT",
-      "name_sv": "Databehandling och informations- och kommunikationsteknik ",
-      "created_at": "2019-05-07T09:34:25.498Z",
-      "updated_at": "2019-07-05T11:57:43.920Z"
+      "name_sv": "Databehandling och informations- och kommunikationsteknik "
     },
-    "created_at": "2019-07-10T12:48:02.720Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 94,
@@ -1502,8 +1244,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 24,
-        "created_at": "2019-07-12T14:28:11.029Z",
-        "updated_at": "2019-07-12T14:28:11.040Z",
         "identification": "hamk-tietojenkäsittely-partio-partiokouluttajakoulutus"
       },
       {
@@ -1514,8 +1254,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 24,
-        "created_at": "2019-07-15T14:37:36.371Z",
-        "updated_at": "2019-07-15T14:37:36.380Z",
         "identification": "hamk-tietojenkäsittely-partio-kogi"
       },
       {
@@ -1526,8 +1264,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 24,
-        "created_at": "2019-07-10T13:59:23.427Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-tietojenkäsittely-sp-pjpk"
       },
       {
@@ -1538,8 +1274,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 24,
-        "created_at": "2019-07-12T08:57:27.375Z",
-        "updated_at": "2019-07-12T08:57:27.383Z",
         "identification": "hamk-tietojenkäsittely-partio-koulutusohjaajakoulutus"
       },
       {
@@ -1550,8 +1284,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 2,
         "academicdegree": 24,
-        "created_at": "2019-07-11T08:28:23.579Z",
-        "updated_at": "2019-07-11T08:28:23.590Z",
         "identification": "hamk-tietojenkäsittely-partio-valmentajakoulutus"
       }
     ]
@@ -1572,9 +1304,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 7,
@@ -1584,20 +1314,14 @@
       "description_en": "SAMK on noin 6000 opiskelijan ja 400 työntekijän monialainen ja kansainvälisesti suuntautunut korkeakoulu. Länsirannikon vaikutusalueella SAMK on merkittävä osaajien tekijä, kehittäjä, kansainvälistäjä ja yrittäjyyden edistäjä.",
       "description_fi": "SAMK on noin 6000 opiskelijan ja 400 työntekijän monialainen ja kansainvälisesti suuntautunut korkeakoulu. Länsirannikon vaikutusalueella SAMK on merkittävä osaajien tekijä, kehittäjä, kansainvälistäjä ja yrittäjyyden edistäjä.",
       "description_sv": "SAMK on noin 6000 opiskelijan ja 400 työntekijän monialainen ja kansainvälisesti suuntautunut korkeakoulu. Länsirannikon vaikutusalueella SAMK on merkittävä osaajien tekijä, kehittäjä, kansainvälistäjä ja yrittäjyyden edistäjä.",
-      "url": "https://www.samk.fi/",
-      "created_at": "2019-12-10T05:28:50.849Z",
-      "updated_at": "2019-12-10T05:40:10.553Z"
+      "url": "https://www.samk.fi/"
     },
     "fieldofstudy": {
       "id": 3,
       "name_fi": "Kauppa ja hallinto",
       "name_en": "Trade and Administration",
-      "name_sv": "Ekonomi och förvaltning",
-      "created_at": "2019-05-07T09:33:01.518Z",
-      "updated_at": "2019-07-05T11:54:01.758Z"
+      "name_sv": "Ekonomi och förvaltning"
     },
-    "created_at": "2019-12-09T12:07:37.061Z",
-    "updated_at": "2019-12-10T05:40:10.569Z",
     "competencedegreelinks": [
       {
         "id": 154,
@@ -1607,8 +1331,6 @@
         "description_sv": "Palloliiton valmennus- tai joukkueenjohtajatehtävissä toimimisesta voi saada 5 opintopistettä kohtaan Projektiopinnot (edellyttää lisäksi NQF6-tason saavuttamista osoittavaa kirjallisuuteen tutustumista).",
         "competence": 25,
         "academicdegree": 33,
-        "created_at": "2019-12-09T12:09:46.591Z",
-        "updated_at": "2019-12-10T05:38:56.403Z",
         "identification": "Palloliitto SAMK"
       }
     ]
@@ -1629,9 +1351,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -1641,20 +1361,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 10,
       "name_fi": "Tekniikka",
       "name_en": "Technology",
-      "name_sv": "Teknik",
-      "created_at": "2019-05-07T09:34:10.767Z",
-      "updated_at": "2019-07-05T11:57:15.075Z"
+      "name_sv": "Teknik"
     },
-    "created_at": "2019-07-10T10:48:29.969Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 67,
@@ -1664,8 +1378,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 19,
-        "created_at": "2019-07-12T08:43:30.926Z",
-        "updated_at": "2019-07-12T08:43:30.935Z",
         "identification": "hamk-rakennusjayhdyskuntatekniikka-partio-koulutusohjaajakoulutus"
       },
       {
@@ -1676,8 +1388,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 19,
-        "created_at": "2019-07-10T13:51:19.992Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-rakennusjayhdyskuntatekniikka-sp-pjpk"
       },
       {
@@ -1688,8 +1398,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 19,
-        "created_at": "2019-07-11T07:55:03.204Z",
-        "updated_at": "2019-07-11T07:55:03.213Z",
         "identification": "hamk-rakennusjayhdyskuntatekniikka-partio-valmentajakoulutus"
       },
       {
@@ -1700,8 +1408,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 19,
-        "created_at": "2019-07-15T14:17:20.777Z",
-        "updated_at": "2019-07-15T14:17:20.786Z",
         "identification": "hamk-rakennusjayhdyskuntatekniikka-partio-kogi"
       },
       {
@@ -1712,8 +1418,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 19,
-        "created_at": "2019-07-12T14:18:40.828Z",
-        "updated_at": "2019-07-12T14:18:40.847Z",
         "identification": "hamk-rakennusjayhdyskuntatekniikka-partio-partiokouluttajakoulutus"
       }
     ]
@@ -1734,9 +1438,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -1746,20 +1448,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 6,
       "name_fi": "Maa- ja metsätalous",
       "name_en": "Agriculture and Forestry",
-      "name_sv": "Lant- och skogsbruk",
-      "created_at": "2019-05-07T09:33:33.309Z",
-      "updated_at": "2019-07-05T11:55:30.282Z"
+      "name_sv": "Lant- och skogsbruk"
     },
-    "created_at": "2019-07-09T06:56:00.288Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 80,
@@ -1769,8 +1465,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 12,
-        "created_at": "2019-07-12T14:06:08.449Z",
-        "updated_at": "2019-07-12T14:06:08.460Z",
         "identification": "hamk-ymparistosuunnittelija-partio-partiokouluttajakoulutus"
       },
       {
@@ -1781,8 +1475,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 12,
-        "created_at": "2019-07-12T08:05:01.830Z",
-        "updated_at": "2019-07-12T08:05:01.841Z",
         "identification": "hamk-ymparistosuunnittelija-partio-koulutusohjaajakoulutus"
       },
       {
@@ -1793,8 +1485,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.\n",
         "competence": 1,
         "academicdegree": 12,
-        "created_at": "2019-07-10T13:08:11.697Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-ymparistosuunnittelija-sp-pjpk"
       },
       {
@@ -1805,8 +1495,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 12,
-        "created_at": "2019-07-11T06:54:30.532Z",
-        "updated_at": "2019-07-11T06:54:30.542Z",
         "identification": "hamk-ymparistosuunnittelija-partio-valmentajakoulutus"
       },
       {
@@ -1817,8 +1505,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 12,
-        "created_at": "2019-07-15T14:08:18.969Z",
-        "updated_at": "2019-07-15T14:08:18.979Z",
         "identification": "hamk-ymparistosuunnittelija-partio-kogi"
       }
     ]
@@ -1839,9 +1525,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -1851,20 +1535,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 10,
       "name_fi": "Tekniikka",
       "name_en": "Technology",
-      "name_sv": "Teknik",
-      "created_at": "2019-05-07T09:34:10.767Z",
-      "updated_at": "2019-07-05T11:57:15.075Z"
+      "name_sv": "Teknik"
     },
-    "created_at": "2019-07-09T14:23:26.283Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 25,
@@ -1874,8 +1552,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.\n\n",
         "competence": 1,
         "academicdegree": 14,
-        "created_at": "2019-07-10T13:29:18.864Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-liikenneala-sp-pjpk"
       },
       {
@@ -1886,8 +1562,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 14,
-        "created_at": "2019-07-15T14:11:20.771Z",
-        "updated_at": "2019-07-15T14:11:20.782Z",
         "identification": "hamk-liikenneala-partio-kogi"
       },
       {
@@ -1898,8 +1572,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 14,
-        "created_at": "2019-07-12T14:09:54.839Z",
-        "updated_at": "2019-07-12T14:09:54.857Z",
         "identification": "hamk-liikenneala-partio-partiokouluttajakoulutus"
       },
       {
@@ -1910,8 +1582,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 14,
-        "created_at": "2019-07-11T07:01:09.535Z",
-        "updated_at": "2019-07-11T07:01:09.545Z",
         "identification": "hamk-liikenneala-partio-valmentajakoulutus"
       },
       {
@@ -1922,8 +1592,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 14,
-        "created_at": "2019-07-12T08:07:00.166Z",
-        "updated_at": "2019-07-12T08:07:00.174Z",
         "identification": "hamk-liikenneala-partio-koulutusohjaajakoulutus"
       }
     ]
@@ -1944,9 +1612,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 2,
@@ -1956,20 +1622,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-05-16T11:50:53.034Z",
-      "updated_at": "2019-10-16T10:53:36.749Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 5,
       "name_fi": "Terveys- ja hyvinvointi",
       "name_en": "Health and Welfare",
-      "name_sv": "Hälsovård och välfärd",
-      "created_at": "2019-05-07T09:33:22.819Z",
-      "updated_at": "2019-07-05T11:55:07.001Z"
+      "name_sv": "Hälsovård och välfärd"
     },
-    "created_at": "2019-07-04T12:53:55.388Z",
-    "updated_at": "2019-11-13T13:37:59.115Z",
     "competencedegreelinks": [
       {
         "id": 117,
@@ -1979,8 +1639,6 @@
         "description_sv": "Osaamista tunnustetaan seuraaviin tutkinnonosiin: Lapsen kasvun, hyvinvoinnin ja oppimisen edistäminen - tunnustetaan 2 osp, Kasvun ja osallisuuden edistäminen 0,5 osp.",
         "competence": 5,
         "academicdegree": 10,
-        "created_at": "2019-09-25T12:36:15.640Z",
-        "updated_at": "2019-11-13T14:04:37.385Z",
         "identification": "seurakuntaopisto-sote-martat-vilppu"
       },
       {
@@ -1991,8 +1649,6 @@
         "description_sv": "Tutkinnon osat: Kasvun ja osallisuuden edistäminen 25 osp, tunnustetaan 5-7 osp, Toiminnalliset menetelmät hyvinvoinnin edistämisessä 15 osp, tunnustetaan 8 osp",
         "competence": 4,
         "academicdegree": 10,
-        "created_at": "2019-07-04T12:55:43.818Z",
-        "updated_at": "2019-11-13T13:37:59.118Z",
         "identification": "seurakuntaopisto-sote-partio-rok"
       }
     ]
@@ -2013,9 +1669,7 @@
       "name_en": "Upper secondary education",
       "name_fi": "Toisen asteen koulutus",
       "name_sv": "Andra stadiets utbildning",
-      "level": "4",
-      "created_at": "2019-05-09T09:57:12.741Z",
-      "updated_at": "2019-07-05T12:03:32.531Z"
+      "level": "4"
     },
     "school": {
       "id": 2,
@@ -2025,20 +1679,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": null,
-      "created_at": "2019-05-16T11:50:53.034Z",
-      "updated_at": "2019-10-16T10:53:36.749Z"
+      "url": null
     },
     "fieldofstudy": {
       "id": 5,
       "name_fi": "Terveys- ja hyvinvointi",
       "name_en": "Health and Welfare",
-      "name_sv": "Hälsovård och välfärd",
-      "created_at": "2019-05-07T09:33:22.819Z",
-      "updated_at": "2019-07-05T11:55:07.001Z"
+      "name_sv": "Hälsovård och välfärd"
     },
-    "created_at": "2019-05-16T11:45:19.370Z",
-    "updated_at": "2019-10-16T10:53:36.753Z",
     "competencedegreelinks": [
       {
         "id": 118,
@@ -2048,8 +1696,6 @@
         "description_sv": "Tutkinnon osasta Yksilön, ryhmän ja yhteisön ohjaaminen 35 osp,  tunnustetaan 2 op tukioppilaskoulutuksen suorittaneille ja tukioppilaana vähintään yhden lukuvuoden toimineille. Suoritus myönnetään kokonaisuudesta.",
         "competence": 15,
         "academicdegree": 2,
-        "created_at": "2019-10-16T06:20:08.308Z",
-        "updated_at": "2019-11-13T13:59:14.774Z",
         "identification": null
       },
       {
@@ -2060,8 +1706,6 @@
         "description_sv": "Osaamista tunnustetaan tutkinnonosiin: Lapsen kasvun, hyvinvoinnin ja oppimisen edistäminen - tunnustetaan 1 osp, Vapaaehtois- ja järjestötoiminnan ohjaaminen - tunnustetaan 2 osp, Ikääntyvien toiminnan ohjaaminen - tunnustetaan 1 osp, Yksilön, ryhmän ja yhteisön ohjaaminen - tunnustetaan 1 osp.",
         "competence": 5,
         "academicdegree": 2,
-        "created_at": "2019-05-29T09:55:36.791Z",
-        "updated_at": "2019-11-14T14:04:35.813Z",
         "identification": "seurakuntaopisto-kaso-martat-vilppu"
       },
       {
@@ -2072,8 +1716,6 @@
         "description_sv": "Tutkinnon osat: Ammatillinen kohtaaminen kasvatus- ja ohjausalalla 15 osp, tunnustetaan 5-10 osp  , Yksilön, ryhmän ja yhteisön ohjaaminen 30 osp, tunnustetaan 10-15 osp, Osallisuuden tukeminen ja sosiaalisuuden vahvistaminen 35 osp, tunnustetaan 10-15 osp, Luonto- ja elämystoiminnan ohjaaminen 20 osp, tunnustetaan 10-15 osp, Vapaaehtois- ja järjestötoiminnan ohjaaminen 15 osp, tunnustetaan 10-15 osp",
         "competence": 4,
         "academicdegree": 2,
-        "created_at": "2019-05-16T11:46:33.373Z",
-        "updated_at": "2019-08-12T11:02:02.917Z",
         "identification": null
       },
       {
@@ -2084,8 +1726,6 @@
         "description_sv": "Tutkinnon osasta  Ammatillinen kohtaaminen kasvatus- ja ohjausalalla 15 osp,  tunnustetaan 2 osp Tehtävä Z kurssin suorittaneille.",
         "competence": 21,
         "academicdegree": 2,
-        "created_at": "2019-10-31T11:55:01.836Z",
-        "updated_at": "2019-11-13T13:54:52.760Z",
         "identification": null
       }
     ]
@@ -2106,9 +1746,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -2118,20 +1756,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 10,
       "name_fi": "Tekniikka",
       "name_en": "Technology",
-      "name_sv": "Teknik",
-      "created_at": "2019-05-07T09:34:10.767Z",
-      "updated_at": "2019-07-05T11:57:15.075Z"
+      "name_sv": "Teknik"
     },
-    "created_at": "2019-07-10T12:07:29.102Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 109,
@@ -2141,8 +1773,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 20,
-        "created_at": "2019-07-15T14:22:24.091Z",
-        "updated_at": "2019-07-15T14:22:24.101Z",
         "identification": "hamk-rakennusmestari-partio-kogi"
       },
       {
@@ -2153,8 +1783,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 20,
-        "created_at": "2019-07-10T13:54:21.277Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-rakennusmestari-sp-pjpk"
       },
       {
@@ -2165,8 +1793,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 20,
-        "created_at": "2019-07-12T14:19:33.541Z",
-        "updated_at": "2019-07-12T14:19:33.559Z",
         "identification": "hamk-rakennusmestari-partio-partiokouluttajakoulutus"
       },
       {
@@ -2177,8 +1803,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 20,
-        "created_at": "2019-07-12T08:48:27.517Z",
-        "updated_at": "2019-07-12T08:48:27.527Z",
         "identification": "hamk-rakennusmestari-partio-koulutusohjaajakoulutus"
       },
       {
@@ -2189,8 +1813,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 2,
         "academicdegree": 20,
-        "created_at": "2019-07-11T08:10:50.075Z",
-        "updated_at": "2019-07-11T08:10:50.085Z",
         "identification": "hamk-rakennusmestari-partio-valmentajakoulutus"
       }
     ]
@@ -2211,9 +1833,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -2223,20 +1843,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 3,
       "name_fi": "Kauppa ja hallinto",
       "name_en": "Trade and Administration",
-      "name_sv": "Ekonomi och förvaltning",
-      "created_at": "2019-05-07T09:33:01.518Z",
-      "updated_at": "2019-07-05T11:54:01.758Z"
+      "name_sv": "Ekonomi och förvaltning"
     },
-    "created_at": "2019-06-07T13:36:10.205Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 43,
@@ -2246,8 +1860,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 6,
-        "created_at": "2019-07-11T07:17:30.820Z",
-        "updated_at": "2019-07-11T07:17:30.830Z",
         "identification": "hamk-liiketalous-partio-valmentajakoulutus"
       },
       {
@@ -2258,8 +1870,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 6,
-        "created_at": "2019-07-12T08:34:41.099Z",
-        "updated_at": "2019-07-12T08:34:41.108Z",
         "identification": "hamk-liiketalous-partio-koulutusohjaajakoulutus"
       },
       {
@@ -2270,8 +1880,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 6,
-        "created_at": "2019-06-07T13:37:18.122Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-liiketalous-sp-partiojohtaja-peruskoulutus"
       },
       {
@@ -2282,8 +1890,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 6,
-        "created_at": "2019-07-15T14:12:10.786Z",
-        "updated_at": "2019-07-15T14:12:10.796Z",
         "identification": "hamk-liiketalous-partio-kogi"
       },
       {
@@ -2294,8 +1900,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 6,
-        "created_at": "2019-07-12T14:10:43.941Z",
-        "updated_at": "2019-07-12T14:10:43.951Z",
         "identification": "hamk-liiketalous-partio-partiokouluttajakoulutus"
       }
     ]
@@ -2316,9 +1920,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -2328,20 +1930,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 5,
       "name_fi": "Terveys- ja hyvinvointi",
       "name_en": "Health and Welfare",
-      "name_sv": "Hälsovård och välfärd",
-      "created_at": "2019-05-07T09:33:22.819Z",
-      "updated_at": "2019-07-05T11:55:07.001Z"
+      "name_sv": "Hälsovård och välfärd"
     },
-    "created_at": "2019-07-10T12:24:05.232Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 69,
@@ -2351,8 +1947,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 21,
-        "created_at": "2019-07-12T08:49:13.334Z",
-        "updated_at": "2019-07-12T08:49:13.359Z",
         "identification": "hamk-sairaanhoitaja-partio-koulutusohjaajakoulutus"
       },
       {
@@ -2363,8 +1957,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 21,
-        "created_at": "2019-07-15T14:23:59.873Z",
-        "updated_at": "2019-07-15T14:23:59.883Z",
         "identification": "hamk-sairaanhoitaja-partio-kogi"
       },
       {
@@ -2375,8 +1967,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 21,
-        "created_at": "2019-07-10T13:57:16.142Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-sairaanhoitaja-sp-pjpk"
       },
       {
@@ -2387,8 +1977,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 2,
         "academicdegree": 21,
-        "created_at": "2019-07-11T08:11:59.771Z",
-        "updated_at": "2019-07-11T08:11:59.785Z",
         "identification": "hamk-sairaanhoitaja-partio-valmentajakoulutus"
       }
     ]
@@ -2409,9 +1997,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -2421,20 +2007,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 10,
       "name_fi": "Tekniikka",
       "name_en": "Technology",
-      "name_sv": "Teknik",
-      "created_at": "2019-05-07T09:34:10.767Z",
-      "updated_at": "2019-07-05T11:57:15.075Z"
+      "name_sv": "Teknik"
     },
-    "created_at": "2019-07-09T14:17:16.927Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 41,
@@ -2444,8 +2024,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 13,
-        "created_at": "2019-07-11T06:58:30.868Z",
-        "updated_at": "2019-07-11T06:58:30.877Z",
         "identification": "hamk-konetekniikka-partio-valmentajakoulutus"
       },
       {
@@ -2456,8 +2034,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 13,
-        "created_at": "2019-07-12T08:06:01.487Z",
-        "updated_at": "2019-07-12T08:06:01.497Z",
         "identification": "hamk-konetekniikka-partio-koulutusohjaajakoulutus"
       },
       {
@@ -2468,8 +2044,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 13,
-        "created_at": "2019-07-12T14:09:12.234Z",
-        "updated_at": "2019-07-12T14:09:12.246Z",
         "identification": "hamk-konetekniikka-partio-partiokouluttajakoulutus"
       },
       {
@@ -2480,8 +2054,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 13,
-        "created_at": "2019-07-15T14:09:52.401Z",
-        "updated_at": "2019-07-15T14:09:52.410Z",
         "identification": "hamk-konetekniikka-partio-kogi"
       },
       {
@@ -2492,8 +2064,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.\n\n",
         "competence": 1,
         "academicdegree": 13,
-        "created_at": "2019-07-10T13:14:32.902Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-konetekniikka-sp-pjpk"
       }
     ]
@@ -2514,9 +2084,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -2526,20 +2094,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 6,
       "name_fi": "Maa- ja metsätalous",
       "name_en": "Agriculture and Forestry",
-      "name_sv": "Lant- och skogsbruk",
-      "created_at": "2019-05-07T09:33:33.309Z",
-      "updated_at": "2019-07-05T11:55:30.282Z"
+      "name_sv": "Lant- och skogsbruk"
     },
-    "created_at": "2019-07-10T08:33:51.486Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 44,
@@ -2549,8 +2111,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 2,
         "academicdegree": 15,
-        "created_at": "2019-07-11T07:19:03.670Z",
-        "updated_at": "2019-07-11T07:19:03.680Z",
         "identification": "hamk-agrologi-partio-valmentajakoulutus"
       },
       {
@@ -2561,8 +2121,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 15,
-        "created_at": "2019-07-15T14:12:50.382Z",
-        "updated_at": "2019-07-15T14:12:50.390Z",
         "identification": "hamk-agrologi-partio-kogi"
       },
       {
@@ -2573,8 +2131,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 15,
-        "created_at": "2019-07-12T08:35:25.919Z",
-        "updated_at": "2019-07-12T08:35:25.931Z",
         "identification": "hamk-agrologi-partio-koulutusohjaajakoulutus"
       },
       {
@@ -2585,8 +2141,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 15,
-        "created_at": "2019-07-12T14:11:51.464Z",
-        "updated_at": "2019-07-12T14:11:51.473Z",
         "identification": "hamk-agrologi-partio-partiokouluttajakoulutus"
       },
       {
@@ -2597,8 +2151,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 15,
-        "created_at": "2019-07-10T13:33:06.207Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-agrologi-sp-pjpk"
       }
     ]
@@ -2619,9 +2171,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -2631,20 +2181,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 6,
       "name_fi": "Maa- ja metsätalous",
       "name_en": "Agriculture and Forestry",
-      "name_sv": "Lant- och skogsbruk",
-      "created_at": "2019-05-07T09:33:33.309Z",
-      "updated_at": "2019-07-05T11:55:30.282Z"
+      "name_sv": "Lant- och skogsbruk"
     },
-    "created_at": "2019-07-08T08:20:10.929Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 39,
@@ -2654,8 +2198,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 11,
-        "created_at": "2019-07-11T06:51:58.124Z",
-        "updated_at": "2019-07-11T06:51:58.140Z",
         "identification": "hamk-hevostalous-partio-valmentajakoulutus"
       },
       {
@@ -2666,8 +2208,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.\n",
         "competence": 1,
         "academicdegree": 11,
-        "created_at": "2019-07-10T12:50:44.370Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-hevostalous-sp-pjpk"
       },
       {
@@ -2678,8 +2218,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 11,
-        "created_at": "2019-07-12T09:00:42.018Z",
-        "updated_at": "2019-07-12T09:00:42.028Z",
         "identification": "hamk-hevostalous-partio-koulutusohjaajakoulutus"
       },
       {
@@ -2690,8 +2228,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 11,
-        "created_at": "2019-07-12T14:05:18.022Z",
-        "updated_at": "2019-07-12T14:05:18.031Z",
         "identification": "hamk-hevostalous-partio-partiokouluttajakoulutus"
       },
       {
@@ -2702,8 +2238,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 11,
-        "created_at": "2019-07-15T13:37:07.311Z",
-        "updated_at": "2019-07-15T13:37:07.320Z",
         "identification": "hamk-hevostalous-partio-kogi"
       }
     ]
@@ -2724,9 +2258,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -2736,20 +2268,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 6,
       "name_fi": "Maa- ja metsätalous",
       "name_en": "Agriculture and Forestry",
-      "name_sv": "Lant- och skogsbruk",
-      "created_at": "2019-05-07T09:33:33.309Z",
-      "updated_at": "2019-07-05T11:55:30.282Z"
+      "name_sv": "Lant- och skogsbruk"
     },
-    "created_at": "2019-05-17T12:45:47.633Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 9,
@@ -2759,8 +2285,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 3,
-        "created_at": "2019-06-07T13:22:25.854Z",
-        "updated_at": "2019-08-12T12:04:13.839Z",
         "identification": "hamk-metsatalous-partio-partiokouluttajakoulutus"
       },
       {
@@ -2771,8 +2295,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 3,
-        "created_at": "2019-07-09T10:20:26.404Z",
-        "updated_at": "2019-08-12T12:04:13.839Z",
         "identification": "partio-valmentaja-hamk-metsatalous"
       },
       {
@@ -2783,8 +2305,6 @@
         "description_sv": "Taimikonhoitajakurssi on mahdollista hyödyntää HAMK metsätalouden amk-opinnoissa. Voit hakea AHOTia/osaamisen tunnistamista 1. vuoden opintoihin sisältyvästä taimikonhoidon käytännön osiosta. Osaamisen näyttönä toimii suoritustodistus 4H:n taimikonhoitajakurssista. Lisätietoja opintojen ohjaajalta.",
         "competence": 9,
         "academicdegree": 3,
-        "created_at": "2019-06-27T13:18:03.409Z",
-        "updated_at": "2019-10-11T05:44:20.494Z",
         "identification": "hamk-metsatalous-4h-taimikonhoito"
       },
       {
@@ -2795,8 +2315,6 @@
         "description_sv": "Tekemällä metsäosaaja-osaamismerkin osoitat osaamista HAMK metsätalouden amk-opintoihin sisältyviin aiheisiin. Parhaan hyödyn osaamismerkistä saa tekemällä osaamismerkin ”HAMK TOIMINTAVINKKI” merkinnällä varustetuilla suoritusvinkeillä. Osaamismerkin tekeminen kartuttaa metsäalan perusosaamista ja keventää uuden tiedon oppimistaakkaa opintojen alussa. Vaikka osaamismerkki ei oikeuta suoriin hyväksilukuihin, niin kannattaa ottaa asia puheeksi opintojen ohjaajan kanssa.\nOsaamismerkin voi tehdä myös metsätalouden amk-opiskelija opintojen ohessa.",
         "competence": 11,
         "academicdegree": 3,
-        "created_at": "2019-07-12T14:31:49.821Z",
-        "updated_at": "2019-08-12T12:04:13.839Z",
         "identification": "hamk-metsatalous-partio-metsaosaaja"
       },
       {
@@ -2807,8 +2325,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 3,
-        "created_at": "2019-05-17T12:53:29.125Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-metsatalous-sp-partiojohtaja-peruskoulutus"
       },
       {
@@ -2819,8 +2335,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 3,
-        "created_at": "2019-07-09T10:17:24.244Z",
-        "updated_at": "2019-08-12T12:04:13.839Z",
         "identification": "partio-kogi-hamk-metsatalous"
       },
       {
@@ -2831,8 +2345,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 3,
-        "created_at": "2019-07-09T10:18:54.786Z",
-        "updated_at": "2019-08-12T12:04:13.839Z",
         "identification": "partio-ko-hamk-metsatalous"
       }
     ]
@@ -2853,9 +2365,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -2865,20 +2375,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 6,
       "name_fi": "Maa- ja metsätalous",
       "name_en": "Agriculture and Forestry",
-      "name_sv": "Lant- och skogsbruk",
-      "created_at": "2019-05-07T09:33:33.309Z",
-      "updated_at": "2019-07-05T11:55:30.282Z"
+      "name_sv": "Lant- och skogsbruk"
     },
-    "created_at": "2019-07-10T08:44:59.906Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 28,
@@ -2888,8 +2392,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 17,
-        "created_at": "2019-07-10T13:38:32.938Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-puutarhatalous-sp-pjpk"
       },
       {
@@ -2900,8 +2402,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 17,
-        "created_at": "2019-07-11T07:33:11.216Z",
-        "updated_at": "2019-07-11T07:33:11.226Z",
         "identification": "hamk-puutarhatalous-partio-valmentajakoulutus"
       },
       {
@@ -2912,8 +2412,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 17,
-        "created_at": "2019-07-15T14:14:47.575Z",
-        "updated_at": "2019-07-15T14:14:47.584Z",
         "identification": "hamk-puutarhatalous-partio-kogi"
       },
       {
@@ -2924,8 +2422,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 6,
         "academicdegree": 17,
-        "created_at": "2019-07-12T08:41:04.022Z",
-        "updated_at": "2019-07-12T08:41:04.031Z",
         "identification": "hamk-puutarhatalous-partio-koulutusohjaajakoulutus"
       },
       {
@@ -2936,8 +2432,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 17,
-        "created_at": "2019-07-12T14:15:50.724Z",
-        "updated_at": "2019-07-12T14:15:50.740Z",
         "identification": "hamk-puutarhatalous-partio-partiokouluttajakoulutus"
       }
     ]
@@ -2958,9 +2452,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -2970,20 +2462,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 10,
       "name_fi": "Tekniikka",
       "name_en": "Technology",
-      "name_sv": "Teknik",
-      "created_at": "2019-05-07T09:34:10.767Z",
-      "updated_at": "2019-07-05T11:57:15.075Z"
+      "name_sv": "Teknik"
     },
-    "created_at": "2019-06-07T13:58:21.940Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 37,
@@ -2993,8 +2479,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 8,
-        "created_at": "2019-07-11T06:50:04.099Z",
-        "updated_at": "2019-07-11T06:50:04.109Z",
         "identification": "hamk-biotalous-partio-valmentajakoulutus"
       },
       {
@@ -3005,8 +2489,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 8,
-        "created_at": "2019-07-12T14:02:26.759Z",
-        "updated_at": "2019-07-12T14:02:26.768Z",
         "identification": "hamk-biotalous-partio-partiokouluttajakoulutus"
       },
       {
@@ -3017,8 +2499,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 8,
-        "created_at": "2019-07-10T12:49:53.514Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-biotalous-sp-pjpk"
       },
       {
@@ -3029,8 +2509,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.\n",
         "competence": 8,
         "academicdegree": 8,
-        "created_at": "2019-07-15T13:35:47.215Z",
-        "updated_at": "2019-07-15T13:35:47.224Z",
         "identification": "hamk-biotalous-partio-kogi"
       },
       {
@@ -3041,8 +2519,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.\n",
         "competence": 6,
         "academicdegree": 8,
-        "created_at": "2019-07-11T12:41:08.490Z",
-        "updated_at": "2019-07-11T12:41:08.499Z",
         "identification": "hamk-biotalous-partio-koulutusohjaajakoulutus"
       }
     ]
@@ -3063,9 +2539,7 @@
       "name_en": "Bachelor’s degrees",
       "name_fi": "Alemmat korkeakoulututkinnot",
       "name_sv": "Lägre högskoleexamina",
-      "level": "6",
-      "created_at": "2019-05-09T09:58:58.697Z",
-      "updated_at": "2019-07-05T12:04:08.413Z"
+      "level": "6"
     },
     "school": {
       "id": 3,
@@ -3075,20 +2549,14 @@
       "description_en": null,
       "description_fi": null,
       "description_sv": null,
-      "url": "https://www.hamk.fi",
-      "created_at": "2019-05-17T12:42:47.514Z",
-      "updated_at": "2019-10-16T10:53:43.960Z"
+      "url": "https://www.hamk.fi"
     },
     "fieldofstudy": {
       "id": 3,
       "name_fi": "Kauppa ja hallinto",
       "name_en": "Trade and Administration",
-      "name_sv": "Ekonomi och förvaltning",
-      "created_at": "2019-05-07T09:33:01.518Z",
-      "updated_at": "2019-07-05T11:54:01.758Z"
+      "name_sv": "Ekonomi och förvaltning"
     },
-    "created_at": "2019-06-07T14:08:48.722Z",
-    "updated_at": "2019-10-16T10:53:43.964Z",
     "competencedegreelinks": [
       {
         "id": 38,
@@ -3098,8 +2566,6 @@
         "description_sv": "Valmentaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Valmentaja-koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 2,
         "academicdegree": 9,
-        "created_at": "2019-07-11T06:51:13.647Z",
-        "updated_at": "2019-07-11T06:51:13.656Z",
         "identification": "hamk-hevosala-partio-valmentajakoulutus"
       },
       {
@@ -3110,8 +2576,6 @@
         "description_sv": "Partiojohtaja-jatkokoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-jatkokoulutus hyväksytään moduuliin 15 op laajuisena.",
         "competence": 8,
         "academicdegree": 9,
-        "created_at": "2019-07-15T13:36:30.318Z",
-        "updated_at": "2019-07-15T13:36:30.333Z",
         "identification": "hamk-hevosala-partio-kogi"
       },
       {
@@ -3122,8 +2586,6 @@
         "description_sv": "Partiokouluttaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiokouluttaja -koulutus hyväksytään moduuliin 2 op laajuisena.",
         "competence": 7,
         "academicdegree": 9,
-        "created_at": "2019-07-12T14:04:00.387Z",
-        "updated_at": "2019-07-12T14:04:00.397Z",
         "identification": "hamk-hevosala-partio-partiokouluttajakoulutus"
       },
       {
@@ -3134,8 +2596,6 @@
         "description_sv": "Koulutusohjaaja-koulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Koulutus-ohjaajakoulutus hyväksytään moduuliin 2 op laajuisena.\n\n",
         "competence": 6,
         "academicdegree": 9,
-        "created_at": "2019-07-11T12:56:58.996Z",
-        "updated_at": "2019-07-11T12:56:59.006Z",
         "identification": "hamk-hevosala-partio-koulutusohjaajakoulutus"
       },
       {
@@ -3146,8 +2606,6 @@
         "description_sv": "Partiojohtaja-peruskoulutuksen voi sisällyttää moduuliin ”Ohjaaminen ja johtaminen vapaaehtoistyössä” kaikissa Hämeen ammattikorkeakoulun tutkinnoissa. Partiojohtaja-peruskoulutus hyväksytään moduuliin 3 op laajuisena.",
         "competence": 1,
         "academicdegree": 9,
-        "created_at": "2019-06-07T14:09:38.910Z",
-        "updated_at": "2019-10-08T08:29:02.113Z",
         "identification": "hamk-hevosala-sp-partiojohtaja-peruskoulutus"
       }
     ]

@@ -202,8 +202,8 @@
     "description_fi": null,
     "description_en": null,
     "description_sv": null,
-    "url": "/images/120v-logo-Marttaliitto.png",
-    "logoUrl": null,
+    "url": null,
+    "logo": "/images/120v-logo-Marttaliitto.png",
     "competences": [
       {
         "id": 13,
@@ -395,7 +395,7 @@
     "description_en": "Suomen Palloliitto ry on perustettu 1907. Kansainväliseen Jalkapalloliittoon (FIFA) SPL liittyi 1908 ja Euroopan Jalkapalloliittoon (UEFA ) 1954.\n\nSuomen Palloliittoon kuuluvissa lähes 1 000 jäsenseurassa on yli 140 000 rekisteröityä pelaajaa. Kaikkiaan jalkapallon kanssa on viikottain tekemisissä noin 500 000 suomalaista. Suomen Palloliitto on harrastajamäärältään Suomen suurin urheilun lajiliitto.\n\nSuomen Palloliitto on jalkapallon erikoisliitto, joka Kansainvälisen Jalkapalloliiton FIFA:n jäsenenä vastaa maamme kaikesta jalkapallo- ja futsaltoiminnasta ja sen kehittämisestä. Työtä tehdään kasvatus- ja harrastustoiminnan että kilpa- ja huippu-urheilun parissa ihmis- ja asiakaskeskeisestä lähtökohdasta.",
     "description_sv": "Suomen Palloliitto ry on perustettu 1907. Kansainväliseen Jalkapalloliittoon (FIFA) SPL liittyi 1908 ja Euroopan Jalkapalloliittoon (UEFA ) 1954.\n\nSuomen Palloliittoon kuuluvissa lähes 1 000 jäsenseurassa on yli 140 000 rekisteröityä pelaajaa. Kaikkiaan jalkapallon kanssa on viikottain tekemisissä noin 500 000 suomalaista. Suomen Palloliitto on harrastajamäärältään Suomen suurin urheilun lajiliitto.\n\nSuomen Palloliitto on jalkapallon erikoisliitto, joka Kansainvälisen Jalkapalloliiton FIFA:n jäsenenä vastaa maamme kaikesta jalkapallo- ja futsaltoiminnasta ja sen kehittämisestä. Työtä tehdään kasvatus- ja harrastustoiminnan että kilpa- ja huippu-urheilun parissa ihmis- ja asiakaskeskeisestä lähtökohdasta.",
     "url": null,
-    "logoUrl": null,
+    "logo": null,
     "competences": [
       {
         "id": 25,

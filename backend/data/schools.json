@@ -538,7 +538,7 @@
     "description_fi": null,
     "description_sv": null,
     "url": null,
-    "logoUrl": null,
+    "logo": null,
     "academicdegrees": [
       {
         "id": 29,
@@ -566,7 +566,7 @@
     "description_fi": "SAMK on noin 6000 opiskelijan ja 400 työntekijän monialainen ja kansainvälisesti suuntautunut korkeakoulu. Länsirannikon vaikutusalueella SAMK on merkittävä osaajien tekijä, kehittäjä, kansainvälistäjä ja yrittäjyyden edistäjä.",
     "description_sv": "SAMK on noin 6000 opiskelijan ja 400 työntekijän monialainen ja kansainvälisesti suuntautunut korkeakoulu. Länsirannikon vaikutusalueella SAMK on merkittävä osaajien tekijä, kehittäjä, kansainvälistäjä ja yrittäjyyden edistäjä.",
     "url": "https://www.samk.fi/",
-    "logoUrl": null,
+    "logo": null,
     "academicdegrees": [
       {
         "id": 33,

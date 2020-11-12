@@ -222,15 +222,41 @@ const main = async () => {
         for (const obj of objList) {
             let filePath = path.join(destDirPath, 'id.' + obj.id + '.json')
             fs.writeFileSync(filePath, JSON.stringify(obj))
+        }
 
-            // If the content type is competencedegreelinks, also create separate json files based on
-            // competence.id and academicdegree.id.
-            if (contentType === 'competencedegreelinks') {
-                filePath = path.join(destDirPath, 'competence.' + obj.competence.id + '.json')
-                fs.writeFileSync(filePath, JSON.stringify(obj))
+        // If the content type is competencedegreelinks, also create separate json files based on
+        // competence.id and academicdegree.id.
+        if (contentType === 'competencedegreelinks') {
+            // Add the objects into the following structure.
+            let objListByKey = {
+                competence: {
+                    // competenceId => list of objects with this competenceId
+                },
+                academicdegree: {
+                    // academicdegreeId => list of objects with this academicdegree
+                }
+            }
 
-                filePath = path.join(destDirPath, 'academicdegree.' + obj.academicdegree.id + '.json')
-                fs.writeFileSync(filePath, JSON.stringify(obj))
+            for (const obj of objList) {
+                for (const k in objListByKey) {
+                    const objList2 = objListByKey[k]
+                    const id = obj[k].id
+
+                    if (objList2[id] === undefined) {
+                        objList2[id] = []
+                    }
+
+                    objList2[id].push(obj)
+                }
+            }
+
+            for (const k in objListByKey) {
+                const objList2 = objListByKey[k]
+
+                for (const id in objList2) {
+                    let filePath = path.join(destDirPath, k + '.' + id + '.json')
+                    fs.writeFileSync(filePath, JSON.stringify(objList2[id]))
+                }
             }
         }
     }

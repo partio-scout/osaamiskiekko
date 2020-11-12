@@ -8,5 +8,8 @@
     "osaamiskiekko"
   ],
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "js-yaml": "^3.14.0"
+  }
 }

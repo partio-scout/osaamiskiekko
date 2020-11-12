@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
 import { FormattedMessage } from 'react-intl';
-import HeaderImage from '../images/headerimage.jpg';
+import HeaderImage from '../images/headerimage-new-orig.jpg';
 import Curve from '../components/Curve.js';
 
 const S = {};

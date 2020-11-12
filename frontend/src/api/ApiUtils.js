@@ -7,11 +7,6 @@ export const institutionTypes = {
 
 export const baseURL = (process.env.REACT_APP_BACKEND_URL || '/data');
 
-export const getFullImageURL = imageURL => (imageURL.startsWith("http")
-    ? imageURL
-    : `${baseURL}${imageURL}`
-);
-
 export const addTypeToInstitution = (schoolOrOrganization, type) => schoolOrOrganization.map(item => {
   const o = Object.assign({}, item);
   const translationKey = `institution.type.${type}`;

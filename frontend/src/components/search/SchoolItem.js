@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
-import { getFullImageURL } from '../../api/ApiUtils';
 
 const S = {};
 S.SchoolItem = styled.div`

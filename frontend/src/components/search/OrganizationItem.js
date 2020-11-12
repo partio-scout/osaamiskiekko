@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useGlobalStateContext } from '../../utils/GlobalStateContext';
 import CompetenceCreditingList from './CompetenceCreditingList';
-import { getFullImageURL } from '../../api/ApiUtils';
 
 const S = {};
 S.OrganizationItem = styled.div`

@@ -304,8 +304,8 @@ export default function CreditingInfo(props) {
   }
 
   return (
-    <S.CreditingInfo aria-live='polite' aria-busy={isLoading} aria-atomic={true} > 
-      {isLoading &&  
+    <S.CreditingInfo aria-live='polite' aria-busy={isLoading} aria-atomic={true} >
+      {isLoading &&
         <BarLoader
           css={loadingSpinnerOverride}
           sizeUnit={"px"}
@@ -320,7 +320,7 @@ export default function CreditingInfo(props) {
               <Link to="/" aria-live='off'>
                 <i className="fas fa-arrow-left" />
                 <FormattedMessage id="creditinginfo.back" />
-              </Link>             
+              </Link>
             </div>
           </div>
           <div className='credit-info' >
@@ -346,7 +346,7 @@ export default function CreditingInfo(props) {
             </div>
           </div>
           <div className='degree-info floating-box' >
-          { creditingData.academicdegree 
+          { creditingData.academicdegree
             ? <>
               <h2>
                 <span>
@@ -359,10 +359,10 @@ export default function CreditingInfo(props) {
                 {school && school[`name_${globalState.language}`]}
               </p>
               <p className='scope'>
-                <FormattedMessage id="creditinginfo.scope" />: 
+                <FormattedMessage id="creditinginfo.scope" />:
                 {' '}
-                {creditingData.academicdegree.credits 
-                  ? `${creditingData.academicdegree.credits} op`
+                {creditingData.academicdegree.credits
+                  ? `${creditingData.academicdegree.credits} op/osp`
                   : <FormattedMessage id='creditinginfo.notfound' />}
               </p>
               <p className='level'>
@@ -401,9 +401,9 @@ export default function CreditingInfo(props) {
                     {organization && organization[`name_${globalState.language}`]}
                   </p>
                   <p className='scope'>
-                    <FormattedMessage id="creditinginfo.scope" />: 
+                    <FormattedMessage id="creditinginfo.scope" />:
                     {' '}
-                    {creditingData.competence.credits 
+                    {creditingData.competence.credits
                       ? `${creditingData.competence.credits} op`
                       : <FormattedMessage id='creditinginfo.notfound' />}
                   </p>
@@ -437,7 +437,7 @@ export default function CreditingInfo(props) {
           </div>
         </>
       }
-      {!isLoading && !creditingData && 
+      {!isLoading && !creditingData &&
         <h1 className='error'><FormattedMessage id="creditinginfo.notfound" /></h1>
       }
     </S.CreditingInfo>

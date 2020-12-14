@@ -14,7 +14,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "markdown-to-jsx": "^6.10.2",
     "react": "^16.8.6",
     "react-aria-live": "^2.0.5",

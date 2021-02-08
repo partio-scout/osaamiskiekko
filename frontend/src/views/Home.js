@@ -11,6 +11,7 @@ import { useGlobalStateContext } from '../utils/GlobalStateContext';
 import { fillData, transformToByOrganization } from '../api/CreditingData';
 import ExaminationNumber from '../components/ExaminationNumber';
 import translations from '../translations/translations';
+import FrontPageOverviewSection from '../components/front-page-overview/FrontPageOverviewSection';
 
 const S = {};
 S.Home = styled.div`
@@ -117,7 +118,9 @@ const Home = () => {
       setCreditingInfoForDegreeByOrganization([]);
   }
 
-  const testForInvisibleBLock = () => sortedSchoolList.length === 0 && creditingInfoForDegreeByOrganization.length === 0;
+  const testForInvisibleBLock = () =>
+    sortedSchoolList.length === 0 &&
+    creditingInfoForDegreeByOrganization.length === 0;
 
   return (
     <S.Home>
@@ -141,6 +144,8 @@ const Home = () => {
           && <OrganizationList creditingInfoByOrganization={creditingInfoForDegreeByOrganization} /> }
         
         {testForInvisibleBLock() && <div className="invisible-block"></div>}
+
+        <FrontPageOverviewSection />
       </main>
     </S.Home>
   );

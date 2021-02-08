@@ -1,0 +1,114 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const S = {};
+S.FrontPageOverviewPair = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5rem 0;
+
+  &.image-right {
+    @media only screen and (min-width: 768px) {
+      .image-container {
+        img {
+          object-position: left center;
+        }
+      }
+    }
+  }
+  &.image-left {
+    @media only screen and (min-width: 768px) {
+      .content {
+          order: 2;
+      }
+      .image-container {
+        order: 1;
+
+        img {
+          object-position: right center;
+        }
+      }
+    }
+  }
+
+  .content {
+    padding: 0 3rem;
+    h2 {
+      margin-bottom: 2rem;
+
+      small {
+        display: block;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 600;
+        color: #7944A1;
+      }
+    }
+    p, ul, li {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+
+    li {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .image-container {
+    position: relative;
+    flex-basis: 55%;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    &::before {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      padding-top: 60%;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    .content {
+
+    }
+    .image-container {
+      width: 100%;
+      flex-basis: unset;
+    }
+  }
+`;
+
+export default function FrontPageOverviewPair({imagePosition, imageSrc, imageAlt, children}) {
+  return (
+    <S.FrontPageOverviewPair className={`image-${imagePosition ? imagePosition : 'left'}`}>
+      <div className="content">
+        {children}
+      </div>
+      <div className="image-container">
+        <img src={imageSrc} alt={imageAlt} />
+      </div>
+    </S.FrontPageOverviewPair>
+  );
+}

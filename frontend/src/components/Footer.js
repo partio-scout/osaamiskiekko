@@ -10,12 +10,12 @@ S.Footer = styled.footer`
   left: 0;
   right: 0;
   background-color: ${props => props.theme.colors.highlight};
-  padding: 20px;
+  padding: 3rem 1.5rem 5rem 1.5rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  max-width: 1400px;
+  //max-width: 1400px;
   max-height: 220px;
   margin: auto;
 
@@ -43,9 +43,12 @@ S.Footer = styled.footer`
   }
 
   .copyright p {
+    max-width: 30rem;
     font-size: 12px;
     line-height: 14px;
     color: ${props => props.theme.colors.navButtons};
+    text-align: center;
+
     a {
       color: ${props => props.theme.colors.navButtons};
        :hover {

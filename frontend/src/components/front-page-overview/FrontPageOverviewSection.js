@@ -6,7 +6,7 @@ import BlockQuote from '../BlockQuote';
 
 const S = {};
 S.FrontPageOverviewSection = styled.section`
-
+  margin-top: 8rem;
 `;
 
 export default function FrontPageOverviewSection() {

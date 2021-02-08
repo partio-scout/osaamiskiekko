@@ -46,10 +46,10 @@ h1 {
   line-height: 46px;
   margin: 0px;
     span {
-      background-size: 100% 2.5rem;
-      background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
-      background-repeat: no-repeat;
-      background-position-y: 70%;
+      // background-size: 100% 2.5rem;
+      // background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
+      // background-repeat: no-repeat;
+      // background-position-y: 70%;
     }
 }
 
@@ -62,7 +62,7 @@ p {
 
 p.important {
   font-size: 24px;
-  color: red;
+  // color: red;
 }
 
 .header-container {

@@ -14,9 +14,52 @@ margin: auto;
 position: relative;
 
 .content {
+  margin: 0 auto;
   margin-bottom: 3rem;
-  padding: 0 15%;
+  width: calc(100% - 4rem);
+  max-width: 55rem;
+  //padding: 0 15%;
   position: relative;
+
+  h4 {
+    color: #7944A1;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+  }
+
+  p {
+    margin-bottom: 2.5rem;
+  }
+
+  a.link-button {
+    color: white;
+    background-color: #7944A1;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .two-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    margin: 5rem 0;
+
+    div {
+      flex-basis: 50%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -27,11 +70,34 @@ position: relative;
     padding: 5%;
     z-index: 20;
   }
-} 
+}
 `;
+
+// Insert images via `require` when `[alt text](INSERT:file-name.ext)`
+// is encountered in file.
+const insertRequiredImages = (pageName, data) => {
+  const matches = data.match(/INSERT\s*:\s*([^)" \n]+)\s*/g)
+
+  if (matches) {
+    const imageFileNames = matches.map(match => {
+      return match.replace(/INSERT\s*:\s*([^)" \n]+)\s*/, '$1');
+    });
+    imageFileNames.forEach(imageFileName => {
+      const realPath = require(`../images/${imageFileName}`)
+      const re = new RegExp(`INSERT\\s*:\\s*${imageFileName}\\s*`)
+      data = data.replace(re, `${realPath}`)
+    });
+  }
+
+  return data
+};
 
 const MarkdownPage = (props) => {
   const { data, isLoading, status } = MarkdownData(props.pageName);
+
+  //prependRequiredImages(data);
+  //console.log(data);
+
   const globalState = useGlobalStateContext();
 
   const title = (!isLoading && data) ? data[`title_${globalState.language}`] : props.match.params.pageName;
@@ -57,7 +123,7 @@ const MarkdownPage = (props) => {
           {isLoading 
             ? ''
             : typeof data !== 'undefined'
-              ? <Markdown>{data[`text_${globalState.language}`]}</Markdown>
+              ? <Markdown>{insertRequiredImages(props.pageName, data[`text_${globalState.language}`])}</Markdown>
               : <FormattedMessage id='error.text'/>}
         </div>
       </main>

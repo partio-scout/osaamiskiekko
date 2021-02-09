@@ -19,6 +19,9 @@ text_fi: >-
   osaamiskeskus Opetus-  ja kulttuuriministeriön rahoituksella.
 
 
+  ![Some alt text](INSERT:front-page-2.png)
+
+
   ### Usein kysyttyä osaamiskiekosta
 
 
@@ -79,27 +82,29 @@ text_fi: >-
 
   #### Kuka ylläpitää osaamiskiekkoa?
 
-
   Osaamiskiekon ylläpidosta vastaa vuoden 2019 aikana Partion nuorisoalan
   osaamiskeskus.
 
 
-  #### Minulla on palaute tai kehittämisehdotus osaamiskiekkoon liittyen. Mihin
-  voin olla yhteydessä?
+  <dl>
+    <div class="two-col">
+      <div>
+        <h3>Kiinnostunut?</h3>
+        <p>
+          Järjestötoimija, teettekö yhteistyötä oppilaitosten kanssa? Saako teillä
+          syntyvästä osaamisesta opintoja oppilaitoksissa?
+        </p>
+        <p>
+          <a href="/otayhteytta" class="link-button">Ota yhteyttä</a>
+        </p>
+      </div>
+      <div>
+        <img src="INSERT:front-page-3.png" alt="">
+      </div>
+    </div>
+  </dl>
 
 
-  Osaamiskiekkoon   liittyvissä   kysymyksissä   ja   kommenteissa   voi  
-  olla   yhteydessä   Partion   nuorisoalan   osaamiskeskukseen:
-
-
-  Julia Parkko Digituottaja julia.parkko@partio.fi 040 521 7100
-
-
-  Timo Sinivuori Osaamiskeskuksen johtaja timo.sinivuori@partio.fi 0400 511 534
-
-
-  Voit lähettää Osaamiskiekkoon liittyvän yhteydenottosi myös lomakkeen kautta:
-  <link>http://osaamiskeskus.partio.fi/yhteydenottolomake/
 text_en: >-
   ## Tietoa osaamiskiekosta
 
@@ -181,22 +186,16 @@ text_en: >-
   osaamiskeskus.
 
 
-  #### Minulla on palaute tai kehittämisehdotus osaamiskiekkoon liittyen. Mihin
-  voin olla yhteydessä?
+  ### Lorem ipsum
+
+  Järjestötoimija, teettekö yhteistyötä oppilaitosten kanssa? Saako teillä
+  syntyvästä osaamisesta opintoja oppilaitoksissa?
 
 
-  Osaamiskiekkoon   liittyvissä   kysymyksissä   ja   kommenteissa   voi  
-  olla   yhteydessä   Partion   nuorisoalan   osaamiskeskukseen:
+  <dl>
+    <a href="/otayhteytta" class="link-button">Ota yhteyttä</a>
+  </dl>
 
-
-  Julia Parkko Digituottaja julia.parkko@partio.fi 040 521 7100
-
-
-  Timo Sinivuori Osaamiskeskuksen johtaja timo.sinivuori@partio.fi 0400 511 534
-
-
-  Voit lähettää Osaamiskiekkoon liittyvän yhteydenottosi myös lomakkeen kautta:
-  <link>http://osaamiskeskus.partio.fi/yhteydenottolomake/
 text_sv: >-
   ##Information om kompetensvisaren
 
@@ -288,23 +287,12 @@ text_sv: >-
   upprätthållandet av kompetensvisaren . 
 
 
-  ####Jag har feedback eller förslag på förbättringar angående kompetensvisaren.
-  Vem kan jag vara i kontakt med om det?
+  ### Lorem ipsum
+
+  Järjestötoimija, teettekö yhteistyötä oppilaitosten kanssa? Saako teillä
+  syntyvästä osaamisesta opintoja oppilaitoksissa?
 
 
-  I frågor eller kommentarer om kompetensvisaren kan du vara i kontakt med
-  Scouternas kompetenscenter inom ungdomsarbete.
-
-
-  Julia Parkko, Digital producent 
-
-  julia.parkko@partio.fi 040 521 7100
-
-
-  Timo Sinivuori, Chef för kompetenscentret 
-
-  timo.sinivuori@partio.fi 0400 511 534
-
-
-  Du kan också vara i kontakt i frågor och kommentarer gällande kunskapsvisaren
-  via följande blankett: <link>http://osaamiskeskus.partio.fi/yhteydenottolomake
+  <dl>
+    <a href="/otayhteytta" class="link-button">Kontakta oss</a>
+  </dl>

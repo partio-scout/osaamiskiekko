@@ -12,7 +12,7 @@ S.FrontPageOverviewSection = styled.section`
 export default function FrontPageOverviewSection() {
   return (
     <S.FrontPageOverviewSection>
-      <FrontPageOverviewPair imagePosition="right" imageSrc={ require('../../images/headerimage.jpg') } imageAlt="">
+      <FrontPageOverviewPair imagePosition="right" imageSrc={ require('../../images/front-page-1.png') } imageAlt="">
         <h2>
           <small>
             Lorem ipsum
@@ -31,12 +31,12 @@ export default function FrontPageOverviewSection() {
           </li>
         </ul>
       </FrontPageOverviewPair>
-      <FrontPageOverviewPair imagePosition="left" imageSrc={ require('../../images/headerimage.jpg') } imageAlt="">
+      <FrontPageOverviewPair imagePosition="left" imageSrc={ require('../../images/front-page-2.png') } imageAlt="">
         <BlockQuote>
-          Näkyvyys osaamiskiekossa on vetovoimatekijä niin oppilaitoksille kuin järjestöillekin!
+          Näkyvyys osaamis&shy;kiekossa on veto&shy;voima&shy;tekijä niin oppi&shy;laitoksille kuin järjes&shy;töillekin!
         </BlockQuote>
       </FrontPageOverviewPair>
-      <FrontPageOverviewPair imagePosition="right" imageSrc={ require('../../images/headerimage.jpg') } imageAlt="">
+      <FrontPageOverviewPair imagePosition="right" imageSrc={ require('../../images/front-page-3.png') } imageAlt="">
         <h2>
           <small>
             Kuinka mukaan?
@@ -50,7 +50,7 @@ export default function FrontPageOverviewSection() {
           <strong>Ota yhteyttä,</strong> laitetaan osaaminen näkyväksi osaamiskiekkoon!
         </p>
       </FrontPageOverviewPair>
-      <FrontPageOverviewPair imagePosition="left" imageSrc={ require('../../images/headerimage.jpg') } imageAlt="">
+      <FrontPageOverviewPair imagePosition="left" imageSrc={ require('../../images/front-page-4.png') } imageAlt="">
         <h2>
           <small>
             Kuinka mukaan?

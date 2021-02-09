@@ -9,32 +9,9 @@ S.FrontPageOverviewPair = styled.div`
   align-items: center;
   margin: 5rem 0;
 
-  &.image-right {
-    @media only screen and (min-width: 768px) {
-      .image-container {
-        img {
-          object-position: left center;
-        }
-      }
-    }
-  }
-  &.image-left {
-    @media only screen and (min-width: 768px) {
-      .content {
-          order: 2;
-      }
-      .image-container {
-        order: 1;
-
-        img {
-          object-position: right center;
-        }
-      }
-    }
-  }
-
   .content {
     padding: 0 3rem;
+
     h2 {
       margin-bottom: 2rem;
 
@@ -73,7 +50,7 @@ S.FrontPageOverviewPair = styled.div`
       display: block;
       width: 0;
       height: 0;
-      padding-top: 60%;
+      padding-top: 62%;
     }
 
     img {
@@ -83,19 +60,56 @@ S.FrontPageOverviewPair = styled.div`
       height: 100%;
       width: 100%;
       display: block;
-      object-fit: cover;
+      object-fit: contain;
       overflow: hidden;
+    }
+  }
+
+  &.image-right {
+    @media only screen and (min-width: 768px) {
+      justify-content: flex-end;
+
+      .content {
+        width: 40rem;
+        max-width: 100%;
+      }
+      .image-container {
+        img {
+          object-position: right center;
+        }
+      }
+    }
+  }
+  &.image-left {
+    @media only screen and (min-width: 768px) {
+      justify-content: flex-start;
+
+      .content {
+        width: 40rem;
+        max-width: 100%;
+        order: 2;
+      }
+      .image-container {
+        order: 1;
+
+        img {
+          object-position: left center;
+        }
+      }
     }
   }
 
   @media only screen and (max-width: 767px) {
     flex-direction: column;
+    margin: 3rem 0;
+
     .content {
 
     }
     .image-container {
       width: 100%;
       flex-basis: unset;
+      margin-top: 2rem;
     }
   }
 `;

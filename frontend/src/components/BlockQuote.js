@@ -18,11 +18,18 @@ S.BlockQuote = styled.blockquote`
   font-weight: bold;
 
   &::before {
-    content: '"';
+    content: '';
+    background-image: url(${require('../images/quote-deepsea.png')});
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center 0.7rem;
+
     display: block;
-    font-size: 10rem;
-    margin-right: 1rem;
-    align-self: flex-start;
+    margin-right: 1.6rem;
+    width: 4rem;
+    flex-shrink: 0;
+    //height: 10rem;
+    align-self: stretch;
   }
 `;
 
@@ -32,5 +39,4 @@ export default function BlockQuote ({ children }) {
       { children }
     </S.BlockQuote>
   )
-
 }

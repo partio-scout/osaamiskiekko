@@ -14,54 +14,40 @@ export default function FrontPageOverviewSection() {
     <S.FrontPageOverviewSection>
       <FrontPageOverviewPair imagePosition="right" imageSrc={ require('../../images/front-page-1.png') } imageAlt="">
         <h2>
-          <small>
-            Lorem ipsum
-          </small>
-          Lorem ipsum
+          <FormattedMessage id="frontPage.text1.h2" />
         </h2>
-        <ul>
-          <li>
-            Koulutuksenjärjestäjät säästävät työajassa.
-          </li>
-          <li>
-            Opettajien työ helpottuu.
-          </li>
-          <li>
-            Opiskelijat saavat tasavertaisesti ja nopeasti muualla hankkimansa osaamisen tunnistettua ja tunnustettua opintopisteiden muodossa
-          </li>
-        </ul>
+        <p>
+          <FormattedMessage id="frontPage.text1.p1" />
+        </p>
+        <p>
+          <FormattedMessage id="frontPage.text1.p2" />
+        </p>
       </FrontPageOverviewPair>
       <FrontPageOverviewPair imagePosition="left" imageSrc={ require('../../images/front-page-2.png') } imageAlt="">
         <BlockQuote>
-          Näkyvyys osaamis&shy;kiekossa on veto&shy;voima&shy;tekijä niin oppi&shy;laitoksille kuin järjes&shy;töillekin!
+          <FormattedMessage id="frontPage.text2.quote" />
         </BlockQuote>
       </FrontPageOverviewPair>
       <FrontPageOverviewPair imagePosition="right" imageSrc={ require('../../images/front-page-3.png') } imageAlt="">
         <h2>
-          <small>
-            Kuinka mukaan?
-          </small>
-          Järjestötoimija
+          <FormattedMessage id="frontPage.text3.h2" />
         </h2>
         <p>
-          Järjestötoimija, teettekö yhteistyötä oppilaitosten kanssa? Saako teillä syntyvästä osaamisesta opintoja oppilaitoksissa?
+          <FormattedMessage id="frontPage.text3.p1" />
         </p>
         <p>
-          <strong>Ota yhteyttä,</strong> laitetaan osaaminen näkyväksi osaamiskiekkoon!
+          <FormattedMessage id="frontPage.text3.p2" />
         </p>
       </FrontPageOverviewPair>
       <FrontPageOverviewPair imagePosition="left" imageSrc={ require('../../images/front-page-4.png') } imageAlt="">
         <h2>
-          <small>
-            Kuinka mukaan?
-          </small>
-          Opot ja opettajat
+          <FormattedMessage id="frontPage.text4.h2" />
         </h2>
         <p>
-          Opot ja opettajat, saako teidän oppilaitoksessa opintoja harrastuksissa ja vapaaehtoistyössä hankitusta osaamisesta?
+          <FormattedMessage id="frontPage.text4.p1" />
         </p>
         <p>
-          <strong>Ilmoita meille,</strong> niin teemme tämän näkyväksi osaamiskiekkoon!
+          <FormattedMessage id="frontPage.text4.p2" />
         </p>
       </FrontPageOverviewPair>
     </S.FrontPageOverviewSection>

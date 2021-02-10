@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
 import { FormattedMessage } from 'react-intl';
-import HeaderImage from '../images/headerimage-new-orig.jpg';
+import HeaderImage from '../images/osaamiskiekko-happy-img1.jpg'; //'../images/headerimage-new-orig.jpg';
 import Curve from '../components/Curve.js';
 
 const S = {};
@@ -17,7 +17,8 @@ S.Header = styled.header`
 
 .header-text {
   padding-left: 2rem;
-  padding-bottom: 230px;
+  padding-bottom: 180px;
+  padding-right: 2rem;
   min-height: 430px;
 
   @media only screen and (max-width: 767px) {
@@ -53,7 +54,7 @@ h1 {
     }
 }
 
-p {
+p, ul, li {
 	color: ${props => props.theme.colors.text};
   font-size: 20px;
   line-height: 30px;
@@ -78,12 +79,14 @@ export default function Header() {
         <h1>
           <FormattedMessage id="header.h1"/>
         </h1>
-        <p className="important">
+        <p className="XXXimportant">
           <FormattedMessage id="header.important"/>
         </p>
-        <p>
-          <FormattedMessage id="header.p"/>
-        </p>
+        <ul>
+          <li><FormattedMessage id="header.li1"/></li>
+          <li><FormattedMessage id="header.li2"/></li>
+          <li><FormattedMessage id="header.li3"/></li>
+        </ul>
       </div>
       <div className="header-image"></div>
       <Curve />

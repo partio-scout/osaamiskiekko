@@ -60,13 +60,53 @@ position: relative;
       width: 100%;
     }
   }
+
+  .otayhteytta-contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .contact {
+      flex-grow: 1;
+      &.col-left {}
+      &.col-right {}
+
+      .img-container {
+        width: 100%;
+        max-width: 350px;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      .info-container {
+        margin-left: 6rem;
+        margin-top: 1rem;
+
+        span {
+          text-transform: uppercase;
+          color: ${props => props.theme.colors.textHighlight};
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
   padding: 0px;
 
   .content {
-    margin: 0 0 0 0;
+    margin: 0 auto;
     padding: 5%;
     z-index: 20;
   }

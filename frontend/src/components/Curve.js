@@ -24,8 +24,26 @@ svg {
 export default function Curve(props) {
   const svgCurve = (color) =>
     <svg version="1.1" viewBox="0 0 1440 370" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gradient">
+          <stop
+            offset="0%"
+            style={{
+              'stopColor': '#8ECCEB',
+              'stopOpacity': '1'
+            }}
+          />
+          <stop
+            offset="100%"
+            style={{
+              'stopColor': '#3262BF',
+              'stopOpacity': '1'
+            }}
+          />
+        </linearGradient>
+      </defs>
       <g fill="none" fillRule="evenodd">
-        <g transform="translate(0 -644)" fill="#6DE5B8">
+        <g transform="translate(0 -644)" fill="url(#gradient)">
           <path d={`
               m 1440 ${1014}
               c ${-480 + 80} -120, ${-960 - 80} -120, -1440 0

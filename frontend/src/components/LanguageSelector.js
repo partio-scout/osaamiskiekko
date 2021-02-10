@@ -10,8 +10,11 @@ S.LanguageSelector = styled.div`
   border-radius: 24.5px;	
   color: ${props => props.theme.colors.textColor};
   background-color: ${props => props.theme.colors.backgroundPrimary};
-  padding: 11px 15px 10px 15px
+  padding: 11px 15px 10px 15px;
   font-weight: bold;
+  @media only screen and (min-width: 768px) {
+    box-shadow: 0 0 1rem ${props => props.theme.colors.backgroundTertiary};
+  }
 
 .choice button {
   background-color: ${props => props.theme.colors.backgroundPrimary};
@@ -31,7 +34,8 @@ S.LanguageSelector = styled.div`
 
   :hover {
     border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
-    background-size: 100% 100%;
+    background-size: 100% 0.2rem;
+    background-position-y: 100%;
     background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
     background-repeat: no-repeat;
   }

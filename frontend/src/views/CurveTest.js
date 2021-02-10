@@ -19,7 +19,7 @@ position: relative;
   svg {
     width: 100%;
     path {
-      fill: ${props => props.theme.colors.backgroundSecondary};
+      //fill: ${props => props.theme.colors.backgroundSecondary};
     }
   }
 }

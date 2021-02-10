@@ -22,7 +22,7 @@ position: relative;
   position: relative;
 
   h4 {
-    color: #7944A1;
+    color: ${props => props.theme.colors.textHighlight};
     text-transform: uppercase;
     font-size: 1.3rem;
     margin-top: 2rem;
@@ -34,7 +34,7 @@ position: relative;
 
   a.link-button {
     color: white;
-    background-color: #7944A1;
+    background-color: ${props => props.theme.colors.textHighlight};
     padding: 1rem 1.5rem;
     font-size: 1.2rem;
     font-weight: bold;

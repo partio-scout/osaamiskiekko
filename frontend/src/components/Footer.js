@@ -92,12 +92,30 @@ S.Footer = styled.footer`
     }
   }
 
-  @media only screen and (max-width: 540px) {
-    align-items: flex-start;
+  @media only screen and (max-width: 767px) {
+    align-items: center;
+    flex-direction: column;
+    max-height: 550px;
+    
+    .col-left {
+      .footer-links {
+        width: 100%;
 
-    ul li {
-      display: inherit;
-      margin-left: 0;
+        ul li {
+          display: inherit;
+          margin-left: 0;
+          text-align: center;
+        }
+      }
+      .copyright {
+        margin: 2rem 0;
+        p {
+          text-align: center;
+        }
+      }
+    }
+    .col-right {
+      flex-direction: column;
     }
   } 
 `;

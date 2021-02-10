@@ -18,7 +18,7 @@ S.Navigation = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: ${props => props.theme.colors[props.backgroundColor]};
+    background: ${props => props.theme.colors[props.backgroundColor]};
 
     .nav-icon {
       display: none;
@@ -52,8 +52,8 @@ S.Navigation = styled.nav`
           margin: 24px 20px 24px 0px;
 
           a {
-            color: ${props => props.theme.colors.textColor};
-            width: 100%
+            color: ${props => props.theme.colors[props.textColor]};
+            width: 100%;
             height: 100%;
             padding: 24px 0px 24px 0px;
             text-decoration: none;
@@ -61,13 +61,14 @@ S.Navigation = styled.nav`
             font-size: 18px;	
 
             &:hover {
-              color: ${props => props.theme.colors.textColor};
+              color: ${props => props.theme.colors[props.textColor]};
 
               span {
                 border-bottom: 2px solid ${props => props.theme.colors[props.textHighlightColor]};
-                background-size: 100% 100%;
+                background-size: 100% 0.2rem;
                 background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors[props.textHighlightColor]} 0)`};
                 background-repeat: no-repeat;
+                background-position-y: 100%;
               }
             }
             
@@ -206,14 +207,16 @@ S.Navigation = styled.nav`
 
 const Navigation = (props) => {
   let { mode, history } = props;
+  let textColor = "textColor";
   let textHighlightColor = "textHighlight";
   let backgroundColor = "backgroundPrimary";
   let mobileBackgroundColor = "backgroundPrimary";
 
   if (mode === 'colorful') { 
-    textHighlightColor = "textColorLight";
-    backgroundColor = "backgroundSecondary";
-    mobileBackgroundColor = "backgroundTertiary";
+    textColor = "backgroundPrimary";
+    textHighlightColor = "backgroundTertiary";
+    backgroundColor = "themeGradient"; // "backgroundSecondary";
+    mobileBackgroundColor = "themeGradient"; //"backgroundTertiary";
   }
 
   const [path, setPath] = useState();
@@ -252,7 +255,7 @@ const Navigation = (props) => {
   });
 
   return (
-    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor} mobileBackgroundColor={mobileBackgroundColor} aria-live="off">
+    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor} mobileBackgroundColor={mobileBackgroundColor} textColor={textColor} aria-live="off">
       <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
           <div className="logo">

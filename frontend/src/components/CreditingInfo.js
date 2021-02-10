@@ -66,10 +66,10 @@ p, p span {
     font-size: 26px;
     line-height: 28px;
     font-weight: bold;
-    background-size: 100% 1.5rem;
+    background-size: 100% 0.5rem;
     background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
     background-repeat: no-repeat;
-    background-position-y: 70%;
+    background-position-y: 100%;
   }
 
   h3, h3 span {
@@ -238,7 +238,7 @@ p, p span {
     svg {
       width: 100%;
       path {
-        fill: ${props => props.theme.colors.backgroundTertiary};
+        //fill: ${props => props.theme.colors.backgroundTertiary};
       }
     }
   }

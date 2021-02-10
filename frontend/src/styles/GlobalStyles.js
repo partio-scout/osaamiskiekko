@@ -24,7 +24,12 @@ body {
 }
 
 #router-content-area {
-  padding-bottom: 230px;
+  @media only screen and (max-width: 767px) {
+    padding-bottom: 550px;
+  }
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 300px;
+  }
 }
 
 h1, h1 span {

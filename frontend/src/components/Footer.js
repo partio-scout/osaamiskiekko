@@ -148,10 +148,10 @@ export default function Footer() {
         </div>
       </div>
       <div className="col-right">
-        <a href="https://kentauri.fi" target="_blank">
+        <a href="https://kentauri.fi" target="_blank" rel="noopener noreferrer">
           <img id="kentauriLogo" src={require('../images/kentauri-logo-valkoinen.png')} alt="Kentaurin logo" />
         </a>
-        <a href="https://10monkeysdigital.com" target="_blank">
+        <a href="https://10monkeysdigital.com" target="_blank" rel="noopener noreferrer">
           <img id="tenMonkeysLogo" src={require('../images/10monkeys-logo-BW-nega.png')} alt="10Monkeys logo" />
         </a>
       </div>

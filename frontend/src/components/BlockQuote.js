@@ -13,9 +13,11 @@ S.BlockQuote = styled.blockquote`
   justify-content: flex-start;
   align-items: center;
 
-  font-size: 2.4rem;
+  font-size: 2.0rem;
   line-height: 1.3;
   font-weight: bold;
+  width: 100%;
+  hyphens: auto;
 
   &::before {
     content: '';
@@ -28,8 +30,11 @@ S.BlockQuote = styled.blockquote`
     margin-right: 1.6rem;
     width: 4rem;
     flex-shrink: 0;
-    //height: 10rem;
     align-self: stretch;
+  }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 1.8rem;
   }
 `;
 

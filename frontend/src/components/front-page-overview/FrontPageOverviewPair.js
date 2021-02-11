@@ -36,7 +36,7 @@ S.FrontPageOverviewPair = styled.div`
 
   .image-container {
     position: relative;
-    flex-basis: 55%;
+    flex-basis: 50%;
     flex-shrink: 0;
     flex-grow: 0;
 
@@ -50,7 +50,7 @@ S.FrontPageOverviewPair = styled.div`
       display: block;
       width: 0;
       height: 0;
-      padding-top: 62%;
+      padding-top: 68%;
     }
 
     img {
@@ -88,12 +88,20 @@ S.FrontPageOverviewPair = styled.div`
         width: 40rem;
         max-width: 100%;
         order: 2;
+
       }
+
       .image-container {
         order: 1;
 
         img {
           object-position: left center;
+        }
+      }
+
+      &.blockquote-container {
+        .content {
+          padding-left: 0;
         }
       }
     }
@@ -114,9 +122,9 @@ S.FrontPageOverviewPair = styled.div`
   }
 `;
 
-export default function FrontPageOverviewPair({imagePosition, imageSrc, imageAlt, children}) {
+export default function FrontPageOverviewPair({imagePosition, imageSrc, imageAlt, children, className}) {
   return (
-    <S.FrontPageOverviewPair className={`image-${imagePosition ? imagePosition : 'left'}`}>
+    <S.FrontPageOverviewPair className={[`image-${imagePosition ? imagePosition : 'left'}`, className]}>
       <div className="content">
         {children}
       </div>

@@ -12,6 +12,7 @@ S.MarkdownPage = styled.div`
 max-width: 1440px;
 margin: auto;
 position: relative;
+hyphens: auto;
 
 .content {
   margin: 0 auto;
@@ -30,6 +31,17 @@ position: relative;
 
   p {
     margin-bottom: 2.5rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+
+    @media (max-width: 767px) {
+      width: calc(100% + 4rem + 10%);
+      max-width: calc(100% + 4rem + 10%);
+      margin-left: calc(-2rem - 5%);
+    }
   }
 
   a.link-button {
@@ -58,6 +70,22 @@ position: relative;
     img {
       display: block;
       width: 100%;
+
+      @media (max-width: 767px) {
+        display: block;
+        width: calc(100% + 4rem + 10%);
+        max-width: calc(100% + 4rem + 10%);
+        margin-left: calc(-2rem - 5%);
+      }
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: stretch;
+
+      div {
+        flex-basis: unset;
+      }
     }
   }
 
@@ -81,9 +109,11 @@ position: relative;
       .img-container {
         width: 100%;
         max-width: 350px;
+
         img {
           display: block;
           width: 100%;
+          margin: 0;
         }
       }
 

@@ -86,7 +86,6 @@ S.Navigation = styled.nav`
   }
 
   @media (max-width: 767px) {
-
     .navbar {
       align-items: flex-start;
       width: 100%;
@@ -98,6 +97,7 @@ S.Navigation = styled.nav`
         margin-top: 11.833333333px;
         // PLEASE NOTE: Fixed manually to the center!
         z-index: 999;
+
         a {
           img {
             width: 48px;
@@ -128,6 +128,7 @@ S.Navigation = styled.nav`
           display: block;
 
           .navbar_subitem {
+            color: ${props => props.theme.colors[props.mobileTextColor]};
             margin: 24px 0px 24px 0px;
             display: block;
             text-align: center;
@@ -135,6 +136,7 @@ S.Navigation = styled.nav`
             padding: 0;
 
             a {
+              color: ${props => props.theme.colors[props.mobileTextColor]};
               display: inline-block;
               width: 100%;
               height: 100%;
@@ -143,6 +145,7 @@ S.Navigation = styled.nav`
 
               &:hover {
                 span {
+                  color: ${props => props.theme.colors[props.mobileTextColor]};
                   border-bottom: 2px solid ${props => props.theme.colors.textHighlight};
                   background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
                 }
@@ -178,7 +181,7 @@ S.Navigation = styled.nav`
   .nav-icon:after, 
   .nav-icon:before, 
   .nav-icon div {
-    background-color: black;
+    background-color: #202020;
     border-radius: 3px;
     content: '';
     display: block;
@@ -208,6 +211,7 @@ S.Navigation = styled.nav`
 const Navigation = (props) => {
   let { mode, history } = props;
   let textColor = "textColor";
+  let mobileTextColor = "textColor";
   let textHighlightColor = "textHighlight";
   let backgroundColor = "backgroundPrimary";
   let mobileBackgroundColor = "backgroundPrimary";
@@ -255,7 +259,7 @@ const Navigation = (props) => {
   });
 
   return (
-    <S.Navigation textHighlightColor={textHighlightColor} backgroundColor={backgroundColor} mobileBackgroundColor={mobileBackgroundColor} textColor={textColor} aria-live="off">
+    <S.Navigation textColor={textColor} mobileTextColor={mobileTextColor} textHighlightColor={textHighlightColor} backgroundColor={backgroundColor} mobileBackgroundColor={mobileBackgroundColor} aria-live="off">
       <OutsideClickHandler onOutsideClick={() => hideIfVisible()} >
         <div className="navbar">
           <div className="logo">

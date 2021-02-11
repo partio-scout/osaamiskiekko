@@ -23,7 +23,7 @@ export default function FrontPageOverviewSection() {
           <FormattedMessage id="frontPage.text1.p2" />
         </p>
       </FrontPageOverviewPair>
-      <FrontPageOverviewPair imagePosition="left" imageSrc={ require('../../images/front-page-2.png') } imageAlt="">
+      <FrontPageOverviewPair className="blockquote-container" imagePosition="left" imageSrc={ require('../../images/front-page-2.png') } imageAlt="">
         <BlockQuote>
           <FormattedMessage id="frontPage.text2.quote" />
         </BlockQuote>

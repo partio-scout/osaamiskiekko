@@ -58,7 +58,7 @@ p, p span {
 
 .degree-info, .competence-info {
   font-size: 16px;
-  line-height: 15px;
+  line-height: 1;
 
   h2, h2 span {
     display: inline;

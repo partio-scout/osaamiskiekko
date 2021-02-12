@@ -91,7 +91,7 @@ p {
     color: #202020;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 900;
-    font-size: 26px;
+    font-size: 28px;
     line-height: 1.1;
   }
   
@@ -99,7 +99,7 @@ p {
     color: #202020;
     font-family: "Fira Sans", sans-serif;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.1;
   }
   

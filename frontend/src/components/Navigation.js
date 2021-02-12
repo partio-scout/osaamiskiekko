@@ -24,6 +24,11 @@ S.Navigation = styled.nav`
       display: none;
       border: none;
       background: none;
+
+      &#focusableHamburger {
+        padding-left: 4px;
+        padding-right: 4px;
+      }
     }
 
     .logo {

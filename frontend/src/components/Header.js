@@ -44,7 +44,12 @@ h1 {
   font-family: ${props => props.theme.fonts.headingFontFamily};
   font-size: 42px;	
   font-weight: bold;	
-  line-height: 46px;
+  line-height: 1.1;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 28px;
+    line-height: 1.1;
+  }
   margin: 0px;
     span {
       // background-size: 100% 2.5rem;

@@ -37,7 +37,7 @@ h1, h1 span {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 900;
   font-size: 48px;
-  line-height: 52px;
+  line-height: 1.1;
 }
 
 h2, h2 span {
@@ -45,7 +45,7 @@ h2, h2 span {
   font-family: "Fira Sans", sans-serif;
   font-weight: bold;
   font-size: 33px;
-  line-height: 36px;
+  line-height: 1.1;
 }
 
 h3, h3 span {
@@ -53,14 +53,14 @@ h3, h3 span {
   font-family: "Fira Sans", sans-serif;
   font-weight: bold;
   font-size: 26px;
-  line-height: 28px;
+  line-height: 1.1;
 }
 
 p.lead {
   color: #202020;
   font-family: "Fira Sans", sans-serif;
   font-size: 20px;
-  line-height: 30px;
+  line-height: 1.2;
 }
 
 label, span.label {
@@ -68,7 +68,7 @@ label, span.label {
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   letter-spacing: 2.29px;
-  line-height: 15px;
+  line-height: 1;
 }
 
 label.secondary, span.label.secondary {
@@ -76,14 +76,14 @@ label.secondary, span.label.secondary {
   font-family: "Fira Sans", sans-serif;
   font-size: 16px;
   letter-spacing: 2.29px;
-  line-height: 15px;
+  line-height: 1;
 }
 
 p {
 	color: #202020;
   font-family: "Fira Sans", sans-serif;
 	font-size: 18px;
-	line-height: 27px;
+	line-height: 1.5;
 }
 
 @media only screen and (max-width: 767px) {
@@ -91,16 +91,16 @@ p {
     color: #202020;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 900;
-    font-size: 37px;
-    line-height: 36px;
+    font-size: 26px;
+    line-height: 1.1;
   }
   
   h2, h2 span {
     color: #202020;
     font-family: "Fira Sans", sans-serif;
     font-weight: bold;
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 22px;
+    line-height: 1.1;
   }
   
   h3, h3 span {
@@ -108,14 +108,14 @@ p {
     font-family: "Fira Sans", sans-serif;
     font-weight: bold;
     font-size: 20px;
-    line-height: 28px;
+    line-height: 1.1;
   }
   
   p.lead {
     color: #202020;
     font-family: "Fira Sans", sans-serif;
     font-size: 18px;
-    line-height: 26px;
+    line-height: 1.2;
   }
   
   label, span.label {
@@ -131,14 +131,14 @@ p {
     font-family: "Fira Sans", sans-serif;
     font-size: 12px;
     letter-spacing: 2px;
-    line-height: 15px;
+    line-height: 1.2;
   }
   
   p {
     color: #202020;
     font-family: "Fira Sans", sans-serif;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
   }
 }
 `;

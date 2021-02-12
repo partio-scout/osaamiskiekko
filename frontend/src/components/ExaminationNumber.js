@@ -6,6 +6,8 @@ const S = {};
 S.ExaminationNumber = styled.div`
   text-align: center;
   margin: 2em;
+  position: relative;
+  z-index: 10;
   .examination-number {
     padding: 5px;
   }

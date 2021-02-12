@@ -7,6 +7,7 @@ S.NavigationWithCurveAndTitle = styled.header`
 max-width: 1440px;
 margin: auto;
 position: relative;
+z-index: 10;
 
 .title {
   padding: ${props => props.fixedPadding || 30}px 15%;
@@ -26,9 +27,14 @@ position: relative;
   z-index: -100;
   left: 0;
   right: 0;
+  overflow: hidden;
 
   svg {
-    width: 100%;
+    width: calc(100% + 10px);
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-top: -1px;
+
     path {
       //fill: ${props => props.theme.colors.backgroundSecondary};
     }

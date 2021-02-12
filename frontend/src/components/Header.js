@@ -7,6 +7,8 @@ import Curve from '../components/Curve.js';
 
 const S = {};
 S.Header = styled.header`
+ position: relative;
+ z-index: 10;
  margin: auto;
  display: grid;
  grid-template-areas: "nav nav" 

@@ -4,16 +4,17 @@ import classnames from 'classnames'
 
 const S = {};
 S.Button = styled.button`
-font-size: 16px;	
-line-height: 24px;	
+font-size: 16px;
+font-weight: bold;
+line-height: 24px;
 text-align: center;
-border-radius: 8px;	
+border-radius: 8px;
 border: none;
 color: ${props => props.theme.colors.textColorLight};
 background-color: ${props => props.theme.colors.highlight};
-padding: 12px 10px; 
+padding: 10px 20px; 
 text-transform: uppercase;
-letter-spacing: 4px;
+//letter-spacing: 4px;
 cursor: pointer;
 
 .button-icon:before {

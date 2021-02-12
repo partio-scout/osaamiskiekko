@@ -9,6 +9,9 @@ import "slick-carousel/slick/slick-theme.css";
 const S = {};
 S.ResultsCarousel = styled.div`
   padding: 0px 40px 0px 40px;
+  position: relative;
+  z-index: 10;
+
   .slick-arrow {
     :before {
       opacity: 0.5;

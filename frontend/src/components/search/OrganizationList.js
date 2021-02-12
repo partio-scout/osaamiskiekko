@@ -9,6 +9,8 @@ S.OrganizationList = styled.ul`
   margin: auto;
   margin-bottom: 50px;
   padding: 0px 20px 0px 20px;
+  position: relative;
+  z-index: 10;
 `;
 
 const OrganizationList = (props) => {

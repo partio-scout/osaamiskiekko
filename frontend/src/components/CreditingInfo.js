@@ -200,7 +200,7 @@ p, p span {
   }
 
   .degree-info, .credit-info, .header {
-    background-color: ${props => props.theme.colors.backgroundTertiary}
+    background: ${props => props.theme.colors.themeGradient}
   }
 
   .degree-info {
@@ -261,9 +261,27 @@ export default function CreditingInfo(props) {
 
   const curveMobile = (color) => (
     <svg viewBox="0 0 320 272" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gradient">
+          <stop
+            offset="0%"
+            style={{
+              'stopColor': '#8ECCEB',
+              'stopOpacity': '1'
+            }}
+          />
+          <stop
+            offset="100%"
+            style={{
+              'stopColor': '#3262BF',
+              'stopOpacity': '1'
+            }}
+          />
+        </linearGradient>
+      </defs>
       <title>Top Curve Mobile</title>
       <g id="Visual" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g id="Contact" fill="#6DE5B8">
+          <g id="Contact" fill="url(#gradient)">
               <path d="M320,278 L320,272 C281.333333,252 228,242 160,242 C92,242 38.6666667,252 0,272 L0,278 L0,0 L320,0 L320,278 Z" id="Combined-Shape"></path>
           </g>
       </g>
@@ -334,7 +352,11 @@ export default function CreditingInfo(props) {
                     : <FormattedMessage id='creditinginfo.notfound' />}
                 </p>
               {testForChromeOrSafariAndMobileForWebShare() &&
-                <Button value={shareText[globalState.language]} icon='fas fa-share-alt' onClick={mobileShareOnClickHandler}></Button>
+                <Button
+                  value={shareText[globalState.language]}
+                  icon='fas fa-share-alt'
+                  onClick={mobileShareOnClickHandler}
+                />
               }
               {creditingData.url &&
               <p className='readmore'>

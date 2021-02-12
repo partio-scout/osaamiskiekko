@@ -23,7 +23,7 @@ grid-template-columns: 4fr 4fr;
 // border-radius: 8px;
 // background-color: ${props => props.theme.colors.backgroundPrimary};
 position: relative;
-z-index: 20;
+z-index: 8;
 
 p, p span {
   margin: 5px 0;

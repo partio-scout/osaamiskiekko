@@ -50,6 +50,13 @@ header .title {
     z-index: 20;
   }
 } 
+
+@media only screen and (min-width: 768px) {
+  .content div {
+    position: relative;
+    z-index: 100;
+  }
+}
 `;
 
 const Credit = (props) => {

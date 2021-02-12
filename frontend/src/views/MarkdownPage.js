@@ -138,7 +138,7 @@ hyphens: auto;
   .content {
     margin: 0 auto;
     padding: 5%;
-    z-index: 20;
+    z-index: 8;
   }
 }
 `;

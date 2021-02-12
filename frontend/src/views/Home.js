@@ -19,7 +19,7 @@ S.Home = styled.div`
   margin: auto;
 
   .invisible-block {
-    height: 400px;
+    height: 200px;
   }
 
   @media only screen and (max-width: 767px) {

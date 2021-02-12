@@ -48,11 +48,37 @@ const blue = {
     default: 'Fira Sans',
     headingFontFamily: 'Futura',
   }
-}
+};
 
-export const defaultTheme = blue;
+const tropicalOcean = {
+  name: 'tropicalOcean',
+  colors: {
+    backgroundPrimary: '#FBFDFC',
+    backgroundSecondary: '#6DE5B8',
+    backgroundTertiary: '#13A5DB',
+    highlight: '#149BCC',
+    textColor: '#202020',
+    textColorSecondary: '#6E6E6E',
+    textColorLight: '#FFFFFF',
+    linkColor: '#149BCC', 
+    navButtons: '#FFFFFF',
+    textHighlight: '#149BCC',
+    get themeGradientColorLeft () { return this.backgroundSecondary },// blue.colors.backgroundSecondary, // '#8ECCEB',
+    get themeGradientColorRight () { return this.backgroundTertiary }, //: blue.colors.backgroundTertiary //'#3262BF'
+    get themeGradient () {
+      return `linear-gradient(to right, ${this.themeGradientColorLeft}, ${this.themeGradientColorRight})`;
+    },
+  },
+  fonts: {
+    default: 'Fira Sans',
+    headingFontFamily: 'Futura',
+  }
+};
+
+export const defaultTheme = tropicalOcean;
 
 export const themes = [
+  tropicalOcean,
   blue,
   green
 ];

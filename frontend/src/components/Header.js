@@ -19,11 +19,11 @@ S.Header = styled.header`
   padding-left: 2rem;
   padding-bottom: 180px;
   padding-right: 2rem;
-  min-height: 430px;
+  min-height: 600px;
 
   @media only screen and (max-width: 767px) {
     grid-column: 1 / 3;
-    min-height: 420px;
+    min-height: 360px;
     padding: 20px 20px 90px 20px;
   }
 }
@@ -67,8 +67,9 @@ p, ul, li {
 }
 
 p.important {
-  font-size: 24px;
+  // font-size: 24px;
   // color: red;
+  //margin-bottom: 5rem;
 }
 
 .header-container {
@@ -87,11 +88,13 @@ export default function Header() {
         <p className="XXXimportant">
           <FormattedMessage id="header.important"/>
         </p>
+        {/*
         <ul>
           <li><FormattedMessage id="header.li1"/></li>
           <li><FormattedMessage id="header.li2"/></li>
           <li><FormattedMessage id="header.li3"/></li>
         </ul>
+        */}
       </div>
       <div className="header-image"></div>
       <Curve />

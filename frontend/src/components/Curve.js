@@ -10,10 +10,6 @@ height: 370px;
 svg {
   height: 370px;
   width: 100%;
-
-  path {
-    fill: ${props => props.theme.colors.accentColor};
-  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -22,21 +18,21 @@ svg {
 `;
 
 export default function Curve(props) {
-  const svgCurve = (color) =>
-    <svg version="1.1" viewBox="0 0 1440 370" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  const svgCurve = () => {
+    return (<svg version="1.1" viewBox="0 0 1440 370" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="gradient">
           <stop
+            id="stopLeft"
             offset="0%"
             style={{
-              'stopColor': '#8ECCEB',
               'stopOpacity': '1'
             }}
           />
           <stop
+            id="stopRight"
             offset="100%"
             style={{
-              'stopColor': '#3262BF',
               'stopOpacity': '1'
             }}
           />
@@ -55,7 +51,8 @@ export default function Curve(props) {
           />
         </g>
       </g>
-    </svg>
+    </svg>);
+  }
 
   return (
     <S.Curve>

@@ -21,7 +21,7 @@ S.BlockQuote = styled.blockquote`
 
   &::before {
     content: '';
-    background-image: url(${require('../images/quote-deepsea.png')});
+    background-image: url(${require('../images/quote-tropicalocean.png')});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center 0.7rem;

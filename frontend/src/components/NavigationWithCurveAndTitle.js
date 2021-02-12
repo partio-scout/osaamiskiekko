@@ -75,16 +75,16 @@ const NavigationWithCurveAndTitle = (props) => {
       <defs>
         <linearGradient id="gradient">
           <stop
+            id="stopLeft"
             offset="0%"
             style={{
-              'stopColor': '#8ECCEB',
               'stopOpacity': '1'
             }}
           />
           <stop
+            id="stopRight"
             offset="100%"
             style={{
-              'stopColor': '#3262BF',
               'stopOpacity': '1'
             }}
           />

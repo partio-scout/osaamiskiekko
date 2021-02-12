@@ -237,9 +237,6 @@ p, p span {
   
     svg {
       width: 100%;
-      path {
-        //fill: ${props => props.theme.colors.backgroundTertiary};
-      }
     }
   }
 
@@ -266,14 +263,12 @@ export default function CreditingInfo(props) {
           <stop
             offset="0%"
             style={{
-              'stopColor': '#8ECCEB',
               'stopOpacity': '1'
             }}
           />
           <stop
             offset="100%"
             style={{
-              'stopColor': '#3262BF',
               'stopOpacity': '1'
             }}
           />

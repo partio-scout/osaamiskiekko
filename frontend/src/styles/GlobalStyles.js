@@ -141,6 +141,19 @@ p {
     line-height: 1.5;
   }
 }
+
+svg {
+  defs {
+    #gradient {
+      #stopLeft {
+        stop-color: ${props => props.theme.colors.themeGradientColorLeft}
+      }
+      #stopRight {
+        stop-color: ${props => props.theme.colors.themeGradientColorRight}
+      }
+    }
+  }
+}
 `;
 
 export default GlobalStyle;

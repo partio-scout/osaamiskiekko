@@ -46,7 +46,7 @@ S.Footer = styled.footer`
           height: 8rem;
         }
         &#tenMonkeysLogo {
-          height: 6rem;
+          height: 4rem;
         }
       }
     }

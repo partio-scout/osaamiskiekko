@@ -26,11 +26,11 @@ hyphens: auto;
     color: ${props => props.theme.colors.textHighlight};
     text-transform: uppercase;
     font-size: 1.3rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
 
   p {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   img {

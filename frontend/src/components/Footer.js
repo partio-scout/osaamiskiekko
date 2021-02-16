@@ -36,19 +36,34 @@ S.Footer = styled.footer`
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    flex-wrap: wrap;
 
     a {
       display: block;
       padding: 0 1rem;
 
-      img {
-        &#kentauriLogo {
+      &#kentauriLogo {
+        img {
           height: 8rem;
         }
-        &#tenMonkeysLogo {
+      }
+
+      &#tenMonkeysLogo {
+        img {
           height: 4rem;
         }
       }
+
+      &#okmLogo {
+        img {
+          height: 3rem;
+        }
+      }
+    }
+
+    .mock {
+      visibility: hidden;
+      width: 8rem;
     }
   }
 
@@ -116,6 +131,11 @@ S.Footer = styled.footer`
     }
     .col-right {
       flex-direction: column;
+      flex-wrap: nowrap;
+
+      #okmLogo img {
+        margin-top: 2.5rem;
+      }
     }
   } 
 `;
@@ -148,12 +168,16 @@ export default function Footer() {
         </div>
       </div>
       <div className="col-right">
-        <a href="https://kentauri.fi" target="_blank" rel="noopener noreferrer">
-          <img id="kentauriLogo" src={require('../images/kentauri-logo-valkoinen.png')} alt="Kentaurin logo" />
+        <a href="https://kentauri.fi" id="kentauriLogo" target="_blank" rel="noopener noreferrer">
+          <img src={require('../images/kentauri-logo-valkoinen.png')} alt="Kentaurin logo" />
         </a>
-        <a href="https://10monkeysdigital.com" target="_blank" rel="noopener noreferrer">
-          <img id="tenMonkeysLogo" src={require('../images/10monkeys-logo-BW-nega.png')} alt="10Monkeys logo" />
+        <a href="https://10monkeysdigital.com" id="tenMonkeysLogo" target="_blank" rel="noopener noreferrer">
+          <img src={require('../images/10monkeys-logo-BW-nega.png')} alt="10Monkeys logo" />
         </a>
+        <a href="https://minedu.fi" id="okmLogo" target="_blank" rel="noopener noreferrer">
+          <img src={require('../images/okm_fi_logo.png')} alt="Opetus- ja kulttuuriministeriö logo" />
+        </a>
+        <div className="mock" />
       </div>
     </S.Footer>
   )

@@ -14,14 +14,14 @@ S.ExaminationNumber = styled.div`
 
   h2, h2 span {
     font-size: 18px;
-    line-height: 27px;
+    line-height: 1.5;
     font-weight: normal;
   }
 
   @media only screen and (max-width: 767px) {
     h2, h2 span {
       font-size: 16px;
-      line-height: 24px;
+      line-height: 1.5;
     }
   }
 `;

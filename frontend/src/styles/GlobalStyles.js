@@ -91,7 +91,7 @@ p {
     color: #202020;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 900;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1.1;
   }
   
@@ -99,7 +99,7 @@ p {
     color: #202020;
     font-family: "Fira Sans", sans-serif;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.1;
   }
   
@@ -121,15 +121,15 @@ p {
   label, span.label {
     color: #202020;	
     font-family: "Fira Sans", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 2px;
-    line-height: 15px;
+    line-height: 1;
   }
   
   label.secondary, span.label.secondary {
     color: #6E6E6E;
     font-family: "Fira Sans", sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 2px;
     line-height: 1.2;
   }

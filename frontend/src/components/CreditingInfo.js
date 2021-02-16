@@ -64,7 +64,7 @@ p, p span {
     display: inline;
     margin: 5px 0;
     font-size: 26px;
-    line-height: 28px;
+    line-height: 1.1;
     font-weight: bold;
     background-size: 100% 0.5rem;
     background-image: ${props => `linear-gradient(180deg,transparent 45%, ${props.theme.colors.textHighlight} 0)`};
@@ -75,19 +75,19 @@ p, p span {
   h3, h3 span {
     margin: 20px 0 10px 0;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 1.5;
     font-weight: bold;
   }
 
   p, p span {
     font-size: 18px;
-    line-height: 27px;
+    line-height: 1.5;
   }
 
   p.level, p.level span, p.scope, p.scope span {
     margin: 0.5rem 0;
     font-size: 16px;
-    line-height: 15px;
+    line-height: 1;
   }
 
   span:first-child {
@@ -111,7 +111,7 @@ p, p span {
   h2, h2 span {
     margin: 10px 0;
     font-size: 26px;
-    line-height: 28px;
+    line-height: 1.1;
     font-weight: bold;
   }
 
@@ -171,8 +171,8 @@ p, p span {
 
   p, p span {
     margin: 5px 0;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .link-and-share {
@@ -188,14 +188,14 @@ p, p span {
 
     h2, h2 span {
       margin: 5px 0;
-      font-size: 20px;
-      line-height: 28px;
+      font-size: 18px;
+      line-height: 1.4;
       background: none;
     }
 
     p, p span {
       font-size: 16px;
-      line-height: 24px;
+      line-height: 1.5;
     }
   }
 
@@ -221,8 +221,8 @@ p, p span {
     box-shadow: none;
 
     p.level, p.level span, p.scope, p.scope span {
-      font-size: 14px;
-      line-height: 15px;
+      font-size: 16px;
+      line-height: 1.1;
     }
   }
 

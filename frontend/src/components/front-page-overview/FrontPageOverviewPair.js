@@ -22,11 +22,19 @@ S.FrontPageOverviewPair = styled.div`
         font-size: 20px;
         font-weight: 600;
         color: #7944A1;
+
+        @media (max-width: 767px) {
+          font-size: 16px;
+        }
       }
     }
     p, ul, li {
       font-size: 1.5rem;
       line-height: 1.5;
+
+      @media (max-width: 767px) {
+        font-size: 1.3rem;
+      }
     }
 
     li {

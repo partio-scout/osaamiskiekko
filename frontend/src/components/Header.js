@@ -47,7 +47,7 @@ h1 {
   line-height: 1.1;
 
   @media only screen and (max-width: 767px) {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 1.1;
   }
   margin: 0px;
@@ -62,8 +62,12 @@ h1 {
 p, ul, li {
 	color: ${props => props.theme.colors.text};
   font-size: 20px;
-  line-height: 30px;
+  line-height: 1.5;
   margin: 24px 0 24px 0px;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 }
 
 p.important {

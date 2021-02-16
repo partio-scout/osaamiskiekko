@@ -80,9 +80,9 @@ S.Footer = styled.footer`
       text-decoration: underline;
       font-size: 14px;	
       font-weight: bold;
-      line-height: 27px;
+      line-height: 1.6;
       :hover {
-        color: ${props => props.theme.colors.textHighlight};
+        color: ${props => props.theme.colors.navButtons}; //${props => props.theme.colors.textHighlight};
         cursor: pointer;
       }
     }
@@ -93,14 +93,14 @@ S.Footer = styled.footer`
     p {
       max-width: 30rem;
       font-size: 12px;
-      line-height: 14px;
+      line-height: 1.2;
       color: ${props => props.theme.colors.navButtons};
       text-align: left;
 
       a {
         color: ${props => props.theme.colors.navButtons};
          :hover {
-          color: ${props => props.theme.colors.textHighlight};
+          color: ${props => props.theme.colors.navButtons}; //${props => props.theme.colors.textHighlight};
           cursor: pointer;
         }
       }

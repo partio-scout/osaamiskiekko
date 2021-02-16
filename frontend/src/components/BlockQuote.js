@@ -17,7 +17,7 @@ S.BlockQuote = styled.blockquote`
   line-height: 1.3;
   font-weight: bold;
   width: 100%;
-  hyphens: auto;
+  //hyphens: auto;
 
   &::before {
     content: '';
@@ -27,14 +27,23 @@ S.BlockQuote = styled.blockquote`
     background-position: center 0.7rem;
 
     display: block;
-    margin-right: 1.6rem;
+    margin-right: 1.5rem;
     width: 4rem;
     flex-shrink: 0;
     align-self: stretch;
+
+    @media only screen and (max-width: 767px) {
+      background-position: center 0.4rem;
+      width: 3rem;
+      margin-right: 1rem;
+      margin-left: -1rem;
+    }
   }
 
   @media only screen and (max-width: 767px) {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin-right: -1rem;
+    width: unset;
   }
 `;
 

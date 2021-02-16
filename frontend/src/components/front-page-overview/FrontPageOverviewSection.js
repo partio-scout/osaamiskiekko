@@ -20,7 +20,8 @@ export default function FrontPageOverviewSection() {
           <FormattedMessage id="frontPage.text1.p1" />
         </p>
         <p>
-          <FormattedMessage id="frontPage.text1.p2" />
+          <span className="bold"><FormattedMessage id="frontPage.text1.p2.bold" /> </span>
+          {/*<FormattedMessage id="frontPage.text1.p2" />*/}
         </p>
       </FrontPageOverviewPair>
       <FrontPageOverviewPair className="blockquote-container" imagePosition="left" imageSrc={ require('../../images/front-page-2.png') } imageAlt="">
@@ -36,6 +37,7 @@ export default function FrontPageOverviewSection() {
           <FormattedMessage id="frontPage.text3.p1" />
         </p>
         <p>
+          <span className="bold"><FormattedMessage id="frontPage.text3.p2.bold" /> </span>
           <FormattedMessage id="frontPage.text3.p2" />
         </p>
       </FrontPageOverviewPair>
@@ -47,6 +49,7 @@ export default function FrontPageOverviewSection() {
           <FormattedMessage id="frontPage.text4.p1" />
         </p>
         <p>
+          <span className="bold"><FormattedMessage id="frontPage.text4.p2.bold" /> </span>
           <FormattedMessage id="frontPage.text4.p2" />
         </p>
       </FrontPageOverviewPair>

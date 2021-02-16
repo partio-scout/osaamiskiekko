@@ -142,6 +142,10 @@ p {
   }
 }
 
+.bold {
+  font-weight: bold;
+}
+
 svg {
   defs {
     #gradient {

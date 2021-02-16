@@ -261,12 +261,14 @@ export default function CreditingInfo(props) {
       <defs>
         <linearGradient id="gradient">
           <stop
+            id="stopLeft"
             offset="0%"
             style={{
               'stopOpacity': '1'
             }}
           />
           <stop
+            id="stopRight"
             offset="100%"
             style={{
               'stopOpacity': '1'

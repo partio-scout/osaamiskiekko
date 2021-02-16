@@ -2,8 +2,8 @@
 <svg width="1440px" height="352px" viewBox="0 0 1440 352" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <linearGradient id="gradient">
-            <stop offset="0%" style="stop-color: #000000; stop-opacity: 1" />
-            <stop offset="100%" style="stop-color: #ffffff; stop-opacity: 1" />
+            <stop id="stopLeft" offset="0%" style="stop-opacity: 1" />
+            <stop id="stopRight" offset="100%" style="stop-opacity: 1" />
         </linearGradient>
     </defs>
     <title>Combined Shape</title>

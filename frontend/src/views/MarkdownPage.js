@@ -45,6 +45,8 @@ hyphens: auto;
   }
 
   a.link-button {
+    margin-top: 0.5rem;
+    display: inline-block;
     color: white;
     background-color: ${props => props.theme.colors.textHighlight};
     padding: 1rem 1.5rem;

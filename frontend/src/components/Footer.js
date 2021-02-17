@@ -46,17 +46,34 @@ S.Footer = styled.footer`
         img {
           height: 8rem;
         }
+
+        @media (max-width: 767px) {
+          order: 1;
+        }
       }
 
       &#tenMonkeysLogo {
         img {
           height: 4rem;
         }
+
+        @media (max-width: 767px) {
+          order: 3;
+          margin-top: 2.5rem;
+        }
       }
 
       &#okmLogo {
         img {
           height: 3rem;
+        }
+
+        @media (max-width: 767px) {
+          order: 2;
+
+          img {
+            //margin-top: 2.5rem;
+          }
         }
       }
     }
@@ -132,10 +149,6 @@ S.Footer = styled.footer`
     .col-right {
       flex-direction: column;
       flex-wrap: nowrap;
-
-      #okmLogo img {
-        margin-top: 2.5rem;
-      }
     }
   } 
 `;

@@ -12,7 +12,7 @@ S.MarkdownPage = styled.div`
 max-width: 1440px;
 margin: auto;
 position: relative;
-hyphens: auto;
+// hyphens: auto;
 
 .content {
   margin: 0 auto;

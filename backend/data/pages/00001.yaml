@@ -68,6 +68,7 @@ text_en: >-
 
   The competence disc demonstrates how skills accumulated through hobbies and volunteer work can be utilised in studies leading to a qualification. The competence disc displays how the content of validated training offered by NGOs and digital badges corresponds to studies leading to a qualification. The app shows the education institutes’ recommendations for how competence gained through NGO activities can be identified and recognised in studies.
 
+
   ![Some alt text](INSERT:front-page-2.png)
 
 
@@ -79,16 +80,19 @@ text_en: >-
 
   The competence disc lists descriptions of training offered by NGOs, digital badges and qualifications of education institutes. An important part of the competence disc is the recommendation drawn up by an education institute on how skills accumulated through NGO activities are recognised at the education institute and in its qualifications. The education institutes and NGOs produce their own content for the competence disc, and the competence disc is then updated by our admins.
 
+
   #### How can we be included on the competence disc?
 
 
   NGOs and education institutes are welcome to provide content for the competence disc. Skills gained through NGO activities are added to the competence disc in the form of validated training and digital badges. If your NGO or education institute already has existing RPL collaboration agreements between NGOs and education institutes for the recognition of prior learning (AHOT in Finnish), these are directly compatible with the competence disc. 
   If your NGO’s training programmes or digital badges have not yet been accredited by an education institute, we can organise an interpretation forum event at a local educational establishment of your choice. The purpose of this is to compare the competence with the qualification requirements and together make a recommendation for the recognition of the competence, which will then be displayed on the competence disc.
 
+
   #### What are NQF levels?
 
 
   The competence disc uses NQF levels to enable comparison of qualifications and competence gained through NGO activities. NQF (the term EQF is also used) refers to the National Qualifications Framework. Finland uses a national framework made up of 8 levels, where, for example, upper secondary level qualifications are on level 4, and bachelor’s degrees from universities of applied sciences are on level 6. As part of the validation process we can assess the NQF level of training programmes offered by an NGO.
+
 
   #### Who maintains the competence disc?
 
@@ -105,7 +109,7 @@ text_en: >-
           Education institutes, get in touch and we can add you to the competence disc!
         </p>
         <p>
-          <a href="/contactus" class="link-button">Contact us</a>
+          <a href="/otayhteytta" class="link-button">Contact us</a>
         </p>
       </div>
       <div>
@@ -119,6 +123,9 @@ text_sv: >-
 
 
   Kompetensvisaren visar hur man kan utnyttja kompetens man samlat inom hobby- och frivilligverksamhet i sina examensstudier. Kompetensvisaren visar hur innehållet i validerade utbildningar som erbjuds av organisationer och digitala kompetensmärken motsvarar examensstudier. I applikationen visas läroanstalternas rekommendationer om hur kompetens som skaffats genom organisationsverksamhet kan identifieras och erkännas i studierna. 
+
+
+  ![Some alt text](INSERT:front-page-2.png)
 
 
   ###Vanliga frågor om kompetensvisaren
@@ -157,7 +164,7 @@ text_sv: >-
         <p>
           Läroanstalt, kontakta oss så lägger vi upp er också i Kompetensvisaren!
         <p>
-          <a href="/kontaktaoss" class="link-button">Kontakta oss</a>
+          <a href="/otayhteytta" class="link-button">Kontakta oss</a>
         </p>
       </div>
       <div>

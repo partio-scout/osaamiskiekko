@@ -1,0 +1,8 @@
+{
+  "googleAnalyticsTrackingId": "",
+  "facebookPixelId": "",
+  "contact": {
+    "url": "https://europe-west1-partio-osaamiskiekko-prod.cloudfunctions.net/app/contact",
+    "devMode": true
+  }
+}

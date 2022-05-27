@@ -1,0 +1,45 @@
+/**
+This file contains various scss variables.
+ */
+$nav-width: 1920px;
+$nav-height: 3rem;
+$nav-font-size: 0.9rem;
+
+$content-width: 1920px;
+
+$breakpoint-xl: 1200px;
+$breakpoint-xl-number: 1200;
+
+$theme-color-1: #5a9cf7;
+$theme-color-2: #eaefff;
+$theme-color-4: #a8376a;
+$theme-color-3: linear-gradient(to top right, #8cd059 30%, #9fdd25 100%);
+
+$body-color: #d8dbe6;
+$border-radius: 1.5rem;
+$menu-link: #c5c7d1;
+$background: linear-gradient(#0b0d0f, #111417);
+
+$heading-color: #f5f8fc;
+$subheading-color: #e7ebf6;
+
+$heading-font-family: "Poppins", sans-serif;
+$body-font-family: "DM Sans", sans-serif;
+$milan-color: #fffa84;
+$mauve-color: #e6b8f6;
+$blusher-pink-color: #ffb8f2;
+$turquoise-color: #6cf4de;
+$black-color: #0b0d0f;
+
+$input-group-size: 100%;
+$shared-padding: 2rem;
+
+$sub-heading-font-weight: 900;
+
+:root {
+  --breakpoint-xl-number: #{$breakpoint-xl-number};
+  --mauve-color: #{$mauve-color};
+  --milan-color: #{$milan-color};
+  --turquoise-color: #{$turquoise-color};
+  --blusher-pink-color: #{$blusher-pink-color};
+}

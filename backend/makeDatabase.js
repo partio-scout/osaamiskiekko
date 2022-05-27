@@ -1,7 +1,7 @@
 /**
- * Generates JSON files based on YAML files in /backend/data and stores them in /frontend/public/data
+ * Generates JSON files based on YAML files in /backend/data and stores them in /frontend/static/data
  *
- * Note that the generated files in /frontend/public/data should be included in the git repository,
+ * Note that the generated files in /frontend/static/data should be included in the git repository,
  * as makeDatabase.js is currently not run when deploying the software.
  *
  * @type {module:fs}
@@ -166,7 +166,7 @@ const main = async () => {
         const renames = contentTypeList[contentType].renames
 
         // Create destination directory, if it does not exist.
-        const destDirPath = path.join(__dirname, '/../frontend/public/data/' + contentType)
+        const destDirPath = path.join(__dirname, '/../frontend/static/data/' + contentType)
         if (fs.existsSync(destDirPath) === false) {
             fs.mkdirSync(destDirPath)
         }

@@ -3,10 +3,10 @@ identification: 4h-taimikonhoito
 nqfId: 8
 organizationId: 3
 credits: 2
-url: 'https://4h.fi/toita/hanki-toita/kurssien-kautta-toihin/metsatyokurssi/'
+url: "https://4h.fi/toita/hanki-toita/kurssien-kautta-toihin/metsatyokurssi/"
 name_fi: 4H-taimikonhoitokurssi
-name_en: 4H course on tending sapling stands
-name_sv: 4H-taimikonhoitokurssi
+name_en: 4H course in the tending of seedling stands
+name_sv: 4H-plantvårdskurs
 description_fi: >-
   Kurssilla tutustutaan taimikonhoidon menetelmiin sekä työvälineiden
   turvalliseen käyttöön sekä teoriassa että käytännössä.
@@ -23,31 +23,29 @@ description_fi: >-
 
   Osallistuja osaa käyttää ja huoltaa turvavarusteita
 description_en: >-
-  During the course the students familiarise themselves with sapling stand
-  tending techniques and safe usage of equipment both in theory and in practice.
+  The course introduces participants to the methods of tending to seedling stands and the safe use of tools in both theory and practice.
 
 
-  The student knows how to tend sapling stands of different species of trees
-  independently (tending of young sapling stands, tending of sapling stands,
-  self-monitoring)
+  Targeted learning outcomes:
 
-  They can use a brush cutter and know how to maintain it.
+  - The participant is able to independently tend to the seedling stands of various tree species (early tending of seedling stands, tending of young stands, HAACP).
 
-  They can take care of their own safety while tending sapling stands.
+  - Knows how to use a clearing saw and maintain it.
 
-  They know how to use and maintain safety equipment.
+  - Knows how to observe safety when tending to seedling stands.
+
+  - Knows how to use and maintain safety equipment.
+
 description_sv: >-
-  Kurssilla tutustutaan taimikonhoidon menetelmiin sekä työvälineiden
-  turvalliseen käyttöön sekä teoriassa että käytännössä.
+  Under kursen lär man sig plantvårdsmetoder och säker användning av redskap, genom både teori och praktik.
 
 
-  Osaamistavoitteet:
+  Kompetensmål:
 
-  Osallistuja osaa hoitaa itsenäisesti eri puulajien taimikoita (taimikon
-  varhaishoito, taimikonhoito, omavalvonta)
+  - Deltagaren kan självständigt vårda plantor av olika trädslag (tidig vård, plantvård, egenkontroll).
 
-  Osaa ottaa käyttöön raivaussahan sekä osaa huoltaa sitä
+  - Kan använda och sköta en röjningssåg.
 
-  Osaa toimia turvallisesti taimikonhoitotyössä
+  - Kan utföra plantvårdsarbete på ett säkert sätt.
 
-  Osallistuja osaa käyttää ja huoltaa turvavarusteita
+  - Deltagaren kan använda och sköta säkerhetsutrustning.

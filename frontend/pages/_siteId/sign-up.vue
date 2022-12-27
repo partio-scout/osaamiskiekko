@@ -231,10 +231,10 @@ export default {
 
       contactInfoList: [
         {
-          name: 'Timo Sinivuori',
+          name: 'Laura Kalervo',
           company: 'Osaamiskeskus Kentauri',
-          email: 'timo.sinivuori@kentauri.fi',
-          phone: '+358 400 511 534'
+          email: 'laura.kalervo@kentauri.fi',
+          phone: '+358 50 597 8190'
         }
       ]
     }

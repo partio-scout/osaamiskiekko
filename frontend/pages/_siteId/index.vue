@@ -8,7 +8,13 @@
             {{ content["header-content"] }}
           </p>
 
-          <search-form />
+          <!-- <search-form /> -->
+          <br>
+          <div class="button">
+            <button class="btn btn-outlined-blue" @click="pass">
+              {{ content["body-part1-h2-2"] }}
+            </button>
+          </div>
         </div>
 
         <div class="right">
@@ -76,7 +82,7 @@
 
         <div class="button">
           <button class="btn btn-outlined-turquoise" @click="$goTo('signUp')">
-            {{ content["body-part3-h2"] }}
+            {{ content["body-part4-h2"] }}
           </button>
         </div>
       </page-section>
@@ -95,12 +101,12 @@
 </template>
 
 <script>
-import SearchForm from '../../components/SearchForm.vue'
+// import SearchForm from '../../components/SearchForm.vue'
 import PageSection from '~/components/PageSection.vue'
 import CategoryItem from '~/components/CategoryItem.vue'
 
 export default {
-  components: { PageSection, CategoryItem, SearchForm },
+  components: { PageSection, CategoryItem },
 
   async asyncData ({ $content, $config: { siteId } }) {
     const content = await $content('home/home-' + siteId).fetch()

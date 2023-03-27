@@ -3,29 +3,25 @@
     <div class="content">
       <h1 v-html="headingHtml" />
 
-      <template v-if="submitted">
+      <!-- <template v-if="submitted">
         <p>
           {{ content["thank-you"] }}
         </p>
-      </template>
+      </template> -->
 
-      <template v-else>
+      <template>
         <div class="mt-5" v-html="content['normal-text']" />
+        <br>
+        <div class="button">
+          <button class="btn btn-outlined-turquoise mt-3" @click="redirect">
+            {{ content["button"] }}
+          </button>
+        </div>
+        <br><br><br><br><br><br>
 
-        <p>* {{ content["special-text"] }}</p>
+        <!-- <p>* {{ content["special-text"] }}</p> -->
 
-        <b-form class="sign-up-form mt-5" @submit.prevent="onSubmit">
-          <!-- <b-form-group
-            :label="'* ' + content['role-label']"
-            label-for="role-select"
-          >
-            <b-form-select
-              id="role-select"
-              v-model="form.role"
-              :options="roleOptions"
-              required
-            />
-          </b-form-group> -->
+        <!-- <b-form class="sign-up-form mt-5" @submit.prevent="onSubmit">
           <div role="group" class="form-group">
             <label
               for="role-select"
@@ -48,7 +44,7 @@
                 >
                   {{ role.text }}
                 </option>
-              </select><!----><!----><!---->
+              </select>
             </div>
           </div>
 
@@ -73,30 +69,9 @@
                 >
                   {{ subject.text }}
                 </option>
-              </select><!----><!----><!---->
+              </select>
             </div>
           </div>
-
-          <!-- <b-form-group
-            :label="'* ' + content['subject-label']"
-            label-for="subject-select"
-          >
-            <b-form-select
-              id="subject-select"
-              v-model="form.subject"
-              :options="subjectOptions"
-              required
-            />
-          </b-form-group> -->
-
-          <!-- <b-form-group :label="'* ' + content['name-label']" label-for="name">
-            <b-form-input
-              id="name"
-              v-model.trim="form.name"
-              required
-              :placeholder="content['name-label']"
-            />
-          </b-form-group> -->
 
           <div role="group" class="form-group">
             <label id="__BVID__35__BV_label_" for="name" class="d-block">
@@ -111,21 +86,9 @@
                 required="required"
                 aria-required="true"
                 class="form-control"
-              ><!----><!----><!---->
+              >
             </div>
           </div>
-
-          <!-- <b-form-group
-            :label="'* ' + content['email-label']"
-            label-for="email"
-          >
-            <b-form-input
-              id="email"
-              v-model.trim="form.email"
-              required
-              :placeholder="content['email-label']"
-            />
-          </b-form-group> -->
 
           <div role="group" class="form-group">
             <label for="email" class="d-block">
@@ -140,27 +103,13 @@
                 required="required"
                 aria-required="true"
                 class="form-control"
-              ><!----><!----><!---->
+              >
             </div>
           </div>
 
           <b-form-group :label="content['phone-label']" label-for="phone">
             <b-form-input id="phone" v-model="form.phone" type="text" />
           </b-form-group>
-          <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
-
-          <!-- <b-form-group
-            :label="'* ' + content['message-label']"
-            label-for="message"
-          >
-            <b-form-textarea
-              id="message"
-              v-model.trim="form.message"
-              no-resize
-              rows="5"
-              required
-            />
-          </b-form-group> -->
 
           <div role="group" class="form-group">
             <label for="message" class="d-block">
@@ -177,7 +126,7 @@
                 class="form-control"
                 style="resize: none;"
                 spellcheck="false"
-              /><!----><!----><!---->
+              />
             </div>
           </div>
 
@@ -186,11 +135,11 @@
               {{ content["submit"] }}
             </button>
           </div>
-        </b-form>
+        </b-form> -->
       </template>
     </div>
 
-    <footer>
+    <!-- <footer>
       <div>
         <contact-info
           v-for="contact in contactInfoList"
@@ -198,16 +147,15 @@
           :item-data="contact"
         />
       </div>
-    </footer>
+    </footer> -->
   </div>
 </template>
 
 <script>
 import Util from '~/assets/js/Util.js'
-import ContactInfo from '~/components/ContactInfo.vue'
 
 export default {
-  components: { ContactInfo },
+  components: { },
   async asyncData ({ $content, $config: { siteId } }) {
     const content = await $content('signup/signup-' + siteId).fetch()
     return {
@@ -317,6 +265,10 @@ export default {
   },
 
   methods: {
+    redirect () {
+      window.location.href = 'https://link.webropolsurveys.com/S/1361750329159F5D'
+    },
+
     async onSubmit () {
       if (this.submitting) {
         return

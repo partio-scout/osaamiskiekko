@@ -1,14 +1,10 @@
-heading: Tehdään osaamisesta totta, [highlight-start]tule mukaan! [highlight-end]
+heading: Toimiiko?
 title: Tule mukaan
 
 normal-text: >
-  <p>Alla olevan lomakkeen täyttämällä saatte lisätietoa Osaamiskiekosta. </p>
+  <p>Anna palautetta.</p>
 
-  <p>Keskeinen osa Osaamiskiekkoa on oppilaitoksen laatima suositus siitä, miten järjestöissä tai vapaa-ajalla hankittu osaaminen hyväksiluetaan tutkinnoissa. Jos järjestöjen koulutuksia ei vielä hyödynnetä osana tutkintoja, Osaamiskeskus Kentauri voi järjestää etänä tulkintafoorumitilaisuuden, jossa järjestö ja oppilaitos luovat yhdessä suosituksen koulutuksen hyväksilukemisesta. Tämän jälkeen yhteensopivuus viedään Osaamiskiekkoon, missä se on kaikkien löydettävissä ja käytettävissä.</p>
-
-  <p>Täytä tiedot ja otamme yhteyttä sinuun.</p>
-
-special-text: Tähdellä merkityt kentät ovat pakollisia
+  <p>Mitä pidät Osaamiskiekosta? Löytyikö kiinnostavaa tietoa? Oliko jokin pielessä? Anna palautetta lomakkeen kautta. </p>
 
 role-label: Olen
 role-choice-0: Valitse
@@ -34,5 +30,6 @@ phone-label: Puhelin
 message-label: Viesti
 
 submit: Lähetä
+button: Tästä kyselyyn
 
 thank-you: Kiitos yhteydenotostasi.

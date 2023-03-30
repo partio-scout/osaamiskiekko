@@ -11,7 +11,7 @@
           <!-- <search-form /> -->
           <br>
           <div class="button">
-            <button class="btn btn-outlined-blue" @click="pass">
+            <button class="btn btn-outlined-blue" @click="redirect">
               {{ content["body-part1-h2-2"] }}
             </button>
           </div>
@@ -229,6 +229,9 @@ export default {
   methods: {
     generateRandomNumber (max) {
       return Math.floor(Math.random() * max)
+    },
+    redirect () {
+      window.location.href = 'https://osaamiskiekko.vxt-research.com/fi/hakukone/'
     }
   }
 }

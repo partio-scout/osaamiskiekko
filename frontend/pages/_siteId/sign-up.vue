@@ -17,7 +17,6 @@
             {{ content["button"] }}
           </button>
         </div>
-        <br><br><br><br><br><br>
 
         <!-- <p>* {{ content["special-text"] }}</p> -->
 

@@ -32,14 +32,14 @@
             </nuxt-link>
           </div>
 
-          <div>
+          <!-- <div>
             <a
               target="_blank"
               href="https://link.webropolsurveys.com/Participation/Public/43bf4835-3f8d-4250-8bee-888d3719be70?displayId=Fin2412610"
             >
               {{ content["giveFeedback"] }}
             </a>
-          </div>
+          </div> -->
 
           <div>
             <nuxt-link :to="$urls.privacyPolicy">

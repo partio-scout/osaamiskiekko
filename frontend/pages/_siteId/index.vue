@@ -231,7 +231,7 @@ export default {
       return Math.floor(Math.random() * max)
     },
     redirect () {
-      window.location.href = 'https://osaamiskiekko.vxt-research.com/fi/hakukone/'
+      window.location.href = 'https://www.osaamiskiekko.fi/fi/hakukone/'
     }
   }
 }

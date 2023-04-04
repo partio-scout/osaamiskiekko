@@ -2,7 +2,7 @@
   <page-section
     image-alt="Duunikoutsi"
     class="part4"
-    img-url="/images/duunikoutsi.jpeg"
+    img-url="/images/duunikoutsi-new.png"
   >
     <h2>{{ heading }}</h2>
 

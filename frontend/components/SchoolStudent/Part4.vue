@@ -36,7 +36,7 @@
     </div> -->
     <div>
       <a
-        style="text-decoration: none; color: #e7ebf6;"
+        style="text-decoration: none; color: #e7ebf6; font-size: 1.2rem;"
         aria-label="Go to Duunikoutsi website"
         target="_blank"
         href="https://www.duunikoutsi.fi/"

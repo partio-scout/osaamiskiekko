@@ -71,7 +71,7 @@ export default {
     h3 {
       margin: 0.6rem 0 1.2rem 0;
 
-      font-size: 1.125rem;
+      font-size: 1.5rem; // was 1.125
       font-family: $heading-font-family;
       font-weight: 700;
 

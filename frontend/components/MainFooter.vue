@@ -189,13 +189,13 @@ export default {
         }
 
         h3 {
-          font-size: 1.1rem;
+          font-size: 1.42rem; // was 1.1
         }
 
         p {
           opacity: 0.6;
 
-          font-size: 0.9rem;
+          font-size: 1.2rem; // was 0.9
           line-height: 1.8;
 
           a {
@@ -216,7 +216,7 @@ export default {
 
           a {
             color: inherit;
-            font-size: 0.9rem;
+            font-size: 1.2rem; // was 0.9
             text-decoration: none;
 
             opacity: 0.6;

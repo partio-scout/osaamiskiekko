@@ -316,7 +316,7 @@ export default {
 
           text-decoration: none;
           color: $menu-link;
-          font-size: 0.9rem;
+          font-size: 1.2rem; // was 0.9
 
           opacity: 0.6;
 

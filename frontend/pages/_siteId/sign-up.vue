@@ -265,7 +265,6 @@ export default {
 
   methods: {
     redirect () {
-      // window.location.href = 'https://link.webropolsurveys.com/S/1361750329159F5D'
       window.open('https://link.webropolsurveys.com/S/1361750329159F5D', '_blank')
     },
 

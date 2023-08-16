@@ -1,12 +1,10 @@
-heading: Let’s make your competencies come true, [highlight-start]sign up! [highlight-end]
+heading: Did it work? 
 title: Sign up
 
 normal-text: >
-  <p>For more information about the Competence Disc, please complete the form below.</p> 
+  <p>Give feedback </p> 
 
-  <p>An essential part of the Competence Disc’s functions is having an educational institution’s recommendation for how competences gained through NGOs or in leisure time are recognised for degrees. If training through NGOs is not yet utilised in your degree programmes, the Youth Work Centre of Expertise Kentauri can organise a remote competence interpretation forum where the NGO and educational institution can collaboratively create a recommendation for training recognition. After this, the compatibility is added to the Competence Disc, where it is visible and available to everyone.</p>
-
-  <p>Fill in your information and we will contact you.</p>
+  <p>What did you think of the Competence Disc? Did you find anything interesting? Was there something wrong? Give feedback via the form below.  </p>
 
 special-text: All fields marked with an asterisk are required
 
@@ -34,6 +32,6 @@ phone-label: Phone
 message-label: Message
 
 submit: Submit
-button: Tästä kyselyyn
+button: To survey
 
 thank-you: Thank you for contacting us.

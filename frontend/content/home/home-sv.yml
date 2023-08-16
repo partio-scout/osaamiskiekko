@@ -1,7 +1,7 @@
 navbar-home: Start
 navbar-student: Studerande
 navbar-school: Läroanstalter och organisationer
-navbar-signup: Kom med!
+navbar-signup: Ge respons på webbplatsen
 
 language: Språk
 
@@ -19,23 +19,23 @@ institutions: Läroanstalter
 organizations: Organisationer
 
 body-part1-h1: Hej du,
-body-part1-h2: varför studera i onödan?
-body-part1-h2-2: Tästä hakukoneeseen
+body-part1-h2: Varför studera det du redan kan?
+body-part1-h2-2: Till sökmotor
 body-part1-p1: Hobbyer ger nyttig kompetens. Med kompetensvisaren förvandlar du kompetens du skaffat under fritiden till studiepoäng och får rekommendationer om hur du kan utnyttja din kompetens i studierna.
 
 body-part2-h1: Vad?
 body-part2-h2: Gratis studiepoäng!
-body-part2-p1: Genom att identifiera och erkänna kompetens kan man undvika onödig och överlappande utbildning, vilket påskyndar utexamineringen av studerande och minskar lärarnas arbetsbörda. Kompetensvisaren hjälper.
+body-part2-p1: Genom att identifiera och erkänna kompetens kan man undvika onödig och överlappande utbildning, vilket påskyndar utexamineringen av studerande och minskar lärarnas arbetsbörda. Kompetensvisaren hjälper er att hitta kompetensen. 
 
 body-part3-h1:
-body-part3-h2: Kom med!
-body-part4-h2: Kom med!
-body-part3-p1: Klicka dig med bland de främsta inom modern kompetens.
+body-part3-h2: Fungerar det? 
+body-part4-h2: Till blanketten
+body-part3-p1: Vad tycker du om kompetensvisaren? Hittade du intressant information? Gick något åt skogen? Ge respons med blanketten.  
 
 category-1: Sökmotor
-category-2: Studerande
+category-2: Till studeranden
 category-3: Läroanstalter och organisationer
-category-4: Kom med!
+category-4: Ge respons
 
 alt-osamiskiekko-broccoli: En bild av några personer som klättrar uppför ett broccolihuvud som om det var ett träd.
 alt-osamiskiekko-water: En bild av en person som paddlar mot solnedgången, men solen är en skiva apelsin.

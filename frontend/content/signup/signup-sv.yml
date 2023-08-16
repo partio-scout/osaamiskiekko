@@ -1,12 +1,10 @@
-heading: Vi gör kompetensen verklig, [highlight-start]kom med! [highlight-end]
+heading: Fungerar det? 
 title: Kom med
 
 normal-text: >
-  <p>Genom att fylla i blanketten nedan får du mer information om Kompetensvisaren.</p> 
+  <p>Ge respons</p> 
 
-  <p>En central del av Kompetensvisaren är den rekommendation som läroinrättningen har gjort upp om hur kunnande som skaffats i organisationer eller på fritiden tillgodoräknas i examina. Om utbildningar från organisationer inte ännu utnyttjas som en del av examina, kan Kompetenscenter Kentauri ordna ett examensforum på distans där organisationen och läroinrättningen tillsammans utarbetar en rekommendation om att utbildningen ska tillgodoräknas. Därefter införs förenligheten i Kompetensvisaren, där alla kan nå och använda den.</p>
-
-  <p>Fyll i uppgifterna, så kontaktar vi dig.</p>
+  <p>Vad tycker du om kompetensvisaren? Hittade du intressant information? Gick något åt skogen? Ge respons med blanketten.  </p>
 
 special-text: Fälten med en asterisk är obligatoriska
 
@@ -34,6 +32,6 @@ phone-label: Telefon
 message-label: Meddelande
 
 submit: Skicka
-button: Tästä kyselyyn
+button: Till undersökning
 
 thank-you: Tack för att du kontaktar oss.

@@ -1,12 +1,11 @@
-footer-text: Den digitala Kompetensvisaren är ett redskap för ungdomsarbete och studiehandledning, utvecklat av kompetenscentret Kentauri och finansierat av Undervisnings- och kulturministeriet. Tjänsten är kostnadsfri också för innehållsproducenterna. Kompetensvisaren underhålls av [link-start]10Monkeys[link-end] tillsammans med kompetenscentret Kentauri.
-home: Start
+footer-text: Den digitala Kompetensvisaren är ett redskap för studiehandledning, utvecklat av kompetenscentret Kentauri och finansierat av Undervisnings- och kulturministeriet. Tjänstens data kommer från Utbildningsstyrelsens eGrunder-tjänst och yrkeshögskolornas läroplaner. Kompetensvisaren underhålls av 10Monkeys och VXT Research tillsammans med kompetenscentret Kentauri.
 student: Studerande
 school: Läroanstalter och organisationer
-signup: Kom med!
+signup: Ge respons
 # giveFeedback: Ge feedback på sidorna
 privacy-policy: Integritetsskydd
 brand: Kompetensvisaren
-accessibility: Tillgänglighetsbeskrivning
+accessibility: Tillgänglighetsutlåtande
 
 alt-link-kentauri: Besök Kentauris webbplats
 alt-link-okm: Besök Utbildnings- och kulturministeriets webbplats

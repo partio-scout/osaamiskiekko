@@ -41,10 +41,15 @@
             </a>
           </div> -->
 
-          <div>
+          <!-- <div>
             <nuxt-link :to="$urls.privacyPolicy">
               {{ content["privacy-policy"] }}
             </nuxt-link>
+          </div> -->
+          <div>
+            <a :href="'https://www.partio.fi/suomen-partiolaiset/tietoa-meista/henkilotietojen-kasittely/tietosuojaseloste/'" target="_blank" rel="noopener noreferrer">
+              {{ content["privacy-policy"] }}
+            </a>
           </div>
 
           <div>

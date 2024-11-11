@@ -1,6 +1,3 @@
-# Building:
-# docker image build -t docker.vxt-research.com/osaamiskiekko-ui .
-
 FROM node:19-alpine3.15 as building
 
 WORKDIR /usr/src/osaamiskiekko-ui

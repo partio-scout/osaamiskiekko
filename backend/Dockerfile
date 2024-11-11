@@ -1,6 +1,3 @@
-# Building:
-# docker image build -t docker.vxt-research.com/osaamiskiekko .
-
 FROM rust:1.67-bullseye as building
 
 WORKDIR /usr/src/osaamiskiekko

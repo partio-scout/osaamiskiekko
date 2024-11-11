@@ -1,0 +1,50 @@
+h1 {
+  font-family: $heading-font-family;
+  color: $heading-color;
+  font-weight: 700;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-family: $heading-font-family;
+  color: $subheading-color;
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  line-height: 2.125rem;
+  @include media-breakpoint-down(sm) {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 0.81rem;
+  font-weight: 600;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1.2rem !important ;
+  }
+}
+
+h4 {
+  font-family: $heading-font-family;
+  font-weight: 700;
+}
+
+h5 {
+  font-weight: 700;
+  font-family: $heading-font-family;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1rem !important ;
+  }
+}
+
+p {
+  line-height: 2.161rem; // was 1.625
+  font-size: 1.33rem; // was 1
+  font-weight: 400;
+}

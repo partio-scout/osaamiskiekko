@@ -1,0 +1,37 @@
+heading: Fungerar det? 
+title: Kom med
+
+normal-text: >
+  <p>Ge respons</p> 
+
+  <p>Vad tycker du om kompetensvisaren? Hittade du intressant information? Gick något åt skogen? Ge respons med blanketten.  </p>
+
+special-text: Fälten med en asterisk är obligatoriska
+
+role-label: Jag är
+role-choice-0: Välj
+role-choice-1: Studerande
+role-choice-2: Läroanstalt
+role-choice-3: Organisation
+role-choice-4: Annat
+
+subject-label: Tema för kontakten
+subject-choice-0: Välj
+subject-choice-1: Mer information om tillgodogörande av kompetens i studier
+subject-choice-2: Med som studerande
+subject-choice-3: Med som läroanstalt
+subject-choice-4: Med som organisation
+subject-choice-5: Annat
+
+name-label: Namn
+
+email-label: E-postadress
+
+phone-label: Telefon
+
+message-label: Meddelande
+
+submit: Skicka
+button: Till undersökning
+
+thank-you: Tack för att du kontaktar oss.

@@ -1,0 +1,37 @@
+heading: Did it work? 
+title: Sign up
+
+normal-text: >
+  <p>Give feedback </p> 
+
+  <p>What did you think of the Competence Disc? Did you find anything interesting? Was there something wrong? Give feedback via the form below.  </p>
+
+special-text: All fields marked with an asterisk are required
+
+role-label: I am a
+role-choice-0: Select
+role-choice-1: Student
+role-choice-2: School
+role-choice-3: Organization
+role-choice-4: Other
+
+subject-label: Reason for contacting us
+subject-choice-0: Select
+subject-choice-1: More information on how to studify competence
+subject-choice-2: Signing up as a student
+subject-choice-3: Signing up as a school
+subject-choice-4: Signing up as an organization or similar
+subject-choice-5: Other
+
+name-label: Name
+
+email-label: Email address
+
+phone-label: Phone
+
+message-label: Message
+
+submit: Submit
+button: To survey
+
+thank-you: Thank you for contacting us.

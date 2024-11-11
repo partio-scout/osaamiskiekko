@@ -1,0 +1,42 @@
+navbar-home: Etusivu
+navbar-student: Opiskelijat
+navbar-school: Oppilaitokset ja järjestöt
+navbar-signup: Anna palautetta sivustosta
+
+language: Kieli
+
+header-heading: Paljasta supervoimasi!
+header-content: Anna tekoälyn vertailla erilaisia osaamisia ja näyttää sinulle, miten voit hyödyntää harrastus- ja vapaaehtoistoiminnassa kertynyttä osaamista tutkintoon johtavissa opinnoissa.
+
+school-placeholder: Etsi järjestö tai oppilaitos
+qualification-placeholder: Etsi tutkinto tai koulutus
+
+search-additional-info: Etkö löytänyt etsimääsi? [link-start]Ota yhteyttä[link-end] ja lisätään teidätkin Osaamiskiekkoon!
+
+no-data: Ei tuloksia
+
+institutions: Oppilaitokset
+organizations: Järjestöt
+
+body-part1-h1: Hei sinä,
+body-part1-h2: Miksi opiskelisit sitä mitä jo osaat?
+body-part1-h2-2: Tästä hakukoneeseen
+body-part1-p1: Harrastuksista ja vapaaehtoistyön koulutuksista kertyy hyödyllistä osaamista. Osaamiskiekon avulla muutat vapaa-ajalla hankitun osaamisen osaamis- tai opintopisteiksi ja saat suosituksia siitä, miten voit hyödyntää osaamistasi opinnoissasi.
+
+body-part2-h1: Mitä?
+body-part2-h2: Ilmaisia opintopisteitä!
+body-part2-p1: Monipuolisella osaamisen tunnistamisella ja tunnustamisella vältetään päällekkäinen opiskelu, mikä nopeuttaa opiskelijoiden valmistumista ja keventää opettajien työmäärää. Osaamiskiekko auttaa löytämään osaamista.
+
+body-part3-h1:
+body-part3-h2: Toimiiko?
+body-part4-h2: Tästä lomakkeeseen
+body-part3-p1: Mitä pidät Osaamiskiekosta? Löytyikö kiinnostavaa tietoa? Oliko jokin pielessä? Anna palautetta lomakkeen kautta. 
+
+category-1: Hakukone
+category-2: Opiskelijalle
+category-3: Oppilaitokset ja järjestöt
+category-4: Anna palautetta
+
+alt-osamiskiekko-broccoli: Kuva ihmisistä kiipeämässä parsakaalia ylös kuin puuta.
+alt-osamiskiekko-water: Kuva melojasta suuntaamassa auringonlaskua kohti, mutta aurinko on appelsiini.
+alt-osamiskiekko-flamingo: Kuva ihmisestä syömässä sokerivaahtoa, mutta herkulla on flamingon pää.

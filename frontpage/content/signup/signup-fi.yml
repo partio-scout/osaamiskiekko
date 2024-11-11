@@ -1,0 +1,35 @@
+heading: Toimiiko?
+title: Tule mukaan
+
+normal-text: >
+  <p>Anna palautetta</p>
+
+  <p>Mitä pidät Osaamiskiekosta? Löytyikö kiinnostavaa tietoa? Oliko jokin pielessä? Anna palautetta lomakkeen kautta. </p>
+
+role-label: Olen
+role-choice-0: Valitse
+role-choice-1: Opiskelija
+role-choice-2: Oppilaitos
+role-choice-3: Järjestö
+role-choice-4: Muu
+
+subject-label: Yhteydenoton aihe
+subject-choice-0: Valitse
+subject-choice-1: Lisätietoja osaamisen opinnollistamisesta
+subject-choice-2: Mukaan opiskelijana
+subject-choice-3: Mukaan oppilaitoksena
+subject-choice-4: Mukaan järjestönä tai muuna organisaationa
+subject-choice-5: Muu
+
+name-label: Nimi
+
+email-label: Sähköpostiosoite
+
+phone-label: Puhelin
+
+message-label: Viesti
+
+submit: Lähetä
+button: Tästä kyselyyn
+
+thank-you: Kiitos yhteydenotostasi.

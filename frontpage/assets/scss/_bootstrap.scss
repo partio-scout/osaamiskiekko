@@ -1,0 +1,7 @@
+/**
+Compiles Bootstrap with our overrides.
+See: nuxt.config.js
+ */
+@import "bootstrap-overrides";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap-vue/src/index";

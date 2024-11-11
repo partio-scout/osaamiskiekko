@@ -1,0 +1,6 @@
+version: '3'
+services:
+  ui:
+    image: docker.vxt-research.com/osaamiskiekko-ui
+    ports:
+      - "8080:80"

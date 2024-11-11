@@ -1,0 +1,178 @@
+.container {
+    background-image: linear-gradient(
+        to bottom,
+        rgb(var(--v-theme-bg-gradient-start)),
+        rgb(var(--v-theme-bg-gradient-end))
+    );
+}
+/* TEXT */
+.dm-sans {
+    font-family: 'DM Sans', sans-serif !important;
+}
+.dm-sans-white {
+    color: rgb(var(--v-theme-h2h3));
+    font-family: 'DM Sans', sans-serif !important;
+}
+.poppins {
+    font-family: 'Poppins', sans-serif !important;
+}
+.poppins-white {
+    color: rgb(var(--v-theme-h2h3));
+    font-family: 'Poppins', sans-serif !important;
+}
+.poppins-purple {
+    color: rgb(var(--v-theme-purple));
+    font-family: 'Poppins', sans-serif !important;
+}
+.poppins-turquoise {
+    color: rgb(var(--v-theme-turquoise));
+    font-family: 'Poppins', sans-serif !important;
+}
+.heading {
+    color: rgb(var(--v-theme-h1));
+    font-family: 'Poppins', sans-serif !important;
+}
+/* HYPHENATION & WORD BREAK RULES*/
+.hyphenate-break-5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    hyphens: auto;
+    overflow: hidden;
+}
+.hyphenate-break-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    hyphens: auto;
+    overflow: hidden;
+}
+.hyphenate-break-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    hyphens: auto;
+    overflow: hidden;
+}
+.hyphenate-break-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    hyphens: auto;
+    overflow: hidden;
+}
+/* BUTTONS */
+.button {
+    width: 300px;
+    height: 60px !important;
+    border-radius: 30px !important;
+    background: transparent;
+    border: 4px solid rgb(var(--v-theme-blue));
+    color: rgb(var(--v-theme-blue));
+    font-family: 'Poppins', sans-serif !important;
+    font-size: medium;
+    transition: color 0.6s;
+    transition: background 0.6s;
+}
+.button:hover {
+    background: rgb(var(--v-theme-blue));
+    color: rgb(var(--v-theme-bg-gradient-end));
+}
+.search-button {
+    width: 130px;
+    height: 50px !important;
+    border-radius: 30px !important;
+    background: rgb(var(--v-theme-blue));
+    color: rgb(var(--v-theme-h2h3));
+    font-family: 'Poppins', sans-serif !important;
+    font-size: larger;
+}
+.button--turquoise {
+    width: 300px;
+    height: 60px !important;
+    border-radius: 30px !important;
+    background: transparent;
+    border: 4px solid rgb(var(--v-theme-turquoise));
+    color: rgb(var(--v-theme-turquoise));
+    font-family: 'Poppins', sans-serif !important;
+    font-size: medium;
+}
+.button--yellow {
+    width: 300px;
+    height: 60px !important;
+    border-radius: 30px !important;
+    background: transparent;
+    border: 4px solid rgb(var(--v-theme-yellow));
+    color: rgb(var(--v-theme-yellow));
+    font-family: 'Poppins', sans-serif !important;
+    font-size: medium;
+}
+.button--purple {
+    width: 300px;
+    height: 60px !important;
+    border-radius: 30px !important;
+    background: transparent;
+    border: 4px solid rgb(var(--v-theme-purple));
+    color: rgb(var(--v-theme-purple));
+    font-family: 'Poppins', sans-serif !important;
+    font-size: medium;
+}
+/* CARDS */
+.degree-card {
+    border-radius: 30px;
+    background-color: rgb(var(--v-theme-turquoise));
+    transition: transform 0.6s;
+    /* transition: background-color 0.6s; */
+}
+.degree-card--no-hover {
+    border-radius: 30px;
+    background-color: rgb(var(--v-theme-turquoise));
+}
+.degree-card:hover {
+    /* border-radius: 30px; */
+    /* background-color: #bafff0; */
+    transform: scale(1.06);
+}
+.yellow {
+    background-color: rgb(var(--v-theme-yellow));
+}
+/* .yellow:hover {
+    background-color: #FBFFB9;
+} */
+.yellow--no-hover {
+    background-color: rgb(var(--v-theme-yellow));
+}
+.skill-card {
+    border-radius: 30px;
+    background-color: rgb(var(--v-theme-purple));
+    transition: transform 0.6s;
+    /* transition: background-color 0.6s; */
+}
+.skill-card--no-hover {
+    border-radius: 30px;
+    background-color: rgb(var(--v-theme-purple));
+}
+.skill-card:hover {
+    /* border-radius: 30px; */
+    /* background-color: #F2DAF6; */
+    transform: scale(1.06);
+
+}
+.result-card {
+    border-radius: 30px;
+    background-color: rgb(var(--v-theme-h1));
+}
+.card-footer {
+    background-color: rgb(var(--v-theme-h1));
+    border-top-left-radius: 30px;
+}
+.card-footer-transparent {
+    opacity: 40%;
+}
+.card-footer-wide {
+    background-color: rgb(var(--v-theme-h2h3));
+}

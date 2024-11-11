@@ -5,7 +5,7 @@ from collections import namedtuple
 from utils import get_localized_value, html_to_plaintext, format_credits
 from field_aliases import FIELD_ALIASES
 
-KNOWN_TUTKINNONOSA_KEYS = set(['id', 'luotu', 'muokattu', 'muokkaaja', 'nimi', 'tila', 'osanTyyppi', 'kuvaus', 'opintoluokitus', 'koodi', 'koodiUri', 'koodiArvo', 'osaAlueet', 'tyyppi', 'valmaTelmaSisalto', 'geneerinenArviointiasteikko', 'vapaatTekstit', 'ammattitaitovaatimukset2019', 'ammattitaidonOsoittamistavat', 'ammattitaitovaatimukset', 'arviointi', 'valmis', 'kaannettava', 'tavoitteet'])
+KNOWN_TUTKINNONOSA_KEYS = set(['id', 'luotu', 'muokattu', 'muokkaaja', 'nimi', 'tila', 'osanTyyppi', 'kuvaus', 'opintoluokitus', 'koodi', 'koodiUri', 'koodiArvo', 'osaAlueet', 'tyyppi', 'valmaTelmaSisalto', 'geneerinenArviointiasteikko', 'vapaatTekstit', 'ammattitaitovaatimukset2019', 'ammattitaidonOsoittamistavat', 'ammattitaitovaatimukset', 'arviointi', 'valmis', 'kaannettava', 'tavoitteet', 'ammattitaitovaatimuksetLista'])
 
 Tutkinnonosa = namedtuple('Tutkinnonosa', ['id', 'description', 'title', 'credits'])
 
@@ -48,7 +48,7 @@ class FormalDegree(object):
         min_credits = None
         max_credits = None
         for item in json.get('suoritustavat', []):
-            rule = item['rakenne']['muodostumisSaanto']
+            rule = item.get('rakenne', {}).get('muodostumisSaanto')
             if not rule:
                 continue
 
@@ -86,7 +86,7 @@ class FormalDegree(object):
         # tyotehtavat_html = get_localized_value(json['tyotehtavatJoissaVoiToimia'])
         # osaaminen_html = get_localized_value(json['suorittaneenOsaaminen'])
 
-        for tutkinnonosa in json['tutkinnonOsat']:
+        for tutkinnonosa in json.get('tutkinnonOsat', []):
             tutkinnonosa_name, texts = self.parse_tutkinnonosa(tutkinnonosa)
             tutkinnonosa_id = tutkinnonosa['id']
 

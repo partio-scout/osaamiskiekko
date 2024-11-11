@@ -134,7 +134,7 @@ def process_lukio():
     course_ids = {} # { degree_id: [course_ids] }
 
     with open('lukio_courses.ndjson', 'w') as output_file:
-        path = 'lukio.json'
+        path = 'ammatilliset-courses/6828810.json'
         with open(path) as input_file:
             json = ujson.loads(input_file.read())
             for oppiaine_json in json['lops2019']['oppiaineet']:
@@ -181,6 +181,6 @@ if __name__ == "__main__":
     reset(f'/formal?api_key={API_KEY}')
     reset(f'/hobby?api_key={API_KEY}')
 
-    process_formal()
     process_hobby()
+    process_formal()
     process_lukio()

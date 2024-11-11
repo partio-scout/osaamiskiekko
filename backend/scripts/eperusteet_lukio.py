@@ -26,7 +26,7 @@ class LukioOppiaine(object):
         short_description = html_to_plaintext(json['tehtava']['kuvaus']['fi'])
         long_description = html_to_plaintext(json['tehtava']['kuvaus']['fi'])
 
-        if json['laajaAlaisetOsaamiset']:
+        if json['laajaAlaisetOsaamiset'] and json['laajaAlaisetOsaamiset']['kuvaus']:
             long_description += '\n\n' + html_to_plaintext(json['laajaAlaisetOsaamiset']['kuvaus']['fi'])
 
         goals = html_to_plaintext(get_localized_value(json['tavoitteet']['kuvaus']))

@@ -100,6 +100,9 @@ def process_amk(cur):
     with open('amk_courses.ndjson', 'w') as output_file:
         cur.execute(f"SELECT id, source_name, title, url, text_content, metadata FROM content WHERE source_type='course'")
         for id, source_name, title, url, text_content, metadata in cur:
+            if len(text_content) < 1:
+                continue
+
             output_file.write(ujson.dumps(render_course(id,title,text_content,metadata), ensure_ascii=False, escape_forward_slashes=False))
             output_file.write('\n')
 

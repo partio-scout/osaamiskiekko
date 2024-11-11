@@ -1,3 +1,4 @@
+import os
 from collections import namedtuple
 
 Conllu = namedtuple('Conllu', ['original', 'lemma', 'category', 'verbmood', 'verbform', 'nouncase'])
@@ -25,16 +26,20 @@ def save_freqs(filename, container, blacklist=None):
 
 
 def load_set(filename):
-        container = set()
-        with open(filename) as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
+    container = set()
 
-                container.add(line)
-
+    if not os.path.exists(filename):
         return container
+
+    with open(filename) as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+
+            container.add(line)
+
+    return container
 
 
 def parse_conllu(raw, debug=False):
@@ -73,9 +78,13 @@ def parse_conllu(raw, debug=False):
                     nouncase = fragments[1]
 
         #print(parts)
+        lemma = parts[2]
+        if len(lemma) < 2 or len(lemma) > 32 or lemma == '..': # lemma == '-' or lemma == '–' or lemma == '.' or lemma == '/'
+            continue
+
         tokens.append(Conllu(
             original = parts[1].lower(),
-            lemma = parts[2],
+            lemma = lemma,
             category = parts[3],
             verbmood = verbmood,
             verbform = verbform,

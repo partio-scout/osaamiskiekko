@@ -11,17 +11,17 @@ from field_aliases import FIELD_ALIASES
 
 Hobbycourse = namedtuple('Hobbycourse', ['id', 'title', 'content', 'description', 'credits', 'organization_id', 'organization_name', 'field', 'url'])
 
-KNOWN_AMOSAA_KEYS = set(['id', 'nimi', 'tila', 'tyyppi', 'kuvaus', 'koulutustoimija', 'luotu', 'muokattu', 'peruste', 'tila2016', 'jotpatyyppi', 'kommentti', 'julkaisukielet', 'liitteet', 'paatospaivamaara', 'voimaantulo', 'voimassaoloLoppuu', 'hyvaksyja', 'paatosnumero', 'suoritustapa', 'esikatseltavissa', 'tutkintonimikkeet', 'osaamisalat', 'oppilaitosTyyppiKoodiUri', 'oppilaitosTyyppiKoodi', 'koulutustyyppi', 'viimeisinJulkaisuAika', 'sisalto', 'suorituspolut', 'tutkinnonOsat', 'opintokokonaisuudet', 'perusteDiaarinumero', '_pohja'])
-KNOWN_SISALTO_KEYS = set(['id', 'tyyppi', 'naytaPohjanTeksti', 'naytaPerusteenTeksti', 'lapset', 'tekstiKappale', 'nimi', 'opintokokonaisuus', 'perusteteksti', 'pohjanTekstikappale', 'perusteenOsaId'])
+KNOWN_AMOSAA_KEYS = set(['id', 'nimi', 'tila', 'tyyppi', 'kuvaus', 'koulutustoimija', 'luotu', 'muokattu', 'peruste', 'tila2016', 'jotpatyyppi', 'kommentti', 'julkaisukielet', 'liitteet', 'paatospaivamaara', 'voimaantulo', 'voimassaoloLoppuu', 'hyvaksyja', 'paatosnumero', 'suoritustapa', 'esikatseltavissa', 'tutkintonimikkeet', 'osaamisalat', 'oppilaitosTyyppiKoodiUri', 'oppilaitosTyyppiKoodi', 'koulutustyyppi', 'viimeisinJulkaisuAika', 'sisalto', 'suorituspolut', 'tutkinnonOsat', 'opintokokonaisuudet', 'perusteDiaarinumero', '_pohja', 'perustePaivitettyPvm'])
+KNOWN_SISALTO_KEYS = set(['id', 'tyyppi', 'naytaPohjanTeksti', 'naytaPerusteenTeksti', 'lapset', 'tekstiKappale', 'nimi', 'opintokokonaisuus', 'perusteteksti', 'pohjanTekstikappale', 'perusteenOsaId', 'osaAlueet'])
 KNOWN_OPINTOKOKONAISUUS_KEYS = set(['id', 'nimiKoodi', 'koodi', 'kuvaus', 'laajuus', 'laajuusYksikko', 'minimilaajuus', 'tyyppi', 'opetuksenTavoiteOtsikko', 'tavoitteet', 'arvioinninKuvaus', 'tavoitteidenKuvaus', 'keskeisetSisallot', 'arvioinnit', 'koodiArvo', 'kooditettuNimi'])
 
 # https://www.opintokeskukset.fi/opintokeskukset/
-ORG_WHITELIST = set([
-    'Opintokeskus Sivis',
-    'Työväen sivistysliitto TSL ry:n opintokeskus',
-    'Toimihenkilöjärjestöjen Sivistysliitto TJS Opintokeskus - Funktionärsorganisationernas Bildningsförbund FOB Studiecentrum (TJS Opintokeskus)',
-    'Maaseudun Sivistysliiton MSL-opintokeskus',
-])
+# ORG_WHITELIST = set([
+#     'Opintokeskus Sivis',
+#     'Työväen sivistysliitto TSL ry:n opintokeskus',
+#     'Toimihenkilöjärjestöjen Sivistysliitto TJS Opintokeskus - Funktionärsorganisationernas Bildningsförbund FOB Studiecentrum (TJS Opintokeskus)',
+#     'Maaseudun Sivistysliiton MSL-opintokeskus',
+# ])
 
 class HobbyOrganization(object):
     def __init__(self):
@@ -52,9 +52,9 @@ class HobbyOrganization(object):
             expires = None
             self.expired = False
 
-        if self.org_name not in ORG_WHITELIST:
-            self.blacklisted = True
-            return
+        # if self.org_name not in ORG_WHITELIST:
+        #     self.blacklisted = True
+        #     return
 
         if self.expired:
             print(f"NOTE: Including expired: {self.org_name}")
@@ -119,7 +119,11 @@ class HobbyOrganization(object):
                     payload = texts[heading]
                     content += payload + '\n\n'
 
-                if not (name and self.org_name and parent_name):
+                if not parent_name:
+                    print(f"opintokokonaisuus {json['id']} is missing field")
+                    return
+
+                if not (name and self.org_name):
                     print(f"name={name}, org={self.org_name}, field={parent_name}")
                     raise Exception("Missing values")
 

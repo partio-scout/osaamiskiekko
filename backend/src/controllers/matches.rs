@@ -17,6 +17,7 @@ use crate::mongo_collections::*;
 use crate::controllers::error::ApiError;
 use crate::controllers::courses::{Matches, HobbyCourse, FormalDegree};
 
+const MAX_KEYWORDS : usize = 10;
 
 pub async fn get_degree_matches(Extension(db): Extension<Arc<DB>>, Path(id): Path<String>) -> Result<Json<Value>, ApiError> {
     println!("Get formal degree matches {}", &id);
@@ -54,7 +55,7 @@ pub async fn get_degree_matches(Extension(db): Extension<Arc<DB>>, Path(id): Pat
             "description": description,
             "url": course.url,
             "tutkinnonosat": result.matching_courses,
-            "keywords": result.keywords
+            "keywords": clamped_slice(&result.keywords, MAX_KEYWORDS)
         }));
     }
 
@@ -96,7 +97,7 @@ pub async fn get_degree_match(Extension(db): Extension<Arc<DB>>, Path((degree_id
             "id": result.result_id,
             "name": { "fi": course.title },
             "tutkinnonosat": result.matching_courses,
-            "keywords": result.keywords
+            "keywords": clamped_slice(&result.keywords, MAX_KEYWORDS)
         }));
 
         break
@@ -209,7 +210,7 @@ pub async fn get_vst_matches(Extension(db): Extension<Arc<DB>>, Path(id): Path<S
             "validated": false, // TODO
             "url": degree.url,
             "tutkinnonosat": result.matching_courses,
-            "keywords": result.keywords,
+            "keywords": clamped_slice(&result.keywords, MAX_KEYWORDS)
         }));
     }
 
@@ -263,4 +264,9 @@ pub async fn get_vst_match(Extension(db): Extension<Arc<DB>>, Path((course_id, r
         Some(r) => Result::Ok(Json(serde_json::json!(&r))),
         None => Result::Err(ApiError::NotFound())
     }
+}
+
+fn clamped_slice<T>(vec: &[T], max_len: usize) -> &[T] {
+    let len = std::cmp::min(vec.len(), max_len);
+    &vec[..len]
 }

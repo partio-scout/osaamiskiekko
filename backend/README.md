@@ -22,13 +22,13 @@ Run load_fields.py. It scrapes field names from oph.fi and writes fields.json
 
     python scripts/load_fields.py
 
-Run process\_amk.py. It reads AMK course descriptions from a local PostgreSQL database and writes amk-courses.json, amk\_courses.ndjson, amk\_degrees.ndjson. Obtaining AMK course descriptions is outside of the scope of this package. They have been obtained by scraping the websites of the schools, and because the websites change regularly, this step cannot be automated.
-
-    python scripts/process_amk.py
-
 Run process\_eperusteet.py. It preprocesses ePerusteet data, uploads course descriptions to the server, and generates formal\_courses.ndjson, formal-degrees-courses.json, hobby\_courses.ndjson, lukio\_courses.ndjson, lukio-courses.json
 
     API_KEY=... python scripts/process_eperusteet.py
+
+Run process\_amk.py. It reads AMK course descriptions from a local PostgreSQL database and writes amk-courses.json, amk\_courses.ndjson, amk\_degrees.ndjson. Obtaining AMK course descriptions is outside of the scope of this package. They have been obtained by scraping the websites of the schools, and because the websites change regularly, this step cannot be automated.
+
+    API_KEY=... python scripts/process_amk.py
 
 Run parse.py. It lemmatizes course descriptions and stores the results in a local MongoDB database.
 Turku-neural-parser-pipeline must be running locally and listening on port 7689.

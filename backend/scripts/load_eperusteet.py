@@ -73,7 +73,7 @@ def fetch_amosaa_course(koulutustoimija_id, id):
 def fetch_formal_education(koulutustyypit):
     for koulutustyyppi in koulutustyypit:
         print(f"Koulutustyyppi {koulutustyyppi}")
-        ids = fetch_ammatillinen_toc(koulutustyyppi)
+        ids = fetch_ammatillinen_toc(koulutustyyppi) or []
         course_count = len(ids)
 
         counter = 0
@@ -161,7 +161,7 @@ def get_localized_value(item):
 
 if __name__ == '__main__':
     # Create directories
-    for directory in ['ammatilliset-courses', 'ammatilliset-organizers', 'ammatilliset-toc', 'amosaa-courses']:
+    for directory in ['ammatilliset-courses', 'ammatilliset-organizers', 'amosaa-courses']:
         if not os.path.isdir(directory):
             os.makedirs(directory)
 

@@ -12,6 +12,7 @@ name = "health"
 path = "src/bin/health.rs"
 
 [dependencies]
+proc-macro2 = "1.0.60"  # temporary dependency issue
 axum = "0.6"
 bytes = "1.1.0"
 futures = "0.3"

@@ -166,9 +166,10 @@ class Parser(object):
 
     def load_wordlists(self):
         self.whitelist = load_set('rules/whitelist.txt')
-        self.blacklist_ngram_candidates = load_set('rules/blacklist-ngram-candidates.txt')
         self.blacklist_keywords = load_set('rules/blacklist-keywords.txt')
+        self.blacklist_ngram_candidates = load_set('rules/blacklist-ngram-candidates.txt')
         self.blacklist_ngrams = load_set('rules/blacklist-ngrams.txt')
+        self.whitelist_ngrams = load_set('rules/whitelist-ngrams.txt')
 
         self.overlapping_verbs = load_set('intermediate/overlap-verbs.txt')
         self.overlapping_nouns = load_set('intermediate/overlap-nouns.txt')
@@ -228,12 +229,18 @@ class Parser(object):
                     response = requests.post(PARSER_URL, data=sentence.encode('utf-8'), headers=HEADERS)
                     raw_conllu = response.text
 
-                    self.db.conllu.insert_one({
-                        "original_id": id,
-                        "type": dataset_type,
-                        "sentence_number": sentence_counter,
-                        "conllu": raw_conllu
-                    })
+                    self.db.conllu.update_one(
+                        { "original_id": id },
+                        {
+                            "$set": {
+                                "original_id": id,
+                                "type": dataset_type,
+                                "sentence_number": sentence_counter,
+                                "conllu": raw_conllu
+                            }
+                        },
+                        upsert=True
+                    )
 
                     sentence_counter += 1
                 document_counter += 1
@@ -316,14 +323,15 @@ class Parser(object):
             if counter % 10000 == 0:
                 print(counter)
 
-        save_freqs('results/ngrams_freqs.txt', validated_ngrams)
+        save_freqs('results/ngrams_freqs.txt', validated_ngrams, blacklist=self.whitelist_ngrams.union(self.blacklist_ngrams))
 
 
     def update_keywords(self, tokens, keywords, global_keywords):
         # Ngrams
         sentence_phrases = parse_sentence(tokens, whitelist=self.overlapping_words, blacklist=self.blacklist_ngram_candidates)
         for phrase in sentence_phrases:
-            keywords[phrase] = keywords.get(phrase, 0.0) + SCORE_NGRAM
+            if phrase in self.whitelist_ngrams:
+                keywords[phrase] = keywords.get(phrase, 0.0) + SCORE_NGRAM
 
         # Standalone words
         for token in tokens:
@@ -353,7 +361,7 @@ class Parser(object):
         parser._generate_keywords('amk_courses.ndjson', parser.db.formal_course_keywords, global_keywords)
         parser._generate_keywords('lukio_courses.ndjson', parser.db.formal_course_keywords, global_keywords)
 
-        save_freqs('results/global_keywords.txt', global_keywords, blacklist=self.seen_words.union(self.whitelist))
+        save_freqs('results/global_keywords.txt', global_keywords, blacklist=self.seen_words.union(self.whitelist).union(self.blacklist_keywords))
 
 
     def _generate_keywords(self, filename, db_collection, global_keywords):
@@ -390,11 +398,14 @@ class Parser(object):
 
 
 if __name__ == '__main__':
+    if not os.path.exists('results'):
+        os.makedirs('results')
+
     parser = Parser()
-    parser.preprocess('hobby_courses.ndjson', 'hobby')
-    parser.preprocess('formal_courses.ndjson', 'formal')
-    parser.preprocess('amk_courses.ndjson', 'formal')
-    parser.preprocess('lukio_courses.ndjson', 'formal')
+    # parser.preprocess('hobby_courses.ndjson', 'hobby')
+    # parser.preprocess('formal_courses.ndjson', 'formal')
+    # parser.preprocess('amk_courses.ndjson', 'formal')
+    # parser.preprocess('lukio_courses.ndjson', 'formal')
 
     parser.analyze_overlap()
     parser.find_ngrams()
